@@ -1,0 +1,364 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "b8e3d55b-fa56-4199-88ad-60cfd98f56f9")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 152.4 78.74)
+		(size 30.48 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6102592d-9e5a-4d16-a1d9-3adb4d835efe")
+		(property "Sheetname" "DAC"
+			(at 161.544 93.472 0)
+			(effects
+				(font
+					(size 3.81 3.81)
+					(thickness 0.762)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Subcircuits/dac.kicad_sch"
+			(at 152.4 109.8046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 78.74 115.57)
+		(size 104.14 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "650cd0f6-4277-45cc-8777-f2e2a60d96c5")
+		(property "Sheetname" "Comms"
+			(at 121.412 133.604 0)
+			(effects
+				(font
+					(size 3.81 3.81)
+					(thickness 0.762)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Subcircuits/comms.kicad_sch"
+			(at 78.74 146.6346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 78.74 41.91)
+		(size 104.14 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "84a1e6aa-eb06-44a1-ae19-b2ac56cdff0b")
+		(property "Sheetname" "PSUs"
+			(at 121.92 57.658 0)
+			(effects
+				(font
+					(size 3.81 3.81)
+					(thickness 0.762)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Subcircuits/psus.kicad_sch"
+			(at 78.74 72.9746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 78.74)
+		(size 30.48 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "9d251ce4-04d4-4800-ac42-9fd9e9a8cf74")
+		(property "Sheetname" "Switches"
+			(at 117.856 92.964 0)
+			(effects
+				(font
+					(size 3.81 3.81)
+					(thickness 0.762)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Subcircuits/switches.kicad_sch"
+			(at 115.57 109.8046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 78.74 78.74)
+		(size 30.48 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a2b5f9c0-8e7d-4b76-a173-d00aba9c5441")
+		(property "Sheetname" "ADC"
+			(at 87.376 92.964 0)
+			(effects
+				(font
+					(size 3.81 3.81)
+					(thickness 0.762)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Subcircuits/adc.kicad_sch"
+			(at 78.74 109.8046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "~{CS}" input
+			(at 91.44 109.22 270)
+			(uuid "ce7c70c4-0c18-4bd0-a164-f4a6e1ca7d35")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDO1" output
+			(at 101.6 109.22 270)
+			(uuid "e4a5711c-bbca-469f-ad91-daee146e8977")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDI" input
+			(at 96.52 109.22 270)
+			(uuid "3e30f9da-e19b-409a-a8fe-444ec795887f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 81.28 78.74 90)
+			(uuid "b9103d39-5bdc-413c-aa77-4bfaaefcf693")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDO0" output
+			(at 104.14 109.22 270)
+			(uuid "4a22537f-3483-4971-8401-59b68ca2fc43")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" input
+			(at 106.68 78.74 90)
+			(uuid "1d38922a-6cf2-4508-8ba9-b59694c4dff5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" input
+			(at 93.98 109.22 270)
+			(uuid "cc73c125-2ee1-47a7-982d-475f2fb8a446")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CNV" input
+			(at 83.82 109.22 270)
+			(uuid "dd293d55-bed6-4c4e-8c6e-2512ca798ed3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IN1" input
+			(at 109.22 93.98 0)
+			(uuid "93307c61-96ef-4989-aa02-1c680ddc4eef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "1.8V" input
+			(at 83.82 78.74 90)
+			(uuid "02cffe57-0f1d-4876-8506-a6fc95123631")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "IN0" input
+			(at 109.22 96.52 0)
+			(uuid "ec014e18-ce1f-4012-a3af-800ea0bb60eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BSY" output
+			(at 86.36 109.22 270)
+			(uuid "689ef368-695b-4daa-8440-e693275e00f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VIO" input
+			(at 86.36 78.74 90)
+			(uuid "ef498ba6-b22b-4ce4-8574-74696d4bd6bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
