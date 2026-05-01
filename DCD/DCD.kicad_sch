@@ -5,6 +5,83 @@
 	(uuid "b8e3d55b-fa56-4199-88ad-60cfd98f56f9")
 	(paper "A4")
 	(lib_symbols)
+	(hierarchical_label "*CS2"
+		(shape input)
+		(at 177.8 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0754dd08-3d1c-40ab-8a3c-5d2c84475c43")
+	)
+	(hierarchical_label "CLK2"
+		(shape input)
+		(at 170.18 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1dd820dc-4fb7-4982-8e2f-482a5abf49a6")
+	)
+	(hierarchical_label "CLK1"
+		(shape input)
+		(at 166.37 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "25e92891-d86c-4201-9721-b8e10eb53097")
+	)
+	(hierarchical_label "SDI1"
+		(shape input)
+		(at 158.75 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "56685911-40b4-4b0f-b687-8527f0965856")
+	)
+	(hierarchical_label "GND"
+		(shape output)
+		(at 179.07 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8a121ff8-f0f5-453d-9134-faf422bdb623")
+	)
+	(hierarchical_label "*CS1"
+		(shape input)
+		(at 173.99 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ee0de0dc-18b5-4686-8a68-d22e3593288b")
+	)
+	(hierarchical_label "SDI2"
+		(shape input)
+		(at 162.56 109.22 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f43a17b1-2e0a-45bf-be0b-2d164445bcab")
+	)
 	(sheet
 		(at 152.4 78.74)
 		(size 30.48 30.48)
