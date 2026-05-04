@@ -5,82 +5,35 @@
 	(uuid "b8e3d55b-fa56-4199-88ad-60cfd98f56f9")
 	(paper "A4")
 	(lib_symbols)
-	(hierarchical_label "*CS2"
-		(shape input)
-		(at 177.8 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 109.22 81.28) (xy 152.4 81.28)
 		)
-		(uuid "0754dd08-3d1c-40ab-8a3c-5d2c84475c43")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63f1b4dd-7e14-434a-ba80-97b0e88541bc")
 	)
-	(hierarchical_label "CLK2"
-		(shape input)
-		(at 170.18 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 109.22 97.79) (xy 115.57 97.79)
 		)
-		(uuid "1dd820dc-4fb7-4982-8e2f-482a5abf49a6")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b41d7d4d-e5ac-4696-96f9-5d40df2ca22d")
 	)
-	(hierarchical_label "CLK1"
-		(shape input)
-		(at 166.37 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 109.22 95.25) (xy 115.57 95.25)
 		)
-		(uuid "25e92891-d86c-4201-9721-b8e10eb53097")
-	)
-	(hierarchical_label "SDI1"
-		(shape input)
-		(at 158.75 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+		(stroke
+			(width 0)
+			(type default)
 		)
-		(uuid "56685911-40b4-4b0f-b687-8527f0965856")
-	)
-	(hierarchical_label "GND"
-		(shape output)
-		(at 179.07 78.74 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8a121ff8-f0f5-453d-9134-faf422bdb623")
-	)
-	(hierarchical_label "*CS1"
-		(shape input)
-		(at 173.99 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ee0de0dc-18b5-4686-8a68-d22e3593288b")
-	)
-	(hierarchical_label "SDI2"
-		(shape input)
-		(at 162.56 109.22 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f43a17b1-2e0a-45bf-be0b-2d164445bcab")
+		(uuid "c90e8907-4cce-4a41-bf57-f76ba9fca8ce")
 	)
 	(sheet
 		(at 152.4 78.74)
@@ -98,7 +51,7 @@
 		)
 		(uuid "6102592d-9e5a-4d16-a1d9-3adb4d835efe")
 		(property "Sheetname" "DAC"
-			(at 161.544 93.472 0)
+			(at 161.29 90.424 0)
 			(effects
 				(font
 					(size 3.81 3.81)
@@ -116,6 +69,86 @@
 				)
 				(justify left top)
 				(hide yes)
+			)
+		)
+		(pin "CLK1" input
+			(at 160.02 109.22 270)
+			(uuid "2285f5c4-99f2-4be6-8c9d-1c4e915b18c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "*CS2" input
+			(at 167.64 109.22 270)
+			(uuid "13e25c96-29bb-4878-9eab-b9c162171512")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDI2" input
+			(at 172.72 109.22 270)
+			(uuid "47ed68d0-508c-4f7f-9a20-6a628fb77374")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" output
+			(at 180.34 78.74 90)
+			(uuid "73736978-b749-43ef-827f-2d10d9f3d159")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "*CS1" input
+			(at 157.48 109.22 270)
+			(uuid "6ecd926e-6db8-47a1-8123-a58a8aa5ef93")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDI1" input
+			(at 162.56 109.22 270)
+			(uuid "07ef535d-63e6-4cce-9108-0ced53553efa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CLK2" input
+			(at 170.18 109.22 270)
+			(uuid "73f3e487-4a21-4590-a10a-3631f4fcbff3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VRef" input
+			(at 152.4 81.28 180)
+			(uuid "58766388-0886-4dbf-b88b-0074698ae6b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -215,8 +248,8 @@
 		)
 	)
 	(sheet
-		(at 115.57 78.74)
-		(size 30.48 30.48)
+		(at 115.57 83.82)
+		(size 30.48 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -230,7 +263,7 @@
 		)
 		(uuid "9d251ce4-04d4-4800-ac42-9fd9e9a8cf74")
 		(property "Sheetname" "Switches"
-			(at 117.856 92.964 0)
+			(at 118.11 90.678 0)
 			(effects
 				(font
 					(size 3.81 3.81)
@@ -241,13 +274,73 @@
 			)
 		)
 		(property "Sheetfile" "Subcircuits/switches.kicad_sch"
-			(at 115.57 109.8046 0)
+			(at 115.57 114.8846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
 				(hide yes)
+			)
+		)
+		(pin "GND" output
+			(at 143.51 109.22 270)
+			(uuid "58075613-4d2a-4c9c-a24b-106406c435a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Ext_Analog" bidirectional
+			(at 132.08 109.22 270)
+			(uuid "67433078-b692-491d-8b39-6a64cae62aaf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ADC1" output
+			(at 115.57 95.25 180)
+			(uuid "2a4ea811-fb56-4545-8493-72998b8fba32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ADC2" output
+			(at 115.57 97.79 180)
+			(uuid "a33604eb-5e6f-49f3-81d6-3872615b0b8c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DAC2" input
+			(at 146.05 97.79 0)
+			(uuid "abbe59f4-e3bc-4b06-88ba-062d1525bdfd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DAC1" input
+			(at 146.05 95.25 0)
+			(uuid "1325d31f-7d35-40d5-b50d-5250132ca213")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -274,7 +367,7 @@
 		)
 		(uuid "a2b5f9c0-8e7d-4b76-a173-d00aba9c5441")
 		(property "Sheetname" "ADC"
-			(at 87.376 92.964 0)
+			(at 87.63 90.678 0)
 			(effects
 				(font
 					(size 3.81 3.81)
@@ -305,7 +398,7 @@
 			)
 		)
 		(pin "SDO1" output
-			(at 101.6 109.22 270)
+			(at 104.14 109.22 270)
 			(uuid "e4a5711c-bbca-469f-ad91-daee146e8977")
 			(effects
 				(font
@@ -335,7 +428,7 @@
 			)
 		)
 		(pin "SDO0" output
-			(at 104.14 109.22 270)
+			(at 101.6 109.22 270)
 			(uuid "4a22537f-3483-4971-8401-59b68ca2fc43")
 			(effects
 				(font
@@ -345,7 +438,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 106.68 78.74 90)
+			(at 91.44 78.74 90)
 			(uuid "1d38922a-6cf2-4508-8ba9-b59694c4dff5")
 			(effects
 				(font
@@ -375,7 +468,7 @@
 			)
 		)
 		(pin "IN1" input
-			(at 109.22 93.98 0)
+			(at 109.22 95.25 0)
 			(uuid "93307c61-96ef-4989-aa02-1c680ddc4eef")
 			(effects
 				(font
@@ -395,7 +488,7 @@
 			)
 		)
 		(pin "IN0" input
-			(at 109.22 96.52 0)
+			(at 109.22 97.79 0)
 			(uuid "ec014e18-ce1f-4012-a3af-800ea0bb60eb")
 			(effects
 				(font
@@ -417,6 +510,16 @@
 		(pin "VIO" input
 			(at 86.36 78.74 90)
 			(uuid "ef498ba6-b22b-4ce4-8574-74696d4bd6bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VRef" output
+			(at 109.22 81.28 0)
+			(uuid "483f4e89-9391-4808-ae38-d38b4895e169")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1074,6 +1074,17 @@
 		)
 		(uuid "112d0c66-b774-40c1-91b3-3cc96025b36e")
 	)
+	(hierarchical_label "VRef"
+		(shape input)
+		(at 109.22 49.53 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6b08bb6a-9f3f-4cb5-a6e0-c8d23610bbec")
+	)
 	(hierarchical_label "GND"
 		(shape output)
 		(at 166.37 119.38 270)
@@ -1414,7 +1425,7 @@
 			(uuid "3535a492-6736-4540-b831-0c1847bdf65f")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
 					(reference "U3")
 					(unit 1)
@@ -1592,7 +1603,7 @@
 			(uuid "f499e37f-76a1-4e67-a232-d92139c0768b")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
 					(reference "U4")
 					(unit 1)

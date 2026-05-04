@@ -2711,16 +2711,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 66.04) (xy 104.14 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1ddcc160-723b-4690-9445-894e99ae5849")
-	)
-	(wire
-		(pts
 			(xy 236.22 81.28) (xy 238.76 81.28)
 		)
 		(stroke
@@ -3128,6 +3118,16 @@
 			(type default)
 		)
 		(uuid "74841ea2-43c0-4247-a9bb-bdd98b63a1eb")
+	)
+	(wire
+		(pts
+			(xy 99.06 66.04) (xy 101.6 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76f0082a-08c2-4c8f-ada1-23b0532856ab")
 	)
 	(wire
 		(pts
@@ -4311,7 +4311,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead_Small")
-		(at 106.68 66.04 90)
+		(at 96.52 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4319,7 +4319,7 @@
 		(dnp no)
 		(uuid "2c0657ed-3877-46ec-b0be-a7c5a2913eee")
 		(property "Reference" "FB3"
-			(at 108.458 60.706 90)
+			(at 98.298 60.706 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4328,7 +4328,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 109.22 62.738 90)
+			(at 99.06 62.738 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4337,7 +4337,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 106.68 67.818 90)
+			(at 96.52 67.818 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4346,7 +4346,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 106.68 66.04 0)
+			(at 96.52 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4355,7 +4355,7 @@
 			)
 		)
 		(property "Description" "Ferrite bead, small symbol"
-			(at 106.68 66.04 0)
+			(at 96.52 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4364,7 +4364,7 @@
 			)
 		)
 		(property "Part number" "BLM18GG471SN1D"
-			(at 106.68 66.04 90)
+			(at 96.52 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4373,7 +4373,7 @@
 			)
 		)
 		(property "Order number" "81-BLM18GG471SN1D"
-			(at 106.68 66.04 90)
+			(at 96.52 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4382,7 +4382,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 106.68 66.04 90)
+			(at 96.52 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4391,7 +4391,7 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 106.68 66.04 90)
+			(at 96.52 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4855,7 +4855,7 @@
 			(uuid "ff83de1d-f1bd-4496-92cf-71e03ada9804")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
 					(reference "U2")
 					(unit 1)
@@ -4865,7 +4865,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 97.79 66.04 90)
+		(at 105.41 66.04 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4874,7 +4874,7 @@
 		(fields_autoplaced yes)
 		(uuid "9826c74f-947e-499d-8a78-e4d19d1c651e")
 		(property "Reference" "R1"
-			(at 97.79 59.69 90)
+			(at 105.41 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4882,7 +4882,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 97.79 62.23 90)
+			(at 105.41 62.23 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4890,7 +4890,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 97.79 67.818 90)
+			(at 105.41 67.818 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4899,7 +4899,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 66.04 0)
+			(at 105.41 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4908,7 +4908,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 97.79 66.04 0)
+			(at 105.41 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4917,7 +4917,7 @@
 			)
 		)
 		(property "Link " "https://eu.mouser.com/ProductDetail/Panasonic/ERA-3VEB1000V?qs=sGAEpiMZZMtlubZbdhIBIFX24rZb7BVEWmP2JDQu%252BM0%3D"
-			(at 97.79 66.04 90)
+			(at 105.41 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4932,7 +4932,7 @@
 			(uuid "db3ee95a-0588-4ed9-99af-42329c8f557f")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
 					(reference "R1")
 					(unit 1)
