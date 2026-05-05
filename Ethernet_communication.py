@@ -4,11 +4,11 @@ from scapy.all import sendp, sniff, get_if_list
 
 interface = "Ethernet"
 
-my_ip = [192, 168, 178, 52]
-fpga_ip = [192, 168, 178, 81]
+my_ip = [10, 0, 0, 10]
+fpga_ip = [10, 0, 0, 240]
 
 my_mac = b"\xe8\x6a\x64\xe7\xe8\x29"
-fpga_mac = b"\xff\xff\xff\xff\xff\xff"
+fpga_mac = b"\xe8\x6a\x64\xe7\xe8\x30"
 
 send_string = "LEDs CHANGED!     "
 def mac_to_str(mac):
@@ -149,13 +149,13 @@ class EthExampleApp:
         packet[26:29] = self.my_ip
         packet[30:33] = self.fpga_ip
 
-        # update packet
-        packet[73] = int(value) // 256
-        packet[74] = int(value) % 256
-
         # Put string into packet
         for index, letter in enumerate(self.send_string):
             packet[42 + index] = ord(letter)
+
+        # update packet
+        packet[73] = int(value)//256
+        packet[74] = int(value)%256
 
         udp_payload_length = len(packet) - 42
         udp_length = 8 + udp_payload_length
@@ -196,7 +196,7 @@ class EthExampleApp:
         r = bytes(packets[0])
 
         if r[0:6] == self.my_mac and r[6:12] == self.fpga_mac:
-            return r[42:].decode("utf-8", errors="replace")
+            return r
 
         return None
 
@@ -205,7 +205,7 @@ class EthExampleApp:
             sw_value = self.getSWValue()
             if sw_value is not None:
                 self.sw_value = sw_value
-                self.switches_label.config(text=f'Switches: {self.sw_value[-8:-1]}')
+                self.switches_label.config(text=f'Switches: {int.from_bytes(self.sw_value[-6:-2])}')
 
     # Function to get the content of the Entry widget and update the led_label
     def setLEDValue(self):
@@ -215,9 +215,9 @@ class EthExampleApp:
 
     # Function to get the content of the Entry widget and update the led_label
     def switchesToLeds(self):
-        self.led_label.config(text=f'Leds: {self.sw_value[-8:-1]}')  # Update the led_label
-        self.sendLEDpacket(int(self.sw_value[-6:-1], 16))
-        self.entry_text.set(f'{int(self.sw_value[-6:-1], 16)}')
+        self.led_label.config(text=f'Leds: 0x{self.sw_value[-6:-2].hex()}')  # Update the led_label
+        self.sendLEDpacket(int.from_bytes(self.sw_value[-6:-2], "big"))
+        self.entry_text.set(f'{int.from_bytes(self.sw_value[-6:-2], "big")}')
 
     def on_closing(self):
         # Stop the counter thread and close the window
@@ -228,7 +228,7 @@ class EthExampleApp:
 
 # Create the main application window
 root = tk.Tk()
-
+root.title("Integrated Example App")
 # Create an instance of the CounterApp class
 app = EthExampleApp(root, interface, my_ip, fpga_ip, my_mac, fpga_mac, send_string)
 
