@@ -35,6 +35,17 @@
 		)
 		(uuid "c90e8907-4cce-4a41-bf57-f76ba9fca8ce")
 	)
+	(hierarchical_label "VDD(3.3V)"
+		(shape input)
+		(at 175.26 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cef0237b-98fe-4a22-850f-1f9ce7500f92")
+	)
 	(sheet
 		(at 152.4 78.74)
 		(size 30.48 30.48)
