@@ -2198,6 +2198,12 @@
 		(uuid "0a3e55c8-d650-42c1-9cb7-171e7ad2a40a")
 	)
 	(junction
+		(at 121.92 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fcdb35f-f542-436c-8a3f-308e6fc586de")
+	)
+	(junction
 		(at 88.9 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2318,6 +2324,12 @@
 		(uuid "82aa904a-f371-4dde-b775-a469ef60e1ab")
 	)
 	(junction
+		(at 133.35 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8555095b-d75c-4d32-9b57-1e8518f5fb50")
+	)
+	(junction
 		(at 238.76 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2384,6 +2396,12 @@
 		(uuid "b2ae0186-c31c-4228-a4b7-901c68779d29")
 	)
 	(junction
+		(at 133.35 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b3dcae50-7cfc-4621-becf-4a67d46f1f86")
+	)
+	(junction
 		(at 238.76 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2436,6 +2454,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d8cef3d8-1da6-451d-a78b-c933f426306f")
+	)
+	(junction
+		(at 123.19 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebf966ac-7235-4859-a960-e2ff887d8bb0")
 	)
 	(junction
 		(at 238.76 99.06)
@@ -2531,6 +2555,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 76.2) (xy 133.35 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02975f9a-3c05-4beb-b7fd-fddcca4ae890")
+	)
+	(wire
+		(pts
 			(xy 238.76 101.6) (xy 238.76 104.14)
 		)
 		(stroke
@@ -2558,6 +2592,16 @@
 			(type default)
 		)
 		(uuid "06dbe8fd-0a55-4588-bba1-6cdf2a8a05f9")
+	)
+	(wire
+		(pts
+			(xy 133.35 40.64) (xy 133.35 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c294b18-881e-40e9-9809-fd2690b48fc8")
 	)
 	(wire
 		(pts
@@ -2741,6 +2785,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 60.96) (xy 133.35 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23d37cde-19a7-4919-b126-9599b16d6ac8")
+	)
+	(wire
+		(pts
 			(xy 238.76 104.14) (xy 238.76 106.68)
 		)
 		(stroke
@@ -2748,6 +2802,16 @@
 			(type default)
 		)
 		(uuid "26206503-c490-4dbc-83db-cff1e6d14b0c")
+	)
+	(wire
+		(pts
+			(xy 133.35 53.34) (xy 133.35 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ccffb16-eaba-4422-ab22-143bbe488d38")
 	)
 	(wire
 		(pts
@@ -2831,6 +2895,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 50.8) (xy 111.76 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43e33093-b7dd-4b7a-ace5-52e32e722ee6")
+	)
+	(wire
+		(pts
 			(xy 77.47 73.66) (xy 77.47 76.2)
 		)
 		(stroke
@@ -2848,6 +2922,26 @@
 			(type default)
 		)
 		(uuid "47be11ff-10ec-4937-a52d-6e2df5d9fedc")
+	)
+	(wire
+		(pts
+			(xy 121.92 50.8) (xy 119.38 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "482e8e5e-09c4-4ce6-bc91-f83fb8743b9a")
+	)
+	(wire
+		(pts
+			(xy 121.92 60.96) (xy 133.35 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "487541b5-be0a-45dd-820c-335fe4f247f9")
 	)
 	(wire
 		(pts
@@ -3141,6 +3235,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 52.07) (xy 121.92 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "843f6993-c8be-4762-839f-f441891f48d1")
+	)
+	(wire
+		(pts
 			(xy 123.19 66.04) (xy 175.26 66.04)
 		)
 		(stroke
@@ -3228,6 +3332,16 @@
 			(type default)
 		)
 		(uuid "97a3e8ad-a41a-494b-8e49-769b6b7031fe")
+	)
+	(wire
+		(pts
+			(xy 88.9 66.04) (xy 88.9 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97d987ac-b279-4206-b500-76a1c90f0d40")
 	)
 	(wire
 		(pts
@@ -3371,6 +3485,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 59.69) (xy 121.92 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac94186f-6200-4c46-8bee-18318b141eae")
+	)
+	(wire
+		(pts
 			(xy 236.22 93.98) (xy 238.76 93.98)
 		)
 		(stroke
@@ -3501,16 +3625,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 54.61) (xy 111.76 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf731dcc-1624-4a19-90f1-9d48a3060800")
-	)
-	(wire
-		(pts
 			(xy 236.22 63.5) (xy 238.76 63.5)
 		)
 		(stroke
@@ -3538,6 +3652,16 @@
 			(type default)
 		)
 		(uuid "c42d1f94-e25b-4d58-b86d-6e932dde73aa")
+	)
+	(wire
+		(pts
+			(xy 133.35 50.8) (xy 121.92 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c842a7be-490c-4704-8542-3c4af79c8918")
 	)
 	(wire
 		(pts
@@ -3608,6 +3732,16 @@
 			(type default)
 		)
 		(uuid "d9162f01-c16d-46a1-a9c2-fbb32495d011")
+	)
+	(wire
+		(pts
+			(xy 133.35 76.2) (xy 133.35 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd355f2b-0a30-493d-a021-317585d916b6")
 	)
 	(wire
 		(pts
@@ -3789,6 +3923,16 @@
 		)
 		(uuid "fb86b492-59cc-479d-88f0-7520f504fb48")
 	)
+	(wire
+		(pts
+			(xy 88.9 50.8) (xy 104.14 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdebdf8f-6b37-4918-8ba3-2621eb88ce61")
+	)
 	(hierarchical_label "SDI"
 		(shape input)
 		(at 144.78 123.19 180)
@@ -3967,7 +4111,7 @@
 	)
 	(hierarchical_label "VRef"
 		(shape output)
-		(at 111.76 54.61 90)
+		(at 133.35 40.64 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4643,6 +4787,311 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 133.35 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "58d62aec-8b31-48f7-88e3-e9ee340826c1")
+		(property "Reference" "C7"
+			(at 135.89 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 135.89 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/Datasheets/GCJ188R71H104KA12_02B-3140350.pdf"
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "GCJ188R72A104KA1D "
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-GCJ188R72A104KA1D "
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Notes" ""
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Murata-Electronics/GCJ188R72A104KA01D?qs=vAU15TnRQM%2FvAWQMlXkQEQ%3D%3D"
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser No." ""
+			(at 133.35 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e267d84c-d4bb-494a-abde-571c2fecb153")
+		)
+		(pin "2"
+			(uuid "d5958a5c-ef40-4b85-a5f5-110eac182c4b")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 106.68 50.8 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "68b4027d-927f-4dd8-a06b-db31b8910bdf")
+		(property "Reference" "FB4"
+			(at 108.458 45.466 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 109.22 47.498 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 106.68 52.578 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 106.68 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 106.68 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 106.68 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 106.68 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
+			(at 106.68 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b20bdfb-5dd2-431b-8d6d-cf5dab2a8bfa")
+		)
+		(pin "2"
+			(uuid "52e96375-293b-4334-9c46-bb3945f6d251")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "FB4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 50.8 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b721678-f784-4edd-9322-4184db43dfcc")
+		(property "Reference" "R3"
+			(at 115.57 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 115.57 46.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 115.57 52.578 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 115.57 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 115.57 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://eu.mouser.com/ProductDetail/Panasonic/ERA-3VEB1000V?qs=sGAEpiMZZMtlubZbdhIBIFX24rZb7BVEWmP2JDQu%252BM0%3D"
+			(at 115.57 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "97adcfbd-0e44-4238-b5e5-979113dcc1e7")
+		)
+		(pin "1"
+			(uuid "2839b5a6-7e2d-4d8e-b307-beca582f7ea7")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 167.64 105.41 0)
 		(mirror y)
@@ -5164,6 +5613,112 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 121.92 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e07b2714-8d3d-45ec-aae8-22a1b0699263")
+		(property "Reference" "C6"
+			(at 125.73 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 125.73 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+			(at 122.8852 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "GRM32EC72A106ME05L"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-GRM32EC72A106ME5L"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/GRM32EC72A106ME05L?qs=d0WKAl%252BL4KZOI4c17DDTDA%3D%3D"
+			(at 121.92 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3f09ff6e-b433-4568-a4a4-c92ca2d558ba")
+		)
+		(pin "2"
+			(uuid "4ead0bf7-2be3-4538-b79f-100dbd15083e")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "C6")
 					(unit 1)
 				)
 			)

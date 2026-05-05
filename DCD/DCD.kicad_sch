@@ -35,17 +35,6 @@
 		)
 		(uuid "c90e8907-4cce-4a41-bf57-f76ba9fca8ce")
 	)
-	(hierarchical_label "VDD(3.3V)"
-		(shape input)
-		(at 175.26 78.74 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cef0237b-98fe-4a22-850f-1f9ce7500f92")
-	)
 	(sheet
 		(at 152.4 78.74)
 		(size 30.48 30.48)
@@ -93,7 +82,7 @@
 			)
 		)
 		(pin "*CS2" input
-			(at 167.64 109.22 270)
+			(at 172.72 109.22 270)
 			(uuid "13e25c96-29bb-4878-9eab-b9c162171512")
 			(effects
 				(font
@@ -103,7 +92,7 @@
 			)
 		)
 		(pin "SDI2" input
-			(at 172.72 109.22 270)
+			(at 177.8 109.22 270)
 			(uuid "47ed68d0-508c-4f7f-9a20-6a628fb77374")
 			(effects
 				(font
@@ -143,7 +132,7 @@
 			)
 		)
 		(pin "CLK2" input
-			(at 170.18 109.22 270)
+			(at 175.26 109.22 270)
 			(uuid "73f3e487-4a21-4590-a10a-3631f4fcbff3")
 			(effects
 				(font
@@ -160,6 +149,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "VDD(3.3V)" input
+			(at 176.53 78.74 90)
+			(uuid "52a88ce1-8b1d-44d0-bc41-c27b9aa43a3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
