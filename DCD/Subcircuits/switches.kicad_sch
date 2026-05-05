@@ -269,12 +269,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_3_Bridged12"
+		(symbol "Jumper:SolderJumper_3_Open"
 			(pin_names
 				(offset 0)
 				(hide yes)
 			)
-			(exclude_from_sim yes)
+			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
 			(property "Reference" "JP"
@@ -285,7 +285,7 @@
 					)
 				)
 			)
-			(property "Value" "SolderJumper_3_Bridged12"
+			(property "Value" "SolderJumper_3_Open"
 				(at 0 2.794 0)
 				(effects
 					(font
@@ -311,7 +311,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
+			(property "Description" "Solder Jumper, 3-pole, open"
 				(at 0 0 0)
 				(effects
 					(font
@@ -329,7 +329,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SolderJumper*Bridged12*"
+			(property "ki_fp_filters" "SolderJumper*Open*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -338,7 +338,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "SolderJumper_3_Bridged12_0_1"
+			(symbol "SolderJumper_3_Open_0_1"
 				(polyline
 					(pts
 						(xy -2.54 0) (xy -2.032 0)
@@ -361,17 +361,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(rectangle
-					(start -1.016 0.508)
-					(end -0.508 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 				(arc
@@ -470,7 +459,7 @@
 					)
 				)
 			)
-			(symbol "SolderJumper_3_Bridged12_1_1"
+			(symbol "SolderJumper_3_Open_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -530,10 +519,10 @@
 		)
 	)
 	(junction
-		(at 111.76 57.15)
+		(at 111.76 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "11dc55be-71b5-47f1-afb3-f1955769fcb0")
+		(uuid "1ad55a75-108e-4024-81e4-1c8b89a62cfe")
 	)
 	(junction
 		(at 73.66 82.55)
@@ -548,16 +537,16 @@
 		(uuid "97a6495f-3dd1-4348-b818-4a2b98c76fe3")
 	)
 	(junction
-		(at 118.11 72.39)
+		(at 99.06 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a9046865-866f-4ae4-97b0-4b175617a0af")
+		(uuid "aea6b71c-8277-4561-9672-54951e51bf8b")
 	)
 	(junction
-		(at 99.06 72.39)
+		(at 111.76 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c1a2fdc1-cfd5-46ae-a861-56835de2a527")
+		(uuid "e2a0e984-b7c2-4443-bcd6-7bc7d0c00875")
 	)
 	(wire
 		(pts
@@ -571,7 +560,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 59.69) (xy 60.96 57.15)
+			(xy 60.96 62.23) (xy 60.96 57.15)
 		)
 		(stroke
 			(width 0)
@@ -581,23 +570,23 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 57.15) (xy 101.6 59.69)
+			(xy 119.38 80.01) (xy 111.76 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "081c3df2-f807-464d-9978-744d86ea5f98")
+	)
+	(wire
+		(pts
+			(xy 101.6 57.15) (xy 101.6 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "0dc362e5-1456-4c56-a98c-be6697deddf1")
-	)
-	(wire
-		(pts
-			(xy 118.11 64.77) (xy 118.11 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14fa7a0c-b456-4466-985c-633912f7d60e")
 	)
 	(wire
 		(pts
@@ -611,47 +600,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 72.39) (xy 130.81 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1750710b-7bce-4881-871e-2532a8b982c9")
-	)
-	(wire
-		(pts
-			(xy 120.65 64.77) (xy 118.11 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18bdc05f-a2d0-4774-936f-ab62d8a4992b")
-	)
-	(wire
-		(pts
-			(xy 54.61 64.77) (xy 57.15 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2abc98b7-caa4-4168-93ba-0917e2654905")
-	)
-	(wire
-		(pts
-			(xy 111.76 49.53) (xy 120.65 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d9bae63-b773-4af3-a49a-07a8d6e0d851")
-	)
-	(wire
-		(pts
-			(xy 86.36 69.85) (xy 86.36 72.39)
+			(xy 86.36 72.39) (xy 86.36 73.66)
 		)
 		(stroke
 			(width 0)
@@ -661,7 +610,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 69.85) (xy 111.76 72.39)
+			(xy 111.76 72.39) (xy 111.76 80.01)
 		)
 		(stroke
 			(width 0)
@@ -671,13 +620,23 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 49.53) (xy 130.81 49.53)
+			(xy 111.76 57.15) (xy 119.38 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4495987b-3723-4211-938b-41753fc833ac")
+		(uuid "3dd9a71d-bff8-493a-b57d-6c86bd7c4ec2")
+	)
+	(wire
+		(pts
+			(xy 54.61 67.31) (xy 57.15 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "549eb9ac-20b0-431b-ab7d-db8c7607ec6b")
 	)
 	(wire
 		(pts
@@ -691,7 +650,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 59.69) (xy 86.36 57.15)
+			(xy 86.36 62.23) (xy 86.36 57.15)
 		)
 		(stroke
 			(width 0)
@@ -701,7 +660,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 72.39) (xy 118.11 72.39)
+			(xy 111.76 82.55) (xy 119.38 82.55)
 		)
 		(stroke
 			(width 0)
@@ -711,7 +670,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 69.85) (xy 101.6 72.39)
+			(xy 101.6 72.39) (xy 101.6 73.66)
 		)
 		(stroke
 			(width 0)
@@ -741,13 +700,23 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 59.69) (xy 73.66 57.15)
+			(xy 73.66 62.23) (xy 73.66 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6b01e70a-0f45-4a5b-800f-3cb508de1a09")
+	)
+	(wire
+		(pts
+			(xy 111.76 59.69) (xy 111.76 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ca476f1-a677-4a1c-90c2-ee7804eaeecc")
 	)
 	(wire
 		(pts
@@ -761,17 +730,17 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 64.77) (xy 130.81 64.77)
+			(xy 119.38 59.69) (xy 111.76 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9478584e-47f8-4289-99b8-88a22d5fd6a9")
+		(uuid "86a0fde1-d905-4542-bd19-dd742f19caff")
 	)
 	(wire
 		(pts
-			(xy 67.31 57.15) (xy 67.31 64.77)
+			(xy 67.31 57.15) (xy 67.31 67.31)
 		)
 		(stroke
 			(width 0)
@@ -781,7 +750,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 69.85) (xy 60.96 82.55)
+			(xy 60.96 72.39) (xy 60.96 82.55)
 		)
 		(stroke
 			(width 0)
@@ -801,37 +770,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 57.15) (xy 120.65 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0827db5-b2b5-4c36-b578-6f379425caf5")
-	)
-	(wire
-		(pts
-			(xy 111.76 59.69) (xy 111.76 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aba10257-5b17-4320-94fe-4b21248619f7")
-	)
-	(wire
-		(pts
-			(xy 111.76 57.15) (xy 111.76 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "af296724-70b3-4938-a124-b47d0afc919f")
-	)
-	(wire
-		(pts
-			(xy 101.6 72.39) (xy 99.06 72.39)
+			(xy 101.6 73.66) (xy 99.06 73.66)
 		)
 		(stroke
 			(width 0)
@@ -841,7 +780,7 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 57.15) (xy 80.01 64.77)
+			(xy 80.01 57.15) (xy 80.01 67.31)
 		)
 		(stroke
 			(width 0)
@@ -851,7 +790,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 64.77) (xy 107.95 64.77)
+			(xy 105.41 67.31) (xy 107.95 67.31)
 		)
 		(stroke
 			(width 0)
@@ -861,27 +800,27 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 72.39) (xy 118.11 72.39)
+			(xy 111.76 62.23) (xy 111.76 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c2ecbde8-ae35-4ea8-9a8b-382b5ef2a79c")
+		(uuid "c4be221f-f9e4-49b2-b452-d20dfb1d4de4")
 	)
 	(wire
 		(pts
-			(xy 128.27 57.15) (xy 130.81 57.15)
+			(xy 111.76 80.01) (xy 111.76 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c6bd8f81-5ba4-45d6-bd91-ec642c88720d")
+		(uuid "cbc8f667-5e99-43ad-9d4a-63948fbcd2f7")
 	)
 	(wire
 		(pts
-			(xy 80.01 64.77) (xy 82.55 64.77)
+			(xy 80.01 67.31) (xy 82.55 67.31)
 		)
 		(stroke
 			(width 0)
@@ -891,7 +830,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 72.39) (xy 88.9 72.39)
+			(xy 86.36 73.66) (xy 88.9 73.66)
 		)
 		(stroke
 			(width 0)
@@ -901,7 +840,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 74.93) (xy 99.06 72.39)
+			(xy 99.06 74.93) (xy 99.06 73.66)
 		)
 		(stroke
 			(width 0)
@@ -921,7 +860,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 64.77) (xy 69.85 64.77)
+			(xy 67.31 67.31) (xy 69.85 67.31)
 		)
 		(stroke
 			(width 0)
@@ -931,7 +870,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 69.85) (xy 73.66 73.66)
+			(xy 73.66 72.39) (xy 73.66 73.66)
 		)
 		(stroke
 			(width 0)
@@ -941,7 +880,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 72.39) (xy 96.52 72.39)
+			(xy 99.06 73.66) (xy 96.52 73.66)
 		)
 		(stroke
 			(width 0)
@@ -951,7 +890,7 @@
 	)
 	(hierarchical_label "DAC1"
 		(shape input)
-		(at 130.81 72.39 0)
+		(at 119.38 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -973,7 +912,7 @@
 	)
 	(hierarchical_label "ADC2"
 		(shape output)
-		(at 130.81 49.53 0)
+		(at 119.38 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -984,7 +923,7 @@
 	)
 	(hierarchical_label "DAC2"
 		(shape input)
-		(at 130.81 57.15 0)
+		(at 119.38 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -995,7 +934,7 @@
 	)
 	(hierarchical_label "ADC1"
 		(shape output)
-		(at 130.81 64.77 0)
+		(at 119.38 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1006,7 +945,7 @@
 	)
 	(hierarchical_label "Ext_Analog"
 		(shape bidirectional)
-		(at 54.61 64.77 180)
+		(at 54.61 67.31 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1016,96 +955,26 @@
 		(uuid "e4465fc3-f284-47e0-ae1d-83c6d1d0a5e4")
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 111.76 64.77 270)
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 73.66 67.31 270)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1010ab3a-3231-4a5f-b0da-71075e1eb180")
-		(property "Reference" "JP4"
-			(at 114.3 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 115.57 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 111.76 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 111.76 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 111.76 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "20a7864a-476a-4cd3-973c-001b5f2251f4")
-		)
-		(pin "3"
-			(uuid "926f313f-2a63-4715-ba07-71c154829b64")
-		)
-		(pin "1"
-			(uuid "9185b45f-a1d1-43bd-aba8-9be12d9131e2")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 101.6 64.77 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "4a903ee5-61e2-4894-9f88-96cb40b0e82b")
+		(fields_autoplaced yes)
+		(uuid "021624d0-cbfc-4b55-be10-6283e69d2ef9")
 		(property "Reference" "JP1"
-			(at 99.06 64.77 0)
+			(at 76.2 67.3099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 97.79 64.77 0)
+		(property "Value" "SolderJumper_3_Open"
+			(at 77.47 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1113,8 +982,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 101.6 64.77 0)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1123,7 +992,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 64.77 0)
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1131,23 +1000,23 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 101.6 64.77 0)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "350e30e8-0897-4bfb-a141-29225a2880ac")
 		)
 		(pin "3"
-			(uuid "63e5c3ff-0177-48e2-93af-8ac20753bfa7")
+			(uuid "9fb1c454-a506-4eb1-87de-5121371bf0d8")
+		)
+		(pin "2"
+			(uuid "9740af28-8a72-4f24-b2db-d9826374976b")
 		)
 		(pin "1"
-			(uuid "ebc5be5b-9ce7-424b-b1b5-f25d0ba953f4")
+			(uuid "9be6c78b-fab4-4046-a6f6-dbf23fc15b74")
 		)
 		(instances
 			(project "DCD"
@@ -1159,318 +1028,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 124.46 57.15 270)
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 86.36 67.31 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4cf1d8ee-bd0a-4e5b-b620-c81db990523e")
-		(property "Reference" "R7"
-			(at 124.46 52.578 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47"
-			(at 124.46 54.61 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 124.46 55.372 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 124.46 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 124.46 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 124.46 57.15 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3c82ecc4-1226-4ae0-96e1-ced9c8545a52")
-		)
-		(pin "1"
-			(uuid "daa2de7a-e458-45ad-a438-8281a8eacd04")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 86.36 64.77 270)
-		(unit 1)
-		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "5625d4a4-c7d7-4248-82ef-015aa92eb41f")
-		(property "Reference" "JP9"
-			(at 88.9 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 90.17 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 86.36 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 86.36 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "78e1b66d-fb2b-4761-9e62-33159a7c1600")
-		)
-		(pin "3"
-			(uuid "18c1b820-c76f-49cb-93a6-cd49e9b8f779")
-		)
-		(pin "1"
-			(uuid "87698654-e48d-41ec-9137-72f41bf4b433")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 73.66 64.77 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "5ea7f2ba-fee7-4b82-8689-1dc32719f9b7")
-		(property "Reference" "JP3"
-			(at 76.2 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 77.47 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 73.66 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 73.66 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 73.66 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "aba28b34-fb59-4b0d-b51a-b97de0ae8a0b")
-		)
-		(pin "3"
-			(uuid "e866f1c8-dab4-4f02-825a-4963f99b4755")
-		)
-		(pin "1"
-			(uuid "48eb05b4-1e3c-46a3-aac9-36dba2124d3f")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 124.46 49.53 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6fabbc28-8f4a-4274-8391-8c08ec5bfe1d")
-		(property "Reference" "R6"
-			(at 124.46 44.958 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47"
-			(at 124.46 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 124.46 47.752 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 124.46 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 124.46 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 124.46 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "79f4c8de-eb0b-4b59-aec7-fdf9483f17ef")
-		)
-		(pin "1"
-			(uuid "dda3dfaa-cb40-455f-a290-1b8041e536fe")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Bridged12")
-		(at 60.96 64.77 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "74088dbd-14bf-4475-bf55-2da1bcfa6457")
+		(fields_autoplaced yes)
+		(uuid "36600437-64c7-4c6e-a5d7-ad7f89a08cbf")
 		(property "Reference" "JP2"
-			(at 63.5 64.77 0)
+			(at 88.9 67.3099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "SolderJumper_3_Bridged12"
-			(at 64.77 64.77 0)
+		(property "Value" "SolderJumper_3_Open"
+			(at 90.17 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1478,8 +1055,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
-			(at 60.96 64.77 0)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 86.36 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1488,7 +1065,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 60.96 64.77 0)
+			(at 86.36 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1496,23 +1073,23 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "3-pole Solder Jumper, pins 1+2 closed/bridged"
-			(at 60.96 64.77 0)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 86.36 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "1042f8ff-6c29-4e2a-96d8-606ea3c076a5")
 		)
 		(pin "3"
-			(uuid "d0ad54e0-4944-4b2b-8bd7-18e904f942bf")
+			(uuid "385a3391-8ec3-4bd2-82fa-b7485938eb7b")
+		)
+		(pin "2"
+			(uuid "5d47422b-c305-41cc-91bd-d4cd6586e4f9")
 		)
 		(pin "1"
-			(uuid "712171e8-86e4-4376-a919-99d92db13382")
+			(uuid "b4132b98-630d-47eb-a33c-91f720d9e880")
 		)
 		(instances
 			(project "DCD"
@@ -1525,16 +1102,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 92.71 72.39 270)
+		(at 92.71 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8a201d8c-2e3a-4edc-928d-9eba71023a11")
 		(property "Reference" "R2"
-			(at 92.71 66.04 90)
+			(at 92.71 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1542,7 +1118,7 @@
 			)
 		)
 		(property "Value" "47"
-			(at 92.71 68.58 90)
+			(at 92.71 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1550,7 +1126,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 92.71 70.612 90)
+			(at 92.71 75.438 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1559,7 +1135,7 @@
 			)
 		)
 		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 92.71 72.39 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1568,7 +1144,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 92.71 72.39 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1577,7 +1153,7 @@
 			)
 		)
 		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 92.71 72.39 90)
+			(at 92.71 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1595,6 +1171,79 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 101.6 67.31 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "99b0351e-2bdc-4703-be01-28eb347e5f83")
+		(property "Reference" "JP3"
+			(at 99.06 67.3099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 97.79 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 101.6 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 101.6 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 101.6 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "59a69941-6c58-4d16-af5f-62f94a692101")
+		)
+		(pin "2"
+			(uuid "b9215edf-861d-438c-933a-99065a075f8a")
+		)
+		(pin "1"
+			(uuid "8f5adc93-e9bb-4236-a5d3-21f56d840636")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "JP3")
 					(unit 1)
 				)
 			)
@@ -1680,32 +1329,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 124.46 72.39 270)
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 60.96 67.31 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "b9727ff0-7a57-4c50-a2c9-c85ec4a4a363")
-		(property "Reference" "R3"
-			(at 124.46 67.818 90)
+		(fields_autoplaced yes)
+		(uuid "c52be0c6-55d3-46f6-9870-c3d27cd81e52")
+		(property "Reference" "JP5"
+			(at 63.5 67.3099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "47"
-			(at 124.46 69.85 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 124.46 70.612 90)
+		(property "Value" "SolderJumper_3_Open"
+			(at 64.77 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1713,8 +1356,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 124.46 72.39 0)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 60.96 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1722,8 +1365,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 124.46 72.39 0)
+		(property "Datasheet" "~"
+			(at 60.96 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1731,25 +1374,28 @@
 				(hide yes)
 			)
 		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 124.46 72.39 90)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 60.96 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "3"
+			(uuid "4edd5904-8856-4e22-8667-aa2eb8e27b29")
 		)
 		(pin "2"
-			(uuid "4188bda2-9913-4cd0-8c97-3f615bdefb0e")
+			(uuid "b013a236-f03b-439f-8c17-4eeaf344ddac")
 		)
 		(pin "1"
-			(uuid "d94262a5-bfb7-455e-b106-1d80c880d28a")
+			(uuid "a1590241-721a-47ec-ac03-a6272d99be0a")
 		)
 		(instances
-			(project "DCD"
+			(project ""
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R3")
+					(reference "JP5")
 					(unit 1)
 				)
 			)
@@ -1879,32 +1525,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 124.46 64.77 270)
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 111.76 67.31 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "d0bb9946-e1fc-43a8-85c8-a2662414aed9")
-		(property "Reference" "R4"
-			(at 124.46 60.198 90)
+		(fields_autoplaced yes)
+		(uuid "fd6d17e5-8f37-49cb-bb0b-308648d10f39")
+		(property "Reference" "JP4"
+			(at 114.3 67.3099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "47"
-			(at 124.46 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 124.46 62.992 90)
+		(property "Value" "SolderJumper_3_Open"
+			(at 115.57 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1912,8 +1552,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 124.46 64.77 0)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 111.76 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1921,8 +1561,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 124.46 64.77 0)
+		(property "Datasheet" "~"
+			(at 111.76 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1930,25 +1570,28 @@
 				(hide yes)
 			)
 		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 124.46 64.77 90)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 111.76 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "3"
+			(uuid "339505e6-4f0c-4f70-bf93-e4e3af50bf07")
 		)
 		(pin "2"
-			(uuid "afc71658-bec6-490d-b464-52b710bd5a47")
+			(uuid "7c213f68-96dc-46ab-a449-895a0a21cfbc")
 		)
 		(pin "1"
-			(uuid "f8d55a27-efb0-4451-a9c0-371cd100f6ba")
+			(uuid "83778d29-dc55-4474-b72c-2acae7680d8b")
 		)
 		(instances
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R4")
+					(reference "JP4")
 					(unit 1)
 				)
 			)

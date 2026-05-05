@@ -5,4 +5,24 @@
 	(uuid "32a476cb-abd2-49d4-af18-b0f560e7a519")
 	(paper "A4")
 	(lib_symbols)
+	(text_box "Current consumption total:\n(VDD5V_I + VIO_I + VDD1.8V_I)*8 + VRef_QI + VRef_I_ADC*8 + VRef_I_DAC*16 + VRef_IQ_Buf + VDD_DAC_I*16 + VRef_IQ_Opamp\n(11.2 + 0.6 + 3.2)*8 + 0.95 + 0 + 1*16 + 0.9 + 0.005*16 + 0.9 = 138.83 [mA]\n\n\nPower Dissipations with 6V Vin:\n @16ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 1*16 + 0.9 + 0.9) = 18.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*11.2*8 = 89.68 [mW]\n  VDD3.3V: (6 - 3.3)*((0.6 + 3.2)*8 + 0.005*16) = 82.296 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2)*8 = 45.6 [mW]\n\n@2ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 1*2 + 0.9 + 0.9) = 4.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*11.2 = 11.2 [mW]\n  VDD3.3V: (6 - 3.3)*(0.6 + 3.2 + 0.005*2) = 10.287 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2) = 5.7 [mW]"
+		(exclude_from_sim no)
+		(at 52.07 13.97 0)
+		(size 129.54 38.1)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "b891ad65-653f-43bd-9daf-1f3d75b930fa")
+	)
 )
