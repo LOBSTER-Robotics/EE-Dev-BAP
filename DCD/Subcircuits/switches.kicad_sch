@@ -519,6 +519,12 @@
 		)
 	)
 	(junction
+		(at 101.6 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "065a6f11-f361-4bf4-a727-de87177f549e")
+	)
+	(junction
 		(at 111.76 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -535,12 +541,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "97a6495f-3dd1-4348-b818-4a2b98c76fe3")
-	)
-	(junction
-		(at 99.06 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aea6b71c-8277-4561-9672-54951e51bf8b")
 	)
 	(junction
 		(at 111.76 80.01)
@@ -640,7 +640,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 99.06 82.55)
+			(xy 73.66 82.55) (xy 101.6 82.55)
 		)
 		(stroke
 			(width 0)
@@ -770,16 +770,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 73.66) (xy 99.06 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "afe779f9-2497-452a-b271-80837db1db47")
-	)
-	(wire
-		(pts
 			(xy 80.01 57.15) (xy 80.01 67.31)
 		)
 		(stroke
@@ -840,7 +830,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 74.93) (xy 99.06 73.66)
+			(xy 101.6 74.93) (xy 101.6 73.66)
 		)
 		(stroke
 			(width 0)
@@ -850,7 +840,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 80.01) (xy 99.06 82.55)
+			(xy 101.6 80.01) (xy 101.6 82.55)
 		)
 		(stroke
 			(width 0)
@@ -880,7 +870,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 73.66) (xy 96.52 73.66)
+			(xy 96.52 73.66) (xy 101.6 73.66)
 		)
 		(stroke
 			(width 0)
@@ -1403,7 +1393,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 99.06 77.47 0)
+		(at 101.6 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1411,7 +1401,7 @@
 		(dnp no)
 		(uuid "c54bb051-5ac0-4c39-a829-e9bbba43a845")
 		(property "Reference" "C3"
-			(at 101.6 76.2 0)
+			(at 104.14 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1420,7 +1410,7 @@
 			)
 		)
 		(property "Value" "1nF"
-			(at 101.6 78.74 0)
+			(at 104.14 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1429,7 +1419,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1438,7 +1428,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheets.kyocera-avx.com/C0GNP0-KGM.pdf"
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1447,7 +1437,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1456,7 +1446,7 @@
 			)
 		)
 		(property "Part number" "0603YA102FAT2A "
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1465,7 +1455,7 @@
 			)
 		)
 		(property "Order number" "581-0603YA102FAT2A"
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1474,7 +1464,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1483,7 +1473,7 @@
 			)
 		)
 		(property "Notes" ""
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1492,7 +1482,7 @@
 			)
 		)
 		(property "Link" "https://www.mouser.com/ProductDetail/KYOCERA-AVX/0603YA102FAT2A?qs=Q0wCMCRSJ1vE1Ym6h4QWAA%3D%3D"
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1501,7 +1491,7 @@
 			)
 		)
 		(property "Mouser No." ""
-			(at 99.06 77.47 0)
+			(at 101.6 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)

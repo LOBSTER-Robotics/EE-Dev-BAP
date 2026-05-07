@@ -3231,7 +3231,7 @@
 			)
 		)
 		(property "Part number" " ADA4945-1ACPZ-R7 "
-			(at 0 0 0)
+			(at -7.62 11.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3240,7 +3240,7 @@
 			)
 		)
 		(property "Order number" " 584-ADA4945-1ACPZ-R7 "
-			(at 0 0 0)
+			(at -7.62 11.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3249,7 +3249,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 0 0 0)
+			(at -7.62 11.176 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3494,14 +3494,14 @@
 			(pin unspecified line
 				(at -5.08 0 0)
 				(length 7.62)
-				(name "-FB"
+				(name "+FB"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "1"
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -3566,14 +3566,14 @@
 			(pin unspecified line
 				(at -5.08 -12.7 0)
 				(length 7.62)
-				(name "+FB"
+				(name "-FB"
 					(effects
 						(font
 							(size 1.27 1.27)
 						)
 					)
 				)
-				(number "4"
+				(number "1"
 					(effects
 						(font
 							(size 1.27 1.27)

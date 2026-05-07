@@ -477,29 +477,9 @@
 				(justify left)
 			)
 		)
-		(pin "IN1" input
-			(at 109.22 95.25 0)
-			(uuid "93307c61-96ef-4989-aa02-1c680ddc4eef")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "1.8V" input
 			(at 83.82 78.74 90)
 			(uuid "02cffe57-0f1d-4876-8506-a6fc95123631")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "IN0" input
-			(at 109.22 97.79 0)
-			(uuid "ec014e18-ce1f-4012-a3af-800ea0bb60eb")
 			(effects
 				(font
 					(size 1.27 1.27)
