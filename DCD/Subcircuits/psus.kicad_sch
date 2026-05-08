@@ -2012,7 +2012,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 74.93 130.81 0)
 			(effects
 				(font
@@ -2214,7 +2214,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 149.86 130.81 0)
 			(effects
 				(font
@@ -2406,7 +2406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/Datasheets/GCJ188R71H104KA12_02B-3140350.pdf"
+		(property "Datasheet" "~"
 			(at 132.08 90.17 0)
 			(effects
 				(font
@@ -2415,7 +2415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 132.08 90.17 0)
 			(effects
 				(font
@@ -2539,7 +2539,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 74.93 90.17 0)
 			(effects
 				(font
@@ -2626,7 +2626,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/Datasheets/GCJ188R71H104KA12_02B-3140350.pdf"
+		(property "Datasheet" "~"
 			(at 207.01 130.81 0)
 			(effects
 				(font
@@ -2635,7 +2635,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 207.01 130.81 0)
 			(effects
 				(font
@@ -2749,7 +2749,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "Datasheets/GRM1885C1H103JA01_01A-1984796.pdf"
+		(property "Datasheet" "~"
 			(at 154.94 130.81 0)
 			(effects
 				(font
@@ -2758,7 +2758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 154.94 130.81 0)
 			(effects
 				(font
@@ -2863,7 +2863,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "Datasheets/GRM1885C1H103JA01_01A-1984796.pdf"
+		(property "Datasheet" "~"
 			(at 80.01 130.81 0)
 			(effects
 				(font
@@ -2872,7 +2872,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 80.01 130.81 0)
 			(effects
 				(font
@@ -3410,7 +3410,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "Datasheets/GRM1885C1H103JA01_01A-1984796.pdf"
+		(property "Datasheet" "~"
 			(at 80.01 90.17 0)
 			(effects
 				(font
@@ -3419,7 +3419,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 80.01 90.17 0)
 			(effects
 				(font
@@ -3524,7 +3524,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/Datasheets/GCJ188R71H104KA12_02B-3140350.pdf"
+		(property "Datasheet" "~"
 			(at 132.08 130.81 0)
 			(effects
 				(font
@@ -3533,7 +3533,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 132.08 130.81 0)
 			(effects
 				(font

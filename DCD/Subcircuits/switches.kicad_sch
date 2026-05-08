@@ -5,37 +5,35 @@
 	(uuid "ad046f05-6e67-40e1-863c-42572319c157")
 	(paper "A5")
 	(lib_symbols
-		(symbol "Device:C_Small"
+		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0.254)
+				(offset 0.762)
 				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "C"
-				(at 0.254 1.778 0)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "C_Small"
-				(at 0.254 -2.032 0)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at 0 0 0)
+				(at 5.08 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -44,6 +42,15 @@
 				)
 			)
 			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
 				(at 0 0 0)
 				(effects
 					(font
@@ -52,7 +59,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Unpolarized capacitor, small symbol"
+			(property "ki_keywords" "test point tp"
 				(at 0 0 0)
 				(effects
 					(font
@@ -61,7 +68,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "capacitor cap"
+			(property "ki_fp_filters" "Pin* Test*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -70,34 +77,12 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_Small_0_1"
-				(polyline
-					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
-					)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
 					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 -0.508) (xy 1.524 -0.508)
-					)
-					(stroke
-						(width 0.3302)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -105,11 +90,11 @@
 					)
 				)
 			)
-			(symbol "C_Small_1_1"
+			(symbol "TestPoint_1_1"
 				(pin passive line
-					(at 0 2.54 270)
-					(length 2.032)
-					(name "~"
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -117,24 +102,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -518,369 +485,275 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 15.24 15.24)
+		(end 115.57 101.6)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 67b8fdfb-dc17-4bc2-9da9-c8e9a47216f6)
+	)
+	(rectangle
+		(start 118.11 15.24)
+		(end 194.31 101.6)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 78befb90-b8a4-4e62-bf0b-7d4acaef1454)
+	)
+	(text "CH1"
+		(exclude_from_sim no)
+		(at 68.072 27.94 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+				(thickness 0.762)
+				(bold yes)
+			)
+		)
+		(uuid "16b17124-f95f-4367-a76f-562e7c49f653")
+	)
+	(text "CH2"
+		(exclude_from_sim no)
+		(at 154.432 28.194 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+				(thickness 0.762)
+				(bold yes)
+			)
+		)
+		(uuid "f2842bc8-b12c-453f-a48f-a4f9833f0549")
+	)
 	(junction
-		(at 101.6 73.66)
+		(at 158.75 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "065a6f11-f361-4bf4-a727-de87177f549e")
+		(uuid "319d7027-a392-46ab-8b37-664413c2a52d")
 	)
 	(junction
-		(at 111.76 59.69)
+		(at 74.93 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "1ad55a75-108e-4024-81e4-1c8b89a62cfe")
+		(uuid "7152b172-d374-4db2-b58e-587612704077")
 	)
 	(junction
-		(at 73.66 82.55)
+		(at 55.88 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6476d5d9-c474-4776-b3a7-3a6505fcf545")
-	)
-	(junction
-		(at 60.96 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "97a6495f-3dd1-4348-b818-4a2b98c76fe3")
-	)
-	(junction
-		(at 111.76 80.01)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e2a0e984-b7c2-4443-bcd6-7bc7d0c00875")
+		(uuid "8030f85e-4388-4ca0-9290-4ed2eb09deb5")
 	)
 	(wire
 		(pts
-			(xy 73.66 57.15) (xy 80.01 57.15)
+			(xy 74.93 69.85) (xy 82.55 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "02abf908-b145-4f13-b279-4b37d94f9dea")
+		(uuid "08367796-29ee-4b40-84e8-1be6e5a3a7b8")
 	)
 	(wire
 		(pts
-			(xy 60.96 62.23) (xy 60.96 57.15)
+			(xy 74.93 67.31) (xy 74.93 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0521309f-a127-4f0d-9546-39648f20c7f9")
+		(uuid "16e7d0af-5ba8-4b38-8532-9bbb3a1d0c0b")
 	)
 	(wire
 		(pts
-			(xy 119.38 80.01) (xy 111.76 80.01)
+			(xy 66.04 67.31) (xy 66.04 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "081c3df2-f807-464d-9978-744d86ea5f98")
+		(uuid "1dedda6d-bc1d-41e1-aa44-62a67b87b2ff")
 	)
 	(wire
 		(pts
-			(xy 101.6 57.15) (xy 101.6 62.23)
+			(xy 146.05 63.5) (xy 148.59 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0dc362e5-1456-4c56-a98c-be6697deddf1")
+		(uuid "23d2e860-2d8b-4f60-a434-0212bb278eea")
 	)
 	(wire
 		(pts
-			(xy 86.36 57.15) (xy 101.6 57.15)
+			(xy 49.53 63.5) (xy 52.07 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "16099dd3-283f-4147-90a3-3e4618fe5210")
+		(uuid "2505d787-4720-4ba3-99b7-22002fac1e41")
 	)
 	(wire
 		(pts
-			(xy 86.36 72.39) (xy 86.36 73.66)
+			(xy 55.88 69.85) (xy 55.88 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "33d18c31-0e5a-456b-9409-a3486b3ae491")
+		(uuid "2eeb5bb8-81b5-4c55-b5e4-aa5dd54fb3df")
 	)
 	(wire
 		(pts
-			(xy 111.76 72.39) (xy 111.76 80.01)
+			(xy 66.04 57.15) (xy 66.04 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3d25d7a6-319c-4691-bc78-86e5a65c57fb")
+		(uuid "4719a056-41e5-4f24-9278-835e25d86853")
 	)
 	(wire
 		(pts
-			(xy 111.76 57.15) (xy 119.38 57.15)
+			(xy 55.88 69.85) (xy 66.04 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3dd9a71d-bff8-493a-b57d-6c86bd7c4ec2")
+		(uuid "6586c889-5faf-4f94-a2f9-a63fd4992caf")
 	)
 	(wire
 		(pts
-			(xy 54.61 67.31) (xy 57.15 67.31)
+			(xy 158.75 60.96) (xy 158.75 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "549eb9ac-20b0-431b-ab7d-db8c7607ec6b")
+		(uuid "6bd47fe4-a12b-49c2-833c-49b871819656")
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 101.6 82.55)
+			(xy 156.21 63.5) (xy 158.75 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5b84948a-52c9-44dc-90e1-fa323ab50c22")
+		(uuid "79c52990-d26f-4e30-89ea-ca7a7611341f")
 	)
 	(wire
 		(pts
-			(xy 86.36 62.23) (xy 86.36 57.15)
+			(xy 55.88 68.58) (xy 55.88 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5bd5022e-2f57-426a-be9c-32e574c3227f")
+		(uuid "90a95e0d-c2b1-4653-8f2c-04da922411b1")
 	)
 	(wire
 		(pts
-			(xy 111.76 82.55) (xy 119.38 82.55)
+			(xy 74.93 57.15) (xy 82.55 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "63e63567-204e-45ba-b893-540c5b2c8d55")
+		(uuid "97a398ac-9999-405d-a923-1f3f06f40cb8")
 	)
 	(wire
 		(pts
-			(xy 101.6 72.39) (xy 101.6 73.66)
+			(xy 74.93 57.15) (xy 74.93 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "659c2b9c-d244-470a-90cf-0a4cfacf5be6")
+		(uuid "9f842b00-91f3-4b25-84f7-62908dfe4356")
 	)
 	(wire
 		(pts
-			(xy 60.96 82.55) (xy 73.66 82.55)
+			(xy 66.04 44.45) (xy 74.93 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "66f0567e-deb5-4d53-81a5-de0a93808f36")
+		(uuid "a18c31bf-23dd-44ec-bdc6-938a7472712e")
 	)
 	(wire
 		(pts
-			(xy 73.66 81.28) (xy 73.66 82.55)
+			(xy 66.04 44.45) (xy 66.04 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "67816e9d-adb6-40dc-98fc-c17a8550342b")
+		(uuid "ad76da54-53d4-4b83-87a9-2b361e521b01")
 	)
 	(wire
 		(pts
-			(xy 73.66 62.23) (xy 73.66 57.15)
+			(xy 74.93 55.88) (xy 74.93 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6b01e70a-0f45-4a5b-800f-3cb508de1a09")
+		(uuid "b24eebf7-8846-4204-a3cd-79388b050df3")
 	)
 	(wire
 		(pts
-			(xy 111.76 59.69) (xy 111.76 57.15)
+			(xy 55.88 58.42) (xy 55.88 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6ca476f1-a677-4a1c-90c2-ee7804eaeecc")
+		(uuid "d62c719b-e357-4d89-9b04-99f1d14c930e")
 	)
 	(wire
 		(pts
-			(xy 60.96 57.15) (xy 67.31 57.15)
+			(xy 55.88 52.07) (xy 62.23 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7f5b1e9f-1c9b-4554-93af-48c677c8dfa5")
+		(uuid "dc931ea2-9ab7-4f82-8578-a2148ee82ab4")
 	)
 	(wire
 		(pts
-			(xy 119.38 59.69) (xy 111.76 59.69)
+			(xy 74.93 44.45) (xy 74.93 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "86a0fde1-d905-4542-bd19-dd742f19caff")
+		(uuid "e35064a0-a92f-41d2-aea4-fbf15c94c303")
 	)
 	(wire
 		(pts
-			(xy 67.31 57.15) (xy 67.31 67.31)
+			(xy 158.75 63.5) (xy 161.29 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9616c76f-afd3-4d45-961a-171b4e5a11ec")
+		(uuid "e3f1c355-9911-4b1a-b8bb-b4ff7c2cbcb4")
 	)
-	(wire
-		(pts
-			(xy 60.96 72.39) (xy 60.96 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "994fe3ba-3484-4053-ae6d-a7405cfab5a8")
-	)
-	(wire
-		(pts
-			(xy 60.96 82.55) (xy 60.96 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e0521d8-8d00-4045-b7fa-98e20f515fda")
-	)
-	(wire
-		(pts
-			(xy 80.01 57.15) (xy 80.01 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b633d6a8-6b0a-4f6c-8fcc-b99c216ad21a")
-	)
-	(wire
-		(pts
-			(xy 105.41 67.31) (xy 107.95 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc982c4d-44b3-445b-b23b-e950c456086b")
-	)
-	(wire
-		(pts
-			(xy 111.76 62.23) (xy 111.76 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4be221f-f9e4-49b2-b452-d20dfb1d4de4")
-	)
-	(wire
-		(pts
-			(xy 111.76 80.01) (xy 111.76 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cbc8f667-5e99-43ad-9d4a-63948fbcd2f7")
-	)
-	(wire
-		(pts
-			(xy 80.01 67.31) (xy 82.55 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d16655ab-b636-44aa-a7e3-1ba6cf9a51a0")
-	)
-	(wire
-		(pts
-			(xy 86.36 73.66) (xy 88.9 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4d5e4c1-8e8d-4e4f-9ce8-a8c8c9e9b118")
-	)
-	(wire
-		(pts
-			(xy 101.6 74.93) (xy 101.6 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2047681-f7be-4c7e-80ef-17d7e5436bb9")
-	)
-	(wire
-		(pts
-			(xy 101.6 80.01) (xy 101.6 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3893cbb-bf22-4242-9e55-2fed000d5ce7")
-	)
-	(wire
-		(pts
-			(xy 67.31 67.31) (xy 69.85 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e92ec5ba-071f-4d63-8dec-498bf425ff85")
-	)
-	(wire
-		(pts
-			(xy 73.66 72.39) (xy 73.66 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef9a9d0b-2728-4b47-a023-55ba8cbc666f")
-	)
-	(wire
-		(pts
-			(xy 96.52 73.66) (xy 101.6 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffe10124-a9ce-490b-8fee-82df95ba7328")
-	)
-	(hierarchical_label "DAC1"
+	(hierarchical_label "DAC0"
 		(shape input)
-		(at 119.38 82.55 0)
+		(at 82.55 69.85 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -889,42 +762,42 @@
 		)
 		(uuid "0623a7bf-f06e-4d52-8416-95ed84144832")
 	)
+	(hierarchical_label "DAC1"
+		(shape input)
+		(at 161.29 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0da96eea-a88e-481e-ae5f-71f2db1a105a")
+	)
 	(hierarchical_label "GND"
 		(shape output)
-		(at 60.96 85.09 270)
+		(at 55.88 72.39 270)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "1c13da9f-f61a-4eb2-a92c-539e0557df0d")
-	)
-	(hierarchical_label "ADC2"
-		(shape output)
-		(at 119.38 57.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "450d0f9a-983d-4d79-a5f9-8267577cb90b")
-	)
-	(hierarchical_label "DAC2"
-		(shape input)
-		(at 119.38 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "97c21e35-57b2-4bb3-893e-91ab82904193")
+		(uuid "16a054a9-7232-45d4-b5e6-3a43a5e27c1b")
 	)
 	(hierarchical_label "ADC1"
 		(shape output)
-		(at 119.38 80.01 0)
+		(at 146.05 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6fa7963a-93d5-4058-926e-95ec600ffcca")
+	)
+	(hierarchical_label "ADC0"
+		(shape output)
+		(at 82.55 57.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -935,27 +808,26 @@
 	)
 	(hierarchical_label "Ext_Analog"
 		(shape bidirectional)
-		(at 54.61 67.31 180)
+		(at 49.53 63.5 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "e4465fc3-f284-47e0-ae1d-83c6d1d0a5e4")
+		(uuid "ccf71963-289c-4552-b8b5-787779ef880d")
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 73.66 67.31 270)
+		(lib_id "Connector:TestPoint")
+		(at 158.75 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "021624d0-cbfc-4b55-be10-6283e69d2ef9")
-		(property "Reference" "JP1"
-			(at 76.2 67.3099 90)
+		(uuid "2174cd60-6cae-4fd8-93f9-d12a6abf269c")
+		(property "Reference" "TP3"
+			(at 156.718 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -963,17 +835,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 77.47 67.31 0)
+		(property "Value" "TestPoint"
+			(at 154.432 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 73.66 67.31 0)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 163.83 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -982,7 +854,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 67.31 0)
+			(at 163.83 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -990,101 +862,22 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 73.66 67.31 0)
+		(property "Description" "test point"
+			(at 158.75 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "3"
-			(uuid "9fb1c454-a506-4eb1-87de-5121371bf0d8")
-		)
-		(pin "2"
-			(uuid "9740af28-8a72-4f24-b2db-d9826374976b")
 		)
 		(pin "1"
-			(uuid "9be6c78b-fab4-4046-a6f6-dbf23fc15b74")
+			(uuid "a58b2fd4-c187-4b86-aec3-256ddc92b5cd")
 		)
 		(instances
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 86.36 67.31 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "36600437-64c7-4c6e-a5d7-ad7f89a08cbf")
-		(property "Reference" "JP2"
-			(at 88.9 67.3099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 90.17 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 86.36 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 86.36 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "385a3391-8ec3-4bd2-82fa-b7485938eb7b")
-		)
-		(pin "2"
-			(uuid "5d47422b-c305-41cc-91bd-d4cd6586e4f9")
-		)
-		(pin "1"
-			(uuid "b4132b98-630d-47eb-a33c-91f720d9e880")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP2")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -1092,110 +885,32 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 92.71 73.66 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8a201d8c-2e3a-4edc-928d-9eba71023a11")
-		(property "Reference" "R2"
-			(at 92.71 80.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47"
-			(at 92.71 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 92.71 75.438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 92.71 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 92.71 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 92.71 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "542bd58b-e7a7-4cbf-a69a-cfec81ae034f")
-		)
-		(pin "1"
-			(uuid "16456912-28d8-452c-a3f2-a2357886bfbd")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 101.6 67.31 90)
+		(at 152.4 63.5 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "99b0351e-2bdc-4703-be01-28eb347e5f83")
-		(property "Reference" "JP3"
-			(at 99.06 67.3099 90)
+		(uuid "4ce675d6-3d4f-4ebe-96ec-0fc38b070436")
+		(property "Reference" "R10"
+			(at 152.273 57.785 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 97.79 67.31 0)
+		(property "Value" "1k"
+			(at 152.273 60.325 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 101.6 67.31 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 152.4 61.722 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1204,80 +919,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 101.6 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 101.6 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "59a69941-6c58-4d16-af5f-62f94a692101")
-		)
-		(pin "2"
-			(uuid "b9215edf-861d-438c-933a-99065a075f8a")
-		)
-		(pin "1"
-			(uuid "8f5adc93-e9bb-4236-a5d3-21f56d840636")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 73.66 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9d568984-1a76-4513-9b2a-cda7e9d4d531")
-		(property "Reference" "R5"
-			(at 76.2 76.1999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "47"
-			(at 76.2 78.7399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 71.882 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
-			(at 73.66 77.47 0)
+			(at 152.4 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1286,7 +928,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 73.66 77.47 0)
+			(at 152.4 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1294,8 +936,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
-			(at 73.66 77.47 90)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 152.4 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1303,42 +945,8 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "2c153235-5772-4bfe-a4f4-c882f6f3b7be")
-		)
-		(pin "1"
-			(uuid "f9101c11-e252-481a-b0ee-ddc76caa579f")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 60.96 67.31 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c52be0c6-55d3-46f6-9870-c3d27cd81e52")
-		(property "Reference" "JP5"
-			(at 63.5 67.3099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 64.77 67.31 0)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 152.4 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1346,116 +954,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 60.96 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 60.96 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "4edd5904-8856-4e22-8667-aa2eb8e27b29")
-		)
-		(pin "2"
-			(uuid "b013a236-f03b-439f-8c17-4eeaf344ddac")
-		)
-		(pin "1"
-			(uuid "a1590241-721a-47ec-ac03-a6272d99be0a")
-		)
-		(instances
-			(project ""
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 101.6 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c54bb051-5ac0-4c39-a829-e9bbba43a845")
-		(property "Reference" "C3"
-			(at 104.14 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1nF"
-			(at 104.14 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://datasheets.kyocera-avx.com/C0GNP0-KGM.pdf"
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part number" "0603YA102FAT2A "
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" "581-0603YA102FAT2A"
-			(at 101.6 77.47 0)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 152.4 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1464,51 +964,24 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 101.6 77.47 0)
+			(at 152.4 63.5 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Notes" ""
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://www.mouser.com/ProductDetail/KYOCERA-AVX/0603YA102FAT2A?qs=Q0wCMCRSJ1vE1Ym6h4QWAA%3D%3D"
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser No." ""
-			(at 101.6 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b14263d-fde9-4af7-bef8-9910f6f83815")
 		)
 		(pin "2"
-			(uuid "0de6755e-6355-44d2-88f0-97c7e4ed80b6")
+			(uuid "8d7d1412-90fa-4358-b9b0-de587f28cbdb")
+		)
+		(pin "1"
+			(uuid "988f7788-f6b1-4c33-bd89-37d2b560a44c")
 		)
 		(instances
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "C3")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -1516,16 +989,16 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 111.76 67.31 270)
+		(at 66.04 52.07 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fd6d17e5-8f37-49cb-bb0b-308648d10f39")
-		(property "Reference" "JP4"
-			(at 114.3 67.3099 90)
+		(uuid "6a81af72-5778-4aaf-a5c8-fa89131ec40e")
+		(property "Reference" "JP7"
+			(at 68.58 52.0699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1534,7 +1007,7 @@
 			)
 		)
 		(property "Value" "SolderJumper_3_Open"
-			(at 115.57 67.31 0)
+			(at 69.85 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1543,7 +1016,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 111.76 67.31 0)
+			(at 66.04 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1552,7 +1025,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 111.76 67.31 0)
+			(at 66.04 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1561,7 +1034,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 111.76 67.31 0)
+			(at 66.04 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1570,18 +1043,377 @@
 			)
 		)
 		(pin "3"
-			(uuid "339505e6-4f0c-4f70-bf93-e4e3af50bf07")
+			(uuid "265e4988-c430-436f-a38d-06a5bb24494c")
 		)
 		(pin "2"
-			(uuid "7c213f68-96dc-46ab-a449-895a0a21cfbc")
+			(uuid "655a0af1-3d0b-467b-95e6-aad990c82f50")
 		)
 		(pin "1"
-			(uuid "83778d29-dc55-4474-b72c-2acae7680d8b")
+			(uuid "66a13f7c-4cdd-49a0-a99f-4495711c6464")
 		)
 		(instances
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "JP4")
+					(reference "JP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 74.93 63.5 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "da046203-ff12-4f7f-86d6-54b9ad08c670")
+		(property "Reference" "R13"
+			(at 80.01 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 80.01 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 76.708 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 74.93 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 74.93 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 74.93 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 74.93 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 74.93 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f13f3f35-6fd2-4617-80ea-73533145f348")
+		)
+		(pin "1"
+			(uuid "29f7d1b7-9f86-4982-b23d-c453c4979deb")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.04 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef75fd41-7499-499a-b218-60c4130ec24b")
+		(property "Reference" "R6"
+			(at 68.58 62.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47"
+			(at 68.58 64.7699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 64.262 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 66.04 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3AEB470V?qs=sGAEpiMZZMtG0KNrPCHnjTg0x5DoQJ5PDmm5pNyEq7Q%3D"
+			(at 66.04 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8126838b-5033-4358-80fd-6e37813ed872")
+		)
+		(pin "1"
+			(uuid "d490854c-70b9-4e6d-ba85-329e7f0f4151")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 74.93 52.07 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f5bf17b3-f75a-4b66-b3ed-5e44cd1572e4")
+		(property "Reference" "R12"
+			(at 78.232 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 78.232 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 76.708 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 74.93 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 74.93 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 74.93 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 74.93 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 74.93 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "03e4dbb5-b5e9-4675-aa0e-d1eb55023931")
+		)
+		(pin "1"
+			(uuid "992d41be-9622-4946-aaa2-57adeb5a828d")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_3_Open")
+		(at 55.88 63.5 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd06d7b3-8268-4f5f-b4ba-6c437fa59d40")
+		(property "Reference" "JP6"
+			(at 58.42 63.4999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SolderJumper_3_Open"
+			(at 59.69 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
+			(at 55.88 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 55.88 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 3-pole, open"
+			(at 55.88 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "8dcf0ff7-447f-4a79-9bd8-599e3323fa63")
+		)
+		(pin "2"
+			(uuid "d138c943-8dcf-441d-865a-7d2dbf74c8a9")
+		)
+		(pin "1"
+			(uuid "af24bbef-576e-4eb1-a137-6a178eb36b3c")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "JP6")
 					(unit 1)
 				)
 			)
