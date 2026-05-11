@@ -1,0 +1,21 @@
+v 4
+file . "tb/TOP_TX_tb.vhd" "08862620e63d1e2e2d4d018d3d7e36018944aac0" "20260511141615.236":
+  entity top_tx_tb at 1( 0) + 0 on 71;
+  architecture sim of top_tx_tb at 8( 103) + 0 on 72;
+file . "src/UDP_FIFO_AXI.vhd" "62f8c6556386e5fa564f27d8c63bfcc434fc8fc1" "20260511141615.040":
+  entity udp_fifo_axi at 1( 0) + 0 on 67;
+  architecture rtl of udp_fifo_axi at 24( 559) + 0 on 68;
+file . "src/MAC_AXItoRGMII.vhd" "08896a6513c4b8e88d64e7af2128556290dadae3" "20260511141614.812":
+  entity mac_axitorgmii at 1( 0) + 0 on 61;
+  architecture rtl of mac_axitorgmii at 27( 763) + 0 on 62;
+file . "src/CRC32_8.vhd" "44f3fd7094dcff1eae4bc83170ba6aedd1eb7762" "20260511141614.636":
+  entity crc32_8 at 24( 1069) + 0 on 59;
+  architecture behavioral of crc32_8 at 35( 1316) + 0 on 60;
+file . "src/RGMII.vhd" "98f0a782c815eaa4e38cac38916259362da07dbe" "20260511141614.946":
+  entity rgmii_tx at 1( 0) + 0 on 63;
+  architecture rtl of rgmii_tx at 24( 435) + 0 on 64;
+  entity rgmii_rx at 54( 1187) + 0 on 65;
+  architecture rtl of rgmii_rx at 75( 1565) + 0 on 66;
+file . "src/TOP_TX.vhd" "2fd485e73f005931e07ec1fb33d6b0d44cc5d9c5" "20260511141615.154":
+  entity top_tx at 1( 0) + 0 on 69;
+  architecture rtl of top_tx at 32( 950) + 0 on 70;
