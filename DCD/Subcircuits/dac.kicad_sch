@@ -391,6 +391,130 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R_Potentiometer"
 			(pin_names
 				(offset 1.016)
@@ -1231,22 +1355,10 @@
 		(uuid "277f00df-041b-41da-9af4-db484af57e51")
 	)
 	(junction
-		(at 125.73 91.44)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2b4f4de5-27ee-4ca2-85b5-dbdb3e6e8be6")
-	)
-	(junction
 		(at 129.54 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c80db9d-9712-41d4-b72c-a112c8a3edb7")
-	)
-	(junction
-		(at 125.73 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "30078373-cbe5-4f94-9b55-6f9d853519f1")
 	)
 	(junction
 		(at 101.6 146.05)
@@ -1259,6 +1371,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b749424-f8f5-4bd3-a0e1-80c3abf8cdeb")
+	)
+	(junction
+		(at 120.65 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "42e781ad-e80d-45e6-8c37-a5ff2a2a8308")
 	)
 	(junction
 		(at 248.92 69.85)
@@ -1283,6 +1401,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "667bb4bc-35c3-47e4-9814-9a13668aaa1c")
+	)
+	(junction
+		(at 146.05 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7064b1a0-d751-483f-8a52-195befc5a78a")
 	)
 	(junction
 		(at 120.65 59.69)
@@ -1321,10 +1445,22 @@
 		(uuid "8360e51f-0b71-4d26-9baa-82895fdd5ca3")
 	)
 	(junction
+		(at 146.05 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83b36ffa-14bf-473a-bed9-59c5f2a809ed")
+	)
+	(junction
 		(at 129.54 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9077d74e-689a-4073-a27e-32a4dfc5f1ea")
+	)
+	(junction
+		(at 125.73 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99ac52b4-7fd4-4ae9-96c1-628f620c3316")
 	)
 	(junction
 		(at 125.73 138.43)
@@ -1381,6 +1517,12 @@
 		(uuid "d0e55f11-4912-4cc7-b0d4-be491ec24753")
 	)
 	(junction
+		(at 120.65 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d685c550-f5ea-4a2b-a05c-adaeb1b9e198")
+	)
+	(junction
 		(at 121.92 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1421,6 +1563,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f68ea4fd-81a4-4c4b-b881-00532dcb862f")
+	)
+	(junction
+		(at 146.05 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f86508be-93f2-4dad-a908-90f74c8b5660")
 	)
 	(no_connect
 		(at 29.21 44.45)
@@ -1556,7 +1704,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 96.52) (xy 125.73 111.76)
+			(xy 125.73 96.52) (xy 125.73 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1626,7 +1774,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 91.44) (xy 125.73 44.45)
+			(xy 125.73 44.45) (xy 125.73 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1636,7 +1784,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 138.43) (xy 161.29 138.43)
+			(xy 125.73 138.43) (xy 146.05 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1686,13 +1834,23 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 92.71) (xy 120.65 134.62)
+			(xy 120.65 92.71) (xy 120.65 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2edb3fcf-8280-45d3-ba6f-63e42ceed4ea")
+	)
+	(wire
+		(pts
+			(xy 125.73 99.06) (xy 146.05 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f9277ae-4249-4d79-9e2c-47a753a7273c")
 	)
 	(wire
 		(pts
@@ -1733,6 +1891,16 @@
 			(type default)
 		)
 		(uuid "3947aaf1-4d90-4b99-8696-3f2b80026f34")
+	)
+	(wire
+		(pts
+			(xy 146.05 91.44) (xy 161.29 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b2f231f-e642-425e-be38-071bcb4d4215")
 	)
 	(wire
 		(pts
@@ -1946,16 +2114,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 91.44) (xy 161.29 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "57fbe5e5-ec05-4d2f-a5d1-08b97958fd62")
-	)
-	(wire
-		(pts
 			(xy 113.03 128.27) (xy 113.03 125.73)
 		)
 		(stroke
@@ -1973,16 +2131,6 @@
 			(type default)
 		)
 		(uuid "58fe8504-fee8-4e55-a349-afe2d1fcd0e1")
-	)
-	(wire
-		(pts
-			(xy 125.73 128.27) (xy 161.29 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5dc33967-12d4-476f-9a19-e3eb9778999a")
 	)
 	(wire
 		(pts
@@ -2043,6 +2191,16 @@
 			(type default)
 		)
 		(uuid "696e3e94-6a5a-4c33-8f8a-b06ef9084ab3")
+	)
+	(wire
+		(pts
+			(xy 139.7 91.44) (xy 146.05 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73f210db-d519-47c8-8912-6c1beaf397b1")
 	)
 	(wire
 		(pts
@@ -2176,7 +2334,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 111.76) (xy 125.73 128.27)
+			(xy 125.73 111.76) (xy 125.73 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2226,7 +2384,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 59.69) (xy 120.65 92.71)
+			(xy 146.05 128.27) (xy 146.05 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f45b55a-cdb5-4aae-88c5-b419894f607d")
+	)
+	(wire
+		(pts
+			(xy 120.65 59.69) (xy 120.65 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2263,6 +2431,26 @@
 			(type default)
 		)
 		(uuid "a11ca834-77a6-4293-80fe-050552326877")
+	)
+	(wire
+		(pts
+			(xy 120.65 91.44) (xy 120.65 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1da24e4-32c4-4c04-b65b-8163274f820c")
+	)
+	(wire
+		(pts
+			(xy 146.05 137.16) (xy 146.05 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7133937-ff4e-419b-aa0a-981e289bc532")
 	)
 	(wire
 		(pts
@@ -2326,6 +2514,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 128.27) (xy 132.08 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aeb470fa-a7de-462d-9e56-64acbfc7bf91")
+	)
+	(wire
+		(pts
 			(xy 255.27 128.27) (xy 265.43 128.27)
 		)
 		(stroke
@@ -2343,16 +2541,6 @@
 			(type default)
 		)
 		(uuid "b968f37e-74c4-4352-b89f-bfa735166aa1")
-	)
-	(wire
-		(pts
-			(xy 125.73 128.27) (xy 125.73 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9a71f1f-0d1a-48f1-a04c-5fcd7cddf987")
 	)
 	(wire
 		(pts
@@ -2426,6 +2614,26 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 128.27) (xy 120.65 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5f38c9e-84f8-4f19-aaad-26cf27344e32")
+	)
+	(wire
+		(pts
+			(xy 146.05 138.43) (xy 161.29 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6cc59a8-dca7-4fc6-bbad-292068b3beb0")
+	)
+	(wire
+		(pts
 			(xy 115.57 132.08) (xy 115.57 146.05)
 		)
 		(stroke
@@ -2456,6 +2664,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 91.44) (xy 132.08 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb218650-565b-4922-a772-76b2785d6717")
+	)
+	(wire
+		(pts
 			(xy 121.92 29.21) (xy 22.86 29.21)
 		)
 		(stroke
@@ -2473,6 +2691,16 @@
 			(type default)
 		)
 		(uuid "cd5304df-41a6-4435-a65b-c882e527af2f")
+	)
+	(wire
+		(pts
+			(xy 125.73 99.06) (xy 125.73 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d12e4083-5722-4fec-9026-54966de52475")
 	)
 	(wire
 		(pts
@@ -2656,6 +2884,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 128.27) (xy 161.29 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8890a4b-cb5b-491a-9eea-0696af72292b")
+	)
+	(wire
+		(pts
 			(xy 113.03 125.73) (xy 129.54 125.73)
 		)
 		(stroke
@@ -2736,13 +2974,13 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 91.44) (xy 125.73 96.52)
+			(xy 139.7 128.27) (xy 146.05 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fbe1242b-ccc4-4182-9396-8fbdf081c959")
+		(uuid "f8cd591b-5052-4642-8813-842c1e473e2e")
 	)
 	(wire
 		(pts
@@ -3143,6 +3381,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 135.89 128.27 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "215eaae2-5c00-4953-95be-9d71892eef6d")
+		(property "Reference" "R3"
+			(at 135.89 130.556 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 135.89 132.588 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 135.89 126.492 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 135.89 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 135.89 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 135.89 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 135.89 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 135.89 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "57a0b2e7-7c6c-4e0e-b655-d148c5c56927")
+		)
+		(pin "1"
+			(uuid "2cf9f129-8704-4ab7-8b61-ceddef6b3194")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 101.6 149.86 0)
 		(unit 1)
@@ -3471,6 +3812,109 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
 					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 135.89 91.44 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6560f09e-01bd-4773-b99d-9ab2efcdecd5")
+		(property "Reference" "R1"
+			(at 135.89 93.726 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 135.89 95.758 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 135.89 89.662 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 135.89 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 135.89 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 135.89 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 135.89 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 135.89 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f4364872-626c-4583-90d2-b4857d0cab21")
+		)
+		(pin "1"
+			(uuid "e9bed4d4-2614-411c-a62b-aa83840551bc")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -4486,6 +4930,109 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 146.05 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e16d30c8-ff04-422d-bc5a-7a89f1d179f8")
+		(property "Reference" "R4"
+			(at 142.748 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 142.748 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 144.272 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 146.05 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 146.05 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 146.05 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 146.05 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 146.05 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3df07cf3-ecd9-4839-afb2-837ba4811c4f")
+		)
+		(pin "1"
+			(uuid "5487eb81-4a3b-494d-9c42-8926a4bcbdce")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 91.44 107.95 0)
 		(unit 1)
@@ -5008,6 +5555,109 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
 					(reference "C38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 146.05 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fc20ba3c-0640-4868-a427-afee16b44fd0")
+		(property "Reference" "R2"
+			(at 142.748 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 142.748 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 144.272 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 146.05 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
+			(at 146.05 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VRW1001V "
+			(at 146.05 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" " 667-ERA-3VRW1001V "
+			(at 146.05 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 146.05 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "207c687b-f875-4220-8866-a66988a3957b")
+		)
+		(pin "1"
+			(uuid "5ac282c6-b4c5-420b-9fe2-8d5d2b0212d5")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/6102592d-9e5a-4d16-a1d9-3adb4d835efe"
+					(reference "R2")
 					(unit 1)
 				)
 			)
