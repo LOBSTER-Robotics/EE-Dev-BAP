@@ -1,0 +1,320 @@
+
+
+
+
+
+entity TOP is
+    generic (
+        G_NUM_CHANNELS           : positive := 16;
+        G_ADC_WIDTH              : positive := 24;
+        G_BYTE_WIDTH             : positive := 8;
+        G_LARGE_FIFO_COUNT_WIDTH : positive := 16
+    );
+    port (
+        clk : in std_logic;
+        rst : in std_logic;
+        Data: in  std_logic_vector(23 downto 0); 
+        Write_En : in std_logic;
+        enable : in std_logic;
+        Read_large_fifo : in std_logic;
+        data_out_large_fifo : out std_logic_vector(G_BYTE_WIDTH-1 downto 0);
+        -- High while a frame is being packed.
+        packer_busy : out std_logic;
+        -- Pulses high for one clock when a full frame has been written.
+        packer_frame_done : out std_logic
+    );
+end entity TOP;
+
+
+
+architecture Behavioral of Top is
+    signal fifo_dout_to_packer : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal fifo_sel : unsigned(3 downto 0);
+    signal adc_fifo_empty : std_logic_vector(G_NUM_CHANNELS-1 downto 0);
+    signal adc_fifo_rd_en : std_logic_vector(G_NUM_CHANNELS-1 downto 0);
+    signal adc_fifo_0_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_1_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_2_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_3_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_4_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_5_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_6_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_7_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_8_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_9_dout  : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_10_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_11_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_12_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_13_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_14_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal adc_fifo_15_dout : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal large_fifo_full : std_logic;
+    signal large_fifo_almost_full : std_logic;
+    signal large_fifo_wr_en : std_logic;
+    signal large_fifo_din : std_logic_vector(G_BYTE_WIDTH-1 downto 0);
+begin
+    u_adc_fifo_frame_packer : entity work.adc_fifo_frame_packer
+        generic map (
+            G_NUM_CHANNELS           => 16,
+            G_ADC_WIDTH              => 24,
+            G_BYTE_WIDTH             => 8,
+            G_LARGE_FIFO_COUNT_WIDTH => 16
+        )
+        port map (
+            i_clk   => clk,
+            i_rst   => rst,
+
+            i_enable => enable,
+
+            i_small_fifo_empty => adc_fifo_empty,
+
+            o_fifo_sel => fifo_sel,
+
+            o_small_fifo_rd_en => adc_fifo_rd_en,
+
+            i_fifo_dout => fifo_dout_to_packer,
+
+            i_large_fifo_full       => large_fifo_full,
+            i_large_fifo_almost_full => large_fifo_almost_full,
+            o_large_fifo_wr_en      => large_fifo_wr_en,
+            o_large_fifo_din        => large_fifo_din,
+
+            o_busy       => packer_busy,
+            o_frame_done => packer_frame_done
+        );
+
+    u_MuxFifo : entity work.fifo_16ch_mux
+        generic map (
+            G_ADC_WIDTH => 24
+        )
+        port map (
+            i_fifo_sel => fifo_sel,
+
+            i_fifo_0_dout  => adc_fifo_0_dout,
+            i_fifo_1_dout  => adc_fifo_1_dout,
+            i_fifo_2_dout  => adc_fifo_2_dout,
+            i_fifo_3_dout  => adc_fifo_3_dout,
+            i_fifo_4_dout  => adc_fifo_4_dout,
+            i_fifo_5_dout  => adc_fifo_5_dout,
+            i_fifo_6_dout  => adc_fifo_6_dout,
+            i_fifo_7_dout  => adc_fifo_7_dout,
+            i_fifo_8_dout  => adc_fifo_8_dout,
+            i_fifo_9_dout  => adc_fifo_9_dout,
+            i_fifo_10_dout => adc_fifo_10_dout,
+            i_fifo_11_dout => adc_fifo_11_dout,
+            i_fifo_12_dout => adc_fifo_12_dout,
+            i_fifo_13_dout => adc_fifo_13_dout,
+            i_fifo_14_dout => adc_fifo_14_dout,
+            i_fifo_15_dout => adc_fifo_15_dout,
+
+            o_fifo_dout => fifo_dout_to_packer
+        );
+    u_Fifo0 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(0),
+        wrreq        => Write_En,
+        q            => adc_fifo_0_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(0),
+        almost_empty => open
+    );
+    u_Fifo1 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(1),
+            wrreq        => Write_En,
+            q            => adc_fifo_1_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(1),
+            almost_empty => open
+        );
+    u_Fifo2 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(2),
+            wrreq        => Write_En,
+            q            => adc_fifo_2_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(2),
+            almost_empty => open
+        );
+    u_Fifo3 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(3),
+            wrreq        => Write_En,
+            q            => adc_fifo_3_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(3),
+            almost_empty => open
+        );
+    u_Fifo4 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(4),
+            wrreq        => Write_En,
+            q            => adc_fifo_4_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(4),
+            almost_empty => open
+        );
+    u_Fifo5 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(5),
+            wrreq        => Write_En,
+            q            => adc_fifo_5_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(5),
+            almost_empty => open
+        );
+    u_Fifo6 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(6),
+            wrreq        => Write_En,
+            q            => adc_fifo_6_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(6),
+            almost_empty => open
+        );
+    u_Fifo7 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(7),
+            wrreq        => Write_En,
+            q            => adc_fifo_7_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(7),
+            almost_empty => open
+        );
+    u_Fifo8 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(8),
+            wrreq        => Write_En,
+            q            => adc_fifo_8_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(8),
+            almost_empty => open
+        );
+    u_Fifo9 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(9),
+            wrreq        => Write_En,
+            q            => adc_fifo_9_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(9),
+            almost_empty => open
+        );
+    u_Fifo10 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(10),
+            wrreq        => Write_En,
+            q            => adc_fifo_10_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(10),
+            almost_empty => open
+        );
+    u_Fifo11 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(11),
+            wrreq        => Write_En,
+            q            => adc_fifo_11_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(11),
+            almost_empty => open
+        );
+    u_Fifo12 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(12),
+            wrreq        => Write_En,
+            q            => adc_fifo_12_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(12),
+            almost_empty => open
+        );
+    u_Fifo13 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(13),
+            wrreq        => Write_En,
+            q            => adc_fifo_13_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(13),
+            almost_empty => open
+        );
+    u_Fifo14 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(14),
+            wrreq        => Write_En,
+            q            => adc_fifo_14_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(14),
+            almost_empty => open
+        );
+    u_Fifo15 : entity work.Fifo    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => Data,
+            rdreq        => adc_fifo_rd_en(15),
+            wrreq        => Write_En,
+            q            => adc_fifo_15_dout,
+            full         => open,
+            almost_full  => open,
+            empty        => adc_fifo_empty(15),
+            almost_empty => open
+        );
+    u_Fifo_large : entity work.Fifo_large    port map (
+            aclr         => rst,
+            clock        => clk,
+            data         => large_fifo_din,
+            rdreq        => Read_large_fifo,  -- Not reading from this FIFO in this design
+            wrreq        => large_fifo_wr_en,
+            q            => data_out_large_fifo,
+            full         => large_fifo_full,
+            almost_full  => large_fifo_almost_full,
+            empty        => open,
+            almost_empty => open
+        );
+
+
+end Behavioral;
+
+

@@ -1,0 +1,192 @@
+u_Fifo0 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(0),
+        wrreq        => Write_En,
+        q            => adc_fifo_0_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(0),
+        almost_empty => open
+    );
+u_Fifo1 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(1),
+        wrreq        => Write_En,
+        q            => adc_fifo_1_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(1),
+        almost_empty => open
+    );
+u_Fifo2 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(2),
+        wrreq        => Write_En,
+        q            => adc_fifo_2_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(2),
+        almost_empty => open
+    );
+u_Fifo3 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(3),
+        wrreq        => Write_En,
+        q            => adc_fifo_3_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(3),
+        almost_empty => open
+    );
+u_Fifo4 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(4),
+        wrreq        => Write_En,
+        q            => adc_fifo_4_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(4),
+        almost_empty => open
+    );
+u_Fifo5 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(5),
+        wrreq        => Write_En,
+        q            => adc_fifo_5_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(5),
+        almost_empty => open
+    );
+u_Fifo6 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(6),
+        wrreq        => Write_En,
+        q            => adc_fifo_6_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(6),
+        almost_empty => open
+    );
+u_Fifo7 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(7),
+        wrreq        => Write_En,
+        q            => adc_fifo_7_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(7),
+        almost_empty => open
+    );
+u_Fifo8 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(8),
+        wrreq        => Write_En,
+        q            => adc_fifo_8_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(8),
+        almost_empty => open
+    );
+u_Fifo9 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(9),
+        wrreq        => Write_En,
+        q            => adc_fifo_9_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(9),
+        almost_empty => open
+    );
+u_Fifo10 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(10),
+        wrreq        => Write_En,
+        q            => adc_fifo_10_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(10),
+        almost_empty => open
+    );
+u_Fifo11 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(11),
+        wrreq        => Write_En,
+        q            => adc_fifo_11_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(11),
+        almost_empty => open
+    );
+u_Fifo12 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(12),
+        wrreq        => Write_En,
+        q            => adc_fifo_12_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(12),
+        almost_empty => open
+    );
+u_Fifo13 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(13),
+        wrreq        => Write_En,
+        q            => adc_fifo_13_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(13),
+        almost_empty => open
+    );
+u_Fifo14 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(14),
+        wrreq        => Write_En,
+        q            => adc_fifo_14_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(14),
+        almost_empty => open
+    );
+u_Fifo15 : entity work.Fifo    port map (
+        aclr         => rst,
+        clock        => clk,
+        data         => Data,
+        rdreq        => adc_fifo_rd_en(15),
+        wrreq        => Write_En,
+        q            => adc_fifo_15_dout,
+        full         => open,
+        almost_full  => open,
+        empty        => adc_fifo_empty(15),
+        almost_empty => open
+    );
