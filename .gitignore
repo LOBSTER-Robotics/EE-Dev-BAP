@@ -36,3 +36,7 @@ Mechanical/*.step
 
 # Apple file system
 .DS_Store
+
+
+# PDFs
+*.pdf
