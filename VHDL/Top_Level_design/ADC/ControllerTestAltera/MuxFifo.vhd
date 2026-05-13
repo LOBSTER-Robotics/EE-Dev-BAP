@@ -34,7 +34,7 @@ end entity fifo_16ch_mux;
 architecture rtl of fifo_16ch_mux is
 begin
 
-    process(all)
+    process(i_fifo_sel, i_fifo_0_dout, i_fifo_1_dout, i_fifo_2_dout, i_fifo_3_dout, i_fifo_4_dout, i_fifo_5_dout, i_fifo_6_dout, i_fifo_7_dout, i_fifo_8_dout, i_fifo_9_dout, i_fifo_10_dout, i_fifo_11_dout, i_fifo_12_dout, i_fifo_13_dout, i_fifo_14_dout, i_fifo_15_dout)
     begin
 
         case i_fifo_sel is

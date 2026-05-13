@@ -1,192 +1,240 @@
-u_Fifo0 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(0),
-        wrreq        => Write_En,
-        q            => adc_fifo_0_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(0),
-        almost_empty => open
-    );
-u_Fifo1 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(1),
-        wrreq        => Write_En,
-        q            => adc_fifo_1_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(1),
-        almost_empty => open
-    );
-u_Fifo2 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(2),
-        wrreq        => Write_En,
-        q            => adc_fifo_2_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(2),
-        almost_empty => open
-    );
-u_Fifo3 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(3),
-        wrreq        => Write_En,
-        q            => adc_fifo_3_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(3),
-        almost_empty => open
-    );
-u_Fifo4 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(4),
-        wrreq        => Write_En,
-        q            => adc_fifo_4_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(4),
-        almost_empty => open
-    );
-u_Fifo5 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(5),
-        wrreq        => Write_En,
-        q            => adc_fifo_5_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(5),
-        almost_empty => open
-    );
-u_Fifo6 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(6),
-        wrreq        => Write_En,
-        q            => adc_fifo_6_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(6),
-        almost_empty => open
-    );
-u_Fifo7 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(7),
-        wrreq        => Write_En,
-        q            => adc_fifo_7_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(7),
-        almost_empty => open
-    );
-u_Fifo8 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(8),
-        wrreq        => Write_En,
-        q            => adc_fifo_8_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(8),
-        almost_empty => open
-    );
-u_Fifo9 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(9),
-        wrreq        => Write_En,
-        q            => adc_fifo_9_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(9),
-        almost_empty => open
-    );
-u_Fifo10 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(10),
-        wrreq        => Write_En,
-        q            => adc_fifo_10_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(10),
-        almost_empty => open
-    );
-u_Fifo11 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(11),
-        wrreq        => Write_En,
-        q            => adc_fifo_11_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(11),
-        almost_empty => open
-    );
-u_Fifo12 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(12),
-        wrreq        => Write_En,
-        q            => adc_fifo_12_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(12),
-        almost_empty => open
-    );
-u_Fifo13 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(13),
-        wrreq        => Write_En,
-        q            => adc_fifo_13_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(13),
-        almost_empty => open
-    );
-u_Fifo14 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(14),
-        wrreq        => Write_En,
-        q            => adc_fifo_14_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(14),
-        almost_empty => open
-    );
-u_Fifo15 : entity work.Fifo    port map (
-        aclr         => rst,
-        clock        => clk,
-        data         => Data,
-        rdreq        => adc_fifo_rd_en(15),
-        wrreq        => Write_En,
-        q            => adc_fifo_15_dout,
-        full         => open,
-        almost_full  => open,
-        empty        => adc_fifo_empty(15),
-        almost_empty => open
-    );
+signal Data_x0 : std_logic_vector(Data'range);
+signal Data_x1 : std_logic_vector(Data'range);
+signal Data_x2 : std_logic_vector(Data'range);
+signal Data_x3 : std_logic_vector(Data'range);
+signal Data_x4 : std_logic_vector(Data'range);
+signal Data_x5 : std_logic_vector(Data'range);
+signal Data_x6 : std_logic_vector(Data'range);
+signal Data_x7 : std_logic_vector(Data'range);
+signal Data_x8 : std_logic_vector(Data'range);
+signal Data_x9 : std_logic_vector(Data'range);
+signal Data_x10 : std_logic_vector(Data'range);
+signal Data_x11 : std_logic_vector(Data'range);
+signal Data_x12 : std_logic_vector(Data'range);
+signal Data_x13 : std_logic_vector(Data'range);
+signal Data_x14 : std_logic_vector(Data'range);
+signal Data_x15 : std_logic_vector(Data'range);
+Data_x0 <= std_logic_vector(resize(unsigned(Data) * 1, Data_x0'length));
+    u_Fifosm0 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(0), 
+                WrEn => Write_En,
+                Q => adc_fifo_0_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(0)  
+            );
+Data_x1 <= std_logic_vector(resize(unsigned(Data) * 2, Data_x1'length));
+    u_Fifosm1 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(1), 
+                WrEn => Write_En,
+                Q => adc_fifo_1_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(1)  
+            );
+Data_x2 <= std_logic_vector(resize(unsigned(Data) * 3, Data_x2'length));
+    u_Fifosm2 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(2), 
+                WrEn => Write_En,
+                Q => adc_fifo_2_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(2)  
+            );
+Data_x3 <= std_logic_vector(resize(unsigned(Data) * 4, Data_x3'length));
+    u_Fifosm3 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(3), 
+                WrEn => Write_En,
+                Q => adc_fifo_3_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(3)  
+            );
+Data_x4 <= std_logic_vector(resize(unsigned(Data) * 5, Data_x4'length));
+    u_Fifosm4 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(4), 
+                WrEn => Write_En,
+                Q => adc_fifo_4_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(4)  
+            );
+Data_x5 <= std_logic_vector(resize(unsigned(Data) * 6, Data_x5'length));
+    u_Fifosm5 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(5), 
+                WrEn => Write_En,
+                Q => adc_fifo_5_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(5)  
+            );
+Data_x6 <= std_logic_vector(resize(unsigned(Data) * 7, Data_x6'length));
+    u_Fifosm6 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(6), 
+                WrEn => Write_En,
+                Q => adc_fifo_6_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(6)  
+            );
+Data_x7 <= std_logic_vector(resize(unsigned(Data) * 8, Data_x7'length));
+    u_Fifosm7 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(7), 
+                WrEn => Write_En,
+                Q => adc_fifo_7_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(7)  
+            );
+Data_x8 <= std_logic_vector(resize(unsigned(Data) * 9, Data_x8'length));
+    u_Fifosm8 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(8), 
+                WrEn => Write_En,
+                Q => adc_fifo_8_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(8)  
+            );
+Data_x9 <= std_logic_vector(resize(unsigned(Data) * 10, Data_x9'length));
+    u_Fifosm9 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(9), 
+                WrEn => Write_En,
+                Q => adc_fifo_9_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(9)  
+            );
+Data_x10 <= std_logic_vector(resize(unsigned(Data) * 11, Data_x10'length));
+    u_Fifosm10 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(10), 
+                WrEn => Write_En,
+                Q => adc_fifo_10_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(10)  
+            );
+Data_x11 <= std_logic_vector(resize(unsigned(Data) * 12, Data_x11'length));
+    u_Fifosm11 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(11), 
+                WrEn => Write_En,
+                Q => adc_fifo_11_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(11)  
+            );
+Data_x12 <= std_logic_vector(resize(unsigned(Data) * 13, Data_x12'length));
+    u_Fifosm12 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(12), 
+                WrEn => Write_En,
+                Q => adc_fifo_12_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(12)  
+            );
+Data_x13 <= std_logic_vector(resize(unsigned(Data) * 14, Data_x13'length));
+    u_Fifosm13 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(13), 
+                WrEn => Write_En,
+                Q => adc_fifo_13_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(13)  
+            );
+Data_x14 <= std_logic_vector(resize(unsigned(Data) * 15, Data_x14'length));
+    u_Fifosm14 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(14), 
+                WrEn => Write_En,
+                Q => adc_fifo_14_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(14)  
+            );
+Data_x15 <= std_logic_vector(resize(unsigned(Data) * 16, Data_x15'length));
+    u_Fifosm15 : entity work.Fifosm 
+            port map (
+                Clock => clk,
+                Reset => rst,
+                Data => Data,
+                RdEn => adc_fifo_rd_en(15), 
+                WrEn => Write_En,
+                Q => adc_fifo_15_dout,  
+                Full => open,      
+                AlmostFull => open,  
+                AlmostEmpty => open,  
+                Empty => adc_fifo_empty(15)  
+            );

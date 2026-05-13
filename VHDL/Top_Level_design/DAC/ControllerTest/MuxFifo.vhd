@@ -4,29 +4,29 @@ use ieee.numeric_std.all;
 
 entity fifo_16ch_mux is
     generic (
-        G_ADC_WIDTH : positive := 24
+        G_DAC_WIDTH : positive := 24
     );
     port (
         i_fifo_sel : in unsigned(3 downto 0);
 
-        i_fifo_0_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_1_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_2_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_3_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_4_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_5_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_6_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_7_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_8_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_9_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_10_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_11_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_12_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_13_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_14_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_15_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
+        i_fifo_0_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_1_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_2_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_3_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_4_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_5_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_6_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_7_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_8_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_9_dout  : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_10_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_11_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_12_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_13_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_14_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
+        i_fifo_15_dout : in std_logic_vector(G_DAC_WIDTH-1 downto 0);
 
-        o_fifo_dout : out std_logic_vector(G_ADC_WIDTH-1 downto 0)
+        o_fifo_dout : out std_logic_vector(G_DAC_WIDTH-1 downto 0)
     );
 end entity fifo_16ch_mux;
 
@@ -34,7 +34,7 @@ end entity fifo_16ch_mux;
 architecture rtl of fifo_16ch_mux is
 begin
 
-    process(all)
+    process(i_fifo_sel, i_fifo_0_dout, i_fifo_1_dout, i_fifo_2_dout, i_fifo_3_dout, i_fifo_4_dout, i_fifo_5_dout, i_fifo_6_dout, i_fifo_7_dout, i_fifo_8_dout, i_fifo_9_dout, i_fifo_10_dout, i_fifo_11_dout, i_fifo_12_dout, i_fifo_13_dout, i_fifo_14_dout, i_fifo_15_dout)
     begin
 
         case i_fifo_sel is
