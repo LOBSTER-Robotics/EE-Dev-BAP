@@ -823,7 +823,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LOBSTER:UMPS-04-03.5-G-VT-SM-WT"
+		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
 			(at 90.17 39.37 0)
 			(effects
 				(font
@@ -934,7 +934,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LOBSTER:UMPS-04-03.5-G-VT-SM-WT"
+		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
 			(at 90.17 52.07 0)
 			(effects
 				(font
@@ -1045,7 +1045,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LOBSTER:UMPS-04-03.5-G-VT-SM-WT"
+		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
 			(at 90.17 64.77 0)
 			(effects
 				(font
@@ -1156,7 +1156,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LOBSTER:UMPS-04-03.5-G-VT-SM-WT"
+		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
 			(at 90.17 77.47 0)
 			(effects
 				(font
