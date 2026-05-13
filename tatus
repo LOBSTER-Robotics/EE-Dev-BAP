@@ -1,0 +1,23 @@
+[33mcommit 2d0f2600c7be42f5199983a9b71033afaf9a7ae1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhardware/adapter-board[m[33m, [m[1;31morigin/hardware/adapter-board[m[33m)[m
+Author: Finnepo9 <finn.vdlangkruis@gmail.com>
+Date:   Tue May 12 16:51:19 2026 +0200
+
+    added breakoutboard start
+
+[33mcommit 05db1f8bfe428f7b5584ac7e9f75f629a86f02b9[m
+Author: Wiktor Tomanek <wiktort52@gmail.com>
+Date:   Tue Apr 28 16:34:04 2026 +0200
+
+    From Lobster Projects
+
+[33mcommit dd34667591849d6e064f24ece29a9b4fcb3fdc1b[m[33m ([m[1;31morigin/vhdl/main[m[33m, [m[1;31morigin/software/main[m[33m, [m[1;31morigin/misc/main[m[33m, [m[1;31morigin/misc/development[m[33m, [m[1;31morigin/hardware/main[m[33m, [m[1;31morigin/hardware/development[m[33m)[m
+Author: Wiktor Tomanek <wiktort52@gmail.com>
+Date:   Tue Apr 28 12:58:54 2026 +0200
+
+    Added description of a model of working with the structure of the repo
+
+[33mcommit d5defd201fecab0e3988980a1a0f5ed9aee4e7bf[m
+Author: Wiktor Tomanek <94623593+Xses-1@users.noreply.github.com>
+Date:   Mon Apr 20 10:30:54 2026 +0200
+
+    Initial commit
