@@ -1,0 +1,6 @@
+RGMII Block
+-> in clk125MHz, rst
+-> in TX packager
+-> out RX unpackager
+--> out TX TX_CLK,TX_D[3:0],TX_CTRL
+--> in RX RX_CLK,RX_D[3:0],RX_CTRL
