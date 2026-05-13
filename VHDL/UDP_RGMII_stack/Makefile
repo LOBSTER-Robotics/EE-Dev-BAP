@@ -92,6 +92,34 @@ crc:
 	$(GHDL) -r $(FLAGS) $(CRC32_8_TOP) --stop-time=100ns --vcd=wave_crc32_8.vcd
 
 # =========================
+# MAC_RX
+# =========================
+
+MAC_RX_SRC=src/MAC_RX.vhd
+MAC_RX_TB=tb/MAC_RX_tb.vhd
+MAC_RX_TOP=MAC_RX_tb
+
+mac_rx:
+	$(GHDL) -a $(FLAGS) $(MAC_RX_SRC)
+	$(GHDL) -a $(FLAGS) $(MAC_RX_TB)
+	$(GHDL) -e $(FLAGS) $(MAC_RX_TOP)
+	$(GHDL) -r $(FLAGS) $(MAC_RX_TOP) --vcd=wave_MAC_RX.vcd
+
+# =========================
+# UDP_RX
+# =========================
+
+UDP_RX_SRC=src/UDP_RX_AXItoFIFO.vhd
+UDP_RX_TB=tb/UDP_RX_AXItoFIFO_tb.vhd
+UDP_RX_TOP=udp_rx_tb
+
+udp_rx:
+	$(GHDL) -a $(FLAGS) $(UDP_RX_SRC)
+	$(GHDL) -a $(FLAGS) $(UDP_RX_TB)
+	$(GHDL) -e $(FLAGS) $(UDP_RX_TOP)
+	$(GHDL) -r $(FLAGS) $(UDP_RX_TOP) --vcd=wave_UDP_RX.vcd
+
+# =========================
 # TOP TX
 # =========================
 
@@ -111,7 +139,29 @@ top_tx:
 	$(GHDL) -a $(FLAGS) $(TOP_TX_SRC)
 	$(GHDL) -a $(FLAGS) $(TOP_TX_TB)
 	$(GHDL) -e $(FLAGS) $(TOP_TX_TOP)
-	$(GHDL) -r $(FLAGS) $(TOP_TX_TOP) --stop-time=6000ns --vcd=wave_mac_tx.vcd
+	$(GHDL) -r $(FLAGS) $(TOP_TX_TOP) --stop-time=6000ns --vcd=wave_top_tx.vcd
+
+# =========================
+# TOP TX
+# =========================
+
+#CRC32_8_SRC=src/CRC32_8.vhd
+MAC_RX_SRC=src/MAC_RX.vhd
+RGMII_SRC=src/RGMII.vhd
+UDP_RX_AXItoFIFO_SRC=src/UDP_RX_AXItoFIFO.vhd
+TOP_RX_SRC=src/TOP_RX.vhd
+TOP_RX_TB=tb/TOP_RX_tb.vhd
+TOP_RX_TOP=TOP_RX_tb
+
+top_rx:
+#	$(GHDL) -a $(FLAGS) $(CRC32_8_SRC)
+	$(GHDL) -a $(FLAGS) $(MAC_RX_SRC)
+	$(GHDL) -a $(FLAGS) $(RGMII_SRC)
+	$(GHDL) -a $(FLAGS) $(UDP_RX_AXItoFIFO_SRC)
+	$(GHDL) -a $(FLAGS) $(TOP_RX_SRC)
+	$(GHDL) -a $(FLAGS) $(TOP_RX_TB)
+	$(GHDL) -e $(FLAGS) $(TOP_RX_TOP)
+	$(GHDL) -r $(FLAGS) $(TOP_RX_TOP) --stop-time=6000ns --vcd=wave_top_rx.vcd
 
 clean:
 	rm -f *.o *.cf *.vcd

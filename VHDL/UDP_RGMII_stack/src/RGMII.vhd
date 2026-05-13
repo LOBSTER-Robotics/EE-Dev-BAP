@@ -75,23 +75,33 @@ end entity;
 architecture rtl of rgmii_rx is
     signal low_nibble  : std_logic_vector(3 downto 0);
     signal high_nibble : std_logic_vector(3 downto 0);
-    signal ctl_rise, ctl_fall : std_logic;
+    signal ctl_rise, ctl_fall, next_dv, next_er : std_logic;
+    signal next_rx_dout : std_logic_vector(7 downto 0);
 begin
 
-    process(rx_clk)
+    process(rx_clk, high_nibble, ctl_fall)
     begin
         if rising_edge(rx_clk) then
             low_nibble <= rgmii_rxd;
             ctl_rise   <= rgmii_rxctl;
+            
+            next_rx_dout <= high_nibble & rgmii_rxd;
+            next_dv <= rgmii_rxctl;
+            next_er <= rgmii_rxctl xor ctl_fall;
         elsif falling_edge(rx_clk) then
             high_nibble <= rgmii_rxd;
             ctl_fall    <= rgmii_rxctl;
         end if;
     end process;
 
-    rx_dout <= high_nibble & low_nibble;
+    process(rx_clk, next_rx_dout, ctl_rise, ctl_fall)
+    begin
+        if rising_edge(rx_clk) then
+            rx_dout <= next_rx_dout;
 
-    rx_dv <= ctl_rise;  -- simplified assumption
-    rx_er <= ctl_rise xor ctl_fall;
+            rx_dv <= next_dv;
+            rx_er <= next_er;
+        end if;
+    end process;
 
 end architecture;

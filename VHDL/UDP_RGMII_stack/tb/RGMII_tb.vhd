@@ -107,7 +107,7 @@ begin
         txd_in <= x"EF";
         wait for clk_period;
 
-        txd_in <= x"00";
+        txd_in <= x"98";
         wait for clk_period;
 
         tx_en <= '0';
