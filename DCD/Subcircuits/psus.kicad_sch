@@ -3312,7 +3312,7 @@
 			(uuid "1364a8b2-d4c4-4a3d-bc92-f483648c6012")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/84a1e6aa-eb06-44a1-ae19-b2ac56cdff0b"
 					(reference "U2")
 					(unit 1)
@@ -5995,7 +5995,7 @@
 			(uuid "670c6354-86d9-4c0b-9f34-a1bb3a4dbc22")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/84a1e6aa-eb06-44a1-ae19-b2ac56cdff0b"
 					(reference "U4")
 					(unit 1)
@@ -6110,7 +6110,7 @@
 			(uuid "c0a1a5c9-f5d8-465e-8b2c-6c2b15d2b586")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/84a1e6aa-eb06-44a1-ae19-b2ac56cdff0b"
 					(reference "U1")
 					(unit 1)
