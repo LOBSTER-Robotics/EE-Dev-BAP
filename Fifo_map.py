@@ -7,15 +7,15 @@ type = "lattice"
 
 def lattice_fifo():
     global output
-    for i in range(0, channels):
-        output += "signal Data_x" + str(i) + " : std_logic_vector(Data'range);\n"
+    # for i in range(0, channels):
+    #     output += "signal Data_x" + str(i) + " : std_logic_vector(Data'range);\n"
     for i in range(0, channels):
         output += "Data_x" + str(i) + " <= std_logic_vector(resize(unsigned(Data) * " + str(i + 1) + ", Data_x" + str(i) + "'length));\n"
         output += "    u_Fifosm" + str(i) + " : entity work.Fifosm \n\
             port map (\n\
                 Clock => clk,\n\
                 Reset => rst,\n\
-                Data => Data,\n\
+                Data => Data_x" + str(i) + ",\n\
                 RdEn => adc_fifo_rd_en(" + str(i) + "), \n\
                 WrEn => Write_En,\n\
                 Q => adc_fifo_" + str(i) + "_dout,  \n\

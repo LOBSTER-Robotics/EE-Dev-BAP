@@ -84,6 +84,7 @@ architecture rtl of Controller is
         S_IDLE,
         S_PREFETCH_FIRST,
         S_CAPTURE_FIRST,
+        S_Wait_Mux,
         S_WRITE_BYTE,
         S_FRAME_DONE,
         S_WRITE_LAST_BYTE,
@@ -249,11 +250,13 @@ begin
                 r_next_state <= S_CAPTURE_FIRST;
             when S_CAPTURE_FIRST =>
                 v_fifo_sel_int := 0;
-                r_next_curr_sample <= i_fifo_dout;
-                r_next_channel     <= r_channel + 1;
                 s_small_fifo_rd_en(r_channel + 1) <= '1';
                 r_next_byte        <= 0;
-                r_next_state       <= S_WRITE_BYTE;
+                r_next_channel     <= r_channel + 1;
+                r_next_state       <= S_Wait_Mux;
+            when S_Wait_Mux =>
+                r_next_state <= S_WRITE_BYTE;
+                r_next_curr_sample <= i_fifo_dout;
             when S_WRITE_BYTE =>
                 s_large_fifo_wr_en <= '1';
                 s_large_fifo_din   <= get_sample_byte(r_curr_sample, r_byte);

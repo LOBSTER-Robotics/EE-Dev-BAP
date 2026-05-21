@@ -97,38 +97,41 @@ begin
             o_frame_done => packer_frame_done
         );
 
-    u_MuxFifo : entity work.fifo_16ch_mux
-        generic map (
-            G_ADC_WIDTH => 24
-        )
-        port map (
-            i_fifo_sel => fifo_sel,
+u_MuxFifo : entity work.fifo_16ch_mux
+    generic map (
+        G_ADC_WIDTH => 24
+    )
+    port map (
+        i_clk => clk,
+        i_rst => rst,
 
-            i_fifo_0_dout  => adc_fifo_0_dout,
-            i_fifo_1_dout  => adc_fifo_1_dout,
-            i_fifo_2_dout  => adc_fifo_2_dout,
-            i_fifo_3_dout  => adc_fifo_3_dout,
-            i_fifo_4_dout  => adc_fifo_4_dout,
-            i_fifo_5_dout  => adc_fifo_5_dout,
-            i_fifo_6_dout  => adc_fifo_6_dout,
-            i_fifo_7_dout  => adc_fifo_7_dout,
-            i_fifo_8_dout  => adc_fifo_8_dout,
-            i_fifo_9_dout  => adc_fifo_9_dout,
-            i_fifo_10_dout => adc_fifo_10_dout,
-            i_fifo_11_dout => adc_fifo_11_dout,
-            i_fifo_12_dout => adc_fifo_12_dout,
-            i_fifo_13_dout => adc_fifo_13_dout,
-            i_fifo_14_dout => adc_fifo_14_dout,
-            i_fifo_15_dout => adc_fifo_15_dout,
+        i_fifo_sel => fifo_sel,
 
-            o_fifo_dout => fifo_dout_to_packer
-        );
-Data_x0 <= std_logic_vector(resize(unsigned(Data) * 1, Data_x0'length));
+        i_fifo_0_dout  => adc_fifo_0_dout,
+        i_fifo_1_dout  => adc_fifo_1_dout,
+        i_fifo_2_dout  => adc_fifo_2_dout,
+        i_fifo_3_dout  => adc_fifo_3_dout,
+        i_fifo_4_dout  => adc_fifo_4_dout,
+        i_fifo_5_dout  => adc_fifo_5_dout,
+        i_fifo_6_dout  => adc_fifo_6_dout,
+        i_fifo_7_dout  => adc_fifo_7_dout,
+        i_fifo_8_dout  => adc_fifo_8_dout,
+        i_fifo_9_dout  => adc_fifo_9_dout,
+        i_fifo_10_dout => adc_fifo_10_dout,
+        i_fifo_11_dout => adc_fifo_11_dout,
+        i_fifo_12_dout => adc_fifo_12_dout,
+        i_fifo_13_dout => adc_fifo_13_dout,
+        i_fifo_14_dout => adc_fifo_14_dout,
+        i_fifo_15_dout => adc_fifo_15_dout,
+
+        o_fifo_dout => fifo_dout_to_packer
+    );
+    Data_x0 <= std_logic_vector(resize(unsigned(Data) * 1, Data_x0'length));
     u_Fifosm0 : entity work.Fifosm
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x0,
                 RdEn => adc_fifo_rd_en(0),
                 WrEn => Write_En,
                 Q => adc_fifo_0_dout,
@@ -142,7 +145,7 @@ Data_x1 <= std_logic_vector(resize(unsigned(Data) * 2, Data_x1'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x1,
                 RdEn => adc_fifo_rd_en(1),
                 WrEn => Write_En,
                 Q => adc_fifo_1_dout,
@@ -156,7 +159,7 @@ Data_x2 <= std_logic_vector(resize(unsigned(Data) * 3, Data_x2'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x2,
                 RdEn => adc_fifo_rd_en(2),
                 WrEn => Write_En,
                 Q => adc_fifo_2_dout,
@@ -170,7 +173,7 @@ Data_x3 <= std_logic_vector(resize(unsigned(Data) * 4, Data_x3'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x3,
                 RdEn => adc_fifo_rd_en(3),
                 WrEn => Write_En,
                 Q => adc_fifo_3_dout,
@@ -184,7 +187,7 @@ Data_x4 <= std_logic_vector(resize(unsigned(Data) * 5, Data_x4'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x4,
                 RdEn => adc_fifo_rd_en(4),
                 WrEn => Write_En,
                 Q => adc_fifo_4_dout,
@@ -198,7 +201,7 @@ Data_x5 <= std_logic_vector(resize(unsigned(Data) * 6, Data_x5'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x5,
                 RdEn => adc_fifo_rd_en(5),
                 WrEn => Write_En,
                 Q => adc_fifo_5_dout,
@@ -212,7 +215,7 @@ Data_x6 <= std_logic_vector(resize(unsigned(Data) * 7, Data_x6'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x6,
                 RdEn => adc_fifo_rd_en(6),
                 WrEn => Write_En,
                 Q => adc_fifo_6_dout,
@@ -226,7 +229,7 @@ Data_x7 <= std_logic_vector(resize(unsigned(Data) * 8, Data_x7'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x7,
                 RdEn => adc_fifo_rd_en(7),
                 WrEn => Write_En,
                 Q => adc_fifo_7_dout,
@@ -240,7 +243,7 @@ Data_x8 <= std_logic_vector(resize(unsigned(Data) * 9, Data_x8'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x8,
                 RdEn => adc_fifo_rd_en(8),
                 WrEn => Write_En,
                 Q => adc_fifo_8_dout,
@@ -254,7 +257,7 @@ Data_x9 <= std_logic_vector(resize(unsigned(Data) * 10, Data_x9'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x9,
                 RdEn => adc_fifo_rd_en(9),
                 WrEn => Write_En,
                 Q => adc_fifo_9_dout,
@@ -268,7 +271,7 @@ Data_x10 <= std_logic_vector(resize(unsigned(Data) * 11, Data_x10'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x10,
                 RdEn => adc_fifo_rd_en(10),
                 WrEn => Write_En,
                 Q => adc_fifo_10_dout,
@@ -282,7 +285,7 @@ Data_x11 <= std_logic_vector(resize(unsigned(Data) * 12, Data_x11'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x11,
                 RdEn => adc_fifo_rd_en(11),
                 WrEn => Write_En,
                 Q => adc_fifo_11_dout,
@@ -296,7 +299,7 @@ Data_x12 <= std_logic_vector(resize(unsigned(Data) * 13, Data_x12'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x12,
                 RdEn => adc_fifo_rd_en(12),
                 WrEn => Write_En,
                 Q => adc_fifo_12_dout,
@@ -310,7 +313,7 @@ Data_x13 <= std_logic_vector(resize(unsigned(Data) * 14, Data_x13'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x13,
                 RdEn => adc_fifo_rd_en(13),
                 WrEn => Write_En,
                 Q => adc_fifo_13_dout,
@@ -324,7 +327,7 @@ Data_x14 <= std_logic_vector(resize(unsigned(Data) * 15, Data_x14'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x14,
                 RdEn => adc_fifo_rd_en(14),
                 WrEn => Write_En,
                 Q => adc_fifo_14_dout,
@@ -338,7 +341,7 @@ Data_x15 <= std_logic_vector(resize(unsigned(Data) * 16, Data_x15'length));
             port map (
                 Clock => clk,
                 Reset => rst,
-                Data => Data,
+                Data => Data_x15,
                 RdEn => adc_fifo_rd_en(15),
                 WrEn => Write_En,
                 Q => adc_fifo_15_dout,
@@ -347,6 +350,8 @@ Data_x15 <= std_logic_vector(resize(unsigned(Data) * 16, Data_x15'length));
                 AlmostEmpty => open,
                 Empty => adc_fifo_empty(15)
             );
+
+
     u_Fifo_large : entity work.Fifolg    port map (
             Clock        => clk,
             Reset        => rst,

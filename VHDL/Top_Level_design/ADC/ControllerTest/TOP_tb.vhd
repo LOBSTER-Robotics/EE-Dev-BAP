@@ -93,7 +93,7 @@ begin
 
         for i in 0 to 4 loop
 
-            Data <= std_logic_vector(to_unsigned(i + 1, G_ADC_WIDTH));
+            Data <= std_logic_vector(to_unsigned(i + 1 + (i+1)*65536+ (i+1)*256, G_ADC_WIDTH));
             Write_En <= '1';
 
             wait until clk'event and clk = '1';
