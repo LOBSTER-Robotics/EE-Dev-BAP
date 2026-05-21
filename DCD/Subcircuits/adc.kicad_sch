@@ -2695,6 +2695,16 @@
 	)
 	(wire
 		(pts
+			(xy 190.5 53.34) (xy 190.5 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "075d1ccd-7e45-44b6-bc8e-92cc5b3b972e")
+	)
+	(wire
+		(pts
 			(xy 129.54 25.4) (xy 129.54 35.56)
 		)
 		(stroke
@@ -2735,7 +2745,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 69.85) (xy 187.96 49.53)
+			(xy 187.96 69.85) (xy 187.96 43.18)
 		)
 		(stroke
 			(width 0)
@@ -3015,16 +3025,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 49.53) (xy 193.04 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "323b474d-4ab8-4826-b385-4949bcd04a24")
-	)
-	(wire
-		(pts
 			(xy 259.08 59.69) (xy 259.08 62.23)
 		)
 		(stroke
@@ -3115,6 +3115,16 @@
 	)
 	(wire
 		(pts
+			(xy 187.96 38.1) (xy 187.96 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "440327e0-90f4-4709-bc67-5ddb95d7aa29")
+	)
+	(wire
+		(pts
 			(xy 73.66 58.42) (xy 73.66 60.96)
 		)
 		(stroke
@@ -3152,6 +3162,16 @@
 			(type default)
 		)
 		(uuid "487541b5-be0a-45dd-820c-335fe4f247f9")
+	)
+	(wire
+		(pts
+			(xy 193.04 43.18) (xy 193.04 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "487f5306-322e-41ac-a3cc-eb1de0889062")
 	)
 	(wire
 		(pts
@@ -3415,6 +3435,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 35.56) (xy 193.04 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "738e61c2-6909-4657-8982-e4aac1f9247d")
+	)
+	(wire
+		(pts
 			(xy 259.08 69.85) (xy 259.08 72.39)
 		)
 		(stroke
@@ -3575,7 +3605,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 49.53) (xy 190.5 62.23)
+			(xy 190.5 35.56) (xy 190.5 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3825,7 +3855,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 39.37) (xy 63.5 45.72)
+			(xy 63.5 25.4) (xy 63.5 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4216,7 +4246,7 @@
 	)
 	(hierarchical_label "5V"
 		(shape input)
-		(at 193.04 49.53 90)
+		(at 193.04 35.56 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4249,7 +4279,7 @@
 	)
 	(hierarchical_label "1.8V"
 		(shape input)
-		(at 190.5 49.53 90)
+		(at 190.5 35.56 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4326,7 +4356,7 @@
 	)
 	(hierarchical_label "VIO"
 		(shape input)
-		(at 187.96 49.53 90)
+		(at 187.96 35.56 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4381,7 +4411,7 @@
 	)
 	(hierarchical_label "7V"
 		(shape input)
-		(at 63.5 39.37 90)
+		(at 63.5 25.4 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4829,6 +4859,111 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 193.04 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "439f59ab-b9fa-464f-b054-268aa624dffe")
+		(property "Reference" "FB24"
+			(at 191.77 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 194.31 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 194.818 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 193.04 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 193.04 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 193.04 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 193.04 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 193.04 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
+			(at 193.04 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a03106fd-4a62-42d7-af3d-07084880534f")
+		)
+		(pin "2"
+			(uuid "3c6f8985-b320-4df8-b86c-95ddbfbb234d")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "FB24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 73.66 55.88 0)
 		(unit 1)
@@ -5257,6 +5392,111 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 187.96 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "75371d67-913f-478e-9ac1-c76e475ac820")
+		(property "Reference" "FB22"
+			(at 186.69 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 189.23 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 189.738 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 187.96 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 187.96 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 187.96 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 187.96 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 187.96 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
+			(at 187.96 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "58e0091c-4354-4250-ad32-4b4037f6ecae")
+		)
+		(pin "2"
+			(uuid "0e76c7e2-0d3c-4d33-81f9-d22327a002e8")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "FB22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 92.71 138.43 90)
 		(unit 1)
@@ -5549,6 +5789,111 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
 					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 190.5 50.8 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8f403c9e-1793-40b5-938c-ea0941f8beea")
+		(property "Reference" "FB23"
+			(at 189.23 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 191.77 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 192.278 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 190.5 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 190.5 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 190.5 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 190.5 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 190.5 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
+			(at 190.5 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "90883dc0-6d1f-4313-b774-be81a267e005")
+		)
+		(pin "2"
+			(uuid "e323d3da-80dc-4125-862a-1c0941526e99")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/a2b5f9c0-8e7d-4b76-a173-d00aba9c5441"
+					(reference "FB23")
 					(unit 1)
 				)
 			)
