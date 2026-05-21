@@ -706,6 +706,30 @@
 		)
 	)
 	(junction
+		(at 26.67 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "058eb78c-411e-448f-8ecd-7085619ecc09")
+	)
+	(junction
+		(at 62.23 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e94edd4-45b2-47e6-b36f-054818225ff0")
+	)
+	(junction
+		(at 26.67 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "21979ea8-b4ca-4b44-9361-3f30637eb041")
+	)
+	(junction
+		(at 26.67 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4ebf8788-d8bf-4a12-b658-f6762434dae2")
+	)
+	(junction
 		(at 62.23 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -720,6 +744,16 @@
 			(type default)
 		)
 		(uuid "001608fb-d6e1-4a52-921d-be32383d5330")
+	)
+	(wire
+		(pts
+			(xy 62.23 91.44) (xy 62.23 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03199d37-4bfc-453d-bb19-e616825e189f")
 	)
 	(wire
 		(pts
@@ -743,13 +777,53 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 77.47) (xy 62.23 77.47)
+			(xy 26.67 80.01) (xy 26.67 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21bce88f-1a10-4623-8324-402bffde22cd")
+	)
+	(wire
+		(pts
+			(xy 26.67 91.44) (xy 62.23 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24e16dbd-848f-43d1-90a6-3568dca5301d")
+	)
+	(wire
+		(pts
+			(xy 41.91 87.63) (xy 64.77 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f7a984-06f9-41b3-91f7-8650ab7c2eda")
+	)
+	(wire
+		(pts
+			(xy 90.17 91.44) (xy 62.23 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "265c8af6-c46c-405b-9f64-c9b0b8347dfc")
+	)
+	(wire
+		(pts
+			(xy 41.91 85.09) (xy 64.77 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29174919-9d29-4d92-a055-7dac2de4b359")
 	)
 	(wire
 		(pts
@@ -760,6 +834,16 @@
 			(type default)
 		)
 		(uuid "390b3321-0bda-4187-8552-0b55358dff42")
+	)
+	(wire
+		(pts
+			(xy 26.67 87.63) (xy 26.67 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b5561d0-fa3f-4aeb-a7fb-fef305ad5d3b")
 	)
 	(wire
 		(pts
@@ -790,6 +874,16 @@
 			(type default)
 		)
 		(uuid "458b3a0e-f88b-4a76-9eb9-7fc0b47a9df8")
+	)
+	(wire
+		(pts
+			(xy 26.67 85.09) (xy 26.67 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47649a38-d259-453a-8b0b-73e5c27e501e")
 	)
 	(wire
 		(pts
@@ -933,6 +1027,26 @@
 	)
 	(wire
 		(pts
+			(xy 26.67 85.09) (xy 29.21 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93cf9bc1-1550-4d3e-855e-0c4b7c3cd72a")
+	)
+	(wire
+		(pts
+			(xy 26.67 82.55) (xy 26.67 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5867048-5f2b-4969-b514-4de4e919accd")
+	)
+	(wire
+		(pts
 			(xy 31.75 34.29) (xy 57.15 34.29)
 		)
 		(stroke
@@ -950,6 +1064,16 @@
 			(type default)
 		)
 		(uuid "b59f1fb4-ccb6-408e-bc88-d4c858f04ae7")
+	)
+	(wire
+		(pts
+			(xy 29.21 80.01) (xy 26.67 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba7348b1-facd-402e-b9ee-d4f5167a30ae")
 	)
 	(wire
 		(pts
@@ -1023,17 +1147,27 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 77.47) (xy 62.23 82.55)
+			(xy 26.67 82.55) (xy 29.21 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f37dc920-179c-40c6-a666-0915929a9bb4")
+		(uuid "f623aece-1d74-42ec-82c1-bd3896130619")
 	)
 	(wire
 		(pts
-			(xy 90.17 59.69) (xy 90.17 77.47)
+			(xy 26.67 87.63) (xy 29.21 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f661beb4-1795-475a-916e-9966e341e996")
+	)
+	(wire
+		(pts
+			(xy 90.17 59.69) (xy 90.17 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1150,7 +1284,7 @@
 		)
 		(uuid "521c04f5-d5d5-43a9-86d8-5b316296dc75")
 	)
-	(hierarchical_label "CLK2"
+	(hierarchical_label "CLK1"
 		(shape output)
 		(at 64.77 87.63 0)
 		(effects
@@ -1271,7 +1405,7 @@
 		)
 		(uuid "ddec1e37-949b-446f-ac39-5be1aafe4ea5")
 	)
-	(hierarchical_label "*CS2"
+	(hierarchical_label "*CS1"
 		(shape output)
 		(at 64.77 85.09 0)
 		(effects
@@ -1808,7 +1942,7 @@
 			(uuid "69283eda-3768-4c43-895b-5c585c24f93e")
 		)
 		(instances
-			(project ""
+			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
 					(reference "J5")
 					(unit 1)

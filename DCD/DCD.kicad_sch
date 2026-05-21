@@ -1938,7 +1938,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 77.47) (xy 127 72.39)
+			(xy 127 72.39) (xy 127 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1948,7 +1948,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 72.39) (xy 129.54 74.93)
+			(xy 129.54 72.39) (xy 129.54 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3238,29 +3238,9 @@
 				(justify right)
 			)
 		)
-		(pin "CLK" output
-			(at 138.43 80.01 90)
-			(uuid "088337a2-f3dc-4ebb-b0c7-e82cb12f28c4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "VRef" input
 			(at 144.78 80.01 90)
 			(uuid "b99e83a2-3e8d-4b36-8cac-16c6c70ed4b5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "*CS" output
-			(at 135.89 80.01 90)
-			(uuid "2c141d0c-7d75-420e-978b-2a8f92141910")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3321,6 +3301,46 @@
 		(pin "7V" input
 			(at 85.09 80.01 90)
 			(uuid "d8e63625-d9cb-4e74-b66b-0f3d51fb11ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK1" output
+			(at 129.54 80.01 90)
+			(uuid "88d888a0-3f1b-4e46-816b-a276da099a54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "*CS2" output
+			(at 135.89 80.01 90)
+			(uuid "fa2c9da0-f549-44e6-ab9a-ba2f84af6ab2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK2" output
+			(at 138.43 80.01 90)
+			(uuid "d76ac820-1ed1-4a66-b9e2-379c8e696ec4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "*CS1" output
+			(at 127 80.01 90)
+			(uuid "6592c0b8-ef6e-49a4-81cd-c03752fa96d1")
 			(effects
 				(font
 					(size 1.27 1.27)
