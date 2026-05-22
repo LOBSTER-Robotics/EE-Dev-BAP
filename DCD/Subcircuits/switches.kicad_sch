@@ -436,18 +436,6 @@
 		)
 		(uuid "5c71b1bb-703e-4cca-a186-8671b9c87c4d")
 	)
-	(text "Theory of\nOperation"
-		(exclude_from_sim no)
-		(at 168.402 91.44 0)
-		(effects
-			(font
-				(size 3.81 3.81)
-				(thickness 0.762)
-				(bold yes)
-			)
-		)
-		(uuid "e331856f-8ce7-4a53-8679-7203881337ed")
-	)
 	(text "CH2"
 		(exclude_from_sim no)
 		(at 171.45 22.098 0)

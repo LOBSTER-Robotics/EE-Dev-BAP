@@ -1865,6 +1865,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text_box "Lenght matching:\n- clk to DAC\n- clks to FLipFlops\n- outputs of FlipFlops (CNV, CS)"
+		(exclude_from_sim no)
+		(at 233.68 80.01 0)
+		(size 45.72 17.78)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e8db0017-d02e-4b4c-9f34-64a270ef4878")
+	)
 	(junction
 		(at 123.19 34.29)
 		(diameter 0)
@@ -3805,7 +3825,7 @@
 	)
 	(global_label "CS_CLK"
 		(shape input)
-		(at 256.54 39.37 0)
+		(at 256.54 36.83 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3813,9 +3833,9 @@
 			)
 			(justify left)
 		)
-		(uuid "651346c7-9606-4592-81a8-451d7a41dc75")
+		(uuid "a4fb1682-f2ba-4c4a-8045-d15d7503fce2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 266.5404 39.37 0)
+			(at 266.5404 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3924,17 +3944,6 @@
 		)
 		(uuid "370ddbdc-077e-4af6-89d4-86470c89ea88")
 	)
-	(hierarchical_label "CLK_DAC"
-		(shape output)
-		(at 256.54 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3bdfff47-8bfa-4b3f-9460-1c6c07290ff8")
-	)
 	(hierarchical_label "DGND"
 		(shape input)
 		(at 40.64 53.34 270)
@@ -3956,6 +3965,17 @@
 			(justify left)
 		)
 		(uuid "61c62351-c599-46ec-bcc2-4ae8cb0fdb8a")
+	)
+	(hierarchical_label "CLK_DAC"
+		(shape output)
+		(at 256.54 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "65c33393-073e-4351-8aec-7060e787d71b")
 	)
 	(hierarchical_label "CNV"
 		(shape input)
