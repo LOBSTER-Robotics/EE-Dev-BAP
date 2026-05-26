@@ -850,6 +850,18 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Order  number",
+          "name": "Order  number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Part number ",
+          "name": "Part number ",
+          "show": false
         }
       ],
       "filter_string": "",

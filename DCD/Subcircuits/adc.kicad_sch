@@ -6576,7 +6576,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part number" "AD4630-24BBCZ"
+		(property "Part number" " AD4630-24BBCZ"
 			(at 195.58 55.88 0)
 			(effects
 				(font
@@ -6585,7 +6585,7 @@
 				(hide yes)
 			)
 		)
-		(property "Order number" "505-AD4630-24BBCZ-ND"
+		(property "Order number" " 584-AD463024BBCZ"
 			(at 195.58 55.88 0)
 			(effects
 				(font
@@ -6594,7 +6594,16 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier" "DigiKey"
+		(property "Supplier" "Mouser"
+			(at 195.58 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Analog-Devices/AD4630-24BBCZ?qs=Rp5uXu7WBW8YQOXZpUyzpg%3D%3D"
 			(at 195.58 55.88 0)
 			(effects
 				(font
