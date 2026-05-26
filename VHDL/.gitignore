@@ -1,0 +1,6 @@
+/sim/
+*.o
+*.cf
+*.vcd
+/tb_*
+!/tb_*.vhd
