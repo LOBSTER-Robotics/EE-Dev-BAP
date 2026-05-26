@@ -2247,6 +2247,42 @@
 				(hide yes)
 			)
 		)
+		(property "Link" "https://www.mouser.com/ProductDetail/Molex/90131-0763?qs=KObwnG1V4zuKPiIchrbqlw%3D%3D"
+			(at 53.34 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 53.34 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " 90131-0763 "
+			(at 53.34 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "538-90131-0763 "
+			(at 53.34 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "0558d75d-7b13-48db-a8d1-77d7b5b159d2")
 		)

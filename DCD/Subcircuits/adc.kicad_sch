@@ -6038,6 +6038,33 @@
 				(hide yes)
 			)
 		)
+		(property "Order number" " 667-ERA-3VEB1000V "
+			(at 58.42 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" " ERA-3VEB1000V"
+			(at 58.42 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 58.42 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7f2c7af9-d282-4e13-936a-345a6aade999")
 		)

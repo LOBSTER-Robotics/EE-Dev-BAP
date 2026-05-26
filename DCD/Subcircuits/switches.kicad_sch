@@ -1168,6 +1168,33 @@
 				(hide yes)
 			)
 		)
+		(property "Order number" " 667-ERA-3AEB470V "
+			(at 45.72 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number " " ERA-3AEB470V "
+			(at 45.72 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 45.72 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8126838b-5033-4358-80fd-6e37813ed872")
 		)
