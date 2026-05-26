@@ -43,3 +43,6 @@ Mechanical/*.step
 
 # Production zips
 *.zip
+
+# Ignore scriptcs
+*.py
