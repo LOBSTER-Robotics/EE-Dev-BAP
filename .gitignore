@@ -40,3 +40,6 @@ Mechanical/*.step
 
 # PDFs
 *.pdf
+
+# Production zips
+*.zip
