@@ -3901,6 +3901,42 @@
 				(hide yes)
 			)
 		)
+		(property "Part number" "DAC8811ICDGKT"
+			(at 49.53 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "595-DAC8811ICDGKT"
+			(at 49.53 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 49.53 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Texas-Instruments/DAC8811ICDGKT?qs=vul0MlC%2Fa1ckja9SywYDlQ%3D%3D"
+			(at 49.53 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "994694d0-c248-4a86-9a5d-8b23a9d8eef4")
 		)
@@ -4313,6 +4349,42 @@
 				(hide yes)
 			)
 		)
+		(property "Part number" "DAC8811ICDGKT"
+			(at 49.53 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "595-DAC8811ICDGKT"
+			(at 49.53 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 49.53 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Texas-Instruments/DAC8811ICDGKT?qs=vul0MlC%2Fa1ckja9SywYDlQ%3D%3D"
+			(at 49.53 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "985d8c6f-88e1-4e0b-afa8-3391d95c9246")
 		)
@@ -4392,6 +4464,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 161.29 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "OPA277UA "
+			(at 161.29 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "595-OPA277UA"
+			(at 161.29 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 161.29 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Texas-Instruments/OPA277UA?qs=7nS3%252BbEUL6skPbgHbWHhXQ%3D%3D&srsltid=AfmBOooMYEOoq7PaAeOD3PNNu6OchYXQ-UuVUDJUEDdGbaQFtKnOjA8d"
 			(at 161.29 118.11 0)
 			(effects
 				(font
@@ -4641,6 +4749,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 33.02 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "OPA277UA "
+			(at 33.02 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "595-OPA277UA"
+			(at 33.02 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 33.02 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Texas-Instruments/OPA277UA?qs=7nS3%252BbEUL6skPbgHbWHhXQ%3D%3D&srsltid=AfmBOooMYEOoq7PaAeOD3PNNu6OchYXQ-UuVUDJUEDdGbaQFtKnOjA8d"
 			(at 33.02 41.91 0)
 			(effects
 				(font
@@ -4974,6 +5118,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 161.29 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "OPA277UA "
+			(at 161.29 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order  number" "595-OPA277UA"
+			(at 161.29 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 161.29 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://nl.mouser.com/ProductDetail/Texas-Instruments/OPA277UA?qs=7nS3%252BbEUL6skPbgHbWHhXQ%3D%3D&srsltid=AfmBOooMYEOoq7PaAeOD3PNNu6OchYXQ-UuVUDJUEDdGbaQFtKnOjA8d"
 			(at 161.29 81.28 0)
 			(effects
 				(font
