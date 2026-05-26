@@ -4,3 +4,4 @@
 *.vcd
 /tb_*
 !/tb_*.vhd
+*.bak
