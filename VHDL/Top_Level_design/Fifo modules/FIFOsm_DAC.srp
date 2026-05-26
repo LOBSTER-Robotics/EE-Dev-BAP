@@ -1,0 +1,40 @@
+SCUBA, Version Diamond (64-bit) 3.14.0.75.2
+Tue May 26 11:31:44 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : E:\Apps\Lattice Diamond\ispfpga\bin\nt64\scuba.exe -w -n FIFOsm_DAC -lang vhdl -synth synplify -bus_exp 7 -bb -arch sa5p00m -type ebfifo -depth 128 -width 16 -rwidth 16 -reset_rel SYNC -pe 10 -pe2 12 -pf 110 -pf2 100 
+    Circuit name     : FIFOsm_DAC
+    Module type      : ebfifo
+    Module Version   : 5.8
+    Ports            : 
+	Inputs       : Data[15:0], WrClock, RdClock, WrEn, RdEn, Reset, RPReset
+	Outputs      : Q[15:0], Empty, Full, AlmostEmpty, AlmostFull
+    I/O buffer       : not inserted
+    EDIF output      : FIFOsm_DAC.edn
+    VHDL output      : FIFOsm_DAC.vhd
+    VHDL template    : FIFOsm_DAC_tmpl.vhd
+    VHDL testbench    : tb_FIFOsm_DAC_tmpl.vhd
+    VHDL purpose     : for synthesis and simulation
+    Bus notation     : big endian
+    Report output    : FIFOsm_DAC.srp
+    Element Usage    :
+          CCU2C : 66
+           AND2 : 2
+        FD1P3BX : 15
+        FD1P3DX : 65
+        FD1S3BX : 2
+        FD1S3DX : 34
+            INV : 2
+            OR2 : 1
+       ROM16X1A : 30
+           XOR2 : 14
+         DP16KD : 1
+    Estimated Resource Usage:
+            LUT : 179
+            EBR : 1
+            Reg : 116

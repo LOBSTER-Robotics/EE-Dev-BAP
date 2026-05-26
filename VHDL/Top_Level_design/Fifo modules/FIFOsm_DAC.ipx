@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="FIFOsm_DAC" module="FIFO_DC" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2026 05 26 11:31:45.514" version="5.8" type="Module" synthesis="synplify" source_format="VHDL">
+  <Package>
+		<File name="FIFOsm_DAC.lpc" type="lpc" modified="2026 05 26 11:31:44.044"/>
+		<File name="FIFOsm_DAC.vhd" type="top_level_vhdl" modified="2026 05 26 11:31:44.149"/>
+		<File name="FIFOsm_DAC_tmpl.vhd" type="template_vhdl" modified="2026 05 26 11:31:44.150"/>
+		<File name="tb_FIFOsm_DAC_tmpl.vhd" type="testbench_vhdl" modified="2026 05 26 11:31:44.152"/>
+  </Package>
+</DiamondModule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="FIFOsm" module="FIFO" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2026 05 26 11:18:15.954" version="5.1" type="Module" synthesis="synplify" source_format="VHDL">
+  <Package>
+		<File name="FIFOsm.lpc" type="lpc" modified="2026 05 26 11:18:06.402"/>
+		<File name="FIFOsm.vhd" type="top_level_vhdl" modified="2026 05 26 11:18:06.512"/>
+		<File name="FIFOsm_tmpl.vhd" type="template_vhdl" modified="2026 05 26 11:18:06.513"/>
+		<File name="tb_FIFOsm_tmpl.vhd" type="testbench_vhdl" modified="2026 05 26 11:18:06.517"/>
+  </Package>
+</DiamondModule>
