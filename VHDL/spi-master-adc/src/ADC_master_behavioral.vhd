@@ -2,200 +2,277 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 architecture Behavioral of ADC_SPI_Controller is
-    -- FSM States
+
+    --------------------------------------------------------------------
+    -- FSM STATES
+    --------------------------------------------------------------------
     type state_type is (
         RESET_ST,
         WAIT_POWERUP_ST,
         START_CONFIG_ST,
         WAIT_CONFIG_ST,
-        START_CONV_ST,
-        WAIT_CONV_ST,
-        START_READ_ST,
-        WAIT_READ_ST
+        RUN_ACQ_ST
     );
 
     signal state        : state_type := RESET_ST;
     signal next_state   : state_type := RESET_ST;
+    signal state_number : integer range 0 to 4   := 0;     
 
-    -- control signals
-
+    --------------------------------------------------------------------
+    -- CONFIG CONTROL
+    --------------------------------------------------------------------
     signal start_config : std_logic := '0';
     signal config_done  : std_logic;
 
-    signal start_conv : std_logic := '0';
-    signal conv_done  : std_logic;
+    --------------------------------------------------------------------
+    -- BLOCK ENABLES
+    --------------------------------------------------------------------
+    signal config_enable : std_logic;
+    signal acq_enable    : std_logic;
 
-    signal start_read : std_logic := '0';
-    signal read_done  : std_logic;
+    --------------------------------------------------------------------
+    -- CONFIG SPI SIGNALS
+    --------------------------------------------------------------------
+    signal sck_config  : std_logic;
+    signal cs_config   : std_logic;
+    signal mosi_config : std_logic;
 
-    -- internal spi signals
+    --------------------------------------------------------------------
+    -- ACQUISITION ENGINE SIGNALS
+    --------------------------------------------------------------------
+    signal sck_acq : std_logic;
+    signal cs_acq  : std_logic;
+    signal cnv_acq : std_logic;
 
-    signal sck_read : std_logic;
-    signal cs_read  : std_logic;
-
-    signal sck_config   : std_logic;
-    signal cs_config    : std_logic;
-    signal MOSI_config  : std_logic;
-
-    -- wait counter 3ms @ 80MHz = 240000 cycles
+    --------------------------------------------------------------------
+    -- POWERUP WAIT COUNTER
+    --------------------------------------------------------------------
     signal wait_counter : integer := 0;
 
 begin
 
-    -- config block portmap
-    CONFIG_BLOCK : entity work.ADC_SPI_Config 
+    --------------------------------------------------------------------
+    -- SPI OWNERSHIP
+    --------------------------------------------------------------------
+    config_enable <= '1'
+        when (state = START_CONFIG_ST or
+              state = WAIT_CONFIG_ST)
+        else '0';
+
+    acq_enable <= '1'
+        when (state = RUN_ACQ_ST)
+        else '0';
+
+    --------------------------------------------------------------------
+    -- CONFIGURATION BLOCK
+    --------------------------------------------------------------------
+    CONFIG_BLOCK : entity work.ADC_SPI_Config
     port map (
+
         CLK => CLK,
+
+        Enable => config_enable,
 
         StartConfig => start_config,
         ConfigDone  => config_done,
 
-        SCK         => sck_config,
-        CS          => cs_config,
-        MOSI        => MOSI_config
+        SCK  => sck_config,
+        CS   => cs_config,
+        MOSI => mosi_config
     );
 
-    -- conversion block portmap
-    CONV_BLOCK: entity work.ADC_Conversion_Control
+    --------------------------------------------------------------------
+    -- ACQUISITION ENGINE
+    --------------------------------------------------------------------
+    ACQ_BLOCK : entity work.ADC_Acquisition_Engine
     port map (
-        CLK         => CLK,
 
-        BUSY        => BUSY,
+        CLK => CLK,
 
-        StartConv   => start_conv,
-        ConvDone    => conv_done,
+        Enable => acq_enable,
 
-        CNV         => CNV
+        MISO1 => MISO1,
+        MISO2 => MISO2,
+
+        CNV => cnv_acq,
+        CS  => cs_acq,
+        SCK => sck_acq,
+
+        Data1 => Data1,
+        Data2 => Data2,
+
+        DataValid => DataValid
     );
 
-    -- spi data read block portmap
-    READ_BLOCK: entity work.ADC_SPI_Data_Read
-    port map (
-        CLK         => CLK,
+    --------------------------------------------------------------------
+    -- SPI BUS MULTIPLEXER
+    --------------------------------------------------------------------
+    SCK <= sck_config
+        when config_enable = '1'
+        else sck_acq;
 
-        MISO1       => MISO1,
-        MISO2       => MISO2,
+    CS <= cs_config
+        when config_enable = '1'
+        else cs_acq;
 
-        StartRead   => start_read,
-        ReadDone    => read_done,
+    --------------------------------------------------------------------
+    -- CNV ONLY USED DURING ACQUISITION
+    --------------------------------------------------------------------
+    CNV <= cnv_acq;
 
-        SCK         => sck_read,
-        CS          => cs_read,
+    --------------------------------------------------------------------
+    -- MOSI ONLY USED DURING CONFIGURATION
+    --------------------------------------------------------------------
+    MOSI <= mosi_config;
 
-        Data1       => Data1,
-        Data2       => Data2
-    );
-
-    -- spi bus multiplexer  
-    SCK <=  sck_config when (state = WAIT_CONFIG_ST or
-                                 state = START_CONFIG_ST)
-            else sck_read;
-    
-    CS  <=  cs_config  when (state = WAIT_CONFIG_ST or
-                             state = START_CONFIG_ST)
-            else cs_read;
-    
-    MOSI <= MOSI_config;
-
-    -- state register
+    --------------------------------------------------------------------
+    -- STATE REGISTER
+    --------------------------------------------------------------------
     process(CLK)
     begin
+
         if rising_edge(CLK) then
+
             state <= next_state;
+
         end if;
+
     end process;
 
-    -- main FSM
+    --------------------------------------------------------------------
+    -- MAIN FSM
+    --------------------------------------------------------------------
     process(CLK)
     begin
-        if rising_edge(CLK) then
-            start_read      <= '0';
-            start_config    <= '0';
-            start_conv      <= '0';
 
-            DataValid       <= '0';
+        if rising_edge(CLK) then
+
+            ------------------------------------------------------------
+            -- DEFAULTS
+            ------------------------------------------------------------
+            start_config <= '0';
 
             case state is
+
+                --------------------------------------------------------
+                -- RESET
+                --------------------------------------------------------
                 when RESET_ST =>
+
                     wait_counter <= 0;
+                    state_number <= 0;
 
+                --------------------------------------------------------
+                -- POWERUP WAIT
+                --------------------------------------------------------
                 when WAIT_POWERUP_ST =>
+
+                    state_number <= 1;
                     if wait_counter < 239999 then
+
                         wait_counter <= wait_counter + 1;
+
                     else
+
                         wait_counter <= 0;
+
                     end if;
 
-                when START_CONFIG_ST => 
-                    start_config <= '1';
-                
-                when WAIT_CONFIG_ST => 
-                    null;
+                --------------------------------------------------------
+                -- START CONFIGURATION
+                --------------------------------------------------------
+                when START_CONFIG_ST =>
                     
-                when START_CONV_ST => 
-                    start_conv <= '1';
-                
-                when WAIT_CONV_ST => 
-                    null;
-                
-                when START_READ_ST => 
-                    start_read <= '0';
+                    state_number <= 2;
+                    start_config <= '1';
 
-                when WAIT_READ_ST =>
-                    if read_done = '1' then 
-                        DataValid <= '1';
-                    end if;
+                --------------------------------------------------------
+                -- WAIT CONFIGURATION DONE
+                --------------------------------------------------------
+                when WAIT_CONFIG_ST =>
+                    
+                    state_number <= 3;
+                    -- null;
+
+                --------------------------------------------------------
+                -- ACQUISITION RUNS AUTONOMOUSLY
+                --------------------------------------------------------
+                when RUN_ACQ_ST =>
+                    
+                    state_number <= 4;
+                    --null;
+
             end case;
+
         end if;
+
     end process;
-        
-    -- state transition logic
+
+    --------------------------------------------------------------------
+    -- NEXT STATE LOGIC
+    --------------------------------------------------------------------
     process(
         state,
-        read_done,
-        config_done,
-        conv_done,
-        wait_counter
+        wait_counter,
+        config_done
     )
     begin
+
+        ------------------------------------------------------------
+        -- DEFAULT
+        ------------------------------------------------------------
         next_state <= state;
 
         case state is
-            when RESET_ST => 
-                next_state <= WAIT_POWERUP_ST;
-            
-            when WAIT_POWERUP_ST =>
-                if wait_counter = 239999 then
-                    next_state <= START_CONFIG_ST;
-                end if;
-            
-            when START_CONFIG_ST => 
-                next_state <= WAIT_CONFIG_ST;
-                
-            when WAIT_CONFIG_ST => 
-                if config_done = '1' then 
-                    next_state <= START_CONV_ST;
-                end if;
-            
-            when START_CONV_ST =>
-                next_state <= WAIT_CONV_ST;
-            
-            when WAIT_CONV_ST => 
-                if conv_done = '1' then
-                    next_state <= START_READ_ST;
-                end if;
-            
-            when START_READ_ST =>
-                next_state <= WAIT_READ_ST;
 
-            when WAIT_READ_ST =>
-                if read_done = '1' then 
-                    next_state <= START_CONV_ST;
+            --------------------------------------------------------
+            -- RESET
+            --------------------------------------------------------
+            when RESET_ST =>
+
+                next_state <= WAIT_POWERUP_ST;
+
+            --------------------------------------------------------
+            -- WAIT POWERUP
+            --------------------------------------------------------
+            when WAIT_POWERUP_ST =>
+
+                if wait_counter = 239999 then
+
+                    next_state <= START_CONFIG_ST;
+
                 end if;
+
+            --------------------------------------------------------
+            -- START CONFIG
+            --------------------------------------------------------
+            when START_CONFIG_ST =>
+
+                next_state <= WAIT_CONFIG_ST;
+
+            --------------------------------------------------------
+            -- WAIT CONFIG DONE
+            --------------------------------------------------------
+            when WAIT_CONFIG_ST =>
+
+                if config_done = '1' then
+
+                    next_state <= RUN_ACQ_ST;
+
+                end if;
+
+            --------------------------------------------------------
+            -- CONTINUOUS ACQUISITION
+            --------------------------------------------------------
+            when RUN_ACQ_ST =>
+
+                next_state <= RUN_ACQ_ST;
+
         end case;
+
     end process;
-                
-end Behavioral; 
+
+end Behavioral;
         
 
 ------------------------------------------------------------------------
@@ -227,6 +304,7 @@ architecture Behavioral of ADC_SPI_Config is
 
     signal state      : state_type := IDLE_ST;
     signal next_state : state_type := IDLE_ST;
+    signal STATE_DEBUG  : integer range 0 to 8  := 0;
 
     --------------------------------------------------------------------
     -- SPI SHIFT REGISTER
@@ -495,6 +573,7 @@ begin
             when IDLE_ST =>
 
                 CS <= '1';
+                STATE_DEBUG <= 0;
 
             --------------------------------------------------------
             -- LOAD COMMAND
@@ -502,6 +581,7 @@ begin
             when LOAD_CMD_ST =>
 
                 CS <= '1';
+                STATE_DEBUG <= 1;
 
             --------------------------------------------------------
             -- ASSERT CS
@@ -510,6 +590,7 @@ begin
             when ASSERT_CS_ST =>
 
                 CS <= '0';
+                STATE_DEBUG <= 2;
 
             --------------------------------------------------------
             -- PRELOAD FIRST BIT
@@ -518,6 +599,7 @@ begin
             when PRELOAD_BIT_ST =>
 
                 CS <= '0';
+                STATE_DEBUG <= 3;
 
             --------------------------------------------------------
             -- SHIFT DATA
@@ -525,6 +607,7 @@ begin
             when SHIFT_ST =>
 
                 CS <= '0';
+                STATE_DEBUG <= 4;
 
             --------------------------------------------------------
             -- HOLD CS AFTER LAST CLOCK
@@ -533,6 +616,7 @@ begin
             when END_CS_ST =>
 
                 CS <= '0';
+                STATE_DEBUG <= 5;
 
             --------------------------------------------------------
             -- NEXT COMMAND
@@ -540,6 +624,7 @@ begin
             when NEXT_CMD_ST =>
 
                 CS <= '1';
+                STATE_DEBUG <= 6;
 
             --------------------------------------------------------
             -- WAIT RESET
@@ -547,6 +632,7 @@ begin
             when WAIT_RESET_ST =>
 
                 CS <= '1';
+                STATE_DEBUG <= 7;
 
             --------------------------------------------------------
             -- DONE
@@ -556,6 +642,8 @@ begin
                 CS <= '1';
 
                 ConfigDone <= '1';
+
+                STATE_DEBUG <= 8;
 
         end case;
 
@@ -569,7 +657,8 @@ begin
         StartConfig,
         bit_counter,
         cmd_counter,
-        wait_reset_counter
+        wait_reset_counter,
+        Enable
     )
     begin
 
@@ -578,98 +667,105 @@ begin
         ------------------------------------------------------------
         next_state <= state;
 
-        case state is
+        ------------------------------------------------------------
+        -- ONLY START ROUTINE IF ENABLED
+        ------------------------------------------------------------
+        if Enable = '1' then
+            
+            case state is
 
-            --------------------------------------------------------
-            -- WAIT FOR START
-            --------------------------------------------------------
-            when IDLE_ST =>
+                --------------------------------------------------------
+                -- WAIT FOR START
+                --------------------------------------------------------
+                when IDLE_ST =>
 
-                if StartConfig = '1' then
+                    if StartConfig = '1' then
 
-                    next_state <= LOAD_CMD_ST;
+                        next_state <= LOAD_CMD_ST;
 
-                end if;
+                    end if;
 
-            --------------------------------------------------------
-            -- LOAD COMMAND
-            --------------------------------------------------------
-            when LOAD_CMD_ST =>
+                --------------------------------------------------------
+                -- LOAD COMMAND
+                --------------------------------------------------------
+                when LOAD_CMD_ST =>
 
-                next_state <= ASSERT_CS_ST;
+                    next_state <= ASSERT_CS_ST;
 
-            --------------------------------------------------------
-            -- ASSERT CS
-            -- Gives tCSSCK timing
-            --------------------------------------------------------
-            when ASSERT_CS_ST =>
+                --------------------------------------------------------
+                -- ASSERT CS
+                -- Gives tCSSCK timing
+                --------------------------------------------------------
+                when ASSERT_CS_ST =>
 
-                next_state <= PRELOAD_BIT_ST;
+                    next_state <= PRELOAD_BIT_ST;
 
-            --------------------------------------------------------
-            -- PRELOAD FIRST BIT
-            -- Gives tSSDI timing
-            --------------------------------------------------------
-            when PRELOAD_BIT_ST =>
+                --------------------------------------------------------
+                -- PRELOAD FIRST BIT
+                -- Gives tSSDI timing
+                --------------------------------------------------------
+                when PRELOAD_BIT_ST =>
 
-                next_state <= SHIFT_ST;
+                    next_state <= SHIFT_ST;
 
-            --------------------------------------------------------
-            -- SHIFT REMAINING 23 BITS
-            --------------------------------------------------------
-            when SHIFT_ST =>
+                --------------------------------------------------------
+                -- SHIFT REMAINING 23 BITS
+                --------------------------------------------------------
+                when SHIFT_ST =>
 
-                if bit_counter = 23 then
+                    if bit_counter = 23 then
 
-                    next_state <= END_CS_ST;
+                        next_state <= END_CS_ST;
 
-                end if;
+                    end if;
 
-            --------------------------------------------------------
-            -- HOLD CS AFTER LAST CLOCK
-            --------------------------------------------------------
-            when END_CS_ST =>
+                --------------------------------------------------------
+                -- HOLD CS AFTER LAST CLOCK
+                --------------------------------------------------------
+                when END_CS_ST =>
 
-                next_state <= NEXT_CMD_ST;
+                    next_state <= NEXT_CMD_ST;
 
-            --------------------------------------------------------
-            -- NEXT COMMAND
-            --------------------------------------------------------
-            when NEXT_CMD_ST =>
+                --------------------------------------------------------
+                -- NEXT COMMAND
+                --------------------------------------------------------
+                when NEXT_CMD_ST =>
 
-                if cmd_counter = 2 then
+                    if cmd_counter = 2 then
 
-                    next_state <= WAIT_RESET_ST;
+                        next_state <= WAIT_RESET_ST;
 
-                elsif cmd_counter = 5 then
+                    elsif cmd_counter = 5 then
 
-                    next_state <= DONE_ST;
+                        next_state <= DONE_ST;
 
-                else
+                    else
 
-                    next_state <= LOAD_CMD_ST;
+                        next_state <= LOAD_CMD_ST;
 
-                end if;
+                    end if;
 
-            --------------------------------------------------------
-            -- WAIT RESET DELAY
-            --------------------------------------------------------
-            when WAIT_RESET_ST =>
+                --------------------------------------------------------
+                -- WAIT RESET DELAY
+                --------------------------------------------------------
+                when WAIT_RESET_ST =>
 
-                if wait_reset_counter = 79999 then
+                    if wait_reset_counter = 79999 then
 
-                    next_state <= LOAD_CMD_ST;
+                        next_state <= LOAD_CMD_ST;
 
-                end if;
+                    end if;
 
-            --------------------------------------------------------
-            -- DONE
-            --------------------------------------------------------
-            when DONE_ST =>
+                --------------------------------------------------------
+                -- DONE
+                --------------------------------------------------------
+                when DONE_ST =>
 
-                next_state <= IDLE_ST;
+                    next_state <= IDLE_ST;
 
-        end case;
+            end case;
+
+        end if;
 
     end process;
 
@@ -678,45 +774,95 @@ end Behavioral;
 
 
 ------------------------------------------------------------------------
--- ADC_Conversion_Control STUB
+-- ADC Acquisition Engine
+-- Zone 2 Operation
+--
+-- 80 MHz FPGA clock
+-- 80 MHz SPI clock
+-- 2 MSPS sample rate
+--
+-- Every 40 FPGA clocks:
+--     new conversion starts
+--
+-- SPI readout happens INSIDE that 40-clock window
 ------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-architecture Stub of ADC_Conversion_Control is
+architecture Behavioral of ADC_Acquisition_Engine is
 
-    signal counter : integer := 0;
-    signal busy_int : std_logic := '0';
+    --------------------------------------------------------------------
+    -- FSM STATES
+    --------------------------------------------------------------------
+    type state_type is (
+        IDLE_ST,
+
+        PRE_CNV_QUIET_ST,
+        CNV_PULSE_ST,
+        POST_CNV_QUIET_ST,
+
+        ASSERT_CS_ST,
+        SHIFT_ST,
+        END_CS_ST
+    );
+
+    signal state      : state_type := IDLE_ST;
+    signal next_state : state_type := IDLE_ST;
+    signal STATE_DEBUG  : integer range 0 to 6  := 0;
+
+    --------------------------------------------------------------------
+    -- FREE RUNNING SAMPLE TIMER
+    -- 80 MHz / 2 MHz = 40 clocks
+    --------------------------------------------------------------------
+    signal sample_counter : integer range 0 to 39 := 0;
+
+    --------------------------------------------------------------------
+    -- QUIET COUNTER
+    --------------------------------------------------------------------
+    signal quiet_counter : integer range 0 to 3 := 0;
+
+    --------------------------------------------------------------------
+    -- SPI ACTIVE
+    --------------------------------------------------------------------
+    signal spi_active : std_logic := '0';
+
+    --------------------------------------------------------------------
+    -- SPI BIT COUNTER
+    --------------------------------------------------------------------
+    signal bit_counter : integer range 0 to 23 := 0;
+
+    --------------------------------------------------------------------
+    -- ADC DATA SHIFT REGISTERS
+    --------------------------------------------------------------------
+    signal shift_reg1 : std_logic_vector(23 downto 0)
+        := (others => '0');
+
+    signal shift_reg2 : std_logic_vector(23 downto 0)
+        := (others => '0');
 
 begin
 
+    --------------------------------------------------------------------
+    -- TRUE 80 MHz SPI CLOCK
+    --------------------------------------------------------------------
+    SCK <= CLK and spi_active; -- ####CHECK IF THIS IS A PROBLEM
+
+    --------------------------------------------------------------------
+    -- FREE RUNNING 2 MHz SAMPLE TIMER
+    --------------------------------------------------------------------
     process(CLK)
     begin
 
         if rising_edge(CLK) then
 
-            ConvDone <= '0';
+            if sample_counter < 39 then
 
-            if StartConv = '1' then
+                sample_counter <= sample_counter + 1;
 
-                busy_int <= '1';
-                counter <= 0;
+            else
 
-            end if;
-
-            if busy_int = '1' then
-
-                if counter = 15 then
-
-                    ConvDone <= '1';
-                    busy_int <= '0';
-
-                else
-
-                    counter <= counter + 1;
-
-                end if;
+                sample_counter <= 0;
 
             end if;
 
@@ -724,55 +870,183 @@ begin
 
     end process;
 
-    CNV <= busy_int;
-
-end Stub;
-
-
-------------------------------------------------------------------------
--- ADC_SPI_Data_Read STUB
-------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
-architecture Stub of ADC_SPI_Data_Read is
-
-    signal counter : integer := 0;
-    signal busy    : std_logic := '0';
-
-begin
-
+    --------------------------------------------------------------------
+    -- STATE REGISTER
+    --------------------------------------------------------------------
     process(CLK)
     begin
 
         if rising_edge(CLK) then
 
-            ReadDone <= '0';
+            state <= next_state;
 
-            if StartRead = '1' then
+        end if;
 
-                busy <= '1';
-                counter <= 0;
+    end process;
 
-            end if;
+    --------------------------------------------------------------------
+    -- MAIN CONTROL LOGIC
+    --------------------------------------------------------------------
+    process(CLK)
+    begin
 
-            if busy = '1' then
+        ----------------------------------------------------------------
+        -- RISING EDGE LOGIC
+        ----------------------------------------------------------------
+        if rising_edge(CLK) then
 
-                if counter = 24 then
+            ------------------------------------------------------------
+            -- DEFAULTS
+            ------------------------------------------------------------
+            DataValid <= '0';
 
-                    ReadDone <= '1';
+            case state is
 
-                    Data1 <= x"ABCDEF";
-                    Data2 <= x"123456";
+                --------------------------------------------------------
+                -- IDLE
+                --------------------------------------------------------
+                when IDLE_ST =>
 
-                    busy <= '0';
+                    CNV <= '0';
 
-                else
+                    spi_active <= '0';
 
-                    counter <= counter + 1;
+                    quiet_counter <= 0;
 
-                end if;
+                    STATE_DEBUG <= 0;
+
+                --------------------------------------------------------
+                -- PRE-CNV QUIET ZONE
+                --
+                -- tQUIET_CNV_ADV >= 19.6 ns
+                -- 2 clocks @ 80 MHz = 25 ns
+                --------------------------------------------------------
+                when PRE_CNV_QUIET_ST =>
+
+                    CNV <= '0';
+
+                    spi_active <= '0';
+
+                    if quiet_counter < 1 then
+
+                        quiet_counter <= quiet_counter + 1;
+
+                    end if;
+
+                    STATE_DEBUG <= 1;
+
+                --------------------------------------------------------
+                -- CNV PULSE
+                --------------------------------------------------------
+                when CNV_PULSE_ST =>
+
+                    ----------------------------------------------------
+                    -- START CONVERSION
+                    ----------------------------------------------------
+                    CNV <= '1';
+
+                    quiet_counter <= 0;
+
+                    STATE_DEBUG <= 2;
+
+                --------------------------------------------------------
+                -- POST-CNV QUIET ZONE
+                --
+                -- tQUIET_CNV_DELAY >= 9.8 ns
+                -- 1 clock @ 80 MHz = 12.5 ns
+                --------------------------------------------------------
+                when POST_CNV_QUIET_ST =>
+
+                    CNV <= '0';
+
+                    spi_active <= '0';
+
+                    STATE_DEBUG <= 3;
+
+                --------------------------------------------------------
+                -- ASSERT CS
+                --------------------------------------------------------
+                when ASSERT_CS_ST =>
+
+                    ----------------------------------------------------
+                    -- RESET SPI COUNTER
+                    ----------------------------------------------------
+                    bit_counter <= 0;
+
+                    ----------------------------------------------------
+                    -- SPI CLOCK STILL OFF
+                    ----------------------------------------------------
+                    spi_active <= '0';
+
+                    STATE_DEBUG <= 4;
+
+                --------------------------------------------------------
+                -- SHIFT SPI DATA
+                --------------------------------------------------------
+                when SHIFT_ST =>
+
+                    ----------------------------------------------------
+                    -- ENABLE TRUE 80 MHz SPI CLOCK
+                    ----------------------------------------------------
+                    spi_active <= '1';
+
+                    ----------------------------------------------------
+                    -- COUNT SPI BITS
+                    ----------------------------------------------------
+                    if bit_counter < 23 then
+
+                        bit_counter <= bit_counter + 1;
+
+                    end if;
+
+                    STATE_DEBUG <= 5;
+
+                --------------------------------------------------------
+                -- END SPI TRANSACTION
+                --------------------------------------------------------
+                when END_CS_ST =>
+
+                    ----------------------------------------------------
+                    -- STOP SPI CLOCK
+                    ----------------------------------------------------
+                    spi_active <= '0';
+
+                    ----------------------------------------------------
+                    -- LATCH ADC DATA
+                    ----------------------------------------------------
+                    Data1 <= shift_reg1;
+
+                    Data2 <= shift_reg2;
+
+                    ----------------------------------------------------
+                    -- DATA VALID PULSE
+                    ----------------------------------------------------
+                    DataValid <= '1';
+
+                    STATE_DEBUG <= 6;
+
+            end case;
+
+        end if;
+
+        ----------------------------------------------------------------
+        -- FALLING EDGE LOGIC
+        --
+        -- ADC updates SDO after rising edge,
+        -- therefore sample on falling edge
+        ----------------------------------------------------------------
+        if falling_edge(CLK) then
+
+            if state = SHIFT_ST then
+
+                --------------------------------------------------------
+                -- SHIFT IN ADC DATA
+                --------------------------------------------------------
+                shift_reg1 <=
+                    shift_reg1(22 downto 0) & MISO1;
+
+                shift_reg2 <=
+                    shift_reg2(22 downto 0) & MISO2;
 
             end if;
 
@@ -780,7 +1054,142 @@ begin
 
     end process;
 
-    SCK <= CLK;
-    CS  <= not busy;
+    --------------------------------------------------------------------
+    -- OUTPUT LOGIC
+    --------------------------------------------------------------------
+    process(state)
+    begin
 
-end Stub;
+        ------------------------------------------------------------
+        -- DEFAULTS
+        ------------------------------------------------------------
+        CS <= '1';
+
+        case state is
+
+            --------------------------------------------------------
+            -- ASSERT CS
+            --------------------------------------------------------
+            when ASSERT_CS_ST =>
+
+                CS <= '0';
+
+            --------------------------------------------------------
+            -- SHIFT DATA
+            --------------------------------------------------------
+            when SHIFT_ST =>
+
+                CS <= '0';
+
+            --------------------------------------------------------
+            -- HOLD CS AFTER LAST CLOCK
+            --------------------------------------------------------
+            when END_CS_ST =>
+
+                CS <= '0';
+
+            when others =>
+                null;
+
+        end case;
+
+    end process;
+
+    --------------------------------------------------------------------
+    -- NEXT STATE LOGIC
+    --------------------------------------------------------------------
+    process(
+        state,
+        sample_counter,
+        quiet_counter,
+        bit_counter,
+        Enable
+    )
+    begin
+
+        ------------------------------------------------------------
+        -- DEFAULT
+        ------------------------------------------------------------
+        next_state <= state;
+
+        ------------------------------------------------------------
+        -- ONLY START ROUTINE IF ENABLED
+        ------------------------------------------------------------
+        if Enable = '1' then 
+
+            case state is
+
+                --------------------------------------------------------
+                -- WAIT FOR START OF NEXT SAMPLE PERIOD
+                --------------------------------------------------------
+                when IDLE_ST =>
+
+                    ----------------------------------------------------
+                    -- START NEW SAMPLE FRAME
+                    ----------------------------------------------------
+                    if sample_counter = 0 then
+
+                        next_state <= PRE_CNV_QUIET_ST;
+
+                    end if;
+
+                --------------------------------------------------------
+                -- PRE-CNV QUIET TIME
+                --------------------------------------------------------
+                when PRE_CNV_QUIET_ST =>
+
+                    if quiet_counter = 1 then
+
+                        next_state <= CNV_PULSE_ST;
+
+                    end if;
+
+                --------------------------------------------------------
+                -- START CONVERSION
+                --------------------------------------------------------
+                when CNV_PULSE_ST =>
+
+                    next_state <= POST_CNV_QUIET_ST;
+
+                --------------------------------------------------------
+                -- POST-CNV QUIET TIME
+                --------------------------------------------------------
+                when POST_CNV_QUIET_ST =>
+
+                    next_state <= ASSERT_CS_ST;
+
+                --------------------------------------------------------
+                -- ASSERT CS
+                --------------------------------------------------------
+                when ASSERT_CS_ST =>
+
+                    next_state <= SHIFT_ST;
+
+                --------------------------------------------------------
+                -- SHIFT 24 BITS
+                --------------------------------------------------------
+                when SHIFT_ST =>
+
+                    if bit_counter = 23 then
+
+                        next_state <= END_CS_ST;
+
+                    end if;
+
+                --------------------------------------------------------
+                -- END SPI TRANSACTION
+                --------------------------------------------------------
+                when END_CS_ST =>
+
+                    ----------------------------------------------------
+                    -- WAIT FOR NEXT SAMPLE FRAME
+                    ----------------------------------------------------
+                    next_state <= IDLE_ST;
+
+            end case;
+
+        end if;
+
+    end process;
+
+end Behavioral;

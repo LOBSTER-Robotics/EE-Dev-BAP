@@ -1,9 +1,10 @@
 GHDL=ghdl
 FLAGS=--std=08
 
-SRC=src/counter.vhd
-TB=tb/counter_tb.vhd
-TOP=counter_tb
+SRC=src/ADC_master.vhd \
+	src/ADC_master_behavioral.vhd
+TB=tb/tb_adc_spi_controller.vhd
+TOP=tb_ADC_SPI_Controller
 
 all: run
 
@@ -15,7 +16,7 @@ elaborate: analyze
 	$(GHDL) -e $(FLAGS) $(TOP)
 
 run: elaborate
-	$(GHDL) -r $(FLAGS) $(TOP) --vcd=wave.vcd
+	$(GHDL) -r $(FLAGS) $(TOP) --vcd=wave.vcd --stop-time=10ms
 
 clean:
 	rm -f *.o *.cf wave.vcd

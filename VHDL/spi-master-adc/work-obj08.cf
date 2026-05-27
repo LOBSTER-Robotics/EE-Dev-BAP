@@ -1,7 +1,12 @@
 v 4
-file . "tb/counter_tb.vhd" "f368162b97e4c836c8c08be8e9aab38e61b4d25d" "20260519100432.943":
-  entity counter_tb at 1( 0) + 0 on 21;
-  architecture sim of counter_tb at 8( 97) + 0 on 22;
-file . "src/counter.vhd" "4fc036219f9cdcf76c0fbdcdf854949cd234ee65" "20260519100432.488":
-  entity counter at 1( 0) + 0 on 19;
-  architecture rtl of counter at 13( 222) + 0 on 20;
+file . "tb/tb_adc_spi_controller.vhd" "93d63f15dc2a6ec5cde90b437b464f705a71272e" "20260527084928.037":
+  entity tb_adc_spi_controller at 6( 182) + 0 on 17;
+  architecture behavioral of tb_adc_spi_controller at 13( 312) + 0 on 18;
+file . "src/ADC_master.vhd" "808d80d995c0de39c2644894ebc785529b58bae2" "20260527084926.634":
+  entity adc_spi_controller at 1( 0) + 0 on 11;
+  entity adc_spi_config at 53( 1806) + 0 on 12;
+  entity adc_acquisition_engine at 78( 2566) + 0 on 13;
+file . "src/ADC_master_behavioral.vhd" "10926b258cd5986da0e04aba6166ac1d651ef28f" "20260527084927.164":
+  architecture behavioral of adc_spi_controller at 1( 0) + 0 on 14;
+  architecture behavioral of adc_spi_config at 281( 8523) + 0 on 15;
+  architecture behavioral of adc_acquisition_engine at 657( 20259) + 0 on 16;
