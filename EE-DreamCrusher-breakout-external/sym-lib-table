@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LOBSTER")(type "Legacy")(uri "${KIPRJMOD}/Libraries/Symbols/LOBSTER.lib")(options "")(descr ""))
+  (lib (name "New_Library")(type "KiCad")(uri "${KIPRJMOD}/Libraries/New_Library.kicad_sym")(options "")(descr ""))
+)

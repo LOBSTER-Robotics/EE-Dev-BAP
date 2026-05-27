@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "LOBSTER")(type "KiCad")(uri "/Users/arthuradmiraal/Documents/TU Delft/LOBSTER/Scout/DreamCrusher-interposer-internal/Libraries/Footprints/LOBSTER.pretty")(options "")(descr ""))
+  (lib (name "AmassConnectors")(type "KiCad")(uri "/Users/arthuradmiraal/Documents/TU Delft/LOBSTER/Scout/DreamCrusher-interposer-internal/Libraries/Footprints/AmassConnectors.pretty")(options "")(descr ""))
+  (lib (name "new_Library")(type "KiCad")(uri "${KIPRJMOD}/Libraries/new_Library.pretty")(options "")(descr ""))
+  (lib (name "custom_components")(type "KiCad")(uri "${KIPRJMOD}/Libraries/custom_components.pretty")(options "")(descr ""))
+)
