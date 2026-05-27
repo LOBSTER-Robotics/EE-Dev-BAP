@@ -36,8 +36,7 @@ entity Controller is
     generic (
         G_NUM_CHANNELS           : positive := 16;
         G_DAC_WIDTH              : positive := 16;
-        G_BYTE_WIDTH             : positive := 8;
-        G_LARGE_FIFO_COUNT_WIDTH : positive := 16
+        G_BYTE_WIDTH             : positive := 8
     );
     port (
         i_clk : in std_logic;

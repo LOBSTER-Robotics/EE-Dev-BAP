@@ -72,7 +72,8 @@ begin
             G_NUM_CHANNELS           => 16,
             G_ADC_WIDTH              => 24,
             G_BYTE_WIDTH             => 8,
-            G_LARGE_FIFO_COUNT_WIDTH => 16
+            G_LARGE_FIFO_COUNT_WIDTH => 16,
+            G_MUX_WAIT_CYCLES        => 3
         )
         port map (
             i_clk   => clk,

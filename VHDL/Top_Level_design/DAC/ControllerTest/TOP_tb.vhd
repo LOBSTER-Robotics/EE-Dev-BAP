@@ -78,8 +78,6 @@ begin
 
             i_small_fifo_rd_en => s_small_fifo_rd_en,
 
-            o_small_fifo_dout => s_small_fifo_dout,
-
             o_small_fifo_empty        => s_small_fifo_empty,
             o_small_fifo_full         => s_small_fifo_full,
             o_small_fifo_almost_empty => s_small_fifo_almost_empty,
@@ -90,7 +88,6 @@ begin
             o_large_fifo_almost_empty => s_large_fifo_almost_empty,
             o_large_fifo_almost_full  => s_large_fifo_almost_full,
 
-            o_fifo_sel   => s_fifo_sel,
             o_busy       => s_busy,
             o_frame_done => s_frame_done
         );
