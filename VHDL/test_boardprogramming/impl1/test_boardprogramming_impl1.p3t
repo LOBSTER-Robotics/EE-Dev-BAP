@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "test_boardprogramming_impl1.log"
+-o "test_boardprogramming_impl1.csv"
+-pr "test_boardprogramming_impl1.prf"

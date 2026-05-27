@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="DDR_RX" module="DDR_GENERIC" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2026 05 27 11:46:27.571" version="6.0" type="Module" synthesis="synplify" source_format="VHDL">
+  <Package>
+		<File name="DDR_RX.lpc" type="lpc" modified="2026 05 27 11:46:23.744"/>
+		<File name="DDR_RX.vhd" type="top_level_vhdl" modified="2026 05 27 11:46:23.827"/>
+		<File name="DDR_RX_tmpl.vhd" type="template_vhdl" modified="2026 05 27 11:46:23.827"/>
+  </Package>
+</DiamondModule>
