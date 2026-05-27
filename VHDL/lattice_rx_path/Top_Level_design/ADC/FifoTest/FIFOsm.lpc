@@ -1,0 +1,50 @@
+[Device]
+Family=ecp5u
+PartType=LFE5U-12F
+PartName=LFE5U-12F-8BG381I
+SpeedGrade=8
+Package=CABGA381
+OperatingCondition=IND
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=FIFO
+CoreRevision=5.1
+ModuleName=FIFOsm
+SourceFormat=VHDL
+ParameterFileVersion=1.0
+Date=05/05/2026
+Time=16:31:43
+
+[Parameters]
+Verilog=0
+VHDL=1
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=[MSB:LSB]
+IO=0
+FIFOImp=EBR Based
+Depth=4
+Width=24
+regout=0
+CtrlByRdEn=0
+EmpFlg=1
+PeMode=Static - Dual Threshold
+PeAssert=1
+PeDeassert=3
+FullFlg=1
+PfMode=Static - Dual Threshold
+PfAssert=4
+PfDeassert=2
+Reset=Async
+Reset1=Sync
+RDataCount=0
+EnECC=0
+EnFWFT=0
+
+[Command]
+cmd_line= -w -n FIFOsm -lang vhdl -synth lse -bus_exp 7 -bb -arch sa5p00 -type ebfifo -sync_mode -depth 4 -width 24 -no_enable -pe 1 -pe2 3 -pf 4 -pf2 2 -reset_rel SYNC

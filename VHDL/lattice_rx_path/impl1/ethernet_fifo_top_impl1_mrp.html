@@ -1,0 +1,2884 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+             Lattice Mapping Report File for Design Module 'top'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a ECP5U -p LFE5U-45F -t CABGA381 -s 8 -oc Commercial
+     ethernet_fifo_top_impl1.ngd -o ethernet_fifo_top_impl1_map.ncd -pr
+     ethernet_fifo_top_impl1.prf -mp ethernet_fifo_top_impl1.mrp -lpf
+     D:/BAP/lattice_projecten/impl1/ethernet_fifo_top_impl1.lpf -lpf
+     D:/BAP/lattice_projecten/ethernet_fifo_top.lpf -gui -msgset
+     D:/BAP/lattice_projecten/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LFE5U-45FCABGA381
+Target Performance:   8
+Mapper:  sa5p00,  version:  Diamond (64-bit) 3.14.0.75.2
+Mapped on:  05/21/26  19:08:07
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:    349 out of 44457 (1%)
+      PFU registers:          349 out of 43848 (1%)
+      PIO registers:            0 out of   609 (0%)
+   Number of SLICEs:       813 out of 21924 (4%)
+      SLICEs as Logic/ROM:    813 out of 21924 (4%)
+      SLICEs as RAM:            0 out of 16443 (0%)
+      SLICEs as Carry:        339 out of 21924 (2%)
+   Number of LUT4s:        1517 out of 43848 (3%)
+      Number used as logic LUTs:        839
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      678
+      Number used as shift registers:     0
+   Number of PIO sites used: 36 out of 203 (18%)
+   Number of IDDR/ODDR/TDDR cells used: 6 out of 609 (1%)
+      Number of IDDR cells:   0
+      Number of ODDR cells:   6
+      Number of TDDR cells:   0
+   Number of PIO using at least one IDDR/ODDR/TDDR: 6 (0 differential)
+      Number of PIO using IDDR only:        0 (0 differential)
+      Number of PIO using ODDR only:        6 (0 differential)
+      Number of PIO using TDDR only:        0 (0 differential)
+      Number of PIO using IDDR/ODDR:        0 (0 differential)
+      Number of PIO using IDDR/TDDR:        0 (0 differential)
+      Number of PIO using ODDR/TDDR:        0 (0 differential)
+      Number of PIO using IDDR/ODDR/TDDR:   0 (0 differential)
+   Number of block RAMs:  17 out of 108 (16%)
+   Number of GSRs:  1 out of 1 (100%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 4 (0%)
+   Number of DCC:  0 out of 60 (0%)
+   Number of DCS:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 4 (0%)
+   Number of DDRDLLs:  0 out of 4 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 10 (0%)
+
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+
+        Number Of Mapped DSP Components:
+   --------------------------------
+   MULT18X18D          14
+   MULT9X9D            0
+   ALU54B              7
+   ALU24B              0
+   PRADD18A            0
+   PRADD9A             0
+   --------------------------------
+   Number of Used DSP MULT Sites:  28 out of 144 (19 %)
+   Number of Used DSP ALU Sites:  14 out of 72 (19 %)
+   Number of Used DSP PRADD Sites:  0 out of 144 (0 %)
+   Number of clocks:  1
+     Net clk_c: 255 loads, 255 rising, 0 falling (Driver: PIO clk )
+   Number of Clock Enables:  61
+     Net u_Fifosm15/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm15/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm15/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm1/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm1/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm1/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm2/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm2/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm2/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm3/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm3/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm3/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm4/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm4/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm4/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm5/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm5/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm5/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm6/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm6/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm6/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm7/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm7/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm7/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm8/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm8/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm8/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm0/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm0/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm0/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm10/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm10/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm10/rden_i: 3 loads, 1 LSLICEs
+     Net clk_c_enable_64: 3 loads, 3 LSLICEs
+
+     Net u_Fifosm11/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm11/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm11/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm12/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm12/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm12/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm13/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm13/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm13/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm14/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm14/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm14/rden_i: 3 loads, 1 LSLICEs
+     Net mac_inst/clk_c_enable_13: 2 loads, 2 LSLICEs
+     Net clk_c_enable_15: 2 loads, 2 LSLICEs
+     Net mac_inst/clk_c_enable_71: 4 loads, 4 LSLICEs
+     Net mac_inst/clk_c_enable_74: 1 loads, 1 LSLICEs
+     Net u_Fifo_large/fcnt_en: 5 loads, 5 LSLICEs
+     Net u_Fifo_large/wren_i: 6 loads, 5 LSLICEs
+     Net u_Fifo_large/rden_i: 7 loads, 5 LSLICEs
+     Net u_Fifosm9/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm9/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm9/rden_i: 3 loads, 1 LSLICEs
+     Net clk_c_enable_38: 12 loads, 12 LSLICEs
+     Net clk_c_enable_73: 5 loads, 5 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_61: 24 loads, 24 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_72: 1 loads, 1 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_4: 1 loads, 1 LSLICEs
+   Number of local set/reset loads for net rst_c merged into GSR:  6
+   Number of LSRs:  3
+     Net rst_c: 108 loads, 91 LSLICEs
+     Net mac_inst/n3482: 3 loads, 3 LSLICEs
+     Net udp_inst/n6371: 5 loads, 5 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net fifo_sel_0: 192 loads
+     Net rst_c: 125 loads
+     Net Write_En_c: 80 loads
+     Net n2296: 63 loads
+     Net u_adc_fifo_frame_packer/n1843: 56 loads
+     Net n1846: 52 loads
+     Net fifo_sel_2: 48 loads
+     Net mac_inst/n2294: 48 loads
+     Net n11984: 46 loads
+     Net mac_inst/n2295: 44 loads
+
+
+
+
+   Number of warnings:  7
+   Number of errors:    0
+     
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+WARNING - map: lat_alu_13 : removed the input signal of SIGNEDCIN pin because
+
+     it's not legal.
+WARNING - map: lat_alu_11 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+WARNING - map: lat_alu_9 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+WARNING - map: lat_alu_3 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+WARNING - map: lat_alu_7 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+WARNING - map: lat_alu_5 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+WARNING - map: lat_alu_1 : removed the input signal of SIGNEDCIN pin because
+     it's not legal.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| packer_frame_done   | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| packer_busy         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txc           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txctl         | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txd[3]        | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txd[2]        | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txd[1]        | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| rgmii_txd[0]        | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| clk                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| rst                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[23]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[22]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[21]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[20]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[19]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[18]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[17]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[16]            | INPUT     | LVCMOS25  |            |
+
++---------------------+-----------+-----------+------------+
+| Data[15]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[14]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[13]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[12]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[11]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[10]            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[9]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[8]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[7]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[6]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[5]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[4]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[3]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[2]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[1]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Data[0]             | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Write_En            | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| enable              | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Signal n1 was merged into signal rst_c
+Signal u_Fifosm9/rden_i_inv was merged into signal u_Fifosm9/rden_i
+Signal u_Fifosm9/invout_1 was merged into signal adc_fifo_empty_9
+Signal u_Fifosm9/invout_2 was merged into signal u_Fifosm9/Full
+Signal u_Fifo_large/fcnt_en_inv_inv was merged into signal u_Fifo_large/fcnt_en
+Signal u_Fifo_large/fcnt_en_inv was merged into signal u_Fifo_large/fcnt_en
+Signal u_Fifo_large/rden_i_inv was merged into signal u_Fifo_large/rden_i
+Signal u_Fifo_large/invout_1 was merged into signal fifo_empty
+Signal u_Fifo_large/invout_2 was merged into signal u_Fifo_large/large_fifo_full
+     
+Signal u_Fifosm14/rden_i_inv was merged into signal u_Fifosm14/rden_i
+Signal u_Fifosm14/invout_1 was merged into signal adc_fifo_empty_14
+Signal u_Fifosm14/invout_2 was merged into signal u_Fifosm14/Full
+Signal u_Fifosm13/rden_i_inv was merged into signal u_Fifosm13/rden_i
+Signal u_Fifosm13/invout_1 was merged into signal adc_fifo_empty_13
+
+Signal u_Fifosm13/invout_2 was merged into signal u_Fifosm13/Full
+Signal u_Fifosm12/rden_i_inv was merged into signal u_Fifosm12/rden_i
+Signal u_Fifosm12/invout_1 was merged into signal adc_fifo_empty_12
+Signal u_Fifosm12/invout_2 was merged into signal u_Fifosm12/Full
+Signal u_Fifosm11/rden_i_inv was merged into signal u_Fifosm11/rden_i
+Signal u_Fifosm11/invout_1 was merged into signal adc_fifo_empty_11
+Signal u_Fifosm11/invout_2 was merged into signal u_Fifosm11/Full
+Signal u_Fifosm10/rden_i_inv was merged into signal u_Fifosm10/rden_i
+Signal u_Fifosm10/invout_1 was merged into signal adc_fifo_empty_10
+Signal u_Fifosm10/invout_2 was merged into signal u_Fifosm10/Full
+Signal u_Fifosm0/rden_i_inv was merged into signal u_Fifosm0/rden_i
+Signal u_Fifosm0/invout_1 was merged into signal adc_fifo_empty_0
+Signal u_Fifosm0/invout_2 was merged into signal u_Fifosm0/Full
+Signal u_Fifosm8/rden_i_inv was merged into signal u_Fifosm8/rden_i
+Signal u_Fifosm8/invout_1 was merged into signal adc_fifo_empty_8
+Signal u_Fifosm8/invout_2 was merged into signal u_Fifosm8/Full
+Signal u_Fifosm7/rden_i_inv was merged into signal u_Fifosm7/rden_i
+Signal u_Fifosm7/invout_1 was merged into signal adc_fifo_empty_7
+Signal u_Fifosm7/invout_2 was merged into signal u_Fifosm7/Full
+Signal u_Fifosm6/rden_i_inv was merged into signal u_Fifosm6/rden_i
+Signal u_Fifosm6/invout_1 was merged into signal adc_fifo_empty_6
+Signal u_Fifosm6/invout_2 was merged into signal u_Fifosm6/Full
+Signal u_Fifosm5/rden_i_inv was merged into signal u_Fifosm5/rden_i
+Signal u_Fifosm5/invout_1 was merged into signal adc_fifo_empty_5
+Signal u_Fifosm5/invout_2 was merged into signal u_Fifosm5/Full
+Signal u_Fifosm4/rden_i_inv was merged into signal u_Fifosm4/rden_i
+Signal u_Fifosm4/invout_1 was merged into signal adc_fifo_empty_4
+Signal u_Fifosm4/invout_2 was merged into signal u_Fifosm4/Full
+Signal u_Fifosm3/rden_i_inv was merged into signal u_Fifosm3/rden_i
+Signal u_Fifosm3/invout_1 was merged into signal adc_fifo_empty_3
+Signal u_Fifosm3/invout_2 was merged into signal u_Fifosm3/Full
+Signal u_Fifosm2/rden_i_inv was merged into signal u_Fifosm2/rden_i
+Signal u_Fifosm2/invout_1 was merged into signal adc_fifo_empty_2
+Signal u_Fifosm2/invout_2 was merged into signal u_Fifosm2/Full
+Signal u_Fifosm1/rden_i_inv was merged into signal u_Fifosm1/rden_i
+Signal u_Fifosm1/invout_1 was merged into signal adc_fifo_empty_1
+Signal u_Fifosm1/invout_2 was merged into signal u_Fifosm1/Full
+Signal u_Fifosm15/rden_i_inv was merged into signal u_Fifosm15/rden_i
+Signal u_Fifosm15/invout_1 was merged into signal adc_fifo_empty_15
+Signal u_Fifosm15/invout_2 was merged into signal u_Fifosm15/Full
+Signal VCC_net undriven or does not drive anything - clipped.
+Signal udp_inst/idx_703_add_4_9/S1 undriven or does not drive anything -
+     clipped.
+Signal udp_inst/idx_703_add_4_9/CO undriven or does not drive anything -
+     clipped.
+Signal udp_inst/idx_703_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal udp_inst/idx_703_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm9/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm9/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm9/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm9/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+
+Signal u_Fifosm9/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm9/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm9/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm9/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm9/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm9/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm9/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm9/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal add_1040_add_4_18/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_18/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a5/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a5/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/af_clr_cmp_4/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_4/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_3/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_3/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_2/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_2/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_1/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_0/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_0/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_ci_a/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_ci_a/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_clr_cmp_ci_a/CI undriven or does not drive anything -
+
+     clipped.
+Signal u_Fifo_large/a4/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a4/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/af_set_cmp_4/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_4/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_3/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_3/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_2/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_2/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_1/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_0/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_0/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_ci_a/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_ci_a/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/af_set_cmp_ci_a/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/a3/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a3/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/ae_clr_cmp_4/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_4/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_3/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_3/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_2/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_2/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_1/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_0/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_0/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_ci_a/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_ci_a/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_clr_cmp_ci_a/CI undriven or does not drive anything -
+
+     clipped.
+Signal u_Fifo_large/a2/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a2/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/ae_set_cmp_4/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_4/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_3/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_3/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_2/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_2/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_1/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_0/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_0/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_ci_a/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_ci_a/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/ae_set_cmp_ci_a/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/r_ctr_4/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifo_large/w_ctr_4/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_4/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_4/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_3/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_3/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/a0/S1 undriven or does not drive anything - clipped.
+
+Signal u_Fifo_large/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_4/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_4/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_3/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_3/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifo_large/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+     
+Signal u_Fifo_large/bdcnt_bctr_4/CO undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifo_large/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal add_1040_add_4_10/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_10/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_20/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_20/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_22/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_22/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_24/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_24/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_4/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_4/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_12/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_12/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_26/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_26/S0 undriven or does not drive anything - clipped.
+Signal mac_inst/frame_len_702_add_4_33/S1 undriven or does not drive anything -
+     clipped.
+Signal mac_inst/frame_len_702_add_4_33/CO undriven or does not drive anything -
+     clipped.
+Signal mac_inst/frame_len_702_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal mac_inst/frame_len_702_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal add_1040_add_4_28/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_28/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_6/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_6/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_2/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_2/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_2/CI undriven or does not drive anything - clipped.
+Signal add_1040_add_4_14/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_14/S0 undriven or does not drive anything - clipped.
+
+Signal add_1040_add_4_30/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_30/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_16/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_16/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_8/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_8/S0 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_32/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_32/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm14/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm14/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm14/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm14/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm14/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm14/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm14/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm14/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm14/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm14/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm14/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm13/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm13/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm13/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm13/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm13/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_1/S0 undriven or does not drive anything - clipped.
+
+Signal u_Fifosm13/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm13/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm13/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm13/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm13/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm13/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm13/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm13/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm12/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm12/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm12/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm12/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm12/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm12/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm12/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm12/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm12/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm12/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+
+Signal u_Fifosm12/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm12/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm11/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm11/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm11/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm11/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm11/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm11/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm11/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm11/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm11/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm11/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm11/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm11/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm10/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm10/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm10/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm10/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm10/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+
+Signal u_Fifosm10/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm10/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm10/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm10/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm10/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm10/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm10/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm10/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm0/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm0/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm0/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm0/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm0/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm0/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm0/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm0/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm0/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm0/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm0/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal add_1040_add_4_cout/S1 undriven or does not drive anything - clipped.
+Signal add_1040_add_4_cout/CO undriven or does not drive anything - clipped.
+
+Signal u_Fifosm8/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm8/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm8/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm8/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm8/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm8/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm8/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm8/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm8/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm8/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm8/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm7/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm7/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm7/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm7/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm7/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm7/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_0/S1 undriven or does not drive anything - clipped.
+
+Signal u_Fifosm7/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm7/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm7/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm7/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm7/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm7/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm6/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm6/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm6/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm6/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm6/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm6/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm6/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm6/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm6/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm6/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm6/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm5/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm5/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm5/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm5/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm5/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/a1/CO undriven or does not drive anything - clipped.
+
+Signal u_Fifosm5/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm5/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm5/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm5/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm5/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm5/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm5/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm4/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm4/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm4/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm4/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm4/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm4/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm4/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm4/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm4/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm4/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+
+Signal u_Fifosm4/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm3/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm3/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm3/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm3/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm3/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm3/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm3/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm3/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm3/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm3/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm3/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm2/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm2/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm2/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm2/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm2/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm2/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_1/S1 undriven or does not drive anything - clipped.
+
+Signal u_Fifosm2/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm2/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm2/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm2/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm2/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm2/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm1/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm1/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm1/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm1/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/w_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm1/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm1/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm1/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm1/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm1/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm1/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm1/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm15/r_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm15/r_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/r_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/r_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm15/w_ctr_0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm15/w_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/w_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/w_ctr_cia/CI undriven or does not drive anything - clipped.
+
+Signal u_Fifosm15/a1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/a1/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/g_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm15/a0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/a0/CO undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_Fifosm15/e_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_Fifosm15/bdcnt_bctr_1/S1 undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm15/bdcnt_bctr_1/CO undriven or does not drive anything - clipped.
+     
+Signal u_Fifosm15/bdcnt_bctr_cia/S1 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm15/bdcnt_bctr_cia/S0 undriven or does not drive anything -
+     clipped.
+Signal u_Fifosm15/bdcnt_bctr_cia/CI undriven or does not drive anything -
+     clipped.
+Block udp_inst/i1_1_lut was optimized away.
+Block u_Fifosm9/INV_6 was optimized away.
+Block u_Fifosm9/INV_7 was optimized away.
+Block u_Fifosm9/INV_8 was optimized away.
+Block u_Fifo_large/INV_0 was optimized away.
+Block u_Fifo_large/INV_3 was optimized away.
+Block u_Fifo_large/INV_6 was optimized away.
+Block u_Fifo_large/INV_7 was optimized away.
+Block u_Fifo_large/INV_8 was optimized away.
+Block u_Fifosm14/INV_6 was optimized away.
+Block u_Fifosm14/INV_7 was optimized away.
+Block u_Fifosm14/INV_8 was optimized away.
+Block u_Fifosm13/INV_6 was optimized away.
+Block u_Fifosm13/INV_7 was optimized away.
+Block u_Fifosm13/INV_8 was optimized away.
+Block u_Fifosm12/INV_6 was optimized away.
+Block u_Fifosm12/INV_7 was optimized away.
+Block u_Fifosm12/INV_8 was optimized away.
+Block u_Fifosm11/INV_6 was optimized away.
+Block u_Fifosm11/INV_7 was optimized away.
+Block u_Fifosm11/INV_8 was optimized away.
+Block u_Fifosm10/INV_6 was optimized away.
+Block u_Fifosm10/INV_7 was optimized away.
+Block u_Fifosm10/INV_8 was optimized away.
+Block u_Fifosm0/INV_6 was optimized away.
+Block u_Fifosm0/INV_7 was optimized away.
+Block u_Fifosm0/INV_8 was optimized away.
+Block u_Fifosm8/INV_6 was optimized away.
+
+Block u_Fifosm8/INV_7 was optimized away.
+Block u_Fifosm8/INV_8 was optimized away.
+Block u_Fifosm7/INV_6 was optimized away.
+Block u_Fifosm7/INV_7 was optimized away.
+Block u_Fifosm7/INV_8 was optimized away.
+Block u_Fifosm6/INV_6 was optimized away.
+Block u_Fifosm6/INV_7 was optimized away.
+Block u_Fifosm6/INV_8 was optimized away.
+Block u_Fifosm5/INV_6 was optimized away.
+Block u_Fifosm5/INV_7 was optimized away.
+Block u_Fifosm5/INV_8 was optimized away.
+Block u_Fifosm4/INV_6 was optimized away.
+Block u_Fifosm4/INV_7 was optimized away.
+Block u_Fifosm4/INV_8 was optimized away.
+Block u_Fifosm3/INV_6 was optimized away.
+Block u_Fifosm3/INV_7 was optimized away.
+Block u_Fifosm3/INV_8 was optimized away.
+Block u_Fifosm2/INV_6 was optimized away.
+Block u_Fifosm2/INV_7 was optimized away.
+Block u_Fifosm2/INV_8 was optimized away.
+Block u_Fifosm1/INV_6 was optimized away.
+Block u_Fifosm1/INV_7 was optimized away.
+Block u_Fifosm1/INV_8 was optimized away.
+Block u_Fifosm15/INV_6 was optimized away.
+Block u_Fifosm15/INV_7 was optimized away.
+Block u_Fifosm15/INV_8 was optimized away.
+Block i2 was optimized away.
+
+
+
+<A name="mrp_mem"></A><B><U><big>Memory Usage</big></U></B>
+
+    
+         
+    INFO: Design contains EBR with GSR enabled. The GSR is only applicable for
+         output registers except FIFO. 
+    /u_Fifo_large:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 66
+    PFU Registers: 33
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 8,  Depth_R= 512,
+         Depth_W= 512,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= Fifolg.lpc
+/u_Fifosm0:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm1:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 18
+    PFU Registers: 7
+
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm10:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm11:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm12:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm13:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm14:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm15:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 18
+    PFU Registers: 7
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm2:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm3:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm4:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm5:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm6:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm7:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm8:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 19
+    PFU Registers: 8
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+/u_Fifosm9:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 18
+    PFU Registers: 7
+
+    -Contains EBR pdp_ram_0_0_0:  TYPE= PDPW16KD,  Width= 24,  Depth_R= 4,
+         Depth_W= 4,  REGMODE= NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE=
+         SYNC,  GSR= ENABLED,  MEM_INIT_FILE= ,  MEM_LPC_FILE= FIFOsm.lpc
+
+
+
+<A name="mrp_dsp"></A><B><U><big>DSP Component Details</big></U></B>
+
+
+     . ALU54B  lat_alu_13:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . MULT18X18D  lat_mult_12:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_22_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_16_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . ALU54B  lat_alu_11:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . MULT18X18D  lat_mult_10:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_19_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . ALU54B  lat_alu_9:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . ALU54B  lat_alu_3:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . MULT18X18D  lat_mult_8:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_17_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  lat_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . ALU54B  lat_alu_7:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . MULT18X18D  lat_mult_6:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_24_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_20_mult_2:
+
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . ALU54B  lat_alu_5:
+
+     54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . ALU54B  lat_alu_1:
+
+     54-Bit ALU
+
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+     	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+     	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+     	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+     
+	LEGACY  	DISABLED
+
+     
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+     . MULT18X18D  lat_mult_4:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  lat_mult_0:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     . MULT18X18D  Data_23__I_0_mult_2:
+
+     Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+     	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+     	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+     	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+     
+	C_PSE17		0b00000000000000000
+
+     
+
+
+
+<A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
+---------------
+
+Instance Name: lat_alu_13
+         Type: ALU54B
+Instance Name: lat_mult_12
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_22_mult_2
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_16_mult_2
+         Type: MULT18X18D
+Instance Name: u_Fifosm15/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm1/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm2/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: lat_alu_11
+         Type: ALU54B
+Instance Name: u_Fifosm3/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm4/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm5/pdp_ram_0_0_0
+         Type: PDPW16KD
+
+Instance Name: lat_mult_10
+         Type: MULT18X18D
+Instance Name: u_Fifosm6/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm7/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm8/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm0/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm10/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm11/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: Data_23__I_0_19_mult_2
+         Type: MULT18X18D
+Instance Name: u_Fifosm12/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm13/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: lat_alu_9
+         Type: ALU54B
+Instance Name: lat_alu_3
+         Type: ALU54B
+Instance Name: lat_mult_8
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_17_mult_2
+         Type: MULT18X18D
+Instance Name: lat_mult_2
+         Type: MULT18X18D
+Instance Name: lat_alu_7
+         Type: ALU54B
+Instance Name: u_Fifosm14/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: lat_mult_6
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_24_mult_2
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_20_mult_2
+         Type: MULT18X18D
+Instance Name: lat_alu_5
+         Type: ALU54B
+Instance Name: lat_alu_1
+         Type: ALU54B
+Instance Name: lat_mult_4
+         Type: MULT18X18D
+Instance Name: lat_mult_0
+         Type: MULT18X18D
+Instance Name: Data_23__I_0_mult_2
+         Type: MULT18X18D
+Instance Name: u_Fifo_large/pdp_ram_0_0_0
+         Type: PDPW16KD
+Instance Name: u_Fifosm9/pdp_ram_0_0_0
+         Type: PDPW16KD
+
+
+
+
+
+<A name="mrp_gsr"></A><B><U><big>GSR Usage</big></U></B>
+---------
+
+GSR Component:
+   The Global Set Reset (GSR) resource has been used to implement a global reset
+        of the design. The reset signal used for GSR control is 'rst_c'.
+        
+
+     GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+        
+
+     Components with disabled GSR Property
+-------------------------------------
+
+     These components have the GSR property set to DISABLED. The components will
+     not respond to the reset signal 'rst_c' via the GSR component.
+
+     Type and number of components of the type: 
+   Register = 160 
+   ALU54B = 7, MULT18X18D = 14 
+
+     Type and instance name of component: 
+   Register : mac_inst/ifg_cnt__i0
+   Register : mac_inst/pre_cnt__i0
+   Register : mac_inst/state_FSM_i1
+   Register : mac_inst/crc_cnt__i0
+   Register : mac_inst/crc_reg_i0
+   Register : mac_inst/frame_len_702__i0
+   Register : mac_inst/ifg_cnt__i3
+   Register : mac_inst/pad_cnt__i5
+   Register : mac_inst/pad_cnt__i4
+   Register : mac_inst/pad_cnt__i3
+   Register : mac_inst/ifg_cnt__i2
+   Register : mac_inst/ifg_cnt__i1
+   Register : mac_inst/pre_cnt__i1
+   Register : mac_inst/pre_cnt__i2
+   Register : mac_inst/state_FSM_i2
+   Register : mac_inst/state_FSM_i3
+   Register : mac_inst/state_FSM_i4
+   Register : mac_inst/state_FSM_i5
+   Register : mac_inst/state_FSM_i6
+   Register : mac_inst/crc_cnt__i1
+   Register : mac_inst/crc_reg_i1
+   Register : mac_inst/crc_reg_i2
+   Register : mac_inst/crc_reg_i3
+   Register : mac_inst/crc_reg_i4
+   Register : mac_inst/crc_reg_i5
+   Register : mac_inst/crc_reg_i6
+   Register : mac_inst/crc_reg_i7
+   Register : mac_inst/crc_reg_i8
+   Register : mac_inst/crc_reg_i9
+   Register : mac_inst/crc_reg_i10
+   Register : mac_inst/crc_reg_i11
+   Register : mac_inst/crc_reg_i12
+   Register : mac_inst/crc_reg_i13
+
+   Register : mac_inst/crc_reg_i14
+   Register : mac_inst/crc_reg_i15
+   Register : mac_inst/crc_reg_i16
+   Register : mac_inst/crc_reg_i17
+   Register : mac_inst/crc_reg_i18
+   Register : mac_inst/crc_reg_i19
+   Register : mac_inst/crc_reg_i20
+   Register : mac_inst/crc_reg_i21
+   Register : mac_inst/crc_reg_i22
+   Register : mac_inst/crc_reg_i23
+   Register : mac_inst/crc_reg_i24
+   Register : mac_inst/crc_reg_i25
+   Register : mac_inst/crc_reg_i26
+   Register : mac_inst/crc_reg_i27
+   Register : mac_inst/crc_reg_i28
+   Register : mac_inst/crc_reg_i29
+   Register : mac_inst/crc_reg_i30
+   Register : mac_inst/crc_reg_i31
+   Register : mac_inst/pad_cnt__i2
+   Register : mac_inst/frame_len_702__i1
+   Register : mac_inst/pad_cnt__i1
+   Register : mac_inst/pad_cnt__i0
+   Register : mac_inst/frame_len_702__i2
+   Register : mac_inst/frame_len_702__i3
+   Register : mac_inst/frame_len_702__i4
+   Register : mac_inst/frame_len_702__i5
+   Register : mac_inst/frame_len_702__i6
+   Register : mac_inst/frame_len_702__i7
+   Register : mac_inst/frame_len_702__i8
+   Register : mac_inst/frame_len_702__i9
+   Register : mac_inst/frame_len_702__i10
+   Register : mac_inst/frame_len_702__i11
+   Register : mac_inst/frame_len_702__i12
+   Register : mac_inst/frame_len_702__i13
+   Register : mac_inst/frame_len_702__i14
+   Register : mac_inst/frame_len_702__i15
+   Register : mac_inst/frame_len_702__i16
+   Register : mac_inst/frame_len_702__i17
+   Register : mac_inst/frame_len_702__i18
+   Register : mac_inst/frame_len_702__i19
+   Register : mac_inst/frame_len_702__i20
+   Register : mac_inst/frame_len_702__i21
+   Register : mac_inst/frame_len_702__i22
+   Register : mac_inst/frame_len_702__i23
+   Register : mac_inst/frame_len_702__i24
+   Register : mac_inst/frame_len_702__i25
+   Register : mac_inst/frame_len_702__i26
+   Register : mac_inst/frame_len_702__i27
+   Register : mac_inst/frame_len_702__i28
+   Register : mac_inst/frame_len_702__i29
+   Register : mac_inst/frame_len_702__i30
+   Register : mac_inst/frame_len_702__i31
+   Register : udp_inst/state_FSM_i1
+   Register : udp_inst/idx_703__i7
+   Register : udp_inst/idx_703__i6
+   Register : udp_inst/state_FSM_i2
+
+   Register : udp_inst/state_FSM_i3
+   Register : udp_inst/state_FSM_i4
+   Register : udp_inst/state_FSM_i5
+   Register : udp_inst/state_FSM_i6
+   Register : udp_inst/idx_703__i5
+   Register : udp_inst/idx_703__i4
+   Register : udp_inst/idx_703__i3
+   Register : udp_inst/idx_703__i2
+   Register : udp_inst/idx_703__i1
+   Register : udp_inst/idx_703__i0
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i0
+   Register : u_adc_fifo_frame_packer/r_next_sample__i0
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i1
+   Register : u_adc_fifo_frame_packer/r_byte__i0
+   Register : u_adc_fifo_frame_packer/r_channel__i0
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i1
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i2
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i3
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i4
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i5
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i6
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i7
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i8
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i9
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i10
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i11
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i12
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i13
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i14
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i15
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i16
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i17
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i18
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i19
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i20
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i21
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i22
+   Register : u_adc_fifo_frame_packer/r_curr_sample__i23
+   Register : u_adc_fifo_frame_packer/r_next_sample__i1
+   Register : u_adc_fifo_frame_packer/r_next_sample__i2
+   Register : u_adc_fifo_frame_packer/r_next_sample__i3
+   Register : u_adc_fifo_frame_packer/r_next_sample__i4
+   Register : u_adc_fifo_frame_packer/r_next_sample__i5
+   Register : u_adc_fifo_frame_packer/r_next_sample__i6
+   Register : u_adc_fifo_frame_packer/r_next_sample__i7
+   Register : u_adc_fifo_frame_packer/r_next_sample__i8
+   Register : u_adc_fifo_frame_packer/r_next_sample__i9
+   Register : u_adc_fifo_frame_packer/r_next_sample__i10
+   Register : u_adc_fifo_frame_packer/r_next_sample__i11
+   Register : u_adc_fifo_frame_packer/r_next_sample__i12
+   Register : u_adc_fifo_frame_packer/r_next_sample__i13
+   Register : u_adc_fifo_frame_packer/r_next_sample__i14
+   Register : u_adc_fifo_frame_packer/r_next_sample__i15
+   Register : u_adc_fifo_frame_packer/r_next_sample__i16
+   Register : u_adc_fifo_frame_packer/r_next_sample__i17
+   Register : u_adc_fifo_frame_packer/r_next_sample__i18
+
+   Register : u_adc_fifo_frame_packer/r_next_sample__i19
+   Register : u_adc_fifo_frame_packer/r_next_sample__i20
+   Register : u_adc_fifo_frame_packer/r_next_sample__i21
+   Register : u_adc_fifo_frame_packer/r_next_sample__i22
+   Register : u_adc_fifo_frame_packer/r_next_sample__i23
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i2
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i3
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i4
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i5
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i6
+   Register : u_adc_fifo_frame_packer/r_state_FSM_i7
+   Register : u_adc_fifo_frame_packer/r_channel__i1
+   Register : u_adc_fifo_frame_packer/r_channel__i2
+   Register : u_adc_fifo_frame_packer/r_channel__i3
+   Register : u_adc_fifo_frame_packer/r_byte__i1
+   ALU54B : lat_alu_13
+   MULT18X18D : lat_mult_12
+   MULT18X18D : Data_23__I_0_22_mult_2
+   MULT18X18D : Data_23__I_0_16_mult_2
+   ALU54B : lat_alu_11
+   MULT18X18D : lat_mult_10
+   MULT18X18D : Data_23__I_0_19_mult_2
+   ALU54B : lat_alu_9
+   ALU54B : lat_alu_3
+   MULT18X18D : lat_mult_8
+   MULT18X18D : Data_23__I_0_17_mult_2
+   MULT18X18D : lat_mult_2
+   ALU54B : lat_alu_7
+   MULT18X18D : lat_mult_6
+   MULT18X18D : Data_23__I_0_24_mult_2
+   MULT18X18D : Data_23__I_0_20_mult_2
+   ALU54B : lat_alu_5
+   ALU54B : lat_alu_1
+   MULT18X18D : lat_mult_4
+   MULT18X18D : lat_mult_0
+   MULT18X18D : Data_23__I_0_mult_2
+
+     EBR components with enabled GSR
+-------------------------------
+
+     These EBR components have the GSR property set to ENABLED. The components
+     will respond to the asynchronous reset signal 'rst_c' via the GSR
+     component.
+
+     Type and number of components of the type: 
+   PDPW16KD = 17
+
+     Type and instance name of component: 
+   PDPW16KD : u_Fifosm15/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm1/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm2/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm3/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm4/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm5/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm6/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm7/pdp_ram_0_0_0
+
+   PDPW16KD : u_Fifosm8/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm0/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm10/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm11/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm12/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm13/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm14/pdp_ram_0_0_0
+   PDPW16KD : u_Fifo_large/pdp_ram_0_0_0
+   PDPW16KD : u_Fifosm9/pdp_ram_0_0_0
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 2 secs  
+   Total REAL Time: 2 secs  
+   Peak Memory Usage: 85 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

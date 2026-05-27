@@ -1,0 +1,442 @@
+<HTML>
+<HEAD><TITLE>Place & Route Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par"></A>PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&amp;T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 21 19:08:22 2026
+
+D:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f ethernet_fifo_top_impl1.p2t
+ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.dir
+ethernet_fifo_top_impl1.prf -gui -msgset D:/BAP/lattice_projecten/promote.xml
+
+
+Preference file: ethernet_fifo_top_impl1.prf.
+
+<A name="par_cts"></A><B><U><big>Cost Table Summary</big></U></B>
+Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
+Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
+----------   --------     -----        ------       -----------  -----------  ----         ------
+5_1   *      0            0.873        0            0.178        0            48           Completed
+* : Design saved.
+
+Total (real) run time for 1-seed: 48 secs 
+
+par done!
+
+Note: user must run &apos;Trace&apos; for timing closure signoff.
+
+Lattice Place and Route Report for Design &quot;ethernet_fifo_top_impl1_map.ncd&quot;
+Thu May 21 19:08:22 2026
+
+
+<A name="par_best"></A><B><U><big>Best Par Run</big></U></B>
+PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset D:/BAP/lattice_projecten/promote.xml -exp parUseNBR=1:parCDP=auto:parCDR=1:parPathBased=OFF:parASE=1:par_low_skew_clock_net=0 ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.dir/5_1.ncd ethernet_fifo_top_impl1.prf
+Preference file: ethernet_fifo_top_impl1.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file ethernet_fifo_top_impl1_map.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Loading device for application par from file &apos;sa5p45.nph&apos; in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+
+<A name="par_dus"></A><B><U><big>Device utilization summary:</big></U></B>
+
+   PIO (prelim)      36/245          14% used
+                     36/203          17% bonded
+   IOLOGIC            6/245           2% used
+
+   SLICE            813/21924         3% used
+
+   GSR                1/1           100% used
+   EBR               17/108          15% used
+   MULT18            14/72           19% used
+   ALU54              7/36           19% used
+
+
+Number of Signals: 2720
+Number of Connections: 6102
+
+Pin Constraint Summary:
+   0 out of 36 pins locked (0% locked).
+
+
+The following 4 signals are selected to use the primary clock routing resources:
+    clk_c (driver: clk, clk/ce/sr load #: 255/0/0)
+    rst_c (driver: rst, clk/ce/sr load #: 0/0/125)
+    u_adc_fifo_frame_packer/clk_c_enable_61 (driver: u_adc_fifo_frame_packer/SLICE_720, clk/ce/sr load #: 0/24/0)
+    clk_c_enable_38 (driver: SLICE_646, clk/ce/sr load #: 0/12/0)
+
+
+Signal rst_c is selected as Global Set/Reset.
+.
+Starting Placer Phase 0.
+...............
+Finished Placer Phase 0.  REAL time: 6 secs 
+
+
+Starting Placer Phase 1.
+................
+Placer score = 804926.
+Finished Placer Phase 1.  REAL time: 15 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  789767
+Finished Placer Phase 2.  REAL time: 16 secs 
+
+
+
+<A name="par_clk"></A><B><U><big>Clock Report</big></U></B>
+
+Global Clock Resources:
+  CLK_PIN    : 2 out of 12 (16%)
+  GR_PCLK    : 0 out of 12 (0%)
+  PLL        : 0 out of 4 (0%)
+  DCS        : 0 out of 2 (0%)
+  DCC        : 0 out of 60 (0%)
+  CLKDIV     : 0 out of 4 (0%)
+
+Quadrant TL Clocks:
+  PRIMARY &quot;clk_c&quot; from comp &quot;clk&quot; on CLK_PIN site &quot;B11 (PT38A)&quot;, CLK/CE/SR load = 28
+  PRIMARY &quot;rst_c&quot; from comp &quot;rst&quot; on CLK_PIN site &quot;H2 (PL35C)&quot;, CLK/CE/SR load = 12
+
+  PRIMARY  : 2 out of 16 (12%)
+
+Quadrant TR Clocks:
+  PRIMARY &quot;clk_c&quot; from comp &quot;clk&quot; on CLK_PIN site &quot;B11 (PT38A)&quot;, CLK/CE/SR load = 49
+  PRIMARY &quot;rst_c&quot; from comp &quot;rst&quot; on CLK_PIN site &quot;H2 (PL35C)&quot;, CLK/CE/SR load = 38
+  PRIMARY &quot;u_adc_fifo_frame_packer/clk_c_enable_61&quot; from F0 on comp &quot;u_adc_fifo_frame_packer/SLICE_720&quot; on site &quot;R37C45B&quot;, CLK/CE/SR load = 10
+  PRIMARY &quot;clk_c_enable_38&quot; from F0 on comp &quot;SLICE_646&quot; on site &quot;R40C48B&quot;, CLK/CE/SR load = 6
+
+  PRIMARY  : 4 out of 16 (25%)
+
+Quadrant BL Clocks:
+  PRIMARY &quot;clk_c&quot; from comp &quot;clk&quot; on CLK_PIN site &quot;B11 (PT38A)&quot;, CLK/CE/SR load = 91
+  PRIMARY &quot;rst_c&quot; from comp &quot;rst&quot; on CLK_PIN site &quot;H2 (PL35C)&quot;, CLK/CE/SR load = 48
+
+  PRIMARY  : 2 out of 16 (12%)
+
+Quadrant BR Clocks:
+  PRIMARY &quot;clk_c&quot; from comp &quot;clk&quot; on CLK_PIN site &quot;B11 (PT38A)&quot;, CLK/CE/SR load = 87
+  PRIMARY &quot;rst_c&quot; from comp &quot;rst&quot; on CLK_PIN site &quot;H2 (PL35C)&quot;, CLK/CE/SR load = 27
+  PRIMARY &quot;u_adc_fifo_frame_packer/clk_c_enable_61&quot; from F0 on comp &quot;u_adc_fifo_frame_packer/SLICE_720&quot; on site &quot;R37C45B&quot;, CLK/CE/SR load = 14
+  PRIMARY &quot;clk_c_enable_38&quot; from F0 on comp &quot;SLICE_646&quot; on site &quot;R40C48B&quot;, CLK/CE/SR load = 6
+
+  PRIMARY  : 4 out of 16 (25%)
+
+Edge Clocks:
+
+  No edge clock selected.
+
+
+
+
+
++
+I/O Usage Summary (final):
+   36 out of 245 (14.7%) PIO sites used.
+   36 out of 203 (17.7%) bonded PIO sites used.
+   Number of PIO comps: 36; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 8 / 27 ( 29%)  | 2.5V       | -          | -          |
+| 1        | 16 / 33 ( 48%) | 2.5V       | -          | -          |
+| 2        | 0 / 32 (  0%)  | -          | -          | -          |
+| 3        | 5 / 33 ( 15%)  | 2.5V       | -          | -          |
+| 6        | 1 / 33 (  3%)  | 2.5V       | -          | -          |
+| 7        | 6 / 32 ( 18%)  | 1.8V       | -          | -          |
+| 8        | 0 / 13 (  0%)  | -          | -          | -          |
++----------+----------------+------------+------------+------------+
+
+---------------------------------- DSP Report ----------------------------------
+
+DSP Slice #:           1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+# of MULT9                                                                 
+# of MULT18                              2  2  2     2  2  2  2            
+# of ALU24                                                                 
+# of ALU54                               1  1  1     1  1  1  1            
+# of PRADD9                                                                
+# of PRADD18                                                               
+
+DSP Slice #:          19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+# of MULT9                                                                 
+# of MULT18                                                                
+# of ALU24                                                                 
+# of ALU54                                                                 
+# of PRADD9                                                                
+# of PRADD18                                                               
+
+DSP Slice  7         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C31         MULT18X18D             MULT18          Data_23__I_0_19_mult_2    
+ MULT18_R22C32         MULT18X18D             MULT18               lat_mult_10          
+  ALU54_R22C34           ALU54B               ALU54                 lat_alu_11          
+
+DSP Slice  8         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C35         MULT18X18D             MULT18          Data_23__I_0_22_mult_2    
+ MULT18_R22C36         MULT18X18D             MULT18                lat_mult_4          
+  ALU54_R22C38           ALU54B               ALU54                 lat_alu_5           
+
+DSP Slice  9         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C42         MULT18X18D             MULT18          Data_23__I_0_17_mult_2    
+ MULT18_R22C43         MULT18X18D             MULT18                lat_mult_8          
+  ALU54_R22C45           ALU54B               ALU54                 lat_alu_9           
+
+DSP Slice 11         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C51         MULT18X18D             MULT18          Data_23__I_0_16_mult_2    
+ MULT18_R22C52         MULT18X18D             MULT18               lat_mult_12          
+  ALU54_R22C54           ALU54B               ALU54                 lat_alu_13          
+
+DSP Slice 12         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C55         MULT18X18D             MULT18           Data_23__I_0_mult_2      
+ MULT18_R22C56         MULT18X18D             MULT18                lat_mult_0          
+  ALU54_R22C58           ALU54B               ALU54                 lat_alu_1           
+
+DSP Slice 13         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C60         MULT18X18D             MULT18          Data_23__I_0_24_mult_2    
+ MULT18_R22C61         MULT18X18D             MULT18                lat_mult_2          
+  ALU54_R22C63           ALU54B               ALU54                 lat_alu_3           
+
+DSP Slice 14         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C64         MULT18X18D             MULT18          Data_23__I_0_20_mult_2    
+ MULT18_R22C65         MULT18X18D             MULT18                lat_mult_6          
+  ALU54_R22C67           ALU54B               ALU54                 lat_alu_7           
+
+------------------------------ End of DSP Report -------------------------------
+Total placer CPU time: 15 secs 
+
+Dumping design to file ethernet_fifo_top_impl1.dir/5_1.ncd.
+
+0 connections routed; 6102 unrouted.
+Starting router resource preassignment
+DSP info: No dsp pins have been swapped.
+
+Completed router resource preassignment. Real time: 23 secs 
+
+Start NBR router at 19:08:45 05/21/26
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at 19:08:47 05/21/26
+
+Start NBR section for initial routing at 19:08:47 05/21/26
+Level 1, iteration 1
+28(0.00%) conflicts; 4351(71.30%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.802ns/0.000ns; real time: 26 secs 
+Level 2, iteration 1
+562(0.03%) conflicts; 3704(60.70%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.958ns/0.000ns; real time: 27 secs 
+Level 3, iteration 1
+354(0.02%) conflicts; 1929(31.61%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.905ns/0.000ns; real time: 27 secs 
+Level 4, iteration 1
+467(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.905ns/0.000ns; real time: 29 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 5 (0.08%)
+
+Start NBR section for normal routing at 19:08:51 05/21/26
+Level 1, iteration 1
+358(0.02%) conflicts; 369(6.05%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.980ns/0.000ns; real time: 29 secs 
+Level 2, iteration 1
+305(0.01%) conflicts; 404(6.62%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 1.006ns/0.000ns; real time: 30 secs 
+Level 2, iteration 2
+272(0.01%) conflicts; 490(8.03%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 1.006ns/0.000ns; real time: 31 secs 
+Level 2, iteration 3
+177(0.01%) conflicts; 531(8.70%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 31 secs 
+Level 2, iteration 4
+106(0.01%) conflicts; 558(9.14%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 32 secs 
+Level 2, iteration 5
+70(0.00%) conflicts; 571(9.36%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.779ns/0.000ns; real time: 32 secs 
+Level 3, iteration 1
+87(0.00%) conflicts; 383(6.28%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 32 secs 
+Level 4, iteration 1
+207(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 33 secs 
+Level 4, iteration 2
+106(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 33 secs 
+Level 4, iteration 3
+57(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 34 secs 
+Level 4, iteration 4
+34(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 34 secs 
+Level 4, iteration 5
+31(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 34 secs 
+Level 4, iteration 6
+16(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.822ns/0.000ns; real time: 34 secs 
+Level 4, iteration 7
+12(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 34 secs 
+Level 4, iteration 8
+11(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 34 secs 
+Level 4, iteration 9
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 34 secs 
+Level 4, iteration 10
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 34 secs 
+Level 4, iteration 11
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 34 secs 
+
+Start NBR section for setup/hold timing optimization with effort level 3 at 19:08:56 05/21/26
+
+Start NBR section for re-routing at 19:09:00 05/21/26
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack&lt;setup&gt;: 0.873ns/0.000ns; real time: 38 secs 
+
+Start NBR section for post-routing at 19:09:00 05/21/26
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 0 (0.00%)
+  Estimated worst slack&lt;setup&gt; : 0.873ns
+  Timing score&lt;setup&gt; : 0
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 46 secs 
+Total REAL time: 47 secs 
+Completely routed.
+End of route.  6102 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 0 
+
+Dumping design to file ethernet_fifo_top_impl1.dir/5_1.ncd.
+
+
+All signals are completely routed.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack&lt;setup/&lt;ns&gt;&gt; = 0.873
+PAR_SUMMARY::Timing score&lt;setup/&lt;ns&gt;&gt; = 0.000
+PAR_SUMMARY::Worst  slack&lt;hold /&lt;ns&gt;&gt; = 0.178
+PAR_SUMMARY::Timing score&lt;hold /&lt;ns&gt;&gt; = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 47 secs 
+Total REAL time to completion: 48 secs 
+
+par done!
+
+Note: user must run &apos;Trace&apos; for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&amp;T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

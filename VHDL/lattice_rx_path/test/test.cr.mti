@@ -1,0 +1,172 @@
+D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity rgmii_tx
+-- Compiling architecture rtl of rgmii_tx
+** Warning: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd(61): (vcom-1615) Existing entity 'rgmii_rx' at D:/BAP/lattice_projecten/RGMII_withDDR.vhd(56) will be overwritten.
+-- Compiling entity rgmii_rx
+** Warning: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd(75): (vcom-1615) Existing architecture 'rgmii_rx(rtl)' at D:/BAP/lattice_projecten/RGMII_withDDR.vhd(70) will be overwritten.
+-- Compiling architecture rtl of rgmii_rx
+
+} {} {}} D:/BAP/lattice_projecten/RGMII_withDDR.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/RGMII_withDDR.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity rgmii_tx_ddr
+-- Compiling architecture rtl of rgmii_tx_ddr
+-- Loading package std_logic_arith
+-- Loading package components
+-- Loading entity DDR_forRGMII
+** Warning: D:/BAP/lattice_projecten/RGMII_withDDR.vhd(56): (vcom-1615) Existing entity 'rgmii_rx' at D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd(61) will be overwritten.
+-- Compiling entity rgmii_rx
+** Warning: D:/BAP/lattice_projecten/RGMII_withDDR.vhd(70): (vcom-1615) Existing architecture 'rgmii_rx(rtl)' at D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd(75) will be overwritten.
+-- Compiling architecture rtl of rgmii_rx
+
+} {} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mac_rx
+-- Compiling architecture rtl of mac_rx
+** Error: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd(111): (vcom-1441) Process(ALL) is not defined for this version of the language.
+** Note: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd(235): VHDL Compiler exiting
+
+} {9.0 10.0} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity udp_rx
+-- Compiling architecture rtl of udp_rx
+
+} {} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity top
+-- Compiling architecture Behavioral of top
+-- Loading package Controller_pkg
+-- Loading entity Controller
+-- Loading entity fifo_16ch_mux
+-- Loading package std_logic_arith
+-- Loading package components
+-- Loading entity FIFOsm
+-- Loading entity Fifolg
+-- Loading entity fifo_udp_reg
+-- Loading entity UDP_FIFO_AXI
+-- Loading entity MAC_AXItoRGMII
+-- Loading entity rgmii_tx_ddr
+
+} {} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity fifo_udp_reg
+-- Compiling architecture rtl of fifo_udp_reg
+
+} {} {}} D:/BAP/lattice_projecten/DDR_forRGMII.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/DDR_forRGMII.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package components
+-- Compiling entity DDR_forRGMII
+-- Compiling architecture Structure of DDR_forRGMII
+
+} {} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UDP_FIFO_AXI
+-- Compiling architecture rtl of UDP_FIFO_AXI
+** Error: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd(78): (vcom-1441) Process(ALL) is not defined for this version of the language.
+** Note: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd(186): VHDL Compiler exiting
+
+} {9.0 10.0} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package Controller_pkg
+-- Compiling package body Controller_pkg
+-- Loading package Controller_pkg
+-- Loading package Controller_pkg
+-- Compiling entity Controller
+-- Compiling architecture rtl of Controller
+
+} {} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package components
+-- Compiling entity Fifolg
+-- Compiling architecture Structure of Fifolg
+
+} {} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_TOP
+-- Compiling architecture sim of tb_TOP
+-- Loading entity top
+
+} {} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity crc32_8
+-- Compiling architecture Behavioral of crc32_8
+
+} {} {}} D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MAC_AXItoRGMII
+-- Compiling architecture rtl of MAC_AXItoRGMII
+-- Loading entity crc32_8
+** Error: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd(103): (vcom-1441) Process(ALL) is not defined for this version of the language.
+** Note: D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd(253): VHDL Compiler exiting
+
+} {10.0 11.0} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package components
+-- Compiling entity FIFOsm
+-- Compiling architecture Structure of FIFOsm
+
+} {} {}} D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity fifo_16ch_mux
+-- Compiling architecture rtl of fifo_16ch_mux
+
+} {} {}}

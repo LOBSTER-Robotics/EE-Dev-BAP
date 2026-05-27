@@ -1,0 +1,269 @@
+---------------------------------------------------
+Report for cell top
+   Instance path: top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     813.00        100.0
+                                  LUT4	     839.00        100.0
+                                 IOBUF	         36        100.0
+                                PFUREG	        349        100.0
+                                RIPPLE	        339        100.0
+                                   EBR	         17        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                          rgmii_tx_ddr	          1         0.0
+                          fifo_udp_reg	          1         0.6
+                     fifo_16ch_mux(24)	          1        11.1
+                        MAC_AXItoRGMII	          1        19.7
+                          UDP_FIFO_AXI	          1         7.1
+                Controller(16,24,8,16)	          1        11.7
+                                FIFOsm	          1         2.4
+                                Fifolg	          1         8.1
+                             FIFOsm_U8	          1         2.4
+                             FIFOsm_U9	          1         2.5
+                            FIFOsm_U14	          1         2.5
+                             FIFOsm_U4	          1         2.5
+                             FIFOsm_U6	          1         2.5
+                             FIFOsm_U7	          1         2.4
+                             FIFOsm_U5	          1         2.5
+                             FIFOsm_U2	          1         2.5
+                             FIFOsm_U3	          1         2.5
+                            FIFOsm_U11	          1         2.5
+                            FIFOsm_U12	          1         2.5
+                            FIFOsm_U13	          1         2.5
+                             FIFOsm_U1	          1         2.5
+                            FIFOsm_U10	          1         2.5
+                             FIFOsm_U0	          1         2.5
+---------------------------------------------------
+Report for cell FIFOsm_U8
+   Instance path: top/u_Fifosm15
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      19.75         2.4
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U7
+   Instance path: top/u_Fifosm1
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      19.75         2.4
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U6
+   Instance path: top/u_Fifosm2
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U5
+   Instance path: top/u_Fifosm3
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U4
+   Instance path: top/u_Fifosm4
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U3
+   Instance path: top/u_Fifosm5
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U2
+   Instance path: top/u_Fifosm6
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U1
+   Instance path: top/u_Fifosm7
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U0
+   Instance path: top/u_Fifosm8
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U14
+   Instance path: top/u_Fifosm0
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U13
+   Instance path: top/u_Fifosm10
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U12
+   Instance path: top/u_Fifosm11
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U11
+   Instance path: top/u_Fifosm12
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U10
+   Instance path: top/u_Fifosm13
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm_U9
+   Instance path: top/u_Fifosm14
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      20.00         2.5
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell rgmii_tx_ddr
+   Instance path: top/rgmii_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                          DDR_forRGMII	          1         0.0
+---------------------------------------------------
+Report for cell DDR_forRGMII
+   Instance path: top/rgmii_inst/DDR_TX
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell MAC_AXItoRGMII
+   Instance path: top/mac_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     160.17        19.7
+                                  LUT4	     256.50        30.6
+                                PFUREG	         85        24.4
+                                RIPPLE	         17         5.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               crc32_8	          1         4.5
+---------------------------------------------------
+Report for cell crc32_8
+   Instance path: top/mac_inst/crc_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      36.33         4.5
+                                  LUT4	      57.50         6.9
+---------------------------------------------------
+Report for cell fifo_udp_reg
+   Instance path: top/reg_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	       5.08         0.6
+                                PFUREG	         11         3.2
+---------------------------------------------------
+Report for cell Fifolg
+   Instance path: top/u_Fifo_large
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      66.25         8.1
+                                  LUT4	       9.00         1.1
+                                PFUREG	         34         9.7
+                                RIPPLE	         60        17.7
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell FIFOsm
+   Instance path: top/u_Fifosm9
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      19.75         2.4
+                                  LUT4	       7.00         0.8
+                                PFUREG	          9         2.6
+                                RIPPLE	         15         4.4
+                                   EBR	          1         5.9
+---------------------------------------------------
+Report for cell UDP_FIFO_AXI
+   Instance path: top/udp_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      57.75         7.1
+                                  LUT4	      95.50        11.4
+                                PFUREG	         14         4.0
+                                RIPPLE	          5         1.5
+---------------------------------------------------
+Report for cell Controller(16,24,8,16)
+   Instance path: top/u_adc_fifo_frame_packer
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      95.50        11.7
+                                  LUT4	     170.00        20.3
+                                PFUREG	         61        17.5
+---------------------------------------------------
+Report for cell fifo_16ch_mux(24)
+   Instance path: top/u_MuxFifo
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      90.00        11.1
+                                  LUT4	     192.00        22.9

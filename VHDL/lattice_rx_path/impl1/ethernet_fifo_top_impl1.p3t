@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "ethernet_fifo_top_impl1.log"
+-o "ethernet_fifo_top_impl1.csv"
+-pr "ethernet_fifo_top_impl1.prf"

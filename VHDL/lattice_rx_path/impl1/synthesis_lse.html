@@ -1,0 +1,997 @@
+<HTML>
+<HEAD><TITLE>Synthesis and Ngdbuild Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Syn"></A><B><U><big>Synthesis and Ngdbuild  Report</big></U></B>
+synthesis:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 21 19:07:52 2026
+
+
+Command Line:  synthesis -f ethernet_fifo_top_impl1_lattice.synproj -gui -msgset D:/BAP/lattice_projecten/promote.xml 
+
+Synthesis options:
+The -a option is ECP5U.
+The -s option is 8.
+The -t option is CABGA381.
+The -d option is LFE5U-45F.
+Using package CABGA381.
+Using performance grade 8.
+                                                          
+
+##########################################################
+
+### Lattice Family : ECP5U
+
+### Device  : LFE5U-45F
+
+### Package : CABGA381
+
+### Speed   : 8
+
+##########################################################
+
+                                                          
+
+INFO - synthesis: User-Selected Strategy Settings
+Optimization goal = Timing
+Top-level module name = top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/lscc/diamond/3.14/ispfpga/sa5p00/data (searchpath added)
+-p D:/BAP/lattice_projecten/impl1 (searchpath added)
+-p D:/BAP/lattice_projecten (searchpath added)
+VHDL library = work
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd
+VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd
+VHDL design file = D:/BAP/lattice_projecten/DDR_forRGMII.vhd
+VHDL design file = D:/BAP/lattice_projecten/RGMII_withDDR.vhd
+VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd
+NGD file = ethernet_fifo_top_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+-vh2008
+
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file D:/lscc/diamond/3.14/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5u.v. VERI-1482
+Compile design.
+Compile Design Begin
+INFO - synthesis: The default VHDL library search path is now "D:/BAP/lattice_projecten/impl1". VHDL-1504
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(27): analyzing entity crc32_8. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(35): analyzing architecture behavioral. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): analyzing entity mac_axitorgmii. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(5): analyzing entity mac_rx. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): analyzing entity udp_fifo_axi. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): analyzing entity udp_rx. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(6): analyzing package controller_pkg. VHDL-1014
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(13): analyzing package body controller_pkg. VHDL-1013
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(40): analyzing entity controller. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(64): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(12): analyzing entity fifolg. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(26): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(12): analyzing entity fifosm. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(26): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(5): analyzing entity fifo_16ch_mux. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(34): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(5): analyzing entity fifo_udp_reg. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(26): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/ddr_forrgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/ddr_forrgmii.vhd(12): analyzing entity ddr_forrgmii. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/ddr_forrgmii.vhd(21): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/rgmii_withddr.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(9): analyzing entity rgmii_tx_ddr. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(24): analyzing architecture rtl. VHDL-1010
+INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(56): analyzing entity rgmii_rx. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(70): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd. VHDL-1481
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6): analyzing entity top. VHDL-1012
+INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(31): analyzing architecture behavioral. VHDL-1010
+unit top is not yet analyzed. VHDL-1485
+d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6): executing top(Behavioral)
+
+WARNING - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(27): replacing existing netlist top(Behavioral). VHDL-1205
+Top module name (VHDL): top
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Top-level module name = top.
+WARNING - synthesis: Initial value found on net next_idx[7] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[6] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_crc_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_crc_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[31] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[30] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[29] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[28] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[27] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[26] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[25] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[24] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[23] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[22] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[21] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[20] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[19] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[18] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[17] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[16] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[15] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[14] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[13] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[12] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[11] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[10] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[9] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[8] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[7] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[6] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txctl will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net ctl_reg will be ignored due to unrecognized driver type
+INFO - synthesis: Extracted state machine for register '\u_adc_fifo_frame_packer/r_state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 0000001
+
+ 001 -> 0000010
+
+ 010 -> 0000100
+
+ 011 -> 0001000
+
+ 100 -> 0010000
+
+ 101 -> 0100000
+
+ 110 -> 1000000
+
+INFO - synthesis: Extracted state machine for register '\udp_inst/state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+INFO - synthesis: Extracted state machine for register '\mac_inst/state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+
+
+
+
+
+######### Begin FIR Info ########
+
+
+Number of FIR filters recognized: 1
+
+
+
+######### End FIR Info ########
+
+
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_16_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_16_e2 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_17_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_17_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_17_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_17_e2 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_16_e1 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_e1 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_19_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_17_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_19_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_19_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_19_e2 is stuck at Zero
+WARNING - synthesis: Bit 27 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_20_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_20_e2 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_20_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_20_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_20_e2 is stuck at Zero
+WARNING - synthesis: Bit 27 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_22_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_22_e2 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_22_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_22_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_22_e2 is stuck at Zero
+WARNING - synthesis: Bit 27 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_24_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_24_e2 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_24_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_24_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_24_e2 is stuck at Zero
+WARNING - synthesis: Bit 27 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 26 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_e2 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_e2 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_e2 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_e2 is stuck at Zero
+WARNING - synthesis: Bit 25 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 24 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_16_e3 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_24_e1 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_22_e1 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_20_e1 is stuck at Zero
+WARNING - synthesis: Bit 23 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 22 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 21 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 20 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 19 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 18 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 17 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 16 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 15 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 14 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 13 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 12 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 11 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 10 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 9 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 8 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 7 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 6 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 5 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 4 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 3 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 2 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 1 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Bit 0 of Register Data_23__I_0_19_e1 is stuck at Zero
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[3] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[2] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[1] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[0] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txctl due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txc due to black_box_pad_pin attribute.
+GSR instance connected to net \i714/n1.
+######## Converted FF type for instance \u_Fifosm0/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_32 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_31 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_30 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_29 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_28 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_27 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_26 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_25 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_24 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_23 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_22 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_21 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_20 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_19 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_18 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_17 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_16 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_15 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_14 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_13 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_5 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_2 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_1 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_0 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_33 due to shared LSR/GSR.
+Applying 200.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No user .sdc file.
+Results of NGD DRC are available in top_drc.log.
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file ethernet_fifo_top_impl1.ngd.
+
+################### Begin Area Report (top)######################
+Number of register bits => 349 of 44457 (0 % )
+ALU54B => 7
+AND2 => 51
+CCU2C => 339
+FD1P3AX => 144
+FD1P3IX => 72
+FD1S3AX => 28
+FD1S3AY => 19
+FD1S3IX => 51
+FD1S3JX => 35
+GSR => 1
+IB => 28
+INV => 71
+L6MUX21 => 72
+LUT4 => 719
+MULT18X18D => 14
+OB => 8
+ODDRX1F => 6
+PDPW16KD => 17
+PFUMX => 121
+ROM16X1A => 36
+XOR2 => 17
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : clk_c, loads : 389
+Clock Enable Nets
+Number of Clock Enables: 61
+Top 10 highest fanout Clock Enables:
+  Net : u_adc_fifo_frame_packer/clk_c_enable_61, loads : 24
+  Net : u_Fifo_large/wren_i, loads : 24
+  Net : u_Fifo_large/rden_i, loads : 16
+  Net : u_Fifo_large/fcnt_en, loads : 11
+  Net : u_Fifosm8/wren_i, loads : 9
+  Net : u_Fifosm10/wren_i, loads : 9
+  Net : u_Fifosm4/wren_i, loads : 9
+  Net : u_Fifosm11/wren_i, loads : 9
+  Net : u_Fifosm6/wren_i, loads : 9
+  Net : u_Fifosm12/wren_i, loads : 9
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : u_adc_fifo_frame_packer/fifo_sel_0, loads : 191
+  Net : rst_c, loads : 186
+  Net : mac_inst/n2296, loads : 62
+  Net : u_adc_fifo_frame_packer/n1843, loads : 54
+  Net : u_adc_fifo_frame_packer/n1846, loads : 49
+  Net : mac_inst/n2294, loads : 48
+  Net : u_adc_fifo_frame_packer/fifo_sel_2, loads : 47
+  Net : udp_inst/n11984, loads : 45
+  Net : mac_inst/n2295, loads : 44
+  Net : mac_inst/n2298, loads : 36
+################### End Clock Report ##################
+
+<A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |  200.000 MHz|   69.502 MHz|    11 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+
+Peak Memory Usage: 164.566  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 13.828  secs
+--------------------------------------------------------------
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>
