@@ -1,21 +1,19 @@
 SCUBA, Version Diamond (64-bit) 3.14.0.75.2
 Wed May 27 11:46:23 2026
-  
+
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-  
-BEGIN SCUBA Module Synthesis
-  
+
     Issued command   : D:\lscc\diamond\3.14\ispfpga\bin\nt64\scuba.exe -w -n DDR_RX -lang vhdl -synth lse -bus_exp 7 -bb -arch sa5p00 -type iol -mode Receive -io_type LVCMOS25 -width 5 -freq_in 125 -gear 2 -del 128 
     Circuit name     : DDR_RX
     Module type      : iol
     Module Version   : 5.8
     Ports            : 
-    Inputs       : clkin, reset, datain[4:0]
-    Outputs      : sclk, q[9:0]
+	Inputs       : clkin, reset, datain[4:0]
+	Outputs      : sclk, q[9:0]
     I/O buffer       : not inserted
     EDIF output      : DDR_RX.edn
     VHDL output      : DDR_RX.vhd
@@ -23,7 +21,8 @@ BEGIN SCUBA Module Synthesis
     VHDL purpose     : for synthesis and simulation
     Bus notation     : big endian
     Report output    : DDR_RX.srp
+    Element Usage    :
+             IB : 6
+         DELAYG : 5
+        IDDRX1F : 5
     Estimated Resource Usage:
-  
-END   SCUBA Module Synthesis
-

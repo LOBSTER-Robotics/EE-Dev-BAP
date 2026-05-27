@@ -1,0 +1,5 @@
+#Start recording tcl command: 5/27/2026 13:37:06
+#Project Location: D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path; Project name: ethernet_fifo_top
+prj_project open "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/ethernet_fifo_top.ldf"
+prj_project close
+#Stop recording: 5/27/2026 14:10:34

@@ -1,0 +1,22 @@
+---------------------------------------------------
+Report for cell top
+   Instance path: top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      48.00        100.0
+                                  LUT4	      26.00        100.0
+                                 IOBUF	         17        100.0
+                                PFUREG	         33        100.0
+                                RIPPLE	         22        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+              led_blinker(125000000,1)	          1        83.3
+---------------------------------------------------
+Report for cell led_blinker(125000000,1)
+   Instance path: top/u_blinker
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      40.00        83.3
+                                  LUT4	      18.00        69.2
+                                PFUREG	         33        100.0
+                                RIPPLE	         22        100.0

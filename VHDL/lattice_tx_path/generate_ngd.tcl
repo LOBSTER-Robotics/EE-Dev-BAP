@@ -50,16 +50,16 @@ set Para(install_dir) $env(TOOLRTF)
 set Para(FPGAPath) "[file join $Para(install_dir) ispfpga bin $platformpath]"
 set Para(bin_dir) "[file join $Para(install_dir) bin $platformpath]"
 
-set Para(ModuleName) "DDR_forRGMII"
+set Para(ModuleName) "DDR_RX"
 set Para(Module) "DDR_GENERIC"
 set Para(libname) ecp5u
 set Para(arch_name) sa5p00
-set Para(PartType) "LAE5U-12F"
+set Para(PartType) "LFE5U-45F"
 
 set Para(tech_syn) ecp5u
 set Para(tech_cae) ecp5u
 set Para(Package) "CABGA381"
-set Para(SpeedGrade) "6"
+set Para(SpeedGrade) "7"
 set Para(FMax) "100"
 set fdcfile "$Para(sbp_path)/$Para(ModuleName).fdc"
 
