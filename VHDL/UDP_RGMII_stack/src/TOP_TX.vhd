@@ -62,7 +62,7 @@ begin
         ------------------------------------------------------------
         fifo_data  => fifo_data,
         fifo_empty => fifo_empty,
-        fifo_last  => fifo_last,
+        fifo_almostfull  => fifo_last,
         fifo_rd_en => fifo_rd_en,
 
         ------------------------------------------------------------

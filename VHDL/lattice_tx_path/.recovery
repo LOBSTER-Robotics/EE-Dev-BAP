@@ -2,12 +2,12 @@
 <BaliProject version="3.2" title="ethernet_fifo_top" device="LFE5U-45F-8BG381C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="top"/>
+        <Options def_top="fifo_udp_reg"/>
         <Source name="UDP_RGMII_stack/src/CRC32_8.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
+            <Options top_module="MAC_AXItoRGMII"/>
         </Source>
         <Source name="UDP_RGMII_stack/src/MAC_RX.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="mac_rx"/>
@@ -16,28 +16,10 @@
             <Options/>
         </Source>
         <Source name="UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
+            <Options top_module="UDP_FIFO_AXI"/>
         </Source>
         <Source name="UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="udp_rx"/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/Controller.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/Fifolg.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/FIFOsm.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/MuxFifo.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/TOP.vhd" type="VHDL" type_short="VHDL">
-            <Options top_module="top"/>
-        </Source>
-        <Source name="Top_Level_design/ADC/ControllerTest/TOP_tb.vhd" type="VHDL" type_short="VHDL" syn_sim="SimOnly">
-            <Options/>
         </Source>
         <Source name="DDR_forRGMII.vhd" type="VHDL" type_short="VHDL">
             <Options/>
@@ -46,6 +28,9 @@
             <Options top_module="rgmii_rx"/>
         </Source>
         <Source name="UDP_RGMII_stack/src/register.vhd" type="VHDL" type_short="VHDL">
+            <Options top_module="fifo_udp_reg"/>
+        </Source>
+        <Source name="../UDP_RGMII_stack/src/TOP_TX.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="ethernet_fifo_top.lpf" type="Logic Preference" type_short="LPF">
