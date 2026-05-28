@@ -13,18 +13,20 @@
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
 
-Command line:   map -a ECP5U -p LFE5U-45F -t CABGA381 -s 7 -oc Industrial
+Command line:   map -a ECP5UM -p LFE5UM-45F -t CABGA381 -s 7 -oc Industrial
      test_boardprogramming_impl1.ngd -o test_boardprogramming_impl1_map.ncd -pr
-     test_boardprogramming_impl1.prf -mp test_boardprogramming_impl1.mrp -lpf D:
-     /BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1/test_boardprogramming_impl
-     1.lpf -lpf
-     D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/test_boardprogramming.lpf -gui
-     
+     test_boardprogramming_impl1.prf -mp test_boardprogramming_impl1.mrp -lpf
+     C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/tes
+     t_boardprogramming/impl1/test_boardprogramming_impl1.lpf -lpf
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/test_boardprogramming.lpf -gui
+     -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml 
 Target Vendor:  LATTICE
-Target Device:  LFE5U-45FCABGA381
+Target Device:  LFE5UM-45FCABGA381
 Target Performance:   7
-Mapper:  sa5p00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  05/27/26  14:27:41
+Mapper:  sa5p00m,  version:  Diamond (64-bit) 3.14.0.75.2
+Mapped on:  05/27/26  15:34:54
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
@@ -57,17 +59,20 @@ Mapped on:  05/27/26  14:27:41
    Number of CLKDIV:  0 out of 4 (0%)
    Number of ECLKSYNC:  0 out of 10 (0%)
    Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Number of DCUs:  0 out of 2 (0%)
+   Number of DCU Channels:  0 out of 4 (0%)
+   Number of EXTREFs:  0 out of 2 (0%)
    Notes:-
       1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
      distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
 
+
         Number Of Mapped DSP Components:
    --------------------------------
    MULT18X18D          0
    MULT9X9D            0
-
    ALU54B              0
    ALU24B              0
    PRADD18A            0
@@ -122,12 +127,12 @@ Mapped on:  05/27/26  14:27:41
 +---------------------+-----------+-----------+------------+
 | led[5]              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
+
 | led[4]              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | led[3]              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | led[2]              | OUTPUT    | LVCMOS25  |            |
-
 +---------------------+-----------+-----------+------------+
 | led[1]              | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -143,13 +148,13 @@ Mapped on:  05/27/26  14:27:41
 +---------------------+-----------+-----------+------------+
 | sw[4]               | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
-| sw[3]               | INPUT     | LVCMOS25  |            |
+| sw[3]               | INPUT     | LVCMOS15  |            |
 +---------------------+-----------+-----------+------------+
-| sw[2]               | INPUT     | LVCMOS25  |            |
+| sw[2]               | INPUT     | LVCMOS15  |            |
 +---------------------+-----------+-----------+------------+
-| sw[1]               | INPUT     | LVCMOS25  |            |
+| sw[1]               | INPUT     | LVCMOS15  |            |
 +---------------------+-----------+-----------+------------+
-| sw[0]               | INPUT     | LVCMOS25  |            |
+| sw[0]               | INPUT     | LVCMOS15  |            |
 +---------------------+-----------+-----------+------------+
 
 
@@ -183,17 +188,14 @@ Block i14 was optimized away.
 
 
 
+
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
 -------------------------
 
    Total CPU Time: 0 secs  
-
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 156 MB
+   Peak Memory Usage: 158 MB
         
-
-
-
 
 
 

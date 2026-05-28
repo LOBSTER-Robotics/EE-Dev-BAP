@@ -1,5 +1,5 @@
--a "ECP5U"
--d LFE5U-45F
+-a "ECP5UM"
+-d LFE5UM-45F
 -t CABGA381
 -s 7
 -frequency 200
@@ -31,12 +31,12 @@
 
 
 -lpf 1
--lib "work" -vhd "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/led_blinker.vhd"
-"D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/top.vhd"
+-lib "work" -vhd "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/led_blinker.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/top.vhd"
 -top top
 
 
--p "D:/lscc/diamond/3.14/ispfpga/sa5p00/data" "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1" "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming"
+-p "E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming"
 
 -ngd "test_boardprogramming_impl1.ngd"
 

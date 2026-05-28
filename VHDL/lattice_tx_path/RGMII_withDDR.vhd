@@ -32,7 +32,7 @@ begin
 	
 	data_tx <= ctl_reg & txd_in(7 downto 4) & ctl_reg & txd_in(3 downto 0);
  
-    DDR_TX: entity work.DDR_forRGMII port map (
+    DDR_TX: entity work.DDR_Transmit port map (
         clkout =>rgmii_txc,
         refclk =>clk125, 
         reset =>reset,
@@ -76,7 +76,7 @@ begin
 
 	data_in <= rgmii_rxctl & rgmii_rxd(3 downto 0);
 	
-	DDR_RX: entity DDR_RX port map (
+	DDR_RX: entity DDR_Recieve port map (
 		clkin => rx_clk, 
 		reset => reset,
 		sclk => open,

@@ -20,7 +20,20 @@ port (
     m_data      : out std_logic_vector(7 downto 0);
     m_valid     : out std_logic;
     m_last      : out std_logic;
-    m_ready     : in  std_logic
+    m_ready     : in  std_logic;
+
+    --------------------------------------------------------------------
+    -- DEBUG OUTPUT FOR LEDS
+    --------------------------------------------------------------------
+    -- debug_state(0) = IDLE
+    -- debug_state(1) = PREAMBLE
+    -- debug_state(2) = PAYLOAD
+    -- debug_state(3) = DROP
+    -- debug_state(4) = gmii_rx_dv
+    -- debug_state(5) = gmii_rx_er
+    -- debug_state(6) = m_valid
+    -- debug_state(7) = m_last
+    debug_state : out std_logic_vector(7 downto 0)
 );
 end entity;
 
@@ -64,6 +77,18 @@ begin
     m_valid <= rx_valid_reg;
     m_data  <= data_d;
     m_last  <= dv_d and not gmii_rx_dv;
+
+    --------------------------------------------------------------------
+    -- DEBUG OUTPUT FOR LEDS
+    --------------------------------------------------------------------
+    debug_state(0) <= '0' when state = IDLE     else '1';
+    debug_state(1) <= '0' when state = PREAMBLE else '1';
+    debug_state(2) <= '0' when state = PAYLOAD  else '1';
+    debug_state(3) <= '0' when state = DROP     else '1';
+    debug_state(4) <= not gmii_rx_dv;
+    debug_state(5) <= not gmii_rx_er;
+    debug_state(6) <= not rx_valid_reg;
+    debug_state(7) <= not reset;
 
     --------------------------------------------------------------------
     -- CLOCKED PROCESS
@@ -128,6 +153,7 @@ begin
             when IDLE =>
                 
                 if gmii_rx_dv = '1' then
+					
 
                     if gmii_rxd = x"55" then
 
@@ -230,4 +256,4 @@ begin
 
     end process;
 
-end architecture;
+end architecture; 

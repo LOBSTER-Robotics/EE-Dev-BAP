@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Bitgen">
+        <Message>
+            <ID>1009992</ID>
+            <Severity>Info</Severity>
+            <Dynamic> SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by sa5p00m.acd ###</Dynamic>
+        </Message>
+        <Message>
+            <ID>1009992</ID>
+            <Severity>Info</Severity>
+            <Dynamic> SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK</Dynamic>
+        </Message>
+    </Task>
     <Task name="Lattice_Synthesis">
         <Message>
             <ID>35002000</ID>
@@ -13,47 +25,47 @@
             <ID>35921504</ID>
             <Severity>Info</Severity>
             <Dynamic></Dynamic>
-            <Dynamic>D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1</Dynamic>
+            <Dynamic>C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1</Dynamic>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(5): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(5): </Dynamic>
             <Dynamic>led_blinker</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(16): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(16): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd</Navigation>
             <Navigation>16</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): </Dynamic>
             <Dynamic>top</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
             <Navigation>4</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(23): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(23): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
             <Navigation>23</Navigation>
         </Message>
         <Message>
             <ID>35921205</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(21): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(21): </Dynamic>
             <Dynamic>top</Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd</Navigation>
             <Navigation>21</Navigation>
         </Message>
         <Message>

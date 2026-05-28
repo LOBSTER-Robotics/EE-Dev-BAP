@@ -5,25 +5,25 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Wed May 27 14:24:30 2026
+Wed May 27 15:34:21 2026
 
 
-Command Line:  synthesis -f test_boardprogramming_impl1_lattice.synproj -gui 
+Command Line:  synthesis -f test_boardprogramming_impl1_lattice.synproj -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml 
 
 Synthesis options:
-The -a option is ECP5U.
+The -a option is ECP5UM.
 The -s option is 7.
 The -t option is CABGA381.
-The -d option is LFE5U-45F.
+The -d option is LFE5UM-45F.
 Using package CABGA381.
 Using performance grade 7.
                                                           
 
 ##########################################################
 
-### Lattice Family : ECP5U
+### Lattice Family : ECP5UM
 
-### Device  : LFE5U-45F
+### Device  : LFE5UM-45F
 
 ### Package : CABGA381
 
@@ -61,12 +61,12 @@ ROM style = auto
 RAM style = auto
 The -comp option is FALSE.
 The -syn option is FALSE.
--p D:/lscc/diamond/3.14/ispfpga/sa5p00/data (searchpath added)
--p D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1 (searchpath added)
--p D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming (searchpath added)
+-p E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data (searchpath added)
+-p C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1 (searchpath added)
+-p C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming (searchpath added)
 VHDL library = work
-VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/led_blinker.vhd
-VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/top.vhd
+VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/led_blinker.vhd
+VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/top.vhd
 NGD file = test_boardprogramming_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -74,29 +74,28 @@ Hardtimer checking is enabled (default). The -dt option is not used.
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 Technology check ok...
 
-Analyzing Verilog file D:/lscc/diamond/3.14/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5u.v. VERI-1482
+Analyzing Verilog file E:/Apps/Lattice Diamond/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5um.v. VERI-1482
 Compile design.
 Compile Design Begin
-INFO - synthesis: The default VHDL library search path is now "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1". VHDL-1504
-Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd. VHDL-1481
-INFO - synthesis: d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(5): analyzing entity led_blinker. VHDL-1012
-INFO - synthesis: d:/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(16): analyzing architecture rtl. VHDL-1010
+INFO - synthesis: The default VHDL library search path is now "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/impl1". VHDL-1504
+Analyzing VHDL file c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd. VHDL-1481
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(5): analyzing entity led_blinker. VHDL-1012
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/led_blinker.vhd(16): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd. VHDL-1481
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): analyzing entity top. VHDL-1012
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(23): analyzing architecture rtl. VHDL-1010
 unit top is not yet analyzed. VHDL-1485
-Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd. VHDL-1481
-INFO - synthesis: d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): analyzing entity top. VHDL-1012
-INFO - synthesis: d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(23): analyzing architecture rtl. VHDL-1010
-unit top is not yet analyzed. VHDL-1485
-unit top is not yet analyzed. VHDL-1485
-d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): executing top(rtl)
+c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(4): executing top(rtl)
 
-WARNING - synthesis: d:/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(21): replacing existing netlist top(rtl). VHDL-1205
+WARNING - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/test_boardprogramming/top.vhd(21): replacing existing netlist top(rtl). VHDL-1205
 Top module name (VHDL): top
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
-Loading device for application map from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
-Package Status:                     Final          Version 1.50.
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data/sa5mlib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sa5p45m.nph' in environment: E:/Apps/Lattice Diamond/ispfpga.
+Package Status:                     Final          Version 1.38.
 Top-level module name = top.
 
 
@@ -106,10 +105,11 @@ Applying 200.000000 MHz constraint to all clocks
 
 WARNING - synthesis: No user .sdc file.
 Results of NGD DRC are available in top_drc.log.
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
-Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data/sa5mlib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/or5g00/data/orc5glib.ngl'...
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file test_boardprogramming_impl1.ngd.
 
@@ -152,7 +152,7 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets phy_clk125_c]            |  200.000 MHz|  141.844 MHz|     8 *
+clk0 [get_nets phy_clk125_c]            |  200.000 MHz|  162.522 MHz|     8 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -160,8 +160,8 @@ clk0 [get_nets phy_clk125_c]            |  200.000 MHz|  141.844 MHz|     8 *
 1 constraints not met.
 
 
-Peak Memory Usage: 109.477  MB
+Peak Memory Usage: 111.125  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 0.906  secs
+Elapsed CPU time for LSE flow : 0.781  secs
 --------------------------------------------------------------

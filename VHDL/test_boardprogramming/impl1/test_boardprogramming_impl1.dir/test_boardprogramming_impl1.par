@@ -4,11 +4,12 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Wed May 27 14:27:43 2026
+Wed May 27 15:34:57 2026
 
-D:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f test_boardprogramming_impl1.p2t
+E:/Apps/Lattice Diamond/ispfpga\bin\nt64\par -f test_boardprogramming_impl1.p2t
 test_boardprogramming_impl1_map.ncd test_boardprogramming_impl1.dir
-test_boardprogramming_impl1.prf -gui
+test_boardprogramming_impl1.prf -gui -msgset
+C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml
 
 
 Preference file: test_boardprogramming_impl1.prf.
@@ -16,11 +17,11 @@ Preference file: test_boardprogramming_impl1.prf.
 Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
 Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            -0.713       100180       0.175        0            12           Completed
+5_1   *      0            3.828        0            0.175        0            09           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 12 secs 
+Total (real) run time for 1-seed: 9 secs 
 
 par done!
 
