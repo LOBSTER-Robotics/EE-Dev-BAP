@@ -14,10 +14,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Thu May 21 19:07:52 2026
+Wed May 27 16:26:55 2026
 
 
-Command Line:  synthesis -f ethernet_fifo_top_impl1_lattice.synproj -gui -msgset D:/BAP/lattice_projecten/promote.xml 
+Command Line:  synthesis -f ethernet_fifo_top_impl1_lattice.synproj -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml 
 
 Synthesis options:
 The -a option is ECP5U.
@@ -71,22 +71,23 @@ RAM style = auto
 The -comp option is FALSE.
 The -syn option is FALSE.
 -p D:/lscc/diamond/3.14/ispfpga/sa5p00/data (searchpath added)
--p D:/BAP/lattice_projecten/impl1 (searchpath added)
--p D:/BAP/lattice_projecten (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1 (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path (searchpath added)
 VHDL library = work
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
-VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd
-VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
-VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
-VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
-VHDL design file = D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd
-VHDL design file = D:/BAP/lattice_projecten/DDR_forRGMII.vhd
-VHDL design file = D:/BAP/lattice_projecten/RGMII_withDDR.vhd
-VHDL design file = D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd
 NGD file = ethernet_fifo_top_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -99,54 +100,57 @@ Technology check ok...
 Analyzing Verilog file D:/lscc/diamond/3.14/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5u.v. VERI-1482
 Compile design.
 Compile Design Begin
-INFO - synthesis: The default VHDL library search path is now "D:/BAP/lattice_projecten/impl1". VHDL-1504
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(27): analyzing entity crc32_8. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(35): analyzing architecture behavioral. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): analyzing entity mac_axitorgmii. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(5): analyzing entity mac_rx. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(28): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): analyzing entity udp_fifo_axi. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): analyzing entity udp_rx. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(6): analyzing package controller_pkg. VHDL-1014
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(13): analyzing package body controller_pkg. VHDL-1013
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(40): analyzing entity controller. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(64): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(12): analyzing entity fifolg. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(26): analyzing architecture structure. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(12): analyzing entity fifosm. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(26): analyzing architecture structure. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(5): analyzing entity fifo_16ch_mux. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(34): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(5): analyzing entity fifo_udp_reg. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(26): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/ddr_forrgmii.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/ddr_forrgmii.vhd(12): analyzing entity ddr_forrgmii. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/ddr_forrgmii.vhd(21): analyzing architecture structure. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/rgmii_withddr.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(9): analyzing entity rgmii_tx_ddr. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(24): analyzing architecture rtl. VHDL-1010
-INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(56): analyzing entity rgmii_rx. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/rgmii_withddr.vhd(70): analyzing architecture rtl. VHDL-1010
-Analyzing VHDL file d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd. VHDL-1481
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6): analyzing entity top. VHDL-1012
-INFO - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(31): analyzing architecture behavioral. VHDL-1010
+INFO - synthesis: The default VHDL library search path is now "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1". VHDL-1504
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(27): analyzing entity crc32_8. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(35): analyzing architecture behavioral. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): analyzing entity mac_axitorgmii. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(5): analyzing entity mac_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): analyzing entity udp_fifo_axi. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): analyzing entity udp_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(6): analyzing package controller_pkg. VHDL-1014
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(13): analyzing package body controller_pkg. VHDL-1013
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(40): analyzing entity controller. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(64): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(12): analyzing entity fifolg. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(26): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(12): analyzing entity fifosm. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(26): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(5): analyzing entity fifo_16ch_mux. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(34): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(5): analyzing entity fifo_udp_reg. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(26): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(12): analyzing entity ddr_forrgmii. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(21): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(12): analyzing entity ddr_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(21): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(9): analyzing entity rgmii_tx_ddr. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(24): analyzing architecture rtl. VHDL-1010
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(56): analyzing entity rgmii_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(70): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6): analyzing entity top. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(31): analyzing architecture behavioral. VHDL-1010
 unit top is not yet analyzed. VHDL-1485
-d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6): executing top(Behavioral)
+d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6): executing top(Behavioral)
 
-WARNING - synthesis: d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(27): replacing existing netlist top(Behavioral). VHDL-1205
+WARNING - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(27): replacing existing netlist top(Behavioral). VHDL-1205
 Top module name (VHDL): top
 Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
 Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
@@ -934,10 +938,10 @@ clk0 [get_nets clk_c]                   |  200.000 MHz|   69.502 MHz|    11 *
 1 constraints not met.
 
 
-Peak Memory Usage: 164.566  MB
+Peak Memory Usage: 164.559  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 13.828  secs
+Elapsed CPU time for LSE flow : 18.563  secs
 --------------------------------------------------------------
 
 

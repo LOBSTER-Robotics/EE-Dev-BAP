@@ -1,0 +1,104 @@
+----------------------------------------------------------------------
+Report for cell top_tb_fpga.TECH
+Register bits:  151 of 44457 (0.340%)
+I/O cells:      8
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        67          100.0
+                            FD1P3IX        19          100.0
+                            FD1S3AX         9          100.0
+                            FD1S3AY         1          100.0
+                            FD1S3IX        87          100.0
+                            FD1S3JX        35          100.0
+                                GSR         1          100.0
+                                 IB         2          100.0
+                               LUT4       416          100.0
+                                 OB         6          100.0
+                            ODDRX1F         6          100.0
+                              PFUMX        19          100.0
+SUB MODULES
+                       DDR_forRGMII         1
+                     MAC_AXItoRGMII         1
+                       UDP_FIFO_AXI         1
+                            crc32_8         1
+                       fifo_udp_reg         1
+                       rgmii_tx_ddr         1
+                    top_ethernet_tx         1
+                              TOTAL       675
+----------------------------------------------------------------------
+Report for cell top_ethernet_tx.v1
+Instance Path : dut
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        17           25.4
+                            FD1P3IX        12           63.2
+                            FD1S3AX         9          100.0
+                            FD1S3AY         1          100.0
+                            FD1S3IX        53           60.9
+                            FD1S3JX        34           97.1
+                               LUT4       399           95.9
+                            ODDRX1F         6          100.0
+                              PFUMX        19          100.0
+SUB MODULES
+                       DDR_forRGMII         1
+                     MAC_AXItoRGMII         1
+                       UDP_FIFO_AXI         1
+                            crc32_8         1
+                       fifo_udp_reg         1
+                       rgmii_tx_ddr         1
+                              TOTAL       556
+----------------------------------------------------------------------
+Report for cell UDP_FIFO_AXI.v1
+Instance Path : dut.udp_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX        13           14.9
+                            FD1S3JX         1            2.9
+                               LUT4       139           33.4
+                              PFUMX         9           47.4
+                              TOTAL       162
+----------------------------------------------------------------------
+Report for cell rgmii_tx_ddr.v1
+Instance Path : dut.rgmii_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            ODDRX1F         6          100.0
+SUB MODULES
+                       DDR_forRGMII         1
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell DDR_forRGMII.v1
+Instance Path : dut.rgmii_inst.DDR_TX
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            ODDRX1F         6          100.0
+                              TOTAL         6
+----------------------------------------------------------------------
+Report for cell fifo_udp_reg.v1
+Instance Path : dut.reg_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         9          100.0
+                            FD1S3AY         1          100.0
+                              TOTAL        10
+----------------------------------------------------------------------
+Report for cell MAC_AXItoRGMII.v1
+Instance Path : dut.mac_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        17           25.4
+                            FD1P3IX        12           63.2
+                            FD1S3IX        40           46.0
+                            FD1S3JX        33           94.3
+                               LUT4       260           62.5
+                              PFUMX        10           52.6
+SUB MODULES
+                            crc32_8         1
+                              TOTAL       373
+----------------------------------------------------------------------
+Report for cell crc32_8.v1
+Instance Path : dut.mac_inst.crc_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        61           14.7
+                              TOTAL        61

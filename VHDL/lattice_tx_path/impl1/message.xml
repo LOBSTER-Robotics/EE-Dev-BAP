@@ -57,255 +57,271 @@
             <ID>35921504</ID>
             <Severity>Info</Severity>
             <Dynamic></Dynamic>
-            <Dynamic>D:/BAP/lattice_projecten/impl1</Dynamic>
+            <Dynamic>D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1</Dynamic>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(27): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(27): </Dynamic>
             <Dynamic>crc32_8</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd</Navigation>
             <Navigation>27</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(35): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(35): </Dynamic>
             <Dynamic>behavioral</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd</Navigation>
             <Navigation>35</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): </Dynamic>
             <Dynamic>mac_axitorgmii</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd</Navigation>
             <Navigation>27</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(5): </Dynamic>
             <Dynamic>mac_rx</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd(28): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(28): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_rx.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd</Navigation>
             <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): </Dynamic>
             <Dynamic>udp_fifo_axi</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd</Navigation>
             <Navigation>24</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): </Dynamic>
             <Dynamic>udp_rx</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_rx_axitofifo.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd</Navigation>
             <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(6): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(6): </Dynamic>
             <Dynamic>controller_pkg</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd</Navigation>
             <Navigation>6</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(13): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(13): </Dynamic>
             <Dynamic>controller_pkg</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd</Navigation>
             <Navigation>13</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(40): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(40): </Dynamic>
             <Dynamic>controller</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd</Navigation>
             <Navigation>40</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(64): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(64): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd</Navigation>
             <Navigation>64</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(12): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(12): </Dynamic>
             <Dynamic>fifolg</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd</Navigation>
             <Navigation>12</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(26): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(26): </Dynamic>
             <Dynamic>structure</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd</Navigation>
             <Navigation>26</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(12): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(12): </Dynamic>
             <Dynamic>fifosm</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd</Navigation>
             <Navigation>12</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(26): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(26): </Dynamic>
             <Dynamic>structure</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd</Navigation>
             <Navigation>26</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(5): </Dynamic>
             <Dynamic>fifo_16ch_mux</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd(34): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(34): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/muxfifo.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd</Navigation>
             <Navigation>34</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(5): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(5): </Dynamic>
             <Dynamic>fifo_udp_reg</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(26): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(26): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd</Navigation>
             <Navigation>26</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/ddr_forrgmii.vhd(12): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(12): </Dynamic>
             <Dynamic>ddr_forrgmii</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/ddr_forrgmii.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd</Navigation>
             <Navigation>12</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/ddr_forrgmii.vhd(21): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(21): </Dynamic>
             <Dynamic>structure</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/ddr_forrgmii.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd</Navigation>
             <Navigation>21</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/rgmii_withddr.vhd(9): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(12): </Dynamic>
+            <Dynamic>ddr_rx</Dynamic>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(21): </Dynamic>
+            <Dynamic>structure</Dynamic>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd</Navigation>
+            <Navigation>21</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(9): </Dynamic>
             <Dynamic>rgmii_tx_ddr</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/rgmii_withddr.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd</Navigation>
             <Navigation>9</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/rgmii_withddr.vhd(24): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(24): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/rgmii_withddr.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd</Navigation>
             <Navigation>24</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/rgmii_withddr.vhd(56): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(56): </Dynamic>
             <Dynamic>rgmii_rx</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/rgmii_withddr.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd</Navigation>
             <Navigation>56</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/rgmii_withddr.vhd(70): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(70): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/rgmii_withddr.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd</Navigation>
             <Navigation>70</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6): </Dynamic>
             <Dynamic>top</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd</Navigation>
             <Navigation>6</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(31): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(31): </Dynamic>
             <Dynamic>behavioral</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd</Navigation>
             <Navigation>31</Navigation>
         </Message>
         <Message>
             <ID>35921205</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(27): </Dynamic>
+            <Dynamic>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(27): </Dynamic>
             <Dynamic>top</Dynamic>
             <Dynamic>Behavioral</Dynamic>
-            <Navigation>d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd</Navigation>
+            <Navigation>d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd</Navigation>
             <Navigation>27</Navigation>
         </Message>
         <Message>

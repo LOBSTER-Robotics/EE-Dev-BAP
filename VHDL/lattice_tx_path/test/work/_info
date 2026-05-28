@@ -1,10 +1,6 @@
 m255
 K4
 z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
 !s11e vcom 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -12,742 +8,803 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dD:/BAP/lattice_projecten/test
-T_opt
-!s110 1779351954
-Vm[ne1aaPI7ocPQdT5gL:@3
-04 6 3 work tb_top sim 1
-=1-3cf011741e4f-6a0ec191-25a-a4f4
-R1
-!s12f OEM25U27 
-!s12b OEM100
-!s124 OEM100
-!s135 nogc
-o-quiet -auto_acc_if_foreign -work work -L work -L pmi_work -L ovi_ecp5u +acc
-tCvgOpt 0
-n@_opt
-OL;O;2024.2;79
+Z0 dD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/test
 Econtroller
-Z3 w1778664898
-Z4 DPx4 work 14 controller_pkg 0 22 bE@@FcDG:izkckiY1:c;@2
-Z5 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 27
-R2
-Z8 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd
-Z9 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd
+Z1 w1778664898
+Z2 DPx4 work 14 controller_pkg 0 22 bE@@FcDG:izkckiY1:c;@2
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 17
+R0
+Z6 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd
+Z7 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd
 l0
 L40 1
 VLJ1a[=aFfY]@bzD56TV?n0
 !s100 K>oCMV97IFo1`BLLehzWG0
-Z10 OL;C;2024.2;79
+Z8 OL;C;2024.2;79
 32
-Z11 !s110 1779351952
+Z9 !s110 1779960561
 !i10b 1
-Z12 !s108 1779351952.000000
-Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd|
-Z14 !s107 D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd|
+Z10 !s108 1779960561.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd|
+Z12 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd|
 !i113 0
-Z15 o-work work -2002 -explicit
-Z16 tExplicit 1 CvgOpt 0
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
 Artl
+R2
+R3
 R4
 R5
-R6
-R7
-Z17 DEx4 work 10 controller 0 22 LJ1a[=aFfY]@bzD56TV?n0
-!i122 27
+Z15 DEx4 work 10 controller 0 22 LJ1a[=aFfY]@bzD56TV?n0
+!i122 17
 l179
 L64 261
 V9R@^D:T]Dh>c@_8Fi>hGZ3
 !s100 b@CEN`BdKgJ2ZANcj=[Qj0
-R10
+R8
 32
-R11
+R9
 !i10b 1
+R10
+R11
 R12
+!i113 0
 R13
 R14
-!i113 0
-R15
-R16
 Pcontroller_pkg
+R3
+R4
 R5
+!i122 17
+R1
+R0
 R6
 R7
-!i122 27
-R3
-R2
-R8
-R9
 l0
 L6 5
 VbE@@FcDG:izkckiY1:c;@2
 !s100 Sn;D]KXf9[7KKeQBLQW3U2
-R10
+R8
 32
 b1
-R11
+R9
 !i10b 1
+R10
+R11
 R12
+!i113 0
 R13
 R14
-!i113 0
-R15
-R16
 Bbody
+R2
+R3
 R4
 R5
-R6
-R7
-!i122 27
+!i122 17
 l0
 L13 21
 V[jQ>Ce1IoDHWXi53oIi^73
 !s100 IiaJocmS<HHhh[Hk7W]Ff3
-R10
+R8
 32
-R11
+R9
 !i10b 1
+R10
+R11
 R12
+!i113 0
 R13
 R14
-!i113 0
-R15
-R16
 Ecrc32_8
-Z18 w1778487487
-R6
-R7
-!i122 20
-R2
-Z19 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd
-Z20 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd
+Z16 w1778487487
+R4
+R5
+!i122 10
+R0
+Z17 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd
+Z18 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd
 l0
 L27 1
 Vci_hCIDfM6iSJI]PTg[0:3
 !s100 ZA_HF6KV<JEY<1cnDc7;m1
-R10
+R8
 32
-Z21 !s110 1779351951
+Z19 !s110 1779960560
 !i10b 1
-Z22 !s108 1779351951.000000
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd|
-Z24 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd|
+Z20 !s108 1779960560.000000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd|
+Z22 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Abehavioral
-R6
-R7
+R4
+R5
 DEx4 work 7 crc32_8 0 22 ci_hCIDfM6iSJI]PTg[0:3
-!i122 20
+!i122 10
 l36
 L35 35
 V<Gzd[DDQO>h6dGGV8@g4L1
 !s100 Q1=:b[1P4gn`:<al^SFVk3
-R10
+R8
 32
-R21
+R19
 !i10b 1
+R20
+R21
 R22
-R23
-R24
 !i113 0
-R15
-R16
+R13
+R14
 Eddr_forrgmii
-Z25 w1779190113
-Z26 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z27 DPx5 ecp5u 10 components 0 22 Ad]?aonGV5M1D:gTUL`R03
-R6
-R7
-!i122 18
-R2
-Z28 8D:/BAP/lattice_projecten/DDR_forRGMII.vhd
-Z29 FD:/BAP/lattice_projecten/DDR_forRGMII.vhd
+Z23 w1779190113
+Z24 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z25 DPx5 ecp5u 10 components 0 22 Ad]?aonGV5M1D:gTUL`R03
+R4
+R5
+!i122 9
+R0
+Z26 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd
+Z27 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd
 l0
-Z30 L12 1
+Z28 L12 1
 VRE_EjIP=ZlOf5Dj^4@lSI3
 !s100 bPPlYE:^RbG`n>dzb1oNn0
-R10
+R8
 32
-R21
+R19
 !i10b 1
 !i113 0
-R15
-R16
+R13
+R14
 Astructure
-R26
-R27
-R6
-R7
-Z31 DEx4 work 12 ddr_forrgmii 0 22 RE_EjIP=ZlOf5Dj^4@lSI3
-!i122 18
+R24
+R25
+R4
+R5
+DEx4 work 12 ddr_forrgmii 0 22 RE_EjIP=ZlOf5Dj^4@lSI3
+!i122 9
 l57
 L21 100
 V4gTLF?fhRM3hke0_RhFlH2
 !s100 7;Wl19?6R4J4D<a8>5;8o1
-R10
+R8
 32
-R21
+R19
 !i10b 1
 !i113 0
-R15
-R16
-Efifo_16ch_mux
-R3
+R13
+R14
+Eddr_rx
+Z29 w1779875183
+R24
+R25
+R4
 R5
-R6
-R7
-!i122 26
-R2
-Z32 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
-Z33 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+!i122 6
+R0
+Z30 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd
+Z31 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd
+l0
+R28
+VBYlz8zAIzofnFXFbJRgRB0
+!s100 ATd=X[D@l@Y:=ZMQ?J6eT3
+R8
+32
+R19
+!i10b 1
+!i113 0
+R13
+R14
+Astructure
+R24
+R25
+R4
+R5
+DEx4 work 6 ddr_rx 0 22 BYlz8zAIzofnFXFbJRgRB0
+!i122 6
+l58
+L21 110
+V[9F@5gN]AR`hATj=`EO`F1
+!s100 V1?WJQWlXzP>:FaSFU3b32
+R8
+32
+R19
+!i10b 1
+!i113 0
+R13
+R14
+Efifo_16ch_mux
+R1
+R3
+R4
+R5
+!i122 16
+R0
+Z32 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+Z33 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
 l0
 L5 1
 V;@jUa@H3GgIKCWQ5Yj3mB1
 !s100 1cW0T_GkH[Am>oR9i?ef53
-R10
+R8
 32
-R11
+R9
 !i10b 1
-R12
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd|
-Z35 !s107 D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd|
+R10
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd|
+Z35 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
 Z36 DEx4 work 13 fifo_16ch_mux 0 22 ;@jUa@H3GgIKCWQ5Yj3mB1
-!i122 26
+!i122 16
 l35
 L34 64
 V`3c:d25L=UdQO^WIMU_DV0
 !s100 l:@TKoZAl4B2KP7cDNiJU3
-R10
+R8
 32
-R11
+R9
 !i10b 1
-R12
+R10
 R34
 R35
 !i113 0
-R15
-R16
+R13
+R14
 Efifo_udp_reg
 Z37 w1779287162
+R3
+R4
 R5
-R6
-R7
-!i122 23
-R2
-Z38 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd
-Z39 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd
+!i122 13
+R0
+Z38 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd
+Z39 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd
 l0
 L5 1
 Vl[j8o22_M;h_]MEXQP;W<0
 !s100 <XLnLckij4XaT>WXfG0=V2
-R10
+R8
 32
-R21
+R9
 !i10b 1
-R22
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd|
-Z41 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd|
+R20
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd|
+Z41 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
 Z42 DEx4 work 12 fifo_udp_reg 0 22 l[j8o22_M;h_]MEXQP;W<0
-!i122 23
+!i122 13
 l33
 L26 32
 V^J91QJ<94mI5PSELhzVVB2
 !s100 FhaAC6NRd96VlUWaCgbgE1
-R10
+R8
 32
-R21
+R9
 !i10b 1
-R22
+R20
 R40
 R41
 !i113 0
-R15
-R16
+R13
+R14
 Efifolg
-R3
-R26
-R27
-R6
-R7
-!i122 24
-R2
-Z43 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
-Z44 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+R1
+R24
+R25
+R4
+R5
+!i122 14
+R0
+Z43 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+Z44 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
 l0
-R30
+R28
 V_b>g`QSUknXVEOfY`[i^T3
 !s100 e5ZJK>a:f_e34a2n>kKQn2
-R10
+R8
 32
-R21
+R9
 !i10b 1
 !i113 0
-R15
-R16
+R13
+R14
 Astructure
-R26
-R27
-R6
-R7
+R24
+R25
+R4
+R5
 Z45 DEx4 work 6 fifolg 0 22 _b>g`QSUknXVEOfY`[i^T3
-!i122 24
+!i122 14
 l217
 L26 880
 VhFX8e1;bHRjGXdZ@6QU:i1
 !s100 5Kk4;fG0N_i6^M@BIA`W]1
-R10
+R8
 32
-R21
+R9
 !i10b 1
 !i113 0
-R15
-R16
+R13
+R14
 Efifosm
-R3
-R26
-R27
-R6
-R7
-!i122 25
-R2
-Z46 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
-Z47 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+R1
+R24
+R25
+R4
+R5
+!i122 15
+R0
+Z46 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+Z47 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
 l0
-R30
+R28
 VGM^7W_YId66eBlR`Un7bM0
 !s100 ndZV75NJTYBC;<edZWmCY0
-R10
+R8
 32
-R21
+R9
 !i10b 1
 !i113 0
-R15
-R16
+R13
+R14
 Astructure
-R26
-R27
-R6
-R7
+R24
+R25
+R4
+R5
 Z48 DEx4 work 6 fifosm 0 22 GM^7W_YId66eBlR`Un7bM0
-!i122 25
+!i122 15
 l127
 L26 510
 VPj[j[fjSO^:CcBSLJ_=7c0
 !s100 gMSdR@z>AmSZ=_SkER?7K1
-R10
+R8
 32
-R11
+R9
 !i10b 1
 !i113 0
-R15
-R16
+R13
+R14
 Emac_axitorgmii
-Z49 w1779281010
+w1779281010
+R3
+R4
 R5
-R6
-R7
-!i122 21
-R2
-Z50 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
-Z51 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+!i122 11
+R0
+8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
 l0
 L5 1
 VO;>F>:ZEKmJPz990]i_>01
 !s100 dno?`=9=PlnZS<lz@V=Of2
-R10
+R8
 32
-R21
+R19
 !i10b 1
-R22
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd|
-Z52 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd|
+R20
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd|
+!s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd|
 !i113 0
-R15
-R16
-Artl
-DEx4 work 7 crc32_8 0 22 YcZ1n9R1>b[U8?0]0?1iF1
-R5
-R6
-R7
-DEx4 work 14 mac_axitorgmii 0 22 8]oFJ:hcUJ0eAmQM_`@@F0
-!i122 6
-l62
-L27 227
-Vc@Lkzhk8N2XYHJG0@004U0
-!s100 C=QoE?:jdHhI[8PN40Q`E1
-R10
-33
-Z53 !s110 1779351757
-!i10b 1
-Z54 !s108 1779351757.000000
-!s90 -reportprogress|300|-2008|-work|work|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd|
-R52
-!i113 0
-Z55 o-2008 -work work
-R16
+R13
+R14
 Emac_rx
-Z56 w1779114017
+Z49 w1779114017
+R3
+R4
 R5
-R6
-R7
-!i122 15
-R2
-Z57 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd
-Z58 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd
+!i122 4
+R0
+Z50 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
+Z51 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
 l0
 L5 1
 VL?zRgW[6zMcM0dfPz_W=^0
 !s100 ji8Qn:>UYBHb`?DNdcW=d1
-R10
+R8
 32
-Z59 !s110 1779351950
+!s110 1779960559
 !i10b 1
-Z60 !s108 1779351950.000000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd|
-Z61 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd|
+!s108 1779960559.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd|
+Z52 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
 DEx4 work 6 mac_rx 0 22 d`J0]Ed;m?gYOU6@OKGN23
 !i122 0
 l60
 L28 208
 VjJ@ZBOBHSX_NiaZQZ^i<O0
 !s100 91B[]kklUmR3j_SOg`zR`0
-R10
+R8
 33
-R53
+!s110 1779960425
 !i10b 1
-!s108 1779351756.000000
-!s90 -reportprogress|300|-2008|-work|work|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd|
-R61
+!s108 1779960425.000000
+!s90 -reportprogress|300|-2008|-work|work|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd|
+R52
 !i113 0
-R55
-R16
+o-2008 -work work
+R14
 Ergmii_rx
-Z62 w1779201252
+Z53 w1778660226
+R3
+R4
 R5
-R6
-R7
-!i122 19
-R2
-Z63 8D:/BAP/lattice_projecten/RGMII_withDDR.vhd
-Z64 FD:/BAP/lattice_projecten/RGMII_withDDR.vhd
+!i122 5
+R0
+Z54 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd
+Z55 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd
 l0
-L56 1
-Vlk3[l7MSCzH]91R_CA==73
-!s100 Fl99314kb6_]T6nEiAC?K3
-R10
+L61 1
+VgNzBHzd5g`a_XHDjO]?M53
+!s100 `L?gFjFIOaZ=9bAcR[5bJ0
+R8
 32
-R21
+R19
 !i10b 1
+R20
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd|
+Z57 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
-DEx4 work 8 rgmii_rx 0 22 lk3[l7MSCzH]91R_CA==73
-!i122 19
-l75
-L70 33
-V<H=`SZgZ97nazU7Wm<Izo0
-!s100 ?GM[bSYOhimOZF=3knj?=2
-R10
+DEx4 work 8 rgmii_rx 0 22 gNzBHzd5g`a_XHDjO]?M53
+!i122 5
+l80
+L75 33
+Vk[Sd[[7jP_>Lf=V57PJ2d1
+!s100 a<?4M7QHdi339;?LZmlkQ2
+R8
 32
-R21
+R19
 !i10b 1
+R20
+R56
+R57
 !i113 0
-R15
-R16
+R13
+R14
 Ergmii_tx
-Z65 w1778660226
+R53
+R3
+R4
 R5
-R6
-R7
-!i122 16
-R2
-Z66 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd
-Z67 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd
+!i122 5
+R0
+R54
+R55
 l0
 L9 1
 VJFP6RKIl9jWVobk[mUJI;0
 !s100 :T;0YVzG<e3FV2BJ82j?D0
-R10
+R8
 32
-R59
+R19
 !i10b 1
-R60
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd|
-Z69 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/RGMII.vhd|
+R20
+R56
+R57
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
 DEx4 work 8 rgmii_tx 0 22 JFP6RKIl9jWVobk[mUJI;0
-!i122 16
+!i122 5
 l27
 L24 28
 V@knMP9jeK`d]iz8PhmP_K1
 !s100 H2?L]i>:11X]l<6f<LTZ43
-R10
+R8
 32
-R59
+R19
 !i10b 1
-R60
-R68
-R69
+R20
+R56
+R57
 !i113 0
-R15
-R16
+R13
+R14
 Ergmii_tx_ddr
-R62
+w1779877690
+R3
+R4
 R5
-R6
-R7
-!i122 19
-R2
-R63
-R64
+!i122 7
+R0
+8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd
+FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd
 l0
 L9 1
 VF@mm5bMJWm`hYn]^^18Q^3
 !s100 jfMBdA;dVS8UIGDSO?GD_2
-R10
+R8
 32
-R21
+R19
 !i10b 1
-R22
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/RGMII_withDDR.vhd|
-!s107 D:/BAP/lattice_projecten/RGMII_withDDR.vhd|
+R20
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd|
+!s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd|
 !i113 0
-R15
-R16
-Artl
-R26
-R27
-R31
-R5
-R6
-R7
-Z70 DEx4 work 12 rgmii_tx_ddr 0 22 F@mm5bMJWm`hYn]^^18Q^3
-!i122 19
-l30
-L24 23
-VGBS0;fonU07bYHZdTI1942
-!s100 SDSb2IALQN?TUMU@Kh8Fh3
-R10
-32
-R21
-!i10b 1
-!i113 0
-R15
-R16
+R13
+R14
 Etb_top
-Z71 w1779284667
+Z58 w1779284667
+R3
+R4
 R5
-R6
-R7
-!i122 29
-R2
-Z72 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
-Z73 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
+!i122 19
+R0
+Z59 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
+Z60 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
 l0
 L5 1
 V2X5G3>_TGHM]QT:Y:ef:h3
 !s100 UHj?5VAUa_kLGeQg8lQ4Z2
-R10
+R8
 32
-R11
+R9
 !i10b 1
-R12
-Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd|
-Z75 !s107 D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd|
+R10
+Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd|
+Z62 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Asim
-Z76 DEx4 work 3 top 0 22 BSYOcbZ^eSh:T2mQ8MjNB1
+Z63 DEx4 work 3 top 0 22 z[Gll7HC6=SmE00iLj:1;1
+R3
+R4
 R5
-R6
-R7
 DEx4 work 6 tb_top 0 22 2X5G3>_TGHM]QT:Y:ef:h3
-!i122 29
+!i122 19
 l37
 L8 163
 VgYMYR1^cVH_ENS0W1>0bW3
 !s100 A1a>>RGZXB;X>R=L5ZTHH1
-R10
+R8
 32
-R11
+R9
 !i10b 1
-R12
-R74
-R75
+R10
+R61
+R62
 !i113 0
-R15
-R16
+R13
+R14
 Etop
-Z77 w1779351876
+Z64 w1779893039
+R3
+R4
 R5
-R6
-R7
-!i122 28
-R2
-Z78 8D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd
-Z79 FD:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd
+!i122 18
+R0
+Z65 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd
+Z66 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd
 l0
 L6 1
-VBSYOcbZ^eSh:T2mQ8MjNB1
-!s100 iL?o_>5VG0GQ71Yo<cT7S3
-R10
+Vz[Gll7HC6=SmE00iLj:1;1
+!s100 gQ>EaNK`eBhQ5@D`lfSN71
+R8
 32
-R11
+R9
 !i10b 1
-R12
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd|
-!s107 D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd|
+R10
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd|
+!s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Abehavioral
-R70
-DEx4 work 14 mac_axitorgmii 0 22 O;>F>:ZEKmJPz990]i_>01
-DEx4 work 12 udp_fifo_axi 0 22 j62I2oAR5:mEaBCNFhAed3
+Z67 DEx4 work 12 rgmii_tx_ddr 0 22 F@mm5bMJWm`hYn]^^18Q^3
+Z68 DEx4 work 14 mac_axitorgmii 0 22 O;>F>:ZEKmJPz990]i_>01
+Z69 DEx4 work 12 udp_fifo_axi 0 22 j62I2oAR5:mEaBCNFhAed3
 R42
 R45
-R26
-R27
+R24
+R25
 R48
 R36
+R2
+R15
+R3
 R4
-R17
 R5
-R6
-R7
-R76
-!i122 28
-l97
-L31 458
-VX::[1?Z2SHUBim`=dlA4^1
-!s100 Ln]lKZ>@TYGPzXTT7ZKfV1
-R10
+R63
+!i122 18
+l99
+L33 458
+V^6Wc@[@BOAIhLaGfd<X=h1
+!s100 [dLHlLF<PCUnXWTGSL7S91
+R8
 32
-R11
+R9
 !i10b 1
 !i113 0
-R15
-R16
-Eudp_fifo_axi
-Z80 w1779351916
+R13
+R14
+Etop_ethernet_tx
+Z70 w1779958209
+R3
+R4
 R5
-R6
-R7
+!i122 20
+R0
+Z71 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd
+Z72 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd
+l0
+L6 1
+VlWT>;YV<kf@688:R1^D:L3
+!s100 `ka0JSDKV]K:j8GJjSged1
+R8
+32
+R9
+!i10b 1
+R10
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd|
+Z74 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R67
+R68
+R69
+R42
+R3
+R4
+R5
+DEx4 work 15 top_ethernet_tx 0 22 lWT>;YV<kf@688:R1^D:L3
+!i122 20
+l48
+L24 122
+V2_h80mdzKcJO5lJ[TeoIk0
+!s100 9549YZ9TX3E?I]`dZV]fM1
+R8
+32
+R9
+!i10b 1
+R10
+R73
+R74
+!i113 0
+R13
+R14
+Etop_tb_fpga
+Z75 w1779957050
+R3
+R4
+R5
 !i122 22
-R2
-Z81 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
-Z82 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+R0
+Z76 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd
+Z77 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd
+l0
+L5 1
+VEa9Q[]5;b9R4L4S0a9aNF2
+!s100 T9K3RScSgaJB@AR0S553a0
+R8
+32
+Z78 !s110 1779960562
+!i10b 1
+Z79 !s108 1779960562.000000
+Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd|
+!s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R63
+R3
+R4
+R5
+DEx4 work 11 top_tb_fpga 0 22 Ea9Q[]5;b9R4L4S0a9aNF2
+!i122 22
+l30
+L29 23
+VUdiElkDK_jL=SoV=nWVI>1
+!s100 [6[OD@[5BS0CWRZ7iJjNf2
+R8
+32
+R78
+!i10b 1
+R79
+R80
+Z81 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd|
+!i113 0
+R13
+R14
+Eudp_fifo_axi
+w1779351916
+R3
+R4
+R5
+!i122 12
+R0
+8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
 l0
 L5 1
 Vj62I2oAR5:mEaBCNFhAed3
 !s100 o=LFbnYOL^Tc@mhb=Qdij1
-R10
+R8
 32
-R21
+R19
 !i10b 1
-R22
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd|
-Z83 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd|
+R20
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd|
+!s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd|
 !i113 0
-R15
-R16
-Artl
-R5
-R6
-R7
-DEx4 work 12 udp_fifo_axi 0 22 Q07zMCICo`IRIWG<boeaI1
-!i122 7
-l64
-L24 162
-VkX`E3m17PLAf@io6UO5c;3
-!s100 ^FQO]WK^4FnmF=FP:jaU;3
-R10
-33
-R53
-!i10b 1
-R54
-!s90 -reportprogress|300|-2008|-work|work|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd|
-R83
-!i113 0
-R55
-R16
+R13
+R14
 Eudp_rx
-Z84 w1779111448
+Z82 w1779111448
+R3
+R4
 R5
-R6
-R7
-!i122 17
-R2
-Z85 8D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
-Z86 FD:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+!i122 8
+R0
+Z83 8D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+Z84 FD:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
 l0
 L5 1
 Ve72AD1U_X8Jk[QU2bo^o=0
 !s100 YB[QTFa1?jz>YlNn7Gl9`2
-R10
+R8
 32
-R21
+R19
 !i10b 1
-R60
-Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd|
-Z88 !s107 D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd|
+R20
+Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd|
+Z86 !s107 D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd|
 !i113 0
-R15
-R16
+R13
+R14
 Artl
+R3
+R4
 R5
-R6
-R7
 DEx4 work 6 udp_rx 0 22 e72AD1U_X8Jk[QU2bo^o=0
-!i122 17
+!i122 8
 l63
 L28 212
 Vi:bT>h>?UfYm0UNTK1YzL1
 !s100 KOAnU2hebDY7X?M7C`M7<0
-R10
+R8
 32
-R21
+R19
 !i10b 1
-R60
-R87
-R88
+R20
+R85
+R86
 !i113 0
-R15
-R16
+R13
+R14

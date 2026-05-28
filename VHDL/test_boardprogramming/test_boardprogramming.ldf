@@ -9,9 +9,12 @@
         <Source name="top.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="top"/>
         </Source>
+<<<<<<< Updated upstream
         <Source name="impl1/impl1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
+=======
+>>>>>>> Stashed changes
         <Source name="test_boardprogramming.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>

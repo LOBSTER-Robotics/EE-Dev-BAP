@@ -20,6 +20,12 @@ u_Fifosm5/rden_i_inv u_Fifosm5/rden_i
 u_Fifosm6/invout_2 u_Fifosm6/Full
 u_Fifosm6/invout_1 adc_fifo_empty_6
 u_Fifosm6/rden_i_inv u_Fifosm6/rden_i
+u_Fifosm10/invout_2 u_Fifosm10/Full
+u_Fifosm10/invout_1 adc_fifo_empty_10
+u_Fifosm10/rden_i_inv u_Fifosm10/rden_i
+u_Fifosm11/invout_2 u_Fifosm11/Full
+u_Fifosm11/invout_1 adc_fifo_empty_11
+u_Fifosm11/rden_i_inv u_Fifosm11/rden_i
 u_Fifosm7/invout_2 u_Fifosm7/Full
 u_Fifosm7/invout_1 adc_fifo_empty_7
 u_Fifosm7/rden_i_inv u_Fifosm7/rden_i
@@ -29,12 +35,6 @@ u_Fifosm8/rden_i_inv u_Fifosm8/rden_i
 u_Fifosm0/invout_2 u_Fifosm0/Full
 u_Fifosm0/invout_1 adc_fifo_empty_0
 u_Fifosm0/rden_i_inv u_Fifosm0/rden_i
-u_Fifosm10/invout_2 u_Fifosm10/Full
-u_Fifosm10/invout_1 adc_fifo_empty_10
-u_Fifosm10/rden_i_inv u_Fifosm10/rden_i
-u_Fifosm11/invout_2 u_Fifosm11/Full
-u_Fifosm11/invout_1 adc_fifo_empty_11
-u_Fifosm11/rden_i_inv u_Fifosm11/rden_i
 u_Fifosm12/invout_2 u_Fifosm12/Full
 u_Fifosm12/invout_1 adc_fifo_empty_12
 u_Fifosm12/rden_i_inv u_Fifosm12/rden_i
@@ -700,7 +700,7 @@ u_Fifosm15/bdcnt_bctr_cia/CI
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Thu May 21 19:08:09 2026
+# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Wed May 27 16:27:19 2026
 
 SYSCONFIG SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=DISABLE SLAVE_PARALLEL_PORT=DISABLE BACKGROUND_RECONFIG=OFF DONE_EX=OFF DONE_OD=ON DONE_PULL=ON MCCLK_FREQ=2.4 TRANSFR=OFF CONFIG_IOVOLTAGE=2.5 CONFIG_SECURE=OFF WAKE_UP=21 COMPRESS_CONFIG=OFF CONFIG_MODE=JTAG INBUF=OFF ;
 FREQUENCY NET "clk_c" 125.000000 MHz ;

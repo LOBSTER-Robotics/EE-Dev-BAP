@@ -1,9 +1,9 @@
 
 -- VHDL netlist produced by program ldbanno, Version Diamond (64-bit) 3.14.0.75.2
 
--- ldbanno -n VHDL -o ethernet_fifo_top_impl1_mapvho.vho -w -neg -gui -msgset D:/BAP/lattice_projecten/promote.xml ethernet_fifo_top_impl1_map.ncd 
--- Netlist created on Thu May 21 19:08:07 2026
--- Netlist written on Thu May 21 19:08:20 2026
+-- ldbanno -n VHDL -o ethernet_fifo_top_impl1_mapvho.vho -w -neg -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_fifo_top_impl1_map.ncd 
+-- Netlist created on Wed May 27 16:27:16 2026
+-- Netlist written on Wed May 27 16:27:36 2026
 -- Design is for device LFE5U-45F
 -- Design is for package CABGA381
 -- Design is for performance grade 8

@@ -1,0 +1,15 @@
+#Start recording tcl command: 5/27/2026 14:10:34
+#Project Location: D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming; Project name: test_boardprogramming
+prj_project new -name "test_boardprogramming" -impl "impl1" -dev LFE5U-45F-7BG381I -synthesis "lse"
+prj_project save
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/led_blinker.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/top.vhd"
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_run Export -impl impl1
+prj_project save
+prj_project close
+#Stop recording: 5/27/2026 15:41:06
