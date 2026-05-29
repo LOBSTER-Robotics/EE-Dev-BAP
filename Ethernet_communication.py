@@ -7,8 +7,8 @@ interface = "Ethernet"
 my_ip = [10, 0, 0, 10]
 fpga_ip = [10, 0, 0, 240]
 
-my_mac = b"\xe8\x6a\x64\xe7\xe8\x29"
-fpga_mac = b"\xe8\x6a\x64\xe7\xe8\x30"
+my_mac = b"\x55\x6a\x64\xe7\xe8\x29"
+fpga_mac = b"\x55\x6a\x64\xe7\xe8\x30"
 
 send_string = "LEDs CHANGED!     "
 def mac_to_str(mac):
@@ -169,6 +169,8 @@ class EthExampleApp:
         packet[24:26] = checksum.to_bytes(2, "big")
 
         decode_udp_packet(packet)
+
+        packet = packet + packet
 
         sendp(bytes(packet), iface=self.interface, verbose=False)
 
