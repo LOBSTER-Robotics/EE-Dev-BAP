@@ -1,0 +1,38 @@
+BLOCK RESETPATHS ;
+BLOCK ASYNCPATHS ;
+
+###############################################################################
+# 100 MHz on-board LVDS oscillator → PLL generates 50 MHz internally.
+# No external clock pin needed beyond P3/P4.
+###############################################################################
+LOCATE COMP "clk_p" SITE "P3" ;
+LOCATE COMP "clk_n" SITE "P4" ;
+IOBUF PORT "clk_p"  IO_TYPE=LVDS ;
+IOBUF PORT "clk_n"  IO_TYPE=LVDS ;
+
+FREQUENCY PORT "clk_p" 100.000000 MHz ;
+USE PRIMARY NET "s_clk_50" ;
+
+###############################################################################
+# Reset push-button (Bank 2, 2.5V — same bank as switches/display)
+###############################################################################
+LOCATE COMP "rst_btn" SITE "K19" ;
+IOBUF PORT  "rst_btn" IO_TYPE=LVCMOS25 PULLMODE=UP ;
+
+###############################################################################
+# DAC8811 SPI interface
+# X4 expansion connector, Bank 0/1 (3.3V)
+#
+# Physical wiring:
+#   X4 pin 2 (GND)  → DAC8811 GND
+#   X4 pin 3 (IO0)  → DAC8811 CLK   (spi_clk)
+#   X4 pin 4 (IO1)  → DAC8811 SDI   (sdi[0])
+#   X4 pin 5 (IO2)  → DAC8811 CS    (cs_n)
+###############################################################################
+LOCATE COMP "spi_clk" SITE "A12" ;
+LOCATE COMP "sdi[0]"  SITE "A13" ;
+LOCATE COMP "cs_n"    SITE "B13" ;
+
+IOBUF PORT "spi_clk"  IO_TYPE=LVCMOS33 ;
+IOBUF PORT "sdi[0]"   IO_TYPE=LVCMOS33 ;
+IOBUF PORT "cs_n"     IO_TYPE=LVCMOS33 ;
