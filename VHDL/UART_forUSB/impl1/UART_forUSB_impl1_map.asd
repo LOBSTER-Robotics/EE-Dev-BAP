@@ -1,16 +1,17 @@
 [ActiveSupport MAP]
-Device = LFE5U-45F;
+Device = LFE5UM-45F;
 Package = CABGA381;
 Performance = 7;
 LUTS_avail = 43848;
-LUTS_used = 134;
+LUTS_used = 167;
 FF_avail = 44051;
-FF_used = 95;
-INPUT_LVCMOS25 = 1;
-INPUT_LVCMOS33 = 2;
+FF_used = 121;
+INPUT_LVCMOS25 = 2;
+INPUT_LVCMOS33 = 1;
+OUTPUT_LVCMOS25 = 8;
 OUTPUT_LVCMOS33 = 1;
 IO_avail = 203;
-IO_used = 4;
+IO_used = 12;
 EBR_avail = 108;
 EBR_used = 0;
 ;

@@ -3,50 +3,50 @@ Report for cell uart_echo
    Instance path: uart_echo
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      92.00        100.0
-                                  LUT4	      98.00        100.0
-                                 IOBUF	          4        100.0
-                                PFUREG	         95        100.0
-                                RIPPLE	         18        100.0
+                                  SLIC	     107.00        100.0
+                                  LUT4	     103.00        100.0
+                                 IOBUF	         12        100.0
+                                PFUREG	        121        100.0
+                                RIPPLE	         32        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-olo_intf_uart(125000000.0,115200.0,8,"1","none")(1,1,1,4)	          1        86.6
+olo_intf_uart(125000000.0,115200.0,8,"1","none")(1,1,1,4)	          1        88.5
 ---------------------------------------------------
 Report for cell olo_intf_uart(125000000.0,115200.0,8,"1","none")(1,1,1,4)
    Instance path: uart_echo/u_uart
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      79.67        86.6
-                                  LUT4	      91.00        92.9
-                                PFUREG	         77        81.1
-                                RIPPLE	         18        100.0
+                                  SLIC	      94.67        88.5
+                                  LUT4	      96.00        93.2
+                                PFUREG	        103        85.1
+                                RIPPLE	         32        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-olo_base_strobe_gen(125000000.0,230400.0,true)	          1        15.2
-                olo_intf_sync(1,'1',2)	          1         1.1
-olo_base_strobe_gen(125000000.0,230400.0,true)_U0	          1        16.3
+olo_base_strobe_gen(125000000.0,230400.0,true)	          1        13.1
+                olo_intf_sync(1,'1',2)	          1         0.9
+olo_base_strobe_gen(125000000.0,230400.0,true)_U0	          1        13.7
 ---------------------------------------------------
 Report for cell olo_intf_sync(1,'1',2)
    Instance path: uart_echo/u_uart/i_sync
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	       1.00         1.1
-                                PFUREG	          2         2.1
+                                  SLIC	       1.00         0.9
+                                PFUREG	          2         1.7
 ---------------------------------------------------
 Report for cell olo_base_strobe_gen(125000000.0,230400.0,true)
    Instance path: uart_echo/u_uart/i_strb_tx
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      14.00        15.2
-                                  LUT4	       9.00         9.2
-                                PFUREG	         18        18.9
-                                RIPPLE	          9        50.0
+                                  SLIC	      14.00        13.1
+                                  LUT4	       9.00         8.7
+                                PFUREG	         18        14.9
+                                RIPPLE	          9        28.1
 ---------------------------------------------------
 Report for cell olo_base_strobe_gen(125000000.0,230400.0,true)_U0
    Instance path: uart_echo/u_uart/i_strb_rx
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      15.00        16.3
-                                  LUT4	       9.00         9.2
-                                PFUREG	         18        18.9
-                                RIPPLE	          9        50.0
+                                  SLIC	      14.67        13.7
+                                  LUT4	       9.00         8.7
+                                PFUREG	         18        14.9
+                                RIPPLE	          9        28.1

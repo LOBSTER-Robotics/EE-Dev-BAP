@@ -52,7 +52,8 @@ entity olo_intf_uart is
         Rx_ParityError  : out   std_logic;
         -- UART Interface
         Uart_Tx         : out   std_logic;
-        Uart_Rx         : in    std_logic                                 := '1'
+        Uart_Rx         : in    std_logic                                 := '1';
+		Debug_Leds_n    : out   std_logic_vector(7 downto 0)
     );
 end entity;
 
@@ -133,6 +134,11 @@ architecture rtl of olo_intf_uart is
     signal TxStrobe  : std_logic;
     signal RxStrobe  : std_logic;
     signal UartRxInt : std_logic;
+	signal heartbeat_cnt      : unsigned(25 downto 0) := (others => '0');
+    signal tx_seen_cnt        : natural range 0 to 12_500_000 := 0;
+    signal rx_seen_cnt        : natural range 0 to 12_500_000 := 0;
+    signal parity_err_sticky  : std_logic := '0';
+    signal debug_leds         : std_logic_vector(7 downto 0);
 
 begin
 
@@ -333,6 +339,65 @@ begin
             end if;
         end if;
     end process;
+	
+	 -----------------------------------------------------------------------------------------------
+    -- Debug LEDs
+    -----------------------------------------------------------------------------------------------
+    p_debug : process (Clk) is
+    begin
+        if rising_edge(Clk) then
+            if Rst = '1' then
+                heartbeat_cnt     <= (others => '0');
+                tx_seen_cnt       <= 0;
+                rx_seen_cnt       <= 0;
+                parity_err_sticky <= '0';
+            else
+                -- LED0 heartbeat: proves clock is running
+                heartbeat_cnt <= heartbeat_cnt + 1;
+
+                -- Stretch Tx_Valid so it is visible on an LED
+                if Tx_Valid = '1' then
+                    tx_seen_cnt <= 12_500_000;  -- about 100 ms at 125 MHz
+                elsif tx_seen_cnt > 0 then
+                    tx_seen_cnt <= tx_seen_cnt - 1;
+                end if;
+
+                -- Stretch Rx_Valid so it is visible on an LED
+                if r.Rx_Valid = '1' then
+                    rx_seen_cnt <= 12_500_000;  -- about 100 ms at 125 MHz
+                elsif rx_seen_cnt > 0 then
+                    rx_seen_cnt <= rx_seen_cnt - 1;
+                end if;
+
+                -- Sticky parity error until reset
+                if r.Rx_ParityError = '1' then
+                    parity_err_sticky <= '1';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- Internal debug LED meaning, active-high here:
+    --
+    -- LED0 = heartbeat / clock alive
+    -- LED1 = reset active
+    -- LED2 = TX ready
+    -- LED3 = TX busy
+    -- LED4 = RX busy
+    -- LED5 = Tx_Valid seen, stretched
+    -- LED6 = Rx_Valid seen, stretched
+    -- LED7 = sticky parity error
+    debug_leds(0) <= heartbeat_cnt(25);
+    debug_leds(1) <= TxStrobe;
+    debug_leds(2) <= r.Tx_Ready;
+    debug_leds(3) <= '1' when r.StateTx /= Idle_s else '0';
+    debug_leds(4) <= '1' when r.StateRx /= Idle_s else '0';
+    debug_leds(5) <= r.Uart_Tx;
+    debug_leds(6) <= Uart_Rx;
+    debug_leds(7) <= parity_err_sticky;
+
+    -- Board LEDs are active-low
+    Debug_Leds_n <= not debug_leds;
 
     -----------------------------------------------------------------------------------------------
     -- Component Instantiations

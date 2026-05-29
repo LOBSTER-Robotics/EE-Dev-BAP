@@ -2,36 +2,36 @@ Loading design for application iotiming from file uart_forusb_impl1.ncd.
 Design name: uart_echo
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LFE5U-45F
+Device:      LFE5UM-45F
 Package:     CABGA381
 Performance: 8
-Package Status:                     Final          Version 1.50.
+Package Status:                     Final          Version 1.38.
 Performance Hardware Data Status:   Final          Version 55.1.
 Loading design for application iotiming from file uart_forusb_impl1.ncd.
 Design name: uart_echo
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LFE5U-45F
+Device:      LFE5UM-45F
 Package:     CABGA381
 Performance: 9
-Package Status:                     Final          Version 1.50.
+Package Status:                     Final          Version 1.38.
 Performance Hardware Data Status:   Final          Version 55.1.
 Loading design for application iotiming from file uart_forusb_impl1.ncd.
 Design name: uart_echo
 NCD version: 3.3
 Vendor:      LATTICE
-Device:      LFE5U-45F
+Device:      LFE5UM-45F
 Package:     CABGA381
 Performance: M
-Package Status:                     Final          Version 1.50.
+Package Status:                     Final          Version 1.38.
 Performance Hardware Data Status:   Final          Version 55.1.
 // Design: uart_echo
 // Package: CABGA381
 // ncd File: uart_forusb_impl1.ncd
 // Version: Diamond (64-bit) 3.14.0.75.2
-// Written on Fri May 29 11:32:16 2026
+// Written on Fri May 29 14:21:36 2026
 // M: Minimum Performance Grade
-// iotiming UART_forUSB_impl1.ncd UART_forUSB_impl1.prf -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml
+// iotiming UART_forUSB_impl1.ncd UART_forUSB_impl1.prf -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml
 
 I/O Timing Report (All units are in ns)
 
@@ -41,13 +41,19 @@ Worst Case Results across Performance Grades (M, 9, 8, 7):
 
 Port    Clock Edge  Setup Performance_Grade  Hold Performance_Grade
 ----------------------------------------------------------------------
-Rst     Clk   R     2.171      7       0.220     7
-Uart_Rx Clk   R     1.903      7      -0.625     7
+Rst     Clk   R     3.450      7       1.457     7
+Uart_Rx Clk   R     1.565      7      -0.375     7
 
 
 // Clock to Output Delay
 
 Port    Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
 ------------------------------------------------------------------------
-Uart_Tx Clk   R     9.563         7        4.231          M
+Uart_Tx Clk   R     9.125         7        4.095          M
+leds[0] Clk   R     7.878         7        3.393          M
+leds[1] Clk   R     8.335         7        3.628          M
+leds[2] Clk   R     9.386         7        4.001          M
+leds[3] Clk   R     8.169         7        3.572          M
+leds[4] Clk   R     8.309         7        3.629          M
+leds[5] Clk   R     7.919         7        3.471          M
 WARNING: you must also run trce with hold speed: 7

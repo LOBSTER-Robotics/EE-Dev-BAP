@@ -4,11 +4,12 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Fri May 29 11:31:47 2026
+Fri May 29 14:21:18 2026
 
-D:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f UART_forUSB_impl1.p2t
+E:/Apps/Lattice Diamond/ispfpga\bin\nt64\par -f UART_forUSB_impl1.p2t
 UART_forUSB_impl1_map.ncd UART_forUSB_impl1.dir UART_forUSB_impl1.prf -gui
--msgset D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml
+-msgset
+C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml
 
 
 Preference file: UART_forUSB_impl1.prf.
@@ -16,11 +17,11 @@ Preference file: UART_forUSB_impl1.prf.
 Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
 Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            3.092        0            0.171        0            21           Completed
+5_1   *      0            3.252        0            0.170        0            13           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 21 secs 
+Total (real) run time for 1-seed: 13 secs 
 
 par done!
 

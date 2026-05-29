@@ -5,34 +5,37 @@
 Design Information
 ------------------
 
-Command line:   map -a ECP5U -p LFE5U-45F -t CABGA381 -s 7 -oc Industrial
+Command line:   map -a ECP5UM -p LFE5UM-45F -t CABGA381 -s 7 -oc Industrial
      UART_forUSB_impl1.ngd -o UART_forUSB_impl1_map.ncd -pr
      UART_forUSB_impl1.prf -mp UART_forUSB_impl1.mrp -lpf
-     D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/UART_forUSB_impl1.lpf -lpf
-     D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.lpf -gui -msgset
-     D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml 
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/UART_forUSB_impl1.lpf -lpf
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.lpf -gui -msgset
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml 
 Target Vendor:  LATTICE
-Target Device:  LFE5U-45FCABGA381
+Target Device:  LFE5UM-45FCABGA381
 Target Performance:   7
-Mapper:  sa5p00,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  05/29/26  11:31:43
+Mapper:  sa5p00m,  version:  Diamond (64-bit) 3.14.0.75.2
+Mapped on:  05/29/26  14:21:16
 
 Design Summary
 --------------
 
-   Number of registers:     95 out of 44457 (0%)
-      PFU registers:           95 out of 43848 (0%)
+   Number of registers:    121 out of 44457 (0%)
+      PFU registers:          121 out of 43848 (0%)
       PIO registers:            0 out of   609 (0%)
-   Number of SLICEs:        92 out of 21924 (0%)
-      SLICEs as Logic/ROM:     92 out of 21924 (0%)
+   Number of SLICEs:       107 out of 21924 (0%)
+      SLICEs as Logic/ROM:    107 out of 21924 (0%)
       SLICEs as RAM:            0 out of 16443 (0%)
-      SLICEs as Carry:         18 out of 21924 (0%)
-   Number of LUT4s:        134 out of 43848 (0%)
-      Number used as logic LUTs:         98
+      SLICEs as Carry:         32 out of 21924 (0%)
+   Number of LUT4s:        167 out of 43848 (0%)
+      Number used as logic LUTs:        103
       Number used as distributed RAM:     0
-      Number used as ripple logic:       36
+      Number used as ripple logic:       64
       Number used as shift registers:     0
-   Number of PIO sites used: 4 out of 203 (2%)
+   Number of PIO sites used: 12 out of 203 (6%)
    Number of block RAMs:  0 out of 108 (0%)
    Number of GSRs:  0 out of 1 (0%)
    JTAG used :      No
@@ -49,27 +52,30 @@ Design Summary
    Number of CLKDIV:  0 out of 4 (0%)
    Number of ECLKSYNC:  0 out of 10 (0%)
    Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Number of DCUs:  0 out of 2 (0%)
+   Number of DCU Channels:  0 out of 4 (0%)
+   Number of EXTREFs:  0 out of 2 (0%)
    Notes:-
       1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
      distributed RAMs) + 2*(Number of ripple logic)
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
 
-        Number Of Mapped DSP Components:
-   --------------------------------
-   MULT18X18D          0
-   MULT9X9D            0
-   ALU54B              0
-
                                     Page 1
 
 
 
 
-Design:  uart_echo                                     Date:  05/29/26  11:31:43
+Design:  uart_echo                                     Date:  05/29/26  14:21:16
 
 Design Summary (cont)
 ---------------------
+
+        Number Of Mapped DSP Components:
+   --------------------------------
+   MULT18X18D          0
+   MULT9X9D            0
+   ALU54B              0
    ALU24B              0
    PRADD18A            0
    PRADD9A             0
@@ -78,38 +84,38 @@ Design Summary (cont)
    Number of Used DSP ALU Sites:  0 out of 72 (0 %)
    Number of Used DSP PRADD Sites:  0 out of 144 (0 %)
    Number of clocks:  1
-     Net Clk_c: 59 loads, 59 rising, 0 falling (Driver: PIO Clk )
+     Net Clk_c: 74 loads, 74 rising, 0 falling (Driver: PIO Clk )
    Number of Clock Enables:  7
-     Net Clk_c_enable_36: 4 loads, 4 LSLICEs
+     Net Clk_c_enable_32: 4 loads, 4 LSLICEs
+     Net Clk_c_enable_25: 4 loads, 4 LSLICEs
      Net rx_valid: 1 loads, 1 LSLICEs
-     Net Clk_c_enable_29: 4 loads, 4 LSLICEs
-     Net u_uart/Clk_c_enable_38: 6 loads, 6 LSLICEs
-     Net u_uart/Clk_c_enable_39: 3 loads, 3 LSLICEs
-     Net u_uart/Clk_c_enable_7: 1 loads, 1 LSLICEs
-     Net u_uart/Clk_c_enable_16: 4 loads, 4 LSLICEs
+     Net u_uart/Clk_c_enable_11: 3 loads, 3 LSLICEs
+     Net u_uart/Clk_c_enable_39: 6 loads, 6 LSLICEs
+     Net u_uart/Clk_c_enable_6: 1 loads, 1 LSLICEs
+     Net u_uart/Clk_c_enable_18: 4 loads, 4 LSLICEs
    Number of LSRs:  10
-     Net n802: 1 loads, 1 LSLICEs
-     Net Rst_c: 12 loads, 12 LSLICEs
-     Net n139: 1 loads, 1 LSLICEs
-     Net n894: 1 loads, 1 LSLICEs
-     Net u_uart/n899: 1 loads, 1 LSLICEs
-     Net u_uart/n898: 3 loads, 3 LSLICEs
+     Net Rst_c: 27 loads, 27 LSLICEs
+     Net n967: 1 loads, 1 LSLICEs
+     Net leds_0_4: 1 loads, 1 LSLICEs
+     Net n146: 1 loads, 1 LSLICEs
+     Net n1056: 1 loads, 1 LSLICEs
+     Net u_uart/n1062: 3 loads, 3 LSLICEs
      Net u_uart/RxStrobe: 1 loads, 1 LSLICEs
-     Net u_uart/n273: 1 loads, 1 LSLICEs
-     Net u_uart/i_strb_tx/n390: 9 loads, 9 LSLICEs
-     Net u_uart/i_strb_rx/n394: 9 loads, 9 LSLICEs
+     Net u_uart/n1065: 1 loads, 1 LSLICEs
+     Net u_uart/i_strb_tx/n402: 9 loads, 9 LSLICEs
+     Net u_uart/i_strb_rx/n406: 9 loads, 9 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net Rst_c: 19 loads
+     Net Rst_c: 34 loads
      Net u_uart/RxStrobe: 13 loads
      Net u_uart/r.RxCount_0: 12 loads
      Net u_uart/r.RxCount_1: 12 loads
      Net u_uart/r.RxCount_2: 11 loads
      Net u_uart/r.TxCount_0: 11 loads
-     Net n139: 10 loads
-     Net u_uart/i_strb_tx/n390: 9 loads
+     Net n146: 10 loads
+     Net u_uart/i_strb_rx/n406: 9 loads
+     Net u_uart/i_strb_tx/n402: 9 loads
      Net u_uart/r.TxCount_1: 9 loads
-     Net u_uart/r.TxCount_2: 9 loads
 
 
 
@@ -117,12 +123,6 @@ Design Summary (cont)
    Number of warnings:  0
    Number of errors:    0
      
-
-Design Errors/Warnings
-----------------------
-
-   No errors or warnings present.
-
 
 
 
@@ -132,7 +132,12 @@ Design Errors/Warnings
 
 
 
-Design:  uart_echo                                     Date:  05/29/26  11:31:43
+Design:  uart_echo                                     Date:  05/29/26  14:21:16
+
+Design Errors/Warnings
+----------------------
+
+   No errors or warnings present.
 
 IO (PIO) Attributes
 -------------------
@@ -141,50 +146,84 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
+| leds[4]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[5]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[6]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[7]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Uart_Tx             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| leds[3]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[2]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[1]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[0]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Clk                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
 | Rst                 | INPUT     | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | Uart_Rx             | INPUT     | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| Clk                 | INPUT     | LVCMOS33  |            |
-+---------------------+-----------+-----------+------------+
-| Uart_Tx             | OUTPUT    | LVCMOS33  |            |
 +---------------------+-----------+-----------+------------+
 
 Removed logic
 -------------
 
 Block GSR_INST undriven or does not drive anything - clipped.
-Signal u_uart/n245 was merged into signal u_uart/RxStrobe
-Signal u_uart/n895 was merged into signal n139
-Signal u_uart/n896 was merged into signal u_uart/n273
-Signal u_uart/i_strb_rx/Count_288_add_4_1/S0 undriven or does not drive anything
+Signal u_uart/n253 was merged into signal u_uart/RxStrobe
+Signal u_uart/n1058 was merged into signal n146
+Signal u_uart/n1057 was merged into signal leds_0_4
+Signal u_uart/i_strb_rx/Count_291_add_4_1/S0 undriven or does not drive anything
      - clipped.
-Signal u_uart/i_strb_rx/Count_288_add_4_1/CI undriven or does not drive anything
+Signal u_uart/i_strb_rx/Count_291_add_4_1/CI undriven or does not drive anything
      - clipped.
-Signal u_uart/i_strb_rx/Count_288_add_4_17/S1 undriven or does not drive
+Signal u_uart/i_strb_rx/Count_291_add_4_17/S1 undriven or does not drive
      anything - clipped.
-Signal u_uart/i_strb_rx/Count_288_add_4_17/CO undriven or does not drive
+Signal u_uart/i_strb_rx/Count_291_add_4_17/CO undriven or does not drive
      anything - clipped.
-Signal u_uart/i_strb_tx/Count_287_add_4_1/S0 undriven or does not drive anything
+Signal u_uart/i_strb_tx/Count_289_add_4_1/S0 undriven or does not drive anything
      - clipped.
-Signal u_uart/i_strb_tx/Count_287_add_4_1/CI undriven or does not drive anything
+Signal u_uart/i_strb_tx/Count_289_add_4_1/CI undriven or does not drive anything
      - clipped.
-Signal u_uart/i_strb_tx/Count_287_add_4_17/S1 undriven or does not drive
+Signal u_uart/i_strb_tx/Count_289_add_4_17/S1 undriven or does not drive
      anything - clipped.
-Signal u_uart/i_strb_tx/Count_287_add_4_17/CO undriven or does not drive
+
+                                    Page 3
+
+
+
+
+Design:  uart_echo                                     Date:  05/29/26  14:21:16
+
+Removed logic (cont)
+--------------------
+Signal u_uart/i_strb_tx/Count_289_add_4_17/CO undriven or does not drive
      anything - clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_27/S1 undriven or does not drive anything
+     - clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_27/CO undriven or does not drive anything
+     - clipped.
 Block u_uart/i_strb_rx/i100_1_lut was optimized away.
-Block u_uart/i505_1_lut was optimized away.
-Block u_uart/i506_1_lut was optimized away.
+Block u_uart/i509_1_lut was optimized away.
+Block u_uart/i508_1_lut was optimized away.
 
      
 
 Run Time and Memory Usage
 -------------------------
 
-   Total CPU Time: 1 secs  
-   Total REAL Time: 2 secs  
-   Peak Memory Usage: 157 MB
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 158 MB
         
 
 
@@ -193,7 +232,34 @@ Run Time and Memory Usage
 
 
 
-                                    Page 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 4
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

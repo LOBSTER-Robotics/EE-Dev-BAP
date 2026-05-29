@@ -8,7 +8,8 @@ entity uart_echo is
         Rst     : in  std_logic;
 
         Uart_Tx : out std_logic;
-        Uart_Rx : in  std_logic
+        Uart_Rx : in  std_logic;
+		leds : out std_logic_vector(7 downto 0)
     );
 end entity;
 
@@ -51,7 +52,8 @@ begin
             Rx_ParityError  => rx_parity_error,
 
             Uart_Tx         => Uart_Tx,
-            Uart_Rx         => Uart_Rx
+            Uart_Rx         => Uart_Rx,
+			Debug_Leds_n    => leds
         );
 
     --------------------------------------------------------------------------

@@ -1,0 +1,5 @@
+#Start recording tcl command: 5/29/2026 12:00:50
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_project close
+#Stop recording: 5/29/2026 12:02:23

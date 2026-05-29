@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Bitgen">
+        <Message>
+            <ID>1009992</ID>
+            <Severity>Info</Severity>
+            <Dynamic> SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by sa5p00m.acd ###</Dynamic>
+        </Message>
+        <Message>
+            <ID>1009992</ID>
+            <Severity>Info</Severity>
+            <Dynamic> SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK</Dynamic>
+        </Message>
+    </Task>
     <Task name="Lattice_Synthesis">
         <Message>
             <ID>35002000</ID>
@@ -13,160 +25,160 @@
             <ID>35921504</ID>
             <Severity>Info</Severity>
             <Dynamic></Dynamic>
-            <Dynamic>D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1</Dynamic>
+            <Dynamic>C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1</Dynamic>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd(27): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd(27): </Dynamic>
             <Dynamic>olo_base_pkg_array</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd</Navigation>
             <Navigation>27</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd(82): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd(82): </Dynamic>
             <Dynamic>olo_base_pkg_array</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_array.vhd</Navigation>
             <Navigation>82</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd(32): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd(32): </Dynamic>
             <Dynamic>olo_base_pkg_math</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd</Navigation>
             <Navigation>32</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd(158): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd(158): </Dynamic>
             <Dynamic>olo_base_pkg_math</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_math.vhd</Navigation>
             <Navigation>158</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd(33): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd(33): </Dynamic>
             <Dynamic>olo_base_strobe_gen</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd</Navigation>
             <Navigation>33</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd(51): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd(51): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_strobe_gen.vhd</Navigation>
             <Navigation>51</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd(28): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd(28): </Dynamic>
             <Dynamic>olo_base_pkg_attribute</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd</Navigation>
             <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd(123): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd(123): </Dynamic>
             <Dynamic>olo_base_pkg_attribute</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_attribute.vhd</Navigation>
             <Navigation>123</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd(33): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd(33): </Dynamic>
             <Dynamic>olo_intf_sync</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd</Navigation>
             <Navigation>33</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd(53): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd(53): </Dynamic>
             <Dynamic>struct</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_sync.vhd</Navigation>
             <Navigation>53</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd(31): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd(31): </Dynamic>
             <Dynamic>olo_base_pkg_logic</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd</Navigation>
             <Navigation>31</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd(116): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd(116): </Dynamic>
             <Dynamic>olo_base_pkg_logic</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_logic.vhd</Navigation>
             <Navigation>116</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd(28): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd(28): </Dynamic>
             <Dynamic>olo_base_pkg_string</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd</Navigation>
             <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921013</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd(58): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd(58): </Dynamic>
             <Dynamic>olo_base_pkg_string</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_base_pkg_string.vhd</Navigation>
             <Navigation>58</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(33): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(33): </Dynamic>
             <Dynamic>olo_intf_uart</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
             <Navigation>33</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(62): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(63): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
-            <Navigation>62</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
+            <Navigation>63</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(5): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(5): </Dynamic>
             <Dynamic>uart_echo</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(15): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(16): </Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
-            <Navigation>15</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
+            <Navigation>16</Navigation>
         </Message>
         <Message>
             <ID>35921205</ID>
             <Severity>Warning</Severity>
-            <Dynamic>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(13): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(14): </Dynamic>
             <Dynamic>uart_echo</Dynamic>
             <Dynamic>rtl</Dynamic>
-            <Navigation>d:/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
-            <Navigation>13</Navigation>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
+            <Navigation>14</Navigation>
         </Message>
         <Message>
             <ID>35001771</ID>
@@ -189,6 +201,22 @@
             <Severity>Info</Severity>
             <Dynamic>\u_uart/r.StateRx</Dynamic>
             <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(340): </Dynamic>
+            <Dynamic>\u_uart/r.Rx_ParityError_135</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
+            <Navigation>340</Navigation>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(377): </Dynamic>
+            <Dynamic>\u_uart/parity_err_sticky_140</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
+            <Navigation>377</Navigation>
         </Message>
         <Message>
             <ID>35001747</ID>
