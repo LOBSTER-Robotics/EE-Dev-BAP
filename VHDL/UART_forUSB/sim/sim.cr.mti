@@ -1,0 +1,127 @@
+D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package olo_base_pkg_attribute
+-- Compiling package body olo_base_pkg_attribute
+-- Loading package olo_base_pkg_attribute
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Loading package olo_base_pkg_math
+-- Loading package olo_base_pkg_logic
+-- Loading package olo_base_pkg_string
+-- Compiling entity olo_intf_uart
+-- Compiling architecture rtl of olo_intf_uart
+** Error: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd(161): (vcom-1441) Process(ALL) is not defined for this version of the language.
+-- Loading entity olo_base_strobe_gen
+-- Loading package olo_base_pkg_attribute
+-- Loading entity olo_intf_sync
+** Note: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd(377): VHDL Compiler exiting
+
+} {14.0 15.0} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Compiling package olo_base_pkg_math
+-- Compiling package body olo_base_pkg_math
+-- Loading package olo_base_pkg_math
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Loading package olo_base_pkg_math
+-- Compiling package olo_base_pkg_logic
+-- Compiling package body olo_base_pkg_logic
+-- Loading package olo_base_pkg_logic
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package olo_base_pkg_attribute
+-- Compiling entity olo_intf_sync
+-- Compiling architecture struct of olo_intf_sync
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity uart_echo
+-- Compiling architecture rtl of uart_echo
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Loading package olo_base_pkg_math
+-- Loading package olo_base_pkg_logic
+-- Loading package olo_base_pkg_string
+-- Loading entity olo_intf_uart
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package olo_base_pkg_array
+** Error: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd(67): Element subtype (ieee.std_logic_1164.STD_LOGIC_VECTOR) of array type cannot be unconstrained array type.
+** Error: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd(68): Element subtype (ieee.NUMERIC_STD.UNSIGNED) of array type cannot be unconstrained array type.
+** Error: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd(69): Element subtype (ieee.NUMERIC_STD.SIGNED) of array type cannot be unconstrained array type.
+** Note: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd(77): VHDL Compiler exiting
+
+} {8.0 11.0} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Loading package olo_base_pkg_math
+-- Compiling package olo_base_pkg_string
+-- Compiling package body olo_base_pkg_string
+-- Loading package olo_base_pkg_string
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package olo_base_pkg_array
+-- Loading package olo_base_pkg_math
+-- Compiling entity olo_base_strobe_gen
+-- Compiling architecture rtl of olo_base_strobe_gen
+
+} {} {}} D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd
+Questa Lattice OEM Edition-64 vcom 2024.2 Compiler 2024.05 May 20 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity uart_echo_tb
+-- Compiling architecture sim of uart_echo_tb
+-- Loading entity uart_echo
+
+} {} {}}

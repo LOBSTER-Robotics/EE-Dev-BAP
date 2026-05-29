@@ -1,0 +1,509 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+!s11e vcom 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/sim
+T_opt
+!s110 1780044603
+V^zJcTiP>OfCaG6niHXR292
+04 12 3 work uart_echo_tb sim 1
+=1-3cf011741e4f-6a19533a-319-bce8
+R1
+!s12f OEM25U6 
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L work -L pmi_work -L ovi_ecp5u +acc
+tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+Polo_base_pkg_array
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+Z6 w1779977132
+R2
+Z7 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd
+Z8 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd
+l0
+L27 51
+Vk03EFm=g0dck]JV07[:JZ1
+!s100 VJM:O^XP]7W1?B6WdI3iB1
+Z9 OL;C;2024.2;79
+33
+b1
+Z10 !s110 1780043033
+!i10b 1
+Z11 !s108 1780043033.000000
+Z12 !s90 -reportprogress|300|-2008|-work|work|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd|
+Z13 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd|
+!i113 0
+Z14 o-2008 -work work
+Z15 tExplicit 1 CvgOpt 0
+Bbody
+Z16 DPx4 work 18 olo_base_pkg_array 0 22 k03EFm=g0dck]JV07[:JZ1
+R3
+R4
+R5
+!i122 0
+l0
+L82 68
+VQ1AcbM^i9k=59dYdJn1810
+!s100 69Pe6`gfL>g;F:1e??aeG0
+R9
+33
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Polo_base_pkg_attribute
+R3
+R4
+R5
+!i122 11
+Z17 w1779977322
+R2
+Z18 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd
+Z19 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd
+l0
+L28 91
+V5P2KNP8mndE>4_c194Rcm0
+!s100 ZVjYn0DMTR]:j5J516GSH1
+R9
+32
+Z20 !s110 1780043396
+!i10b 1
+Z21 !s108 1780043395.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd|
+Z23 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd|
+!i113 0
+Z24 o-work work -2002 -explicit
+R15
+Bbody
+Z25 DPx4 work 22 olo_base_pkg_attribute 0 22 5P2KNP8mndE>4_c194Rcm0
+R3
+R4
+R5
+!i122 11
+l0
+L123 3
+V5:RXj43OS`Nc57V05:0Eb0
+!s100 ;`[cbJ`_>m==eN^UNF^zJ2
+R9
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R15
+Polo_base_pkg_logic
+R16
+Z26 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z27 DPx4 work 17 olo_base_pkg_math 0 22 Dl2XOfCCE5zL3GQPTeoh02
+R3
+R4
+R5
+!i122 12
+Z28 w1779977124
+R2
+Z29 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd
+Z30 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd
+l0
+L31 81
+VmhOE@ISCEW6jOfE;kMDP;0
+!s100 dlhSRf0d9lR;HKWj6W5FX0
+R9
+32
+b1
+R20
+!i10b 1
+Z31 !s108 1780043396.000000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd|
+Z33 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd|
+!i113 0
+R24
+R15
+Bbody
+Z34 DPx4 work 18 olo_base_pkg_logic 0 22 mhOE@ISCEW6jOfE;kMDP;0
+R16
+R26
+R27
+R3
+R4
+R5
+!i122 12
+l0
+L116 226
+Vac:MjZ8b@1zPELmoaSk9l1
+!s100 `fR8iGWJCYDhXdiS[bPCM2
+R9
+32
+R20
+!i10b 1
+R31
+R32
+R33
+!i113 0
+R24
+R15
+Polo_base_pkg_math
+R16
+R26
+R3
+R4
+R5
+!i122 10
+Z35 w1779977112
+R2
+Z36 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd
+Z37 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd
+l0
+L32 122
+VDl2XOfCCE5zL3GQPTeoh02
+!s100 [^F>1O`SVM]g`fbJK[MOZ0
+R9
+32
+b1
+Z38 !s110 1780043395
+!i10b 1
+R21
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd|
+Z40 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd|
+!i113 0
+R24
+R15
+Bbody
+R27
+R16
+R26
+R3
+R4
+R5
+!i122 10
+l0
+L158 520
+VOaA4@7h22IAS;QflBUffK0
+!s100 KWd:M:0fdUCI0jVEF4R>[3
+R9
+32
+R38
+!i10b 1
+R21
+R39
+R40
+!i113 0
+R24
+R15
+Polo_base_pkg_string
+R16
+R26
+R3
+R27
+R4
+R5
+!i122 13
+Z41 w1779977118
+R2
+Z42 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd
+Z43 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd
+l0
+L28 26
+VG0[?=7PCP]f:S@ZP`:fn=1
+!s100 RcSR2bkkzToK`NhSS=zCO3
+R9
+32
+b1
+R20
+!i10b 1
+R31
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd|
+Z45 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd|
+!i113 0
+R24
+R15
+Bbody
+Z46 DPx4 work 19 olo_base_pkg_string 0 22 G0[?=7PCP]f:S@ZP`:fn=1
+R16
+R26
+R3
+R27
+R4
+R5
+!i122 13
+l0
+L58 158
+V@ze?^SAU:ZQENlNPaj>Wi2
+!s100 fBg0ZRj`OB>`amF7fAC940
+R9
+32
+R20
+!i10b 1
+R31
+R44
+R45
+!i113 0
+R24
+R15
+Eolo_base_strobe_gen
+Z47 w1779975713
+R16
+R27
+R26
+R3
+R4
+R5
+!i122 15
+R2
+Z48 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd
+Z49 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd
+l0
+Z50 L33 1
+VfV@4[Qe>;bl3@m[009Ydz0
+!s100 L0G<3mbGbNf;7SMUWME<o3
+R9
+32
+R20
+!i10b 1
+R31
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd|
+Z52 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd|
+!i113 0
+R24
+R15
+Artl
+R16
+R27
+R26
+R3
+R4
+R5
+DEx4 work 19 olo_base_strobe_gen 0 22 fV@4[Qe>;bl3@m[009Ydz0
+!i122 15
+l66
+L51 62
+VfPBm7GdB8[4XFmJB_fVOf2
+!s100 DKQkF`id^7bd26F61X<kD0
+R9
+32
+R20
+!i10b 1
+R31
+R51
+R52
+!i113 0
+R24
+R15
+Eolo_intf_sync
+Z53 w1779975811
+R25
+R3
+R4
+R5
+!i122 14
+R2
+Z54 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd
+Z55 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd
+l0
+R50
+V3P3OH08D`j==8hhYCcZ;[3
+!s100 PQ]YbiTTKbg6IzDkR1g<H3
+R9
+32
+R20
+!i10b 1
+R31
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd|
+Z57 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd|
+!i113 0
+R24
+R15
+Astruct
+R25
+R3
+R4
+R5
+DEx4 work 13 olo_intf_sync 0 22 3P3OH08D`j==8hhYCcZ;[3
+!i122 14
+l86
+L53 61
+V]lfAc4;Eb`?no61jMkJ1[1
+!s100 Sfzd7k`JzM6=ZoHSdX@U10
+R9
+32
+R20
+!i10b 1
+R31
+R56
+R57
+!i113 0
+R24
+R15
+Eolo_intf_uart
+Z58 w1779977845
+R46
+R34
+R16
+R27
+R26
+R3
+R4
+R5
+!i122 19
+R2
+Z59 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd
+Z60 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd
+l0
+R50
+VzIMkGIjfL_:nkS@DNiR4>1
+!s100 OY<n<KaMITITzmCnJnLjn1
+R9
+32
+Z61 !s110 1780044601
+!i10b 1
+!s108 1780044600.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd|
+Z62 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd|
+!i113 0
+R24
+R15
+Artl
+DPx4 work 22 olo_base_pkg_attribute 0 22 Fe:ce69c1fhV;G`HL?2c42
+DEx4 work 13 olo_intf_sync 0 22 Nn9ZI9eWJFS_O0fCgn0UV3
+DEx4 work 19 olo_base_strobe_gen 0 22 ]c1WgOHHjc0X`=k^ZQ;eL2
+DPx4 work 19 olo_base_pkg_string 0 22 U>[cD6`znYmBYZCjQV=ol1
+DPx4 work 18 olo_base_pkg_logic 0 22 fG6][jh1XPC[Yc0Ah[=oz1
+R16
+DPx4 work 17 olo_base_pkg_math 0 22 FcP6j=^6ZG?BT>E0aGU1a2
+R26
+R3
+R4
+R5
+DEx4 work 13 olo_intf_uart 0 22 jOmKNK1oeLlS3h5?Y0N=K0
+!i122 7
+l137
+L62 316
+Vf]gI9f3NG[B=0Q3igE>d[3
+!s100 4f@FQznoSB^>XFLiTKN1D1
+R9
+33
+!s110 1780043034
+!i10b 1
+!s108 1780043034.000000
+!s90 -reportprogress|300|-2008|-work|work|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd|
+R62
+!i113 0
+R14
+R15
+Euart_echo
+Z63 w1780040614
+R3
+R4
+R5
+!i122 17
+R2
+Z64 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd
+Z65 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd
+l0
+L5 1
+VRB4=QDNH2UeTo0ik`DS8E2
+!s100 XNKRggDRR1L[_^;oDdb4R0
+R9
+32
+R20
+!i10b 1
+R31
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd|
+Z67 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd|
+!i113 0
+R24
+R15
+Artl
+R46
+R34
+R16
+R27
+R26
+DEx4 work 13 olo_intf_uart 0 22 zIMkGIjfL_:nkS@DNiR4>1
+R3
+R4
+R5
+Z68 DEx4 work 9 uart_echo 0 22 RB4=QDNH2UeTo0ik`DS8E2
+!i122 17
+l28
+L15 79
+VOMIB1clzalQj0W4YJYmFo0
+!s100 hP^ZT5BeFzGe7;9DZ:8NH2
+R9
+32
+R20
+!i10b 1
+R31
+R66
+R67
+!i113 0
+R24
+R15
+Euart_echo_tb
+Z69 w1780044545
+R3
+R4
+R5
+!i122 20
+R2
+Z70 8D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd
+Z71 FD:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd
+l0
+L5 1
+VcVb]h`HaAPY5@P_]Q:Uga2
+!s100 NFnnkjBINB7i:KQD4LoCc0
+R9
+32
+R61
+!i10b 1
+Z72 !s108 1780044601.000000
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd|
+Z74 !s107 D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd|
+!i113 0
+R24
+R15
+Asim
+R68
+R3
+R4
+R5
+DEx4 work 12 uart_echo_tb 0 22 cVb]h`HaAPY5@P_]Q:Uga2
+!i122 20
+l74
+L8 128
+VZHDc[n4C13GeB6m;ckcPJ1
+!s100 >]eKG;>0^TkMQn=NkYb1h0
+R9
+32
+R61
+!i10b 1
+R72
+R73
+R74
+!i113 0
+R24
+R15

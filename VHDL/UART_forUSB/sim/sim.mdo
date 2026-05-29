@@ -1,0 +1,33 @@
+if {![file exists "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/sim/sim.mpf"]} { 
+	project new "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/sim" sim
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd"
+} else {
+	project open "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/sim/sim"
+	project compileoutofdate
+}
+vsim -voptargs=+acc -L work -L pmi_work -L ovi_ecp5u  uart_echo_tb -t ns
+view wave
+add wave /*
+run 1000ns
