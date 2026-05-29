@@ -13,262 +13,27 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# do {D:/BAP/lattice_projecten/test/test.mdo}
-# Loading project test
+# do {D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/sim/sim.mdo}
+# Loading project sim
+# Compile of RGMII_withDDR.vhd failed with 1 errors.
 # Compile of MAC_RX.vhd failed with 1 errors.
-# Compile of RGMII.vhd was successful with warnings.
-# Compile of UDP_RX_AXItoFIFO.vhd was successful.
-# Compile of DDR_forRGMII.vhd was successful.
-# Compile of RGMII_withDDR.vhd was successful with warnings.
-# Compile of CRC32_8.vhd was successful.
 # Compile of MAC_AXItoRGMII.vhd failed with 1 errors.
 # Compile of UDP_FIFO_AXI.vhd failed with 1 errors.
-# Compile of register.vhd was successful.
-# Compile of Fifolg.vhd was successful.
-# Compile of FIFOsm.vhd was successful.
-# Compile of MuxFifo.vhd was successful.
-# Compile of Controller.vhd was successful.
-# Compile of TOP.vhd was successful.
-# Compile of TOP_tb.vhd was successful.
-# 15 compiles, 3 failed with 3 errors.
-# vsim -voptargs="+acc" -L work -L pmi_work -L ovi_ecp5u tb_TOP -t ns 
-# Start time: 10:25:52 on May 21,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: (vopt-13) Recompile work.udp_fifo_axi(rtl) because work.udp_fifo_axi has changed.
-# ** Warning: (vopt-13) Recompile work.mac_axitorgmii(rtl) because work.mac_axitorgmii, work.crc32_8 have changed.
-# ** Note: (vopt-143) Recognized 1 FSM in architecture body "Controller(rtl)".
-# ** Note: (vopt-143) Recognized 1 FSM in architecture body "MAC_AXItoRGMII(rtl)".
-# ** Note: (vopt-143) Recognized 1 FSM in architecture body "UDP_FIFO_AXI(rtl)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Compile of top_ethernet_tx_tbfpga.vhd failed with 1 errors.
+# 5 compiles, 5 failed with 5 errors.
+# vsim -voptargs="+acc" -L work -L pmi_work -L ovi_ecp5u top_tb_fpga_tb -t ns 
+# Start time: 12:17:12 on May 28,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_top(sim)#1
-# Loading work.controller_pkg(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ecp5u.components(body)
-# Loading work.top(behavioral)#1
-# Loading work.controller(rtl)#1
-# Loading work.fifo_16ch_mux(rtl)#1
-# Loading work.fifosm(structure)#1
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading ecp5u.and2(v)#1
-# Loading ecp5u.inv(v)#1
-# Loading ecp5u.xor2(v)#1
-# Loading ieee.std_logic_unsigned(body)
-# Loading ecp5u.mem2(body)
-# Loading ecp5u.rom16x1a(v)#1
-# Loading ecp5u.rom16x1a(v)#2
-# Loading ecp5u.PDPW16KD(fast)
-# Loading ecp5u.global(body)
-# Loading ecp5u.gsr_pur_assign(v)#1
-# Loading ecp5u.fd1p3dx(v)#1
-# Loading ecp5u.fd1s3bx(v)#1
-# Loading ecp5u.fd1s3dx(v)#1
-# Loading ecp5u.ccu2c(bev)#1
-# Loading ecp5u.ccu2c(bev)#2
-# Loading ecp5u.ccu2c(bev)#3
-# Loading ecp5u.ccu2c(bev)#4
-# Loading ecp5u.ccu2c(bev)#5
-# Loading ecp5u.ccu2c(bev)#6
-# Loading ecp5u.ccu2c(bev)#7
-# Loading ecp5u.ccu2c(bev)#8
-# Loading ecp5u.ccu2c(bev)#9
-# Loading ecp5u.ccu2c(bev)#10
-# Loading ecp5u.ccu2c(bev)#11
-# Loading ecp5u.VHI(fast)
-# Loading ecp5u.VLO(fast)
-# Loading work.fifolg(structure)#1
-# Loading ecp5u.ccu2c(bev)#12
-# Loading ecp5u.ccu2c(bev)#13
-# Loading ecp5u.ccu2c(bev)#14
-# Loading ecp5u.ccu2c(bev)#15
-# Loading ecp5u.ccu2c(bev)#16
-# Loading work.fifo_udp_reg(rtl)#1
-# Loading work.udp_fifo_axi(rtl)#1
-# Loading work.mac_axitorgmii(rtl)#1
-# Loading work.crc32_8(behavioral)#1
-# Loading work.rgmii_tx_ddr(rtl)#1
-# Loading work.ddr_forrgmii(structure)#1
-# Loading ecp5u.ODDRX1F(fast)
-# Loading ecp5u.OB(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Note: Writing ADC samples into FIFOs
-#    Time: 65 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Enabling frame packer
-#    Time: 145 ns  Iteration: 0  Instance: /tb_top
-run
-run
-# ** Note: Frame done detected
-#    Time: 2135 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Reading large FIFO
-#    Time: 2185 ns  Iteration: 0  Instance: /tb_top
-# ** Note: Read byte 0 = 
-#    Time: 2185 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 1 = 
-#    Time: 2195 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 2 = 
-#    Time: 2205 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 3 = 
-#    Time: 2215 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 4 = 
-#    Time: 2225 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 5 = 
-#    Time: 2235 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 6 = 
-#    Time: 2245 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 7 = 
-#    Time: 2255 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 8 = 
-#    Time: 2265 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 9 = 
-#    Time: 2275 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 10 = 
-#    Time: 2285 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 11 = 
-#    Time: 2295 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 12 = 
-#    Time: 2305 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 13 = 
-#    Time: 2315 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 14 = 
-#    Time: 2325 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 15 = 
-#    Time: 2335 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 16 = 
-#    Time: 2345 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 17 = 
-#    Time: 2355 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 18 = 
-#    Time: 2365 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 19 = 
-#    Time: 2375 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 20 = 
-#    Time: 2385 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 21 = 
-#    Time: 2395 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 22 = 
-#    Time: 2405 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 23 = 
-#    Time: 2415 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 24 = 
-#    Time: 2425 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 25 = 
-#    Time: 2435 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 26 = 
-#    Time: 2445 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 27 = 
-#    Time: 2455 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 28 = 
-#    Time: 2465 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 29 = 
-#    Time: 2475 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 30 = 
-#    Time: 2485 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 31 = 
-#    Time: 2495 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 32 = 
-#    Time: 2505 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 33 = 
-#    Time: 2515 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 34 = 
-#    Time: 2525 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 35 = 
-#    Time: 2535 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 36 = 
-#    Time: 2545 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 37 = 
-#    Time: 2555 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 38 = 
-#    Time: 2565 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 39 = 
-#    Time: 2575 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 40 = 
-#    Time: 2585 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 41 = 
-#    Time: 2595 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 42 = 
-#    Time: 2605 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 43 = 
-#    Time: 2615 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 44 = 
-#    Time: 2625 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 45 = 
-#    Time: 2635 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 46 = 
-#    Time: 2645 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 47 = 
-#    Time: 2655 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 48 = 
-#    Time: 2665 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 49 = 
-#    Time: 2675 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 50 = 
-#    Time: 2685 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 51 = 
-#    Time: 2695 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 52 = 
-#    Time: 2705 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 53 = 
-#    Time: 2715 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 54 = 
-#    Time: 2725 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 55 = 
-#    Time: 2735 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 56 = 
-#    Time: 2745 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 57 = 
-#    Time: 2755 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 58 = 
-#    Time: 2765 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 59 = 
-#    Time: 2775 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 60 = 
-#    Time: 2785 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 61 = 
-#    Time: 2795 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 62 = 
-#    Time: 2805 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 63 = 
-#    Time: 2815 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 64 = 
-#    Time: 2825 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 65 = 
-#    Time: 2835 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 66 = 
-#    Time: 2845 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 67 = 
-#    Time: 2855 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 68 = 
-#    Time: 2865 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 69 = 
-#    Time: 2875 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 70 = 
-#    Time: 2885 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 71 = 
-#    Time: 2895 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 72 = 
-#    Time: 2905 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 73 = 
-#    Time: 2915 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 74 = 
-#    Time: 2925 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 75 = 
-#    Time: 2935 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 76 = 
-#    Time: 2945 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 77 = 
-#    Time: 2955 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 78 = 
-#    Time: 2965 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 79 = 
-#    Time: 2975 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 80 = 
-#    Time: 2985 ns  Iteration: 1  Instance: /tb_top
-# ** Note: Read byte 81 = 
-#    Time: 2995 ns  Iteration: 1  Instance: /tb_top
-# End time: 19:03:23 on May 21,2026, Elapsed time: 8:37:31
-# Errors: 0, Warnings: 5
+# Loading work.top_tb_fpga_tb(tb)#1
+# ** Error: (vsim-3173) Entity 'D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/sim/work.top_tb_fpga' has no architecture.
+# Load interrupted
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO D:\BAP\EE-Dev-BAP\VHDL\lattice_tx_path\sim\sim.mdo PAUSED at line 34
+# End time: 12:18:06 on May 28,2026, Elapsed time: 0:00:54
+# Errors: 1, Warnings: 2

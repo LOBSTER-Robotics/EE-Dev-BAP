@@ -22,7 +22,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Thu May 21 19:08:13 2026
+Wed May 27 16:27:25 2026
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -32,7 +32,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/lattice_projecten/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
 Design file:     ethernet_fifo_top_impl1_map.ncd
 Preference file: ethernet_fifo_top_impl1.prf
 Device,speed:    LFE5U-45F,8
@@ -42,7 +42,7 @@ Report level:    verbose report, limited to 1 item per preference
 <A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
 <LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY NET "clk_c" 125.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
-Report:  173.762MHz is the maximum frequency for this preference.
+Report:  172.444MHz is the maximum frequency for this preference.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -56,40 +56,40 @@ BLOCK RESETPATHS
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 2.245ns
+Passed: The following path meets requirements by 2.201ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         PDPW16KD   Port           u_Fifosm15/pdp_ram_0_0_0(ASIC)  (from clk_c +)
    Destination:    FF         Data in        u_adc_fifo_frame_packer/r_curr_sample__i23  (to clk_c +)
 
-   Delay:               5.965ns  (85.9% logic, 14.1% route), 5 logic levels.
+   Delay:               6.008ns  (86.0% logic, 14.0% route), 5 logic levels.
 
  Constraint Details:
 
-      5.965ns physical path delay u_Fifosm15/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_427 meets
+      6.008ns physical path delay u_Fifosm15/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_427 meets
       8.000ns delay constraint less
-     -0.210ns DIN_SET requirement (totaling 8.210ns) by 2.245ns
+     -0.209ns DIN_SET requirement (totaling 8.209ns) by 2.201ns
 
  Physical Path Details:
 
       Data path u_Fifosm15/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_427:
 
    Name    Fanout   Delay (ns)          Site               Resource
-C2Q_DEL     ---     4.278 *am_0_0_0.CLKR to *ram_0_0_0.DO5 u_Fifosm15/pdp_ram_0_0_0 (from clk_c)
+C2Q_DEL     ---     4.325 *am_0_0_0.CLKR to *ram_0_0_0.DO5 u_Fifosm15/pdp_ram_0_0_0 (from clk_c)
 ROUTE         1   e 0.419 *ram_0_0_0.DO5 to */SLICE_500.C1 adc_fifo_15_dout_23
-CTOOFX_DEL  ---     0.306 */SLICE_500.C1 to *LICE_500.OFX0 u_MuxFifo/i6806/SLICE_500
+CTOOFX_DEL  ---     0.305 */SLICE_500.C1 to *LICE_500.OFX0 u_MuxFifo/i6806/SLICE_500
 ROUTE         1   e 0.001 *LICE_500.OFX0 to *SLICE_500.FXB u_MuxFifo/n11094
-FXTOF_DEL   ---     0.180 *SLICE_500.FXB to *LICE_500.OFX1 u_MuxFifo/i6806/SLICE_500
+FXTOF_DEL   ---     0.179 *SLICE_500.FXB to *LICE_500.OFX1 u_MuxFifo/i6806/SLICE_500
 ROUTE         1   e 0.001 *LICE_500.OFX1 to  SLICE_451.FXB u_MuxFifo/n11096
-FXTOF_DEL   ---     0.180  SLICE_451.FXB to SLICE_451.OFX1 SLICE_451
+FXTOF_DEL   ---     0.179  SLICE_451.FXB to SLICE_451.OFX1 SLICE_451
 ROUTE         2   e 0.419 SLICE_451.OFX1 to */SLICE_427.A1 fifo_dout_to_packer_23
-CTOF_DEL    ---     0.180 */SLICE_427.A1 to */SLICE_427.F1 u_adc_fifo_frame_packer/SLICE_427
+CTOF_DEL    ---     0.179 */SLICE_427.A1 to */SLICE_427.F1 u_adc_fifo_frame_packer/SLICE_427
 ROUTE         1   e 0.001 */SLICE_427.F1 to *SLICE_427.DI1 u_adc_fifo_frame_packer/n3433 (to clk_c)
                   --------
-                    5.965   (85.9% logic, 14.1% route), 5 logic levels.
+                    6.008   (86.0% logic, 14.0% route), 5 logic levels.
 
-Report:  173.762MHz is the maximum frequency for this preference.
+Report:  172.444MHz is the maximum frequency for this preference.
 
 <A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
@@ -97,7 +97,7 @@ Report:  173.762MHz is the maximum frequency for this preference.
 Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY NET "clk_c" 125.000000 MHz ;  |  125.000 MHz|  173.762 MHz|   5  
+FREQUENCY NET "clk_c" 125.000000 MHz ;  |  125.000 MHz|  172.444 MHz|   5  
                                         |             |             |
 ----------------------------------------------------------------------------
 
@@ -124,7 +124,7 @@ Constraints cover 29531 paths, 1 nets, and 4847 connections (79.43% coverage)
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
-Thu May 21 19:08:14 2026
+Wed May 27 16:27:27 2026
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -134,7 +134,7 @@ Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
 <A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
 ------------------
-Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/lattice_projecten/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
 Design file:     ethernet_fifo_top_impl1_map.ncd
 Preference file: ethernet_fifo_top_impl1.prf
 Device,speed:    LFE5U-45F,M
@@ -157,32 +157,32 @@ BLOCK RESETPATHS
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 0.178ns
+Passed: The following path meets requirements by 0.176ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              u_adc_fifo_frame_packer/r_channel__i1  (from clk_c +)
    Destination:    FF         Data in        u_adc_fifo_frame_packer/r_channel__i1  (to clk_c +)
 
-   Delay:               0.297ns  (80.1% logic, 19.9% route), 2 logic levels.
+   Delay:               0.294ns  (79.9% logic, 20.1% route), 2 logic levels.
 
  Constraint Details:
 
-      0.297ns physical path delay u_adc_fifo_frame_packer/SLICE_414 to u_adc_fifo_frame_packer/SLICE_414 meets
-      0.119ns DIN_HLD and
-      0.000ns delay constraint requirement (totaling 0.119ns) by 0.178ns
+      0.294ns physical path delay u_adc_fifo_frame_packer/SLICE_414 to u_adc_fifo_frame_packer/SLICE_414 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling 0.118ns) by 0.176ns
 
  Physical Path Details:
 
       Data path u_adc_fifo_frame_packer/SLICE_414 to u_adc_fifo_frame_packer/SLICE_414:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.164 *SLICE_414.CLK to */SLICE_414.Q0 u_adc_fifo_frame_packer/SLICE_414 (from clk_c)
+REG_DEL     ---     0.162 *SLICE_414.CLK to */SLICE_414.Q0 u_adc_fifo_frame_packer/SLICE_414 (from clk_c)
 ROUTE        21   e 0.058 */SLICE_414.Q0 to */SLICE_414.M0 u_adc_fifo_frame_packer/r_channel_1
-MTOF_DEL    ---     0.074 */SLICE_414.M0 to *LICE_414.OFX0 u_adc_fifo_frame_packer/SLICE_414
+MTOF_DEL    ---     0.073 */SLICE_414.M0 to *LICE_414.OFX0 u_adc_fifo_frame_packer/SLICE_414
 ROUTE         1   e 0.001 *LICE_414.OFX0 to *SLICE_414.DI0 u_adc_fifo_frame_packer/n11992 (to clk_c)
                   --------
-                    0.297   (80.1% logic, 19.9% route), 2 logic levels.
+                    0.294   (79.9% logic, 20.1% route), 2 logic levels.
 
 <A name="mtw1_hold_rs"></A><B><U><big>Report Summary</big></U></B>
 --------------
@@ -190,7 +190,7 @@ ROUTE         1   e 0.001 *LICE_414.OFX0 to *SLICE_414.DI0 u_adc_fifo_frame_pack
 Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
-FREQUENCY NET "clk_c" 125.000000 MHz ;  |     0.000 ns|     0.178 ns|   2  
+FREQUENCY NET "clk_c" 125.000000 MHz ;  |     0.000 ns|     0.176 ns|   2  
                                         |             |             |
 ----------------------------------------------------------------------------
 

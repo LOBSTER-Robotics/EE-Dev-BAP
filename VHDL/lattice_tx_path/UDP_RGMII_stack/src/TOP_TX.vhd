@@ -102,7 +102,7 @@ begin
     --------------------------------------------------------------------
     -- GMII → RGMII PHY adapter
     --------------------------------------------------------------------
-    rgmii_inst : entity work.rgmii_tx
+    rgmii_inst : entity work.rgmii_tx_ddr
     port map (
 
         clk125 => clk125,

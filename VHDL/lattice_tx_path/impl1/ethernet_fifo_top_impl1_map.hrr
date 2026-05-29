@@ -14,9 +14,8 @@ SUB MODULES
                           rgmii_tx_ddr	          1         0.0
                           fifo_udp_reg	          1         0.6
                      fifo_16ch_mux(24)	          1        11.1
-                        MAC_AXItoRGMII	          1        19.7
                           UDP_FIFO_AXI	          1         7.1
-                Controller(16,24,8,16)	          1        11.7
+                        MAC_AXItoRGMII	          1        19.7
                                 FIFOsm	          1         2.4
                                 Fifolg	          1         8.1
                              FIFOsm_U8	          1         2.4
@@ -34,6 +33,7 @@ SUB MODULES
                              FIFOsm_U1	          1         2.5
                             FIFOsm_U10	          1         2.5
                              FIFOsm_U0	          1         2.5
+                Controller(16,24,8,16)	          1        11.7
 ---------------------------------------------------
 Report for cell FIFOsm_U8
    Instance path: top/u_Fifosm15

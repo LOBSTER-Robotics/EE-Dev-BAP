@@ -1,0 +1,75 @@
+---------------------------------------------------
+Report for cell top_tb_fpga
+   Instance path: top_tb_fpga
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     305.00        100.0
+                                  LUT4	     415.00        100.0
+                                 IOBUF	          8        100.0
+                                PFUREG	        151        100.0
+                                RIPPLE	         67        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                       top_ethernet_tx	          1        80.7
+---------------------------------------------------
+Report for cell top_ethernet_tx
+   Instance path: top_tb_fpga/dut
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     246.00        80.7
+                                  LUT4	     399.00        96.1
+                                PFUREG	        109        72.2
+                                RIPPLE	         17        25.4
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                          rgmii_tx_ddr	          1         0.0
+                          fifo_udp_reg	          1         1.6
+                          UDP_FIFO_AXI	          1        25.7
+                        MAC_AXItoRGMII	          1        53.4
+---------------------------------------------------
+Report for cell UDP_FIFO_AXI
+   Instance path: top_tb_fpga/dut/udp_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      78.33        25.7
+                                  LUT4	     139.00        33.5
+                                PFUREG	         14         9.3
+---------------------------------------------------
+Report for cell rgmii_tx_ddr
+   Instance path: top_tb_fpga/dut/rgmii_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                          DDR_forRGMII	          1         0.0
+---------------------------------------------------
+Report for cell DDR_forRGMII
+   Instance path: top_tb_fpga/dut/rgmii_inst/DDR_TX
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell fifo_udp_reg
+   Instance path: top_tb_fpga/dut/reg_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	       4.83         1.6
+                                PFUREG	         10         6.6
+---------------------------------------------------
+Report for cell MAC_AXItoRGMII
+   Instance path: top_tb_fpga/dut/mac_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     162.83        53.4
+                                  LUT4	     260.00        62.7
+                                PFUREG	         85        56.3
+                                RIPPLE	         17        25.4
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               crc32_8	          1        12.0
+---------------------------------------------------
+Report for cell crc32_8
+   Instance path: top_tb_fpga/dut/mac_inst/crc_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      36.50        12.0
+                                  LUT4	      61.00        14.7

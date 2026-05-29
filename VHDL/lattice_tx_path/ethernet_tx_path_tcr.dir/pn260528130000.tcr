@@ -1,0 +1,22 @@
+#Start recording tcl command: 5/28/2026 11:34:37
+#Project Location: D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path; Project name: ethernet_tx_path
+prj_project new -name "ethernet_tx_path" -impl "impl2" -dev LFE5U-45F-7BG381I -synthesis "lse"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/TOP_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/TOP_TX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd"
+prj_project save
+prj_strgy set_value -strategy Strategy1 lse_vhdl2008=True
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd"
+prj_src remove "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd"
+prj_src syn_sim -src "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd" SimulateOnly
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/sim/sim.spf"
+prj_src remove "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd"
+prj_run PAR -impl impl2
+prj_src remove "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd"
+prj_src remove "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/TOP_TX.vhd"
+prj_src remove "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/TOP_RX.vhd"
+prj_src syn_sim -src "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd" SimulateOnly
+prj_run PAR -impl impl2
+prj_run PAR -impl impl2
+prj_run PAR -impl impl2
+#Stop recording: 5/28/2026 13:00:00

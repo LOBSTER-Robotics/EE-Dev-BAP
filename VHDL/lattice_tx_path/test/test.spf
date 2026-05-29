@@ -1,9 +1,10 @@
 <BaliSimProject version="1.3" path="." stage="0" language="-1" name="test" simType="QuestaSim">
     <Source worklib="work" path="UDP_RGMII_stack/src/MAC_RX.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="UDP_RGMII_stack/src/RGMII.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="DDR_RX.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="RGMII_withDDR.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="DDR_forRGMII.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
-    <Source worklib="work" path="RGMII_withDDR.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="UDP_RGMII_stack/src/CRC32_8.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
@@ -14,8 +15,12 @@
     <Source worklib="work" path="Top_Level_design/ADC/ControllerTest/Controller.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="Top_Level_design/ADC/ControllerTest/TOP.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <Source worklib="work" path="Top_Level_design/ADC/ControllerTest/TOP_tb.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="top_ethernet_tx.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="top_ethernet_tx_tbfpga.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="top_ethernet_tx_tbfpga_tb.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="TOP_tb_fpga.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
     <SimLib value="pmi_work ovi_ecp5u"/>
     <GlbInc value=""/>
     <Macro value=""/>
-    <TopModule instance="" language="VHDL" name="tb_TOP"/>
+    <TopModule instance="" language="VHDL" name="top_tb_fpga_tb"/>
 </BaliSimProject>

@@ -1,0 +1,1 @@
+D:/lscc/diamond/3.14/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 15679776 work.top_tb_fpga_tb -quiet -auto_acc_if_foreign -work work -L work -L pmi_work -L ovi_ecp5u +acc -allow_unnamed -o _opt -id 1-3cf011741e4f-6a181155-b0-b7ac +__design_bin_path+D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/sim +__betafsm

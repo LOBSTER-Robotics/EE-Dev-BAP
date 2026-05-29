@@ -1,80 +1,80 @@
 // Verilog netlist produced by program LSE :  version Diamond (64-bit) 3.14.0.75.2
-// Netlist written on Thu May 21 19:08:04 2026
+// Netlist written on Wed May 27 16:27:12 2026
 //
 // Verilog Description of module top
 //
 
 module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done, 
-            rgmii_txd, rgmii_txctl, rgmii_txc);   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(6[8:11])
-    input clk;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
-    input rst;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(15[9:12])
-    input [23:0]Data;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    input Write_En;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(17[9:17])
-    input enable;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(18[9:15])
-    output packer_busy;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(21[9:20])
-    output packer_frame_done;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(22[9:26])
-    output [3:0]rgmii_txd;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(23[3:12])
-    output rgmii_txctl;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(24[9:20])
-    output rgmii_txc /* synthesis black_box_pad_pin=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(25[9:18])
+            rgmii_txd, rgmii_txctl, rgmii_txc);   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6[8:11])
+    input clk;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    input rst;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(15[9:12])
+    input [23:0]Data;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    input Write_En;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(17[9:17])
+    input enable;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(18[9:15])
+    output packer_busy;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(21[9:20])
+    output packer_frame_done;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(22[9:26])
+    output [3:0]rgmii_txd;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(23[3:12])
+    output rgmii_txctl;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(24[9:20])
+    output rgmii_txc /* synthesis black_box_pad_pin=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(25[9:18])
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire GND_net, VCC_net, rst_c, Data_c_23, Data_c_22, Data_c_21, 
         Data_c_20, Data_c_19, Data_c_18, Data_c_17, Data_c_16, Data_c_15, 
         Data_c_14, Data_c_13, Data_c_12, Data_c_11, Data_c_10, Data_c_9, 
         Data_c_8, Data_c_7, Data_c_6, Data_c_5, Data_c_4, Data_c_3, 
         Data_c_2, Data_c_1, Data_c_0, Write_En_c, enable_c, packer_frame_done_c;
-    wire [23:0]fifo_dout_to_packer;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(32[12:31])
-    wire [3:0]fifo_sel;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(33[12:20])
-    wire [15:0]adc_fifo_empty;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(34[12:26])
-    wire [15:0]adc_fifo_rd_en;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(35[12:26])
-    wire [23:0]adc_fifo_0_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(36[12:27])
-    wire [23:0]adc_fifo_1_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(37[12:27])
-    wire [23:0]adc_fifo_2_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(38[12:27])
-    wire [23:0]adc_fifo_3_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(39[12:27])
-    wire [23:0]adc_fifo_4_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(40[12:27])
-    wire [23:0]adc_fifo_5_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(41[12:27])
-    wire [23:0]adc_fifo_6_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(42[12:27])
-    wire [23:0]adc_fifo_7_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(43[12:27])
-    wire [23:0]adc_fifo_8_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(44[12:27])
-    wire [23:0]adc_fifo_9_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(45[12:27])
-    wire [23:0]adc_fifo_10_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(46[12:28])
-    wire [23:0]adc_fifo_11_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(47[12:28])
-    wire [23:0]adc_fifo_12_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(48[12:28])
-    wire [23:0]adc_fifo_13_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(49[12:28])
-    wire [23:0]adc_fifo_14_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(50[12:28])
-    wire [23:0]adc_fifo_15_dout;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(51[12:28])
+    wire [23:0]fifo_dout_to_packer;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(32[12:31])
+    wire [3:0]fifo_sel;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(33[12:20])
+    wire [15:0]adc_fifo_empty;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(34[12:26])
+    wire [15:0]adc_fifo_rd_en;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(35[12:26])
+    wire [23:0]adc_fifo_0_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(36[12:27])
+    wire [23:0]adc_fifo_1_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(37[12:27])
+    wire [23:0]adc_fifo_2_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(38[12:27])
+    wire [23:0]adc_fifo_3_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(39[12:27])
+    wire [23:0]adc_fifo_4_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(40[12:27])
+    wire [23:0]adc_fifo_5_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(41[12:27])
+    wire [23:0]adc_fifo_6_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(42[12:27])
+    wire [23:0]adc_fifo_7_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(43[12:27])
+    wire [23:0]adc_fifo_8_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(44[12:27])
+    wire [23:0]adc_fifo_9_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(45[12:27])
+    wire [23:0]adc_fifo_10_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(46[12:28])
+    wire [23:0]adc_fifo_11_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(47[12:28])
+    wire [23:0]adc_fifo_12_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(48[12:28])
+    wire [23:0]adc_fifo_13_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(49[12:28])
+    wire [23:0]adc_fifo_14_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(50[12:28])
+    wire [23:0]adc_fifo_15_dout;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(51[12:28])
     
     wire large_fifo_almost_full;
-    wire [7:0]large_fifo_din;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(55[12:26])
-    wire [23:0]Data_x2;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(58[12:19])
-    wire [23:0]Data_x4;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(60[12:19])
+    wire [7:0]large_fifo_din;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(55[12:26])
+    wire [23:0]Data_x2;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(58[12:19])
+    wire [23:0]Data_x4;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(60[12:19])
     
     wire n4725, n5017, n4712, n4817, n5044, n5045, n4773, n4779, 
         n4786, n4780, n4785, n4781, n4784, n5043;
-    wire [23:0]Data_x6;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(62[12:19])
-    wire [23:0]Data_x8;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(64[12:19])
+    wire [23:0]Data_x6;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(62[12:19])
+    wire [23:0]Data_x8;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(64[12:19])
     
     wire n4774, n4693, n4772, n4449, n4448, n4446, n4445, n4444, 
         n4443, n4771, n4442, n4378, n4770, n4622, n4626, n4416, 
         n5046;
-    wire [23:0]Data_x10;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(66[12:20])
+    wire [23:0]Data_x10;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(66[12:20])
     
     wire n4377, n4376, n4375, n4374, n4373, n4372, n4447, n4371, 
         n4640, n4739, n4743, n4412;
-    wire [23:0]Data_x12;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(68[12:20])
+    wire [23:0]Data_x12;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(68[12:20])
     
     wire n4404, n4331, n5016, n4692, n4673, n4679, n4681, n4690, 
         n4769, n4441, n4438, n4434, n4691, n5047;
-    wire [23:0]Data_x14;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(70[12:20])
-    wire [7:0]udp_tdata;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(75[12:21])
-    wire [7:0]gmii_txd;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(83[12:20])
+    wire [23:0]Data_x14;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(70[12:20])
+    wire [7:0]udp_tdata;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(75[12:21])
+    wire [7:0]gmii_txd;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(83[12:20])
     
     wire n5048, fifo_almostempty_N_1, fifo_almostempty, fifo_empty;
-    wire [7:0]data_out_large_fifo;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(90[9:28])
+    wire [7:0]data_out_large_fifo;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(90[9:28])
     
     wire read_large_fifo;
-    wire [7:0]reg_fifo_data;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(93[9:22])
+    wire [7:0]reg_fifo_data;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(93[9:22])
     
     wire reg_fifo_empty, reg_fifo_almostfull, fifo_rd_en_in, n4370, 
         n4659, n4946, n4887, n4654, n4653, n4652, n5052, n4651, 
@@ -134,14 +134,14 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
         n4400, n4401, n4613, n4411, n4413, fifo_rd_en_N_404, clk_c_enable_38, 
         n4604, n4340, clk_c_enable_64, n4460, n4339, n4614, n4615, 
         n4616, n5081, n4433, n4432, n4874;
-    wire [1:0]crc_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(48[12:19])
+    wire [1:0]crc_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(48[12:19])
     
     wire n5080, n11921, n5079, n4940;
-    wire [31:0]frame_len;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(51[12:21])
+    wire [31:0]frame_len;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(51[12:21])
     
     wire n11378;
-    wire [31:0]crc_reg;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[12:19])
-    wire [31:0]crc_next;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(57[12:20])
+    wire [31:0]crc_reg;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[12:19])
+    wire [31:0]crc_next;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(57[12:20])
     
     wire n4338, n4888, n4948, n4985, n5078, n4942, n11377, n5077, 
         n4665, n11372, n4337, n4667, n5091, n4474, n4668, n5042, 
@@ -558,7 +558,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     defparam Data_23__I_0_16_mult_2.SOURCEB_MODE = "B_SHIFT";
     defparam Data_23__I_0_16_mult_2.MULT_BYPASS = "DISABLED";
     defparam Data_23__I_0_16_mult_2.RESETMODE = "SYNC";
-    OB packer_frame_done_pad (.I(packer_frame_done_c), .O(packer_frame_done));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(22[9:26])
+    OB packer_frame_done_pad (.I(packer_frame_done_c), .O(packer_frame_done));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(22[9:26])
     FIFOsm_U8 u_Fifosm15 (.clk_c(clk_c), .\adc_fifo_empty[15] (adc_fifo_empty[15]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[15] (adc_fifo_rd_en[15]), .Data_c_19(Data_c_19), 
@@ -568,7 +568,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .Data_c_9(Data_c_9), .Data_c_8(Data_c_8), .Data_c_7(Data_c_7), 
             .Data_c_6(Data_c_6), .Data_c_5(Data_c_5), .Data_c_4(Data_c_4), 
             .Data_c_3(Data_c_3), .Data_c_2(Data_c_2), .Data_c_1(Data_c_1), 
-            .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_15_dout({adc_fifo_15_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
+            .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_15_dout({adc_fifo_15_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
     FIFOsm_U7 u_Fifosm1 (.clk_c(clk_c), .\adc_fifo_empty[1] (adc_fifo_empty[1]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[1] (adc_fifo_rd_en[1]), .Data_c_22(Data_c_22), 
@@ -579,11 +579,11 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .Data_c_9(Data_c_9), .Data_c_8(Data_c_8), .Data_c_7(Data_c_7), 
             .Data_c_6(Data_c_6), .Data_c_5(Data_c_5), .Data_c_4(Data_c_4), 
             .Data_c_3(Data_c_3), .Data_c_2(Data_c_2), .Data_c_1(Data_c_1), 
-            .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_1_dout({adc_fifo_1_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
+            .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_1_dout({adc_fifo_1_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
     FIFOsm_U6 u_Fifosm2 (.clk_c(clk_c), .\adc_fifo_empty[2] (adc_fifo_empty[2]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[2] (adc_fifo_rd_en[2]), .Data_x2({Data_x2}), 
-            .rst_c(rst_c), .adc_fifo_2_dout({adc_fifo_2_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
+            .rst_c(rst_c), .adc_fifo_2_dout({adc_fifo_2_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
     ALU54B lat_alu_11 (.CE3(GND_net), .CE2(GND_net), .CE1(GND_net), .CE0(VCC_net), 
            .CLK3(GND_net), .CLK2(GND_net), .CLK1(GND_net), .CLK0(GND_net), 
            .RST3(GND_net), .RST2(GND_net), .RST1(GND_net), .RST0(GND_net), 
@@ -722,12 +722,12 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .Data_c_8(Data_c_8), .Data_c_7(Data_c_7), .Data_c_6(Data_c_6), 
             .Data_c_5(Data_c_5), .Data_c_4(Data_c_4), .Data_c_3(Data_c_3), 
             .Data_c_2(Data_c_2), .Data_c_1(Data_c_1), .Data_c_0(Data_c_0), 
-            .rst_c(rst_c), .adc_fifo_3_dout({adc_fifo_3_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
+            .rst_c(rst_c), .adc_fifo_3_dout({adc_fifo_3_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
     FIFOsm_U4 u_Fifosm4 (.clk_c(clk_c), .\adc_fifo_empty[4] (adc_fifo_empty[4]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[4] (adc_fifo_rd_en[4]), .Data_x4({Data_x4}), 
-            .rst_c(rst_c), .adc_fifo_4_dout({adc_fifo_4_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
-    LUT4 fifo_almostempty_I_0_1_lut (.A(fifo_almostempty), .Z(fifo_almostempty_N_1)) /* synthesis lut_function=(!(A)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(390[21:41])
+            .rst_c(rst_c), .adc_fifo_4_dout({adc_fifo_4_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
+    LUT4 fifo_almostempty_I_0_1_lut (.A(fifo_almostempty), .Z(fifo_almostempty_N_1)) /* synthesis lut_function=(!(A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(390[21:41])
     defparam fifo_almostempty_I_0_1_lut.init = 16'h5555;
     FIFOsm_U3 u_Fifosm5 (.clk_c(clk_c), .\adc_fifo_empty[5] (adc_fifo_empty[5]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
@@ -739,7 +739,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .\Data_x2[9] (Data_x2[9]), .\Data_x2[8] (Data_x2[8]), .\Data_x2[7] (Data_x2[7]), 
             .\Data_x2[6] (Data_x2[6]), .\Data_x2[5] (Data_x2[5]), .\Data_x2[4] (Data_x2[4]), 
             .\Data_x2[3] (Data_x2[3]), .\Data_x2[2] (Data_x2[2]), .\Data_x2[1] (Data_x2[1]), 
-            .\Data_x2[0] (Data_x2[0]), .rst_c(rst_c), .adc_fifo_5_dout({adc_fifo_5_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
+            .\Data_x2[0] (Data_x2[0]), .rst_c(rst_c), .adc_fifo_5_dout({adc_fifo_5_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
     MULT18X18D lat_mult_10 (.A17(GND_net), .A16(GND_net), .A15(GND_net), 
             .A14(GND_net), .A13(GND_net), .A12(GND_net), .A11(GND_net), 
             .A10(GND_net), .A9(GND_net), .A8(GND_net), .A7(GND_net), 
@@ -811,7 +811,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     FIFOsm_U2 u_Fifosm6 (.clk_c(clk_c), .\adc_fifo_empty[6] (adc_fifo_empty[6]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[6] (adc_fifo_rd_en[6]), .Data_x6({Data_x6}), 
-            .rst_c(rst_c), .adc_fifo_6_dout({adc_fifo_6_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
+            .rst_c(rst_c), .adc_fifo_6_dout({adc_fifo_6_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
     FIFOsm_U1 u_Fifosm7 (.clk_c(clk_c), .\adc_fifo_empty[7] (adc_fifo_empty[7]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[7] (adc_fifo_rd_en[7]), .Data_c_20(Data_c_20), 
@@ -821,11 +821,11 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .Data_c_10(Data_c_10), .Data_c_9(Data_c_9), .Data_c_8(Data_c_8), 
             .Data_c_7(Data_c_7), .Data_c_6(Data_c_6), .Data_c_5(Data_c_5), 
             .Data_c_4(Data_c_4), .Data_c_3(Data_c_3), .Data_c_2(Data_c_2), 
-            .Data_c_1(Data_c_1), .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_7_dout({adc_fifo_7_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
+            .Data_c_1(Data_c_1), .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_7_dout({adc_fifo_7_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
     FIFOsm_U0 u_Fifosm8 (.clk_c(clk_c), .\adc_fifo_empty[8] (adc_fifo_empty[8]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[8] (adc_fifo_rd_en[8]), .Data_x8({Data_x8}), 
-            .rst_c(rst_c), .adc_fifo_8_dout({adc_fifo_8_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
+            .rst_c(rst_c), .adc_fifo_8_dout({adc_fifo_8_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
     CCU2C add_1040_add_4_cout (.A0(GND_net), .B0(GND_net), .C0(GND_net), 
           .D0(GND_net), .A1(GND_net), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
           .CIN(n9006), .S0(n399));
@@ -843,11 +843,11 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .Data_c_10(Data_c_10), .Data_c_9(Data_c_9), .Data_c_8(Data_c_8), 
             .Data_c_7(Data_c_7), .Data_c_6(Data_c_6), .Data_c_5(Data_c_5), 
             .Data_c_4(Data_c_4), .Data_c_3(Data_c_3), .Data_c_2(Data_c_2), 
-            .Data_c_1(Data_c_1), .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_0_dout({adc_fifo_0_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
+            .Data_c_1(Data_c_1), .Data_c_0(Data_c_0), .rst_c(rst_c), .adc_fifo_0_dout({adc_fifo_0_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
     FIFOsm_U13 u_Fifosm10 (.clk_c(clk_c), .\adc_fifo_empty[10] (adc_fifo_empty[10]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[10] (adc_fifo_rd_en[10]), .Data_x10({Data_x10}), 
-            .rst_c(rst_c), .adc_fifo_10_dout({adc_fifo_10_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
+            .rst_c(rst_c), .adc_fifo_10_dout({adc_fifo_10_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
     LUT4 i717_4_lut (.A(n2131), .B(rst_c), .C(n31), .D(n1844), .Z(clk_c_enable_64)) /* synthesis lut_function=(A (B)+!A (B+!(C+(D)))) */ ;
     defparam i717_4_lut.init = 16'hcccd;
     FIFOsm_U12 u_Fifosm11 (.clk_c(clk_c), .\adc_fifo_empty[11] (adc_fifo_empty[11]), 
@@ -860,7 +860,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .\Data_x2[8] (Data_x2[8]), .\Data_x2[7] (Data_x2[7]), .\Data_x2[6] (Data_x2[6]), 
             .\Data_x2[5] (Data_x2[5]), .\Data_x2[4] (Data_x2[4]), .\Data_x2[3] (Data_x2[3]), 
             .\Data_x2[2] (Data_x2[2]), .\Data_x2[1] (Data_x2[1]), .\Data_x2[0] (Data_x2[0]), 
-            .rst_c(rst_c), .adc_fifo_11_dout({adc_fifo_11_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
+            .rst_c(rst_c), .adc_fifo_11_dout({adc_fifo_11_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
     MULT18X18D Data_23__I_0_19_mult_2 (.A17(Data_c_17), .A16(Data_c_16), 
             .A15(Data_c_15), .A14(Data_c_14), .A13(Data_c_13), .A12(Data_c_12), 
             .A11(Data_c_11), .A10(Data_c_10), .A9(Data_c_9), .A8(Data_c_8), 
@@ -933,7 +933,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     FIFOsm_U11 u_Fifosm12 (.clk_c(clk_c), .\adc_fifo_empty[12] (adc_fifo_empty[12]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[12] (adc_fifo_rd_en[12]), .Data_x12({Data_x12}), 
-            .rst_c(rst_c), .adc_fifo_12_dout({adc_fifo_12_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
+            .rst_c(rst_c), .adc_fifo_12_dout({adc_fifo_12_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
     FIFOsm_U10 u_Fifosm13 (.clk_c(clk_c), .\adc_fifo_empty[13] (adc_fifo_empty[13]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[13] (adc_fifo_rd_en[13]), .\Data_x6[22] (Data_x6[22]), 
@@ -944,7 +944,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .\Data_x6[9] (Data_x6[9]), .\Data_x6[8] (Data_x6[8]), .\Data_x6[7] (Data_x6[7]), 
             .\Data_x6[6] (Data_x6[6]), .\Data_x6[5] (Data_x6[5]), .\Data_x6[4] (Data_x6[4]), 
             .\Data_x6[3] (Data_x6[3]), .\Data_x6[2] (Data_x6[2]), .\Data_x6[1] (Data_x6[1]), 
-            .\Data_x6[0] (Data_x6[0]), .rst_c(rst_c), .adc_fifo_13_dout({adc_fifo_13_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
+            .\Data_x6[0] (Data_x6[0]), .rst_c(rst_c), .adc_fifo_13_dout({adc_fifo_13_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
     ALU54B lat_alu_9 (.CE3(GND_net), .CE2(GND_net), .CE1(GND_net), .CE0(VCC_net), 
            .CLK3(GND_net), .CLK2(GND_net), .CLK1(GND_net), .CLK0(GND_net), 
            .RST3(GND_net), .RST2(GND_net), .RST1(GND_net), .RST0(GND_net), 
@@ -1538,7 +1538,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     FIFOsm_U9 u_Fifosm14 (.clk_c(clk_c), .\adc_fifo_empty[14] (adc_fifo_empty[14]), 
             .GND_net(GND_net), .VCC_net(VCC_net), .Write_En_c(Write_En_c), 
             .\adc_fifo_rd_en[14] (adc_fifo_rd_en[14]), .Data_x14({Data_x14}), 
-            .rst_c(rst_c), .adc_fifo_14_dout({adc_fifo_14_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
+            .rst_c(rst_c), .adc_fifo_14_dout({adc_fifo_14_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
     MULT18X18D lat_mult_6 (.A17(GND_net), .A16(GND_net), .A15(GND_net), 
             .A14(GND_net), .A13(GND_net), .A12(GND_net), .A11(GND_net), 
             .A10(GND_net), .A9(GND_net), .A8(GND_net), .A7(GND_net), 
@@ -1679,7 +1679,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     rgmii_tx_ddr rgmii_inst (.clk_c(clk_c), .rst_c(rst_c), .gmii_txd({gmii_txd}), 
             .buf_douto3(buf_douto3), .buf_douto2(buf_douto2), .buf_douto1(buf_douto1), 
             .buf_douto0(buf_douto0), .GND_net(GND_net), .VCC_net(VCC_net), 
-            .buf_clkout(buf_clkout), .ctl_reg(ctl_reg), .buf_douto4(buf_douto4));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(465[18:42])
+            .buf_clkout(buf_clkout), .ctl_reg(ctl_reg), .buf_douto4(buf_douto4));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(465[18:42])
     MULT18X18D Data_23__I_0_20_mult_2 (.A17(Data_c_17), .A16(Data_c_16), 
             .A15(Data_c_15), .A14(Data_c_14), .A13(Data_c_13), .A12(Data_c_12), 
             .A11(Data_c_11), .A10(Data_c_10), .A9(Data_c_9), .A8(Data_c_8), 
@@ -2075,7 +2075,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     defparam lat_mult_4.SOURCEB_MODE = "B_SHIFT";
     defparam lat_mult_4.MULT_BYPASS = "DISABLED";
     defparam lat_mult_4.RESETMODE = "SYNC";
-    OB packer_busy_pad (.I(n11977), .O(packer_busy));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(21[9:20])
+    OB packer_busy_pad (.I(n11977), .O(packer_busy));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(21[9:20])
     MULT18X18D lat_mult_0 (.A17(GND_net), .A16(GND_net), .A15(GND_net), 
             .A14(GND_net), .A13(GND_net), .A12(GND_net), .A11(GND_net), 
             .A10(GND_net), .A9(GND_net), .A8(GND_net), .A7(GND_net), 
@@ -2151,12 +2151,12 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     defparam add_1040_add_4_32.INIT1 = 16'h5555;
     defparam add_1040_add_4_32.INJECT1_0 = "NO";
     defparam add_1040_add_4_32.INJECT1_1 = "NO";
-    OB Inst2_OB (.I(buf_clkout), .O(rgmii_txc)) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(89[15:17])
-    OB Inst1_OB4 (.I(buf_douto4), .O(rgmii_txctl)) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(92[16:18])
-    OB Inst1_OB3 (.I(buf_douto3), .O(rgmii_txd[3])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(95[16:18])
-    OB Inst1_OB2 (.I(buf_douto2), .O(rgmii_txd[2])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(98[16:18])
-    OB Inst1_OB1 (.I(buf_douto1), .O(rgmii_txd[1])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(101[16:18])
-    OB Inst1_OB0 (.I(buf_douto0), .O(rgmii_txd[0])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/ddr_forrgmii.vhd(104[16:18])
+    OB Inst2_OB (.I(buf_clkout), .O(rgmii_txc)) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(89[15:17])
+    OB Inst1_OB4 (.I(buf_douto4), .O(rgmii_txctl)) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(92[16:18])
+    OB Inst1_OB3 (.I(buf_douto3), .O(rgmii_txd[3])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(95[16:18])
+    OB Inst1_OB2 (.I(buf_douto2), .O(rgmii_txd[2])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(98[16:18])
+    OB Inst1_OB1 (.I(buf_douto1), .O(rgmii_txd[1])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(101[16:18])
+    OB Inst1_OB0 (.I(buf_douto0), .O(rgmii_txd[0])) /* synthesis syn_black_box=true, IO_TYPE="LVCMOS18", syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(104[16:18])
     MULT18X18D Data_23__I_0_mult_2 (.A17(Data_c_17), .A16(Data_c_16), .A15(Data_c_15), 
             .A14(Data_c_14), .A13(Data_c_13), .A12(Data_c_12), .A11(Data_c_11), 
             .A10(Data_c_10), .A9(Data_c_9), .A8(Data_c_8), .A7(Data_c_7), 
@@ -2225,7 +2225,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     defparam Data_23__I_0_mult_2.SOURCEB_MODE = "B_SHIFT";
     defparam Data_23__I_0_mult_2.MULT_BYPASS = "DISABLED";
     defparam Data_23__I_0_mult_2.RESETMODE = "SYNC";
-    IB clk_pad (.I(clk), .O(clk_c));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    IB clk_pad (.I(clk), .O(clk_c));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     CCU2C add_1040_add_4_8 (.A0(frame_len[6]), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[7]), .B1(GND_net), .C1(GND_net), 
           .D1(VCC_net), .CIN(n8993), .COUT(n8994));
@@ -2247,33 +2247,33 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     defparam add_1040_add_4_30.INIT1 = 16'h555f;
     defparam add_1040_add_4_30.INJECT1_0 = "NO";
     defparam add_1040_add_4_30.INJECT1_1 = "NO";
-    IB rst_pad (.I(rst), .O(rst_c));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(15[9:12])
-    IB Data_pad_23 (.I(Data[23]), .O(Data_c_23));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_22 (.I(Data[22]), .O(Data_c_22));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_21 (.I(Data[21]), .O(Data_c_21));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_20 (.I(Data[20]), .O(Data_c_20));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_19 (.I(Data[19]), .O(Data_c_19));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_18 (.I(Data[18]), .O(Data_c_18));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_17 (.I(Data[17]), .O(Data_c_17));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_16 (.I(Data[16]), .O(Data_c_16));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_15 (.I(Data[15]), .O(Data_c_15));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_14 (.I(Data[14]), .O(Data_c_14));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_13 (.I(Data[13]), .O(Data_c_13));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_12 (.I(Data[12]), .O(Data_c_12));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_11 (.I(Data[11]), .O(Data_c_11));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_10 (.I(Data[10]), .O(Data_c_10));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_9 (.I(Data[9]), .O(Data_c_9));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_8 (.I(Data[8]), .O(Data_c_8));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_7 (.I(Data[7]), .O(Data_c_7));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_6 (.I(Data[6]), .O(Data_c_6));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_5 (.I(Data[5]), .O(Data_c_5));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_4 (.I(Data[4]), .O(Data_c_4));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_3 (.I(Data[3]), .O(Data_c_3));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_2 (.I(Data[2]), .O(Data_c_2));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_1 (.I(Data[1]), .O(Data_c_1));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Data_pad_0 (.I(Data[0]), .O(Data_c_0));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(16[9:13])
-    IB Write_En_pad (.I(Write_En), .O(Write_En_c));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(17[9:17])
-    IB enable_pad (.I(enable), .O(enable_c));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(18[9:15])
+    IB rst_pad (.I(rst), .O(rst_c));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(15[9:12])
+    IB Data_pad_23 (.I(Data[23]), .O(Data_c_23));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_22 (.I(Data[22]), .O(Data_c_22));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_21 (.I(Data[21]), .O(Data_c_21));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_20 (.I(Data[20]), .O(Data_c_20));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_19 (.I(Data[19]), .O(Data_c_19));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_18 (.I(Data[18]), .O(Data_c_18));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_17 (.I(Data[17]), .O(Data_c_17));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_16 (.I(Data[16]), .O(Data_c_16));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_15 (.I(Data[15]), .O(Data_c_15));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_14 (.I(Data[14]), .O(Data_c_14));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_13 (.I(Data[13]), .O(Data_c_13));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_12 (.I(Data[12]), .O(Data_c_12));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_11 (.I(Data[11]), .O(Data_c_11));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_10 (.I(Data[10]), .O(Data_c_10));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_9 (.I(Data[9]), .O(Data_c_9));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_8 (.I(Data[8]), .O(Data_c_8));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_7 (.I(Data[7]), .O(Data_c_7));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_6 (.I(Data[6]), .O(Data_c_6));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_5 (.I(Data[5]), .O(Data_c_5));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_4 (.I(Data[4]), .O(Data_c_4));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_3 (.I(Data[3]), .O(Data_c_3));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_2 (.I(Data[2]), .O(Data_c_2));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_1 (.I(Data[1]), .O(Data_c_1));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Data_pad_0 (.I(Data[0]), .O(Data_c_0));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(16[9:13])
+    IB Write_En_pad (.I(Write_En), .O(Write_En_c));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(17[9:17])
+    IB enable_pad (.I(enable), .O(enable_c));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(18[9:15])
     CCU2C add_1040_add_4_14 (.A0(frame_len[12]), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[13]), .B1(GND_net), .C1(GND_net), 
           .D1(VCC_net), .CIN(n8996), .COUT(n8997));
@@ -2333,7 +2333,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .n2315(n2315), .\next_crc_reg_31__N_594[9] (next_crc_reg_31__N_594[9]), 
             .\next_crc_reg_31__N_594[12] (next_crc_reg_31__N_594[12]), .\crc_next[12] (crc_next[12]), 
             .n11918(n11918), .n11917(n11917), .n11913(n11913), .n11912(n11912), 
-            .n11915(n11915), .n11916(n11916));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(440[16:42])
+            .n11915(n11915), .n11916(n11916));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(440[16:42])
     CCU2C add_1040_add_4_26 (.A0(frame_len[24]), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[25]), .B1(GND_net), .C1(GND_net), 
           .D1(VCC_net), .CIN(n9002), .COUT(n9003));
@@ -2359,7 +2359,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .data_out_large_fifo({data_out_large_fifo}), .reg_fifo_almostfull(reg_fifo_almostfull), 
             .fifo_almostempty_N_1(fifo_almostempty_N_1), .read_large_fifo(read_large_fifo), 
             .fifo_rd_en_in(fifo_rd_en_in), .reg_fifo_empty(reg_fifo_empty), 
-            .fifo_empty(fifo_empty));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(393[12:36])
+            .fifo_empty(fifo_empty));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(393[12:36])
     CCU2C add_1040_add_4_24 (.A0(frame_len[22]), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[23]), .B1(GND_net), .C1(GND_net), 
           .D1(VCC_net), .CIN(n9001), .COUT(n9002));
@@ -2391,7 +2391,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
     Fifolg u_Fifo_large (.clk_c(clk_c), .n11947(n11947), .fifo_empty(fifo_empty), 
            .fifo_almostempty(fifo_almostempty), .large_fifo_almost_full(large_fifo_almost_full), 
            .VCC_net(VCC_net), .GND_net(GND_net), .read_large_fifo(read_large_fifo), 
-           .large_fifo_din({large_fifo_din}), .rst_c(rst_c), .data_out_large_fifo({data_out_large_fifo})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+           .large_fifo_din({large_fifo_din}), .rst_c(rst_c), .data_out_large_fifo({data_out_large_fifo})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     GSR GSR_INST (.GSR(n1));
     CCU2C add_1040_add_4_18 (.A0(frame_len[16]), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[17]), .B1(GND_net), .C1(GND_net), 
@@ -2412,7 +2412,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
            .\Data_x4[9] (Data_x4[9]), .\Data_x4[8] (Data_x4[8]), .\Data_x4[7] (Data_x4[7]), 
            .\Data_x4[6] (Data_x4[6]), .\Data_x4[5] (Data_x4[5]), .\Data_x4[4] (Data_x4[4]), 
            .\Data_x4[3] (Data_x4[3]), .\Data_x4[2] (Data_x4[2]), .\Data_x4[1] (Data_x4[1]), 
-           .\Data_x4[0] (Data_x4[0]), .rst_c(rst_c), .adc_fifo_9_dout({adc_fifo_9_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
+           .\Data_x4[0] (Data_x4[0]), .rst_c(rst_c), .adc_fifo_9_dout({adc_fifo_9_dout})) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
     LUT4 i718_4_lut (.A(n1847), .B(rst_c), .C(n11978), .D(n1846), .Z(clk_c_enable_38)) /* synthesis lut_function=(A (B+!(C (D)))+!A (B+!(C+!(D)))) */ ;
     defparam i718_4_lut.init = 16'hcfee;
     PUR PUR_INST (.PUR(VCC_net));
@@ -2441,7 +2441,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .\crc_next[12] (crc_next[12]), .\crc_reg[12] (crc_reg[12]), 
             .\next_crc_reg_31__N_594[12] (next_crc_reg_31__N_594[12]), .n11942(n11942), 
             .n2268(n2268), .n5459(n5459), .\crc_reg[25] (crc_reg[25]), 
-            .\crc_reg[1] (crc_reg[1]), .\crc_reg[17] (crc_reg[17]));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(414[16:40])
+            .\crc_reg[1] (crc_reg[1]), .\crc_reg[17] (crc_reg[17]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(414[16:40])
     \Controller(16,24,8,16)  u_adc_fifo_frame_packer (.adc_fifo_rd_en({adc_fifo_rd_en}), 
             .n1844(n1844), .n1846(n1846), .large_fifo_din({large_fifo_din}), 
             .rst_c(rst_c), .clk_c(clk_c), .clk_c_enable_38(clk_c_enable_38), 
@@ -2456,7 +2456,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .n11394(n11394), .n11391(n11391), .n11385(n11385), .n11387(n11387), 
             .n11384(n11384), .n11374(n11374), .n11383(n11383), .n11382(n11382), 
             .n11388(n11388), .n11381(n11381), .n11392(n11392), .n11380(n11380), 
-            .n11379(n11379), .n11390(n11390), .n31(n31));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(98[31:53])
+            .n11379(n11379), .n11390(n11390), .n31(n31));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(98[31:53])
     \fifo_16ch_mux(24)  u_MuxFifo (.adc_fifo_6_dout({adc_fifo_6_dout}), .adc_fifo_7_dout({adc_fifo_7_dout}), 
             .fifo_sel({fifo_sel}), .fifo_dout_to_packer({fifo_dout_to_packer}), 
             .adc_fifo_4_dout({adc_fifo_4_dout}), .adc_fifo_5_dout({adc_fifo_5_dout}), 
@@ -2471,7 +2471,7 @@ module top (clk, rst, Data, Write_En, enable, packer_busy, packer_frame_done,
             .n11373(n11373), .n11394(n11394), .n11391(n11391), .n11385(n11385), 
             .n11387(n11387), .n11384(n11384), .n11374(n11374), .n11383(n11383), 
             .n11382(n11382), .n11388(n11388), .n11381(n11381), .n11392(n11392), 
-            .n11380(n11380), .n11379(n11379), .n11390(n11390));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(128[17:42])
+            .n11380(n11380), .n11379(n11379), .n11390(n11390));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(128[17:42])
     
 endmodule
 //
@@ -2513,7 +2513,7 @@ module FIFOsm_U8 (clk_c, \adc_fifo_empty[15] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_15_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -2522,137 +2522,137 @@ module FIFOsm_U8 (clk_c, \adc_fifo_empty[15] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[15] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[15] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[15] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[15] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[15] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[15] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[15] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(GND_net), .DI2(GND_net), 
             .DI3(GND_net), .DI4(Data_c_0), .DI5(Data_c_1), .DI6(Data_c_2), 
@@ -2680,7 +2680,7 @@ module FIFOsm_U8 (clk_c, \adc_fifo_empty[15] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_15_dout[6]), .DO25(adc_fifo_15_dout[7]), .DO26(adc_fifo_15_dout[8]), 
             .DO27(adc_fifo_15_dout[9]), .DO28(adc_fifo_15_dout[10]), .DO29(adc_fifo_15_dout[11]), 
             .DO30(adc_fifo_15_dout[12]), .DO31(adc_fifo_15_dout[13]), .DO32(adc_fifo_15_dout[14]), 
-            .DO33(adc_fifo_15_dout[15]), .DO34(adc_fifo_15_dout[16]), .DO35(adc_fifo_15_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(365[18:36])
+            .DO33(adc_fifo_15_dout[15]), .DO34(adc_fifo_15_dout[16]), .DO35(adc_fifo_15_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=365, LSE_RLINE=365 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(365[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -2798,7 +2798,7 @@ module FIFOsm_U7 (clk_c, \adc_fifo_empty[1] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_1_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -2807,137 +2807,137 @@ module FIFOsm_U7 (clk_c, \adc_fifo_empty[1] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[1] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[1] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[1] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[1] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[1] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[1] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[1] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(Data_c_0), .DI2(Data_c_1), 
             .DI3(Data_c_2), .DI4(Data_c_3), .DI5(Data_c_4), .DI6(Data_c_5), 
@@ -2965,7 +2965,7 @@ module FIFOsm_U7 (clk_c, \adc_fifo_empty[1] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_1_dout[6]), .DO25(adc_fifo_1_dout[7]), .DO26(adc_fifo_1_dout[8]), 
             .DO27(adc_fifo_1_dout[9]), .DO28(adc_fifo_1_dout[10]), .DO29(adc_fifo_1_dout[11]), 
             .DO30(adc_fifo_1_dout[12]), .DO31(adc_fifo_1_dout[13]), .DO32(adc_fifo_1_dout[14]), 
-            .DO33(adc_fifo_1_dout[15]), .DO34(adc_fifo_1_dout[16]), .DO35(adc_fifo_1_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(169[17:35])
+            .DO33(adc_fifo_1_dout[15]), .DO34(adc_fifo_1_dout[16]), .DO35(adc_fifo_1_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=169, LSE_RLINE=169 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(169[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -3057,7 +3057,7 @@ module FIFOsm_U6 (clk_c, \adc_fifo_empty[2] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_2_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -3066,137 +3066,137 @@ module FIFOsm_U6 (clk_c, \adc_fifo_empty[2] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[2] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[2] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[2] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[2] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[2] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[2] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[2] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x2[0]), .DI1(Data_x2[1]), .DI2(Data_x2[2]), 
             .DI3(Data_x2[3]), .DI4(Data_x2[4]), .DI5(Data_x2[5]), .DI6(Data_x2[6]), 
@@ -3225,7 +3225,7 @@ module FIFOsm_U6 (clk_c, \adc_fifo_empty[2] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_2_dout[6]), .DO25(adc_fifo_2_dout[7]), .DO26(adc_fifo_2_dout[8]), 
             .DO27(adc_fifo_2_dout[9]), .DO28(adc_fifo_2_dout[10]), .DO29(adc_fifo_2_dout[11]), 
             .DO30(adc_fifo_2_dout[12]), .DO31(adc_fifo_2_dout[13]), .DO32(adc_fifo_2_dout[14]), 
-            .DO33(adc_fifo_2_dout[15]), .DO34(adc_fifo_2_dout[16]), .DO35(adc_fifo_2_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(183[17:35])
+            .DO33(adc_fifo_2_dout[15]), .DO34(adc_fifo_2_dout[16]), .DO35(adc_fifo_2_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=183, LSE_RLINE=183 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(183[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -3342,7 +3342,7 @@ module FIFOsm_U5 (clk_c, \adc_fifo_empty[3] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_3_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -3351,137 +3351,137 @@ module FIFOsm_U5 (clk_c, \adc_fifo_empty[3] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[3] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[3] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[3] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[3] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[3] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[3] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[3] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(GND_net), .DI2(Data_c_0), 
             .DI3(Data_c_1), .DI4(Data_c_2), .DI5(Data_c_3), .DI6(Data_c_4), 
@@ -3509,7 +3509,7 @@ module FIFOsm_U5 (clk_c, \adc_fifo_empty[3] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_3_dout[6]), .DO25(adc_fifo_3_dout[7]), .DO26(adc_fifo_3_dout[8]), 
             .DO27(adc_fifo_3_dout[9]), .DO28(adc_fifo_3_dout[10]), .DO29(adc_fifo_3_dout[11]), 
             .DO30(adc_fifo_3_dout[12]), .DO31(adc_fifo_3_dout[13]), .DO32(adc_fifo_3_dout[14]), 
-            .DO33(adc_fifo_3_dout[15]), .DO34(adc_fifo_3_dout[16]), .DO35(adc_fifo_3_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(197[17:35])
+            .DO33(adc_fifo_3_dout[15]), .DO34(adc_fifo_3_dout[16]), .DO35(adc_fifo_3_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=197, LSE_RLINE=197 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(197[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -3601,7 +3601,7 @@ module FIFOsm_U4 (clk_c, \adc_fifo_empty[4] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_4_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -3610,137 +3610,137 @@ module FIFOsm_U4 (clk_c, \adc_fifo_empty[4] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[4] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[4] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[4] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[4] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[4] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[4] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[4] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x4[0]), .DI1(Data_x4[1]), .DI2(Data_x4[2]), 
             .DI3(Data_x4[3]), .DI4(Data_x4[4]), .DI5(Data_x4[5]), .DI6(Data_x4[6]), 
@@ -3769,7 +3769,7 @@ module FIFOsm_U4 (clk_c, \adc_fifo_empty[4] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_4_dout[6]), .DO25(adc_fifo_4_dout[7]), .DO26(adc_fifo_4_dout[8]), 
             .DO27(adc_fifo_4_dout[9]), .DO28(adc_fifo_4_dout[10]), .DO29(adc_fifo_4_dout[11]), 
             .DO30(adc_fifo_4_dout[12]), .DO31(adc_fifo_4_dout[13]), .DO32(adc_fifo_4_dout[14]), 
-            .DO33(adc_fifo_4_dout[15]), .DO34(adc_fifo_4_dout[16]), .DO35(adc_fifo_4_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(211[17:35])
+            .DO33(adc_fifo_4_dout[15]), .DO34(adc_fifo_4_dout[16]), .DO35(adc_fifo_4_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=211, LSE_RLINE=211 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(211[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -3889,7 +3889,7 @@ module FIFOsm_U3 (clk_c, \adc_fifo_empty[5] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_5_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -3898,137 +3898,137 @@ module FIFOsm_U3 (clk_c, \adc_fifo_empty[5] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[5] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[5] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[5] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[5] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[5] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[5] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[5] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(\Data_x2[0] ), .DI2(\Data_x2[1] ), 
             .DI3(\Data_x2[2] ), .DI4(\Data_x2[3] ), .DI5(\Data_x2[4] ), 
@@ -4058,7 +4058,7 @@ module FIFOsm_U3 (clk_c, \adc_fifo_empty[5] , GND_net, VCC_net, Write_En_c,
             .DO25(adc_fifo_5_dout[7]), .DO26(adc_fifo_5_dout[8]), .DO27(adc_fifo_5_dout[9]), 
             .DO28(adc_fifo_5_dout[10]), .DO29(adc_fifo_5_dout[11]), .DO30(adc_fifo_5_dout[12]), 
             .DO31(adc_fifo_5_dout[13]), .DO32(adc_fifo_5_dout[14]), .DO33(adc_fifo_5_dout[15]), 
-            .DO34(adc_fifo_5_dout[16]), .DO35(adc_fifo_5_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(225[17:35])
+            .DO34(adc_fifo_5_dout[16]), .DO35(adc_fifo_5_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=225, LSE_RLINE=225 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(225[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -4150,7 +4150,7 @@ module FIFOsm_U2 (clk_c, \adc_fifo_empty[6] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_6_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -4159,137 +4159,137 @@ module FIFOsm_U2 (clk_c, \adc_fifo_empty[6] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[6] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[6] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[6] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[6] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[6] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[6] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[6] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x6[0]), .DI1(Data_x6[1]), .DI2(Data_x6[2]), 
             .DI3(Data_x6[3]), .DI4(Data_x6[4]), .DI5(Data_x6[5]), .DI6(Data_x6[6]), 
@@ -4318,7 +4318,7 @@ module FIFOsm_U2 (clk_c, \adc_fifo_empty[6] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_6_dout[6]), .DO25(adc_fifo_6_dout[7]), .DO26(adc_fifo_6_dout[8]), 
             .DO27(adc_fifo_6_dout[9]), .DO28(adc_fifo_6_dout[10]), .DO29(adc_fifo_6_dout[11]), 
             .DO30(adc_fifo_6_dout[12]), .DO31(adc_fifo_6_dout[13]), .DO32(adc_fifo_6_dout[14]), 
-            .DO33(adc_fifo_6_dout[15]), .DO34(adc_fifo_6_dout[16]), .DO35(adc_fifo_6_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(239[17:35])
+            .DO33(adc_fifo_6_dout[15]), .DO34(adc_fifo_6_dout[16]), .DO35(adc_fifo_6_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=239, LSE_RLINE=239 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(239[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -4434,7 +4434,7 @@ module FIFOsm_U1 (clk_c, \adc_fifo_empty[7] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_7_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -4443,137 +4443,137 @@ module FIFOsm_U1 (clk_c, \adc_fifo_empty[7] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[7] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[7] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[7] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[7] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[7] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[7] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[7] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(GND_net), .DI2(GND_net), 
             .DI3(Data_c_0), .DI4(Data_c_1), .DI5(Data_c_2), .DI6(Data_c_3), 
@@ -4601,7 +4601,7 @@ module FIFOsm_U1 (clk_c, \adc_fifo_empty[7] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_7_dout[6]), .DO25(adc_fifo_7_dout[7]), .DO26(adc_fifo_7_dout[8]), 
             .DO27(adc_fifo_7_dout[9]), .DO28(adc_fifo_7_dout[10]), .DO29(adc_fifo_7_dout[11]), 
             .DO30(adc_fifo_7_dout[12]), .DO31(adc_fifo_7_dout[13]), .DO32(adc_fifo_7_dout[14]), 
-            .DO33(adc_fifo_7_dout[15]), .DO34(adc_fifo_7_dout[16]), .DO35(adc_fifo_7_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(253[17:35])
+            .DO33(adc_fifo_7_dout[15]), .DO34(adc_fifo_7_dout[16]), .DO35(adc_fifo_7_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=253, LSE_RLINE=253 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(253[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -4693,7 +4693,7 @@ module FIFOsm_U0 (clk_c, \adc_fifo_empty[8] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_8_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -4702,137 +4702,137 @@ module FIFOsm_U0 (clk_c, \adc_fifo_empty[8] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[8] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[8] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[8] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[8] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[8] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[8] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[8] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x8[0]), .DI1(Data_x8[1]), .DI2(Data_x8[2]), 
             .DI3(Data_x8[3]), .DI4(Data_x8[4]), .DI5(Data_x8[5]), .DI6(Data_x8[6]), 
@@ -4861,7 +4861,7 @@ module FIFOsm_U0 (clk_c, \adc_fifo_empty[8] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_8_dout[6]), .DO25(adc_fifo_8_dout[7]), .DO26(adc_fifo_8_dout[8]), 
             .DO27(adc_fifo_8_dout[9]), .DO28(adc_fifo_8_dout[10]), .DO29(adc_fifo_8_dout[11]), 
             .DO30(adc_fifo_8_dout[12]), .DO31(adc_fifo_8_dout[13]), .DO32(adc_fifo_8_dout[14]), 
-            .DO33(adc_fifo_8_dout[15]), .DO34(adc_fifo_8_dout[16]), .DO35(adc_fifo_8_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(267[17:35])
+            .DO33(adc_fifo_8_dout[15]), .DO34(adc_fifo_8_dout[16]), .DO35(adc_fifo_8_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=267, LSE_RLINE=267 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(267[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -4980,7 +4980,7 @@ module FIFOsm_U14 (clk_c, \adc_fifo_empty[0] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_0_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire Full, invout_2, fcount_2, fcnt_en, ifcount_2, empty_d, 
         full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -4989,135 +4989,135 @@ module FIFOsm_U14 (clk_c, \adc_fifo_empty[0] , GND_net, VCC_net, Write_En_c,
         cmp_ci, co0_1, cmp_le_1_c, cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, 
         cmp_ge_d1_c, cmp_ge_d1, w_ctr_ci, r_ctr_ci, invout_1, rden_i_inv;
     
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[0] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[0] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[0] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[0] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[0] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[0] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[0] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_c_0), .DI1(Data_c_1), .DI2(Data_c_2), 
             .DI3(Data_c_3), .DI4(Data_c_4), .DI5(Data_c_5), .DI6(Data_c_6), 
@@ -5145,7 +5145,7 @@ module FIFOsm_U14 (clk_c, \adc_fifo_empty[0] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_0_dout[6]), .DO25(adc_fifo_0_dout[7]), .DO26(adc_fifo_0_dout[8]), 
             .DO27(adc_fifo_0_dout[9]), .DO28(adc_fifo_0_dout[10]), .DO29(adc_fifo_0_dout[11]), 
             .DO30(adc_fifo_0_dout[12]), .DO31(adc_fifo_0_dout[13]), .DO32(adc_fifo_0_dout[14]), 
-            .DO33(adc_fifo_0_dout[15]), .DO34(adc_fifo_0_dout[16]), .DO35(adc_fifo_0_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(155[17:35])
+            .DO33(adc_fifo_0_dout[15]), .DO34(adc_fifo_0_dout[16]), .DO35(adc_fifo_0_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(155[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -5219,7 +5219,7 @@ module FIFOsm_U14 (clk_c, \adc_fifo_empty[0] , GND_net, VCC_net, Write_En_c,
     defparam pdp_ram_0_0_0.INITVAL_3E = "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000";
     defparam pdp_ram_0_0_0.INITVAL_3F = "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000";
     defparam pdp_ram_0_0_0.INIT_DATA = "STATIC";
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=155, LSE_RLINE=155 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
     
 endmodule
@@ -5239,7 +5239,7 @@ module FIFOsm_U13 (clk_c, \adc_fifo_empty[10] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_10_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -5248,137 +5248,137 @@ module FIFOsm_U13 (clk_c, \adc_fifo_empty[10] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[10] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[10] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[10] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[10] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[10] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[10] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[10] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x10[0]), .DI1(Data_x10[1]), .DI2(Data_x10[2]), 
             .DI3(Data_x10[3]), .DI4(Data_x10[4]), .DI5(Data_x10[5]), .DI6(Data_x10[6]), 
@@ -5407,7 +5407,7 @@ module FIFOsm_U13 (clk_c, \adc_fifo_empty[10] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_10_dout[6]), .DO25(adc_fifo_10_dout[7]), .DO26(adc_fifo_10_dout[8]), 
             .DO27(adc_fifo_10_dout[9]), .DO28(adc_fifo_10_dout[10]), .DO29(adc_fifo_10_dout[11]), 
             .DO30(adc_fifo_10_dout[12]), .DO31(adc_fifo_10_dout[13]), .DO32(adc_fifo_10_dout[14]), 
-            .DO33(adc_fifo_10_dout[15]), .DO34(adc_fifo_10_dout[16]), .DO35(adc_fifo_10_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(295[18:36])
+            .DO33(adc_fifo_10_dout[15]), .DO34(adc_fifo_10_dout[16]), .DO35(adc_fifo_10_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=295, LSE_RLINE=295 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(295[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -5525,7 +5525,7 @@ module FIFOsm_U12 (clk_c, \adc_fifo_empty[11] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_11_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -5534,137 +5534,137 @@ module FIFOsm_U12 (clk_c, \adc_fifo_empty[11] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[11] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[11] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[11] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[11] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[11] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[11] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[11] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(GND_net), .DI2(\Data_x2[0] ), 
             .DI3(\Data_x2[1] ), .DI4(\Data_x2[2] ), .DI5(\Data_x2[3] ), 
@@ -5694,7 +5694,7 @@ module FIFOsm_U12 (clk_c, \adc_fifo_empty[11] , GND_net, VCC_net, Write_En_c,
             .DO25(adc_fifo_11_dout[7]), .DO26(adc_fifo_11_dout[8]), .DO27(adc_fifo_11_dout[9]), 
             .DO28(adc_fifo_11_dout[10]), .DO29(adc_fifo_11_dout[11]), .DO30(adc_fifo_11_dout[12]), 
             .DO31(adc_fifo_11_dout[13]), .DO32(adc_fifo_11_dout[14]), .DO33(adc_fifo_11_dout[15]), 
-            .DO34(adc_fifo_11_dout[16]), .DO35(adc_fifo_11_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(309[18:36])
+            .DO34(adc_fifo_11_dout[16]), .DO35(adc_fifo_11_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=309, LSE_RLINE=309 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(309[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -5786,7 +5786,7 @@ module FIFOsm_U11 (clk_c, \adc_fifo_empty[12] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_12_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -5795,137 +5795,137 @@ module FIFOsm_U11 (clk_c, \adc_fifo_empty[12] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[12] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[12] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[12] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[12] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[12] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[12] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[12] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x12[0]), .DI1(Data_x12[1]), .DI2(Data_x12[2]), 
             .DI3(Data_x12[3]), .DI4(Data_x12[4]), .DI5(Data_x12[5]), .DI6(Data_x12[6]), 
@@ -5954,7 +5954,7 @@ module FIFOsm_U11 (clk_c, \adc_fifo_empty[12] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_12_dout[6]), .DO25(adc_fifo_12_dout[7]), .DO26(adc_fifo_12_dout[8]), 
             .DO27(adc_fifo_12_dout[9]), .DO28(adc_fifo_12_dout[10]), .DO29(adc_fifo_12_dout[11]), 
             .DO30(adc_fifo_12_dout[12]), .DO31(adc_fifo_12_dout[13]), .DO32(adc_fifo_12_dout[14]), 
-            .DO33(adc_fifo_12_dout[15]), .DO34(adc_fifo_12_dout[16]), .DO35(adc_fifo_12_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(323[18:36])
+            .DO33(adc_fifo_12_dout[15]), .DO34(adc_fifo_12_dout[16]), .DO35(adc_fifo_12_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=323, LSE_RLINE=323 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(323[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -6074,7 +6074,7 @@ module FIFOsm_U10 (clk_c, \adc_fifo_empty[13] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_13_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -6083,137 +6083,137 @@ module FIFOsm_U10 (clk_c, \adc_fifo_empty[13] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[13] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[13] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[13] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[13] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[13] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[13] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[13] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(\Data_x6[0] ), .DI2(\Data_x6[1] ), 
             .DI3(\Data_x6[2] ), .DI4(\Data_x6[3] ), .DI5(\Data_x6[4] ), 
@@ -6243,7 +6243,7 @@ module FIFOsm_U10 (clk_c, \adc_fifo_empty[13] , GND_net, VCC_net, Write_En_c,
             .DO25(adc_fifo_13_dout[7]), .DO26(adc_fifo_13_dout[8]), .DO27(adc_fifo_13_dout[9]), 
             .DO28(adc_fifo_13_dout[10]), .DO29(adc_fifo_13_dout[11]), .DO30(adc_fifo_13_dout[12]), 
             .DO31(adc_fifo_13_dout[13]), .DO32(adc_fifo_13_dout[14]), .DO33(adc_fifo_13_dout[15]), 
-            .DO34(adc_fifo_13_dout[16]), .DO35(adc_fifo_13_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(337[18:36])
+            .DO34(adc_fifo_13_dout[16]), .DO35(adc_fifo_13_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=337, LSE_RLINE=337 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(337[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -6335,7 +6335,7 @@ module FIFOsm_U9 (clk_c, \adc_fifo_empty[14] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_14_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -6344,137 +6344,137 @@ module FIFOsm_U9 (clk_c, \adc_fifo_empty[14] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[14] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[14] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[14] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[14] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[14] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[14] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[14] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(Data_x14[0]), .DI1(Data_x14[1]), .DI2(Data_x14[2]), 
             .DI3(Data_x14[3]), .DI4(Data_x14[4]), .DI5(Data_x14[5]), .DI6(Data_x14[6]), 
@@ -6503,7 +6503,7 @@ module FIFOsm_U9 (clk_c, \adc_fifo_empty[14] , GND_net, VCC_net, Write_En_c,
             .DO24(adc_fifo_14_dout[6]), .DO25(adc_fifo_14_dout[7]), .DO26(adc_fifo_14_dout[8]), 
             .DO27(adc_fifo_14_dout[9]), .DO28(adc_fifo_14_dout[10]), .DO29(adc_fifo_14_dout[11]), 
             .DO30(adc_fifo_14_dout[12]), .DO31(adc_fifo_14_dout[13]), .DO32(adc_fifo_14_dout[14]), 
-            .DO33(adc_fifo_14_dout[15]), .DO34(adc_fifo_14_dout[16]), .DO35(adc_fifo_14_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(351[18:36])
+            .DO33(adc_fifo_14_dout[15]), .DO34(adc_fifo_14_dout[16]), .DO35(adc_fifo_14_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=18, LSE_RCOL=36, LSE_LLINE=351, LSE_RLINE=351 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(351[18:36])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -6599,12 +6599,12 @@ module rgmii_tx_ddr (clk_c, rst_c, gmii_txd, buf_douto3, buf_douto2,
     input ctl_reg;
     output buf_douto4;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     DDR_forRGMII DDR_TX (.clk_c(clk_c), .rst_c(rst_c), .gmii_txd({gmii_txd}), 
             .buf_douto3(buf_douto3), .buf_douto2(buf_douto2), .buf_douto1(buf_douto1), 
             .buf_douto0(buf_douto0), .GND_net(GND_net), .VCC_net(VCC_net), 
-            .buf_clkout(buf_clkout), .ctl_reg(ctl_reg), .buf_douto4(buf_douto4)) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .buf_clkout(buf_clkout), .ctl_reg(ctl_reg), .buf_douto4(buf_douto4)) /* synthesis NGD_DRC_MASK=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     
 endmodule
 //
@@ -6627,25 +6627,25 @@ module DDR_forRGMII (clk_c, rst_c, gmii_txd, buf_douto3, buf_douto2,
     input ctl_reg;
     output buf_douto4;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     ODDRX1F Inst4_ODDRX1F3 (.D0(gmii_txd[3]), .D1(gmii_txd[7]), .SCLK(clk_c), 
-            .RST(rst_c), .Q(buf_douto3)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .RST(rst_c), .Q(buf_douto3)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst4_ODDRX1F3.GSR = "ENABLED";
     ODDRX1F Inst4_ODDRX1F2 (.D0(gmii_txd[2]), .D1(gmii_txd[6]), .SCLK(clk_c), 
-            .RST(rst_c), .Q(buf_douto2)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .RST(rst_c), .Q(buf_douto2)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst4_ODDRX1F2.GSR = "ENABLED";
     ODDRX1F Inst4_ODDRX1F1 (.D0(gmii_txd[1]), .D1(gmii_txd[5]), .SCLK(clk_c), 
-            .RST(rst_c), .Q(buf_douto1)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .RST(rst_c), .Q(buf_douto1)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst4_ODDRX1F1.GSR = "ENABLED";
     ODDRX1F Inst4_ODDRX1F0 (.D0(gmii_txd[0]), .D1(gmii_txd[4]), .SCLK(clk_c), 
-            .RST(rst_c), .Q(buf_douto0)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .RST(rst_c), .Q(buf_douto0)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst4_ODDRX1F0.GSR = "ENABLED";
     ODDRX1F Inst3_ODDRX1F (.D0(VCC_net), .D1(GND_net), .SCLK(clk_c), .RST(rst_c), 
-            .Q(buf_clkout)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .Q(buf_clkout)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst3_ODDRX1F.GSR = "ENABLED";
     ODDRX1F Inst4_ODDRX1F4 (.D0(ctl_reg), .D1(ctl_reg), .SCLK(clk_c), 
-            .RST(rst_c), .Q(buf_douto4)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/lattice_projecten/rgmii_withddr.vhd(35[13:37])
+            .RST(rst_c), .Q(buf_douto4)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=48, LSE_LCOL=13, LSE_RCOL=37, LSE_LLINE=35, LSE_RLINE=35 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(35[13:37])
     defparam Inst4_ODDRX1F4.GSR = "ENABLED";
     
 endmodule
@@ -6750,20 +6750,20 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
     input n11915;
     input n11916;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     wire [7:0]n2290;
     
     wire n11955, n7145, clk_c_enable_13;
-    wire [3:0]ifg_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(49[12:19])
+    wire [3:0]ifg_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(49[12:19])
     
     wire n3482;
     wire [3:0]n1;
-    wire [31:0]crc_next;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(57[12:20])
+    wire [31:0]crc_next;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(57[12:20])
     
     wire n2, n10244;
-    wire [31:0]next_crc_reg;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[21:33])
-    wire [31:0]crc_reg;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[12:19])
-    wire [2:0]pre_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(46[12:19])
+    wire [31:0]next_crc_reg;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[21:33])
+    wire [31:0]crc_reg;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(55[12:19])
+    wire [2:0]pre_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(46[12:19])
     
     wire n9509, n11854, n11853;
     wire [7:0]gmii_txd_7__N_406;
@@ -6774,18 +6774,18 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
     wire [31:0]n133;
     
     wire n9022, n2_adj_898, n10500, n2_adj_899, n10588;
-    wire [5:0]pad_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(47[12:19])
+    wire [5:0]pad_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(47[12:19])
     
     wire n11944, n11920, n11932, n10360, n11966, n11796, n5449;
-    wire [5:0]next_pad_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(47[21:33])
+    wire [5:0]next_pad_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(47[21:33])
     
     wire n11757, n9020, n10456, n10332, n11910, n10534, n11909, 
         n9019, n5583, n10368, n11908, n10442, n9018, n6156, n10374, 
         n6195;
-    wire [31:0]frame_len_c;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(51[12:21])
+    wire [31:0]frame_len_c;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(51[12:21])
     
     wire n11827, n11826, n5;
-    wire [1:0]next_crc_cnt;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(48[21:33])
+    wire [1:0]next_crc_cnt;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(48[21:33])
     
     wire n11957, n6247, n10125, n11750, n10840, n10838, n10212, 
         n10548, n10396, n9017, n10274, n5581, n2_adj_900, n10570, 
@@ -6807,641 +6807,641 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
         n11860;
     
     LUT4 i1_3_lut_rep_182_4_lut (.A(n2290[5]), .B(n11955), .C(rst_c), 
-         .D(n7145), .Z(clk_c_enable_13)) /* synthesis lut_function=(A (C+(D))+!A (B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n7145), .Z(clk_c_enable_13)) /* synthesis lut_function=(A (C+(D))+!A (B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_rep_182_4_lut.init = 16'hfff4;
-    FD1S3IX ifg_cnt__i0 (.D(n1[0]), .CK(clk_c), .CD(n3482), .Q(ifg_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3IX ifg_cnt__i0 (.D(n1[0]), .CK(clk_c), .CD(n3482), .Q(ifg_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam ifg_cnt__i0.GSR = "DISABLED";
     LUT4 i1_4_lut (.A(crc_next[27]), .B(n2), .C(n10244), .D(n2290[3]), 
-         .Z(next_crc_reg[27])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(next_crc_reg[27])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut.init = 16'hfefc;
     LUT4 select_534_Select_27_i2_4_lut (.A(crc_reg[27]), .B(n2296), .C(crc_next[27]), 
-         .D(n11984), .Z(n2)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_27_i2_4_lut.init = 16'h88c0;
     FD1P3IX pre_cnt__i0 (.D(n9509), .SP(clk_c_enable_15), .CD(rst_c), 
-            .CK(clk_c), .Q(pre_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pre_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pre_cnt__i0.GSR = "DISABLED";
     PFUMX i7484 (.BLUT(n11854), .ALUT(n11853), .C0(crc_cnt[1]), .Z(gmii_txd_7__N_406[4]));
     LUT4 i2035_4_lut_4_lut (.A(n11907), .B(n2290[3]), .C(n11_adj_895), 
          .D(rst_c), .Z(clk_c_enable_71)) /* synthesis lut_function=(A ((C+(D))+!B)+!A (B (C+(D))+!B (D))) */ ;
     defparam i2035_4_lut_4_lut.init = 16'hffe2;
     LUT4 i1_4_lut_adj_243 (.A(crc_next[28]), .B(n2_adj_896), .C(n10390), 
-         .D(n2290[3]), .Z(next_crc_reg[28])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[28])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_243.init = 16'hfefc;
     LUT4 select_534_Select_28_i2_4_lut (.A(crc_reg[28]), .B(n2296), .C(crc_next[28]), 
-         .D(n11984), .Z(n2_adj_896)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_896)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_28_i2_4_lut.init = 16'h88c0;
     PFUMX i7481 (.BLUT(n11851), .ALUT(n11850), .C0(crc_cnt[1]), .Z(n11852));
     PFUMX i7478 (.BLUT(n11848), .ALUT(n11847), .C0(crc_cnt[1]), .Z(gmii_txd_7__N_406[2]));
     LUT4 i1_3_lut_4_lut (.A(n2290[4]), .B(n11970), .C(n2298), .D(crc_reg[23]), 
-         .Z(n10216)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n10216)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut.init = 16'hfef0;
     LUT4 i1_4_lut_adj_244 (.A(n2290[3]), .B(n2_adj_897), .C(n10386), .D(crc_next[29]), 
-         .Z(next_crc_reg[29])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(next_crc_reg[29])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_244.init = 16'hfefc;
     LUT4 i2_2_lut_3_lut_4_lut (.A(n399), .B(n11929), .C(rst_c), .D(n2290[3]), 
-         .Z(clk_c_enable_74)) /* synthesis lut_function=(A (C+(D))+!A (B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(173[17] 195[24])
+         .Z(clk_c_enable_74)) /* synthesis lut_function=(A (C+(D))+!A (B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(173[17] 195[24])
     defparam i2_2_lut_3_lut_4_lut.init = 16'hfff4;
     LUT4 select_534_Select_29_i2_4_lut (.A(crc_reg[29]), .B(n2296), .C(crc_next[29]), 
-         .D(n11984), .Z(n2_adj_897)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_897)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_29_i2_4_lut.init = 16'h88c0;
     PFUMX i7473 (.BLUT(n11841), .ALUT(n11840), .C0(crc_cnt[1]), .Z(gmii_txd_7__N_406[0]));
     CCU2C frame_len_702_add_4_23 (.A0(frame_len[21]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[22]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9021), .COUT(n9022), .S0(n133[21]), .S1(n133[22]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9021), .COUT(n9022), .S0(n133[21]), .S1(n133[22]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_23.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_23.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_23.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_23.INJECT1_1 = "NO";
     LUT4 i1_4_lut_adj_245 (.A(crc_next[30]), .B(n2_adj_898), .C(n10500), 
-         .D(n2290[3]), .Z(next_crc_reg[30])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[30])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_245.init = 16'hfefc;
     LUT4 select_534_Select_30_i2_4_lut (.A(crc_reg[30]), .B(n2296), .C(crc_next[30]), 
-         .D(n11984), .Z(n2_adj_898)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_898)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_30_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_246 (.A(crc_next[31]), .B(n2_adj_899), .C(n10588), 
-         .D(n2290[3]), .Z(next_crc_reg[31])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[31])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_246.init = 16'hfefc;
     LUT4 select_534_Select_31_i2_4_lut (.A(crc_reg[31]), .B(n2296), .C(crc_next[31]), 
-         .D(n11984), .Z(n2_adj_899)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_899)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_31_i2_4_lut.init = 16'h88c0;
     LUT4 i863_2_lut_rep_198_3_lut (.A(pad_cnt[1]), .B(pad_cnt[0]), .C(pad_cnt[2]), 
-         .Z(n11944)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
+         .Z(n11944)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
     defparam i863_2_lut_rep_198_3_lut.init = 16'hfefe;
     LUT4 i1_3_lut_4_lut_adj_247 (.A(n11945), .B(n11920), .C(crc_reg[19]), 
-         .D(crc_reg[3]), .Z(crc_next[11])) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(crc_reg[3]), .Z(crc_next[11])) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1_3_lut_4_lut_adj_247.init = 16'h4bb4;
     LUT4 i871_2_lut_rep_186_3_lut_4_lut (.A(pad_cnt[1]), .B(pad_cnt[0]), 
-         .C(pad_cnt[3]), .D(pad_cnt[2]), .Z(n11932)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
+         .C(pad_cnt[3]), .D(pad_cnt[2]), .Z(n11932)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
     defparam i871_2_lut_rep_186_3_lut_4_lut.init = 16'hfffe;
     LUT4 i1_3_lut_4_lut_4_lut (.A(\udp_tdata[2] ), .B(n11945), .C(crc_reg[3]), 
-         .D(\udp_tdata[0] ), .Z(n10360)) /* synthesis lut_function=(A (B (C)+!B (C (D)+!C !(D)))+!A (B (C)+!B !(C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\udp_tdata[0] ), .Z(n10360)) /* synthesis lut_function=(A (B (C)+!B (C (D)+!C !(D)))+!A (B (C)+!B !(C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_4_lut.init = 16'he1d2;
     LUT4 i2803_2_lut_rep_220 (.A(frame_len[2]), .B(frame_len[1]), .Z(n11966)) /* synthesis lut_function=(A+(B)) */ ;
     defparam i2803_2_lut_rep_220.init = 16'heeee;
     LUT4 n6_bdd_2_lut_3_lut (.A(frame_len[2]), .B(frame_len[1]), .C(frame_len[3]), 
          .Z(n11796)) /* synthesis lut_function=(A (C)+!A (B (C)+!B !(C))) */ ;
     defparam n6_bdd_2_lut_3_lut.init = 16'he1e1;
-    FD1S3JX state_FSM_i1 (.D(n5449), .CK(clk_c), .PD(rst_c), .Q(n2298));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3JX state_FSM_i1 (.D(n5449), .CK(clk_c), .PD(rst_c), .Q(n2298));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i1.GSR = "DISABLED";
     LUT4 i2036_4_lut (.A(frame_len[1]), .B(pad_cnt[1]), .C(n2290[3]), 
-         .D(pad_cnt[0]), .Z(next_pad_cnt[1])) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C (D)))+!A (B (C (D))+!B !((D)+!C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(pad_cnt[0]), .Z(next_pad_cnt[1])) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C (D)))+!A (B (C (D))+!B !((D)+!C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2036_4_lut.init = 16'hca3a;
     LUT4 n8_bdd_2_lut_3_lut_4_lut (.A(frame_len[2]), .B(frame_len[1]), .C(frame_len[4]), 
          .D(frame_len[3]), .Z(n11757)) /* synthesis lut_function=(A (C (D)+!C !(D))+!A (B (C (D)+!C !(D))+!B !(C))) */ ;
     defparam n8_bdd_2_lut_3_lut_4_lut.init = 16'he10f;
     CCU2C frame_len_702_add_4_21 (.A0(frame_len[19]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[20]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9020), .COUT(n9021), .S0(n133[19]), .S1(n133[20]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9020), .COUT(n9021), .S0(n133[19]), .S1(n133[20]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_21.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_21.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_21.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_21.INJECT1_1 = "NO";
     LUT4 i1_3_lut_4_lut_adj_248 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[1] ), .Z(n10456)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[1] ), .Z(n10456)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_248.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_249 (.A(\udp_tdata[2] ), .B(n11945), .C(crc_reg[8]), 
-         .D(\crc_reg[2] ), .Z(crc_next[0])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[2] ), .Z(crc_next[0])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_249.init = 16'h2dd2;
     LUT4 i1_3_lut_4_lut_adj_250 (.A(\udp_tdata[2] ), .B(n11945), .C(crc_reg[26]), 
-         .D(crc_reg[4]), .Z(n10332)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[4]), .Z(n10332)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_250.init = 16'h2dd2;
     LUT4 i2582_3_lut_rep_164_4_lut (.A(n11984), .B(n2296), .C(crc_reg[5]), 
-         .D(\udp_tdata[5] ), .Z(n11910)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\udp_tdata[5] ), .Z(n11910)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2582_3_lut_rep_164_4_lut.init = 16'hb4f0;
     LUT4 i1_3_lut_4_lut_adj_251 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[14]), .Z(n10534)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[14]), .Z(n10534)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_251.init = 16'hfef0;
     LUT4 i1_2_lut_rep_163_3_lut_4_lut (.A(n11984), .B(n2296), .C(crc_reg[4]), 
-         .D(\udp_tdata[4] ), .Z(n11909)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\udp_tdata[4] ), .Z(n11909)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_rep_163_3_lut_4_lut.init = 16'hb4f0;
     CCU2C frame_len_702_add_4_19 (.A0(frame_len[17]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[18]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9019), .COUT(n9020), .S0(n133[17]), .S1(n133[18]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9019), .COUT(n9020), .S0(n133[17]), .S1(n133[18]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_19.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_19.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_19.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_19.INJECT1_1 = "NO";
     LUT4 i1275_3_lut (.A(n5583), .B(gmii_txd_7__N_406[7]), .C(n2290[4]), 
-         .Z(gmii_txd[7])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[7])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1275_3_lut.init = 16'hcaca;
     LUT4 i1_3_lut_4_lut_adj_252 (.A(\udp_tdata[2] ), .B(n11945), .C(crc_reg[29]), 
-         .D(\crc_reg[2] ), .Z(n10368)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[2] ), .Z(n10368)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_252.init = 16'h2dd2;
     LUT4 i1274_4_lut (.A(n11931), .B(n11921), .C(n2296), .D(n11984), 
-         .Z(n5583)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5583)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1274_4_lut.init = 16'h0aca;
     LUT4 i1_3_lut_4_lut_adj_253 (.A(\udp_tdata[2] ), .B(n11945), .C(crc_reg[18]), 
-         .D(\crc_reg[2] ), .Z(crc_next[10])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[2] ), .Z(crc_next[10])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_253.init = 16'h2dd2;
     LUT4 i11_4_lut (.A(n11920), .B(n11852), .C(n2290[4]), .D(n11942), 
-         .Z(gmii_txd[3])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[3])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i11_4_lut.init = 16'hcac0;
     LUT4 i1_2_lut_rep_162_3_lut_4_lut (.A(n11984), .B(n2296), .C(crc_reg[6]), 
-         .D(n11919), .Z(n11908)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11919), .Z(n11908)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_rep_162_3_lut_4_lut.init = 16'hb4f0;
     LUT4 i6601_3_lut_4_lut (.A(n11984), .B(n2296), .C(\udp_tdata[0] ), 
-         .D(\udp_tdata[4] ), .Z(n10442)) /* synthesis lut_function=(!(A+((C (D)+!C !(D))+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\udp_tdata[4] ), .Z(n10442)) /* synthesis lut_function=(!(A+((C (D)+!C !(D))+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i6601_3_lut_4_lut.init = 16'h0440;
     CCU2C frame_len_702_add_4_17 (.A0(frame_len[15]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[16]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9018), .COUT(n9019), .S0(n133[15]), .S1(n133[16]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9018), .COUT(n9019), .S0(n133[15]), .S1(n133[16]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_17.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_17.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_17.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_17.INJECT1_1 = "NO";
     LUT4 i1_2_lut_3_lut_4_lut (.A(n11984), .B(n2296), .C(crc_reg[3]), 
-         .D(n11920), .Z(n6156)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11920), .Z(n6156)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_3_lut_4_lut.init = 16'hb4f0;
     LUT4 i1_3_lut_4_lut_adj_254 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[18]), .Z(n10374)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[18]), .Z(n10374)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_254.init = 16'hfef0;
     LUT4 i1_2_lut_3_lut_4_lut_adj_255 (.A(n11984), .B(n2296), .C(crc_reg[7]), 
-         .D(n11921), .Z(n6195)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11921), .Z(n6195)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_3_lut_4_lut_adj_255.init = 16'hb4f0;
-    LUT4 i1_2_lut_rep_224 (.A(n2297), .B(n2290[5]), .Z(n11970)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i1_2_lut_rep_224 (.A(n2297), .B(n2290[5]), .Z(n11970)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_rep_224.init = 16'heeee;
     LUT4 mux_298_i1_4_lut (.A(frame_len_c[0]), .B(pad_cnt[0]), .C(n2290[3]), 
-         .D(n11_adj_895), .Z(next_pad_cnt[0])) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A (B (C (D))+!B !((D)+!C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11_adj_895), .Z(next_pad_cnt[0])) /* synthesis lut_function=(!(A (B ((D)+!C)+!B !(C (D)))+!A (B (C (D))+!B !((D)+!C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam mux_298_i1_4_lut.init = 16'h35c5;
     PFUMX i7462 (.BLUT(n11827), .ALUT(n11826), .C0(crc_cnt[1]), .Z(gmii_txd_7__N_406[7]));
     LUT4 i1_4_lut_4_lut (.A(crc_cnt[0]), .B(crc_cnt[1]), .C(n5), .D(n2290[4]), 
-         .Z(next_crc_cnt[0])) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (D)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(229[17] 234[24])
+         .Z(next_crc_cnt[0])) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (D)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(229[17] 234[24])
     defparam i1_4_lut_4_lut.init = 16'hfda0;
     LUT4 i1_4_lut_4_lut_adj_256 (.A(crc_cnt[0]), .B(crc_cnt[1]), .C(n2290[4]), 
-         .D(n5), .Z(next_crc_cnt[1])) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(229[17] 234[24])
+         .D(n5), .Z(next_crc_cnt[1])) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (B (C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(229[17] 234[24])
     defparam i1_4_lut_4_lut_adj_256.init = 16'hece0;
     LUT4 i1_2_lut_3_lut_4_lut_adj_257 (.A(n11984), .B(n2296), .C(n11957), 
-         .D(\udp_tdata[1] ), .Z(n6247)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\udp_tdata[1] ), .Z(n6247)) /* synthesis lut_function=(A (C)+!A !(B (C (D)+!C !(D))+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_3_lut_4_lut_adj_257.init = 16'hb4f0;
-    LUT4 i2_4_lut (.A(n2296), .B(n10125), .C(n2268), .D(n399), .Z(n5)) /* synthesis lut_function=(A (B+(C+!(D)))+!A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i2_4_lut (.A(n2296), .B(n10125), .C(n2268), .D(n399), .Z(n5)) /* synthesis lut_function=(A (B+(C+!(D)))+!A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2_4_lut.init = 16'hecee;
     FD1S3IX crc_cnt__i0 (.D(next_crc_cnt[0]), .CK(clk_c), .CD(rst_c), 
-            .Q(crc_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_cnt__i0.GSR = "DISABLED";
-    FD1S3JX crc_reg_i0 (.D(next_crc_reg[0]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[0])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i0 (.D(next_crc_reg[0]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[0])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i0.GSR = "DISABLED";
     LUT4 n8_bdd_3_lut_4_lut (.A(frame_len[3]), .B(n11966), .C(frame_len[4]), 
          .D(\frame_len[5] ), .Z(n11750)) /* synthesis lut_function=(A (B (C (D)+!C !(D))+!B !(D))+!A !(D)) */ ;
     defparam n8_bdd_3_lut_4_lut.init = 16'h807f;
     LUT4 i1_4_lut_adj_258 (.A(pad_cnt[4]), .B(n10840), .C(n10838), .D(pad_cnt[5]), 
-         .Z(n11_adj_895)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
+         .Z(n11_adj_895)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
     defparam i1_4_lut_adj_258.init = 16'hfffe;
     LUT4 i1_3_lut_4_lut_adj_259 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[20]), .Z(n10212)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[20]), .Z(n10212)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_259.init = 16'hfef0;
-    FD1S3IX frame_len_702__i0 (.D(n133[0]), .CK(clk_c), .CD(rst_c), .Q(frame_len_c[0])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i0 (.D(n133[0]), .CK(clk_c), .CD(rst_c), .Q(frame_len_c[0])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i0.GSR = "DISABLED";
     LUT4 i1_3_lut_4_lut_adj_260 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[12] ), .Z(n10548)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[12] ), .Z(n10548)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_260.init = 16'hfef0;
-    LUT4 i1_2_lut (.A(pad_cnt[0]), .B(pad_cnt[3]), .Z(n10840)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
+    LUT4 i1_2_lut (.A(pad_cnt[0]), .B(pad_cnt[3]), .Z(n10840)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
     defparam i1_2_lut.init = 16'heeee;
     LUT4 n6_bdd_4_lut (.A(n11944), .B(pad_cnt[3]), .C(n11796), .D(n2290[3]), 
          .Z(next_pad_cnt[3])) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))+!A !(B ((D)+!C)+!B !(C+(D)))) */ ;
     defparam n6_bdd_4_lut.init = 16'h99f0;
     LUT4 i1_3_lut_4_lut_adj_261 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[6]), .Z(n10396)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[6]), .Z(n10396)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_261.init = 16'hfef0;
-    LUT4 i1_2_lut_adj_262 (.A(pad_cnt[2]), .B(pad_cnt[1]), .Z(n10838)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
+    LUT4 i1_2_lut_adj_262 (.A(pad_cnt[2]), .B(pad_cnt[1]), .Z(n10838)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(207[20:31])
     defparam i1_2_lut_adj_262.init = 16'heeee;
     CCU2C frame_len_702_add_4_15 (.A0(\frame_len[13] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[14] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9017), .COUT(n9018), .S0(n133[13]), .S1(n133[14]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9017), .COUT(n9018), .S0(n133[13]), .S1(n133[14]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_15.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_15.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_15.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_15.INJECT1_1 = "NO";
     LUT4 i1_3_lut_4_lut_adj_263 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[22]), .Z(n10274)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[22]), .Z(n10274)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_263.init = 16'hfef0;
     LUT4 i1273_3_lut (.A(n5581), .B(gmii_txd_7__N_406[6]), .C(n2290[4]), 
-         .Z(gmii_txd[6])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[6])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1273_3_lut.init = 16'hcaca;
     LUT4 i1_3_lut_rep_165_4_lut (.A(n11921), .B(n11945), .C(\crc_reg[17] ), 
-         .D(crc_reg[7]), .Z(n11911)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[7]), .Z(n11911)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_rep_165_4_lut.init = 16'h2dd2;
     LUT4 i1272_4_lut (.A(n2297), .B(n11919), .C(n2296), .D(n11984), 
-         .Z(n5581)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5581)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1272_4_lut.init = 16'h0aca;
     LUT4 i1_4_lut_adj_264 (.A(crc_next[0]), .B(n2_adj_900), .C(n10570), 
-         .D(n2290[3]), .Z(next_crc_reg[0])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[0])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_264.init = 16'hfefc;
     LUT4 i1150_3_lut_4_lut (.A(n11931), .B(n2296), .C(fifo_rd_en_N_404), 
-         .D(n2186), .Z(n5459)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2186), .Z(n5459)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1150_3_lut_4_lut.init = 16'h1f00;
     LUT4 select_534_Select_0_i2_4_lut (.A(crc_reg[0]), .B(n2296), .C(crc_next[0]), 
-         .D(n11984), .Z(n2_adj_900)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_900)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_0_i2_4_lut.init = 16'h88c0;
     LUT4 i1_3_lut_4_lut_adj_265 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[25] ), .Z(n10340)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[25] ), .Z(n10340)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_265.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_266 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[15]), .Z(n10490)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[15]), .Z(n10490)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_266.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_267 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[5]), .Z(n10432)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[5]), .Z(n10432)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_267.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_268 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[16]), .Z(n10446)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[16]), .Z(n10446)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_268.init = 16'hfef0;
     CCU2C frame_len_702_add_4_13 (.A0(\frame_len[11] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[12] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9016), .COUT(n9017), .S0(n133[11]), .S1(n133[12]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9016), .COUT(n9017), .S0(n133[11]), .S1(n133[12]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_13.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_13.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_13.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_13.INJECT1_1 = "NO";
     LUT4 i1_3_lut_4_lut_adj_269 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[9] ), .Z(n10584)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[9] ), .Z(n10584)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_269.init = 16'hfef0;
     LUT4 i1269_3_lut (.A(n5577), .B(gmii_txd_7__N_406[2]), .C(n2290[4]), 
-         .Z(gmii_txd[2])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[2])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1269_3_lut.init = 16'hcaca;
     LUT4 i1_3_lut_4_lut_adj_270 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[10]), .Z(n10574)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[10]), .Z(n10574)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_270.init = 16'hfef0;
     LUT4 i1268_4_lut (.A(n2297), .B(\udp_tdata[2] ), .C(n2296), .D(n11984), 
-         .Z(n5577)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5577)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1268_4_lut.init = 16'h0aca;
     LUT4 i1_3_lut_4_lut_adj_271 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[2] ), .Z(n10558)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[2] ), .Z(n10558)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_271.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_272 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[0]), .Z(n10570)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[0]), .Z(n10570)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_272.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_273 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[8]), .Z(n10504)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[8]), .Z(n10504)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_273.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_274 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[4]), .Z(n10478)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[4]), .Z(n10478)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_274.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_275 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[7]), .Z(n10378)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[7]), .Z(n10378)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_275.init = 16'hfef0;
     FD1P3IX ifg_cnt__i3 (.D(next_ifg_cnt_3__N_717[3]), .SP(clk_c_enable_13), 
-            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam ifg_cnt__i3.GSR = "DISABLED";
     LUT4 i1152_3_lut_4_lut (.A(n11931), .B(n2296), .C(n15), .D(n2187), 
-         .Z(n5461)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5461)) /* synthesis lut_function=(A (C (D))+!A (B (C (D))+!B (D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1152_3_lut_4_lut.init = 16'hf100;
     LUT4 i1_3_lut_4_lut_adj_276 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[24]), .Z(n10344)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[24]), .Z(n10344)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_276.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_277 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[11]), .Z(n10496)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[11]), .Z(n10496)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_277.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_278 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[13]), .Z(n10278)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[13]), .Z(n10278)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_278.init = 16'hfef0;
     LUT4 i905_2_lut_3_lut (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .C(ifg_cnt[2]), 
-         .Z(next_ifg_cnt_3__N_717[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
+         .Z(next_ifg_cnt_3__N_717[2])) /* synthesis lut_function=(!(A (B (C)+!B !(C))+!A !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
     defparam i905_2_lut_3_lut.init = 16'h7878;
     LUT4 i11_4_lut_adj_279 (.A(\udp_tdata[5] ), .B(n11862), .C(n2290[4]), 
-         .D(n11942), .Z(gmii_txd[5])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11942), .Z(gmii_txd[5])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i11_4_lut_adj_279.init = 16'hcac0;
     FD1P3IX pad_cnt__i5 (.D(next_pad_cnt[5]), .SP(clk_c_enable_71), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i5.GSR = "DISABLED";
     FD1P3IX pad_cnt__i4 (.D(next_pad_cnt[4]), .SP(clk_c_enable_71), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i4.GSR = "DISABLED";
     LUT4 i1_3_lut_4_lut_adj_280 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(\crc_reg[17] ), .Z(n10240)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(\crc_reg[17] ), .Z(n10240)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_280.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_281 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[19]), .Z(n10236)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[19]), .Z(n10236)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_281.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_282 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[21]), .Z(n10382)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[21]), .Z(n10382)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_282.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_283 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[3]), .Z(n10282)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[3]), .Z(n10282)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_283.init = 16'hfef0;
     FD1P3IX pad_cnt__i3 (.D(next_pad_cnt[3]), .SP(clk_c_enable_71), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i3.GSR = "DISABLED";
     PFUMX i7416 (.BLUT(n11750), .ALUT(n11749), .C0(n2290[3]), .Z(next_pad_cnt[5]));
     LUT4 i12_4_lut (.A(\udp_tdata[1] ), .B(n11839), .C(n2290[4]), .D(n11942), 
-         .Z(gmii_txd[1])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[1])) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i12_4_lut.init = 16'hcac0;
     FD1P3IX ifg_cnt__i2 (.D(next_ifg_cnt_3__N_717[2]), .SP(clk_c_enable_13), 
-            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam ifg_cnt__i2.GSR = "DISABLED";
     FD1P3IX ifg_cnt__i1 (.D(next_ifg_cnt_3__N_717[1]), .SP(clk_c_enable_13), 
-            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CD(n3482), .CK(clk_c), .Q(ifg_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam ifg_cnt__i1.GSR = "DISABLED";
     FD1P3IX pre_cnt__i1 (.D(n9543), .SP(clk_c_enable_15), .CD(rst_c), 
-            .CK(clk_c), .Q(pre_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pre_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pre_cnt__i1.GSR = "DISABLED";
     LUT4 i1_3_lut_4_lut_adj_284 (.A(n11945), .B(\udp_tdata[1] ), .C(crc_reg[6]), 
-         .D(n11957), .Z(n10518)) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11957), .Z(n10518)) /* synthesis lut_function=(!(A (C (D)+!C !(D))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_284.init = 16'h4bb4;
     LUT4 i1_3_lut_4_lut_adj_285 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[26]), .Z(n10416)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[26]), .Z(n10416)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_285.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_286 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[27]), .Z(n10244)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[27]), .Z(n10244)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_286.init = 16'hfef0;
     CCU2C frame_len_702_add_4_11 (.A0(\frame_len[9] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[10] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9015), .COUT(n9016), .S0(n133[9]), .S1(n133[10]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9015), .COUT(n9016), .S0(n133[9]), .S1(n133[10]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_11.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_11.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_11.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_11.INJECT1_1 = "NO";
     LUT4 i1_3_lut_4_lut_adj_287 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[28]), .Z(n10390)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[28]), .Z(n10390)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_287.init = 16'hfef0;
     LUT4 i1_3_lut_4_lut_adj_288 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[29]), .Z(n10386)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[29]), .Z(n10386)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_288.init = 16'hfef0;
     FD1P3IX pre_cnt__i2 (.D(n9561), .SP(clk_c_enable_15), .CD(rst_c), 
-            .CK(clk_c), .Q(pre_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pre_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pre_cnt__i2.GSR = "DISABLED";
     LUT4 i1_3_lut_4_lut_adj_289 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[30]), .Z(n10500)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[30]), .Z(n10500)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_289.init = 16'hfef0;
     LUT4 i1271_3_lut (.A(n5579), .B(gmii_txd_7__N_406[4]), .C(n2290[4]), 
-         .Z(gmii_txd[4])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[4])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1271_3_lut.init = 16'hcaca;
     LUT4 i1_3_lut_4_lut_adj_290 (.A(n2290[4]), .B(n11970), .C(n2298), 
-         .D(crc_reg[31]), .Z(n10588)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[31]), .Z(n10588)) /* synthesis lut_function=(A (C+(D))+!A (B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_290.init = 16'hfef0;
     LUT4 i1270_4_lut (.A(n2297), .B(\udp_tdata[4] ), .C(n2296), .D(n11984), 
-         .Z(n5579)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5579)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1270_4_lut.init = 16'h0aca;
     LUT4 i1123_3_lut (.A(n5431), .B(gmii_txd_7__N_406[0]), .C(n2290[4]), 
-         .Z(gmii_txd[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(gmii_txd[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1123_3_lut.init = 16'hcaca;
     LUT4 i1122_4_lut (.A(n2297), .B(\udp_tdata[0] ), .C(n2296), .D(n11984), 
-         .Z(n5431)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5431)) /* synthesis lut_function=(!(A (B (C (D))+!B (C))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1122_4_lut.init = 16'h0aca;
     CCU2C frame_len_702_add_4_9 (.A0(\frame_len[7] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[8] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9014), .COUT(n9015), .S0(n133[7]), .S1(n133[8]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9014), .COUT(n9015), .S0(n133[7]), .S1(n133[8]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_9.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_9.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_9.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_9.INJECT1_1 = "NO";
-    FD1S3IX state_FSM_i2 (.D(n5447), .CK(clk_c), .CD(rst_c), .Q(n2297));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX state_FSM_i2 (.D(n5447), .CK(clk_c), .CD(rst_c), .Q(n2297));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i2.GSR = "DISABLED";
-    FD1S3IX state_FSM_i3 (.D(n5445), .CK(clk_c), .CD(rst_c), .Q(n2296));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX state_FSM_i3 (.D(n5445), .CK(clk_c), .CD(rst_c), .Q(n2296));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i3.GSR = "DISABLED";
-    FD1S3IX state_FSM_i4 (.D(n5443), .CK(clk_c), .CD(rst_c), .Q(n2290[3]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX state_FSM_i4 (.D(n5443), .CK(clk_c), .CD(rst_c), .Q(n2290[3]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i4.GSR = "DISABLED";
-    FD1S3IX state_FSM_i5 (.D(n10155), .CK(clk_c), .CD(rst_c), .Q(n2290[4]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX state_FSM_i5 (.D(n10155), .CK(clk_c), .CD(rst_c), .Q(n2290[4]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i5.GSR = "DISABLED";
-    FD1S3IX state_FSM_i6 (.D(n5439), .CK(clk_c), .CD(rst_c), .Q(n2290[5]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX state_FSM_i6 (.D(n5439), .CK(clk_c), .CD(rst_c), .Q(n2290[5]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam state_FSM_i6.GSR = "DISABLED";
-    LUT4 i310_4_lut (.A(n2290[4]), .B(n11984), .C(n2296), .D(n4), .Z(ctl_reg)) /* synthesis lut_function=(!(A (B (C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i310_4_lut (.A(n2290[4]), .B(n11984), .C(n2296), .D(n4), .Z(ctl_reg)) /* synthesis lut_function=(!(A (B (C))+!A (B (C+!(D))+!B !(C+(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i310_4_lut.init = 16'h3f3a;
     LUT4 i1_2_lut_adj_291 (.A(n2297), .B(n2290[3]), .Z(n4)) /* synthesis lut_function=(A+(B)) */ ;
     defparam i1_2_lut_adj_291.init = 16'heeee;
     LUT4 i1066_2_lut_4_lut (.A(n7145), .B(n11939), .C(rst_c), .D(ifg_cnt[0]), 
          .Z(n1[0])) /* synthesis lut_function=(!(A (D)+!A (B (D)+!B (C (D)+!C !(D))))) */ ;
     defparam i1066_2_lut_4_lut.init = 16'h01fe;
-    LUT4 i898_2_lut (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .Z(next_ifg_cnt_3__N_717[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
+    LUT4 i898_2_lut (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .Z(next_ifg_cnt_3__N_717[1])) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
     defparam i898_2_lut.init = 16'h6666;
-    LUT4 i1_3_lut (.A(n2297), .B(pre_cnt[0]), .C(pre_cnt[1]), .Z(n9543)) /* synthesis lut_function=(!((B (C)+!B !(C))+!A)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i1_3_lut (.A(n2297), .B(pre_cnt[0]), .C(pre_cnt[1]), .Z(n9543)) /* synthesis lut_function=(!((B (C)+!B !(C))+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut.init = 16'h2828;
     FD1S3IX crc_cnt__i1 (.D(next_crc_cnt[1]), .CK(clk_c), .CD(rst_c), 
-            .Q(crc_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_cnt__i1.GSR = "DISABLED";
-    FD1S3JX crc_reg_i1 (.D(next_crc_reg[1]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[1] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i1 (.D(next_crc_reg[1]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[1] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i1.GSR = "DISABLED";
     CCU2C frame_len_702_add_4_7 (.A0(\frame_len[5] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[6] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9013), .COUT(n9014), .S0(n133[5]), .S1(n133[6]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9013), .COUT(n9014), .S0(n133[5]), .S1(n133[6]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_7.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_7.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_7.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_7.INJECT1_1 = "NO";
-    FD1S3JX crc_reg_i2 (.D(next_crc_reg[2]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[2] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i2 (.D(next_crc_reg[2]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[2] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i2.GSR = "DISABLED";
-    FD1S3JX crc_reg_i3 (.D(next_crc_reg[3]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[3])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i3 (.D(next_crc_reg[3]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[3])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i3.GSR = "DISABLED";
-    FD1S3JX crc_reg_i4 (.D(next_crc_reg[4]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[4])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i4 (.D(next_crc_reg[4]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[4])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i4.GSR = "DISABLED";
-    FD1S3JX crc_reg_i5 (.D(next_crc_reg[5]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[5])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i5 (.D(next_crc_reg[5]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[5])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i5.GSR = "DISABLED";
-    FD1S3JX crc_reg_i6 (.D(next_crc_reg[6]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[6])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i6 (.D(next_crc_reg[6]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[6])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i6.GSR = "DISABLED";
-    FD1S3JX crc_reg_i7 (.D(next_crc_reg[7]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[7])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i7 (.D(next_crc_reg[7]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[7])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i7.GSR = "DISABLED";
-    FD1S3JX crc_reg_i8 (.D(next_crc_reg[8]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[8])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i8 (.D(next_crc_reg[8]), .CK(clk_c), .PD(rst_c), .Q(crc_reg[8])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i8.GSR = "DISABLED";
-    FD1S3JX crc_reg_i9 (.D(next_crc_reg[9]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[9] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+    FD1S3JX crc_reg_i9 (.D(next_crc_reg[9]), .CK(clk_c), .PD(rst_c), .Q(\crc_reg[9] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i9.GSR = "DISABLED";
     FD1S3JX crc_reg_i10 (.D(next_crc_reg[10]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[10])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[10])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i10.GSR = "DISABLED";
     FD1S3JX crc_reg_i11 (.D(next_crc_reg[11]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[11])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[11])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i11.GSR = "DISABLED";
     FD1S3JX crc_reg_i12 (.D(next_crc_reg[12]), .CK(clk_c), .PD(rst_c), 
-            .Q(\crc_reg[12] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(\crc_reg[12] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i12.GSR = "DISABLED";
     FD1S3JX crc_reg_i13 (.D(next_crc_reg[13]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[13])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[13])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i13.GSR = "DISABLED";
     FD1S3JX crc_reg_i14 (.D(next_crc_reg[14]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[14])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[14])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i14.GSR = "DISABLED";
     FD1S3JX crc_reg_i15 (.D(next_crc_reg[15]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[15])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[15])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i15.GSR = "DISABLED";
     FD1S3JX crc_reg_i16 (.D(next_crc_reg[16]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[16])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[16])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i16.GSR = "DISABLED";
     FD1S3JX crc_reg_i17 (.D(next_crc_reg[17]), .CK(clk_c), .PD(rst_c), 
-            .Q(\crc_reg[17] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(\crc_reg[17] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i17.GSR = "DISABLED";
     FD1S3JX crc_reg_i18 (.D(next_crc_reg[18]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[18])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[18])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i18.GSR = "DISABLED";
     FD1S3JX crc_reg_i19 (.D(next_crc_reg[19]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[19])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[19])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i19.GSR = "DISABLED";
     FD1S3JX crc_reg_i20 (.D(next_crc_reg[20]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[20])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[20])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i20.GSR = "DISABLED";
     FD1S3JX crc_reg_i21 (.D(next_crc_reg[21]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[21])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[21])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i21.GSR = "DISABLED";
     FD1S3JX crc_reg_i22 (.D(next_crc_reg[22]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[22])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[22])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i22.GSR = "DISABLED";
     FD1S3JX crc_reg_i23 (.D(next_crc_reg[23]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[23])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[23])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i23.GSR = "DISABLED";
     FD1S3JX crc_reg_i24 (.D(next_crc_reg[24]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[24])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[24])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i24.GSR = "DISABLED";
     FD1S3JX crc_reg_i25 (.D(next_crc_reg[25]), .CK(clk_c), .PD(rst_c), 
-            .Q(\crc_reg[25] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(\crc_reg[25] )) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i25.GSR = "DISABLED";
     FD1S3JX crc_reg_i26 (.D(next_crc_reg[26]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[26])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[26])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i26.GSR = "DISABLED";
     FD1S3JX crc_reg_i27 (.D(next_crc_reg[27]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[27])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[27])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i27.GSR = "DISABLED";
     FD1S3JX crc_reg_i28 (.D(next_crc_reg[28]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[28])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[28])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i28.GSR = "DISABLED";
     FD1S3JX crc_reg_i29 (.D(next_crc_reg[29]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[29])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[29])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i29.GSR = "DISABLED";
     FD1S3JX crc_reg_i30 (.D(next_crc_reg[30]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[30])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[30])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i30.GSR = "DISABLED";
     FD1S3JX crc_reg_i31 (.D(next_crc_reg[31]), .CK(clk_c), .PD(rst_c), 
-            .Q(crc_reg[31])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .Q(crc_reg[31])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam crc_reg_i31.GSR = "DISABLED";
     FD1P3IX pad_cnt__i2 (.D(next_pad_cnt[2]), .SP(clk_c_enable_71), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i2.GSR = "DISABLED";
     CCU2C frame_len_702_add_4_5 (.A0(frame_len[3]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[4]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9012), .COUT(n9013), .S0(n133[3]), .S1(n133[4]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9012), .COUT(n9013), .S0(n133[3]), .S1(n133[4]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_5.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_5.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_5.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_5.INJECT1_1 = "NO";
-    FD1S3IX frame_len_702__i1 (.D(n133[1]), .CK(clk_c), .CD(rst_c), .Q(frame_len[1])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i1 (.D(n133[1]), .CK(clk_c), .CD(rst_c), .Q(frame_len[1])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i1.GSR = "DISABLED";
     CCU2C frame_len_702_add_4_3 (.A0(frame_len[1]), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(frame_len[2]), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9011), .COUT(n9012), .S0(n133[1]), .S1(n133[2]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9011), .COUT(n9012), .S0(n133[1]), .S1(n133[2]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_3.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_3.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_3.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_3.INJECT1_1 = "NO";
     CCU2C frame_len_702_add_4_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), 
           .D0(VCC_net), .A1(n2296), .B1(n11984), .C1(n2298), .D1(frame_len_c[0]), 
-          .COUT(n9011), .S1(n133[0]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .COUT(n9011), .S1(n133[0]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_1.INIT0 = 16'h0000;
     defparam frame_len_702_add_4_1.INIT1 = 16'h8d22;
     defparam frame_len_702_add_4_1.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_1.INJECT1_1 = "NO";
     FD1P3IX pad_cnt__i1 (.D(next_pad_cnt[1]), .SP(clk_c_enable_71), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i1.GSR = "DISABLED";
     FD1P3IX pad_cnt__i0 (.D(next_pad_cnt[0]), .SP(clk_c_enable_74), .CD(rst_c), 
-            .CK(clk_c), .Q(pad_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
+            .CK(clk_c), .Q(pad_cnt[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=42, LSE_LLINE=440, LSE_RLINE=440 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(76[13] 98[20])
     defparam pad_cnt__i0.GSR = "DISABLED";
     LUT4 i1_4_lut_adj_292 (.A(n5440), .B(n399), .C(n10185), .D(n11929), 
-         .Z(n10155)) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n10155)) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_292.init = 16'hfefa;
     LUT4 i1_4_lut_adj_293 (.A(pad_cnt[3]), .B(n10864), .C(n10838), .D(pad_cnt[4]), 
          .Z(n10185)) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;
     defparam i1_4_lut_adj_293.init = 16'h0004;
-    LUT4 i1_2_lut_rep_237 (.A(pre_cnt[1]), .B(pre_cnt[0]), .Z(n11983)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i1_2_lut_rep_237 (.A(pre_cnt[1]), .B(pre_cnt[0]), .Z(n11983)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_rep_237.init = 16'h8888;
     LUT4 i1_3_lut_4_lut_adj_294 (.A(pre_cnt[1]), .B(pre_cnt[0]), .C(pre_cnt[2]), 
-         .D(n2297), .Z(n9561)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A !(C (D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2297), .Z(n9561)) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C (D)))+!A !(C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_294.init = 16'h7800;
     LUT4 i1_3_lut_adj_295 (.A(pad_cnt[5]), .B(pad_cnt[0]), .C(n2290[3]), 
          .Z(n10864)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
     defparam i1_3_lut_adj_295.init = 16'h1010;
     LUT4 i1_2_lut_rep_208_3_lut (.A(pre_cnt[1]), .B(pre_cnt[0]), .C(pre_cnt[2]), 
-         .Z(n11954)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n11954)) /* synthesis lut_function=(A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_rep_208_3_lut.init = 16'h8080;
-    FD1S3IX frame_len_702__i2 (.D(n133[2]), .CK(clk_c), .CD(rst_c), .Q(frame_len[2])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i2 (.D(n133[2]), .CK(clk_c), .CD(rst_c), .Q(frame_len[2])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i2.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i3 (.D(n133[3]), .CK(clk_c), .CD(rst_c), .Q(frame_len[3])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i3 (.D(n133[3]), .CK(clk_c), .CD(rst_c), .Q(frame_len[3])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i3.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i4 (.D(n133[4]), .CK(clk_c), .CD(rst_c), .Q(frame_len[4])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i4 (.D(n133[4]), .CK(clk_c), .CD(rst_c), .Q(frame_len[4])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i4.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i5 (.D(n133[5]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[5] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i5 (.D(n133[5]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[5] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i5.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i6 (.D(n133[6]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[6] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i6 (.D(n133[6]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[6] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i6.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i7 (.D(n133[7]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[7] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i7 (.D(n133[7]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[7] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i7.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i8 (.D(n133[8]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[8] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i8 (.D(n133[8]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[8] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i8.GSR = "DISABLED";
-    FD1S3IX frame_len_702__i9 (.D(n133[9]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[9] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    FD1S3IX frame_len_702__i9 (.D(n133[9]), .CK(clk_c), .CD(rst_c), .Q(\frame_len[9] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i9.GSR = "DISABLED";
     FD1S3IX frame_len_702__i10 (.D(n133[10]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[10] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[10] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i10.GSR = "DISABLED";
     FD1S3IX frame_len_702__i11 (.D(n133[11]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[11] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[11] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i11.GSR = "DISABLED";
     FD1S3IX frame_len_702__i12 (.D(n133[12]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[12] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[12] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i12.GSR = "DISABLED";
     FD1S3IX frame_len_702__i13 (.D(n133[13]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[13] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[13] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i13.GSR = "DISABLED";
     FD1S3IX frame_len_702__i14 (.D(n133[14]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[14] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[14] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i14.GSR = "DISABLED";
     FD1S3IX frame_len_702__i15 (.D(n133[15]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[15])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[15])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i15.GSR = "DISABLED";
     FD1S3IX frame_len_702__i16 (.D(n133[16]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[16])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[16])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i16.GSR = "DISABLED";
     FD1S3IX frame_len_702__i17 (.D(n133[17]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[17])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[17])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i17.GSR = "DISABLED";
     FD1S3IX frame_len_702__i18 (.D(n133[18]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[18])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[18])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i18.GSR = "DISABLED";
     FD1S3IX frame_len_702__i19 (.D(n133[19]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[19])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[19])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i19.GSR = "DISABLED";
     FD1S3IX frame_len_702__i20 (.D(n133[20]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[20])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[20])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i20.GSR = "DISABLED";
     FD1S3IX frame_len_702__i21 (.D(n133[21]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[21])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[21])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i21.GSR = "DISABLED";
     FD1S3IX frame_len_702__i22 (.D(n133[22]), .CK(clk_c), .CD(rst_c), 
-            .Q(frame_len[22])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(frame_len[22])) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i22.GSR = "DISABLED";
     FD1S3IX frame_len_702__i23 (.D(n133[23]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[23] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[23] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i23.GSR = "DISABLED";
     FD1S3IX frame_len_702__i24 (.D(n133[24]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[24] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[24] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i24.GSR = "DISABLED";
     FD1S3IX frame_len_702__i25 (.D(n133[25]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[25] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[25] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i25.GSR = "DISABLED";
     FD1S3IX frame_len_702__i26 (.D(n133[26]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[26] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[26] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i26.GSR = "DISABLED";
     FD1S3IX frame_len_702__i27 (.D(n133[27]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[27] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[27] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i27.GSR = "DISABLED";
     FD1S3IX frame_len_702__i28 (.D(n133[28]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[28] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[28] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i28.GSR = "DISABLED";
     FD1S3IX frame_len_702__i29 (.D(n133[29]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[29] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[29] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i29.GSR = "DISABLED";
     FD1S3IX frame_len_702__i30 (.D(n133[30]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[30] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[30] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i30.GSR = "DISABLED";
     FD1S3IX frame_len_702__i31 (.D(n133[31]), .CK(clk_c), .CD(rst_c), 
-            .Q(\frame_len[31] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+            .Q(\frame_len[31] )) /* synthesis syn_use_carry_chain=1, REG_OUTPUT_CLK=CLK3, REG_OUTPUT_CE=CE3, REG_OUTPUT_RST=RST3 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702__i31.GSR = "DISABLED";
     LUT4 i2812_rep_185_3_lut_4_lut (.A(pre_cnt[1]), .B(pre_cnt[0]), .C(n2297), 
-         .D(pre_cnt[2]), .Z(n11931)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(pre_cnt[2]), .Z(n11931)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2812_rep_185_3_lut_4_lut.init = 16'h8000;
     CCU2C frame_len_702_add_4_33 (.A0(\frame_len[31] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(GND_net), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
-          .CIN(n9026), .S0(n133[31]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .CIN(n9026), .S0(n133[31]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_33.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_33.INIT1 = 16'h0000;
     defparam frame_len_702_add_4_33.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_33.INJECT1_1 = "NO";
     CCU2C frame_len_702_add_4_31 (.A0(\frame_len[29] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[30] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9025), .COUT(n9026), .S0(n133[29]), .S1(n133[30]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9025), .COUT(n9026), .S0(n133[29]), .S1(n133[30]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_31.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_31.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_31.INJECT1_0 = "NO";
@@ -7452,28 +7452,28 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .D(n2290[4]), .Z(n5439)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (C)) */ ;
     defparam i1130_2_lut_3_lut_4_lut.init = 16'hf8f0;
     LUT4 i2569_3_lut_rep_174 (.A(n5703), .B(\reg_fifo_data[3] ), .C(n2185), 
-         .Z(n11920)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n11920)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i2569_3_lut_rep_174.init = 16'hcaca;
     LUT4 i1134_2_lut_3_lut_4_lut (.A(n11942), .B(n11968), .C(n11933), 
-         .D(n399), .Z(n5443)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A (C)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(173[17] 195[24])
+         .D(n399), .Z(n5443)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A (C)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(173[17] 195[24])
     defparam i1134_2_lut_3_lut_4_lut.init = 16'hf0f8;
     CCU2C frame_len_702_add_4_29 (.A0(\frame_len[27] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[28] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9024), .COUT(n9025), .S0(n133[27]), .S1(n133[28]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9024), .COUT(n9025), .S0(n133[27]), .S1(n133[28]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_29.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_29.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_29.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_29.INJECT1_1 = "NO";
     LUT4 i1_4_lut_adj_296 (.A(crc_next[19]), .B(n2_adj_901), .C(n10236), 
-         .D(n2290[3]), .Z(next_crc_reg[19])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[19])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_296.init = 16'hfefc;
     LUT4 select_534_Select_19_i2_4_lut (.A(crc_reg[19]), .B(n2296), .C(crc_next[19]), 
-         .D(n11984), .Z(n2_adj_901)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_901)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_19_i2_4_lut.init = 16'h88c0;
     LUT4 i1131_2_lut_3_lut (.A(crc_cnt[0]), .B(crc_cnt[1]), .C(n2290[4]), 
          .Z(n5440)) /* synthesis lut_function=(!(A (B+!(C))+!A !(C))) */ ;
     defparam i1131_2_lut_3_lut.init = 16'h7070;
-    LUT4 i900_2_lut_rep_239 (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .Z(n11985)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
+    LUT4 i900_2_lut_rep_239 (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .Z(n11985)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
     defparam i900_2_lut_rep_239.init = 16'h8888;
     LUT4 i675_2_lut_rep_193_3_lut_4_lut (.A(crc_cnt[0]), .B(crc_cnt[1]), 
          .C(n2290[5]), .D(n2290[4]), .Z(n11939)) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;
@@ -7482,42 +7482,42 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .Z(n11955)) /* synthesis lut_function=(A (B (C))) */ ;
     defparam i425_2_lut_rep_209_3_lut.init = 16'h8080;
     LUT4 i1_4_lut_adj_297 (.A(crc_next[20]), .B(n2_adj_902), .C(n10212), 
-         .D(n2290[3]), .Z(next_crc_reg[20])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[20])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_297.init = 16'hfefc;
     LUT4 i2840_4_lut (.A(n11985), .B(n2290[5]), .C(ifg_cnt[3]), .D(ifg_cnt[2]), 
          .Z(n7145)) /* synthesis lut_function=(A (B ((D)+!C))+!A (B)) */ ;
     defparam i2840_4_lut.init = 16'hcc4c;
     LUT4 select_534_Select_20_i2_4_lut (.A(crc_reg[20]), .B(n2296), .C(crc_next[20]), 
-         .D(n11984), .Z(n2_adj_902)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_902)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_20_i2_4_lut.init = 16'h88c0;
-    LUT4 i1_2_lut_adj_298 (.A(pre_cnt[0]), .B(n2297), .Z(n9509)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i1_2_lut_adj_298 (.A(pre_cnt[0]), .B(n2297), .Z(n9509)) /* synthesis lut_function=(!(A+!(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_adj_298.init = 16'h4444;
     LUT4 n8_bdd_4_lut (.A(n11932), .B(pad_cnt[4]), .C(n11757), .D(n2290[3]), 
          .Z(next_pad_cnt[4])) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))+!A !(B ((D)+!C)+!B !(C+(D)))) */ ;
     defparam n8_bdd_4_lut.init = 16'h99f0;
     LUT4 i1_4_lut_adj_299 (.A(crc_next[21]), .B(n2_adj_903), .C(n10382), 
-         .D(n2290[3]), .Z(next_crc_reg[21])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[21])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_299.init = 16'hfefc;
     LUT4 i1_4_lut_adj_300 (.A(n2290[3]), .B(n2_adj_904), .C(n10456), .D(n6929), 
-         .Z(next_crc_reg[1])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(next_crc_reg[1])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_300.init = 16'hfefc;
     LUT4 select_534_Select_1_i2_4_lut (.A(\crc_reg[1] ), .B(n2296), .C(n6929), 
-         .D(n11984), .Z(n2_adj_904)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_904)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_1_i2_4_lut.init = 16'h88c0;
     LUT4 i912_3_lut_4_lut (.A(ifg_cnt[1]), .B(ifg_cnt[0]), .C(ifg_cnt[2]), 
-         .D(ifg_cnt[3]), .Z(next_ifg_cnt_3__N_717[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
+         .D(ifg_cnt[3]), .Z(next_ifg_cnt_3__N_717[3])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(D))+!A !(D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(246[37:44])
     defparam i912_3_lut_4_lut.init = 16'h7f80;
     LUT4 i1_4_lut_adj_301 (.A(n3), .B(\next_crc_reg_31__N_594[2] ), .C(n10558), 
-         .D(n2296), .Z(next_crc_reg[2])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2296), .Z(next_crc_reg[2])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_301.init = 16'hfefa;
     LUT4 select_534_Select_21_i2_4_lut (.A(crc_reg[21]), .B(n2296), .C(crc_next[21]), 
-         .D(n11984), .Z(n2_adj_903)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_903)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_21_i2_4_lut.init = 16'h88c0;
     LUT4 select_534_Select_2_i3_2_lut (.A(\crc_next[2] ), .B(n2290[3]), 
-         .Z(n3)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n3)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_2_i3_2_lut.init = 16'h8888;
     LUT4 i1_2_lut_3_lut_4_lut_adj_302 (.A(n11954), .B(n2297), .C(n2186), 
-         .D(n2296), .Z(n9742)) /* synthesis lut_function=(A (B (C)+!B (C (D)))+!A (C (D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2296), .Z(n9742)) /* synthesis lut_function=(A (B (C)+!B (C (D)))+!A (C (D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_2_lut_3_lut_4_lut_adj_302.init = 16'hf080;
     LUT4 pad_cnt_2__bdd_4_lut_then_3_lut (.A(pad_cnt[2]), .B(pad_cnt[0]), 
          .C(pad_cnt[1]), .Z(n12003)) /* synthesis lut_function=(A (B+(C))+!A !(B+(C))) */ ;
@@ -7526,116 +7526,116 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .Z(n12002)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;
     defparam pad_cnt_2__bdd_4_lut_else_3_lut.init = 16'h6666;
     LUT4 i1136_3_lut_4_lut (.A(n11954), .B(n2297), .C(n2268), .D(n2296), 
-         .Z(n5445)) /* synthesis lut_function=(A (B+(C (D)))+!A (C (D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5445)) /* synthesis lut_function=(A (B+(C (D)))+!A (C (D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1136_3_lut_4_lut.init = 16'hf888;
     LUT4 i1_4_lut_adj_303 (.A(crc_next[3]), .B(n2_adj_905), .C(n10282), 
-         .D(n2290[3]), .Z(next_crc_reg[3])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[3])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_303.init = 16'hfefc;
     LUT4 i1_4_lut_adj_304 (.A(crc_next[22]), .B(n2_adj_906), .C(n10274), 
-         .D(n2290[3]), .Z(next_crc_reg[22])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[22])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_304.init = 16'hfefc;
     LUT4 select_534_Select_22_i2_4_lut (.A(crc_reg[22]), .B(n2296), .C(crc_next[22]), 
-         .D(n11984), .Z(n2_adj_906)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_906)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_22_i2_4_lut.init = 16'h88c0;
     LUT4 select_534_Select_3_i2_4_lut (.A(crc_reg[3]), .B(n2296), .C(crc_next[3]), 
-         .D(n11984), .Z(n2_adj_905)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_905)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_3_i2_4_lut.init = 16'h88c0;
     LUT4 n8_bdd_3_lut_7415_4_lut (.A(pad_cnt[3]), .B(n11944), .C(pad_cnt[4]), 
-         .D(pad_cnt[5]), .Z(n11749)) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
+         .D(pad_cnt[5]), .Z(n11749)) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(211[37:44])
     defparam n8_bdd_3_lut_7415_4_lut.init = 16'hfe01;
     LUT4 i1_4_lut_adj_305 (.A(crc_next[4]), .B(n2_adj_907), .C(n10478), 
-         .D(n2290[3]), .Z(next_crc_reg[4])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[4])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_305.init = 16'hfefc;
     LUT4 select_534_Select_4_i2_4_lut (.A(crc_reg[4]), .B(n2296), .C(crc_next[4]), 
-         .D(n11984), .Z(n2_adj_907)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_907)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_4_i2_4_lut.init = 16'h88c0;
     LUT4 i2811_2_lut_rep_177_3_lut_4_lut (.A(pre_cnt[2]), .B(n11983), .C(n2296), 
-         .D(n2297), .Z(n11923)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (C)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2297), .Z(n11923)) /* synthesis lut_function=(A (B (C+(D))+!B (C))+!A (C)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2811_2_lut_rep_177_3_lut_4_lut.init = 16'hf8f0;
-    LUT4 i1133_2_lut_rep_187 (.A(n2290[3]), .B(n11_adj_895), .Z(n11933)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i1133_2_lut_rep_187 (.A(n2290[3]), .B(n11_adj_895), .Z(n11933)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1133_2_lut_rep_187.init = 16'h8888;
     LUT4 i1_3_lut_4_lut_adj_306 (.A(n2290[3]), .B(n11_adj_895), .C(n2298), 
-         .D(n11970), .Z(n10125)) /* synthesis lut_function=(A (B+(C+(D)))+!A (C+(D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11970), .Z(n10125)) /* synthesis lut_function=(A (B+(C+(D)))+!A (C+(D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_306.init = 16'hfff8;
     LUT4 i1_4_lut_adj_307 (.A(crc_next[23]), .B(n2_adj_908), .C(n10216), 
-         .D(n2290[3]), .Z(next_crc_reg[23])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[23])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_307.init = 16'hfefc;
     CCU2C frame_len_702_add_4_27 (.A0(\frame_len[25] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[26] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9023), .COUT(n9024), .S0(n133[25]), .S1(n133[26]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9023), .COUT(n9024), .S0(n133[25]), .S1(n133[26]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_27.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_27.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_27.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_27.INJECT1_1 = "NO";
     CCU2C frame_len_702_add_4_25 (.A0(\frame_len[23] ), .B0(n3360), .C0(GND_net), 
           .D0(VCC_net), .A1(\frame_len[24] ), .B1(n3360), .C1(GND_net), 
-          .D1(VCC_net), .CIN(n9022), .COUT(n9023), .S0(n133[23]), .S1(n133[24]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+          .D1(VCC_net), .CIN(n9022), .COUT(n9023), .S0(n133[23]), .S1(n133[24]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam frame_len_702_add_4_25.INIT0 = 16'h2222;
     defparam frame_len_702_add_4_25.INIT1 = 16'h2222;
     defparam frame_len_702_add_4_25.INJECT1_0 = "NO";
     defparam frame_len_702_add_4_25.INJECT1_1 = "NO";
     LUT4 i1138_3_lut_4_lut (.A(pre_cnt[2]), .B(n11983), .C(n2297), .D(n2315), 
-         .Z(n5447)) /* synthesis lut_function=(A (B (D)+!B (C+(D)))+!A (C+(D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5447)) /* synthesis lut_function=(A (B (D)+!B (C+(D)))+!A (C+(D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1138_3_lut_4_lut.init = 16'hff70;
     LUT4 select_534_Select_23_i2_4_lut (.A(crc_reg[23]), .B(n2296), .C(crc_next[23]), 
-         .D(n11984), .Z(n2_adj_908)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_908)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_23_i2_4_lut.init = 16'h88c0;
     LUT4 i1_2_lut_4_lut (.A(\udp_tdata[5] ), .B(crc_reg[5]), .C(n11945), 
          .D(crc_next[30]), .Z(crc_next[29])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (B (D)+!B !(D)))) */ ;
     defparam i1_2_lut_4_lut.init = 16'h39c6;
     LUT4 i1_4_lut_adj_308 (.A(crc_next[5]), .B(n2_adj_909), .C(n10432), 
-         .D(n2290[3]), .Z(next_crc_reg[5])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[5])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_308.init = 16'hfefc;
     LUT4 select_534_Select_5_i2_4_lut (.A(crc_reg[5]), .B(n2296), .C(crc_next[5]), 
-         .D(n11984), .Z(n2_adj_909)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_909)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_5_i2_4_lut.init = 16'h88c0;
-    LUT4 i639_2_lut (.A(n2298), .B(n2296), .Z(n3360)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+    LUT4 i639_2_lut (.A(n2298), .B(n2296), .Z(n3360)) /* synthesis lut_function=(!((B)+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i639_2_lut.init = 16'h2222;
     LUT4 i1_3_lut_4_lut_adj_309 (.A(\udp_tdata[0] ), .B(n11945), .C(crc_reg[0]), 
-         .D(crc_reg[4]), .Z(n10288)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(crc_reg[4]), .Z(n10288)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A (C (D)+!C !(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_3_lut_4_lut_adj_309.init = 16'h2dd2;
     LUT4 i1_4_lut_adj_310 (.A(crc_next[6]), .B(n2_adj_910), .C(n10396), 
-         .D(n2290[3]), .Z(next_crc_reg[6])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[6])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_310.init = 16'hfefc;
     LUT4 select_534_Select_6_i2_4_lut (.A(crc_reg[6]), .B(n2296), .C(crc_next[6]), 
-         .D(n11984), .Z(n2_adj_910)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_910)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_6_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_311 (.A(crc_next[24]), .B(n2_adj_911), .C(n10344), 
-         .D(n2290[3]), .Z(next_crc_reg[24])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[24])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_311.init = 16'hfefc;
     LUT4 i2824_2_lut_3_lut_4_lut (.A(n11986), .B(n2290[4]), .C(rst_c), 
-         .D(n2290[5]), .Z(n3482)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A (C)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[5]), .Z(n3482)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A (C)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i2824_2_lut_3_lut_4_lut.init = 16'hf0f8;
     LUT4 select_534_Select_24_i2_4_lut (.A(crc_reg[24]), .B(n2296), .C(crc_next[24]), 
-         .D(n11984), .Z(n2_adj_911)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_911)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_24_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_312 (.A(crc_next[7]), .B(n2_adj_912), .C(n10378), 
-         .D(n2290[3]), .Z(next_crc_reg[7])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[7])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_312.init = 16'hfefc;
     LUT4 select_534_Select_7_i2_4_lut (.A(crc_reg[7]), .B(n2296), .C(crc_next[7]), 
-         .D(n11984), .Z(n2_adj_912)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_912)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_7_i2_4_lut.init = 16'h88c0;
     LUT4 crc_reg_22__bdd_3_lut_7321 (.A(crc_reg[22]), .B(crc_cnt[0]), .C(crc_reg[30]), 
          .Z(n11587)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;
     defparam crc_reg_22__bdd_3_lut_7321.init = 16'h1d1d;
     LUT4 i1_4_lut_adj_313 (.A(crc_next[8]), .B(n2_adj_913), .C(n10504), 
-         .D(n2290[3]), .Z(next_crc_reg[8])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[8])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_313.init = 16'hfefc;
     LUT4 select_534_Select_8_i2_4_lut (.A(crc_reg[8]), .B(n2296), .C(crc_next[8]), 
-         .D(n11984), .Z(n2_adj_913)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_913)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_8_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_314 (.A(n3_adj_914), .B(\next_crc_reg_31__N_594[9] ), 
-         .C(n10584), .D(n2296), .Z(next_crc_reg[9])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .C(n10584), .D(n2296), .Z(next_crc_reg[9])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_314.init = 16'hfefa;
     LUT4 crc_reg_23__bdd_3_lut_7461 (.A(crc_reg[23]), .B(crc_cnt[0]), .C(crc_reg[31]), 
          .Z(n11826)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;
     defparam crc_reg_23__bdd_3_lut_7461.init = 16'h1d1d;
     PFUMX i7322 (.BLUT(n11588), .ALUT(n11587), .C0(crc_cnt[1]), .Z(gmii_txd_7__N_406[6]));
     LUT4 i1_4_lut_adj_315 (.A(crc_next[10]), .B(n2_adj_915), .C(n10574), 
-         .D(n2290[3]), .Z(next_crc_reg[10])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[10])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_315.init = 16'hfefc;
     LUT4 select_534_Select_10_i2_4_lut (.A(crc_reg[10]), .B(n2296), .C(crc_next[10]), 
-         .D(n11984), .Z(n2_adj_915)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_915)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_10_i2_4_lut.init = 16'h88c0;
     LUT4 crc_reg_23__bdd_3_lut (.A(crc_reg[7]), .B(crc_reg[15]), .C(crc_cnt[0]), 
          .Z(n11827)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
@@ -7644,28 +7644,28 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .Z(n11588)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
     defparam crc_reg_22__bdd_3_lut.init = 16'h3535;
     LUT4 i1_4_lut_adj_316 (.A(crc_next[11]), .B(n2_adj_916), .C(n10496), 
-         .D(n2290[3]), .Z(next_crc_reg[11])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[11])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_316.init = 16'hfefc;
     LUT4 select_534_Select_11_i2_4_lut (.A(crc_reg[11]), .B(n2296), .C(crc_next[11]), 
-         .D(n11984), .Z(n2_adj_916)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_916)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_11_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_317 (.A(n3_adj_917), .B(\next_crc_reg_31__N_594[12] ), 
-         .C(n10548), .D(n2296), .Z(next_crc_reg[12])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .C(n10548), .D(n2296), .Z(next_crc_reg[12])) /* synthesis lut_function=(A+(B (C+(D))+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_317.init = 16'hfefa;
     LUT4 select_534_Select_12_i3_2_lut (.A(\crc_next[12] ), .B(n2290[3]), 
-         .Z(n3_adj_917)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n3_adj_917)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_12_i3_2_lut.init = 16'h8888;
     LUT4 i1_4_lut_adj_318 (.A(n2290[3]), .B(n2_adj_918), .C(n10340), .D(n6922), 
-         .Z(next_crc_reg[25])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(next_crc_reg[25])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_318.init = 16'hfefc;
     LUT4 i1_4_lut_adj_319 (.A(crc_next[13]), .B(n2_adj_919), .C(n10278), 
-         .D(n2290[3]), .Z(next_crc_reg[13])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[13])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_319.init = 16'hfefc;
     LUT4 select_534_Select_13_i2_4_lut (.A(crc_reg[13]), .B(n2296), .C(crc_next[13]), 
-         .D(n11984), .Z(n2_adj_919)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_919)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_13_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_320 (.A(n2296), .B(\crc_reg[25] ), .C(n6922), .D(n11984), 
-         .Z(n2_adj_918)) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n2_adj_918)) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_320.init = 16'h88a0;
     LUT4 crc_reg_16__bdd_3_lut_7472 (.A(crc_reg[16]), .B(crc_cnt[0]), .C(crc_reg[24]), 
          .Z(n11840)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;
@@ -7674,22 +7674,22 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .Z(n11841)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
     defparam crc_reg_16__bdd_3_lut.init = 16'h3535;
     LUT4 i1140_4_lut (.A(n2298), .B(n10872), .C(n11984), .D(ifg_cnt[2]), 
-         .Z(n5449)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A !((D)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(n5449)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))+!A !((D)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1140_4_lut.init = 16'ha0ec;
     LUT4 i1_2_lut_rep_168_4_lut (.A(n5703), .B(\reg_fifo_data[3] ), .C(n2185), 
-         .D(n11945), .Z(n11914)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n11945), .Z(n11914)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1_2_lut_rep_168_4_lut.init = 16'h00ca;
     LUT4 i1_4_lut_adj_321 (.A(ifg_cnt[0]), .B(ifg_cnt[1]), .C(n2290[5]), 
-         .D(ifg_cnt[3]), .Z(n10872)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(ifg_cnt[3]), .Z(n10872)) /* synthesis lut_function=(A (B (C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_321.init = 16'h8000;
     LUT4 i1_4_lut_adj_322 (.A(crc_next[26]), .B(n2_adj_920), .C(n10416), 
-         .D(n2290[3]), .Z(next_crc_reg[26])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[26])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_322.init = 16'hfefc;
     LUT4 i1_4_lut_adj_323 (.A(crc_next[14]), .B(n2_adj_921), .C(n10534), 
-         .D(n2290[3]), .Z(next_crc_reg[14])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[14])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_323.init = 16'hfefc;
     LUT4 select_534_Select_14_i2_4_lut (.A(crc_reg[14]), .B(n2296), .C(crc_next[14]), 
-         .D(n11984), .Z(n2_adj_921)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_921)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_14_i2_4_lut.init = 16'h88c0;
     LUT4 crc_reg_18__bdd_3_lut (.A(\crc_reg[2] ), .B(crc_reg[10]), .C(crc_cnt[0]), 
          .Z(n11848)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
@@ -7704,41 +7704,41 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
          .Z(n11851)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
     defparam crc_reg_19__bdd_3_lut_7668.init = 16'h3535;
     LUT4 i1_4_lut_adj_324 (.A(crc_next[15]), .B(n2_adj_922), .C(n10490), 
-         .D(n2290[3]), .Z(next_crc_reg[15])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[15])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_324.init = 16'hfefc;
     LUT4 select_534_Select_15_i2_4_lut (.A(crc_reg[15]), .B(n2296), .C(crc_next[15]), 
-         .D(n11984), .Z(n2_adj_922)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_922)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_15_i2_4_lut.init = 16'h88c0;
     LUT4 crc_reg_20__bdd_3_lut_7483 (.A(crc_reg[20]), .B(crc_cnt[0]), .C(crc_reg[28]), 
          .Z(n11853)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;
     defparam crc_reg_20__bdd_3_lut_7483.init = 16'h1d1d;
     LUT4 i1_4_lut_adj_325 (.A(n2290[3]), .B(n2_adj_923), .C(n10240), .D(n6926), 
-         .Z(next_crc_reg[17])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .Z(next_crc_reg[17])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_325.init = 16'hfefc;
     LUT4 crc_reg_20__bdd_3_lut (.A(crc_reg[4]), .B(\crc_reg[12] ), .C(crc_cnt[0]), 
          .Z(n11854)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
     defparam crc_reg_20__bdd_3_lut.init = 16'h3535;
     LUT4 select_534_Select_26_i2_4_lut (.A(crc_reg[26]), .B(n2296), .C(crc_next[26]), 
-         .D(n11984), .Z(n2_adj_920)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_920)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_26_i2_4_lut.init = 16'h88c0;
     LUT4 select_534_Select_17_i2_4_lut (.A(\crc_reg[17] ), .B(n2296), .C(n6926), 
-         .D(n11984), .Z(n2_adj_923)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_923)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_17_i2_4_lut.init = 16'h88c0;
     LUT4 i1_4_lut_adj_326 (.A(crc_next[18]), .B(n2_adj_924), .C(n10374), 
-         .D(n2290[3]), .Z(next_crc_reg[18])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[18])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_326.init = 16'hfefc;
     LUT4 select_534_Select_18_i2_4_lut (.A(crc_reg[18]), .B(n2296), .C(crc_next[18]), 
-         .D(n11984), .Z(n2_adj_924)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_924)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_18_i2_4_lut.init = 16'h88c0;
     LUT4 crc_reg_13__bdd_3_lut_7646 (.A(crc_reg[5]), .B(crc_reg[21]), .C(crc_cnt[1]), 
          .Z(n11861)) /* synthesis lut_function=(!(A (B+!(C))+!A (B (C)))) */ ;
     defparam crc_reg_13__bdd_3_lut_7646.init = 16'h3535;
     PFUMX i7525 (.BLUT(n12002), .ALUT(n12003), .C0(n2290[3]), .Z(next_pad_cnt[2]));
     LUT4 i1_4_lut_adj_327 (.A(crc_next[16]), .B(n2_adj_925), .C(n10446), 
-         .D(n2290[3]), .Z(next_crc_reg[16])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n2290[3]), .Z(next_crc_reg[16])) /* synthesis lut_function=(A (B+(C+(D)))+!A (B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam i1_4_lut_adj_327.init = 16'hfefc;
     LUT4 select_534_Select_16_i2_4_lut (.A(crc_reg[16]), .B(n2296), .C(crc_next[16]), 
-         .D(n11984), .Z(n2_adj_925)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
+         .D(n11984), .Z(n2_adj_925)) /* synthesis lut_function=(A (B (C+(D)))+!A !(((D)+!C)+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(129[13] 249[22])
     defparam select_534_Select_16_i2_4_lut.init = 16'h88c0;
     PFUMX i7489 (.BLUT(n11861), .ALUT(n11860), .C0(crc_cnt[0]), .Z(n11862));
     LUT4 crc_reg_13__bdd_3_lut_7488 (.A(crc_reg[13]), .B(crc_cnt[1]), .C(crc_reg[29]), 
@@ -7772,7 +7772,7 @@ module MAC_AXItoRGMII (rst_c, clk_c, n2296, n11984, clk_c_enable_15,
             .\crc_next[15] (crc_next[15]), .n6926(n6926), .\crc_reg[25] (\crc_reg[25] ), 
             .\crc_reg[23] (crc_reg[23]), .n10442(n10442), .n10332(n10332), 
             .\crc_next[18] (crc_next[18]), .\crc_next[26] (crc_next[26]), 
-            .\crc_next[16] (crc_next[16]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/mac_axitorgmii.vhd(67[16:35])
+            .\crc_next[16] (crc_next[16]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(67[16:35])
     
 endmodule
 //
@@ -7881,168 +7881,168 @@ module crc32_8 (n6156, n11910, n11909, \crc_next[31] , \crc_next[27] ,
         n11940, n10260, n10542, n9792, n10484, n10298, n10410;
     
     LUT4 i1_4_lut (.A(n6156), .B(n11910), .C(n11909), .D(\crc_next[31] ), 
-         .Z(\crc_next[27] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[27] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut.init = 16'h6996;
     LUT4 i1_4_lut_adj_195 (.A(n11918), .B(n11917), .C(\crc_reg[1] ), .D(\crc_reg[7] ), 
-         .Z(\crc_next[31] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[31] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_195.init = 16'h6996;
     LUT4 i1_3_lut_4_lut (.A(n11957), .B(\crc_reg[2] ), .C(\crc_reg[6] ), 
-         .D(\crc_reg[4] ), .Z(n10402)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(63[19:53])
+         .D(\crc_reg[4] ), .Z(n10402)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(63[19:53])
     defparam i1_3_lut_4_lut.init = 16'h6996;
     LUT4 i1_2_lut_4_lut (.A(\crc_reg[7] ), .B(n11917), .C(\crc_reg[17] ), 
-         .D(n2295), .Z(n3)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C (D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .D(n2295), .Z(n3)) /* synthesis lut_function=(A (B (C (D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut_4_lut.init = 16'h9600;
     LUT4 i1_4_lut_adj_196 (.A(n11908), .B(n11910), .C(n10288), .D(n11913), 
-         .Z(\crc_next[28] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(65[19:40])
+         .Z(\crc_next[28] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(65[19:40])
     defparam i1_4_lut_adj_196.init = 16'h6996;
     LUT4 i1_4_lut_adj_197 (.A(n11912), .B(n6195), .C(n11915), .D(n10518), 
-         .Z(\crc_next[30] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[30] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_197.init = 16'h6996;
     LUT4 i1_2_lut_3_lut_4_lut (.A(\crc_reg[4] ), .B(n11913), .C(n11912), 
-         .D(\crc_reg[6] ), .Z(n4)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .D(\crc_reg[6] ), .Z(n4)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_3_lut_4_lut.init = 16'h6996;
     LUT4 i1_4_lut_adj_198 (.A(n6156), .B(n11910), .C(n10230), .D(n6195), 
-         .Z(\crc_next[19] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[19] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_198.init = 16'h6996;
     LUT4 i1_4_lut_adj_199 (.A(n11912), .B(n11916), .C(n11918), .D(n10224), 
-         .Z(n10230)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n10230)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_199.init = 16'h6996;
     LUT4 i1_3_lut_4_lut_adj_200 (.A(\crc_reg[4] ), .B(n11913), .C(\crc_reg[14] ), 
-         .D(n11910), .Z(\crc_next[6] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .D(n11910), .Z(\crc_next[6] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_3_lut_4_lut_adj_200.init = 16'h6996;
     LUT4 i1_4_lut_adj_201 (.A(n6195), .B(n4), .C(n11914), .D(n10198), 
-         .Z(\crc_next[20] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[20] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_201.init = 16'h6996;
-    LUT4 i1_2_lut (.A(\crc_reg[3] ), .B(\crc_reg[28] ), .Z(n10198)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+    LUT4 i1_2_lut (.A(\crc_reg[3] ), .B(\crc_reg[28] ), .Z(n10198)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut.init = 16'h6666;
     LUT4 i1_4_lut_adj_202 (.A(n11915), .B(n11914), .C(n10472), .D(\crc_reg[3] ), 
-         .Z(n6929)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n6929)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_202.init = 16'h6996;
-    LUT4 i1_2_lut_adj_203 (.A(\crc_reg[0] ), .B(\crc_reg[9] ), .Z(n10472)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+    LUT4 i1_2_lut_adj_203 (.A(\crc_reg[0] ), .B(\crc_reg[9] ), .Z(n10472)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut_adj_203.init = 16'h6666;
     LUT4 i1_4_lut_adj_204 (.A(n11909), .B(n11910), .C(n6195), .D(n10368), 
-         .Z(\crc_next[21] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[21] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_204.init = 16'h6996;
     LUT4 i1_4_lut_adj_205 (.A(n6247), .B(n11913), .C(n11915), .D(n10552), 
-         .Z(\crc_next[2] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[2] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_205.init = 16'h6996;
-    LUT4 i1_2_lut_adj_206 (.A(\crc_reg[4] ), .B(\crc_reg[10] ), .Z(n10552)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+    LUT4 i1_2_lut_adj_206 (.A(\crc_reg[4] ), .B(\crc_reg[10] ), .Z(n10552)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_adj_206.init = 16'h6666;
     LUT4 i1_4_lut_adj_207 (.A(n11916), .B(n11910), .C(n11918), .D(n10268), 
-         .Z(\crc_next[3] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[3] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_207.init = 16'h6996;
     LUT4 i1_3_lut (.A(\crc_reg[1] ), .B(\crc_reg[2] ), .C(\crc_reg[11] ), 
-         .Z(n10268)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n10268)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_3_lut.init = 16'h9696;
     LUT4 i1_4_lut_adj_208 (.A(n11912), .B(n11914), .C(n10466), .D(n11915), 
-         .Z(\crc_next[4] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[4] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_208.init = 16'h6996;
     LUT4 i1_4_lut_adj_209 (.A(n11916), .B(n11956), .C(n10460), .D(\crc_reg[6] ), 
-         .Z(n10466)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n10466)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_209.init = 16'h6996;
-    LUT4 i1_2_lut_adj_210 (.A(\crc_reg[3] ), .B(\crc_reg[12] ), .Z(n10460)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+    LUT4 i1_2_lut_adj_210 (.A(\crc_reg[3] ), .B(\crc_reg[12] ), .Z(n10460)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut_adj_210.init = 16'h6666;
     LUT4 i1_4_lut_adj_211 (.A(n6156), .B(n11910), .C(n11912), .D(n10318), 
-         .Z(\crc_next[22] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[22] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_211.init = 16'h6996;
     LUT4 i1_4_lut_adj_212 (.A(n11916), .B(\crc_reg[2] ), .C(\crc_reg[6] ), 
-         .D(\crc_reg[30] ), .Z(n10318)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .D(\crc_reg[30] ), .Z(n10318)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_212.init = 16'h6996;
     LUT4 i1_4_lut_adj_213 (.A(n6195), .B(n4), .C(n11914), .D(n10206), 
-         .Z(\crc_next[23] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[23] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_213.init = 16'h6996;
-    LUT4 i1_2_lut_adj_214 (.A(\crc_reg[3] ), .B(\crc_reg[31] ), .Z(n10206)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+    LUT4 i1_2_lut_adj_214 (.A(\crc_reg[3] ), .B(\crc_reg[31] ), .Z(n10206)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut_adj_214.init = 16'h6666;
     LUT4 i1_4_lut_adj_215 (.A(n11913), .B(n6156), .C(n11917), .D(n10426), 
-         .Z(\crc_next[5] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[5] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_215.init = 16'h6996;
     LUT4 i1_4_lut_adj_216 (.A(n11918), .B(\crc_reg[4] ), .C(n10420), .D(\crc_reg[1] ), 
-         .Z(n10426)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(n10426)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_216.init = 16'h6996;
-    LUT4 i1_2_lut_adj_217 (.A(\crc_reg[7] ), .B(\crc_reg[13] ), .Z(n10420)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+    LUT4 i1_2_lut_adj_217 (.A(\crc_reg[7] ), .B(\crc_reg[13] ), .Z(n10420)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_adj_217.init = 16'h6666;
     LUT4 i1_4_lut_adj_218 (.A(n11908), .B(n11910), .C(n11915), .D(n10324), 
-         .Z(\crc_next[7] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[7] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_218.init = 16'h6996;
-    LUT4 i1_2_lut_adj_219 (.A(\crc_reg[0] ), .B(\crc_reg[15] ), .Z(n10324)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+    LUT4 i1_2_lut_adj_219 (.A(\crc_reg[0] ), .B(\crc_reg[15] ), .Z(n10324)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_2_lut_adj_219.init = 16'h6666;
     LUT4 i1_3_lut_4_lut_adj_220 (.A(\crc_reg[6] ), .B(\crc_reg[2] ), .C(\crc_reg[22] ), 
-         .D(\crc_reg[1] ), .Z(n10528)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .D(\crc_reg[1] ), .Z(n10528)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_3_lut_4_lut_adj_220.init = 16'h6996;
     LUT4 i1_4_lut_adj_221 (.A(n10256), .B(n11910), .C(n11945), .D(n10899), 
-         .Z(\crc_next[24] )) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C+!(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[24] )) /* synthesis lut_function=(!(A (B (C+!(D))+!B !(C+!(D)))+!A !(B (C+!(D))+!B !(C+!(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_221.init = 16'h6966;
     LUT4 i1_4_lut_adj_222 (.A(n11913), .B(n11917), .C(n11956), .D(n10248), 
-         .Z(n10256)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(n10256)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_222.init = 16'h6996;
     LUT4 i1_3_lut_4_lut_adj_223 (.A(\crc_reg[6] ), .B(\crc_reg[2] ), .C(\crc_reg[27] ), 
-         .D(\crc_reg[1] ), .Z(n10224)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .D(\crc_reg[1] ), .Z(n10224)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_3_lut_4_lut_adj_223.init = 16'h6996;
-    LUT4 i1_2_lut_adj_224 (.A(\udp_tdata[0] ), .B(\udp_tdata[2] ), .Z(n10899)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+    LUT4 i1_2_lut_adj_224 (.A(\udp_tdata[0] ), .B(\udp_tdata[2] ), .Z(n10899)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_adj_224.init = 16'h6666;
     LUT4 crcIn_0__I_0_234_2_lut_rep_210 (.A(\crc_reg[0] ), .B(\crc_reg[2] ), 
-         .Z(n11956)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(61[19:40])
+         .Z(n11956)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(61[19:40])
     defparam crcIn_0__I_0_234_2_lut_rep_210.init = 16'h6666;
     LUT4 i1_4_lut_adj_225 (.A(n11912), .B(n6195), .C(n11918), .D(n10510), 
-         .Z(\crc_next[8] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[8] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_225.init = 16'h6996;
     LUT4 i1_3_lut_adj_226 (.A(\crc_reg[1] ), .B(\crc_reg[6] ), .C(\crc_reg[16] ), 
-         .Z(n10510)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n10510)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_3_lut_adj_226.init = 16'h9696;
     LUT4 i1_3_lut_4_lut_adj_227 (.A(\crc_reg[0] ), .B(\crc_reg[2] ), .C(\crc_reg[24] ), 
-         .D(\crc_reg[4] ), .Z(n10438)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(61[19:40])
+         .D(\crc_reg[4] ), .Z(n10438)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(61[19:40])
     defparam i1_3_lut_4_lut_adj_227.init = 16'h6996;
-    LUT4 i1_2_lut_adj_228 (.A(\crc_reg[4] ), .B(\crc_reg[7] ), .Z(n10248)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+    LUT4 i1_2_lut_adj_228 (.A(\crc_reg[4] ), .B(\crc_reg[7] ), .Z(n10248)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_adj_228.init = 16'h6666;
     LUT4 crcIn_0__I_0_226_2_lut_rep_211 (.A(\crc_reg[0] ), .B(\crc_reg[1] ), 
-         .Z(n11957)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
+         .Z(n11957)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
     defparam crcIn_0__I_0_226_2_lut_rep_211.init = 16'h6666;
     LUT4 crcOut_31__N_758_I_0_232_2_lut_rep_194_3_lut (.A(\crc_reg[0] ), .B(\crc_reg[1] ), 
-         .C(\crc_reg[2] ), .Z(n11940)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
+         .C(\crc_reg[2] ), .Z(n11940)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
     defparam crcOut_31__N_758_I_0_232_2_lut_rep_194_3_lut.init = 16'h9696;
     LUT4 i1_2_lut_3_lut (.A(\crc_reg[0] ), .B(\crc_reg[1] ), .C(\crc_reg[21] ), 
-         .Z(n10260)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
+         .Z(n10260)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(67[19:40])
     defparam i1_2_lut_3_lut.init = 16'h9696;
     LUT4 i1_4_lut_adj_229 (.A(n11915), .B(n11913), .C(n10542), .D(\crc_reg[4] ), 
-         .Z(\crc_next[12] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[12] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_229.init = 16'h6996;
-    LUT4 i1_2_lut_adj_230 (.A(\crc_reg[0] ), .B(\crc_reg[20] ), .Z(n10542)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+    LUT4 i1_2_lut_adj_230 (.A(\crc_reg[0] ), .B(\crc_reg[20] ), .Z(n10542)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_2_lut_adj_230.init = 16'h6666;
     LUT4 i1_4_lut_adj_231 (.A(n9792), .B(n11910), .C(n11914), .D(n10360), 
-         .Z(n6922)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n6922)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_231.init = 16'h6996;
     LUT4 i1_4_lut_adj_232 (.A(n11915), .B(n11910), .C(n11918), .D(n10260), 
-         .Z(\crc_next[13] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(66[19:53])
+         .Z(\crc_next[13] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(66[19:53])
     defparam i1_4_lut_adj_232.init = 16'h6996;
     LUT4 i1_4_lut_adj_233 (.A(n11916), .B(n11912), .C(n11918), .D(n10528), 
-         .Z(\crc_next[14] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[14] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_233.init = 16'h6996;
     LUT4 i1_4_lut_adj_234 (.A(n6195), .B(n11914), .C(n11916), .D(n10484), 
-         .Z(\crc_next[15] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(\crc_next[15] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_234.init = 16'h6996;
     LUT4 i1_4_lut_adj_235 (.A(n6156), .B(n11910), .C(n10298), .D(n11913), 
-         .Z(n6926)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(n6926)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_235.init = 16'h6996;
     LUT4 i1_4_lut_adj_236 (.A(n6247), .B(n11915), .C(\crc_reg[4] ), .D(\crc_reg[25] ), 
-         .Z(n10298)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(n10298)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_236.init = 16'h6996;
     LUT4 i1_3_lut_adj_237 (.A(\crc_reg[3] ), .B(\crc_reg[2] ), .C(\crc_reg[23] ), 
-         .Z(n10484)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n10484)) /* synthesis lut_function=(A (B (C)+!B !(C))+!A !(B (C)+!B !(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_3_lut_adj_237.init = 16'h9696;
     LUT4 i1_4_lut_adj_238 (.A(n9792), .B(n11910), .C(n10442), .D(n10332), 
-         .Z(\crc_next[18] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[18] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_238.init = 16'h6996;
     LUT4 i1_4_lut_adj_239 (.A(n6195), .B(n6156), .C(n10410), .D(n11912), 
-         .Z(\crc_next[26] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(\crc_next[26] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_239.init = 16'h6996;
     LUT4 i1_4_lut_adj_240 (.A(n11918), .B(n11912), .C(n11940), .D(\crc_reg[6] ), 
-         .Z(n9792)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
+         .Z(n9792)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(68[19:64])
     defparam i1_4_lut_adj_240.init = 16'h6996;
     LUT4 i1_4_lut_adj_241 (.A(n10442), .B(n6156), .C(n11916), .D(n10438), 
-         .Z(\crc_next[16] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(53[19:53])
+         .Z(\crc_next[16] )) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(53[19:53])
     defparam i1_4_lut_adj_241.init = 16'h6996;
     LUT4 i1_4_lut_adj_242 (.A(n10442), .B(n11916), .C(n11918), .D(n10402), 
-         .Z(n10410)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
+         .Z(n10410)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(60[19:66])
     defparam i1_4_lut_adj_242.init = 16'h6996;
     
 endmodule
@@ -8063,29 +8063,29 @@ module fifo_udp_reg (reg_fifo_data, clk_c, data_out_large_fifo, reg_fifo_almostf
     output reg_fifo_empty;
     input fifo_empty;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
-    FD1S3AX data_reg_i0 (.D(data_out_large_fifo[0]), .CK(clk_c), .Q(reg_fifo_data[0])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i0 (.D(data_out_large_fifo[0]), .CK(clk_c), .Q(reg_fifo_data[0])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i0.GSR = "ENABLED";
-    FD1S3AX almostfull_reg_14 (.D(fifo_almostempty_N_1), .CK(clk_c), .Q(reg_fifo_almostfull)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX almostfull_reg_14 (.D(fifo_almostempty_N_1), .CK(clk_c), .Q(reg_fifo_almostfull)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam almostfull_reg_14.GSR = "ENABLED";
-    FD1S3AX rd_en_reg_15 (.D(fifo_rd_en_in), .CK(clk_c), .Q(read_large_fifo)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX rd_en_reg_15 (.D(fifo_rd_en_in), .CK(clk_c), .Q(read_large_fifo)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam rd_en_reg_15.GSR = "ENABLED";
-    FD1S3AY empty_reg_13 (.D(fifo_empty), .CK(clk_c), .Q(reg_fifo_empty)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AY empty_reg_13 (.D(fifo_empty), .CK(clk_c), .Q(reg_fifo_empty)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam empty_reg_13.GSR = "ENABLED";
-    FD1S3AX data_reg_i1 (.D(data_out_large_fifo[1]), .CK(clk_c), .Q(reg_fifo_data[1])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i1 (.D(data_out_large_fifo[1]), .CK(clk_c), .Q(reg_fifo_data[1])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i1.GSR = "ENABLED";
-    FD1S3AX data_reg_i2 (.D(data_out_large_fifo[2]), .CK(clk_c), .Q(reg_fifo_data[2])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i2 (.D(data_out_large_fifo[2]), .CK(clk_c), .Q(reg_fifo_data[2])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i2.GSR = "ENABLED";
-    FD1S3AX data_reg_i3 (.D(data_out_large_fifo[3]), .CK(clk_c), .Q(reg_fifo_data[3])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i3 (.D(data_out_large_fifo[3]), .CK(clk_c), .Q(reg_fifo_data[3])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i3.GSR = "ENABLED";
-    FD1S3AX data_reg_i4 (.D(data_out_large_fifo[4]), .CK(clk_c), .Q(reg_fifo_data[4])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i4 (.D(data_out_large_fifo[4]), .CK(clk_c), .Q(reg_fifo_data[4])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i4.GSR = "ENABLED";
-    FD1S3AX data_reg_i5 (.D(data_out_large_fifo[5]), .CK(clk_c), .Q(reg_fifo_data[5])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i5 (.D(data_out_large_fifo[5]), .CK(clk_c), .Q(reg_fifo_data[5])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i5.GSR = "ENABLED";
-    FD1S3AX data_reg_i6 (.D(data_out_large_fifo[6]), .CK(clk_c), .Q(reg_fifo_data[6])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i6 (.D(data_out_large_fifo[6]), .CK(clk_c), .Q(reg_fifo_data[6])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i6.GSR = "ENABLED";
-    FD1S3AX data_reg_i7 (.D(data_out_large_fifo[7]), .CK(clk_c), .Q(reg_fifo_data[7])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
+    FD1S3AX data_reg_i7 (.D(data_out_large_fifo[7]), .CK(clk_c), .Q(reg_fifo_data[7])) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=12, LSE_RCOL=36, LSE_LLINE=393, LSE_RLINE=393 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(37[9] 48[16])
     defparam data_reg_i7.GSR = "ENABLED";
     
 endmodule
@@ -8108,7 +8108,7 @@ module Fifolg (clk_c, n11947, fifo_empty, fifo_almostempty, large_fifo_almost_fu
     input rst_c;
     output [7:0]data_out_large_fifo;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire rden_i_inv, wren_i, cnt_con, fcount_1, fcnt_en, ifcount_1, 
         large_fifo_full, invout_2, invout_1, fcount_2, ifcount_2, 
@@ -8132,507 +8132,507 @@ module Fifolg (clk_c, n11947, fifo_empty, fifo_almostempty, large_fifo_almost_fu
         co2_7, co3_7, af_set_d_c, af_set_d, cmp_ci_5, co0_8, co1_8, 
         co2_8, co3_8, af_clr_d_c, af_clr_d, fcnt_en_inv;
     
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(231[14:18])
-    FD1P3AX FF_32 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(322[12:19])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(231[14:18])
+    FD1P3AX FF_32 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(322[12:19])
     defparam FF_32.GSR = "ENABLED";
-    INV INV_8 (.A(large_fifo_full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
-    AND2 AND2_t4 (.A(n11947), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(219[14:18])
-    INV INV_7 (.A(fifo_empty), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
-    FD1P3AX FF_31 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(326[12:19])
+    INV INV_8 (.A(large_fifo_full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    AND2 AND2_t4 (.A(n11947), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(219[14:18])
+    INV INV_7 (.A(fifo_empty), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    FD1P3AX FF_31 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(326[12:19])
     defparam FF_31.GSR = "ENABLED";
-    FD1P3AX FF_30 (.D(ifcount_3), .SP(fcnt_en), .CK(clk_c), .Q(fcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(330[12:19])
+    FD1P3AX FF_30 (.D(ifcount_3), .SP(fcnt_en), .CK(clk_c), .Q(fcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(330[12:19])
     defparam FF_30.GSR = "ENABLED";
-    FD1P3AX FF_29 (.D(ifcount_4), .SP(fcnt_en), .CK(clk_c), .Q(fcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(334[12:19])
+    FD1P3AX FF_29 (.D(ifcount_4), .SP(fcnt_en), .CK(clk_c), .Q(fcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(334[12:19])
     defparam FF_29.GSR = "ENABLED";
-    FD1P3AX FF_28 (.D(ifcount_5), .SP(fcnt_en), .CK(clk_c), .Q(fcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(338[12:19])
+    FD1P3AX FF_28 (.D(ifcount_5), .SP(fcnt_en), .CK(clk_c), .Q(fcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(338[12:19])
     defparam FF_28.GSR = "ENABLED";
-    FD1P3AX FF_27 (.D(ifcount_6), .SP(fcnt_en), .CK(clk_c), .Q(fcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(342[12:19])
+    FD1P3AX FF_27 (.D(ifcount_6), .SP(fcnt_en), .CK(clk_c), .Q(fcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(342[12:19])
     defparam FF_27.GSR = "ENABLED";
-    FD1P3AX FF_26 (.D(ifcount_7), .SP(fcnt_en), .CK(clk_c), .Q(fcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(346[12:19])
+    FD1P3AX FF_26 (.D(ifcount_7), .SP(fcnt_en), .CK(clk_c), .Q(fcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(346[12:19])
     defparam FF_26.GSR = "ENABLED";
-    FD1P3AX FF_25 (.D(ifcount_8), .SP(fcnt_en), .CK(clk_c), .Q(fcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(350[12:19])
+    FD1P3AX FF_25 (.D(ifcount_8), .SP(fcnt_en), .CK(clk_c), .Q(fcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(350[12:19])
     defparam FF_25.GSR = "ENABLED";
-    FD1P3AX FF_24 (.D(ifcount_9), .SP(fcnt_en), .CK(clk_c), .Q(fcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(354[12:19])
+    FD1P3AX FF_24 (.D(ifcount_9), .SP(fcnt_en), .CK(clk_c), .Q(fcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(354[12:19])
     defparam FF_24.GSR = "ENABLED";
-    FD1S3AY FF_23 (.D(empty_d), .CK(clk_c), .Q(fifo_empty)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(358[12:19])
+    FD1S3AY FF_23 (.D(empty_d), .CK(clk_c), .Q(fifo_empty)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(358[12:19])
     defparam FF_23.GSR = "ENABLED";
-    FD1S3AX FF_22 (.D(full_d), .CK(clk_c), .Q(large_fifo_full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(361[12:19])
+    FD1S3AX FF_22 (.D(full_d), .CK(clk_c), .Q(large_fifo_full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(361[12:19])
     defparam FF_22.GSR = "ENABLED";
-    FD1P3AX FF_21 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(364[12:19])
+    FD1P3AX FF_21 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(364[12:19])
     defparam FF_21.GSR = "ENABLED";
-    FD1P3AX FF_20 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(368[12:19])
+    FD1P3AX FF_20 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(368[12:19])
     defparam FF_20.GSR = "ENABLED";
-    FD1P3AX FF_19 (.D(iwcount_2), .SP(wren_i), .CK(clk_c), .Q(wcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(372[12:19])
+    FD1P3AX FF_19 (.D(iwcount_2), .SP(wren_i), .CK(clk_c), .Q(wcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(372[12:19])
     defparam FF_19.GSR = "ENABLED";
-    FD1P3AX FF_18 (.D(iwcount_3), .SP(wren_i), .CK(clk_c), .Q(wcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(376[12:19])
+    FD1P3AX FF_18 (.D(iwcount_3), .SP(wren_i), .CK(clk_c), .Q(wcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(376[12:19])
     defparam FF_18.GSR = "ENABLED";
-    FD1P3AX FF_17 (.D(iwcount_4), .SP(wren_i), .CK(clk_c), .Q(wcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(380[12:19])
+    FD1P3AX FF_17 (.D(iwcount_4), .SP(wren_i), .CK(clk_c), .Q(wcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(380[12:19])
     defparam FF_17.GSR = "ENABLED";
-    FD1P3AX FF_16 (.D(iwcount_5), .SP(wren_i), .CK(clk_c), .Q(wcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(384[12:19])
+    FD1P3AX FF_16 (.D(iwcount_5), .SP(wren_i), .CK(clk_c), .Q(wcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(384[12:19])
     defparam FF_16.GSR = "ENABLED";
-    FD1P3AX FF_15 (.D(iwcount_6), .SP(wren_i), .CK(clk_c), .Q(wcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(388[12:19])
+    FD1P3AX FF_15 (.D(iwcount_6), .SP(wren_i), .CK(clk_c), .Q(wcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(388[12:19])
     defparam FF_15.GSR = "ENABLED";
-    FD1P3AX FF_14 (.D(iwcount_7), .SP(wren_i), .CK(clk_c), .Q(wcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(392[12:19])
+    FD1P3AX FF_14 (.D(iwcount_7), .SP(wren_i), .CK(clk_c), .Q(wcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(392[12:19])
     defparam FF_14.GSR = "ENABLED";
-    FD1P3AX FF_13 (.D(iwcount_8), .SP(wren_i), .CK(clk_c), .Q(wcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(396[12:19])
+    FD1P3AX FF_13 (.D(iwcount_8), .SP(wren_i), .CK(clk_c), .Q(wcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(396[12:19])
     defparam FF_13.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(iwcount_9), .SP(wren_i), .CK(clk_c), .Q(wcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(400[12:19])
+    FD1P3AX FF_12 (.D(iwcount_9), .SP(wren_i), .CK(clk_c), .Q(wcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(400[12:19])
     defparam FF_12.GSR = "ENABLED";
-    FD1P3AX FF_11 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(404[12:19])
+    FD1P3AX FF_11 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(404[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(408[12:19])
+    FD1P3AX FF_10 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(408[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1P3AX FF_9 (.D(ircount_2), .SP(rden_i), .CK(clk_c), .Q(rcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(412[11:18])
+    FD1P3AX FF_9 (.D(ircount_2), .SP(rden_i), .CK(clk_c), .Q(rcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(412[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1P3AX FF_8 (.D(ircount_3), .SP(rden_i), .CK(clk_c), .Q(rcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(416[11:18])
+    FD1P3AX FF_8 (.D(ircount_3), .SP(rden_i), .CK(clk_c), .Q(rcount_3)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(416[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(ircount_4), .SP(rden_i), .CK(clk_c), .Q(rcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(420[11:18])
+    FD1P3AX FF_7 (.D(ircount_4), .SP(rden_i), .CK(clk_c), .Q(rcount_4)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(420[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(ircount_5), .SP(rden_i), .CK(clk_c), .Q(rcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(424[11:18])
+    FD1P3AX FF_6 (.D(ircount_5), .SP(rden_i), .CK(clk_c), .Q(rcount_5)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(424[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_5 (.D(ircount_6), .SP(rden_i), .CK(clk_c), .Q(rcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(428[11:18])
+    FD1P3AX FF_5 (.D(ircount_6), .SP(rden_i), .CK(clk_c), .Q(rcount_6)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(428[11:18])
     defparam FF_5.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_7), .SP(rden_i), .CK(clk_c), .Q(rcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(432[11:18])
+    FD1P3AX FF_4 (.D(ircount_7), .SP(rden_i), .CK(clk_c), .Q(rcount_7)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(432[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_8), .SP(rden_i), .CK(clk_c), .Q(rcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(436[11:18])
+    FD1P3AX FF_3 (.D(ircount_8), .SP(rden_i), .CK(clk_c), .Q(rcount_8)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(436[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_2 (.D(ircount_9), .SP(rden_i), .CK(clk_c), .Q(rcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(440[11:18])
+    FD1P3AX FF_2 (.D(ircount_9), .SP(rden_i), .CK(clk_c), .Q(rcount_9)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(440[11:18])
     defparam FF_2.GSR = "ENABLED";
-    FD1S3AY FF_1 (.D(ae_d), .CK(clk_c), .Q(fifo_almostempty)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(444[11:18])
+    FD1S3AY FF_1 (.D(ae_d), .CK(clk_c), .Q(fifo_almostempty)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(444[11:18])
     defparam FF_1.GSR = "ENABLED";
-    FD1S3AX FF_0 (.D(af_d), .CK(clk_c), .Q(large_fifo_almost_full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(447[11:18])
+    FD1S3AX FF_0 (.D(af_d), .CK(clk_c), .Q(large_fifo_almost_full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(447[11:18])
     defparam FF_0.GSR = "ENABLED";
-    FD1P3AX FF_33 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(318[12:19])
+    FD1P3AX FF_33 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(318[12:19])
     defparam FF_33.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(450[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(450[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(457[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(457[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_3), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .COUT(co1), .S0(ifcount_2), .S1(ifcount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(464[19:24])
+          .COUT(co1), .S0(ifcount_2), .S1(ifcount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(464[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_2 (.A0(fcount_4), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_5), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co1), 
-          .COUT(co2), .S0(ifcount_4), .S1(ifcount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(471[19:24])
+          .COUT(co2), .S0(ifcount_4), .S1(ifcount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(471[19:24])
     defparam bdcnt_bctr_2.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_2.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_2.INJECT1_0 = "NO";
     defparam bdcnt_bctr_2.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_3 (.A0(fcount_6), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_7), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co2), 
-          .COUT(co3), .S0(ifcount_6), .S1(ifcount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(478[19:24])
+          .COUT(co3), .S0(ifcount_6), .S1(ifcount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(478[19:24])
     defparam bdcnt_bctr_3.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_3.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_3.INJECT1_0 = "NO";
     defparam bdcnt_bctr_3.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_4 (.A0(fcount_8), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_9), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co3), 
-          .S0(ifcount_8), .S1(ifcount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(485[19:24])
+          .S0(ifcount_8), .S1(ifcount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(485[19:24])
     defparam bdcnt_bctr_4.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_4.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_4.INJECT1_0 = "NO";
     defparam bdcnt_bctr_4.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(492[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(492[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(499[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(499[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_3), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(co1_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(506[14:19])
+          .COUT(co1_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(506[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C e_cmp_2 (.A0(GND_net), .B0(fcount_4), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_5), .C1(VCC_net), .D1(VCC_net), .CIN(co1_1), 
-          .COUT(co2_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(513[14:19])
+          .COUT(co2_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(513[14:19])
     defparam e_cmp_2.INIT0 = 16'b1001100110101010;
     defparam e_cmp_2.INIT1 = 16'b1001100110101010;
     defparam e_cmp_2.INJECT1_0 = "NO";
     defparam e_cmp_2.INJECT1_1 = "NO";
     CCU2C e_cmp_3 (.A0(GND_net), .B0(fcount_6), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_7), .C1(VCC_net), .D1(VCC_net), .CIN(co2_1), 
-          .COUT(co3_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(520[14:19])
+          .COUT(co3_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(520[14:19])
     defparam e_cmp_3.INIT0 = 16'b1001100110101010;
     defparam e_cmp_3.INIT1 = 16'b1001100110101010;
     defparam e_cmp_3.INJECT1_0 = "NO";
     defparam e_cmp_3.INJECT1_1 = "NO";
     CCU2C e_cmp_4 (.A0(GND_net), .B0(fcount_8), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_9), .C1(VCC_net), .D1(VCC_net), .CIN(co3_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(527[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(527[14:19])
     defparam e_cmp_4.INIT0 = 16'b1001100110101010;
     defparam e_cmp_4.INIT1 = 16'b1001100110101010;
     defparam e_cmp_4.INJECT1_0 = "NO";
     defparam e_cmp_4.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(535[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(535[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(543[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(543[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(550[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(550[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_3), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(co1_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(557[14:19])
+          .COUT(co1_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(557[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C g_cmp_2 (.A0(fcount_4), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_5), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(co1_2), 
-          .COUT(co2_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(564[14:19])
+          .COUT(co2_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(564[14:19])
     defparam g_cmp_2.INIT0 = 16'b1001100110101010;
     defparam g_cmp_2.INIT1 = 16'b1001100110101010;
     defparam g_cmp_2.INJECT1_0 = "NO";
     defparam g_cmp_2.INJECT1_1 = "NO";
     CCU2C g_cmp_3 (.A0(fcount_6), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_7), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(co2_2), 
-          .COUT(co3_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(571[14:19])
+          .COUT(co3_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(571[14:19])
     defparam g_cmp_3.INIT0 = 16'b1001100110101010;
     defparam g_cmp_3.INIT1 = 16'b1001100110101010;
     defparam g_cmp_3.INJECT1_0 = "NO";
     defparam g_cmp_3.INJECT1_1 = "NO";
     CCU2C g_cmp_4 (.A0(fcount_8), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_9), .B1(wren_i_inv), .C1(VCC_net), .D1(VCC_net), 
-          .CIN(co3_2), .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(578[14:19])
+          .CIN(co3_2), .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(578[14:19])
     defparam g_cmp_4.INIT0 = 16'b1001100110101010;
     defparam g_cmp_4.INIT1 = 16'b1001100110101010;
     defparam g_cmp_4.INJECT1_0 = "NO";
     defparam g_cmp_4.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(585[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(585[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(593[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(593[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .COUT(co0_3), .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(600[14:19])
+          .COUT(co0_3), .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(600[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C w_ctr_1 (.A0(wcount_2), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_3), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_3), 
-          .COUT(co1_3), .S0(iwcount_2), .S1(iwcount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(608[14:19])
+          .COUT(co1_3), .S0(iwcount_2), .S1(iwcount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(608[14:19])
     defparam w_ctr_1.INIT0 = 16'b0110011010101010;
     defparam w_ctr_1.INIT1 = 16'b0110011010101010;
     defparam w_ctr_1.INJECT1_0 = "NO";
     defparam w_ctr_1.INJECT1_1 = "NO";
     CCU2C w_ctr_2 (.A0(wcount_4), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_5), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co1_3), 
-          .COUT(co2_3), .S0(iwcount_4), .S1(iwcount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(616[14:19])
+          .COUT(co2_3), .S0(iwcount_4), .S1(iwcount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(616[14:19])
     defparam w_ctr_2.INIT0 = 16'b0110011010101010;
     defparam w_ctr_2.INIT1 = 16'b0110011010101010;
     defparam w_ctr_2.INJECT1_0 = "NO";
     defparam w_ctr_2.INJECT1_1 = "NO";
     CCU2C w_ctr_3 (.A0(wcount_6), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_7), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co2_3), 
-          .COUT(co3_3), .S0(iwcount_6), .S1(iwcount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(624[14:19])
+          .COUT(co3_3), .S0(iwcount_6), .S1(iwcount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(624[14:19])
     defparam w_ctr_3.INIT0 = 16'b0110011010101010;
     defparam w_ctr_3.INIT1 = 16'b0110011010101010;
     defparam w_ctr_3.INJECT1_0 = "NO";
     defparam w_ctr_3.INJECT1_1 = "NO";
     CCU2C w_ctr_4 (.A0(wcount_8), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_9), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co3_3), 
-          .S0(iwcount_8), .S1(iwcount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(632[14:19])
+          .S0(iwcount_8), .S1(iwcount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(632[14:19])
     defparam w_ctr_4.INIT0 = 16'b0110011010101010;
     defparam w_ctr_4.INIT1 = 16'b0110011010101010;
     defparam w_ctr_4.INJECT1_0 = "NO";
     defparam w_ctr_4.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(640[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(640[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .COUT(co0_4), .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(647[14:19])
+          .COUT(co0_4), .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(647[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_1 (.A0(rcount_2), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_3), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_4), 
-          .COUT(co1_4), .S0(ircount_2), .S1(ircount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(655[14:19])
+          .COUT(co1_4), .S0(ircount_2), .S1(ircount_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(655[14:19])
     defparam r_ctr_1.INIT0 = 16'b0110011010101010;
     defparam r_ctr_1.INIT1 = 16'b0110011010101010;
     defparam r_ctr_1.INJECT1_0 = "NO";
     defparam r_ctr_1.INJECT1_1 = "NO";
     CCU2C r_ctr_2 (.A0(rcount_4), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_5), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co1_4), 
-          .COUT(co2_4), .S0(ircount_4), .S1(ircount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(663[14:19])
+          .COUT(co2_4), .S0(ircount_4), .S1(ircount_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(663[14:19])
     defparam r_ctr_2.INIT0 = 16'b0110011010101010;
     defparam r_ctr_2.INIT1 = 16'b0110011010101010;
     defparam r_ctr_2.INJECT1_0 = "NO";
     defparam r_ctr_2.INJECT1_1 = "NO";
     CCU2C r_ctr_3 (.A0(rcount_6), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_7), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co2_4), 
-          .COUT(co3_4), .S0(ircount_6), .S1(ircount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(671[14:19])
+          .COUT(co3_4), .S0(ircount_6), .S1(ircount_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(671[14:19])
     defparam r_ctr_3.INIT0 = 16'b0110011010101010;
     defparam r_ctr_3.INIT1 = 16'b0110011010101010;
     defparam r_ctr_3.INJECT1_0 = "NO";
     defparam r_ctr_3.INJECT1_1 = "NO";
     CCU2C r_ctr_4 (.A0(rcount_8), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_9), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co3_4), 
-          .S0(ircount_8), .S1(ircount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(679[14:19])
+          .S0(ircount_8), .S1(ircount_9)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(679[14:19])
     defparam r_ctr_4.INIT0 = 16'b0110011010101010;
     defparam r_ctr_4.INIT1 = 16'b0110011010101010;
     defparam r_ctr_4.INJECT1_0 = "NO";
     defparam r_ctr_4.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(687[22:27])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(687[22:27])
     defparam ae_set_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam ae_set_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam ae_set_cmp_ci_a.INJECT1_0 = "NO";
     defparam ae_set_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_0 (.A0(fcnt_en_inv_inv), .B0(fcount_0), .C0(VCC_net), 
           .D0(VCC_net), .A1(cnt_con_inv), .B1(fcount_1), .C1(VCC_net), 
-          .D1(VCC_net), .CIN(cmp_ci_2), .COUT(co0_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(694[19:24])
+          .D1(VCC_net), .CIN(cmp_ci_2), .COUT(co0_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(694[19:24])
     defparam ae_set_cmp_0.INIT0 = 16'b1001100110101010;
     defparam ae_set_cmp_0.INIT1 = 16'b1001100110101010;
     defparam ae_set_cmp_0.INJECT1_0 = "NO";
     defparam ae_set_cmp_0.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(VCC_net), .B1(fcount_3), .C1(VCC_net), .D1(VCC_net), .CIN(co0_5), 
-          .COUT(co1_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(702[19:24])
+          .COUT(co1_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(702[19:24])
     defparam ae_set_cmp_1.INIT0 = 16'b1001100110101010;
     defparam ae_set_cmp_1.INIT1 = 16'b1001100110101010;
     defparam ae_set_cmp_1.INJECT1_0 = "NO";
     defparam ae_set_cmp_1.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_2 (.A0(GND_net), .B0(fcount_4), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_5), .C1(VCC_net), .D1(VCC_net), .CIN(co1_5), 
-          .COUT(co2_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(709[19:24])
+          .COUT(co2_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(709[19:24])
     defparam ae_set_cmp_2.INIT0 = 16'b1001100110101010;
     defparam ae_set_cmp_2.INIT1 = 16'b1001100110101010;
     defparam ae_set_cmp_2.INJECT1_0 = "NO";
     defparam ae_set_cmp_2.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_3 (.A0(GND_net), .B0(fcount_6), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_7), .C1(VCC_net), .D1(VCC_net), .CIN(co2_5), 
-          .COUT(co3_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(716[19:24])
+          .COUT(co3_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(716[19:24])
     defparam ae_set_cmp_3.INIT0 = 16'b1001100110101010;
     defparam ae_set_cmp_3.INIT1 = 16'b1001100110101010;
     defparam ae_set_cmp_3.INJECT1_0 = "NO";
     defparam ae_set_cmp_3.INJECT1_1 = "NO";
     CCU2C ae_set_cmp_4 (.A0(GND_net), .B0(fcount_8), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_9), .C1(VCC_net), .D1(VCC_net), .CIN(co3_5), 
-          .COUT(ae_set_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(723[19:24])
+          .COUT(ae_set_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(723[19:24])
     defparam ae_set_cmp_4.INIT0 = 16'b1001100110101010;
     defparam ae_set_cmp_4.INIT1 = 16'b1001100110101010;
     defparam ae_set_cmp_4.INJECT1_0 = "NO";
     defparam ae_set_cmp_4.INJECT1_1 = "NO";
     CCU2C a2 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(ae_set_d_c), 
-          .S0(ae_set_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(731[9:14])
+          .S0(ae_set_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(731[9:14])
     defparam a2.INIT0 = 16'b0110011010101010;
     defparam a2.INIT1 = 16'b0110011010101010;
     defparam a2.INJECT1_0 = "NO";
     defparam a2.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(739[22:27])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_3)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(739[22:27])
     defparam ae_clr_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam ae_clr_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam ae_clr_cmp_ci_a.INJECT1_0 = "NO";
     defparam ae_clr_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_0 (.A0(fcnt_en_inv_inv), .B0(fcount_0), .C0(VCC_net), 
           .D0(VCC_net), .A1(cnt_con), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), 
-          .CIN(cmp_ci_3), .COUT(co0_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(746[19:24])
+          .CIN(cmp_ci_3), .COUT(co0_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(746[19:24])
     defparam ae_clr_cmp_0.INIT0 = 16'b1001100110101010;
     defparam ae_clr_cmp_0.INIT1 = 16'b1001100110101010;
     defparam ae_clr_cmp_0.INJECT1_0 = "NO";
     defparam ae_clr_cmp_0.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_1 (.A0(cnt_con_inv), .B0(fcount_2), .C0(VCC_net), 
           .D0(VCC_net), .A1(VCC_net), .B1(fcount_3), .C1(VCC_net), .D1(VCC_net), 
-          .CIN(co0_6), .COUT(co1_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(754[19:24])
+          .CIN(co0_6), .COUT(co1_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(754[19:24])
     defparam ae_clr_cmp_1.INIT0 = 16'b1001100110101010;
     defparam ae_clr_cmp_1.INIT1 = 16'b1001100110101010;
     defparam ae_clr_cmp_1.INJECT1_0 = "NO";
     defparam ae_clr_cmp_1.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_2 (.A0(GND_net), .B0(fcount_4), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_5), .C1(VCC_net), .D1(VCC_net), .CIN(co1_6), 
-          .COUT(co2_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(761[19:24])
+          .COUT(co2_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(761[19:24])
     defparam ae_clr_cmp_2.INIT0 = 16'b1001100110101010;
     defparam ae_clr_cmp_2.INIT1 = 16'b1001100110101010;
     defparam ae_clr_cmp_2.INJECT1_0 = "NO";
     defparam ae_clr_cmp_2.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_3 (.A0(GND_net), .B0(fcount_6), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_7), .C1(VCC_net), .D1(VCC_net), .CIN(co2_6), 
-          .COUT(co3_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(768[19:24])
+          .COUT(co3_6)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(768[19:24])
     defparam ae_clr_cmp_3.INIT0 = 16'b1001100110101010;
     defparam ae_clr_cmp_3.INIT1 = 16'b1001100110101010;
     defparam ae_clr_cmp_3.INJECT1_0 = "NO";
     defparam ae_clr_cmp_3.INJECT1_1 = "NO";
     CCU2C ae_clr_cmp_4 (.A0(GND_net), .B0(fcount_8), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_9), .C1(VCC_net), .D1(VCC_net), .CIN(co3_6), 
-          .COUT(ae_clr_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(775[19:24])
+          .COUT(ae_clr_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(775[19:24])
     defparam ae_clr_cmp_4.INIT0 = 16'b1001100110101010;
     defparam ae_clr_cmp_4.INIT1 = 16'b1001100110101010;
     defparam ae_clr_cmp_4.INJECT1_0 = "NO";
     defparam ae_clr_cmp_4.INJECT1_1 = "NO";
     CCU2C a3 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(ae_clr_d_c), 
-          .S0(ae_clr_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(783[9:14])
+          .S0(ae_clr_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(783[9:14])
     defparam a3.INIT0 = 16'b0110011010101010;
     defparam a3.INIT1 = 16'b0110011010101010;
     defparam a3.INJECT1_0 = "NO";
     defparam a3.INJECT1_1 = "NO";
     CCU2C af_set_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_4)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(791[22:27])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_4)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(791[22:27])
     defparam af_set_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam af_set_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam af_set_cmp_ci_a.INJECT1_0 = "NO";
     defparam af_set_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C af_set_cmp_0 (.A0(fcount_0), .B0(fcnt_en_inv_inv), .C0(VCC_net), 
           .D0(VCC_net), .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), 
-          .CIN(cmp_ci_4), .COUT(co0_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(798[19:24])
+          .CIN(cmp_ci_4), .COUT(co0_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(798[19:24])
     defparam af_set_cmp_0.INIT0 = 16'b1001100110101010;
     defparam af_set_cmp_0.INIT1 = 16'b1001100110101010;
     defparam af_set_cmp_0.INJECT1_0 = "NO";
     defparam af_set_cmp_0.INJECT1_1 = "NO";
     CCU2C af_set_cmp_1 (.A0(fcount_2), .B0(cnt_con_inv), .C0(VCC_net), 
           .D0(VCC_net), .A1(fcount_3), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), 
-          .CIN(co0_7), .COUT(co1_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(806[19:24])
+          .CIN(co0_7), .COUT(co1_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(806[19:24])
     defparam af_set_cmp_1.INIT0 = 16'b1001100110101010;
     defparam af_set_cmp_1.INIT1 = 16'b1001100110101010;
     defparam af_set_cmp_1.INJECT1_0 = "NO";
     defparam af_set_cmp_1.INJECT1_1 = "NO";
     CCU2C af_set_cmp_2 (.A0(fcount_4), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_5), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .CIN(co1_7), 
-          .COUT(co2_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(813[19:24])
+          .COUT(co2_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(813[19:24])
     defparam af_set_cmp_2.INIT0 = 16'b1001100110101010;
     defparam af_set_cmp_2.INIT1 = 16'b1001100110101010;
     defparam af_set_cmp_2.INJECT1_0 = "NO";
     defparam af_set_cmp_2.INJECT1_1 = "NO";
     CCU2C af_set_cmp_3 (.A0(fcount_6), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_7), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .CIN(co2_7), 
-          .COUT(co3_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(820[19:24])
+          .COUT(co3_7)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(820[19:24])
     defparam af_set_cmp_3.INIT0 = 16'b1001100110101010;
     defparam af_set_cmp_3.INIT1 = 16'b1001100110101010;
     defparam af_set_cmp_3.INJECT1_0 = "NO";
     defparam af_set_cmp_3.INJECT1_1 = "NO";
     CCU2C af_set_cmp_4 (.A0(fcount_8), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_9), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co3_7), 
-          .COUT(af_set_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(827[19:24])
+          .COUT(af_set_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(827[19:24])
     defparam af_set_cmp_4.INIT0 = 16'b1001100110101010;
     defparam af_set_cmp_4.INIT1 = 16'b1001100110101010;
     defparam af_set_cmp_4.INJECT1_0 = "NO";
     defparam af_set_cmp_4.INJECT1_1 = "NO";
     CCU2C a4 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(af_set_d_c), 
-          .S0(af_set_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(835[9:14])
+          .S0(af_set_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(835[9:14])
     defparam a4.INIT0 = 16'b0110011010101010;
     defparam a4.INIT1 = 16'b0110011010101010;
     defparam a4.INJECT1_0 = "NO";
     defparam a4.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(843[22:27])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_5)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(843[22:27])
     defparam af_clr_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam af_clr_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam af_clr_cmp_ci_a.INJECT1_0 = "NO";
     defparam af_clr_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_0 (.A0(fcount_0), .B0(fcnt_en_inv_inv), .C0(VCC_net), 
           .D0(VCC_net), .A1(fcount_1), .B1(cnt_con_inv), .C1(VCC_net), 
-          .D1(VCC_net), .CIN(cmp_ci_5), .COUT(co0_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(850[19:24])
+          .D1(VCC_net), .CIN(cmp_ci_5), .COUT(co0_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(850[19:24])
     defparam af_clr_cmp_0.INIT0 = 16'b1001100110101010;
     defparam af_clr_cmp_0.INIT1 = 16'b1001100110101010;
     defparam af_clr_cmp_0.INJECT1_0 = "NO";
     defparam af_clr_cmp_0.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_1 (.A0(fcount_2), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_3), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_8), 
-          .COUT(co1_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(858[19:24])
+          .COUT(co1_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(858[19:24])
     defparam af_clr_cmp_1.INIT0 = 16'b1001100110101010;
     defparam af_clr_cmp_1.INIT1 = 16'b1001100110101010;
     defparam af_clr_cmp_1.INJECT1_0 = "NO";
     defparam af_clr_cmp_1.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_2 (.A0(fcount_4), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_5), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .CIN(co1_8), 
-          .COUT(co2_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(865[19:24])
+          .COUT(co2_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(865[19:24])
     defparam af_clr_cmp_2.INIT0 = 16'b1001100110101010;
     defparam af_clr_cmp_2.INIT1 = 16'b1001100110101010;
     defparam af_clr_cmp_2.INJECT1_0 = "NO";
     defparam af_clr_cmp_2.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_3 (.A0(fcount_6), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_7), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .CIN(co2_8), 
-          .COUT(co3_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(872[19:24])
+          .COUT(co3_8)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(872[19:24])
     defparam af_clr_cmp_3.INIT0 = 16'b1001100110101010;
     defparam af_clr_cmp_3.INIT1 = 16'b1001100110101010;
     defparam af_clr_cmp_3.INJECT1_0 = "NO";
     defparam af_clr_cmp_3.INJECT1_1 = "NO";
     CCU2C af_clr_cmp_4 (.A0(fcount_8), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_9), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co3_8), 
-          .COUT(af_clr_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(879[19:24])
+          .COUT(af_clr_d_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(879[19:24])
     defparam af_clr_cmp_4.INIT0 = 16'b1001100110101010;
     defparam af_clr_cmp_4.INIT1 = 16'b1001100110101010;
     defparam af_clr_cmp_4.INJECT1_0 = "NO";
     defparam af_clr_cmp_4.INJECT1_1 = "NO";
     CCU2C a5 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(af_clr_d_c), 
-          .S0(af_clr_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(893[9:14])
+          .S0(af_clr_d)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(893[9:14])
     defparam a5.INIT0 = 16'b0110011010101010;
     defparam a5.INIT1 = 16'b0110011010101010;
     defparam a5.INJECT1_0 = "NO";
     defparam a5.INJECT1_1 = "NO";
-    AND2 AND2_t3 (.A(read_large_fifo), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(225[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifolg.vhd(234[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    AND2 AND2_t3 (.A(read_large_fifo), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(225[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(234[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     ROM16X1A LUT4_3 (.AD0(fifo_empty), .AD1(wren_i), .AD2(cmp_le_1), .AD3(GND_net), 
-            .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+            .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(large_fifo_full), .AD1(rden_i), .AD2(cmp_ge_d1), 
-            .AD3(GND_net), .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+            .AD3(GND_net), .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     defparam LUT4_2.initval = 16'b0011001000110010;
-    INV INV_3 (.A(fcnt_en), .Z(fcnt_en_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
-    INV INV_2 (.A(cnt_con), .Z(cnt_con_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
-    INV INV_0 (.A(fcnt_en_inv), .Z(fcnt_en_inv_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    INV INV_3 (.A(fcnt_en), .Z(fcnt_en_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    INV INV_2 (.A(cnt_con), .Z(cnt_con_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
+    INV INV_0 (.A(fcnt_en_inv), .Z(fcnt_en_inv_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     ROM16X1A LUT4_1 (.AD0(GND_net), .AD1(ae_clr_d), .AD2(ae_set_d), .AD3(fifo_almostempty), 
-            .DO0(ae_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+            .DO0(ae_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     defparam LUT4_1.initval = 16'b0100010001010000;
     ROM16X1A LUT4_0 (.AD0(GND_net), .AD1(af_clr_d), .AD2(af_set_d), .AD3(large_fifo_almost_full), 
-            .DO0(af_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+            .DO0(af_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     defparam LUT4_0.initval = 16'b0100010001010000;
     PDPW16KD pdp_ram_0_0_0 (.DI0(large_fifo_din[0]), .DI1(large_fifo_din[1]), 
             .DI2(large_fifo_din[2]), .DI3(large_fifo_din[3]), .DI4(large_fifo_din[4]), 
@@ -8657,7 +8657,7 @@ module Fifolg (clk_c, n11947, fifo_empty, fifo_almostempty, large_fifo_almost_fu
             .DO19(data_out_large_fifo[1]), .DO20(data_out_large_fifo[2]), 
             .DO21(data_out_large_fifo[3]), .DO22(data_out_large_fifo[4]), 
             .DO23(data_out_large_fifo[5]), .DO24(data_out_large_fifo[6]), 
-            .DO25(data_out_large_fifo[7])) /* synthesis syn_black_box=true, MEM_LPC_FILE="Fifolg.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(378[20:38])
+            .DO25(data_out_large_fifo[7])) /* synthesis syn_black_box=true, MEM_LPC_FILE="Fifolg.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=20, LSE_RCOL=38, LSE_LLINE=378, LSE_RLINE=378 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(378[20:38])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -8777,7 +8777,7 @@ module FIFOsm (clk_c, \adc_fifo_empty[9] , GND_net, VCC_net, Write_En_c,
     input rst_c;
     output [23:0]adc_fifo_9_dout;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
     
     wire fcount_1, fcnt_en, ifcount_1, fcount_2, ifcount_2, empty_d, 
         Full, full_d, wcount_0, wren_i, iwcount_0, wcount_1, iwcount_1, 
@@ -8786,137 +8786,137 @@ module FIFOsm (clk_c, \adc_fifo_empty[9] , GND_net, VCC_net, Write_En_c,
         cmp_le_1, cmp_ci_1, co0_2, wren_i_inv, cmp_ge_d1_c, cmp_ge_d1, 
         w_ctr_ci, r_ctr_ci, invout_2, invout_1, rden_i_inv;
     
-    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
+    FD1P3AX FF_11 (.D(ifcount_1), .SP(fcnt_en), .CK(clk_c), .Q(fcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(232[12:19])
     defparam FF_11.GSR = "ENABLED";
-    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
+    FD1P3AX FF_10 (.D(ifcount_2), .SP(fcnt_en), .CK(clk_c), .Q(fcount_2)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(236[12:19])
     defparam FF_10.GSR = "ENABLED";
-    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[9] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
+    FD1S3AY FF_9 (.D(empty_d), .CK(clk_c), .Q(\adc_fifo_empty[9] )) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(240[11:18])
     defparam FF_9.GSR = "ENABLED";
-    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
+    FD1S3AX FF_8 (.D(full_d), .CK(clk_c), .Q(Full)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(243[11:18])
     defparam FF_8.GSR = "ENABLED";
-    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
+    FD1P3AX FF_7 (.D(iwcount_0), .SP(wren_i), .CK(clk_c), .Q(wcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(246[11:18])
     defparam FF_7.GSR = "ENABLED";
-    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
+    FD1P3AX FF_6 (.D(iwcount_1), .SP(wren_i), .CK(clk_c), .Q(wcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(250[11:18])
     defparam FF_6.GSR = "ENABLED";
-    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
+    FD1P3AX FF_4 (.D(ircount_0), .SP(rden_i), .CK(clk_c), .Q(rcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(258[11:18])
     defparam FF_4.GSR = "ENABLED";
-    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
+    FD1P3AX FF_3 (.D(ircount_1), .SP(rden_i), .CK(clk_c), .Q(rcount_1)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(262[11:18])
     defparam FF_3.GSR = "ENABLED";
-    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
+    FD1P3AX FF_12 (.D(ifcount_0), .SP(fcnt_en), .CK(clk_c), .Q(fcount_0)) /* synthesis syn_black_box=true, GSR="ENABLED", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(228[12:19])
     defparam FF_12.GSR = "ENABLED";
     CCU2C bdcnt_bctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
+          .A1(cnt_con), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .COUT(bdcnt_bctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(276[21:26])
     defparam bdcnt_bctr_cia.INIT0 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INIT1 = 16'b0110011010101010;
     defparam bdcnt_bctr_cia.INJECT1_0 = "NO";
     defparam bdcnt_bctr_cia.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_0 (.A0(fcount_0), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(bdcnt_bctr_ci), 
-          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
+          .COUT(co0), .S0(ifcount_0), .S1(ifcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(283[19:24])
     defparam bdcnt_bctr_0.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_0.INJECT1_0 = "NO";
     defparam bdcnt_bctr_0.INJECT1_1 = "NO";
     CCU2C bdcnt_bctr_1 (.A0(fcount_2), .B0(cnt_con), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(cnt_con), .C1(VCC_net), .D1(VCC_net), .CIN(co0), 
-          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
+          .S0(ifcount_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(290[19:24])
     defparam bdcnt_bctr_1.INIT0 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INIT1 = 16'b1001100110101010;
     defparam bdcnt_bctr_1.INJECT1_0 = "NO";
     defparam bdcnt_bctr_1.INJECT1_1 = "NO";
     CCU2C e_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(297[17:22])
     defparam e_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam e_cmp_ci_a.INJECT1_0 = "NO";
     defparam e_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C e_cmp_0 (.A0(rden_i), .B0(fcount_0), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(fcount_1), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci), 
-          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
+          .COUT(co0_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(304[14:19])
     defparam e_cmp_0.INIT0 = 16'b1001100110101010;
     defparam e_cmp_0.INIT1 = 16'b1001100110101010;
     defparam e_cmp_0.INJECT1_0 = "NO";
     defparam e_cmp_0.INJECT1_1 = "NO";
     CCU2C e_cmp_1 (.A0(GND_net), .B0(fcount_2), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_1), 
-          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
+          .COUT(cmp_le_1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(311[14:19])
     defparam e_cmp_1.INIT0 = 16'b1001100110101010;
     defparam e_cmp_1.INIT1 = 16'b1001100110101010;
     defparam e_cmp_1.INJECT1_0 = "NO";
     defparam e_cmp_1.INJECT1_1 = "NO";
     CCU2C a0 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_le_1_c), 
-          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
+          .S0(cmp_le_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(319[9:14])
     defparam a0.INIT0 = 16'b0110011010101010;
     defparam a0.INIT1 = 16'b0110011010101010;
     defparam a0.INJECT1_0 = "NO";
     defparam a0.INJECT1_1 = "NO";
     CCU2C g_cmp_ci_a (.A0(VCC_net), .B0(VCC_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(cmp_ci_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(327[17:22])
     defparam g_cmp_ci_a.INIT0 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INIT1 = 16'b0110011010101010;
     defparam g_cmp_ci_a.INJECT1_0 = "NO";
     defparam g_cmp_ci_a.INJECT1_1 = "NO";
     CCU2C g_cmp_0 (.A0(fcount_0), .B0(wren_i), .C0(VCC_net), .D0(VCC_net), 
           .A1(fcount_1), .B1(wren_i), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ci_1), 
-          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
+          .COUT(co0_2)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(334[14:19])
     defparam g_cmp_0.INIT0 = 16'b1001100110101010;
     defparam g_cmp_0.INIT1 = 16'b1001100110101010;
     defparam g_cmp_0.INJECT1_0 = "NO";
     defparam g_cmp_0.INJECT1_1 = "NO";
     CCU2C g_cmp_1 (.A0(fcount_2), .B0(wren_i_inv), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(co0_2), 
-          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
+          .COUT(cmp_ge_d1_c)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(341[14:19])
     defparam g_cmp_1.INIT0 = 16'b1001100110101010;
     defparam g_cmp_1.INIT1 = 16'b1001100110101010;
     defparam g_cmp_1.INJECT1_0 = "NO";
     defparam g_cmp_1.INJECT1_1 = "NO";
     CCU2C a1 (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(cmp_ge_d1_c), 
-          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
+          .S0(cmp_ge_d1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(349[9:14])
     defparam a1.INIT0 = 16'b0110011010101010;
     defparam a1.INIT1 = 16'b0110011010101010;
     defparam a1.INJECT1_0 = "NO";
     defparam a1.INJECT1_1 = "NO";
     CCU2C w_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(w_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(357[16:21])
     defparam w_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam w_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam w_ctr_cia.INJECT1_0 = "NO";
     defparam w_ctr_cia.INJECT1_1 = "NO";
     CCU2C w_ctr_0 (.A0(wcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(wcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(w_ctr_ci), 
-          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
+          .S0(iwcount_0), .S1(iwcount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(364[14:19])
     defparam w_ctr_0.INIT0 = 16'b0110011010101010;
     defparam w_ctr_0.INIT1 = 16'b0110011010101010;
     defparam w_ctr_0.INJECT1_0 = "NO";
     defparam w_ctr_0.INJECT1_1 = "NO";
     CCU2C r_ctr_cia (.A0(GND_net), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
-          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
+          .A1(VCC_net), .B1(VCC_net), .C1(VCC_net), .D1(VCC_net), .COUT(r_ctr_ci)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(380[16:21])
     defparam r_ctr_cia.INIT0 = 16'b0110011010101010;
     defparam r_ctr_cia.INIT1 = 16'b0110011010101010;
     defparam r_ctr_cia.INJECT1_0 = "NO";
     defparam r_ctr_cia.INJECT1_1 = "NO";
     CCU2C r_ctr_0 (.A0(rcount_0), .B0(GND_net), .C0(VCC_net), .D0(VCC_net), 
           .A1(rcount_1), .B1(GND_net), .C1(VCC_net), .D1(VCC_net), .CIN(r_ctr_ci), 
-          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
+          .S0(ircount_0), .S1(ircount_1)) /* synthesis syn_black_box=true, syn_unconnected_inputs="CIN", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(387[14:19])
     defparam r_ctr_0.INIT0 = 16'b0110011010101010;
     defparam r_ctr_0.INIT1 = 16'b0110011010101010;
     defparam r_ctr_0.INJECT1_0 = "NO";
     defparam r_ctr_0.INJECT1_1 = "NO";
-    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
-    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
-    AND2 AND2_t3 (.A(\adc_fifo_rd_en[9] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
-    INV INV_7 (.A(\adc_fifo_empty[9] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
-    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
-    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
-    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
-    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
+    AND2 AND2_t4 (.A(Write_En_c), .B(invout_2), .Z(wren_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(129[14:18])
+    INV INV_8 (.A(Full), .Z(invout_2)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
+    AND2 AND2_t3 (.A(\adc_fifo_rd_en[9] ), .B(invout_1), .Z(rden_i)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(135[14:18])
+    INV INV_7 (.A(\adc_fifo_empty[9] ), .Z(invout_1)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
+    AND2 AND2_t2 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(141[14:18])
+    XOR2 XOR2_t1 (.A(wren_i), .B(rden_i), .Z(fcnt_en)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(144[14:18])
+    INV INV_6 (.A(rden_i), .Z(rden_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
+    INV INV_5 (.A(wren_i), .Z(wren_i_inv)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
     ROM16X1A LUT4_3 (.AD0(\adc_fifo_empty[9] ), .AD1(wren_i), .AD2(cmp_le_1), 
-            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
+            .AD3(GND_net), .DO0(empty_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
     defparam LUT4_3.initval = 16'b0011001000110010;
     ROM16X1A LUT4_2 (.AD0(Full), .AD1(rden_i), .AD2(cmp_ge_d1), .AD3(GND_net), 
-            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
+            .DO0(full_d)) /* synthesis syn_black_box=true, syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
     defparam LUT4_2.initval = 16'b0011001000110010;
     PDPW16KD pdp_ram_0_0_0 (.DI0(GND_net), .DI1(\Data_x4[0] ), .DI2(\Data_x4[1] ), 
             .DI3(\Data_x4[2] ), .DI4(\Data_x4[3] ), .DI5(\Data_x4[4] ), 
@@ -8946,7 +8946,7 @@ module FIFOsm (clk_c, \adc_fifo_empty[9] , GND_net, VCC_net, Write_En_c,
             .DO25(adc_fifo_9_dout[7]), .DO26(adc_fifo_9_dout[8]), .DO27(adc_fifo_9_dout[9]), 
             .DO28(adc_fifo_9_dout[10]), .DO29(adc_fifo_9_dout[11]), .DO30(adc_fifo_9_dout[12]), 
             .DO31(adc_fifo_9_dout[13]), .DO32(adc_fifo_9_dout[14]), .DO33(adc_fifo_9_dout[15]), 
-            .DO34(adc_fifo_9_dout[16]), .DO35(adc_fifo_9_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(281[17:35])
+            .DO34(adc_fifo_9_dout[16]), .DO35(adc_fifo_9_dout[17])) /* synthesis syn_black_box=true, MEM_LPC_FILE="FIFOsm.lpc", MEM_INIT_FILE="", syn_instantiated=1, LSE_LINE_FILE_ID=46, LSE_LCOL=17, LSE_RCOL=35, LSE_LLINE=281, LSE_RLINE=281 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(281[17:35])
     defparam pdp_ram_0_0_0.DATA_WIDTH_W = 36;
     defparam pdp_ram_0_0_0.DATA_WIDTH_R = 36;
     defparam pdp_ram_0_0_0.GSR = "ENABLED";
@@ -9114,8 +9114,8 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     input \crc_reg[1] ;
     input \crc_reg[17] ;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
-    wire [7:0]idx;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(62[12:15])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire [7:0]idx;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(62[12:15])
     
     wire n10812, n10734, n10187, n10738, n10109;
     wire [7:0]n2181;
@@ -9143,7 +9143,7 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
         n11960, n9010, n11959, n11941, n9009, n11994, n14, n11993, 
         n11997, n12001, n11996, n12000, n11999;
     
-    LUT4 i1_4_lut (.A(idx[3]), .B(n2187), .C(idx[1]), .D(idx[4]), .Z(n10812)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+    LUT4 i1_4_lut (.A(idx[3]), .B(n2187), .C(idx[1]), .D(idx[4]), .Z(n10812)) /* synthesis lut_function=(!(A+!(B (C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i1_4_lut.init = 16'h4000;
     LUT4 i1_4_lut_adj_182 (.A(n10734), .B(n10187), .C(n10738), .D(idx[3]), 
          .Z(n10109)) /* synthesis lut_function=(A (B+!((D)+!C))) */ ;
@@ -9161,7 +9161,7 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     LUT4 i1_4_lut_adj_183 (.A(n2181[1]), .B(idx[1]), .C(idx[3]), .D(rst_c), 
          .Z(n10187)) /* synthesis lut_function=(!((B+((D)+!C))+!A)) */ ;
     defparam i1_4_lut_adj_183.init = 16'h0020;
-    LUT4 i1_2_lut_adj_184 (.A(idx[1]), .B(n2186), .Z(n10738)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+    LUT4 i1_2_lut_adj_184 (.A(idx[1]), .B(n2186), .Z(n10738)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam i1_2_lut_adj_184.init = 16'h8888;
     LUT4 i1_2_lut_3_lut (.A(n2181[1]), .B(n2187), .C(n2186), .Z(n10562)) /* synthesis lut_function=(!(A (C)+!A ((C)+!B))) */ ;
     defparam i1_2_lut_3_lut.init = 16'h0e0e;
@@ -9175,12 +9175,12 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     defparam i7267_2_lut_4_lut.init = 16'h0008;
     CCU2C idx_703_add_4_3 (.A0(idx[1]), .B0(GND_net), .C0(GND_net), .D0(VCC_net), 
           .A1(idx[2]), .B1(GND_net), .C1(GND_net), .D1(VCC_net), .CIN(n9007), 
-          .COUT(n9008), .S0(n37[1]), .S1(n37[2]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+          .COUT(n9008), .S0(n37[1]), .S1(n37[2]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703_add_4_3.INIT0 = 16'haaa0;
     defparam idx_703_add_4_3.INIT1 = 16'haaa0;
     defparam idx_703_add_4_3.INJECT1_0 = "NO";
     defparam idx_703_add_4_3.INJECT1_1 = "NO";
-    LUT4 i1_2_lut_adj_185 (.A(idx[7]), .B(idx[6]), .Z(n10756)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[21] 156[28])
+    LUT4 i1_2_lut_adj_185 (.A(idx[7]), .B(idx[6]), .Z(n10756)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[21] 156[28])
     defparam i1_2_lut_adj_185.init = 16'heeee;
     LUT4 i1_2_lut_rep_161_3_lut_4_lut (.A(n2296), .B(n11984), .C(n399), 
          .D(n11968), .Z(n11907)) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;
@@ -9191,99 +9191,99 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
          .Z(n9870)) /* synthesis lut_function=(!(A+(B+((D)+!C)))) */ ;
     defparam i1_2_lut_3_lut_4_lut.init = 16'h0010;
     LUT4 i1403_3_lut_rep_175 (.A(n5711), .B(\reg_fifo_data[7] ), .C(n2185), 
-         .Z(n11921)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n11921)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1403_3_lut_rep_175.init = 16'hcaca;
     LUT4 i2871_2_lut_rep_171_4_lut (.A(n5711), .B(\reg_fifo_data[7] ), .C(n2185), 
-         .D(n11945), .Z(n11917)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n11945), .Z(n11917)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i2871_2_lut_rep_171_4_lut.init = 16'h00ca;
     PFUMX i7470 (.BLUT(n11838), .ALUT(n11837), .C0(crc_cnt[0]), .Z(n11839));
     LUT4 idx_4__I_0_Mux_0_i31_4_lut (.A(n15_c), .B(n11963), .C(n2187), 
-         .D(idx[3]), .Z(t_data_7__N_296[0])) /* synthesis lut_function=(A (B (C)+!B (C+!(D)))+!A !(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .D(idx[3]), .Z(t_data_7__N_296[0])) /* synthesis lut_function=(A (B (C)+!B (C+!(D)))+!A !(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam idx_4__I_0_Mux_0_i31_4_lut.init = 16'ha0a3;
     LUT4 n11632_bdd_3_lut (.A(n11632), .B(\reg_fifo_data[1] ), .C(n2185), 
          .Z(\udp_tdata[1] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
     defparam n11632_bdd_3_lut.init = 16'hcaca;
     LUT4 i2798_4_lut (.A(idx[0]), .B(n5729), .C(n11964), .D(idx[4]), 
-         .Z(t_data_7__N_296[5])) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .Z(t_data_7__N_296[5])) /* synthesis lut_function=(A (B (C+!(D))+!B (C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i2798_4_lut.init = 16'ha088;
-    LUT4 i198_2_lut_rep_222 (.A(reg_fifo_empty), .B(n2185), .Z(n11968)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i198_2_lut_rep_222 (.A(reg_fifo_empty), .B(n2185), .Z(n11968)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i198_2_lut_rep_222.init = 16'h8888;
     LUT4 i1_2_lut_rep_183_3_lut_4_lut (.A(reg_fifo_empty), .B(n2185), .C(n11984), 
-         .D(n2296), .Z(n11929)) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n2296), .Z(n11929)) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1_2_lut_rep_183_3_lut_4_lut.init = 16'h0800;
-    FD1S3JX state_FSM_i1 (.D(n5466), .CK(clk_c), .PD(rst_c), .Q(n2181[0]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3JX state_FSM_i1 (.D(n5466), .CK(clk_c), .PD(rst_c), .Q(n2181[0]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i1.GSR = "DISABLED";
     CCU2C idx_703_add_4_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
           .A1(idx[0]), .B1(GND_net), .C1(GND_net), .D1(VCC_net), .COUT(n9007), 
-          .S1(n37[0]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+          .S1(n37[0]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703_add_4_1.INIT0 = 16'h0000;
     defparam idx_703_add_4_1.INIT1 = 16'h555f;
     defparam idx_703_add_4_1.INJECT1_0 = "NO";
     defparam idx_703_add_4_1.INJECT1_1 = "NO";
     LUT4 idx_3__I_0_Mux_6_i15_3_lut_rep_203_4_lut_3_lut (.A(idx[1]), .B(idx[2]), 
-         .C(idx[3]), .Z(n11949)) /* synthesis lut_function=(A (B+(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .C(idx[3]), .Z(n11949)) /* synthesis lut_function=(A (B+(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam idx_3__I_0_Mux_6_i15_3_lut_rep_203_4_lut_3_lut.init = 16'he8e8;
     LUT4 i1394_4_lut (.A(n11895), .B(t_data_7__N_288[5]), .C(n2186), .D(n11962), 
-         .Z(n5703)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5703)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1394_4_lut.init = 16'hcac0;
     LUT4 i1_4_lut_adj_186 (.A(n6), .B(n9742), .C(fifo_rd_en_N_404), .D(n10760), 
          .Z(n9744)) /* synthesis lut_function=(A (B)+!A (B (C+(D)))) */ ;
     defparam i1_4_lut_adj_186.init = 16'hccc8;
     LUT4 next_state_2__I_15_2_lut_3_lut_4_lut_4_lut (.A(reg_fifo_empty), .B(n2296), 
-         .C(n2297), .D(n11954), .Z(next_state_2__N_398)) /* synthesis lut_function=(!(A+!(B+(C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(168[20:36])
+         .C(n2297), .D(n11954), .Z(next_state_2__N_398)) /* synthesis lut_function=(!(A+!(B+(C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(168[20:36])
     defparam next_state_2__I_15_2_lut_3_lut_4_lut_4_lut.init = 16'h5444;
-    LUT4 i1_3_lut (.A(idx[0]), .B(idx[2]), .C(idx[1]), .Z(t_data_7__N_288[5])) /* synthesis lut_function=(!((B (C)+!B !(C))+!A)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(144[39:42])
+    LUT4 i1_3_lut (.A(idx[0]), .B(idx[2]), .C(idx[1]), .Z(t_data_7__N_288[5])) /* synthesis lut_function=(!((B (C)+!B !(C))+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(144[39:42])
     defparam i1_3_lut.init = 16'h2828;
     LUT4 i1_1_lut (.A(rst_c), .Z(n1)) /* synthesis lut_function=(!(A)) */ ;
     defparam i1_1_lut.init = 16'h5555;
     LUT4 i1402_4_lut (.A(n11800), .B(t_data_7__N_288[6]), .C(n2186), .D(n11962), 
-         .Z(n5711)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5711)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1402_4_lut.init = 16'hcac0;
     PFUMX i7452 (.BLUT(n11799), .ALUT(n11798), .C0(n2187), .Z(n11800));
-    LUT4 i2989_2_lut_3_lut (.A(idx[1]), .B(idx[0]), .C(idx[2]), .Z(n7)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+    LUT4 i2989_2_lut_3_lut (.A(idx[1]), .B(idx[0]), .C(idx[2]), .Z(n7)) /* synthesis lut_function=(!(A+(B+(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i2989_2_lut_3_lut.init = 16'h0101;
-    LUT4 i744_2_lut_3_lut (.A(idx[1]), .B(idx[0]), .C(idx[2]), .Z(n6)) /* synthesis lut_function=(A (C)+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+    LUT4 i744_2_lut_3_lut (.A(idx[1]), .B(idx[0]), .C(idx[2]), .Z(n6)) /* synthesis lut_function=(A (C)+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i744_2_lut_3_lut.init = 16'he0e0;
     LUT4 idx_3__I_0_Mux_3_i15_4_lut_4_lut_4_lut_4_lut (.A(idx[1]), .B(idx[0]), 
-         .C(idx[3]), .D(idx[2]), .Z(t_data_7__N_304[3])) /* synthesis lut_function=(!(A (D)+!A (B (C (D))+!B !((D)+!C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .C(idx[3]), .D(idx[2]), .Z(t_data_7__N_304[3])) /* synthesis lut_function=(!(A (D)+!A (B (C (D))+!B !((D)+!C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam idx_3__I_0_Mux_3_i15_4_lut_4_lut_4_lut_4_lut.init = 16'h15ef;
-    LUT4 n1_bdd_4_lut_3_lut (.A(idx[2]), .B(idx[4]), .C(idx[1]), .Z(n11783)) /* synthesis lut_function=(!(A+(B (C)+!B !(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+    LUT4 n1_bdd_4_lut_3_lut (.A(idx[2]), .B(idx[4]), .C(idx[1]), .Z(n11783)) /* synthesis lut_function=(!(A+(B (C)+!B !(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam n1_bdd_4_lut_3_lut.init = 16'h1414;
     LUT4 idx_3__I_0_Mux_5_i15_4_lut_4_lut_4_lut (.A(idx[2]), .B(idx[3]), 
-         .C(idx[0]), .D(idx[1]), .Z(t_data_7__N_304[5])) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A !((C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .C(idx[0]), .D(idx[1]), .Z(t_data_7__N_304[5])) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A !((C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam idx_3__I_0_Mux_5_i15_4_lut_4_lut_4_lut.init = 16'h7173;
     LUT4 i1420_4_lut_3_lut_3_lut (.A(idx[2]), .B(idx[3]), .C(idx[1]), 
-         .Z(n5729)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+!(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .Z(n5729)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B+!(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam i1420_4_lut_3_lut_3_lut.init = 16'h1818;
     LUT4 t_data_7__N_304_1__bdd_2_lut_7409_3_lut_3_lut (.A(idx[2]), .B(idx[0]), 
-         .C(idx[1]), .Z(n11630)) /* synthesis lut_function=(!(A+!(B+(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .C(idx[1]), .Z(n11630)) /* synthesis lut_function=(!(A+!(B+(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam t_data_7__N_304_1__bdd_2_lut_7409_3_lut_3_lut.init = 16'h5454;
     FD1P3IX idx_703__i7 (.D(n37[7]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[7])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[7])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i7.GSR = "DISABLED";
-    LUT4 i1120_2_lut (.A(idx[2]), .B(idx[3]), .Z(n5429)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+    LUT4 i1120_2_lut (.A(idx[2]), .B(idx[3]), .Z(n5429)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i1120_2_lut.init = 16'h8888;
-    LUT4 i1_2_lut_3_lut_3_lut (.A(idx[2]), .B(idx[0]), .C(idx[1]), .Z(t_data_7__N_288[4])) /* synthesis lut_function=(!(A+(B (C)+!B !(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+    LUT4 i1_2_lut_3_lut_3_lut (.A(idx[2]), .B(idx[0]), .C(idx[1]), .Z(t_data_7__N_288[4])) /* synthesis lut_function=(!(A+(B (C)+!B !(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam i1_2_lut_3_lut_3_lut.init = 16'h1414;
-    LUT4 n2187_bdd_4_lut_3_lut (.A(idx[2]), .B(idx[3]), .C(idx[1]), .Z(n11799)) /* synthesis lut_function=(!(A (B+(C))+!A !((C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+    LUT4 n2187_bdd_4_lut_3_lut (.A(idx[2]), .B(idx[3]), .C(idx[1]), .Z(n11799)) /* synthesis lut_function=(!(A (B+(C))+!A !((C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam n2187_bdd_4_lut_3_lut.init = 16'h5353;
     FD1P3IX idx_703__i6 (.D(n37[6]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[6])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[6])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i6.GSR = "DISABLED";
     LUT4 t_data_7__N_304_2__bdd_2_lut_7398_3_lut_3_lut (.A(idx[2]), .B(idx[1]), 
-         .C(idx[0]), .Z(n11716)) /* synthesis lut_function=(!(A+!(B+!(C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .C(idx[0]), .Z(n11716)) /* synthesis lut_function=(!(A+!(B+!(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam t_data_7__N_304_2__bdd_2_lut_7398_3_lut_3_lut.init = 16'h4545;
     PFUMX i7437 (.BLUT(n11783), .ALUT(n11782), .C0(idx[3]), .Z(n11784));
-    LUT4 i7276_3_lut (.A(n2187), .B(idx[4]), .C(idx[3]), .Z(n10955)) /* synthesis lut_function=((B+!(C))+!A) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i7276_3_lut (.A(n2187), .B(idx[4]), .C(idx[3]), .Z(n10955)) /* synthesis lut_function=((B+!(C))+!A) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i7276_3_lut.init = 16'hdfdf;
     LUT4 i1_4_lut_adj_187 (.A(n2186), .B(n11931), .C(n2296), .D(n11962), 
          .Z(n10056)) /* synthesis lut_function=(!(A (B+(C))+!A (B+(C+!(D))))) */ ;
     defparam i1_4_lut_adj_187.init = 16'h0302;
     LUT4 i1400_4_lut (.A(n11897), .B(t_data_7__N_288[6]), .C(n2186), .D(n11962), 
-         .Z(n5709)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5709)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1400_4_lut.init = 16'hcac0;
     LUT4 i1_4_lut_adj_188 (.A(clk_c_enable_73), .B(n2181[0]), .C(n10193), 
-         .D(rst_c), .Z(n6371)) /* synthesis lut_function=(A (B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+         .D(rst_c), .Z(n6371)) /* synthesis lut_function=(A (B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam i1_4_lut_adj_188.init = 16'haaa8;
     LUT4 i1_4_lut_adj_189 (.A(n10732), .B(n10812), .C(n10109), .D(idx[2]), 
          .Z(n10193)) /* synthesis lut_function=(A (B (C+!(D))+!B (C))) */ ;
@@ -9294,63 +9294,63 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     LUT4 n11784_bdd_4_lut (.A(n11784), .B(idx[0]), .C(t_data_7__N_304[3]), 
          .D(n2187), .Z(n11895)) /* synthesis lut_function=(A (B (C+(D))+!B !((D)+!C))+!A !((D)+!C)) */ ;
     defparam n11784_bdd_4_lut.init = 16'h88f0;
-    LUT4 i1399_3_lut (.A(n5707), .B(\reg_fifo_data[5] ), .C(n2185), .Z(\udp_tdata[5] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i1399_3_lut (.A(n5707), .B(\reg_fifo_data[5] ), .C(n2185), .Z(\udp_tdata[5] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1399_3_lut.init = 16'hcaca;
     LUT4 i1398_4_lut (.A(n3187[5]), .B(t_data_7__N_288[5]), .C(n2186), 
-         .D(n11962), .Z(n5707)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n11962), .Z(n5707)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1398_4_lut.init = 16'hcac0;
-    LUT4 i1397_3_lut (.A(n5705), .B(\reg_fifo_data[4] ), .C(n2185), .Z(\udp_tdata[4] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i1397_3_lut (.A(n5705), .B(\reg_fifo_data[4] ), .C(n2185), .Z(\udp_tdata[4] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1397_3_lut.init = 16'hcaca;
     LUT4 i1179_4_lut (.A(n10562), .B(\reg_fifo_data[0] ), .C(n2185), .D(n3187[0]), 
-         .Z(\udp_tdata[0] )) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(\udp_tdata[0] )) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1179_4_lut.init = 16'hcac0;
     LUT4 n11718_bdd_3_lut (.A(n11718), .B(\reg_fifo_data[2] ), .C(n2185), 
          .Z(\udp_tdata[2] )) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
     defparam n11718_bdd_3_lut.init = 16'hcaca;
     LUT4 i1401_3_lut_rep_173 (.A(n5709), .B(\reg_fifo_data[6] ), .C(n2185), 
-         .Z(n11919)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n11919)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1401_3_lut_rep_173.init = 16'hcaca;
-    FD1S3IX state_FSM_i2 (.D(n5464), .CK(clk_c), .CD(rst_c), .Q(n2181[1]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3IX state_FSM_i2 (.D(n5464), .CK(clk_c), .CD(rst_c), .Q(n2181[1]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i2.GSR = "DISABLED";
-    FD1S3IX state_FSM_i3 (.D(n5462), .CK(clk_c), .CD(rst_c), .Q(n2187));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3IX state_FSM_i3 (.D(n5462), .CK(clk_c), .CD(rst_c), .Q(n2187));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i3.GSR = "DISABLED";
-    FD1S3IX state_FSM_i4 (.D(n5460), .CK(clk_c), .CD(rst_c), .Q(n2186));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3IX state_FSM_i4 (.D(n5460), .CK(clk_c), .CD(rst_c), .Q(n2186));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i4.GSR = "DISABLED";
-    FD1S3IX state_FSM_i5 (.D(n5458), .CK(clk_c), .CD(rst_c), .Q(n2185));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3IX state_FSM_i5 (.D(n5458), .CK(clk_c), .CD(rst_c), .Q(n2185));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i5.GSR = "DISABLED";
-    FD1S3IX state_FSM_i6 (.D(n11968), .CK(clk_c), .CD(rst_c), .Q(n2184));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    FD1S3IX state_FSM_i6 (.D(n11968), .CK(clk_c), .CD(rst_c), .Q(n2184));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam state_FSM_i6.GSR = "DISABLED";
     PFUMX i7394 (.BLUT(n11717), .ALUT(n11716), .C0(n2186), .Z(n11718));
     FD1P3IX idx_703__i5 (.D(n37[5]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[5])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[5])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i5.GSR = "DISABLED";
     FD1P3IX idx_703__i4 (.D(n37[4]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[4])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[4])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i4.GSR = "DISABLED";
     FD1P3IX idx_703__i3 (.D(n37[3]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[3])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[3])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i3.GSR = "DISABLED";
     FD1P3IX idx_703__i2 (.D(n37[2]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[2])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[2])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i2.GSR = "DISABLED";
     FD1P3IX idx_703__i1 (.D(n37[1]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[1])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[1])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i1.GSR = "DISABLED";
     FD1P3IX idx_703__i0 (.D(n37[0]), .SP(clk_c_enable_73), .CD(n6371), 
-            .CK(clk_c), .Q(idx[0])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+            .CK(clk_c), .Q(idx[0])) /* synthesis syn_use_carry_chain=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703__i0.GSR = "DISABLED";
     LUT4 i2872_2_lut_rep_166_4_lut (.A(n5709), .B(\reg_fifo_data[6] ), .C(n2185), 
-         .D(n11945), .Z(n11912)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n11945), .Z(n11912)) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A (((D)+!C)+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i2872_2_lut_rep_166_4_lut.init = 16'h00ca;
     LUT4 i1155_4_lut (.A(n2181[1]), .B(n2206), .C(n11923), .D(n15_adj_893), 
-         .Z(n5464)) /* synthesis lut_function=(A (B+((D)+!C))+!A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5464)) /* synthesis lut_function=(A (B+((D)+!C))+!A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1155_4_lut.init = 16'heece;
-    LUT4 i186_2_lut (.A(reg_fifo_almostfull), .B(n2181[0]), .Z(n2206)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i186_2_lut (.A(reg_fifo_almostfull), .B(n2181[0]), .Z(n2206)) /* synthesis lut_function=(A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i186_2_lut.init = 16'h8888;
     LUT4 reduce_nor_714_i1_2_lut_rep_238 (.A(n2181[0]), .B(n2184), .Z(n11984)) /* synthesis lut_function=(A+(B)) */ ;
     defparam reduce_nor_714_i1_2_lut_rep_238.init = 16'heeee;
     LUT4 i1_4_lut_adj_191 (.A(n11960), .B(n9657), .C(idx[3]), .D(idx[5]), 
-         .Z(n15_adj_893)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .Z(n15_adj_893)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam i1_4_lut_adj_191.init = 16'hffef;
     LUT4 i2873_2_lut_rep_167_3_lut_4_lut (.A(n2181[0]), .B(n2184), .C(\udp_tdata[4] ), 
          .D(n2296), .Z(n11913)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;
@@ -9365,7 +9365,7 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     defparam crc_reg_31__I_0_i3_3_lut_4_lut.init = 16'hfe10;
     CCU2C idx_703_add_4_9 (.A0(idx[7]), .B0(GND_net), .C0(GND_net), .D0(VCC_net), 
           .A1(GND_net), .B1(GND_net), .C1(GND_net), .D1(GND_net), .CIN(n9010), 
-          .S0(n37[7]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+          .S0(n37[7]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703_add_4_9.INIT0 = 16'haaa0;
     defparam idx_703_add_4_9.INIT1 = 16'h0000;
     defparam idx_703_add_4_9.INJECT1_0 = "NO";
@@ -9381,13 +9381,13 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     PFUMX i1396 (.BLUT(n3207[4]), .ALUT(t_data_7__N_288[4]), .C0(n2186), 
           .Z(n5705));
     LUT4 i1153_4_lut (.A(n5461), .B(n11923), .C(n15_adj_893), .D(n2181[1]), 
-         .Z(n5462)) /* synthesis lut_function=(A+!((C+!(D))+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5462)) /* synthesis lut_function=(A+!((C+!(D))+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1153_4_lut.init = 16'haeaa;
     LUT4 i2623_3_lut_4_lut (.A(n2181[0]), .B(n2184), .C(n11911), .D(\crc_reg[9] ), 
          .Z(\next_crc_reg_31__N_594[9] )) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C))) */ ;
     defparam i2623_3_lut_4_lut.init = 16'hfe10;
     LUT4 i1_4_lut_adj_192 (.A(n11959), .B(n11941), .C(idx[4]), .D(idx[2]), 
-         .Z(n15)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[21] 156[28])
+         .Z(n15)) /* synthesis lut_function=(A+(B+((D)+!C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[21] 156[28])
     defparam i1_4_lut_adj_192.init = 16'hffef;
     LUT4 crc_reg_31__I_0_i13_3_lut_4_lut (.A(n2181[0]), .B(n2184), .C(\crc_next[12] ), 
          .D(\crc_reg[12] ), .Z(\next_crc_reg_31__N_594[12] )) /* synthesis lut_function=(A (D)+!A (B (D)+!B (C))) */ ;
@@ -9396,14 +9396,14 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     defparam i1_2_lut_rep_196_3_lut.init = 16'h1010;
     CCU2C idx_703_add_4_7 (.A0(idx[5]), .B0(GND_net), .C0(GND_net), .D0(VCC_net), 
           .A1(idx[6]), .B1(GND_net), .C1(GND_net), .D1(VCC_net), .CIN(n9009), 
-          .COUT(n9010), .S0(n37[5]), .S1(n37[6]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+          .COUT(n9010), .S0(n37[5]), .S1(n37[6]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703_add_4_7.INIT0 = 16'haaa0;
     defparam idx_703_add_4_7.INIT1 = 16'haaa0;
     defparam idx_703_add_4_7.INJECT1_0 = "NO";
     defparam idx_703_add_4_7.INJECT1_1 = "NO";
     CCU2C idx_703_add_4_5 (.A0(idx[3]), .B0(GND_net), .C0(GND_net), .D0(VCC_net), 
           .A1(idx[4]), .B1(GND_net), .C1(GND_net), .D1(VCC_net), .CIN(n9008), 
-          .COUT(n9009), .S0(n37[3]), .S1(n37[4]));   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
+          .COUT(n9009), .S0(n37[3]), .S1(n37[4]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(155[37:40])
     defparam idx_703_add_4_5.INIT0 = 16'haaa0;
     defparam idx_703_add_4_5.INIT1 = 16'haaa0;
     defparam idx_703_add_4_5.INJECT1_0 = "NO";
@@ -9414,38 +9414,38 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
     LUT4 i1276_2_lut_rep_199_3_lut (.A(n2181[0]), .B(n2184), .C(n2296), 
          .Z(n11945)) /* synthesis lut_function=(A+(B+!(C))) */ ;
     defparam i1276_2_lut_rep_199_3_lut.init = 16'hefef;
-    LUT4 i1151_4_lut (.A(n5459), .B(n11923), .C(n15), .D(n2187), .Z(n5460)) /* synthesis lut_function=(A+!((C+!(D))+!B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+    LUT4 i1151_4_lut (.A(n5459), .B(n11923), .C(n15), .D(n2187), .Z(n5460)) /* synthesis lut_function=(A+!((C+!(D))+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1151_4_lut.init = 16'haeaa;
     LUT4 idx_3__I_0_Mux_2_i15_4_lut_4_lut (.A(idx[2]), .B(idx[0]), .C(idx[1]), 
-         .D(idx[3]), .Z(t_data_7__N_304[2])) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A !(B (C+!(D))+!B !(C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .D(idx[3]), .Z(t_data_7__N_304[2])) /* synthesis lut_function=(!(A (B (D)+!B (C+(D)))+!A !(B (C+!(D))+!B !(C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam idx_3__I_0_Mux_2_i15_4_lut_4_lut.init = 16'h41df;
     PFUMX mux_573_i6 (.BLUT(t_data_7__N_304[5]), .ALUT(t_data_7__N_296[5]), 
           .C0(n2187), .Z(n3187[5]));
     LUT4 i1149_4_lut (.A(n2185), .B(fifo_rd_en_N_404), .C(reg_fifo_empty), 
-         .D(n9742), .Z(n5458)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .D(n9742), .Z(n5458)) /* synthesis lut_function=(A (B ((D)+!C)+!B !(C))+!A (B (D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1149_4_lut.init = 16'hce0a;
     LUT4 i1_4_lut_then_4_lut (.A(idx[4]), .B(idx[2]), .C(idx[3]), .D(idx[0]), 
-         .Z(n11994)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .Z(n11994)) /* synthesis lut_function=(!(A+(B+(C+!(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i1_4_lut_then_4_lut.init = 16'h0100;
     PFUMX mux_573_i1 (.BLUT(n14), .ALUT(t_data_7__N_296[0]), .C0(n10955), 
           .Z(n3187[0]));
     LUT4 i1_4_lut_else_4_lut (.A(idx[4]), .B(idx[2]), .C(idx[3]), .D(idx[0]), 
-         .Z(n11993)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .Z(n11993)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam i1_4_lut_else_4_lut.init = 16'h1000;
     LUT4 idx_4__I_0_Mux_2_i31_4_lut_4_lut_then_4_lut (.A(idx[2]), .B(idx[3]), 
-         .C(idx[0]), .D(idx[1]), .Z(n11997)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .C(idx[0]), .D(idx[1]), .Z(n11997)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam idx_4__I_0_Mux_2_i31_4_lut_4_lut_then_4_lut.init = 16'h1000;
-    LUT4 n7313_bdd_3_lut_3_lut (.A(n11949), .B(n2187), .C(n12001), .Z(n11897)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+    LUT4 n7313_bdd_3_lut_3_lut (.A(n11949), .B(n2187), .C(n12001), .Z(n11897)) /* synthesis lut_function=(!(A ((C)+!B)+!A (B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam n7313_bdd_3_lut_3_lut.init = 16'h1d1d;
     PFUMX i7346 (.BLUT(n11631), .ALUT(n11630), .C0(n2186), .Z(n11632));
     LUT4 idx_4__I_0_Mux_2_i31_4_lut_4_lut_else_4_lut (.A(idx[2]), .B(idx[3]), 
-         .C(idx[0]), .D(idx[1]), .Z(n11996)) /* synthesis lut_function=(!(A+(B+!(C (D)+!C !(D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
+         .C(idx[0]), .D(idx[1]), .Z(n11996)) /* synthesis lut_function=(!(A+(B+!(C (D)+!C !(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(147[24:51])
     defparam idx_4__I_0_Mux_2_i31_4_lut_4_lut_else_4_lut.init = 16'h1001;
     LUT4 idx_4__I_0_Mux_6_i31_4_lut_then_4_lut (.A(idx[4]), .B(idx[3]), 
-         .C(idx[2]), .D(idx[0]), .Z(n12000)) /* synthesis lut_function=((B+(C+!(D)))+!A) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .C(idx[2]), .D(idx[0]), .Z(n12000)) /* synthesis lut_function=((B+(C+!(D)))+!A) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam idx_4__I_0_Mux_6_i31_4_lut_then_4_lut.init = 16'hfdff;
     LUT4 idx_4__I_0_Mux_6_i31_4_lut_else_4_lut (.A(idx[4]), .B(idx[3]), 
-         .C(idx[2]), .D(idx[0]), .Z(n11999)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B (D)+!B (C+(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
+         .C(idx[2]), .D(idx[0]), .Z(n11999)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B (D)+!B (C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(127[38:41])
     defparam idx_4__I_0_Mux_6_i31_4_lut_else_4_lut.init = 16'hffb8;
     PFUMX idx_4__I_0_Mux_0_i15 (.BLUT(n7), .ALUT(n9870), .C0(idx[4]), 
           .Z(n15_c)) /* synthesis LSE_LINE_FILE_ID=46, LSE_LCOL=16, LSE_RCOL=40, LSE_LLINE=414, LSE_RLINE=414 */ ;
@@ -9469,20 +9469,20 @@ module UDP_FIFO_AXI (n2187, rst_c, n2186, fifo_rd_en_N_404, GND_net,
          .Z(n10760)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
     defparam i1_3_lut_4_lut.init = 16'hfffe;
     LUT4 i3011_4_lut_4_lut (.A(idx[1]), .B(idx[0]), .C(idx[2]), .D(idx[3]), 
-         .Z(t_data_7__N_304[1])) /* synthesis lut_function=(!(A (B (C+(D))+!B (C (D)))+!A (B (D)+!B (C (D))))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .Z(t_data_7__N_304[1])) /* synthesis lut_function=(!(A (B (C+(D))+!B (C (D)))+!A (B (D)+!B (C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i3011_4_lut_4_lut.init = 16'h037f;
     LUT4 i1_3_lut_rep_195_4_lut (.A(idx[3]), .B(idx[5]), .C(idx[1]), .D(idx[0]), 
          .Z(n11941)) /* synthesis lut_function=(A+(B+!(C (D)))) */ ;
     defparam i1_3_lut_rep_195_4_lut.init = 16'hefff;
-    LUT4 equal_12_i13_2_lut_rep_213 (.A(idx[6]), .B(idx[7]), .Z(n11959)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
+    LUT4 equal_12_i13_2_lut_rep_213 (.A(idx[6]), .B(idx[7]), .Z(n11959)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
     defparam equal_12_i13_2_lut_rep_213.init = 16'heeee;
     LUT4 i1_3_lut_4_lut_adj_193 (.A(idx[6]), .B(idx[7]), .C(idx[4]), .D(idx[2]), 
-         .Z(n9657)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
+         .Z(n9657)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
     defparam i1_3_lut_4_lut_adj_193.init = 16'hfeff;
-    LUT4 equal_12_i9_2_lut_rep_214 (.A(idx[0]), .B(idx[1]), .Z(n11960)) /* synthesis lut_function=((B)+!A) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
+    LUT4 equal_12_i9_2_lut_rep_214 (.A(idx[0]), .B(idx[1]), .Z(n11960)) /* synthesis lut_function=((B)+!A) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(113[24:51])
     defparam equal_12_i9_2_lut_rep_214.init = 16'hdddd;
     LUT4 i1157_3_lut (.A(n2181[0]), .B(n2184), .C(reg_fifo_almostfull), 
-         .Z(n5466)) /* synthesis lut_function=(A (B+!(C))+!A (B)) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
+         .Z(n5466)) /* synthesis lut_function=(A (B+!(C))+!A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(90[13] 183[22])
     defparam i1157_3_lut.init = 16'hcece;
     LUT4 idx_4__I_0_Mux_0_i14_3_lut_4_lut_3_lut (.A(idx[1]), .B(idx[0]), 
          .C(idx[2]), .Z(n14)) /* synthesis lut_function=(!(A (B+!(C))+!A ((C)+!B))) */ ;
@@ -9555,17 +9555,17 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
     output n11390;
     output n31;
     
-    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(14[9:12])
-    wire [1:0]r_byte;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(103[12:18])
+    wire clk_c /* synthesis SET_AS_NETWORK=clk_c, is_clock=1 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(14[9:12])
+    wire [1:0]r_byte;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(103[12:18])
     
     wire n9;
-    wire [23:0]r_curr_sample;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(106[12:25])
+    wire [23:0]r_curr_sample;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(106[12:25])
     
     wire n11905, n9200, n11926, n10879, n11951;
     wire [7:0]n1841;
     
     wire n11901;
-    wire [3:0]r_channel;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(100[12:21])
+    wire [3:0]r_channel;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(100[12:21])
     
     wire n11899, n9_adj_886, n11906, clk_c_enable_61, n9_adj_887, 
         n9_adj_888, n9_adj_889, n11980, n11922, n3410, n9_adj_890, 
@@ -9574,7 +9574,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
     wire [3:0]o_fifo_sel_3__N_2;
     
     wire n8101, n8128, clk_c_enable_72;
-    wire [23:0]r_next_sample;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(109[12:25])
+    wire [23:0]r_next_sample;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(109[12:25])
     
     wire n11976, n11948, n11924, n5482, n9663, n11988, n11935, 
         n11973, n11981;
@@ -9596,7 +9596,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
         n11927, n10926;
     
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7514_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9), .D(r_curr_sample[6]), .Z(n11905)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9), .D(r_curr_sample[6]), .Z(n11905)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7514_4_lut.init = 16'h7430;
     LUT4 i1_4_lut (.A(n9200), .B(n11926), .C(n10879), .D(n11951), .Z(adc_fifo_rd_en[9])) /* synthesis lut_function=(!(((C+(D))+!B)+!A)) */ ;
     defparam i1_4_lut.init = 16'h0008;
@@ -9609,10 +9609,10 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .D(n1846), .Z(large_fifo_din[0])) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C (D)))) */ ;
     defparam i1_2_lut_3_lut_4_lut_adj_127.init = 16'hf0e0;
     LUT4 i26_3_lut (.A(r_curr_sample[23]), .B(r_curr_sample[15]), .C(r_byte[0]), 
-         .Z(n9_adj_886)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .Z(n9_adj_886)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut.init = 16'hcaca;
     LUT4 i26_3_lut_adj_128 (.A(r_curr_sample[22]), .B(r_curr_sample[14]), 
-         .C(r_byte[0]), .Z(n9)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_128.init = 16'hcaca;
     LUT4 i1_2_lut_3_lut_4_lut_adj_129 (.A(n1844), .B(n1841[6]), .C(n11906), 
          .D(n1846), .Z(large_fifo_din[7])) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C (D)))) */ ;
@@ -9621,123 +9621,123 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(clk_c_enable_61)) /* synthesis lut_function=(!(A (C+!(D))+!A ((C+!(D))+!B))) */ ;
     defparam i7278_3_lut_4_lut.init = 16'h0e00;
     LUT4 i26_3_lut_adj_130 (.A(r_curr_sample[21]), .B(r_curr_sample[13]), 
-         .C(r_byte[0]), .Z(n9_adj_887)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9_adj_887)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_130.init = 16'hcaca;
     LUT4 i26_3_lut_adj_131 (.A(r_curr_sample[19]), .B(r_curr_sample[11]), 
-         .C(r_byte[0]), .Z(n9_adj_888)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9_adj_888)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_131.init = 16'hcaca;
     LUT4 i26_3_lut_adj_132 (.A(r_curr_sample[18]), .B(r_curr_sample[10]), 
-         .C(r_byte[0]), .Z(n9_adj_889)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9_adj_889)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_132.init = 16'hcaca;
     LUT4 i1_4_lut_adj_133 (.A(n11980), .B(n11922), .C(r_channel[2]), .D(r_channel[3]), 
          .Z(adc_fifo_rd_en[12])) /* synthesis lut_function=(!(((C+!(D))+!B)+!A)) */ ;
     defparam i1_4_lut_adj_133.init = 16'h0800;
     FD1P3IX r_curr_sample__i0 (.D(n3410), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i0.GSR = "DISABLED";
     LUT4 i26_3_lut_adj_134 (.A(r_curr_sample[17]), .B(r_curr_sample[9]), 
-         .C(r_byte[0]), .Z(n9_adj_890)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9_adj_890)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_134.init = 16'hcaca;
     LUT4 i26_3_lut_adj_135 (.A(r_curr_sample[20]), .B(r_curr_sample[12]), 
-         .C(r_byte[0]), .Z(n9_adj_891)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
+         .C(r_byte[0]), .Z(n9_adj_891)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(110[39:42])
     defparam i26_3_lut_adj_135.init = 16'hcaca;
     LUT4 i26_3_lut_adj_136 (.A(r_curr_sample[16]), .B(r_curr_sample[8]), 
-         .C(r_byte[0]), .Z(n9_adj_892)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .C(r_byte[0]), .Z(n9_adj_892)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i26_3_lut_adj_136.init = 16'hcaca;
     LUT4 i1_4_lut_adj_137 (.A(n10792), .B(n10804), .C(n10802), .D(n10786), 
-         .Z(n557)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .Z(n557)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_4_lut_adj_137.init = 16'hfffe;
     LUT4 i1_2_lut_adj_138 (.A(adc_fifo_empty[9]), .B(adc_fifo_empty[6]), 
-         .Z(n10792)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .Z(n10792)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_2_lut_adj_138.init = 16'heeee;
     LUT4 i1_4_lut_adj_139 (.A(adc_fifo_empty[10]), .B(n10800), .C(n10794), 
-         .D(adc_fifo_empty[11]), .Z(n10804)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .D(adc_fifo_empty[11]), .Z(n10804)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_4_lut_adj_139.init = 16'hfffe;
     LUT4 i1_4_lut_adj_140 (.A(adc_fifo_empty[14]), .B(adc_fifo_empty[0]), 
-         .C(adc_fifo_empty[3]), .D(adc_fifo_empty[7]), .Z(n10802)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .C(adc_fifo_empty[3]), .D(adc_fifo_empty[7]), .Z(n10802)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_4_lut_adj_140.init = 16'hfffe;
     LUT4 i1_2_lut_adj_141 (.A(adc_fifo_empty[2]), .B(adc_fifo_empty[1]), 
-         .Z(n10786)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .Z(n10786)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_2_lut_adj_141.init = 16'heeee;
     LUT4 i1_4_lut_adj_142 (.A(adc_fifo_empty[5]), .B(adc_fifo_empty[13]), 
-         .C(adc_fifo_empty[15]), .D(adc_fifo_empty[12]), .Z(n10800)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .C(adc_fifo_empty[15]), .D(adc_fifo_empty[12]), .Z(n10800)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_4_lut_adj_142.init = 16'hfffe;
     LUT4 i1_2_lut_adj_143 (.A(adc_fifo_empty[8]), .B(adc_fifo_empty[4]), 
-         .Z(n10794)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .Z(n10794)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_2_lut_adj_143.init = 16'heeee;
     LUT4 i1163_3_lut (.A(n5471), .B(o_fifo_sel_3__N_2[0]), .C(n1841[6]), 
-         .Z(fifo_sel[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(fifo_sel[0])) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1163_3_lut.init = 16'hcaca;
     LUT4 i7273_3_lut_4_lut (.A(rst_c), .B(n1846), .C(n8101), .D(n8128), 
          .Z(clk_c_enable_72)) /* synthesis lut_function=(A+(B+!(C+(D)))) */ ;
     defparam i7273_3_lut_4_lut.init = 16'heeef;
     FD1P3IX r_next_sample__i0 (.D(fifo_dout_to_packer[0]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i0.GSR = "DISABLED";
     LUT4 i1_4_lut_adj_144 (.A(n11976), .B(n11926), .C(n11951), .D(n11948), 
          .Z(adc_fifo_rd_en[13])) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;
     defparam i1_4_lut_adj_144.init = 16'h0400;
     LUT4 i1_3_lut_4_lut (.A(enable_c), .B(n11924), .C(n1841[0]), .D(packer_frame_done_c), 
-         .Z(n5482)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A (C+(D))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
+         .Z(n5482)) /* synthesis lut_function=(A (B (C+(D))+!B (D))+!A (C+(D))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(136[13] 138[20])
     defparam i1_3_lut_4_lut.init = 16'hffd0;
     LUT4 i2945_4_lut_then_4_lut (.A(n1841[0]), .B(n9663), .C(r_channel[1]), 
-         .D(r_channel[2]), .Z(n11988)) /* synthesis lut_function=(!(A+!(B (D)+!B !(C+!(D))))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(r_channel[2]), .Z(n11988)) /* synthesis lut_function=(!(A+!(B (D)+!B !(C+!(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2945_4_lut_then_4_lut.init = 16'h4500;
     LUT4 i3884_4_lut (.A(n1844), .B(n11935), .C(n1841[6]), .D(n2131), 
          .Z(n8128)) /* synthesis lut_function=(A (B (C))+!A (B (C+(D))+!B !(C+!(D)))) */ ;
     defparam i3884_4_lut.init = 16'hc5c0;
     LUT4 equal_48_i5_2_lut_rep_227 (.A(r_channel[0]), .B(r_channel[1]), 
-         .Z(n11973)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .Z(n11973)) /* synthesis lut_function=(A+!(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam equal_48_i5_2_lut_rep_227.init = 16'hbbbb;
     LUT4 i4856_4_lut (.A(r_channel[0]), .B(r_byte[0]), .C(n11981), .D(r_byte[1]), 
          .Z(o_fifo_sel_3__N_6[0])) /* synthesis lut_function=(A (B+(C+(D)))+!A !(B+(C+(D)))) */ ;
     defparam i4856_4_lut.init = 16'haaa9;
     LUT4 i1_4_lut_adj_145 (.A(r_byte[1]), .B(n5), .C(rst_c), .D(r_byte[0]), 
-         .Z(n10077)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A ((C+!(D))+!B))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(15[9:12])
+         .Z(n10077)) /* synthesis lut_function=(!(A ((C+(D))+!B)+!A ((C+!(D))+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(15[9:12])
     defparam i1_4_lut_adj_145.init = 16'h0408;
     LUT4 i1_3_lut_4_lut_adj_146 (.A(r_channel[0]), .B(r_channel[1]), .C(n10919), 
-         .D(n11926), .Z(adc_fifo_rd_en[3])) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .D(n11926), .Z(adc_fifo_rd_en[3])) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam i1_3_lut_4_lut_adj_146.init = 16'h0400;
     LUT4 i1_4_lut_adj_147 (.A(rst_c), .B(n22), .C(n7311), .D(n1846), 
-         .Z(n1[0])) /* synthesis lut_function=(!(A+(B (C (D))+!B (C+!(D))))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(15[9:12])
+         .Z(n1[0])) /* synthesis lut_function=(!(A+(B (C (D))+!B (C+!(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(15[9:12])
     defparam i1_4_lut_adj_147.init = 16'h0544;
-    LUT4 i1_2_lut_adj_148 (.A(packer_frame_done_c), .B(n1841[1]), .Z(n2131)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    LUT4 i1_2_lut_adj_148 (.A(packer_frame_done_c), .B(n1841[1]), .Z(n2131)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1_2_lut_adj_148.init = 16'heeee;
     LUT4 i1_3_lut_4_lut_adj_149 (.A(n11934), .B(n11926), .C(n11980), .D(n6), 
          .Z(adc_fifo_rd_en[4])) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;
     defparam i1_3_lut_4_lut_adj_149.init = 16'h0040;
-    FD1S3JX r_state_FSM_i1 (.D(n5482), .CK(clk_c), .PD(rst_c), .Q(n1841[0]));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3JX r_state_FSM_i1 (.D(n5482), .CK(clk_c), .PD(rst_c), .Q(n1841[0]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i1.GSR = "DISABLED";
     LUT4 i1_3_lut_4_lut_adj_150 (.A(n11934), .B(n11926), .C(r_channel[3]), 
          .D(n11952), .Z(adc_fifo_rd_en[8])) /* synthesis lut_function=(!(A+((C+!(D))+!B))) */ ;
     defparam i1_3_lut_4_lut_adj_150.init = 16'h0400;
     LUT4 i1_2_lut_3_lut_4_lut_adj_151 (.A(r_byte[0]), .B(r_byte[1]), .C(n11980), 
-         .D(n11982), .Z(n10778)) /* synthesis lut_function=(A+!(B (C (D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(306[55:86])
+         .D(n11982), .Z(n10778)) /* synthesis lut_function=(A+!(B (C (D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(306[55:86])
     defparam i1_2_lut_3_lut_4_lut_adj_151.init = 16'hbfff;
     LUT4 i2889_4_lut (.A(r_channel[0]), .B(n1841[0]), .C(o_fifo_sel_3__N_2[0]), 
-         .D(n1841[6]), .Z(n5494)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B+!(C+!(D))))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(n1841[6]), .Z(n5494)) /* synthesis lut_function=(!(A (B+!(C (D)))+!A (B+!(C+!(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2889_4_lut.init = 16'h3011;
     LUT4 i2789_4_lut (.A(r_channel[0]), .B(n10770), .C(n11978), .D(r_channel[2]), 
-         .Z(o_fifo_sel_3__N_2[0])) /* synthesis lut_function=(A ((C+!(D))+!B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
+         .Z(o_fifo_sel_3__N_2[0])) /* synthesis lut_function=(A ((C+!(D))+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
     defparam i2789_4_lut.init = 16'ha2aa;
     LUT4 equal_45_i5_2_lut_rep_229 (.A(r_channel[0]), .B(r_channel[1]), 
-         .Z(n11975)) /* synthesis lut_function=((B)+!A) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .Z(n11975)) /* synthesis lut_function=((B)+!A) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam equal_45_i5_2_lut_rep_229.init = 16'hdddd;
     LUT4 i1_3_lut_4_lut_adj_152 (.A(r_channel[0]), .B(r_channel[1]), .C(n10919), 
-         .D(n11926), .Z(adc_fifo_rd_en[2])) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .D(n11926), .Z(adc_fifo_rd_en[2])) /* synthesis lut_function=(!((B+(C+!(D)))+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam i1_3_lut_4_lut_adj_152.init = 16'h0200;
     LUT4 i1_2_lut_adj_153 (.A(r_channel[3]), .B(r_channel[1]), .Z(n10770)) /* synthesis lut_function=(A (B)) */ ;
     defparam i1_2_lut_adj_153.init = 16'h8888;
     LUT4 equal_42_i5_2_lut_rep_230 (.A(r_channel[0]), .B(r_channel[1]), 
-         .Z(n11976)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .Z(n11976)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam equal_42_i5_2_lut_rep_230.init = 16'heeee;
-    FD1P3AX r_byte__i0 (.D(n1[0]), .SP(clk_c_enable_4), .CK(clk_c), .Q(r_byte[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+    FD1P3AX r_byte__i0 (.D(n1[0]), .SP(clk_c_enable_4), .CK(clk_c), .Q(r_byte[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_byte__i0.GSR = "DISABLED";
     FD1P3IX r_channel__i0 (.D(n5494), .SP(clk_c_enable_64), .CD(rst_c), 
-            .CK(clk_c), .Q(r_channel[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_channel[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_channel__i0.GSR = "DISABLED";
     LUT4 i6593_2_lut_3_lut (.A(r_channel[0]), .B(r_channel[1]), .C(n1841[6]), 
-         .Z(n10879)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+         .Z(n10879)) /* synthesis lut_function=(A+(B+(C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam i6593_2_lut_3_lut.init = 16'hfefe;
     LUT4 i7285_2_lut_rep_231 (.A(n1841[0]), .B(packer_frame_done_c), .Z(n11977)) /* synthesis lut_function=(!(A+(B))) */ ;
     defparam i7285_2_lut_rep_231.init = 16'h1111;
@@ -9748,19 +9748,19 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .C(n1841[6]), .D(n1844), .Z(n11934)) /* synthesis lut_function=(A+(B+(C+(D)))) */ ;
     defparam i6588_2_lut_rep_188_3_lut_4_lut.init = 16'hfffe;
     LUT4 i1389_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5697), .D(o_fifo_sel_3__N_6[3]), 
-         .Z(fifo_sel[3])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(fifo_sel[3])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1389_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1387_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5695), .D(o_fifo_sel_3__N_6[2]), 
-         .Z(fifo_sel[2])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(fifo_sel[2])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1387_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i2945_4_lut_else_4_lut (.A(r_channel[0]), .B(n1841[0]), .C(r_channel[1]), 
-         .D(r_channel[2]), .Z(n11987)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A (B+!(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(r_channel[2]), .Z(n11987)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A (B+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2945_4_lut_else_4_lut.init = 16'h1320;
     LUT4 i1385_rep_24_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11386)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11386)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_24_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_31_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11393)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11393)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_31_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_2_lut_rep_226 (.A(n1844), .B(n1841[6]), .Z(n11972)) /* synthesis lut_function=(A+(B)) */ ;
     defparam i1_2_lut_rep_226.init = 16'heeee;
@@ -9768,10 +9768,10 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .D(n1846), .Z(large_fifo_din[5])) /* synthesis lut_function=(A (C)+!A (B (C)+!B (C (D)))) */ ;
     defparam i1_2_lut_3_lut_4_lut_adj_154.init = 16'hf0e0;
     LUT4 i1_4_lut_adj_155 (.A(rst_c), .B(n2185), .C(n10056), .D(n2184), 
-         .Z(clk_c_enable_73)) /* synthesis lut_function=(A+!(B+(C+(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/top.vhd(15[9:12])
+         .Z(clk_c_enable_73)) /* synthesis lut_function=(A+!(B+(C+(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(15[9:12])
     defparam i1_4_lut_adj_155.init = 16'haaab;
     LUT4 i1385_rep_27_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11389)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11389)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_27_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i69_2_lut_rep_178 (.A(n557), .B(large_fifo_almost_full), .Z(n11924)) /* synthesis lut_function=(A+(B)) */ ;
     defparam i69_2_lut_rep_178.init = 16'heeee;
@@ -9791,10 +9791,10 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(n5)) /* synthesis lut_function=(A ((D)+!C)+!A (B ((D)+!C)+!B (C (D)))) */ ;
     defparam i3867_3_lut_4_lut.init = 16'hfe0e;
     LUT4 i1385_rep_16_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11378)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11378)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_16_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_14_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11376)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11376)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_14_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_2_lut_rep_201_3_lut (.A(n1844), .B(n1841[6]), .C(n1846), .Z(n11947)) /* synthesis lut_function=(A+(B+(C))) */ ;
     defparam i1_2_lut_rep_201_3_lut.init = 16'hfefe;
@@ -9802,7 +9802,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .C(n1841[0]), .D(enable_c), .Z(n6125)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;
     defparam i1_2_lut_3_lut_4_lut_adj_160.init = 16'h1000;
     LUT4 i1385_rep_10_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11372)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11372)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_10_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_3_lut_4_lut_adj_161 (.A(n11934), .B(n9200), .C(n11926), .D(n11975), 
          .Z(adc_fifo_rd_en[10])) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;
@@ -9814,208 +9814,208 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(adc_fifo_rd_en[6])) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;
     defparam i1_3_lut_4_lut_adj_163.init = 16'h0040;
     LUT4 i1385_rep_15_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11377)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11377)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_15_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_3_lut_4_lut_adj_164 (.A(n11934), .B(n9175), .C(n11926), .D(n11973), 
          .Z(adc_fifo_rd_en[7])) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;
     defparam i1_3_lut_4_lut_adj_164.init = 16'h0040;
     LUT4 i1385_rep_13_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11375)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11375)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_13_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1386_4_lut_4_lut (.A(r_channel[2]), .B(n11936), .C(n1841[6]), 
-         .D(n11979), .Z(n5695)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
+         .D(n11979), .Z(n5695)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
     defparam i1386_4_lut_4_lut.init = 16'h8a80;
     LUT4 i1385_rep_11_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11373)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11373)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_11_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_2_lut_rep_176_4_lut (.A(n1847), .B(n11937), .C(n1846), .D(n11934), 
-         .Z(n11922)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B+((D)+!C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(n11922)) /* synthesis lut_function=(!(A (B (C+(D))+!B (D))+!A (B+((D)+!C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1_2_lut_rep_176_4_lut.init = 16'h003a;
     LUT4 i1388_4_lut_4_lut (.A(r_channel[3]), .B(n11936), .C(n1841[6]), 
-         .D(n11979), .Z(n5697)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
+         .D(n11979), .Z(n5697)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
     defparam i1388_4_lut_4_lut.init = 16'h8a80;
     LUT4 i1385_rep_32_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11394)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11394)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_32_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_29_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11391)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11391)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_29_3_lut_4_lut.init = 16'hf4b0;
     FD1P3IX r_curr_sample__i1 (.D(n3411), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i1.GSR = "DISABLED";
     LUT4 i1385_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), .D(o_fifo_sel_3__N_6[1]), 
-         .Z(fifo_sel[1])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(fifo_sel[1])) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_23_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11385)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11385)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_23_3_lut_4_lut.init = 16'hf4b0;
     FD1P3IX r_curr_sample__i2 (.D(n3412), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i2.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i3 (.D(n3413), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i3.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i4 (.D(n3414), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i4.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i5 (.D(n3415), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i5.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i6 (.D(n3416), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[6])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[6])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i6.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i7 (.D(n3417), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[7])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[7])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i7.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i8 (.D(n3418), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[8])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[8])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i8.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i9 (.D(n3419), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[9])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[9])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i9.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i10 (.D(n3420), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[10])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[10])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i10.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i11 (.D(n3421), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[11])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[11])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i11.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i12 (.D(n3422), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[12])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[12])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i12.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i13 (.D(n3423), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[13])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[13])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i13.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i14 (.D(n3424), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[14])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[14])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i14.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i15 (.D(n3425), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[15])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[15])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i15.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i16 (.D(n3426), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[16])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[16])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i16.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i17 (.D(n3427), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[17])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[17])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i17.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i18 (.D(n3428), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[18])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[18])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i18.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i19 (.D(n3429), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[19])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[19])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i19.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i20 (.D(n3430), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[20])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[20])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i20.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i21 (.D(n3431), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[21])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[21])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i21.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i22 (.D(n3432), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[22])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[22])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i22.GSR = "DISABLED";
     FD1P3IX r_curr_sample__i23 (.D(n3433), .SP(clk_c_enable_38), .CD(rst_c), 
-            .CK(clk_c), .Q(r_curr_sample[23])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_curr_sample[23])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_curr_sample__i23.GSR = "DISABLED";
     FD1P3IX r_next_sample__i1 (.D(fifo_dout_to_packer[1]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i1.GSR = "DISABLED";
     LUT4 i1385_rep_25_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11387)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11387)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_25_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_22_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11384)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11384)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_22_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_12_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11374)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11374)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_12_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_21_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11383)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11383)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_21_3_lut_4_lut.init = 16'hf4b0;
     FD1P3IX r_next_sample__i2 (.D(fifo_dout_to_packer[2]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i2.GSR = "DISABLED";
     FD1P3IX r_next_sample__i3 (.D(fifo_dout_to_packer[3]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i3.GSR = "DISABLED";
     FD1P3IX r_next_sample__i4 (.D(fifo_dout_to_packer[4]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[4])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i4.GSR = "DISABLED";
     FD1P3IX r_next_sample__i5 (.D(fifo_dout_to_packer[5]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[5])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i5.GSR = "DISABLED";
     FD1P3IX r_next_sample__i6 (.D(fifo_dout_to_packer[6]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[6])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[6])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i6.GSR = "DISABLED";
     FD1P3IX r_next_sample__i7 (.D(fifo_dout_to_packer[7]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[7])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[7])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i7.GSR = "DISABLED";
     FD1P3IX r_next_sample__i8 (.D(fifo_dout_to_packer[8]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[8])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[8])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i8.GSR = "DISABLED";
     FD1P3IX r_next_sample__i9 (.D(fifo_dout_to_packer[9]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[9])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[9])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i9.GSR = "DISABLED";
     FD1P3IX r_next_sample__i10 (.D(fifo_dout_to_packer[10]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[10])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[10])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i10.GSR = "DISABLED";
     FD1P3IX r_next_sample__i11 (.D(fifo_dout_to_packer[11]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[11])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[11])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i11.GSR = "DISABLED";
     FD1P3IX r_next_sample__i12 (.D(fifo_dout_to_packer[12]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[12])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[12])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i12.GSR = "DISABLED";
     FD1P3IX r_next_sample__i13 (.D(fifo_dout_to_packer[13]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[13])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[13])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i13.GSR = "DISABLED";
     FD1P3IX r_next_sample__i14 (.D(fifo_dout_to_packer[14]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[14])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[14])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i14.GSR = "DISABLED";
     FD1P3IX r_next_sample__i15 (.D(fifo_dout_to_packer[15]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[15])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[15])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i15.GSR = "DISABLED";
     FD1P3IX r_next_sample__i16 (.D(fifo_dout_to_packer[16]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[16])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[16])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i16.GSR = "DISABLED";
     FD1P3IX r_next_sample__i17 (.D(fifo_dout_to_packer[17]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[17])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[17])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i17.GSR = "DISABLED";
     FD1P3IX r_next_sample__i18 (.D(fifo_dout_to_packer[18]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[18])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[18])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i18.GSR = "DISABLED";
     FD1P3IX r_next_sample__i19 (.D(fifo_dout_to_packer[19]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[19])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[19])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i19.GSR = "DISABLED";
     FD1P3IX r_next_sample__i20 (.D(fifo_dout_to_packer[20]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[20])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[20])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i20.GSR = "DISABLED";
     FD1P3IX r_next_sample__i21 (.D(fifo_dout_to_packer[21]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[21])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[21])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i21.GSR = "DISABLED";
     FD1P3IX r_next_sample__i22 (.D(fifo_dout_to_packer[22]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[22])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[22])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i22.GSR = "DISABLED";
     FD1P3IX r_next_sample__i23 (.D(fifo_dout_to_packer[23]), .SP(clk_c_enable_61), 
-            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[23])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CD(rst_c), .CK(clk_c), .Q(r_next_sample[23])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_next_sample__i23.GSR = "DISABLED";
     LUT4 i1385_rep_20_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11382)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11382)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_20_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_26_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11388)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11388)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_26_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_19_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11381)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11381)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_19_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_30_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11392)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11392)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_30_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_18_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11380)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11380)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_18_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_17_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11379)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11379)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_17_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1385_rep_28_3_lut_4_lut (.A(n1841[6]), .B(n1846), .C(n5693), 
-         .D(o_fifo_sel_3__N_6[1]), .Z(n11390)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(o_fifo_sel_3__N_6[1]), .Z(n11390)) /* synthesis lut_function=(A (C)+!A (B (D)+!B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1385_rep_28_3_lut_4_lut.init = 16'hf4b0;
     LUT4 i1_2_lut_rep_232 (.A(r_byte[0]), .B(r_byte[1]), .Z(n11978)) /* synthesis lut_function=(A+!(B)) */ ;
     defparam i1_2_lut_rep_232.init = 16'hbbbb;
@@ -10026,17 +10026,17 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
     defparam i7281_2_lut_rep_233.init = 16'h1111;
     LUT4 i1_2_lut_3_lut (.A(n1847), .B(n1841[1]), .C(r_channel[0]), .Z(n2114[0])) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;
     defparam i1_2_lut_3_lut.init = 16'h1010;
-    FD1S3IX r_state_FSM_i2 (.D(n6125), .CK(clk_c), .CD(rst_c), .Q(n1841[1]));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i2 (.D(n6125), .CK(clk_c), .CD(rst_c), .Q(n1841[1]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i2.GSR = "DISABLED";
-    FD1S3IX r_state_FSM_i3 (.D(n1868), .CK(clk_c), .CD(rst_c), .Q(n1847));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i3 (.D(n1868), .CK(clk_c), .CD(rst_c), .Q(n1847));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i3.GSR = "DISABLED";
-    FD1S3IX r_state_FSM_i4 (.D(n5480), .CK(clk_c), .CD(rst_c), .Q(n1846));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i4 (.D(n5480), .CK(clk_c), .CD(rst_c), .Q(n1846));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i4.GSR = "DISABLED";
-    FD1S3IX r_state_FSM_i5 (.D(n8101), .CK(clk_c), .CD(rst_c), .Q(packer_frame_done_c));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i5 (.D(n8101), .CK(clk_c), .CD(rst_c), .Q(packer_frame_done_c));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i5.GSR = "DISABLED";
-    FD1S3IX r_state_FSM_i6 (.D(n5476), .CK(clk_c), .CD(rst_c), .Q(n1844));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i6 (.D(n5476), .CK(clk_c), .CD(rst_c), .Q(n1844));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i6.GSR = "DISABLED";
-    FD1S3IX r_state_FSM_i7 (.D(n9515), .CK(clk_c), .CD(rst_c), .Q(n1841[6]));   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    FD1S3IX r_state_FSM_i7 (.D(n9515), .CK(clk_c), .CD(rst_c), .Q(n1841[6]));   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam r_state_FSM_i7.GSR = "DISABLED";
     LUT4 i1_2_lut_rep_234 (.A(r_channel[0]), .B(r_channel[1]), .Z(n11980)) /* synthesis lut_function=(A (B)) */ ;
     defparam i1_2_lut_rep_234.init = 16'h8888;
@@ -10044,13 +10044,13 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(n11952)) /* synthesis lut_function=(A (B (C))) */ ;
     defparam i1_2_lut_rep_206_3_lut.init = 16'h8080;
     FD1P3IX r_channel__i1 (.D(n11992), .SP(clk_c_enable_64), .CD(rst_c), 
-            .CK(clk_c), .Q(r_channel[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_channel[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_channel__i1.GSR = "DISABLED";
     FD1P3IX r_channel__i2 (.D(n11989), .SP(clk_c_enable_64), .CD(rst_c), 
-            .CK(clk_c), .Q(r_channel[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_channel[2])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_channel__i2.GSR = "DISABLED";
     FD1P3IX r_channel__i3 (.D(n5718), .SP(clk_c_enable_64), .CD(rst_c), 
-            .CK(clk_c), .Q(r_channel[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .CK(clk_c), .Q(r_channel[3])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_channel__i3.GSR = "DISABLED";
     LUT4 i768_2_lut_rep_192_3_lut_4_lut (.A(r_channel[0]), .B(r_channel[1]), 
          .C(r_channel[3]), .D(r_channel[2]), .Z(n11938)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C))+!A !(C))) */ ;
@@ -10139,7 +10139,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .C(n5673), .Z(n3433)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
     defparam i1381_3_lut.init = 16'hcaca;
     FD1P3AX r_byte__i1 (.D(n10077), .SP(clk_c_enable_72), .CK(clk_c), 
-            .Q(r_byte[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
+            .Q(r_byte[1])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=46, LSE_LCOL=31, LSE_RCOL=53, LSE_LLINE=98, LSE_RLINE=98 */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(191[13] 205[20])
     defparam r_byte__i1.GSR = "DISABLED";
     LUT4 mux_104_i3_3_lut_4_lut_4_lut_4_lut_4_lut (.A(r_channel[2]), .B(r_channel[3]), 
          .C(n7311), .D(n11980), .Z(o_fifo_sel_3__N_6[2])) /* synthesis lut_function=(A (B+(C+!(D)))+!A !(C+!(D))) */ ;
@@ -10153,21 +10153,21 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(n5476)) /* synthesis lut_function=(A (B+(C (D)))+!A (B)) */ ;
     defparam i1_4_lut_adj_167.init = 16'heccc;
     LUT4 i12_4_lut (.A(n1846), .B(n1841[6]), .C(n11936), .D(n11924), 
-         .Z(n9515)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(n9515)) /* synthesis lut_function=(A (B (C+!(D))+!B !(C+(D)))+!A (B (C))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i12_4_lut.init = 16'hc0ca;
     LUT4 i1_3_lut_4_lut_adj_168 (.A(n1846), .B(n11972), .C(rst_c), .D(n2131), 
-         .Z(clk_c_enable_4)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(clk_c_enable_4)) /* synthesis lut_function=(A+(B+(C+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1_3_lut_4_lut_adj_168.init = 16'hfeff;
     PFUMX i1162 (.BLUT(n2114[0]), .ALUT(o_fifo_sel_3__N_6[0]), .C0(n1846), 
           .Z(n5471));
     LUT4 i2944_4_lut_then_4_lut (.A(n1841[0]), .B(n9663), .C(n1841[6]), 
-         .D(r_channel[0]), .Z(n11991)) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B !(C+(D))))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .D(r_channel[0]), .Z(n11991)) /* synthesis lut_function=(!(A+!(B (C+!(D))+!B !(C+(D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2944_4_lut_then_4_lut.init = 16'h4045;
     LUT4 i2944_4_lut_else_4_lut (.A(n1841[0]), .B(n1841[6]), .C(r_channel[0]), 
-         .Z(n11990)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(n11990)) /* synthesis lut_function=(!(A+(B+!(C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2944_4_lut_else_4_lut.init = 16'h1010;
     LUT4 i1171_4_lut (.A(n1846), .B(n1847), .C(n10778), .D(n10051), 
-         .Z(n5480)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(n5480)) /* synthesis lut_function=(A (B+(C+(D)))+!A (B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1171_4_lut.init = 16'heeec;
     LUT4 i1_4_lut_adj_169 (.A(n557), .B(n11978), .C(n10772), .D(n10770), 
          .Z(n10051)) /* synthesis lut_function=(!(A+(B+!(C (D))))) */ ;
@@ -10179,16 +10179,16 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .Z(n10919)) /* synthesis lut_function=((B+(C+(D)))+!A) */ ;
     defparam i6631_3_lut_4_lut.init = 16'hfffd;
     LUT4 i1384_4_lut_4_lut (.A(r_channel[1]), .B(n9663), .C(n1841[6]), 
-         .D(n11979), .Z(n5693)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
+         .D(n11979), .Z(n5693)) /* synthesis lut_function=(A (B (C+(D))+!B !(C+!(D)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(306[17] 314[24])
     defparam i1384_4_lut_4_lut.init = 16'h8a80;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7508_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_892), .D(r_curr_sample[0]), .Z(n11899)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_892), .D(r_curr_sample[0]), .Z(n11899)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7508_4_lut.init = 16'h7430;
     LUT4 i2946_4_lut (.A(n11938), .B(n1841[0]), .C(n11927), .D(n1841[6]), 
-         .Z(n5718)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A (B+!(C (D))))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+         .Z(n5718)) /* synthesis lut_function=(!(A (B+!(C+!(D)))+!A (B+!(C (D))))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i2946_4_lut.init = 16'h3022;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7509_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_891), .D(r_curr_sample[4]), .Z(n11900)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_891), .D(r_curr_sample[4]), .Z(n11900)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7509_4_lut.init = 16'h7430;
     LUT4 i3004_2_lut (.A(r_byte[0]), .B(r_byte[1]), .Z(n7311)) /* synthesis lut_function=(A+(B)) */ ;
     defparam i3004_2_lut.init = 16'heeee;
@@ -10210,7 +10210,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
     LUT4 i1_4_lut_adj_174 (.A(n11951), .B(n11926), .C(n10879), .D(n6), 
          .Z(adc_fifo_rd_en[1])) /* synthesis lut_function=(!(A+((C+(D))+!B))) */ ;
     defparam i1_4_lut_adj_174.init = 16'h0004;
-    LUT4 equal_49_i6_2_lut (.A(r_channel[2]), .B(r_channel[3]), .Z(n6)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(263[44:57])
+    LUT4 equal_49_i6_2_lut (.A(r_channel[2]), .B(r_channel[3]), .Z(n6)) /* synthesis lut_function=(A+(B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(263[44:57])
     defparam equal_49_i6_2_lut.init = 16'heeee;
     LUT4 i1_3_lut_4_lut_adj_175 (.A(n11951), .B(n11948), .C(n11926), .D(n11973), 
          .Z(adc_fifo_rd_en[15])) /* synthesis lut_function=(!(A+(((D)+!C)+!B))) */ ;
@@ -10218,7 +10218,7 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
     LUT4 i1142_3_lut (.A(fifo_dout_to_packer[0]), .B(r_next_sample[0]), 
          .C(n5673), .Z(n3410)) /* synthesis lut_function=(A (B+!(C))+!A (B (C))) */ ;
     defparam i1142_3_lut.init = 16'hcaca;
-    LUT4 i1_3_lut_adj_176 (.A(n1846), .B(r_byte[0]), .C(r_byte[1]), .Z(n5673)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
+    LUT4 i1_3_lut_adj_176 (.A(n1846), .B(r_byte[0]), .C(r_byte[1]), .Z(n5673)) /* synthesis lut_function=(!((B+!(C))+!A)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(235[9] 319[18])
     defparam i1_3_lut_adj_176.init = 16'h2020;
     LUT4 i1_3_lut_4_lut_adj_177 (.A(n11981), .B(n11978), .C(n1841[6]), 
          .D(n1841[1]), .Z(n1868)) /* synthesis lut_function=(A (B (D)+!B (C+(D)))+!A (D)) */ ;
@@ -10243,24 +10243,24 @@ module \Controller(16,24,8,16)  (adc_fifo_rd_en, n1844, n1846, large_fifo_din,
          .D(n1847), .Z(n11926)) /* synthesis lut_function=(!(A (C+!(D))+!A (B (C+!(D))+!B !(C+(D))))) */ ;
     defparam i1429_3_lut_rep_180_4_lut.init = 16'h1f10;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7511_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_889), .D(r_curr_sample[2]), .Z(n11902)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_889), .D(r_curr_sample[2]), .Z(n11902)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7511_4_lut.init = 16'h7430;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7512_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_888), .D(r_curr_sample[3]), .Z(n11903)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_888), .D(r_curr_sample[3]), .Z(n11903)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7512_4_lut.init = 16'h7430;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7513_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_887), .D(r_curr_sample[5]), .Z(n11904)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_887), .D(r_curr_sample[5]), .Z(n11904)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7513_4_lut.init = 16'h7430;
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_886), .D(r_curr_sample[7]), .Z(n11906)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_886), .D(r_curr_sample[7]), .Z(n11906)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_4_lut.init = 16'h7430;
     PFUMX i7517 (.BLUT(n11990), .ALUT(n11991), .C0(r_channel[1]), .Z(n11992));
     LUT4 r_next_byte_1__N_260_0__bdd_4_lut_7510_4_lut (.A(r_byte[0]), .B(r_byte[1]), 
-         .C(n9_adj_890), .D(r_curr_sample[1]), .Z(n11901)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(270[20:30])
+         .C(n9_adj_890), .D(r_curr_sample[1]), .Z(n11901)) /* synthesis lut_function=(!(A (B+!(C))+!A !(B (D)+!B (C)))) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(270[20:30])
     defparam r_next_byte_1__N_260_0__bdd_4_lut_7510_4_lut.init = 16'h7430;
     PFUMX i7515 (.BLUT(n11987), .ALUT(n11988), .C0(n1841[6]), .Z(n11989));
     LUT4 mux_104_i4_3_lut_4_lut_4_lut (.A(r_channel[3]), .B(n11952), .C(n7311), 
-         .D(n11981), .Z(o_fifo_sel_3__N_6[3])) /* synthesis lut_function=(A ((C+(D))+!B)+!A !((C+(D))+!B)) */ ;   // d:/bap/lattice_projecten/top_level_design/adc/controllertest/controller.vhd(262[43:52])
+         .D(n11981), .Z(o_fifo_sel_3__N_6[3])) /* synthesis lut_function=(A ((C+(D))+!B)+!A !((C+(D))+!B)) */ ;   // d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(262[43:52])
     defparam mux_104_i4_3_lut_4_lut_4_lut.init = 16'haaa6;
     
 endmodule

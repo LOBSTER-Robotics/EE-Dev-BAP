@@ -31,23 +31,24 @@
 -vh2008
 
 -lpf 1
--lib "work" -vhd "D:/BAP/lattice_projecten/UDP_RGMII_stack/src/CRC32_8.vhd"
-"D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd"
-"D:/BAP/lattice_projecten/UDP_RGMII_stack/src/MAC_RX.vhd"
-"D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd"
-"D:/BAP/lattice_projecten/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd"
-"D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Controller.vhd"
-"D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/Fifolg.vhd"
-"D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd"
-"D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd"
-"D:/BAP/lattice_projecten/Top_Level_design/ADC/ControllerTest/TOP.vhd"
-"D:/BAP/lattice_projecten/DDR_forRGMII.vhd"
-"D:/BAP/lattice_projecten/RGMII_withDDR.vhd"
-"D:/BAP/lattice_projecten/UDP_RGMII_stack/src/register.vhd"
+-lib "work" -vhd "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd"
+"D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd"
 -top top
 
 
--p "D:/lscc/diamond/3.14/ispfpga/sa5p00/data" "D:/BAP/lattice_projecten/impl1" "D:/BAP/lattice_projecten"
+-p "D:/lscc/diamond/3.14/ispfpga/sa5p00/data" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path"
 
 -ngd "ethernet_fifo_top_impl1.ngd"
 
