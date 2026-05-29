@@ -4,7 +4,13 @@ use ieee.numeric_std.all;
 
 entity spi_master_dac is
     generic (
-        Num_Channels : positive := 1
+        Num_Channels     : positive := 1;
+        -- Extra clock cycles to wait in DONE before starting next transfer.
+        -- Controls the DAC sample rate:
+        --   sample_rate = f_clk / (19 + DONE_WAIT_CYCLS)
+        -- At 50 MHz for 2 MSps: 50e6 / (19 + 6) = 2.0 MSps  → DONE_WAIT_CYCLS = 6
+        -- At 50 MHz for max:    50e6 /  19        = 2.63 MSps → DONE_WAIT_CYCLS = 0
+        DONE_WAIT_CYCLS : natural := 6
     );
     port (
         clk        : in  std_logic;
@@ -31,15 +37,17 @@ architecture rtl of spi_master_dac is
     signal state       : state_t                                     := IDLE;
     signal shift_reg   : data_array_t                                := (others => (others => '0'));
     signal bit_count   : unsigned(3 downto 0)                        := (others => '0');
+    signal wait_count  : natural range 0 to DONE_WAIT_CYCLS       := 0;
     signal cs_n_reg    : std_logic                                   := '1';
     signal read_en_reg : std_logic_vector(Num_Channels - 1 downto 0) := (others => '0');
     signal sdi_reg     : std_logic_vector(Num_Channels - 1 downto 0) := (others => '0');
 
-    signal next_state       : state_t;
-    signal next_shift_reg   : data_array_t;
-    signal next_bit_count   : unsigned(3 downto 0);
-    signal next_cs_n        : std_logic;
-    signal next_read_en     : std_logic_vector(Num_Channels - 1 downto 0);
+    signal next_state      : state_t;
+    signal next_shift_reg  : data_array_t;
+    signal next_bit_count  : unsigned(3 downto 0);
+    signal next_wait_count : natural range 0 to DONE_WAIT_CYCLS;
+    signal next_cs_n       : std_logic;
+    signal next_read_en    : std_logic_vector(Num_Channels - 1 downto 0);
 
 begin
 
@@ -52,13 +60,15 @@ begin
     spi_clk <= clk;  -- TEMPORARY
 
 
-    p_comb : process(state, fifo_empty, data_in, shift_reg, bit_count, cs_n_reg)
+    p_comb : process(state, fifo_empty, data_in, shift_reg, bit_count,
+                     cs_n_reg, wait_count)
     begin
-        next_state     <= state;
-        next_shift_reg <= shift_reg;
-        next_bit_count <= bit_count;
-        next_cs_n      <= cs_n_reg;
-        next_read_en   <= (others => '0');
+        next_state      <= state;
+        next_shift_reg  <= shift_reg;
+        next_bit_count  <= bit_count;
+        next_wait_count <= wait_count;
+        next_cs_n       <= cs_n_reg;
+        next_read_en    <= (others => '0');
 
         case state is
 
@@ -94,11 +104,17 @@ begin
 
             when DONE =>
                 next_cs_n <= '1';
-                if fifo_empty = ALL_NOT_EMPTY then
-                    next_read_en <= (others => '1');
-                    next_state   <= READ;
+                -- Rate limiter: hold in DONE for DONE_WAIT_CYCLS extra cycles
+                if wait_count < DONE_WAIT_CYCLS then
+                    next_wait_count <= wait_count + 1;
                 else
-                    next_state <= IDLE;
+                    next_wait_count <= 0;
+                    if fifo_empty = ALL_NOT_EMPTY then
+                        next_read_en <= (others => '1');
+                        next_state   <= READ;
+                    else
+                        next_state <= IDLE;
+                    end if;
                 end if;
 
             when others =>
@@ -115,12 +131,14 @@ begin
                 state       <= IDLE;
                 shift_reg   <= (others => (others => '0'));
                 bit_count   <= (others => '0');
+                wait_count  <= 0;
                 cs_n_reg    <= '1';
                 read_en_reg <= (others => '0');
             else
                 state       <= next_state;
                 shift_reg   <= next_shift_reg;
                 bit_count   <= next_bit_count;
+                wait_count  <= next_wait_count;
                 cs_n_reg    <= next_cs_n;
                 read_en_reg <= next_read_en;
             end if;

@@ -111,10 +111,10 @@ begin
 
     u_fifo : entity work.fifo_dac_behav
         generic map (
-            G_DEPTH        => 32,   -- matches FIFOsm used in synthesis
+            G_DEPTH        => 128,  -- matches FIFOsm_DAC used in synthesis
             G_WIDTH        => 16,
-            G_ALMOST_EMPTY => 2,
-            G_ALMOST_FULL  => 30
+            G_ALMOST_EMPTY => 10,
+            G_ALMOST_FULL  => 110
         )
         port map (
             Data        => s_sine_data,
@@ -141,7 +141,10 @@ begin
     --------------------------------------------------------------------
 
     u_spi : entity work.spi_master_dac
-        generic map (Num_Channels => C_N_CH)
+        generic map (
+            Num_Channels    => C_N_CH,
+            DONE_WAIT_CYCLS => 6    -- 50 MHz / (19+6) = 2.0 MSps
+        )
         port map (
             clk        => s_clk,
             rst        => s_rst,
@@ -176,8 +179,8 @@ begin
         report "  sine_wave_gen filling FIFO, spi_master_dac draining it";
 
         -- Run long enough to see many SPI transfers.
-        -- Each transfer: READ(1) + SETUP(1) + TRANSFER(16) + DONE(1) = 19 cycles.
-        -- 10 µs = 1000 cycles → ~50 complete transfers visible in Surfer.
+        -- Each transfer: READ(1) + SETUP(1) + TRANSFER(16) + DONE(7) = 25 cycles → 2 MSps.
+        -- 10 µs = 500 cycles → ~20 complete transfers visible.
         wait for 10 us;
 
         report "tb_full_path: simulation complete" severity failure;

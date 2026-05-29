@@ -151,15 +151,19 @@ begin
     s_fifo_wr_en <= s_sine_valid and (not s_fifo_almost_full);
 
     --------------------------------------------------------------------
-    -- FIFOsm — ECP5 block-RAM FIFO, single clock, depth 32
+    -- FIFOsm_DAC — ECP5 dual-clock block-RAM FIFO, depth 128
+    -- Both clocks tied to s_clk_50 (single domain for baseline test).
+    -- AlmostFull at 110/128, AlmostEmpty at 10/128.
     --------------------------------------------------------------------
     u_fifo : entity work.FIFOsm_DAC
         port map (
             Data        => s_sine_data,
-            Clock       => s_clk_50,
+            WrClock     => s_clk_50,
+            RdClock     => s_clk_50,
             WrEn        => s_fifo_wr_en,
             RdEn        => s_read_en(0),
             Reset       => s_rst,
+            RPReset     => s_rst,
             Q           => s_fifo_q,
             Empty       => s_fifo_empty,
             Full        => s_fifo_full,
@@ -171,7 +175,10 @@ begin
     -- SPI master (spi_clk = s_clk_50 = 50 MHz = DAC8811 rated max)
     --------------------------------------------------------------------
     u_spi : entity work.spi_master_dac
-        generic map (Num_Channels => 1)
+        generic map (
+            Num_Channels    => 1,
+            DONE_WAIT_CYCLS => 6    -- 50 MHz / (19+6) = 2.0 MSps
+        )
         port map (
             clk           => s_clk_50,
             rst           => s_rst,
