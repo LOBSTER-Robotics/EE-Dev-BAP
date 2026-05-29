@@ -75,13 +75,9 @@ architecture rtl of rgmii_rx is
 begin
 
 	data_in <= rgmii_rxctl & rgmii_rxd(3 downto 0);
-	
-<<<<<<< Updated upstream
+
 	DDR_RX: entity DDR_Recieve port map (
-=======
-	DDR_RX_inst: entity DDR_RX port map (
->>>>>>> Stashed changes
-		clkin => rx_clk, 
+		clkin => rx_clk,
 		reset => reset,
 		sclk => open,
 		datain => data_in, 
