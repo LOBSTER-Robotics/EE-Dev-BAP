@@ -28,8 +28,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- ECP5 primitives
-library ECP5U;
-use ECP5U.components.all;
+library ECP5UM;
+use ECP5UM.components.all;
 
 entity top_dac_baseline is
     port (
@@ -153,7 +153,7 @@ begin
     --------------------------------------------------------------------
     -- FIFOsm — ECP5 block-RAM FIFO, single clock, depth 32
     --------------------------------------------------------------------
-    u_fifo : entity work.FIFOsm
+    u_fifo : entity work.FIFOsm_DAC
         port map (
             Data        => s_sine_data,
             Clock       => s_clk_50,
