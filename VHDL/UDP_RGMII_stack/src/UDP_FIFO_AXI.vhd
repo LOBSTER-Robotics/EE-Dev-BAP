@@ -60,6 +60,7 @@ architecture rtl of UDP_FIFO_AXI is
     signal state, next_state : state_t;
 
     signal idx, next_idx : integer range 0 to 255 := 0;
+    signal pld_cnt, next_pld_cnt : integer range 0 to 1500 := 0;
 
 begin
     process(clk)
@@ -68,9 +69,11 @@ begin
                 if rst = '1' then
                     state   <= IDLE;
                     idx     <= 0;
+                    pld_cnt <= 0;
                 else
                     state   <= next_state;
                     idx     <= next_idx;
+                    pld_cnt <= next_pld_cnt;
                 end if;
             end if;
         end process;
@@ -81,6 +84,7 @@ begin
             -- defaults
             next_state <= state;
             next_idx   <= idx;
+            next_pld_cnt <= pld_cnt;
 
             t_valid <= '0';
             t_last  <= '0';
@@ -148,6 +152,7 @@ begin
                         next_state <= PAYLOAD;
                         next_idx <= 0;
                         fifo_rd_en <= '1';
+                        next_pld_cnt <= 0;
                     elsif idx >= udp_header'length - 3 then
                         fifo_rd_en <= '1';
                         next_idx <= idx + 1;
@@ -167,10 +172,12 @@ begin
 
                 if fifo_empty = '0' and t_ready = '1' then
                     fifo_rd_en <= '1';
+                    next_pld_cnt <= pld_cnt + 1;
 
-                elsif fifo_empty = '1' then
+                elsif fifo_empty = '1' or pld_cnt = 1440 then
                     next_state <= DONE;
                     t_last  <= '1';
+                    next_pld_cnt <= 0;
                 end if;
 
             ------------------------------------------------------------
