@@ -1,139 +1,73 @@
--- DAC baseline validation top-level.
+-- DAC baseline validation top-level — Cyclone 10 LP edition.
 --
--- Clock:
---   On-board 100 MHz LVDS oscillator (P3/P4) → EHXPLLL PLL → 50 MHz.
---   No external clock input needed.
---   PLL settings: CLKI_DIV=1, CLKFB_DIV=5, CLKOP_DIV=10
---   FVCO = 100 × 5 / 1 = 500 MHz  (in-range: 400–800 MHz)
---   FCLKOP = 500 / 10 = 50 MHz
+-- Clock:   50 MHz on-board oscillator (PIN_E1)
+-- Reset:   Active-low push button PB0/S3 (PIN_E15)
 --
--- Reset:
---   Active-high. Design stays in reset until PLL is locked.
---   Connect rst_btn to a push button (e.g. K19, Bank 2, LVCMOS25).
+-- SPI outputs → J10 GPIO header → DAC8811 EVM J8:
+--   spi_clk  J10 pin 1 (PIN_L13) → EVM J8 pin 1 (SCLK)
+--   sdi[0]   J10 pin 2 (PIN_L16) → EVM J8 pin 3 (SDI)
+--   cs_n     J10 pin 3 (PIN_L15) → EVM J8 pin 5 (CS)
+--   GND      J10 pin 12          → EVM J8 pin 2/4/6 (GND)
 --
--- SPI outputs (X4 expansion connector, Bank 0/1, LVCMOS33):
---   spi_clk → X4 pin 3 (A12, IO0)  → DAC8811 CLK
---   sdi(0)  → X4 pin 4 (A13, IO1)  → DAC8811 SDI
---   cs_n    → X4 pin 5 (B13, IO2)  → DAC8811 CS
---   GND     → X4 pin 2             → DAC8811 GND reference
---
--- Chain:
---   sine_wave_gen (262 × 50 MHz / 65536 ≈ 200 kHz)
---     → FIFOsm (ECP5 block-RAM FIFO, depth 32, single clock)
---       → spi_master_dac (spi_clk = 50 MHz = DAC8811 max)
---         → DAC8811
+-- LEDs (active low, Bank 2, 2.5V):
+--   LED0 (L14): heartbeat — blinks ~1.5 Hz, confirms FPGA is running
+--   LED1 (K15): SPI active — lit while CS is low (transfer in progress)
+--   LED2 (J14): running   — lit when not in reset
+--   LED3 (J13): unused    — always off
 
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
--- ECP5 primitives
-library ECP5UM;
-use ECP5UM.components.all;
-
 entity top_dac_baseline is
     port (
-        -- 100 MHz LVDS oscillator (on-board, P3/P4)
-        clk_p   : in  std_logic;
-        clk_n   : in  std_logic;
+        clk     : in  std_logic;
+        rst_n   : in  std_logic;
 
-        -- Push-button reset (active-high, Bank 2 LVCMOS25)
-        rst_btn : in  std_logic;
-
-        -- DAC8811 SPI bus (X4 pins 3-5, Bank 0/1 LVCMOS33)
         spi_clk : out std_logic;
         sdi     : out std_logic_vector(0 downto 0);
-        cs_n    : out std_logic
+        cs_n    : out std_logic;
+
+        led     : out std_logic_vector(3 downto 0)  -- active low
     );
 end entity top_dac_baseline;
 
 architecture rtl of top_dac_baseline is
 
-    --------------------------------------------------------------------
-    -- Clock / reset signals
-    --------------------------------------------------------------------
-    signal s_clk_100  : std_logic;   -- raw 100 MHz from LVDS buffer
-    signal s_clk_50   : std_logic;   -- 50 MHz PLL output
-    signal s_pll_lock : std_logic;
-    signal s_rst      : std_logic;   -- internal reset: button OR PLL unlocked
+    signal s_rst        : std_logic;
+    signal s_sine_data  : std_logic_vector(15 downto 0);
+    signal s_read_en    : std_logic_vector(0 downto 0);
+    signal s_cs_n       : std_logic;
 
-    --------------------------------------------------------------------
-    -- FIFO / sine generator interconnect
-    --------------------------------------------------------------------
-    signal s_sine_data         : std_logic_vector(15 downto 0);
-    signal s_sine_valid        : std_logic;
-    signal s_fifo_wr_en        : std_logic;
-
-    signal s_fifo_q            : std_logic_vector(15 downto 0);
-    signal s_fifo_empty        : std_logic;
-    signal s_fifo_full         : std_logic;
-    signal s_fifo_almost_empty : std_logic;
-    signal s_fifo_almost_full  : std_logic;
-
-    signal s_read_en : std_logic_vector(0 downto 0);
+    -- Heartbeat: 25-bit counter, bit 24 toggles at 50MHz/2^25 ≈ 1.5 Hz
+    signal s_heartbeat  : unsigned(24 downto 0) := (others => '0');
 
 begin
 
-    --------------------------------------------------------------------
-    -- LVDS input buffer: differential 100 MHz → single-ended
-    --------------------------------------------------------------------
-    u_clk_ibuf : ILVDS
-        port map (
-            A  => clk_p,
-            AN => clk_n,
-            Z  => s_clk_100
-        );
+    s_rst <= not rst_n;
+    cs_n  <= s_cs_n;
 
     --------------------------------------------------------------------
-    -- PLL: 100 MHz → 50 MHz
-    -- FVCO = 100 × CLKFB_DIV / CLKI_DIV = 100 × 5 / 1 = 500 MHz
-    -- FCLKOP = FVCO / CLKOP_DIV = 500 / 10 = 50 MHz
+    -- Heartbeat counter
     --------------------------------------------------------------------
-    u_pll : EHXPLLL
-        generic map (
-            PLLRST_ENA       => "DISABLED",
-            INTFB_WAKE       => "DISABLED",
-            STDBY_ENABLE     => "DISABLED",
-            DPHASE_SOURCE    => "DISABLED",
-            OUTDIVIDER_MUXA  => "DIVA",
-            OUTDIVIDER_MUXB  => "DIVB",
-            CLKOP_ENABLE     => "ENABLED",
-            CLKOS_ENABLE     => "DISABLED",
-            CLKOS2_ENABLE    => "DISABLED",
-            CLKOS3_ENABLE    => "DISABLED",
-            CLKOP_DIV        => 10,
-            CLKOP_CPHASE     => 4,   -- 180° phase: half-period = clean 50 MHz
-            CLKFB_DIV        => 5,
-            CLKI_DIV         => 1,
-            FEEDBK_PATH      => "CLKOP"
-        )
-        port map (
-            CLKI        => s_clk_100,
-            CLKFB       => s_clk_50,
-            CLKOP       => s_clk_50,
-            CLKOS       => open,
-            CLKOS2      => open,
-            CLKOS3      => open,
-            LOCK        => s_pll_lock,
-            INTLOCK     => open,
-            RST         => '0',
-            STDBY       => '0',
-            PHASESEL1   => '0',
-            PHASESEL0   => '0',
-            PHASEDIR    => '0',
-            PHASESTEP   => '0',
-            PHASELOADREG => '0',
-            PLLWAKESYNC => '0',
-            ENCLKOP     => '0',
-            ENCLKOS     => '0',
-            ENCLKOS2    => '0',
-            ENCLKOS3    => '0',
-            REFCLK      => open,
-            CLKINTFB    => open
-        );
+    process (clk)
+    begin
+        if rising_edge(clk) then
+            if s_rst = '1' then
+                s_heartbeat <= (others => '0');
+            else
+                s_heartbeat <= s_heartbeat + 1;
+            end if;
+        end if;
+    end process;
 
-    -- Hold reset until button released AND PLL has locked
-    s_rst <= rst_btn or (not s_pll_lock);
+    --------------------------------------------------------------------
+    -- LED assignments (active low: '0' = ON, '1' = OFF)
+    --------------------------------------------------------------------
+    led(0) <= not s_heartbeat(24);  -- blinks ~1.5 Hz
+    led(1) <= s_cs_n;               -- ON when CS low (SPI transferring)
+    led(2) <= s_rst;                -- ON when not in reset
+    led(3) <= '1';                  -- always off
 
     --------------------------------------------------------------------
     -- Sine wave generator (~200 kHz at 50 MHz clock)
@@ -141,52 +75,29 @@ begin
     u_sine_gen : entity work.sine_wave_gen
         generic map (G_PHASE_INC => 262)
         port map (
-            i_clk   => s_clk_50,
+            i_clk   => clk,
             i_rst   => s_rst,
             i_en    => '1',
             o_data  => s_sine_data,
-            o_valid => s_sine_valid
-        );
-
-    s_fifo_wr_en <= s_sine_valid and (not s_fifo_almost_full);
-
-    --------------------------------------------------------------------
-    -- FIFOsm_DAC — ECP5 dual-clock block-RAM FIFO, depth 128
-    -- Both clocks tied to s_clk_50 (single domain for baseline test).
-    -- AlmostFull at 110/128, AlmostEmpty at 10/128.
-    --------------------------------------------------------------------
-    u_fifo : entity work.FIFOsm_DAC
-        port map (
-            Data        => s_sine_data,
-            WrClock     => s_clk_50,
-            RdClock     => s_clk_50,
-            WrEn        => s_fifo_wr_en,
-            RdEn        => s_read_en(0),
-            Reset       => s_rst,
-            RPReset     => s_rst,
-            Q           => s_fifo_q,
-            Empty       => s_fifo_empty,
-            Full        => s_fifo_full,
-            AlmostEmpty => s_fifo_almost_empty,
-            AlmostFull  => s_fifo_almost_full
+            o_valid => open
         );
 
     --------------------------------------------------------------------
-    -- SPI master (spi_clk = s_clk_50 = 50 MHz = DAC8811 rated max)
+    -- SPI master
     --------------------------------------------------------------------
     u_spi : entity work.spi_master_dac
         generic map (
             Num_Channels    => 1,
-            DONE_WAIT_CYCLS => 6    -- 50 MHz / (19+6) = 2.0 MSps
+            DONE_WAIT_CYCLS => 6
         )
         port map (
-            clk           => s_clk_50,
+            clk           => clk,
             rst           => s_rst,
-            data_in       => s_fifo_q,
-            fifo_empty(0) => s_fifo_empty,
+            data_in       => s_sine_data,
+            fifo_empty(0) => '0',
             read_en       => s_read_en,
             sdi           => sdi,
-            cs_n          => cs_n,
+            cs_n          => s_cs_n,
             spi_clk       => spi_clk
         );
 

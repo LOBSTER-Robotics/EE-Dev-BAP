@@ -38,22 +38,8 @@ architecture sim of tb_full_path is
     -- Sine generator
     --------------------------------------------------------------------
 
-    signal s_sine_data  : std_logic_vector(15 downto 0);
-    signal s_sine_valid : std_logic;
-
-    --------------------------------------------------------------------
-    -- FIFO control / status
-    --------------------------------------------------------------------
-
-    -- read_en comes from the SPI master (std_logic_vector, 1 bit per channel)
-    signal s_read_en : std_logic_vector(C_N_CH-1 downto 0);
-
-    signal s_fifo_q            : std_logic_vector(15 downto 0);
-    signal s_fifo_empty        : std_logic;
-    signal s_fifo_full         : std_logic;
-    signal s_fifo_almost_empty : std_logic;
-    signal s_fifo_almost_full  : std_logic;
-    signal s_fifo_wr_en        : std_logic;
+    signal s_sine_data : std_logic_vector(15 downto 0);
+    signal s_read_en   : std_logic_vector(C_N_CH-1 downto 0);  -- SPI output, unused
 
     --------------------------------------------------------------------
     -- SPI bus outputs (connect to DAC8811 in hardware)
@@ -97,47 +83,12 @@ begin
             i_rst   => s_rst,
             i_en    => '1',
             o_data  => s_sine_data,
-            o_valid => s_sine_valid
-        );
-
-    -- Throttle writes when FIFO is almost full
-    s_fifo_wr_en <= s_sine_valid and (not s_fifo_almost_full);
-
-    --------------------------------------------------------------------
-    -- DUT 2: Behavioral FIFO
-    -- WrClock and RdClock both tied to s_clk (single-domain simulation).
-    -- read_en(0) drives RdEn; fifo_empty driven by FIFO Empty output.
-    --------------------------------------------------------------------
-
-    u_fifo : entity work.fifo_dac_behav
-        generic map (
-            G_DEPTH        => 128,  -- matches FIFOsm_DAC used in synthesis
-            G_WIDTH        => 16,
-            G_ALMOST_EMPTY => 10,
-            G_ALMOST_FULL  => 110
-        )
-        port map (
-            Data        => s_sine_data,
-            WrClock     => s_clk,
-            RdClock     => s_clk,
-            WrEn        => s_fifo_wr_en,
-            RdEn        => s_read_en(0),      -- driven by SPI master
-            Reset       => s_rst,
-            RPReset     => s_rst,
-            Q           => s_fifo_q,
-            Empty       => s_fifo_empty,
-            Full        => s_fifo_full,
-            AlmostEmpty => s_fifo_almost_empty,
-            AlmostFull  => s_fifo_almost_full
+            o_valid => open
         );
 
     --------------------------------------------------------------------
-    -- DUT 3: SPI master (final RTL from vhdl/feature/spi-master-dac)
-    --
-    -- fifo_empty : SPI master polls this; asserts read_en when '0'
-    -- read_en    : SPI master drives this; wired to FIFO RdEn above
-    -- data_in    : FIFO Q output (valid 1 cycle after read_en pulse)
-    -- spi_clk    : pass-through of clk (temporary in current RTL)
+    -- DUT 2: SPI master — sine generator wired directly, no FIFO.
+    -- fifo_empty tied '0' so master always sees data available.
     --------------------------------------------------------------------
 
     u_spi : entity work.spi_master_dac
@@ -146,17 +97,11 @@ begin
             DONE_WAIT_CYCLS => 6    -- 50 MHz / (19+6) = 2.0 MSps
         )
         port map (
-            clk        => s_clk,
-            rst        => s_rst,
-
-            -- Channel 0 data from FIFO
-            -- data_in(k*16+15 downto k*16) = channel k, so for k=0: bits 15:0
-            data_in    => s_fifo_q,
-
-            -- fifo_empty is a vector; bit k = '0' means channel k has data
-            fifo_empty(0) => s_fifo_empty,
-
-            read_en    => s_read_en,
+            clk           => s_clk,
+            rst           => s_rst,
+            data_in       => s_sine_data,
+            fifo_empty(0) => '0',        -- always data available
+            read_en       => s_read_en,  -- unused
 
             sdi        => s_sdi,
             cs_n       => s_cs_n,

@@ -57,7 +57,7 @@ begin
 
     cs_n    <= cs_n_reg;
     read_en <= read_en_reg;
-    spi_clk <= clk;  -- TEMPORARY
+    spi_clk <= clk and (not cs_n_reg);  -- idles LOW when CS is high (SPI Mode 0)
 
 
     p_comb : process(state, fifo_empty, data_in, shift_reg, bit_count,

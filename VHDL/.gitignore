@@ -5,3 +5,6 @@
 /tb_*
 !/tb_*.vhd
 *.bak
+/quartus/
+*.qpf
+*.qsf
