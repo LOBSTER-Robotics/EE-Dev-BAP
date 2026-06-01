@@ -6,7 +6,7 @@ Performance Grade:      7
 PACKAGE:          CABGA381
 Package Status:                     Final          Version 1.38
 
-Fri May 29 14:21:25 2026
+Fri May 29 16:44:29 2026
 
 Pinout by Port Name:
 +-----------+----------+--------------+-------+-----------+-----------------------------------+
@@ -24,6 +24,7 @@ Pinout by Port Name:
 | leds[5]   | D18/2    | LVCMOS25_OUT | PR14A |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
 | leds[6]   | D17/2    | LVCMOS25_OUT | PR11B |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
 | leds[7]   | E16/2    | LVCMOS25_OUT | PR11C |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
+| n_Rst     | U17/3    | LVCMOS25_OUT | PR68B |           | DRIVE:8mA CLAMP:ON SLEW:SLOW      |
 +-----------+----------+--------------+-------+-----------+-----------------------------------+
 
 Vccio by Bank:
@@ -286,7 +287,7 @@ Pinout by Pin Number:
 | U1/8     |     unused, PULL:DOWN |            |              | PB6A         | D5/MISO2/IO5             |           |
 | U2/8     |     unused, PULL:DOWN |            |              | PB13B        | CS1N                     |           |
 | U16/3    |     unused, PULL:DOWN |            |              | PR68C        | LRC_GPLL0T_IN/RDQ65      |           |
-| U17/3    |     unused, PULL:DOWN |            |              | PR68B        | RDQ65                    |           |
+| U17/3    | n_Rst                 | LOCATED    | LVCMOS25_OUT | PR68B        | RDQ65                    |           |
 | U18/3    |     unused, PULL:DOWN |            |              | PR68A        | RDQ65                    |           |
 | U19/3    |     unused, PULL:DOWN |            |              | PR65C        | RDQ65                    |           |
 | U20/3    |     unused, PULL:DOWN |            |              | PR62D        | RDQ65                    |           |
@@ -333,6 +334,7 @@ LOCATE  COMP  "leds[4]"  SITE  "E18";
 LOCATE  COMP  "leds[5]"  SITE  "D18";
 LOCATE  COMP  "leds[6]"  SITE  "D17";
 LOCATE  COMP  "leds[7]"  SITE  "E16";
+LOCATE  COMP  "n_Rst"  SITE  "U17";
 
 
 
@@ -344,5 +346,5 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Fri May 29 14:21:25 2026
+Fri May 29 16:44:29 2026
 

@@ -6,6 +6,7 @@ entity uart_echo is
     port (
         Clk     : in  std_logic;
         Rst     : in  std_logic;
+		n_Rst 	: out std_logic;
 
         Uart_Tx : out std_logic;
         Uart_Rx : in  std_logic;
@@ -27,7 +28,7 @@ architecture rtl of uart_echo is
     signal echo_data        : std_logic_vector(7 downto 0);
 
 begin
-
+	n_Rst <= not Rst;
     --------------------------------------------------------------------------
     -- UART
     --------------------------------------------------------------------------

@@ -2,91 +2,7 @@
 <HEAD><TITLE>Project Summary</TITLE>
 <STYLE TYPE="text/css">
 <!--
- body,pre{
-    font-family:'Courier New', monospace;
-    color: #000000;
-    font-size:88%;
-    background-color: #ffffff;
-}
-h1 {
-    font-weight: bold;
-    margin-top: 24px;
-    margin-bottom: 10px;
-    border-bottom: 3px solid #000;    font-size: 1em;
-}
-h2 {
-    font-weight: bold;
-    margin-top: 18px;
-    margin-bottom: 5px;
-    font-size: 0.90em;
-}
-h3 {
-    font-weight: bold;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-size: 0.80em;
-}
-p {
-    font-size:78%;
-}
-P.Table {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    margin-left: 4px;
-}
-table
-{
-    border-width: 1px 1px 1px 1px;
-    border-style: solid solid solid solid;
-    border-color: black black black black;
-    border-collapse: collapse;
-}
-th {
-    font-weight:bold;
-    padding: 4px;
-    border-width: 1px 1px 1px 1px;
-    border-style: solid solid solid solid;
-    border-color: black black black black;
-    vertical-align:top;
-    text-align:left;
-    font-size:78%;
-}
-td {
-    padding: 4px;
-    border-width: 1px 1px 1px 1px;
-    border-style: solid solid solid solid;
-    border-color: black black black black;
-    vertical-align:top;
-    font-size:78%;
-}
-a {
-    color:#013C9A;
-    text-decoration:none;
-}
-
-a:visited {
-    color:#013C9A;
-}
-
-a:hover, a:active {
-    text-decoration:underline;
-    color:#5BAFD4;
-}
-.pass
-{
-background-color: #00ff00;
-}
-.fail
-{
-background-color: #ff0000;
-}
-.comment
-{
-    font-size: 90%;
-    font-style: italic;
-}
-
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
 -->
 </STYLE>
 </HEAD>
@@ -110,7 +26,7 @@ Target Vendor:  LATTICE
 Target Device:  LFE5UM-45FCABGA381
 Target Performance:   7
 Mapper:  sa5p00m,  version:  Diamond (64-bit) 3.14.0.75.2
-Mapped on:  05/29/26  14:21:16
+Mapped on:  05/29/26  16:44:21
 
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
@@ -121,12 +37,12 @@ Mapped on:  05/29/26  14:21:16
       SLICEs as Logic/ROM:    107 out of 21924 (0%)
       SLICEs as RAM:            0 out of 16443 (0%)
       SLICEs as Carry:         32 out of 21924 (0%)
-   Number of LUT4s:        167 out of 43848 (0%)
-      Number used as logic LUTs:        103
+   Number of LUT4s:        168 out of 43848 (0%)
+      Number used as logic LUTs:        104
       Number used as distributed RAM:     0
       Number used as ripple logic:       64
       Number used as shift registers:     0
-   Number of PIO sites used: 12 out of 203 (6%)
+   Number of PIO sites used: 13 out of 203 (6%)
    Number of block RAMs:  0 out of 108 (0%)
    Number of GSRs:  0 out of 1 (0%)
    JTAG used :      No
@@ -168,35 +84,35 @@ Mapped on:  05/29/26  14:21:16
    Number of clocks:  1
      Net Clk_c: 74 loads, 74 rising, 0 falling (Driver: PIO Clk )
    Number of Clock Enables:  7
+     Net Clk_c_enable_39: 4 loads, 4 LSLICEs
      Net Clk_c_enable_32: 4 loads, 4 LSLICEs
-     Net Clk_c_enable_25: 4 loads, 4 LSLICEs
      Net rx_valid: 1 loads, 1 LSLICEs
-     Net u_uart/Clk_c_enable_11: 3 loads, 3 LSLICEs
-     Net u_uart/Clk_c_enable_39: 6 loads, 6 LSLICEs
-     Net u_uart/Clk_c_enable_6: 1 loads, 1 LSLICEs
-     Net u_uart/Clk_c_enable_18: 4 loads, 4 LSLICEs
+     Net u_uart/Clk_c_enable_12: 3 loads, 3 LSLICEs
+     Net u_uart/Clk_c_enable_5: 1 loads, 1 LSLICEs
+     Net u_uart/Clk_c_enable_25: 4 loads, 4 LSLICEs
+     Net u_uart/Clk_c_enable_36: 6 loads, 6 LSLICEs
    Number of LSRs:  10
-     Net Rst_c: 27 loads, 27 LSLICEs
      Net n967: 1 loads, 1 LSLICEs
+     Net Rst_c: 27 loads, 27 LSLICEs
+     Net n147: 1 loads, 1 LSLICEs
+     Net n1065: 1 loads, 1 LSLICEs
      Net leds_0_4: 1 loads, 1 LSLICEs
-     Net n146: 1 loads, 1 LSLICEs
-     Net n1056: 1 loads, 1 LSLICEs
-     Net u_uart/n1062: 3 loads, 3 LSLICEs
+     Net u_uart/n1060: 3 loads, 3 LSLICEs
+     Net u_uart/n1063: 1 loads, 1 LSLICEs
      Net u_uart/RxStrobe: 1 loads, 1 LSLICEs
-     Net u_uart/n1065: 1 loads, 1 LSLICEs
-     Net u_uart/i_strb_tx/n402: 9 loads, 9 LSLICEs
-     Net u_uart/i_strb_rx/n406: 9 loads, 9 LSLICEs
+     Net u_uart/i_strb_tx/n401: 9 loads, 9 LSLICEs
+     Net u_uart/i_strb_rx/n405: 9 loads, 9 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net Rst_c: 34 loads
+     Net Rst_c: 35 loads
      Net u_uart/RxStrobe: 13 loads
      Net u_uart/r.RxCount_0: 12 loads
      Net u_uart/r.RxCount_1: 12 loads
      Net u_uart/r.RxCount_2: 11 loads
      Net u_uart/r.TxCount_0: 11 loads
-     Net n146: 10 loads
-     Net u_uart/i_strb_rx/n406: 9 loads
-     Net u_uart/i_strb_tx/n402: 9 loads
+     Net n147: 10 loads
+     Net u_uart/i_strb_rx/n405: 9 loads
+     Net u_uart/i_strb_tx/n401: 9 loads
      Net u_uart/r.TxCount_1: 9 loads
 
 
@@ -224,15 +140,17 @@ Mapped on:  05/29/26  14:21:16
 | IO Name             | Direction | Levelmode | IO         |
 |                     |           |  IO_TYPE  | Register   |
 +---------------------+-----------+-----------+------------+
-| leds[4]             | OUTPUT    | LVCMOS25  |            |
+| leds[6]             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | leds[5]             | OUTPUT    | LVCMOS25  |            |
-+---------------------+-----------+-----------+------------+
-| leds[6]             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | leds[7]             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | Uart_Tx             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| n_Rst               | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[4]             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
 | leds[3]             | OUTPUT    | LVCMOS25  |            |
 +---------------------+-----------+-----------+------------+
@@ -254,9 +172,9 @@ Mapped on:  05/29/26  14:21:16
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
 Block GSR_INST undriven or does not drive anything - clipped.
-Signal u_uart/n253 was merged into signal u_uart/RxStrobe
-Signal u_uart/n1058 was merged into signal n146
-Signal u_uart/n1057 was merged into signal leds_0_4
+Signal u_uart/n254 was merged into signal u_uart/RxStrobe
+Signal u_uart/n1055 was merged into signal leds_0_4
+Signal u_uart/n1056 was merged into signal n147
 Signal u_uart/i_strb_rx/Count_291_add_4_1/S0 undriven or does not drive anything
      - clipped.
 Signal u_uart/i_strb_rx/Count_291_add_4_1/CI undriven or does not drive anything
@@ -269,9 +187,9 @@ Signal u_uart/i_strb_tx/Count_289_add_4_1/S0 undriven or does not drive anything
      - clipped.
 Signal u_uart/i_strb_tx/Count_289_add_4_1/CI undriven or does not drive anything
      - clipped.
+
 Signal u_uart/i_strb_tx/Count_289_add_4_17/S1 undriven or does not drive
      anything - clipped.
-
 Signal u_uart/i_strb_tx/Count_289_add_4_17/CO undriven or does not drive
      anything - clipped.
 Signal u_uart/heartbeat_cnt_290_add_4_1/S0 undriven or does not drive anything -
@@ -282,9 +200,9 @@ Signal u_uart/heartbeat_cnt_290_add_4_27/S1 undriven or does not drive anything
      - clipped.
 Signal u_uart/heartbeat_cnt_290_add_4_27/CO undriven or does not drive anything
      - clipped.
-Block u_uart/i_strb_rx/i100_1_lut was optimized away.
-Block u_uart/i509_1_lut was optimized away.
-Block u_uart/i508_1_lut was optimized away.
+Block u_uart/i_strb_rx/i101_1_lut was optimized away.
+Block u_uart/i506_1_lut was optimized away.
+Block u_uart/i507_1_lut was optimized away.
 
      
 
@@ -297,8 +215,6 @@ Block u_uart/i508_1_lut was optimized away.
    Total REAL Time: 0 secs  
    Peak Memory Usage: 158 MB
         
-
-
 
 
 

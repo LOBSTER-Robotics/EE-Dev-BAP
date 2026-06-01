@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Fri May 29 13:46:54 2026
+Fri May 29 16:44:20 2026
 
 
 Command Line:  synthesis -f UART_forUSB_impl1_lattice.synproj -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml 
@@ -74,6 +74,8 @@ VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-De
 VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd
 VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd
 VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd
+VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_send.vhd
+VHDL design file = C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd
 NGD file = UART_forUSB_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -113,11 +115,17 @@ INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev
 INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(63): analyzing architecture rtl. VHDL-1010
 Analyzing VHDL file c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd. VHDL-1481
 INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(5): analyzing entity uart_echo. VHDL-1012
-INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(16): analyzing architecture rtl. VHDL-1010
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(17): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd. VHDL-1481
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd(5): analyzing entity variable_clock_divider. VHDL-1012
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd(20): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd. VHDL-1481
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd(5): analyzing entity uart_tx_test. VHDL-1012
+INFO - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd(17): analyzing architecture rtl. VHDL-1010
 unit uart_echo is not yet analyzed. VHDL-1485
 c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(5): executing uart_echo(rtl)
 
-WARNING - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(14): replacing existing netlist uart_echo(rtl). VHDL-1205
+WARNING - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(15): replacing existing netlist uart_echo(rtl). VHDL-1205
 Top module name (VHDL): uart_echo
 Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data/sa5mlib.ngl'...
 Loading NGL library 'E:/Apps/Lattice Diamond/ispfpga/sa5p00/data/sa5plib.ngl'...
@@ -154,9 +162,9 @@ original encoding -> new encoding (one-hot encoding)
 
 
 
+WARNING - synthesis: Bit 9 of Register \u_uart/r.TxShiftReg is stuck at Zero
 WARNING - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(340): Register \u_uart/r.Rx_ParityError_135 is stuck at Zero. VDB-5013
 WARNING - synthesis: c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(377): Register \u_uart/parity_err_sticky_140 is stuck at Zero. VDB-5013
-WARNING - synthesis: Bit 9 of Register \u_uart/r.TxShiftReg is stuck at Zero
 GSR will not be inferred because no asynchronous signal was found in the netlist.
 Applying 200.000000 MHz constraint to all clocks
 
@@ -180,8 +188,8 @@ FD1S3IX => 71
 FD1S3JX => 4
 GSR => 1
 IB => 3
-LUT4 => 105
-OB => 9
+LUT4 => 106
+OB => 10
 PFUMX => 4
 ################### End Area Report ##################
 
@@ -192,24 +200,24 @@ Number of Clocks: 1
 Clock Enable Nets
 Number of Clock Enables: 7
 Top 7 highest fanout Clock Enables:
-  Net : u_uart/Clk_c_enable_39, loads : 10
-  Net : Clk_c_enable_25, loads : 8
+  Net : u_uart/Clk_c_enable_36, loads : 10
   Net : Clk_c_enable_32, loads : 8
-  Net : u_uart/Clk_c_enable_18, loads : 8
-  Net : u_uart/Clk_c_enable_11, loads : 5
-  Net : u_uart/Clk_c_enable_6, loads : 1
+  Net : Clk_c_enable_39, loads : 8
+  Net : u_uart/Clk_c_enable_25, loads : 8
+  Net : u_uart/Clk_c_enable_12, loads : 5
+  Net : u_uart/Clk_c_enable_5, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : Rst_c, loads : 48
-  Net : u_uart/i_strb_tx/n402, loads : 16
-  Net : u_uart/i_strb_rx/n406, loads : 16
+  Net : Rst_c, loads : 49
+  Net : u_uart/i_strb_tx/n401, loads : 16
+  Net : u_uart/i_strb_rx/n405, loads : 16
   Net : u_uart/r.RxCount_0, loads : 12
-  Net : u_uart/i_strb_rx/RxStrobe, loads : 12
   Net : u_uart/r.RxCount_1, loads : 12
-  Net : u_uart/r.RxCount_2, loads : 11
+  Net : u_uart/i_strb_rx/RxStrobe, loads : 12
   Net : u_uart/r.TxCount_0, loads : 11
-  Net : u_uart/Clk_c_enable_39, loads : 10
-  Net : u_uart/n146, loads : 9
+  Net : u_uart/r.RxCount_2, loads : 11
+  Net : u_uart/Clk_c_enable_36, loads : 10
+  Net : u_uart/n147, loads : 9
 ################### End Clock Report ##################
 
 Timing Report Summary
@@ -227,8 +235,8 @@ clk0 [get_nets Clk_c]                   |  200.000 MHz|  140.410 MHz|    13 *
 1 constraints not met.
 
 
-Peak Memory Usage: 137.129  MB
+Peak Memory Usage: 139.012  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.156  secs
+Elapsed CPU time for LSE flow : 1.047  secs
 --------------------------------------------------------------

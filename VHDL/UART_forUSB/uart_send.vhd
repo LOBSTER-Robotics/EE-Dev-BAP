@@ -6,9 +6,11 @@ entity uart_tx_test is
     port (
         Clk     : in  std_logic;
         Rst     : in  std_logic;
+		n_Rst   : out std_logic;
 
         Uart_Tx : out std_logic;
-        Uart_Rx : in  std_logic    -- unused
+        Uart_Rx : in  std_logic;    -- unused
+		leds : out std_logic_vector(7 downto 0)
     );
 end entity;
 
@@ -19,8 +21,12 @@ architecture rtl of uart_tx_test is
     signal tx_data          : std_logic_vector(7 downto 0) := x"55";
 
     signal rx_valid         : std_logic;
+	signal uart_led_tx         : std_logic;
     signal rx_data          : std_logic_vector(7 downto 0);
     signal rx_parity_error  : std_logic;
+	signal div_value : unsigned(31 downto 0);
+
+
 
 begin
 
@@ -30,7 +36,7 @@ begin
     u_uart : entity work.olo_intf_uart
         generic map (
             ClkFreq_g  => 125.0e6,
-            BaudRate_g => 115.2e3,
+            BaudRate_g => 9600.0,
             DataBits_g => 8,
             StopBits_g => "1",
             Parity_g   => "none"
@@ -47,9 +53,25 @@ begin
             Rx_Data         => rx_data,
             Rx_ParityError  => rx_parity_error,
 
-            Uart_Tx         => Uart_Tx,
+            Uart_Tx         => uart_led_tx,
             Uart_Rx         => Uart_Rx
         );
+		leds(0) <= uart_led_tx;
+		Uart_Tx <= uart_led_tx;
+		leds(1) <= tx_ready;
+		div_value <= to_unsigned(25, 32); -- 100 MHz / (2 * 50) = 1 MHz
+		n_Rst <= not Rst;
+		
+	u_clk_div : entity work.variable_clock_divider
+    generic map (
+        COUNTER_WIDTH => 32
+    )
+    port map (
+        clk            => Clk,
+        reset          => Rst,
+        terminal_count => div_value,
+        clk_div        => leds(2)
+    );
 
     --------------------------------------------------------------------------
     -- Continuously transmit 0x55
@@ -66,7 +88,7 @@ begin
                 -- Present a new byte whenever the UART is ready
                 if tx_ready = '1' then
                     tx_valid <= '1';
-                    tx_data  <= x"55";
+                    tx_data  <= x"F4";
                 else
                     tx_valid <= '0';
                 end if;

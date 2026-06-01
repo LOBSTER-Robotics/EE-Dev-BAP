@@ -54,7 +54,13 @@ entity TOP_RX_FIFO is
 		seg_m  : out std_logic;
 		seg_n  : out std_logic;
 		seg_p  : out std_logic;
-		seg_dp : out std_logic
+		seg_dp : out std_logic;
+
+        --------------------------------------------------------------------
+        -- UART
+        --------------------------------------------------------------------
+        Uart_Tx : out std_logic;
+        Uart_Rx : in  std_logic
     );
 end TOP_RX_FIFO;
 
@@ -171,6 +177,10 @@ architecture rtl of TOP_RX_FIFO is
     signal fifo_read_enable     : std_logic;
     signal fifo_rd_en_i         : std_logic;
 
+    signal uart_tx_valid_i : std_logic;
+    signal uart_tx_ready_i : std_logic;
+    signal uart_tx_data_i  : std_logic_vector(7 downto 0);
+
     --------------------------------------------------------------------
     -- LED/debug bus before active-low inversion
     --------------------------------------------------------------------
@@ -231,7 +241,7 @@ begin
     debug_bus(3) <= phy_link_up_i;
     debug_bus(4) <= phy_duplex_i;
     debug_bus(6 downto 5) <= phy_speed_i;
-    debug_bus(7) <= not fifo_empty_i;
+	debug_bus(7) <= fifo_empty_i;
 
     fifo_q <= not debug_bus;
 
@@ -268,14 +278,14 @@ begin
     --------------------------------------------------------------------
     fifo_read_enable <= not fifo_empty_i;
 
-    read_pulse_inst : OneClockPulse
-        port map (
-            clk       => clk125,
-            reset     => rx_reset,
-            enable    => fifo_read_enable,
-            ext_in    => read_switch,
-            pulse_out => fifo_rd_en_i
-        );
+    -- read_pulse_inst : OneClockPulse
+    --     port map (
+    --         clk       => clk125,
+    --         reset     => rx_reset,
+    --         enable    => fifo_read_enable,
+    --         ext_in    => read_switch,
+    --         pulse_out => fifo_rd_en_i
+    --     );
 
     --------------------------------------------------------------------
     -- RGMII RX
@@ -341,5 +351,42 @@ begin
             AlmostEmpty => fifo_almost_empty_i,
             AlmostFull  => fifo_almost_full_i
         );
+    uart_inst : entity work.olo_intf_uart
+    generic map (
+        ClkFreq_g  => 125.0e6,
+        BaudRate_g => 115.2e3,
+        DataBits_g => 8,
+        StopBits_g => "1",
+        Parity_g   => "none"
+    )
+    port map (
+        Clk            => clk125,
+        Rst            => fifo_reset,
+
+        Tx_Valid       => uart_tx_valid_i,
+        Tx_Ready       => uart_tx_ready_i,
+        Tx_Data        => uart_tx_data_i,
+
+        Rx_Valid       => open,
+        Rx_Data        => open,
+        Rx_ParityError => open,
+
+        Uart_Tx        => Uart_Tx,
+        Uart_Rx        => Uart_Rx
+
+    );
+    fifo_to_uart_inst : entity work.fifo_to_uart_byte
+    port map (
+        Clk        => clk125,
+        Rst        => fifo_reset,
+
+        Fifo_Q     => fifo_data_q,
+        Fifo_Empty => fifo_empty_i,
+        Fifo_RdEn  => fifo_rd_en_i,
+
+        Tx_Valid   => uart_tx_valid_i,
+        Tx_Ready   => uart_tx_ready_i,
+        Tx_Data    => uart_tx_data_i
+    );
 
 end rtl;

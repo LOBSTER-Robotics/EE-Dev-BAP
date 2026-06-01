@@ -5,39 +5,39 @@
             <Task name="IBIS" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="3" update_time="0"/>
             <Task name="TimingSimFileVHD" build_result="0" update_result="3" update_time="0"/>
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1780057300"/>
+            <Task name="Bitgen" build_result="0" update_result="2" update_time="1780300378"/>
             <Task name="Promgen" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1780057278">
-            <Task name="Map" build_result="2" update_result="0" update_time="1780057278"/>
+        <Milestone name="Map" build_result="0" build_time="1780300378">
+            <Task name="Map" build_result="0" update_result="2" update_time="1780300378"/>
             <Task name="MapTrace" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVerilogSimFile" build_result="0" update_result="3" update_time="0"/>
             <Task name="MapVHDLSimFile" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1780057291">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1780057291"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1780057292"/>
-            <Task name="IOTiming" build_result="2" update_result="0" update_time="1780057296"/>
+        <Milestone name="PAR" build_result="0" build_time="1780300378">
+            <Task name="PAR" build_result="0" update_result="2" update_time="1780300378"/>
+            <Task name="PARTrace" build_result="0" update_result="2" update_time="1780300378"/>
+            <Task name="IOTiming" build_result="0" update_result="2" update_time="1780300378"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1780055216">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1780055216"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1780055241"/>
+        <Milestone name="Synthesis" build_result="0" build_time="1780298866">
+            <Task name="Lattice_Synthesis" build_result="0" update_result="2" update_time="1780298866"/>
+            <Task name="LSE_Compile" build_result="0" update_result="2" update_time="1780298866"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="2" update_result="0" update_time="1780055211"/>
-            <Task name="BKM" build_result="0" update_result="3" update_time="0"/>
+            <Task name="HDLE" build_result="2" update_result="0" update_time="1780298866"/>
+            <Task name="BKM" build_result="0" update_result="2" update_time="1780298866"/>
             <Task name="SSO" build_result="0" update_result="3" update_time="0"/>
             <Task name="PIODRC" build_result="0" update_result="3" update_time="0"/>
             <Task name="DEC" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Report name=".vdbs/UART_forUSB_impl1_map.vdb" last_build_time="1780057278" last_build_size="96068"/>
-        <Report name="UART_forUSB_impl1.bgn" last_build_time="1780057300" last_build_size="4759"/>
-        <Report name="UART_forUSB_impl1.bit" last_build_time="1780057300" last_build_size="1032635"/>
-        <Report name="UART_forUSB_impl1.ior" last_build_time="1780057296" last_build_size="2411"/>
-        <Report name="UART_forUSB_impl1.lsedata" last_build_time="1780055215" last_build_size="260422"/>
-        <Report name="UART_forUSB_impl1.ncd" last_build_time="1780057291" last_build_size="192164"/>
-        <Report name="UART_forUSB_impl1.ngd" last_build_time="1780055215" last_build_size="161533"/>
-        <Report name="UART_forUSB_impl1.twr" last_build_time="1780057292" last_build_size="58073"/>
-        <Report name="UART_forUSB_impl1_map.ncd" last_build_time="1780057277" last_build_size="137514"/>
+        <Report name=".vdbs/UART_forUSB_impl1_map.vdb" last_build_time="1780065863" last_build_size="96481"/>
+        <Report name="UART_forUSB_impl1.bgn" last_build_time="1780065886" last_build_size="4759"/>
+        <Report name="UART_forUSB_impl1.bit" last_build_time="1780065886" last_build_size="1032635"/>
+        <Report name="UART_forUSB_impl1.ior" last_build_time="1780065881" last_build_size="2411"/>
+        <Report name="UART_forUSB_impl1.lsedata" last_build_time="1780065860" last_build_size="260819"/>
+        <Report name="UART_forUSB_impl1.ncd" last_build_time="1780065877" last_build_size="192682"/>
+        <Report name="UART_forUSB_impl1.ngd" last_build_time="1780065861" last_build_size="162441"/>
+        <Report name="UART_forUSB_impl1.twr" last_build_time="1780065878" last_build_size="53802"/>
+        <Report name="UART_forUSB_impl1_map.ncd" last_build_time="1780065862" last_build_size="138191"/>
     </Strategy>
 </BuildStatus>

@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Fri May 29 14:21:36 2026
+Fri May 29 16:44:41 2026
 
 
 Command: bitgen -w -g CfgMode:Disable -g RamCfg:Reset -g DisableUES:FALSE -g ES:No -e -s C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.sec -k C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.bek -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml UART_forUSB_impl1.ncd UART_forUSB_impl1.prf 
@@ -78,5 +78,5 @@ Bitstream Status: Final           Version 10.27.
  
 Saving bit stream in "UART_forUSB_impl1.bit".
 Total CPU Time: 4 secs 
-Total REAL Time: 4 secs 
-Peak Memory Usage: 363 MB
+Total REAL Time: 5 secs 
+Peak Memory Usage: 365 MB

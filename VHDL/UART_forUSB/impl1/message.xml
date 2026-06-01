@@ -166,19 +166,51 @@
         <Message>
             <ID>35921010</ID>
             <Severity>Info</Severity>
-            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(16): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(17): </Dynamic>
             <Dynamic>rtl</Dynamic>
             <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
-            <Navigation>16</Navigation>
+            <Navigation>17</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd(5): </Dynamic>
+            <Dynamic>variable_clock_divider</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd(20): </Dynamic>
+            <Dynamic>rtl</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/counter.vhd</Navigation>
+            <Navigation>20</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd(5): </Dynamic>
+            <Dynamic>uart_tx_test</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd(17): </Dynamic>
+            <Dynamic>rtl</Dynamic>
+            <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_send.vhd</Navigation>
+            <Navigation>17</Navigation>
         </Message>
         <Message>
             <ID>35921205</ID>
             <Severity>Warning</Severity>
-            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(14): </Dynamic>
+            <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd(15): </Dynamic>
             <Dynamic>uart_echo</Dynamic>
             <Dynamic>rtl</Dynamic>
             <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/uart_echo.vhd</Navigation>
-            <Navigation>14</Navigation>
+            <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35001771</ID>
@@ -203,6 +235,12 @@
             <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
+            <ID>35001747</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>\u_uart/r.TxShiftReg</Dynamic>
+        </Message>
+        <Message>
             <ID>35935013</ID>
             <Severity>Warning</Severity>
             <Dynamic>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd(340): </Dynamic>
@@ -217,12 +255,6 @@
             <Dynamic>\u_uart/parity_err_sticky_140</Dynamic>
             <Navigation>c:/users/hoona/documents/school/universiteit/jaar 3/bap/ee-dev-bap/vhdl/uart_forusb/olo_intf_uart.vhd</Navigation>
             <Navigation>377</Navigation>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>9</Dynamic>
-            <Dynamic>\u_uart/r.TxShiftReg</Dynamic>
         </Message>
         <Message>
             <ID>35001611</ID>
