@@ -1,0 +1,6 @@
+#Start recording tcl command: 6/1/2026 10:47:51
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/lattice_tx_path; Project name: ethernet_tx_path
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/ethernet_tx_path.ldf"
+prj_project save
+prj_project close
+#Stop recording: 6/1/2026 11:10:30

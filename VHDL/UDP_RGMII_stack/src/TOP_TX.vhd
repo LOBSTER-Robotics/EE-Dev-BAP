@@ -16,7 +16,7 @@ port (
     --------------------------------------------------------------------
     fifo_data  : in  std_logic_vector(7 downto 0);
     fifo_empty : in  std_logic;
-    fifo_last  : in  std_logic;
+    fifo_almostfull  : in  std_logic;
     fifo_rd_en : out std_logic;
 
     --------------------------------------------------------------------
@@ -62,7 +62,7 @@ begin
         ------------------------------------------------------------
         fifo_data  => fifo_data,
         fifo_empty => fifo_empty,
-        fifo_almostfull  => fifo_last,
+        fifo_almostfull  => fifo_almostfull,
         fifo_rd_en => fifo_rd_en,
 
         ------------------------------------------------------------
@@ -102,7 +102,7 @@ begin
     --------------------------------------------------------------------
     -- GMII → RGMII PHY adapter
     --------------------------------------------------------------------
-    rgmii_inst : entity work.rgmii_tx
+    rgmii_inst : entity work.rgmii_tx_ddr
     port map (
 
         clk125 => clk125,

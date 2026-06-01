@@ -3,11 +3,7 @@
 <ReportView version="2.0">
     <Implement name="impl2">
         <ToolReport id="tooldec" path="" status="0"/>
-<<<<<<< Updated upstream
-        <ToolReport id="toolhle_genhierarchy" path="C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1/hdla_gen_hierarchy.html" status="1"/>
-=======
-        <ToolReport id="toolhle_genhierarchy" path="D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl2/hdla_gen_hierarchy.html" status="1"/>
->>>>>>> Stashed changes
+        <ToolReport id="toolhle_genhierarchy" path="C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl2/hdla_gen_hierarchy.html" status="1"/>
         <ToolReport id="toolpio" path="" status="0"/>
         <ToolReport id="toolsso" path="" status="0"/>
     </Implement>

@@ -10,7 +10,7 @@ entity UDP_FIFO_AXI is
         -- FIFO input
         fifo_data  : in  std_logic_vector(7 downto 0);
         fifo_empty : in  std_logic;
-        fifo_last  : in  std_logic;
+        fifo_almostfull  : in  std_logic;
         fifo_rd_en : out std_logic;
 
         -- AXI-stream output to MAC
@@ -91,11 +91,12 @@ begin
 
             ------------------------------------------------------------
             -- IDLE
+            -- If fifo is empty wait else start making the header
             ------------------------------------------------------------
             when IDLE =>
                 next_idx <= 0;
 
-                if fifo_empty = '0' then
+                if fifo_almostfull = '1' then
                     next_state <= ETH_HDR;
                     next_idx <= 0;
                 end if;
@@ -146,9 +147,10 @@ begin
                     if idx = udp_header'length - 1 then
                         next_state <= PAYLOAD;
                         next_idx <= 0;
-                        if fifo_empty = '0' and t_ready = '1' then
-                            fifo_rd_en <= '1';
-                        end if;
+                        fifo_rd_en <= '1';
+                    elsif idx >= udp_header'length - 3 then
+                        fifo_rd_en <= '1';
+                        next_idx <= idx + 1;
                     else
                         next_idx <= idx + 1;
                     end if;
@@ -156,6 +158,7 @@ begin
 
             ------------------------------------------------------------
             -- PAYLOAD
+            -- Use fifo unit it is empty, then do to done->idle
             ------------------------------------------------------------
             when PAYLOAD =>
 
@@ -165,10 +168,7 @@ begin
                 if fifo_empty = '0' and t_ready = '1' then
                     fifo_rd_en <= '1';
 
-                    if fifo_last = '1' then
-                        next_state <= DONE;
-                    end if;
-                elsif fifo_last = '1' then
+                elsif fifo_empty = '1' then
                     next_state <= DONE;
                     t_last  <= '1';
                 end if;

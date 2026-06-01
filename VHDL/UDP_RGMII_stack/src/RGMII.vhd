@@ -58,7 +58,7 @@ use ieee.numeric_std.all;
 --
 --RX
 --
-entity rgmii_rx is
+entity rgmii_rx_ddr is
 port (
     rx_clk   : in  std_logic;
     reset    : in  std_logic;
@@ -72,7 +72,7 @@ port (
 );
 end entity;
 
-architecture rtl of rgmii_rx is
+architecture rtl of rgmii_rx_ddr is
     signal low_nibble  : std_logic_vector(3 downto 0);
     signal high_nibble : std_logic_vector(3 downto 0);
     signal ctl_rise, ctl_fall, next_dv, next_er : std_logic;

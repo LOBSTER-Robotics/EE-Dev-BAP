@@ -62,11 +62,6 @@ architecture rtl of MAC_AXItoRGMII is
 begin
 
     --------------------------------------------------------------------
-    -- CRC Input Selection
-    --------------------------------------------------------------------
-    crc_input <= s_data when state = PAYLOAD else x"00";
-
-    --------------------------------------------------------------------
     -- CRC Generator
     --------------------------------------------------------------------
     crc_inst : entity work.crc32_8
@@ -109,7 +104,7 @@ begin
         begin
 
             ----------------------------------------------------------------
-            -- defaults (VERY IMPORTANT)
+            -- defaults
             ----------------------------------------------------------------
             next_state     <= state;
 
@@ -128,8 +123,8 @@ begin
             ----------------------------------------------------------------
             -- CRC input
             ----------------------------------------------------------------
-            crc_input <= s_data when state = PAYLOAD else x"00";
-
+            --crc_input <= s_data when state = PAYLOAD else x"00";
+            crc_input <= x"00";
             ----------------------------------------------------------------
             case state is
 
@@ -143,10 +138,10 @@ begin
                 next_frame_len <= 0;
                 next_crc_reg   <= (others => '1');
 
-                --if s_valid = '1' then
-                next_pre_cnt <= 0;
-                next_state <= PREAMBLE;
-                --end if;
+                if s_valid = '1' then
+                    next_pre_cnt <= 0;
+                    next_state <= PREAMBLE;
+                end if;
 
             ------------------------------------------------------------
             -- PREAMBLE
@@ -180,13 +175,15 @@ begin
                     gmii_tx_en <= '1';
                     gmii_txd   <= s_data;
 
+                    crc_input <= s_data;
                     next_crc_reg   <= crc_next;
+                    
                     next_frame_len <= frame_len + 1;
 
                     if s_last = '1' then
 
                         if frame_len < 58 then
-                            next_pad_cnt <= 58 - (frame_len + 1);
+                            next_pad_cnt <= 57 - (frame_len);
                             next_state <= PADDING;
                         else
                             next_crc_cnt <= 0;
@@ -225,7 +222,8 @@ begin
                     when 0 => gmii_txd <= not crc_reg(7 downto 0);
                     when 1 => gmii_txd <= not crc_reg(15 downto 8);
                     when 2 => gmii_txd <= not crc_reg(23 downto 16);
-                    when others => gmii_txd <= not crc_reg(31 downto 24);
+                    when 3 => gmii_txd <= not crc_reg(31 downto 24);
+                    when others => gmii_txd <= (others => '1');
                 end case;
 
                 if crc_cnt = 3 then
@@ -236,7 +234,7 @@ begin
                 end if;
 
             ------------------------------------------------------------
-            -- IFG
+            -- IFG: inter frame gap
             ------------------------------------------------------------
             when IFG =>
 
