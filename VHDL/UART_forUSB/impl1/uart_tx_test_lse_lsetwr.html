@@ -1,0 +1,328 @@
+<HTML>
+<HEAD><TITLE>Lattice Synthesis Timing Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Map_Twr"></A><B><U><big>Lattice Synthesis Timing Report</big></U></B>
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Fri May 29 16:40:15 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Design:     uart_tx_test
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets Clk_c]
+            2381 items scored, 2381 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 4.596ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \u_uart/i_strb_tx/Count__i4  (from Clk_c +)
+   Destination:    FD1S3IX    D              \u_uart/i_strb_tx/Count__i19  (to Clk_c +)
+
+   Delay:                   9.736ns  (17.5% logic, 82.5% route), 17 logic levels.
+
+ Constraint Details:
+
+      9.736ns data_path \u_uart/i_strb_tx/Count__i4 to \u_uart/i_strb_tx/Count__i19 violates
+      5.000ns delay constraint less
+     -0.140ns L_S requirement (totaling 5.140ns) by 4.596ns
+
+ Path Details: \u_uart/i_strb_tx/Count__i4 to \u_uart/i_strb_tx/Count__i19
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.268             CK to Q              \u_uart/i_strb_tx/Count__i4 (from Clk_c)
+Route         2   e 1.258                                  Count[4]
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_2_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n906
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_4_lut_adj_9
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n903
+LUT4        ---     0.123              A to Z              \u_uart/i_strb_tx/i218_4_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n18
+LUT4        ---     0.123              D to Z              \u_uart/i_strb_tx/i1_4_lut
+Route         2   e 1.158                                  \u_uart/i_strb_tx/n780
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_3_lut
+Route         5   e 1.341                                  n596
+A1_TO_FCO   ---     0.247           A[2] to COUT           add_387_1
+Route         1   e 0.020                                  n764
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_3
+Route         1   e 0.020                                  n765
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_5
+Route         1   e 0.020                                  n766
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_7
+Route         1   e 0.020                                  n767
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_9
+Route         1   e 0.020                                  n768
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_11
+Route         1   e 0.020                                  n769
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_13
+Route         1   e 0.020                                  n770
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_15
+Route         1   e 0.020                                  n771
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_17
+Route         1   e 0.020                                  n772
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_19
+Route         1   e 0.020                                  n773
+FCI_TO_F    ---     0.218            CIN to S[2]           add_387_21
+Route         1   e 1.020                                  n46
+                  --------
+                    9.736  (17.5% logic, 82.5% route), 17 logic levels.
+
+
+Error:  The following path violates requirements by 4.596ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \u_uart/i_strb_tx/Count__i3  (from Clk_c +)
+   Destination:    FD1S3IX    D              \u_uart/i_strb_tx/Count__i19  (to Clk_c +)
+
+   Delay:                   9.736ns  (17.5% logic, 82.5% route), 17 logic levels.
+
+ Constraint Details:
+
+      9.736ns data_path \u_uart/i_strb_tx/Count__i3 to \u_uart/i_strb_tx/Count__i19 violates
+      5.000ns delay constraint less
+     -0.140ns L_S requirement (totaling 5.140ns) by 4.596ns
+
+ Path Details: \u_uart/i_strb_tx/Count__i3 to \u_uart/i_strb_tx/Count__i19
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.268             CK to Q              \u_uart/i_strb_tx/Count__i3 (from Clk_c)
+Route         2   e 1.258                                  Count[3]
+LUT4        ---     0.123              A to Z              \u_uart/i_strb_tx/i1_2_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n906
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_4_lut_adj_9
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n903
+LUT4        ---     0.123              A to Z              \u_uart/i_strb_tx/i218_4_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n18
+LUT4        ---     0.123              D to Z              \u_uart/i_strb_tx/i1_4_lut
+Route         2   e 1.158                                  \u_uart/i_strb_tx/n780
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_3_lut
+Route         5   e 1.341                                  n596
+A1_TO_FCO   ---     0.247           A[2] to COUT           add_387_1
+Route         1   e 0.020                                  n764
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_3
+Route         1   e 0.020                                  n765
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_5
+Route         1   e 0.020                                  n766
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_7
+Route         1   e 0.020                                  n767
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_9
+Route         1   e 0.020                                  n768
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_11
+Route         1   e 0.020                                  n769
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_13
+Route         1   e 0.020                                  n770
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_15
+Route         1   e 0.020                                  n771
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_17
+Route         1   e 0.020                                  n772
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_19
+Route         1   e 0.020                                  n773
+FCI_TO_F    ---     0.218            CIN to S[2]           add_387_21
+Route         1   e 1.020                                  n46
+                  --------
+                    9.736  (17.5% logic, 82.5% route), 17 logic levels.
+
+
+Error:  The following path violates requirements by 4.537ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \u_uart/i_strb_tx/Count__i4  (from Clk_c +)
+   Destination:    FD1S3IX    D              \u_uart/i_strb_tx/Count__i19  (to Clk_c +)
+
+   Delay:                   9.677ns  (17.2% logic, 82.8% route), 16 logic levels.
+
+ Constraint Details:
+
+      9.677ns data_path \u_uart/i_strb_tx/Count__i4 to \u_uart/i_strb_tx/Count__i19 violates
+      5.000ns delay constraint less
+     -0.140ns L_S requirement (totaling 5.140ns) by 4.537ns
+
+ Path Details: \u_uart/i_strb_tx/Count__i4 to \u_uart/i_strb_tx/Count__i19
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.268             CK to Q              \u_uart/i_strb_tx/Count__i4 (from Clk_c)
+Route         2   e 1.258                                  Count[4]
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_2_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n906
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_4_lut_adj_9
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n903
+LUT4        ---     0.123              A to Z              \u_uart/i_strb_tx/i218_4_lut
+Route         1   e 1.020                                  \u_uart/i_strb_tx/n18
+LUT4        ---     0.123              D to Z              \u_uart/i_strb_tx/i1_4_lut
+Route         2   e 1.158                                  \u_uart/i_strb_tx/n780
+LUT4        ---     0.123              B to Z              \u_uart/i_strb_tx/i1_3_lut
+Route         5   e 1.341                                  n596
+A1_TO_FCO   ---     0.247           A[2] to COUT           add_387_3
+Route         1   e 0.020                                  n765
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_5
+Route         1   e 0.020                                  n766
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_7
+Route         1   e 0.020                                  n767
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_9
+Route         1   e 0.020                                  n768
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_11
+Route         1   e 0.020                                  n769
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_13
+Route         1   e 0.020                                  n770
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_15
+Route         1   e 0.020                                  n771
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_17
+Route         1   e 0.020                                  n772
+FCI_TO_FCO  ---     0.039            CIN to COUT           add_387_19
+Route         1   e 0.020                                  n773
+FCI_TO_F    ---     0.218            CIN to S[2]           add_387_21
+Route         1   e 1.020                                  n46
+                  --------
+                    9.677  (17.2% logic, 82.8% route), 16 logic levels.
+
+Warning: 9.596 ns is the maximum delay for this constraint.
+
+
+<A name="mtw1_rs"></A><B><U><big>Timing Report Summary</big></U></B>
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets Clk_c]                   |     5.000 ns|     9.596 ns|    17 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+\u_uart/i_strb_tx/n780                  |       2|    1283|     53.88%
+                                        |        |        |
+n596                                    |       5|     898|     37.72%
+                                        |        |        |
+\u_clk_div/n897                         |       2|     758|     31.84%
+                                        |        |        |
+\u_clk_div/n284                         |      32|     736|     30.91%
+                                        |        |        |
+n768                                    |       1|     700|     29.40%
+                                        |        |        |
+\u_uart/i_strb_tx/n18                   |       1|     656|     27.55%
+                                        |        |        |
+n767                                    |       1|     622|     26.12%
+                                        |        |        |
+n769                                    |       1|     574|     24.11%
+                                        |        |        |
+n770                                    |       1|     556|     23.35%
+                                        |        |        |
+n765                                    |       1|     542|     22.76%
+                                        |        |        |
+n766                                    |       1|     480|     20.16%
+                                        |        |        |
+\u_uart/i_strb_tx/n903                  |       1|     410|     17.22%
+                                        |        |        |
+n771                                    |       1|     398|     16.72%
+                                        |        |        |
+\u_clk_div/n996                         |       1|     396|     16.63%
+                                        |        |        |
+n4                                      |       3|     385|     16.17%
+                                        |        |        |
+\u_uart/i_strb_tx/n916                  |       1|     328|     13.78%
+                                        |        |        |
+n764                                    |       1|     302|     12.68%
+                                        |        |        |
+\u_clk_div/n990                         |       1|     264|     11.09%
+                                        |        |        |
+\u_uart/i_strb_tx/n920                  |       1|     246|     10.33%
+                                        |        |        |
+n772                                    |       1|     240|     10.08%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary:</big></U></B>
+---------------
+
+Timing errors: 2381  Score: 4939421
+
+Constraints cover  4031 paths, 221 nets, and 538 connections (95.9% coverage)
+
+
+Peak memory: 145604608 bytes, TRCE: 974848 bytes, DLYMAN: 0 bytes
+CPU_TIME_REPORT: 0 secs 
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

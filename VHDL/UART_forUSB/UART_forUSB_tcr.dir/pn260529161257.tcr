@@ -1,0 +1,53 @@
+#Start recording tcl command: 5/29/2026 13:17:58
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation
+RX
+#Start recording tcl command: 5/29/2026 16:12:56
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation; Project name: RX
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_run Export -impl impl1 -task Bitgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Bitgen
+pgr_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_send.vhd"
+prj_src syn_sim -src "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd" SimulateOnly
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+prj_project save
+prj_project close
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation/RX.ldf"
+pgr_project close
+#Stop recording: 5/29/2026 16:12:57
