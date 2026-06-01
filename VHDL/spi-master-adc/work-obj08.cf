@@ -1,12 +1,12 @@
 v 4
-file . "tb/tb_adc_spi_controller.vhd" "93d63f15dc2a6ec5cde90b437b464f705a71272e" "20260527084928.037":
-  entity tb_adc_spi_controller at 6( 182) + 0 on 17;
-  architecture behavioral of tb_adc_spi_controller at 13( 312) + 0 on 18;
-file . "src/ADC_master.vhd" "808d80d995c0de39c2644894ebc785529b58bae2" "20260527084926.634":
-  entity adc_spi_controller at 1( 0) + 0 on 11;
-  entity adc_spi_config at 53( 1806) + 0 on 12;
-  entity adc_acquisition_engine at 78( 2566) + 0 on 13;
-file . "src/ADC_master_behavioral.vhd" "10926b258cd5986da0e04aba6166ac1d651ef28f" "20260527084927.164":
-  architecture behavioral of adc_spi_controller at 1( 0) + 0 on 14;
-  architecture behavioral of adc_spi_config at 281( 8523) + 0 on 15;
-  architecture behavioral of adc_acquisition_engine at 657( 20259) + 0 on 16;
+file . "tb/tb_adc_spi_controller.vhd" "88fd5900575e0f145b0d8baed2a1a1f6f6b0a9e8" "20260601094920.522":
+  entity tb_adc_spi_controller at 6( 182) + 0 on 145;
+  architecture behavioral of tb_adc_spi_controller at 13( 312) + 0 on 146;
+file . "src/ADC_master.vhd" "808d80d995c0de39c2644894ebc785529b58bae2" "20260601094919.267":
+  entity adc_spi_controller at 1( 0) + 0 on 139;
+  entity adc_spi_config at 53( 1806) + 0 on 140;
+  entity adc_acquisition_engine at 78( 2566) + 0 on 141;
+file . "src/ADC_master_behavioral.vhd" "4d8e21bc757452bc001f469caf5d7705b7c176e3" "20260601094919.656":
+  architecture behavioral of adc_spi_controller at 1( 0) + 0 on 142;
+  architecture behavioral of adc_spi_config at 281( 8523) + 0 on 143;
+  architecture behavioral of adc_acquisition_engine at 807( 25824) + 0 on 144;

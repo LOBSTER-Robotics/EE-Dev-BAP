@@ -16,7 +16,7 @@ elaborate: analyze
 	$(GHDL) -e $(FLAGS) $(TOP)
 
 run: elaborate
-	$(GHDL) -r $(FLAGS) $(TOP) --vcd=wave.vcd --stop-time=10ms
+	$(GHDL) -r $(FLAGS) $(TOP) --vcd=wave.vcd --stop-time=6ms
 
 clean:
 	rm -f *.o *.cf wave.vcd

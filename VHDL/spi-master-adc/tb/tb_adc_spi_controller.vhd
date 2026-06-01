@@ -97,20 +97,28 @@ begin
         ----------------------------------------------------------------
         -- WAIT FOR CHIP SELECT
         ----------------------------------------------------------------
-        wait until CS = '0';
+        wait until falling_edge(CS);
+
+        wait for 6.8 ns;
 
         shift1 := adc_data1;
         shift2 := adc_data2;
 
+        MISO1 <= shift1(23);
+        MISO2 <= shift2(23);
+
+        shift1 := shift1(22 downto 0) & '0';
+        shift2 := shift2(22 downto 0) & '0';
+
         ----------------------------------------------------------------
         -- SHIFT OUT 24 BITS
         ----------------------------------------------------------------
-        for i in 0 to 23 loop
+        for i in 0 to 22 loop
 
             ------------------------------------------------------------
             -- ADC updates data after rising edge
             ------------------------------------------------------------
-            wait until rising_edge(SCK);
+            wait until falling_edge(SCK);
 
             MISO1 <= shift1(23);
             MISO2 <= shift2(23);
