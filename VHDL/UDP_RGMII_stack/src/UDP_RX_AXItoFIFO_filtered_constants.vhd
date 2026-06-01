@@ -3,6 +3,16 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity udp_rx is
+    generic (
+        --------------------------------------------------------------------
+        -- RX FILTER GENERICS
+        -- Byte order is network order:
+        -- LOCAL_MAC_ADDR = x"001122334455" accepts DA 00:11:22:33:44:55
+        -- LOCAL_IP_ADDR  = x"C0A80164"     accepts 192.168.1.100
+        --------------------------------------------------------------------
+        LOCAL_MAC_ADDR : std_logic_vector(47 downto 0) := x"001122334455";
+        LOCAL_IP_ADDR  : std_logic_vector(31 downto 0) := x"C0A80164"
+    );
     port (
         clk         : in  std_logic;
         reset       : in  std_logic;
@@ -26,16 +36,6 @@ entity udp_rx is
 end entity;
 
 architecture rtl of udp_rx is
-
-    --------------------------------------------------------------------
-    -- FIXED RX FILTER CONSTANTS
-    -- Byte order is network order:
-    -- LOCAL_MAC_ADDR = x"001122334455" accepts DA 00:11:22:33:44:55
-    -- LOCAL_IP_ADDR  = x"C0A80164"     accepts 192.168.1.100
-    -- Change these constants to match your FPGA/board address.
-    --------------------------------------------------------------------
-    constant LOCAL_MAC_ADDR : std_logic_vector(47 downto 0) := x"001122334455";
-    constant LOCAL_IP_ADDR  : std_logic_vector(31 downto 0) := x"C0A80164";
 
     type state_t is (
         IDLE,
