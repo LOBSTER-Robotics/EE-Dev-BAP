@@ -222,9 +222,8 @@ begin
                 t_data       <= fifo_data;
                 next_pld_cnt <= pld_cnt + 1;
 
-                if fifo_empty = '0' and t_ready = '1' then
+                if fifo_empty = '0' and t_ready = '1' and pld_cnt < 1440 then
                     fifo_rd_en <= '1';
-
                 elsif fifo_empty = '1' or pld_cnt >= 1440 then
                     next_state   <= DONE;
                     t_last       <= '1';

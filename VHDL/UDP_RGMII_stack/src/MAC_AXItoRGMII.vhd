@@ -117,7 +117,7 @@ begin
         end if;
 
         -- Input stream is being accepted in PAYLOAD
-        if state = PAYLOAD and s_valid = '1' then
+        if s_valid = '1' then
             debug_state(7) <= '1';
         else
             debug_state(7) <= '0';

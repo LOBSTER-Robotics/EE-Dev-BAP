@@ -275,9 +275,9 @@ begin
     debug_bus(4) <= tx_fifo_wr_en;
     debug_bus(5) <= reg_fifo_almostfull;
 	debug_bus(6) <= tx_fifo_empty_i;
-	debug_bus(7) <= tx_fifo_empty_i;
+	debug_bus(7) <= reg_fifo_empty;
 
-    fifo_q <= not debug_bus;
+    fifo_q <= not mac_debug_state;
 
     seg_display_inst : entity work.byte_to_14seg
     port map (
@@ -285,7 +285,7 @@ begin
 
         -- Use your internal normal-polarity debug bus if you have it.
         -- If fifo_q is active-low for LEDs, then use not fifo_q.
-        data_in  => rx_fifo_data_q,
+        data_in  => reg_fifo_data,
 
         -- DIP switch ON = logic 0, so invert it.
         sel_high => not seg_sel_sw,
@@ -448,7 +448,7 @@ begin
         reg_fifo_data => reg_fifo_data,
         reg_fifo_empty => reg_fifo_empty,
         reg_fifo_almostfull => reg_fifo_almostfull,
-        fifo_rd_en => fifo_rd_en_in        
+        fifo_rd_en => fifo_rd_en_in
     );
 	
 	--------------------------------------------------------------------
@@ -474,7 +474,8 @@ begin
         t_data  => udp_tdata,
         t_valid => udp_tvalid,
         t_ready => udp_tready,
-        t_last  => udp_tlast
+        t_last  => udp_tlast,
+        debug_state => mac_debug_state
     );
 
     --------------------------------------------------------------------
@@ -499,8 +500,8 @@ begin
         ------------------------------------------------------------
         gmii_txd   => gmii_txd,
         gmii_tx_en => gmii_tx_en,
-        gmii_tx_er => gmii_tx_er,
-        debug_state => mac_debug_state
+        gmii_tx_er => gmii_tx_er
+
     );
 
     --------------------------------------------------------------------
@@ -530,7 +531,7 @@ begin
         port map (
             clk           => clk125,
             rst           => rx_reset,
-            enable        => start_fill,
+            enable        => '1',
             fifo_full     => tx_fifo_full_i,
             Data          => tx_fifo_data,
             fifo_write_en => tx_fifo_wr_en
