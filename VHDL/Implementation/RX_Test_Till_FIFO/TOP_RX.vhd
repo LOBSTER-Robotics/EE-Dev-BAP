@@ -105,8 +105,7 @@ architecture rtl of TOP_RX_FIFO is
             m_data      : out std_logic_vector(7 downto 0);
             m_valid     : out std_logic;
             m_last      : out std_logic;
-            m_ready     : in  std_logic;
-            debug_state : out std_logic_vector(7 downto 0)
+            m_ready     : in  std_logic
         );
     end component;
 
@@ -270,12 +269,12 @@ begin
     -- Versa user LEDs are active-low, so fifo_q is inverted.
     --------------------------------------------------------------------
     debug_bus(0) <= reset;
-    debug_bus(1) <= fifo_reset;
+    debug_bus(1) <= udp_tlast;
     debug_bus(2) <= mdio_init_done_i;
     debug_bus(3) <= phy_link_up_i;
     debug_bus(4) <= tx_fifo_wr_en;
     debug_bus(5) <= reg_fifo_almostfull;
-	debug_bus(6) <= start_fill;
+	debug_bus(6) <= tx_fifo_empty_i;
 	debug_bus(7) <= tx_fifo_empty_i;
 
     fifo_q <= not debug_bus;
@@ -316,7 +315,7 @@ begin
          port map (
              clk       => clk125,
              reset     => rx_reset,
-             enable    => tx_fifo_empty_i,
+             enable    => '1',
              ext_in    => read_switch,
              pulse_out => start_fill
          );
@@ -347,8 +346,7 @@ begin
             m_data      => mac_tdata,
             m_valid     => mac_tvalid,
             m_last      => mac_tlast,
-            m_ready     => mac_tready,
-            debug_state => mac_debug_state
+            m_ready     => mac_tready
         );
 
     --------------------------------------------------------------------
@@ -501,7 +499,8 @@ begin
         ------------------------------------------------------------
         gmii_txd   => gmii_txd,
         gmii_tx_en => gmii_tx_en,
-        gmii_tx_er => gmii_tx_er
+        gmii_tx_er => gmii_tx_er,
+        debug_state => mac_debug_state
     );
 
     --------------------------------------------------------------------
@@ -527,13 +526,14 @@ begin
         rgmii_txctl => rgmii_txctl,
         rgmii_txc   => rgmii_txc
     );
-	top_tb_fpga_inst : entity work.top_tb_fpga
-    port map (
-        clk           => clk125,
-        rst           => rx_reset,
-        enable        => tx_fifo_empty_i,
-        Data          => tx_fifo_data,
-        fifo_write_en => tx_fifo_wr_en
-    );
+    top_tb_fpga_inst : entity work.top_tb_fpga
+        port map (
+            clk           => clk125,
+            rst           => rx_reset,
+            enable        => start_fill,
+            fifo_full     => tx_fifo_full_i,
+            Data          => tx_fifo_data,
+            fifo_write_en => tx_fifo_wr_en
+        );
 
 end rtl;

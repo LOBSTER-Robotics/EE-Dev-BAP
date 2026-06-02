@@ -29,14 +29,32 @@ architecture rtl of marvell_88e1512_rgmii_init is
     constant WAIT_10MS_CLKS  : natural := CLK_FREQ_HZ / 100;
     constant POLL_CLKS       : natural := CLK_FREQ_HZ / 10;  -- 100 ms
 
+    -- Page 2 Register 21 bits:
+    -- bit 5 = RGMII RX clock delay
+    -- bit 4 = RGMII TX clock delay
+    constant RGMII_DELAY_MASK : std_logic_vector(15 downto 0) := x"0030";
+
     type state_t is (
         S_RESET_LOW,
         S_RESET_HIGH_WAIT,
+
         S_WR_PAGE18_START, S_WR_PAGE18_WAIT,
         S_WR_MODE_START,   S_WR_MODE_WAIT,
         S_MODE_RESET_WAIT,
-        S_WR_PAGE0_START,  S_WR_PAGE0_WAIT,
+
+        -- New states for RGMII internal delay config
+        S_WR_PAGE2_START,       S_WR_PAGE2_WAIT,
+        S_RD_RGMII_DELAY_START, S_RD_RGMII_DELAY_WAIT,
+        S_WR_RGMII_DELAY_START, S_WR_RGMII_DELAY_WAIT,
+
+        S_WR_PAGE0_START, S_WR_PAGE0_WAIT,
+
+        -- Software reset after changing RGMII delay bits
+        S_SW_RESET_START, S_SW_RESET_WAIT,
+        S_SW_RESET_DELAY,
+
         S_WR_ANEG_START,   S_WR_ANEG_WAIT,
+
         S_POLL_DELAY,
         S_RD_STATUS_START, S_RD_STATUS_WAIT
     );
@@ -57,6 +75,8 @@ architecture rtl of marvell_88e1512_rgmii_init is
     signal link_up_r    : std_logic := '0';
     signal speed_r      : std_logic_vector(1 downto 0) := "00";
     signal duplex_r     : std_logic := '0';
+
+    signal rgmii_delay_reg : std_logic_vector(15 downto 0) := (others => '0');
 
 begin
 
@@ -92,23 +112,28 @@ begin
             mdio_start <= '0';
 
             if rst = '1' then
-                state        <= S_RESET_LOW;
-                timer        <= 0;
-                phy_resetn_r <= '0';
-                init_done_r  <= '0';
-                link_up_r    <= '0';
-                speed_r      <= "00";
-                duplex_r     <= '0';
-                mdio_rw      <= '0';
-                mdio_reg     <= (others => '0');
-                mdio_wdata   <= (others => '0');
+                state           <= S_RESET_LOW;
+                timer           <= 0;
+                phy_resetn_r    <= '0';
+                init_done_r     <= '0';
+                link_up_r       <= '0';
+                speed_r         <= "00";
+                duplex_r        <= '0';
+                mdio_rw         <= '0';
+                mdio_reg        <= (others => '0');
+                mdio_wdata      <= (others => '0');
+                rgmii_delay_reg <= (others => '0');
 
             else
                 case state is
 
+                    ----------------------------------------------------------------
+                    -- Hardware reset
+                    ----------------------------------------------------------------
                     when S_RESET_LOW =>
                         phy_resetn_r <= '0';
                         init_done_r  <= '0';
+                        link_up_r    <= '0';
 
                         if timer >= RESET_HOLD_CLKS then
                             timer <= 0;
@@ -127,12 +152,14 @@ begin
                             timer <= timer + 1;
                         end if;
 
-                    -- Select page 18: register 22 = 0x0012
+                    ----------------------------------------------------------------
+                    -- Select Page 18
+                    ----------------------------------------------------------------
                     when S_WR_PAGE18_START =>
                         if mdio_busy = '0' then
                             mdio_rw    <= '0';
-                            mdio_reg   <= "10110"; -- register 22
-                            mdio_wdata <= x"0012";
+                            mdio_reg   <= "10110"; -- Reg 22: page select
+                            mdio_wdata <= x"0012"; -- Page 18
                             mdio_start <= '1';
                             state      <= S_WR_PAGE18_WAIT;
                         end if;
@@ -142,14 +169,16 @@ begin
                             state <= S_WR_MODE_START;
                         end if;
 
-                    -- Page 18, register 20 = 0x8200
-                    -- bit15 = mode software reset
-                    -- bits[9:7] = 100, as required reserved value
+                    ----------------------------------------------------------------
+                    -- Page 18, Reg 20 = 0x8200
+                    -- bit 15 = mode software reset
+                    -- bits[9:7] = 100
                     -- MODE[2:0] = 000, RGMII-to-copper
+                    ----------------------------------------------------------------
                     when S_WR_MODE_START =>
                         if mdio_busy = '0' then
                             mdio_rw    <= '0';
-                            mdio_reg   <= "10100"; -- register 20
+                            mdio_reg   <= "10100"; -- Reg 20
                             mdio_wdata <= x"8200";
                             mdio_start <= '1';
                             state      <= S_WR_MODE_WAIT;
@@ -164,33 +193,116 @@ begin
                     when S_MODE_RESET_WAIT =>
                         if timer >= WAIT_10MS_CLKS then
                             timer <= 0;
-                            state <= S_WR_PAGE0_START;
+                            state <= S_WR_PAGE2_START;
                         else
                             timer <= timer + 1;
                         end if;
 
-                    -- Return to page 0: register 22 = 0x0000
+                    ----------------------------------------------------------------
+                    -- New: Select Page 2 for RGMII delay control
+                    ----------------------------------------------------------------
+                    when S_WR_PAGE2_START =>
+                        if mdio_busy = '0' then
+                            mdio_rw    <= '0';
+                            mdio_reg   <= "10110"; -- Reg 22: page select
+                            mdio_wdata <= x"0002"; -- Page 2
+                            mdio_start <= '1';
+                            state      <= S_WR_PAGE2_WAIT;
+                        end if;
+
+                    when S_WR_PAGE2_WAIT =>
+                        if mdio_done = '1' then
+                            state <= S_RD_RGMII_DELAY_START;
+                        end if;
+
+                    ----------------------------------------------------------------
+                    -- Read Page 2, Reg 21
+                    ----------------------------------------------------------------
+                    when S_RD_RGMII_DELAY_START =>
+                        if mdio_busy = '0' then
+                            mdio_rw    <= '1';
+                            mdio_reg   <= "10101"; -- Reg 21
+                            mdio_wdata <= x"0000";
+                            mdio_start <= '1';
+                            state      <= S_RD_RGMII_DELAY_WAIT;
+                        end if;
+
+                    when S_RD_RGMII_DELAY_WAIT =>
+                        if mdio_done = '1' then
+                            -- Preserve existing bits, enable RGMII TX and RX delays
+                            rgmii_delay_reg <= mdio_rdata or RGMII_DELAY_MASK;
+                            state           <= S_WR_RGMII_DELAY_START;
+                        end if;
+
+                    ----------------------------------------------------------------
+                    -- Write Page 2, Reg 21 with bits 5 and 4 set
+                    ----------------------------------------------------------------
+                    when S_WR_RGMII_DELAY_START =>
+                        if mdio_busy = '0' then
+                            mdio_rw    <= '0';
+                            mdio_reg   <= "10101"; -- Reg 21
+                            mdio_wdata <= rgmii_delay_reg;
+                            mdio_start <= '1';
+                            state      <= S_WR_RGMII_DELAY_WAIT;
+                        end if;
+
+                    when S_WR_RGMII_DELAY_WAIT =>
+                        if mdio_done = '1' then
+                            state <= S_WR_PAGE0_START;
+                        end if;
+
+                    ----------------------------------------------------------------
+                    -- Return to Page 0
+                    ----------------------------------------------------------------
                     when S_WR_PAGE0_START =>
                         if mdio_busy = '0' then
                             mdio_rw    <= '0';
-                            mdio_reg   <= "10110"; -- register 22
-                            mdio_wdata <= x"0000";
+                            mdio_reg   <= "10110"; -- Reg 22: page select
+                            mdio_wdata <= x"0000"; -- Page 0
                             mdio_start <= '1';
                             state      <= S_WR_PAGE0_WAIT;
                         end if;
 
                     when S_WR_PAGE0_WAIT =>
                         if mdio_done = '1' then
-                            state <= S_WR_ANEG_START;
+                            state <= S_SW_RESET_START;
                         end if;
 
-                    -- Page 0, register 0 = 0x1340
-                    -- enable auto-negotiation and restart it
+                    ----------------------------------------------------------------
+                    -- Software reset after changing RGMII delay bits
+                    ----------------------------------------------------------------
+                    when S_SW_RESET_START =>
+                        if mdio_busy = '0' then
+                            mdio_rw    <= '0';
+                            mdio_reg   <= "00000"; -- Page 0, Reg 0
+                            mdio_wdata <= x"9340"; -- reset + auto-neg enable + restart
+                            mdio_start <= '1';
+                            state      <= S_SW_RESET_WAIT;
+                        end if;
+
+                    when S_SW_RESET_WAIT =>
+                        if mdio_done = '1' then
+                            timer <= 0;
+                            state <= S_SW_RESET_DELAY;
+                        end if;
+
+                    when S_SW_RESET_DELAY =>
+                        if timer >= WAIT_10MS_CLKS then
+                            timer <= 0;
+                            state <= S_WR_ANEG_START;
+                        else
+                            timer <= timer + 1;
+                        end if;
+
+                    ----------------------------------------------------------------
+                    -- Restart auto-negotiation cleanly
+                    -- Page 0, Reg 0 = 0x1340
+                    ----------------------------------------------------------------
                     when S_WR_ANEG_START =>
                         if mdio_busy = '0' then
                             mdio_rw    <= '0';
-                            mdio_reg   <= "00000"; -- register 0
-                            mdio_wdata <= x"1340";
+                            mdio_reg   <= "00000"; -- Reg 0
+                            mdio_wdata <= x"1340"; -- auto-neg enable + restart
                             mdio_start <= '1';
                             state      <= S_WR_ANEG_WAIT;
                         end if;
@@ -202,6 +314,9 @@ begin
                             state       <= S_POLL_DELAY;
                         end if;
 
+                    ----------------------------------------------------------------
+                    -- Poll Page 0, Reg 17
+                    ----------------------------------------------------------------
                     when S_POLL_DELAY =>
                         if timer >= POLL_CLKS then
                             timer <= 0;
@@ -210,11 +325,10 @@ begin
                             timer <= timer + 1;
                         end if;
 
-                    -- Read page 0, register 17: Copper Specific Status Register 1
                     when S_RD_STATUS_START =>
                         if mdio_busy = '0' then
                             mdio_rw    <= '1';
-                            mdio_reg   <= "10001"; -- register 17
+                            mdio_reg   <= "10001"; -- Page 0, Reg 17
                             mdio_wdata <= x"0000";
                             mdio_start <= '1';
                             state      <= S_RD_STATUS_WAIT;
@@ -222,11 +336,17 @@ begin
 
                     when S_RD_STATUS_WAIT =>
                         if mdio_done = '1' then
-                            speed_r   <= mdio_rdata(15 downto 14);
-                            duplex_r  <= mdio_rdata(13);
                             link_up_r <= mdio_rdata(10);
-                            timer     <= 0;
-                            state     <= S_POLL_DELAY;
+
+                            -- Reg 17 bit 11 = speed/duplex resolved.
+                            -- Only trust speed/duplex when this bit is 1.
+                            if mdio_rdata(11) = '1' then
+                                speed_r  <= mdio_rdata(15 downto 14);
+                                duplex_r <= mdio_rdata(13);
+                            end if;
+
+                            timer <= 0;
+                            state <= S_POLL_DELAY;
                         end if;
 
                 end case;

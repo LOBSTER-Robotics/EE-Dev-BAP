@@ -8,16 +8,26 @@ entity UDP_FIFO_AXI is
         rst   : in  std_logic;
 
         -- FIFO input
-        fifo_data  : in  std_logic_vector(7 downto 0);
-        fifo_empty : in  std_logic;
-        fifo_almostfull  : in  std_logic;
-        fifo_rd_en : out std_logic;
+        fifo_data       : in  std_logic_vector(7 downto 0);
+        fifo_empty      : in  std_logic;
+        fifo_almostfull : in  std_logic;
+        fifo_rd_en      : out std_logic;
 
         -- AXI-stream output to MAC
         t_data  : out std_logic_vector(7 downto 0);
         t_valid : out std_logic;
         t_ready : in  std_logic;
-        t_last  : out std_logic
+        t_last  : out std_logic;
+
+        -- Debug bits
+        -- debug_state(0) = IDLE
+        -- debug_state(1) = ETH_HDR
+        -- debug_state(2) = IP_HDR
+        -- debug_state(3) = UDP_HDR
+        -- debug_state(4) = PAYLOAD
+        -- debug_state(5) = DONE
+        -- debug_state(6) = frame active / not IDLE
+        debug_state : out std_logic_vector(7 downto 0)
     );
 end entity;
 
@@ -33,6 +43,7 @@ architecture rtl of UDP_FIFO_AXI is
     );
 
     type byte_array is array (natural range <>) of std_logic_vector(7 downto 0);
+
     constant eth_header : byte_array(0 to 13) := (
         x"FF",x"FF",x"FF",x"FF",x"FF",x"FF",
         x"12",x"34",x"56",x"78",x"9A",x"BC",
@@ -63,46 +74,87 @@ architecture rtl of UDP_FIFO_AXI is
     signal pld_cnt, next_pld_cnt : integer range 0 to 1500 := 0;
 
 begin
+
+    --------------------------------------------------------------------
+    -- State register
+    --------------------------------------------------------------------
     process(clk)
-        begin
-            if rising_edge(clk) then
-                if rst = '1' then
-                    state   <= IDLE;
-                    idx     <= 0;
-                    pld_cnt <= 0;
-                else
-                    state   <= next_state;
-                    idx     <= next_idx;
-                    pld_cnt <= next_pld_cnt;
-                end if;
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+                state   <= IDLE;
+                idx     <= 0;
+                pld_cnt <= 0;
+            else
+                state   <= next_state;
+                idx     <= next_idx;
+                pld_cnt <= next_pld_cnt;
             end if;
-        end process;
+        end if;
+    end process;
 
+    --------------------------------------------------------------------
+    -- Debug state output
+    --------------------------------------------------------------------
     process(all)
-        begin
+    begin
+        debug_state <= (others => '0');
 
-            -- defaults
-            next_state <= state;
-            next_idx   <= idx;
-            next_pld_cnt <= pld_cnt;
+        case state is
+            when IDLE =>
+                debug_state(0) <= '1';
 
-            t_valid <= '0';
-            t_last  <= '0';
-            fifo_rd_en <= '0';
-            t_data <= (others => '0');
+            when ETH_HDR =>
+                debug_state(1) <= '1';
 
-            case state is
+            when IP_HDR =>
+                debug_state(2) <= '1';
+
+            when UDP_HDR =>
+                debug_state(3) <= '1';
+
+            when PAYLOAD =>
+                debug_state(4) <= '1';
+
+            when DONE =>
+                debug_state(5) <= '1';
+        end case;
+
+        if state /= IDLE then
+            debug_state(6) <= '1';
+        end if;
+        if pld_cnt >= 1440 then
+            debug_state(7) <= '1';
+        end if;
+    end process;
+
+    --------------------------------------------------------------------
+    -- Main FSM
+    --------------------------------------------------------------------
+    process(all)
+    begin
+
+        -- defaults
+        next_state   <= state;
+        next_idx     <= idx;
+        next_pld_cnt <= pld_cnt;
+
+        t_valid    <= '0';
+        t_last     <= '0';
+        fifo_rd_en <= '0';
+        t_data     <= (others => '0');
+
+        case state is
 
             ------------------------------------------------------------
             -- IDLE
-            -- If fifo is empty wait else start making the header
             ------------------------------------------------------------
             when IDLE =>
                 next_idx <= 0;
 
                 if fifo_almostfull = '1' then
                     next_state <= ETH_HDR;
-                    next_idx <= 0;
+                    next_idx   <= 0;
                 end if;
 
             ------------------------------------------------------------
@@ -116,7 +168,7 @@ begin
                 if t_ready = '1' then
                     if idx = eth_header'length - 1 then
                         next_state <= IP_HDR;
-                        next_idx <= 0;
+                        next_idx   <= 0;
                     else
                         next_idx <= idx + 1;
                     end if;
@@ -133,7 +185,7 @@ begin
                 if t_ready = '1' then
                     if idx = ip_header'length - 1 then
                         next_state <= UDP_HDR;
-                        next_idx <= 0;
+                        next_idx   <= 0;
                     else
                         next_idx <= idx + 1;
                     end if;
@@ -149,13 +201,13 @@ begin
 
                 if t_ready = '1' then
                     if idx = udp_header'length - 1 then
-                        next_state <= PAYLOAD;
-                        next_idx <= 0;
-                        fifo_rd_en <= '1';
+                        next_state   <= PAYLOAD;
+                        next_idx     <= 0;
+                        fifo_rd_en   <= '1';
                         next_pld_cnt <= 0;
                     elsif idx >= udp_header'length - 3 then
                         fifo_rd_en <= '1';
-                        next_idx <= idx + 1;
+                        next_idx   <= idx + 1;
                     else
                         next_idx <= idx + 1;
                     end if;
@@ -163,20 +215,19 @@ begin
 
             ------------------------------------------------------------
             -- PAYLOAD
-            -- Use fifo unit it is empty, then do to done->idle
             ------------------------------------------------------------
             when PAYLOAD =>
 
-                t_valid <= '1';
-                t_data  <= fifo_data;
+                t_valid      <= '1';
+                t_data       <= fifo_data;
+                next_pld_cnt <= pld_cnt + 1;
 
                 if fifo_empty = '0' and t_ready = '1' then
                     fifo_rd_en <= '1';
-                    next_pld_cnt <= pld_cnt + 1;
 
-                elsif fifo_empty = '1' or pld_cnt = 1440 then
-                    next_state <= DONE;
-                    t_last  <= '1';
+                elsif fifo_empty = '1' or pld_cnt >= 1440 then
+                    next_state   <= DONE;
+                    t_last       <= '1';
                     next_pld_cnt <= 0;
                 end if;
 
@@ -184,10 +235,11 @@ begin
             -- DONE
             ------------------------------------------------------------
             when DONE =>
-                t_valid <= '0';
+                t_valid    <= '0';
                 next_state <= IDLE;
 
-            end case;
+        end case;
 
-        end process;
+    end process;
+
 end architecture;

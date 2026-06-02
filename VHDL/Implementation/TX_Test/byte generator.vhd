@@ -7,6 +7,7 @@ entity top_tb_fpga is
         clk           : in  std_logic;
         rst           : in  std_logic;
         enable        : in  std_logic;
+        fifo_full     : in  std_logic;
         Data          : out std_logic_vector(7 downto 0);
         fifo_write_en : out std_logic
     );
@@ -62,20 +63,23 @@ begin
                     -- Write 1600 bytes into FIFO
                     ----------------------------------------------------
                     when WRITE_FIFO =>
-                        fifo_write_en <= '1';
-                        Data          <= std_logic_vector(data_cnt);
 
-                        if write_count = TOTAL_BYTES_C - 1 then
-                            -- Last byte has been written
-                            fifo_write_en <= '0';
-                            state         <= IDLE;
-                            write_count   <= 0;
-                            data_cnt      <= (others => '0');
+                        if fifo_full = '0' then
+                            fifo_write_en <= '1';
+                            Data          <= std_logic_vector(data_cnt);
+
+                            if write_count = TOTAL_BYTES_C - 1 then
+                                fifo_write_en <= '0';
+                                state         <= IDLE;
+                                write_count   <= 0;
+                                data_cnt      <= (others => '0');
+                            else
+                                write_count <= write_count + 1;
+                                data_cnt    <= data_cnt + 1;
+                            end if;
 
                         else
-                            -- Prepare next byte
-                            write_count <= write_count + 1;
-                            data_cnt    <= data_cnt + 1;
+                            fifo_write_en <= '0';
                         end if;
 
                 end case;

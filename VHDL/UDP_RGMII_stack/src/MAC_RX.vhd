@@ -23,16 +23,16 @@ port (
     m_ready     : in  std_logic;
 
     --------------------------------------------------------------------
-    -- DEBUG OUTPUT FOR LEDS
-    --------------------------------------------------------------------
+    -- DEBUG OUTPUT
     -- debug_state(0) = IDLE
     -- debug_state(1) = PREAMBLE
     -- debug_state(2) = PAYLOAD
     -- debug_state(3) = DROP
     -- debug_state(4) = gmii_rx_dv
     -- debug_state(5) = gmii_rx_er
-    -- debug_state(6) = m_valid
-    -- debug_state(7) = m_last
+    -- debug_state(6) = rx_valid_reg / m_valid
+    -- debug_state(7) = frame active, state /= IDLE
+    --------------------------------------------------------------------
     debug_state : out std_logic_vector(7 downto 0)
 );
 end entity;
@@ -66,8 +66,8 @@ architecture rtl of mac_rx is
     signal next_valid     : std_logic;
     signal next_last      : std_logic;
 
-    signal dv_d      : std_logic;
-    signal data_d    : std_logic_vector(7 downto 0);
+    signal dv_d           : std_logic;
+    signal data_d         : std_logic_vector(7 downto 0);
 
 begin
 
@@ -79,16 +79,36 @@ begin
     m_last  <= dv_d and not gmii_rx_dv;
 
     --------------------------------------------------------------------
-    -- DEBUG OUTPUT FOR LEDS
+    -- DEBUG OUTPUT
     --------------------------------------------------------------------
-    debug_state(0) <= '0' when state = IDLE     else '1';
-    debug_state(1) <= '0' when state = PREAMBLE else '1';
-    debug_state(2) <= '0' when state = PAYLOAD  else '1';
-    debug_state(3) <= '0' when state = DROP     else '1';
-    debug_state(4) <= not gmii_rx_dv;
-    debug_state(5) <= not gmii_rx_er;
-    debug_state(6) <= not rx_valid_reg;
-    debug_state(7) <= not reset;
+    process(all)
+    begin
+        debug_state <= (others => '0');
+
+        case state is
+            when IDLE =>
+                debug_state(0) <= '1';
+
+            when PREAMBLE =>
+                debug_state(1) <= '1';
+
+            when PAYLOAD =>
+                debug_state(2) <= '1';
+
+            when DROP =>
+                debug_state(3) <= '1';
+        end case;
+
+        debug_state(4) <= gmii_rx_dv;
+        debug_state(5) <= gmii_rx_er;
+        debug_state(6) <= rx_valid_reg;
+
+        if state /= IDLE then
+            debug_state(7) <= '1';
+        else
+            debug_state(7) <= '0';
+        end if;
+    end process;
 
     --------------------------------------------------------------------
     -- CLOCKED PROCESS
@@ -106,8 +126,8 @@ begin
                 rx_valid_reg <= '0';
                 rx_last_reg  <= '0';
 
-                dv_d   <= '0';
-                data_d <= (others => '0');
+                dv_d         <= '0';
+                data_d       <= (others => '0');
 
             else
 
@@ -121,9 +141,8 @@ begin
                 rx_valid_reg <= next_valid;
                 rx_last_reg  <= next_last;
 
-
-                dv_d   <= gmii_rx_dv;
-                data_d <= gmii_rxd;
+                dv_d         <= gmii_rx_dv;
+                data_d       <= gmii_rxd;
 
             end if;
         end if;
@@ -151,9 +170,8 @@ begin
             -- IDLE
             ----------------------------------------------------------------
             when IDLE =>
-                
+
                 if gmii_rx_dv = '1' then
-					
 
                     if gmii_rxd = x"55" then
 
@@ -172,7 +190,7 @@ begin
             -- PREAMBLE DETECTION
             ----------------------------------------------------------------
             when PREAMBLE =>
-                
+
                 if gmii_rx_dv = '1' then
 
                     --------------------------------------------------------
@@ -181,11 +199,11 @@ begin
                     if pre_cnt < 7 then
 
                         if gmii_rxd = x"55" then
-                            
+
                             next_pre_cnt <= pre_cnt + 1;
 
                         else
-                            
+
                             next_state <= DROP;
 
                         end if;
@@ -196,11 +214,11 @@ begin
                     else
 
                         if gmii_rxd = x"D5" then
-                            
+
                             next_state <= PAYLOAD;
 
                         else
-                            
+
                             next_state <= DROP;
 
                         end if;
@@ -217,7 +235,7 @@ begin
             -- PAYLOAD RECEIVE
             ----------------------------------------------------------------
             when PAYLOAD =>
-                
+
                 if gmii_rx_er = '1' then
 
                     next_state <= DROP;
@@ -245,7 +263,7 @@ begin
             -- DROP FRAME
             ----------------------------------------------------------------
             when DROP =>
-                
+
                 if gmii_rx_dv = '0' then
 
                     next_state <= IDLE;
@@ -256,4 +274,4 @@ begin
 
     end process;
 
-end architecture; 
+end architecture;
