@@ -28,6 +28,13 @@ entity TOP_RX_FIFO is
         phy_reset           : out std_logic;  -- PHY RESETn, active-low
         phy_mdc             : out std_logic;
         phy_mdio            : inout std_logic;
+		
+		--------------------------------------------------------------------
+        -- RGMII PHY OUTPUT
+        --------------------------------------------------------------------
+		rgmii_txd : out std_logic_vector(3 downto 0);
+        rgmii_txctl : out std_logic;
+        rgmii_txc : out std_logic;
 
         --------------------------------------------------------------------
         -- SWITCH READ INPUT
@@ -153,6 +160,9 @@ architecture rtl of TOP_RX_FIFO is
     signal gmii_rxd             : std_logic_vector(7 downto 0);
     signal gmii_rx_dv           : std_logic;
     signal gmii_rx_er           : std_logic;
+	signal gmii_txd   : std_logic_vector(7 downto 0);
+    signal gmii_tx_en : std_logic;
+    signal gmii_tx_er : std_logic;
 
     --------------------------------------------------------------------
     -- MAC / UDP signals
@@ -162,24 +172,48 @@ architecture rtl of TOP_RX_FIFO is
     signal mac_tlast            : std_logic;
     signal mac_tready           : std_logic;
     signal mac_debug_state      : std_logic_vector(7 downto 0);
+	signal udp_tdata  : std_logic_vector(7 downto 0);
+    signal udp_tvalid : std_logic;
+    signal udp_tready : std_logic;
+    signal udp_tlast  : std_logic;
 
     --------------------------------------------------------------------
-    -- FIFO signals
+    -- FIFO signals RX
     --------------------------------------------------------------------
     signal rx_fifo_data         : std_logic_vector(7 downto 0);
     signal rx_fifo_wr_en        : std_logic;
     signal rx_fifo_last         : std_logic;
-    signal fifo_data_q          : std_logic_vector(7 downto 0);
-    signal fifo_full_i          : std_logic;
-    signal fifo_empty_i         : std_logic;
-    signal fifo_almost_empty_i  : std_logic;
-    signal fifo_almost_full_i   : std_logic;
-    signal fifo_read_enable     : std_logic;
-    signal fifo_rd_en_i         : std_logic;
+    signal rx_fifo_data_q          : std_logic_vector(7 downto 0);
+    signal rx_fifo_full_i          : std_logic;
+    signal rx_fifo_empty_i         : std_logic;
+    signal rx_fifo_almost_empty_i  : std_logic;
+    signal rx_fifo_almost_full_i   : std_logic;
+    signal rx_fifo_read_enable     : std_logic;
+    signal rx_fifo_rd_en_i         : std_logic;
+	
+	--------------------------------------------------------------------
+    -- FIFO signals TX
+    --------------------------------------------------------------------
+    signal tx_fifo_data         : std_logic_vector(7 downto 0);
+    signal tx_fifo_wr_en        : std_logic;
+    signal tx_fifo_last         : std_logic;
+    signal tx_fifo_data_q          : std_logic_vector(7 downto 0);
+    signal tx_fifo_full_i          : std_logic;
+    signal tx_fifo_empty_i         : std_logic;
+    signal tx_fifo_almost_empty_i  : std_logic;
+    signal tx_fifo_almost_full_i   : std_logic;
+    signal tx_fifo_read_enable     : std_logic;
+    signal tx_fifo_rd_en_i         : std_logic;
 
     signal uart_tx_valid_i : std_logic;
     signal uart_tx_ready_i : std_logic;
     signal uart_tx_data_i  : std_logic_vector(7 downto 0);
+	
+	signal reg_fifo_data : std_logic_vector(7 downto 0);
+    signal reg_fifo_empty : std_logic;
+    signal reg_fifo_almostfull : std_logic;
+	signal fifo_rd_en_in :std_logic;
+	signal start_fill         : std_logic;
 
     --------------------------------------------------------------------
     -- LED/debug bus before active-low inversion
@@ -196,7 +230,7 @@ begin
     --------------------------------------------------------------------
     -- Hold RX chain reset until PHY MDIO setup is complete
     --------------------------------------------------------------------
-    rx_reset <= reset or (not mdio_init_done_i);
+    rx_reset <= reset or (not mdio_init_done_i) or not phy_link_up_i;
 
     --------------------------------------------------------------------
     -- Marvell 88E1512 PHY init
@@ -239,9 +273,10 @@ begin
     debug_bus(1) <= fifo_reset;
     debug_bus(2) <= mdio_init_done_i;
     debug_bus(3) <= phy_link_up_i;
-    debug_bus(4) <= phy_duplex_i;
-    debug_bus(6 downto 5) <= phy_speed_i;
-	debug_bus(7) <= fifo_empty_i;
+    debug_bus(4) <= tx_fifo_wr_en;
+    debug_bus(5) <= reg_fifo_almostfull;
+	debug_bus(6) <= start_fill;
+	debug_bus(7) <= tx_fifo_empty_i;
 
     fifo_q <= not debug_bus;
 
@@ -251,7 +286,7 @@ begin
 
         -- Use your internal normal-polarity debug bus if you have it.
         -- If fifo_q is active-low for LEDs, then use not fifo_q.
-        data_in  => fifo_data_q,
+        data_in  => rx_fifo_data_q,
 
         -- DIP switch ON = logic 0, so invert it.
         sel_high => not seg_sel_sw,
@@ -276,17 +311,15 @@ begin
     --------------------------------------------------------------------
     -- FIFO read pulse
     --------------------------------------------------------------------
-    fifo_read_enable <= not fifo_empty_i;
 
-    -- read_pulse_inst : OneClockPulse
-    --     port map (
-    --         clk       => clk125,
-    --         reset     => rx_reset,
-    --         enable    => fifo_read_enable,
-    --         ext_in    => read_switch,
-    --         pulse_out => fifo_rd_en_i
-    --     );
-
+     read_pulse_inst : OneClockPulse
+         port map (
+             clk       => clk125,
+             reset     => rx_reset,
+             enable    => tx_fifo_empty_i,
+             ext_in    => read_switch,
+             pulse_out => start_fill
+         );
     --------------------------------------------------------------------
     -- RGMII RX
     --------------------------------------------------------------------
@@ -332,24 +365,37 @@ begin
             fifo_data  => rx_fifo_data,
             fifo_wr_en => rx_fifo_wr_en,
             fifo_last  => rx_fifo_last,
-            fifo_full  => fifo_full_i
+            fifo_full  => rx_fifo_full_i
         );
 
     --------------------------------------------------------------------
     -- FIFO
     --------------------------------------------------------------------
-    fifo_inst : Fifolg
+    fifo_rx_inst : Fifolg
         port map (
             Data        => rx_fifo_data,
             Clock       => clk125,
             WrEn        => rx_fifo_wr_en,
-            RdEn        => fifo_rd_en_i,
-            Reset       => fifo_reset,
-            Q           => fifo_data_q,
-            Empty       => fifo_empty_i,
-            Full        => fifo_full_i,
-            AlmostEmpty => fifo_almost_empty_i,
-            AlmostFull  => fifo_almost_full_i
+            RdEn        => rx_fifo_rd_en_i,
+            Reset       => rx_reset,
+            Q           => rx_fifo_data_q,
+            Empty       => rx_fifo_empty_i,
+            Full        => rx_fifo_full_i,
+            AlmostEmpty => rx_fifo_almost_empty_i,
+            AlmostFull  => rx_fifo_almost_full_i
+        );
+    fifo_tx_inst : Fifolg
+        port map (
+            Data        => tx_fifo_data,
+            Clock       => clk125,
+            WrEn        => tx_fifo_wr_en,
+            RdEn        => tx_fifo_rd_en_i,
+            Reset       => rx_reset,
+            Q           => tx_fifo_data_q,
+            Empty       => tx_fifo_empty_i,
+            Full        => tx_fifo_full_i,
+            AlmostEmpty => tx_fifo_almost_empty_i,
+            AlmostFull  => tx_fifo_almost_full_i
         );
     uart_inst : entity work.olo_intf_uart
     generic map (
@@ -361,7 +407,7 @@ begin
     )
     port map (
         Clk            => clk125,
-        Rst            => fifo_reset,
+        Rst            => rx_reset,
 
         Tx_Valid       => uart_tx_valid_i,
         Tx_Ready       => uart_tx_ready_i,
@@ -378,15 +424,116 @@ begin
     fifo_to_uart_inst : entity work.fifo_to_uart_byte
     port map (
         Clk        => clk125,
-        Rst        => fifo_reset,
+        Rst        => rx_reset,
 
-        Fifo_Q     => fifo_data_q,
-        Fifo_Empty => fifo_empty_i,
-        Fifo_RdEn  => fifo_rd_en_i,
+        Fifo_Q     => rx_fifo_data_q,
+        Fifo_Empty => rx_fifo_empty_i,
+        Fifo_RdEn  => rx_fifo_rd_en_i,
 
         Tx_Valid   => uart_tx_valid_i,
         Tx_Ready   => uart_tx_ready_i,
         Tx_Data    => uart_tx_data_i
+    );
+	
+	reg_inst: entity work.fifo_udp_reg
+    port map (
+        clk => clk125,
+        rst => rx_reset,
+
+        -- From FIFO to UDP
+        fifo_data  => tx_fifo_data_q,
+        fifo_empty => tx_fifo_empty_i,
+        fifo_almostfull  => tx_fifo_almost_full_i,
+        reg_fifo_rd_en => tx_fifo_rd_en_i,
+
+        -- FROM UDP to FIFO
+        reg_fifo_data => reg_fifo_data,
+        reg_fifo_empty => reg_fifo_empty,
+        reg_fifo_almostfull => reg_fifo_almostfull,
+        fifo_rd_en => fifo_rd_en_in        
+    );
+	
+	--------------------------------------------------------------------
+    -- UDP Packetizer
+    --------------------------------------------------------------------
+    udp_inst : entity work.UDP_FIFO_AXI
+    port map (
+
+        clk => clk125,
+        rst => rx_reset,
+
+        ------------------------------------------------------------
+        -- FIFO input
+        ------------------------------------------------------------
+        fifo_data  => reg_fifo_data,
+        fifo_empty => reg_fifo_empty,
+        fifo_almostfull  => reg_fifo_almostfull,
+        fifo_rd_en => fifo_rd_en_in,
+
+        ------------------------------------------------------------
+        -- AXI-stream output
+        ------------------------------------------------------------
+        t_data  => udp_tdata,
+        t_valid => udp_tvalid,
+        t_ready => udp_tready,
+        t_last  => udp_tlast
+    );
+
+    --------------------------------------------------------------------
+    -- Ethernet MAC
+    --------------------------------------------------------------------
+    mac_inst : entity work.MAC_AXItoRGMII
+    port map (
+
+        clk   => clk125,
+        reset => rx_reset,
+
+        ------------------------------------------------------------
+        -- AXI-stream input
+        ------------------------------------------------------------
+        s_data  => udp_tdata,
+        s_valid => udp_tvalid,
+        s_last  => udp_tlast,
+        s_ready => udp_tready,
+
+        ------------------------------------------------------------
+        -- GMII output
+        ------------------------------------------------------------
+        gmii_txd   => gmii_txd,
+        gmii_tx_en => gmii_tx_en,
+        gmii_tx_er => gmii_tx_er
+    );
+
+    --------------------------------------------------------------------
+    -- GMII ? RGMII PHY adapter
+    --------------------------------------------------------------------
+    rgmii_inst : entity work.rgmii_tx_ddr
+    port map (
+
+        clk125 => clk125,
+        reset  => rx_reset,
+
+        ------------------------------------------------------------
+        -- GMII input
+        ------------------------------------------------------------
+        txd_in => gmii_txd,
+        tx_en  => gmii_tx_en,
+        tx_er  => gmii_tx_er,
+
+        ------------------------------------------------------------
+        -- RGMII PHY output
+        ------------------------------------------------------------
+        rgmii_txd   => rgmii_txd,
+        rgmii_txctl => rgmii_txctl,
+        rgmii_txc   => rgmii_txc
+    );
+	top_tb_fpga_inst : entity work.top_tb_fpga
+    port map (
+        clk           => clk125,
+        rst           => rx_reset,
+        enable        => tx_fifo_empty_i,
+        Data          => tx_fifo_data,
+        fifo_write_en => tx_fifo_wr_en
     );
 
 end rtl;

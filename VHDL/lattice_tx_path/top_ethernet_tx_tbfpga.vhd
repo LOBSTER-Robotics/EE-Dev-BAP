@@ -6,11 +6,9 @@ entity top_tb_fpga is
     port (
         clk : in std_logic;
         rst : in std_logic;
-		
-		-- RGMII output
-		rgmii_txd : out std_logic_vector(3 downto 0);
-        rgmii_txctl : out std_logic;
-        rgmii_txc : out std_logic
+		enable : in std_logic;
+		Data : out std_logic_vector(7 downto 0);
+		fifo_write_en : out std_logic
     );
 end entity top_tb_fpga;
 
@@ -34,9 +32,7 @@ dut : entity work.top_ethernet_tx
             clk                 => clk,
             rst                 => rst,
             Data                => Data,
-            fifo_empty            => fifo_empty,
-            fifo_almostfull              => fifo_almostfull,
-            Read_large_fifo         => Read_large_fifo,
+			write_enable_fifo   => write_enable_fifo,
 			rgmii_txd => rgmii_txd,
 			rgmii_txctl => rgmii_txctl,
 			rgmii_txc => rgmii_txc
@@ -47,15 +43,11 @@ dut : entity work.top_ethernet_tx
 		if rising_edge(clk) then
 			if rst = '1' then
 				Data <= (others => '0');
-				fifo_empty <= '1';
-				fifo_almostfull <= '0';
 				
 				cnt <= (others => '0');
 				lenght_cnt <= 0;
 			else
 				Data <= std_logic_vector(next_cnt);
-				fifo_empty <= next_fifo_empty;
-				fifo_almostfull <= next_fifo_almostfull;
 				
 				cnt <= next_cnt;
 				lenght_cnt <= next_lenght_cnt;

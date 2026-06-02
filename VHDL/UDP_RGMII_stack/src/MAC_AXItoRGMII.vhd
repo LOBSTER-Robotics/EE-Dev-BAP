@@ -48,7 +48,7 @@ architecture rtl of MAC_AXItoRGMII is
     signal crc_cnt, next_crc_cnt : integer range 0 to 3 := 0;
     signal ifg_cnt, next_ifg_cnt : integer range 0 to 11 := 0;
 
-    signal frame_len, next_frame_len : integer := 0;
+    signal frame_len, next_frame_len : integer range 0 to 1600 := 0;
     --------------------------------------------------------------------
     -- CRC
     --------------------------------------------------------------------
@@ -158,7 +158,7 @@ begin
 
                 if pre_cnt = 7 then
                     next_state <= PAYLOAD;
-                    s_ready <= '1';
+                    -- s_ready <= '1';
                 else
                     next_pre_cnt <= pre_cnt + 1;
                 end if;
