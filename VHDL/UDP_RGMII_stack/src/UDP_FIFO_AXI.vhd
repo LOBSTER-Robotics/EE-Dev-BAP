@@ -206,7 +206,7 @@ begin
                         fifo_rd_en   <= '1';
                         next_pld_cnt <= 0;
                     -- Remove elsif or change the -int to fix when bytes start
-                    elsif idx >= udp_header'length - 3 then
+                    elsif idx >= udp_header'length - 2 then
                         fifo_rd_en <= '1';
                         next_idx   <= idx + 1;
                     else
@@ -222,8 +222,10 @@ begin
                 t_valid      <= '1';
                 t_data       <= fifo_data;
 
-                if fifo_empty = '0' and t_ready = '1' and pld_cnt < 1439 then
+                if fifo_empty = '0' and t_ready = '1' and pld_cnt < 1438 then
                     fifo_rd_en <= '1';
+                    next_pld_cnt <= pld_cnt + 1;
+                elsif fifo_empty = '0' and t_ready = '1' and pld_cnt < 1439 then
                     next_pld_cnt <= pld_cnt + 1;
                 elsif fifo_empty = '1' or pld_cnt >= 1439 then
                     next_state   <= DONE;
