@@ -72,15 +72,7 @@ begin
     --------------------------------------------------------------------
     -- Sine wave generator (~200 kHz at 50 MHz clock)
     --------------------------------------------------------------------
-    u_sine_gen : entity work.sine_wave_gen
-        generic map (G_PHASE_INC => 262)
-        port map (
-            i_clk   => clk,
-            i_rst   => s_rst,
-            i_en    => '1',
-            o_data  => s_sine_data,
-            o_valid => open
-        );
+
 
     --------------------------------------------------------------------
     -- SPI master
@@ -93,7 +85,7 @@ begin
         port map (
             clk           => clk,
             rst           => s_rst,
-            data_in       => s_sine_data,
+            data_in       => x"0000",
             fifo_empty(0) => '0',
             read_en       => s_read_en,
             sdi           => sdi,

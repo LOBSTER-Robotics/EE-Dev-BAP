@@ -38,9 +38,17 @@ architecture rtl of top_dac_slow is
     signal s_cs_n     : std_logic;
     signal s_read_en  : std_logic_vector(0 downto 0);
 
-    -- Ramp: 3277 per transfer → ~1 kHz sawtooth at 20 kSps
-    constant C_RAMP_STEP : unsigned(15 downto 0) := to_unsigned(3277, 16);
-    signal s_ramp        : unsigned(15 downto 0) := (others => '0');
+    -- Step sequencer: 0x0000 → 0x4000 → 0x8000 → 0xC000 → 0xFFFF → repeat
+    type t_seq is array (0 to 4) of unsigned(15 downto 0);
+    constant C_SEQ : t_seq := (
+        to_unsigned(16#0000#, 16),
+        to_unsigned(16#4000#, 16),
+        to_unsigned(16#8000#, 16),
+        to_unsigned(16#C000#, 16),
+        to_unsigned(16#FFFF#, 16)
+    );
+    signal s_seq_idx : integer range 0 to 4 := 0;
+    signal s_ramp    : unsigned(15 downto 0) := (others => '0');
 
     -- Heartbeat: 50 MHz / 2^25 ≈ 1.5 Hz blink
     signal s_heartbeat : unsigned(24 downto 0) := (others => '0');
@@ -81,16 +89,22 @@ begin
     end process;
 
     --------------------------------------------------------------------
-    -- Ramp generator (500 kHz domain)
-    -- Steps forward by C_RAMP_STEP each time the SPI master reads
+    -- Step sequencer (500 kHz domain)
+    -- Advances to the next fixed value each time the SPI master reads
     --------------------------------------------------------------------
     p_ramp : process (s_clk_500k)
     begin
         if rising_edge(s_clk_500k) then
             if s_rst = '1' then
-                s_ramp <= (others => '0');
+                s_seq_idx <= 0;
+                s_ramp    <= C_SEQ(0);
             elsif s_read_en(0) = '1' then
-                s_ramp <= s_ramp + C_RAMP_STEP;
+                if s_seq_idx = 4 then
+                    s_seq_idx <= 0;
+                else
+                    s_seq_idx <= s_seq_idx + 1;
+                end if;
+                s_ramp <= C_SEQ(s_seq_idx);
             end if;
         end if;
     end process;
@@ -115,7 +129,7 @@ begin
         port map (
             clk           => s_clk_500k,
             rst           => s_rst,
-            data_in       => std_logic_vector(s_ramp),
+            data_in       => x"5555",
             fifo_empty(0) => '0',
             read_en       => s_read_en,
             sdi           => sdi,
