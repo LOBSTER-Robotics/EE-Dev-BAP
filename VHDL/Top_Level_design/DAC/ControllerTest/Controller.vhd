@@ -32,7 +32,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.Controller_Pkg.all;
 
-entity Controller is
+entity Controller_DAC is
     generic (
         G_NUM_CHANNELS           : positive := 16;
         G_DAC_WIDTH              : positive := 16;
@@ -45,8 +45,6 @@ entity Controller is
         i_enable : in std_logic;
 
         i_large_fifo_almost_empty : in std_logic;
-
-        o_fifo_sel : out unsigned(clog2(G_NUM_CHANNELS)-1 downto 0);
 
         o_small_fifo_wr_en : out std_logic_vector(G_NUM_CHANNELS-1 downto 0);
 
@@ -61,10 +59,10 @@ entity Controller is
         o_busy : out std_logic;
         o_frame_done : out std_logic
     );
-end entity Controller;
+end entity Controller_DAC;
 
 
-architecture rtl of Controller is
+architecture rtl of Controller_DAC is
 
     constant C_CHANNEL_WIDTH : positive := clog2(G_NUM_CHANNELS);
 
@@ -212,7 +210,6 @@ begin
         r_next_word_buffer <= r_word_buffer;
         r_next_word_valid  <= r_word_valid;
 
-        o_fifo_sel          <= r_channel;
         o_small_fifo_wr_en  <= (others => '0');
         o_large_fifo_rd_en  <= '0';
         o_small_fifo_din    <= r_word_buffer;
@@ -251,7 +248,6 @@ begin
                 end if;
                 if r_word_valid = '1' then
                     o_small_fifo_din <= r_word_buffer;
-                    o_fifo_sel       <= r_channel;
                     o_small_fifo_wr_en(to_integer(r_channel)) <= '1';
                     r_next_word_valid <= '0';
                     if r_channel = C_LAST_CHANNEL then

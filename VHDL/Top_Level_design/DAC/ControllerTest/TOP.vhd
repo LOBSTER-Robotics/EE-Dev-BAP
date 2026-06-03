@@ -66,7 +66,7 @@ architecture rtl of top_controller_fifos is
     signal s_small_fifo_full         : std_logic_vector(C_NUM_CHANNELS - 1 downto 0);
     signal s_small_fifo_almost_empty : std_logic_vector(C_NUM_CHANNELS - 1 downto 0);
     signal s_small_fifo_almost_full  : std_logic_vector(C_NUM_CHANNELS - 1 downto 0);
-	signal         o_small_fifo_dout : std_logic_vector(C_NUM_CHANNELS * C_DAC_WIDTH - 1 downto 0);
+	signal o_small_fifo_dout : std_logic_vector(C_NUM_CHANNELS * C_DAC_WIDTH - 1 downto 0);
 
 begin
 
@@ -111,7 +111,7 @@ begin
     -- Controller
     --------------------------------------------------------------------
 
-    u_controller : entity work.Controller
+    u_controller : entity work.Controller_DAC
         generic map (
             G_NUM_CHANNELS           => C_NUM_CHANNELS,
             G_DAC_WIDTH              => C_DAC_WIDTH,
@@ -124,8 +124,6 @@ begin
             i_enable                  => i_enable,
 
             i_large_fifo_almost_empty => s_large_fifo_almost_empty,
-
-            o_fifo_sel                => s_fifo_sel,
 
             o_small_fifo_wr_en        => s_small_fifo_wr_en,
 

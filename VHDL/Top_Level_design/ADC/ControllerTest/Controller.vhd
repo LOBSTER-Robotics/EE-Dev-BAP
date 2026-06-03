@@ -37,47 +37,46 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.Controller_pkg.all;
 
-entity Controller is
+entity Controller_ADC is
     generic (
-        G_NUM_CHANNELS           : positive := 16;
-        G_ADC_WIDTH              : positive := 24;
-        G_BYTE_WIDTH             : positive := 8;
-        G_LARGE_FIFO_COUNT_WIDTH : positive := 16;
+        C_NUM_CHANNELS           : positive := 16;
+        C_ADC_WIDTH              : positive := 24;
+        C_BYTE_WIDTH             : positive := 8;
 
         -- Initial mux-fill latency. The split FIFO mux has two registered
         -- stages, so the first selected sample must be allowed to propagate
         -- through the mux before it is captured. After this first wait, the
         -- next channels are selected early while the current sample bytes are
         -- being written, so there is no per-sample wait state.
-        G_MUX_WAIT_CYCLES        : positive := 3
+        C_MUX_WAIT_CYCLES        : positive := 3
     );
     port (
         i_clk : in std_logic;
         i_rst : in std_logic;
         i_enable : in std_logic;
-        i_small_fifo_empty : in std_logic_vector(G_NUM_CHANNELS-1 downto 0);
-        o_fifo_sel : out unsigned(clog2(G_NUM_CHANNELS)-1 downto 0);
-        o_small_fifo_rd_en : out std_logic_vector(G_NUM_CHANNELS-1 downto 0);
-        i_fifo_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
+        i_small_fifo_empty : in std_logic_vector(C_NUM_CHANNELS-1 downto 0);
+        o_fifo_sel : out unsigned(clog2(C_NUM_CHANNELS)-1 downto 0);
+        o_small_fifo_rd_en : out std_logic_vector(C_NUM_CHANNELS-1 downto 0);
+        i_fifo_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
         i_large_fifo_full : in std_logic;
         i_large_fifo_almost_full : in std_logic;
         o_large_fifo_wr_en : out std_logic;
-        o_large_fifo_din : out std_logic_vector(G_BYTE_WIDTH-1 downto 0);
+        o_large_fifo_din : out std_logic_vector(C_BYTE_WIDTH-1 downto 0);
         o_busy : out std_logic;
         o_frame_done : out std_logic
     );
-end entity Controller;
+end entity Controller_ADC;
 
-architecture rtl of Controller is
+architecture rtl of Controller_ADC is
 
-    constant C_CHANNEL_SEL_WIDTH : positive := clog2(G_NUM_CHANNELS);
+    constant C_CHANNEL_SEL_WIDTH : positive := clog2(C_NUM_CHANNELS);
 
-    constant C_BYTES_PER_SAMPLE : positive := G_ADC_WIDTH / G_BYTE_WIDTH;
+    constant C_BYTES_PER_SAMPLE : positive := C_ADC_WIDTH / C_BYTE_WIDTH;
 
-    constant C_FRAME_BYTES : positive := G_NUM_CHANNELS * C_BYTES_PER_SAMPLE;
+    constant C_FRAME_BYTES : positive := C_NUM_CHANNELS * C_BYTES_PER_SAMPLE;
 
-    subtype t_sample is std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    subtype t_byte   is std_logic_vector(G_BYTE_WIDTH-1 downto 0);
+    subtype t_sample is std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    subtype t_byte   is std_logic_vector(C_BYTE_WIDTH-1 downto 0);
 
     type t_state is (
         S_IDLE,
@@ -93,22 +92,22 @@ architecture rtl of Controller is
 
     signal r_state : t_state := S_IDLE;
 
-    signal r_channel : integer range 0 to G_NUM_CHANNELS-1 := 0;
+    signal r_channel : integer range 0 to C_NUM_CHANNELS-1 := 0;
 
     signal r_byte : integer range 0 to C_BYTES_PER_SAMPLE-1 := 0;
 
     signal r_curr_sample : t_sample := (others => '0');
 
-    signal r_wait_count : integer range 0 to G_MUX_WAIT_CYCLES-1 := 0;
+    signal r_wait_count : integer range 0 to C_MUX_WAIT_CYCLES-1 := 0;
 
     signal r_next_state       : t_state;
-    signal r_next_channel     : integer range 0 to G_NUM_CHANNELS-1;
+    signal r_next_channel     : integer range 0 to C_NUM_CHANNELS-1;
     signal r_next_byte        : integer range 0 to C_BYTES_PER_SAMPLE-1;
     signal r_next_curr_sample : t_sample;
-    signal r_next_wait_count  : integer range 0 to G_MUX_WAIT_CYCLES-1;
+    signal r_next_wait_count  : integer range 0 to C_MUX_WAIT_CYCLES-1;
 
     signal s_fifo_sel         : unsigned(C_CHANNEL_SEL_WIDTH-1 downto 0);
-    signal s_small_fifo_rd_en : std_logic_vector(G_NUM_CHANNELS-1 downto 0);
+    signal s_small_fifo_rd_en : std_logic_vector(C_NUM_CHANNELS-1 downto 0);
     signal s_large_fifo_wr_en : std_logic;
     signal s_large_fifo_din   : t_byte;
 
@@ -137,14 +136,14 @@ architecture rtl of Controller is
         variable sample_index : integer;
     begin
 
-        for bit_index in 0 to G_BYTE_WIDTH - 1 loop
+        for bit_index in 0 to C_BYTE_WIDTH - 1 loop
 
             sample_index :=
-                G_ADC_WIDTH - 1
-                - integer(byte_index * G_BYTE_WIDTH)
+                C_ADC_WIDTH - 1
+                - integer(byte_index * C_BYTE_WIDTH)
                 - bit_index;
 
-            v_byte(G_BYTE_WIDTH - 1 - bit_index) := sample(sample_index);
+            v_byte(C_BYTE_WIDTH - 1 - bit_index) := sample(sample_index);
 
         end loop;
 
@@ -192,7 +191,7 @@ begin
         i_large_fifo_almost_full,
         i_fifo_dout
     )
-        variable v_fifo_sel_int : integer range 0 to G_NUM_CHANNELS - 1;
+        variable v_fifo_sel_int : integer range 0 to C_NUM_CHANNELS - 1;
     begin
         r_next_state       <= r_state;
         r_next_channel     <= r_channel;
@@ -235,14 +234,14 @@ begin
                 -- sample while channel 0 is being written.
                 v_fifo_sel_int := 0;
 
-                if r_wait_count = G_MUX_WAIT_CYCLES - 1 then
+                if r_wait_count = C_MUX_WAIT_CYCLES - 1 then
                     r_next_curr_sample <= i_fifo_dout;
                     r_next_channel     <= 0;
                     r_next_byte        <= 0;
                     r_next_wait_count  <= 0;
                     r_next_state       <= S_WRITE_BYTE;
 
-                    if G_NUM_CHANNELS > 1 then
+                    if C_NUM_CHANNELS > 1 then
                         v_fifo_sel_int := 1;
                         s_small_fifo_rd_en(1) <= '1';
                     end if;
@@ -257,7 +256,7 @@ begin
                 -- Normally keep the mux pointed one channel ahead. This allows
                 -- the next sample to propagate through the registered mux while
                 -- the current sample bytes are being written.
-                if r_channel < G_NUM_CHANNELS - 1 then
+                if r_channel < C_NUM_CHANNELS - 1 then
                     v_fifo_sel_int := r_channel + 1;
                 else
                     v_fifo_sel_int := r_channel;
@@ -266,7 +265,7 @@ begin
                 if r_byte = C_BYTES_PER_SAMPLE - 1 then
                     r_next_byte <= 0;
 
-                    if r_channel = G_NUM_CHANNELS - 1 then
+                    if r_channel = C_NUM_CHANNELS - 1 then
                         r_next_state <= S_FRAME_DONE;
                     else
                         -- The next sample has already been selected long enough,
@@ -279,7 +278,7 @@ begin
                         -- read channel N+2. Changing the select here does not
                         -- disturb the channel N+1 value being captured at the
                         -- clock edge, because the mux output is registered.
-                        if r_channel < G_NUM_CHANNELS - 2 then
+                        if r_channel < C_NUM_CHANNELS - 2 then
                             v_fifo_sel_int := r_channel + 2;
                             s_small_fifo_rd_en(r_channel + 2) <= '1';
                         end if;
