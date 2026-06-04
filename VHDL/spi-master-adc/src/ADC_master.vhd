@@ -1,6 +1,3 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
 ------------------------------------------------------------------------
 -- TOP LEVEL CONTROLLER
 ------------------------------------------------------------------------
@@ -44,7 +41,8 @@ entity ADC_SPI_Controller is
         ----------------------------------------------------------------
         -- DATA VALID FLAG
         ----------------------------------------------------------------
-        DataValid : out std_logic
+        DataValid : out std_logic;
+        RangeLEDs : out std_logic_vector(3 downto 0)
 
     );
 end ADC_SPI_Controller;

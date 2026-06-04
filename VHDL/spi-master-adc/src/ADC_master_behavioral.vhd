@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 architecture Behavioral of ADC_SPI_Controller is
 
@@ -48,6 +49,13 @@ architecture Behavioral of ADC_SPI_Controller is
     -- POWERUP WAIT COUNTER
     --------------------------------------------------------------------
     signal wait_counter : integer := 0;
+
+    --------------------------------------------------------------------
+    -- NEEDED SIGNALS FOR LED DEBUGGER
+    --------------------------------------------------------------------
+    signal data1_int : std_logic_vector(23 downto 0);
+    signal data2_int : std_logic_vector(23 downto 0);
+    signal dv_int    : std_logic;
 
 begin
 
@@ -98,11 +106,15 @@ begin
         CS  => cs_acq,
         SCK => sck_acq,
 
-        Data1 => Data1,
-        Data2 => Data2,
+        Data1 => data1_int,
+        Data2 => data2_int,
 
-        DataValid => DataValid
+        DataValid => dv_int
     );
+
+    Data1     <= data1_int;
+    Data2     <= data2_int;
+    DataValid <= dv_int;
 
     --------------------------------------------------------------------
     -- SPI BUS MULTIPLEXER
@@ -137,6 +149,22 @@ begin
 
         end if;
 
+    end process;
+
+    --------------------------------------------------------------------
+    -- UPDATE LED LEVEL INDICATOR
+    --------------------------------------------------------------------
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+            if dv_int = '1' then
+                if    unsigned(data1_int) < x"400000" then RangeLEDs <= "0001";
+                elsif unsigned(data1_int) < x"800000" then RangeLEDs <= "0010";
+                elsif unsigned(data1_int) < x"C00000" then RangeLEDs <= "0100";
+                else                                        RangeLEDs <= "1000";
+                end if;
+            end if;
+        end if;
     end process;
 
     --------------------------------------------------------------------
