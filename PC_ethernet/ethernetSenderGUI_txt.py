@@ -102,7 +102,7 @@ class EthernetSenderGUI:
 
         interface_frame.columnconfigure(1, weight=1)
 
-        self.interface_details = tk.Text(interface_frame, height=5, wrap=tk.WORD)
+        self.interface_details = tk.Text(interface_frame, height=4, wrap=tk.WORD)
         self.interface_details.grid(row=1, column=0, columnspan=3, pady=8, sticky="ew")
         self.interface_details.configure(state="disabled")
 
@@ -169,15 +169,15 @@ class EthernetSenderGUI:
         help_frame.pack(fill=tk.X, pady=10)
 
         help_text = (
-            "For single packet mode, enter one payload.\n"
-            "For list mode, enter one payload per line.\n"
-            "TXT files can be loaded into the payload box or sent directly.\n\n"
-            "Supported examples:\n"
-            "  Hello FPGA UDP              -> plain string\n"
-            "  text:Hello FPGA UDP         -> string\n"
-            "  hex:48 65 6C 6C 6F          -> bytes from hex\n"
-            "  bytes:48 65 6C 6C 6F        -> bytes from hex\n"
-            "  list:12,34,56,78,900000     -> list[int], large ints become multiple bytes\n"
+            "For single packet mode, enter one payload. "
+            "For list mode, enter one payload per line. "
+            "TXT files can be loaded into the payload box or sent directly.\n"
+            "Supported examples: "
+            "  Hello FPGA UDP           -> plain string, "
+            "  text:Hello FPGA UDP      -> string, "
+            "  hex:48 65 6C 6C 6F       -> bytes from hex, "
+            "  bytes:48 65 6C 6C 6F     -> bytes from hex, "
+            "  list:12,34,56,78,900000  -> list[int], large ints become multiple bytes\n"
         )
 
         ttk.Label(help_frame, text=help_text, justify=tk.LEFT).pack(anchor="w")
@@ -186,7 +186,7 @@ class EthernetSenderGUI:
         payload_frame = ttk.LabelFrame(main, text="Payload input", padding=10)
         payload_frame.pack(fill=tk.BOTH, expand=True)
 
-        self.payload_text = scrolledtext.ScrolledText(payload_frame, height=10, wrap=tk.WORD)
+        self.payload_text = scrolledtext.ScrolledText(payload_frame, height=6, wrap=tk.WORD)
         self.payload_text.pack(fill=tk.BOTH, expand=True)
 
         self.payload_text.insert(
