@@ -4,6 +4,9 @@ use IEEE.NUMERIC_STD.ALL;
 
 architecture Behavioral of ADC_SPI_Controller is
 
+    signal CLK80 : std_logic;
+    signal CLKOUT2 : std_logic;
+
     --------------------------------------------------------------------
     -- FSM STATES
     --------------------------------------------------------------------
@@ -70,6 +73,24 @@ begin
     acq_enable <= '1'
         when (state = RUN_ACQ_ST)
         else '0';
+    
+    --------------------------------------------------------------------
+    -- CLOCK REFERENCE
+    --------------------------------------------------------------------
+    CLOCK_BLOCK : entity work.PLL
+    port map (
+        CLKI => CLK,
+        CLKOP => CLK80
+    );
+
+    DDR1_BLOCK : entity work.DDR_1bit
+    port map (
+        refclk  => CLK80,
+        reset => '0',
+        data => "10",
+        dout => CLKOUT,
+        clkout => CLKOUT2
+    );
 
     --------------------------------------------------------------------
     -- CONFIGURATION BLOCK
@@ -77,7 +98,7 @@ begin
     CONFIG_BLOCK : entity work.ADC_SPI_Config
     port map (
 
-        CLK => CLK,
+        CLK => CLK80,
 
         Enable => config_enable,
 
@@ -95,7 +116,7 @@ begin
     ACQ_BLOCK : entity work.ADC_Acquisition_Engine
     port map (
 
-        CLK => CLK,
+        CLK => CLK80,
 
         Enable => acq_enable,
 
@@ -140,10 +161,10 @@ begin
     --------------------------------------------------------------------
     -- STATE REGISTER
     --------------------------------------------------------------------
-    process(CLK)
+    process(CLK80)
     begin
 
-        if rising_edge(CLK) then
+        if rising_edge(CLK80) then
 
             state <= next_state;
 
@@ -154,9 +175,9 @@ begin
     --------------------------------------------------------------------
     -- UPDATE LED LEVEL INDICATOR
     --------------------------------------------------------------------
-    process(CLK)
+    process(CLK80)
     begin
-        if rising_edge(CLK) then
+        if rising_edge(CLK80) then
             if dv_int = '1' then
                 if    unsigned(data1_int) < x"400000" then RangeLEDs <= "0001";
                 elsif unsigned(data1_int) < x"800000" then RangeLEDs <= "0010";
@@ -170,10 +191,10 @@ begin
     --------------------------------------------------------------------
     -- MAIN FSM
     --------------------------------------------------------------------
-    process(CLK)
+    process(CLK80)
     begin
 
-        if rising_edge(CLK) then
+        if rising_edge(CLK80) then
 
             ------------------------------------------------------------
             -- DEFAULTS
