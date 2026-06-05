@@ -190,6 +190,7 @@ begin
         -- DEFAULTS
         ------------------------------------------------------------
         start_config <= '0';
+        next_wait_counter <= wait_counter;
 
         case state is
 
@@ -352,8 +353,8 @@ architecture Behavioral of ADC_SPI_Config is
     --------------------------------------------------------------------
     -- BIT COUNTER
     --------------------------------------------------------------------
-    signal bit_counter : integer range 0 to 23 := 0;
-    signal next_bit_counter : integer range 0 to 23 := 0;
+    signal bit_counter : integer range 0 to 24 := 0;
+    signal next_bit_counter : integer range 0 to 24 := 0;
 
     --------------------------------------------------------------------
     -- COMMAND COUNTER
@@ -422,8 +423,9 @@ begin
     --------------------------------------------------------------------
     process(state, cmd_counter, wait_reset_counter)
     begin
-
-
+        spi_active <= '0';
+        next_cmd_counter <= cmd_counter;
+        next_wait_reset_counter <= wait_reset_counter;
 
         case state is
 
@@ -941,15 +943,15 @@ begin
     --------------------------------------------------------------------
     process(CLK)
     begin
-
         if rising_edge(CLK) then
+            state          <= next_state;
             sample_counter <= next_sample_counter;
-            state <= next_state;
-
+            quiet_counter  <= next_quiet_counter;
+            bit_counter    <= next_bit_counter;
+            shift_reg1     <= next_shift_reg1;
+            shift_reg2     <= next_shift_reg2;
         end if;
-
     end process;
-
     --------------------------------------------------------------------
     -- MAIN CONTROL LOGIC
     --------------------------------------------------------------------
@@ -1063,7 +1065,7 @@ begin
                 ----------------------------------------------------
                 if bit_counter < 23 then
 
-                    bit_counter <= bit_counter + 1;
+                    next_bit_counter <= bit_counter + 1;
 
                 end if;
 
@@ -1167,7 +1169,12 @@ begin
         ------------------------------------------------------------
         -- ONLY START ROUTINE IF ENABLED
         ------------------------------------------------------------
-        if Enable = '1' then 
+        if Enable = '1' then
+            if sample_counter < 39 then
+                next_sample_counter <= sample_counter + 1;
+            else
+                next_sample_counter <= 0;
+            end if;
 
             case state is
 
@@ -1175,7 +1182,6 @@ begin
                 -- WAIT FOR START OF NEXT SAMPLE PERIOD
                 --------------------------------------------------------
                 when IDLE_ST =>
-                    next_sample_counter <= sample_counter + 1;
                     ----------------------------------------------------
                     -- START NEW SAMPLE FRAME
                     ----------------------------------------------------
