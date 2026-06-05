@@ -1,0 +1,12 @@
+v 4
+file . "src/ADC_master_behavioral.vhd" "4fba4d0a6ffd273355c7cda5eb01616758684548" "20260604075454.846":
+  architecture behavioral of adc_spi_controller at 1( 0) + 0 on 25;
+  architecture behavioral of adc_spi_config at 309( 9636) + 0 on 26;
+  architecture behavioral of adc_acquisition_engine at 835( 26937) + 0 on 27;
+file . "src/ADC_master.vhd" "3c5121e381157b20778bd7e01bdb2c73ace42da6" "20260604075454.448":
+  entity adc_spi_controller at 4( 170) + 0 on 22;
+  entity adc_spi_config at 51( 1816) + 0 on 23;
+  entity adc_acquisition_engine at 76( 2576) + 0 on 24;
+file . "tb/tb_adc_spi_controller.vhd" "88fd5900575e0f145b0d8baed2a1a1f6f6b0a9e8" "20260604075455.657":
+  entity tb_adc_spi_controller at 6( 182) + 0 on 28;
+  architecture behavioral of tb_adc_spi_controller at 13( 312) + 0 on 29;
