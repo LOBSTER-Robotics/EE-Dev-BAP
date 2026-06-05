@@ -5,7 +5,6 @@ use IEEE.NUMERIC_STD.ALL;
 architecture Behavioral of ADC_SPI_Controller is
 
     signal CLK80 : std_logic;
-    signal CLKOUT2 : std_logic;
 
     --------------------------------------------------------------------
     -- FSM STATES
@@ -82,15 +81,6 @@ begin
     port map (
         CLKI => CLK,
         CLKOP => CLK80
-    );
-
-    DDR1_BLOCK : entity work.DDR_1bit
-    port map (
-        refclk  => CLK80,
-        reset => '0',
-        data => "10",
-        dout => CLKOUT,
-        clkout => CLKOUT2
     );
 
     --------------------------------------------------------------------
@@ -963,7 +953,7 @@ begin
     --------------------------------------------------------------------
     -- MAIN CONTROL LOGIC
     --------------------------------------------------------------------
-    process(CLK)
+    process(state, MISO1, MISO2, quiet_counter, bit_counter, shift_reg1, shift_reg2)
     begin
 
         ------------------------------------------------------------

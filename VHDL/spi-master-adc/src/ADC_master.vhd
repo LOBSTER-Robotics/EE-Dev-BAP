@@ -27,7 +27,6 @@ entity ADC_SPI_Controller is
         -- ADC CONTROL SIGNALS
         ----------------------------------------------------------------
         SCK       : out std_logic;
-        CLKOUT       : out std_logic_vector(0 downto 0);
         CS        : out std_logic;
         CNV       : out std_logic;
         MOSI      : out std_logic;
