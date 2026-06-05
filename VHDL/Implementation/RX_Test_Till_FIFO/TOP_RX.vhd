@@ -6,10 +6,11 @@ entity TOP_RX_FIFO is
     generic (
         CLK_FREQ_HZ : positive := 125_000_000;
         PHY_ADDR    : std_logic_vector(4 downto 0) := "00000";
-        C_NUM_CHANNELS           : positive := 1;
+        C_NUM_CHANNELS           : positive := 16;
         C_DAC_WIDTH              : positive := 16;
         C_ADC_WIDTH              : positive := 16;
-        C_BYTE_WIDTH             : positive := 8
+        C_BYTE_WIDTH             : positive := 8;
+        C_MUX_WAIT_CYCLES        : positive := 3
     );
     port (
         --------------------------------------------------------------------
@@ -121,6 +122,7 @@ architecture rtl of TOP_RX_FIFO is
     --------------------------------------------------------------------
     signal rx_fifo_data         : std_logic_vector(7 downto 0);
     signal rx_fifo_wr_en        : std_logic;
+    signal rx_fifo_wr_en_safe        : std_logic;
     signal rx_fifo_last         : std_logic;
     signal rx_fifo_data_q          : std_logic_vector(7 downto 0);
     signal rx_fifo_full_i          : std_logic;
@@ -129,7 +131,8 @@ architecture rtl of TOP_RX_FIFO is
     signal rx_fifo_almost_full_i   : std_logic;
     signal rx_fifo_read_enable     : std_logic;
     signal rx_fifo_rd_en_i         : std_logic;
-	
+    signal rx_fifo_rd_en_safe         : std_logic;
+
 	--------------------------------------------------------------------
     -- FIFO signals TX
     --------------------------------------------------------------------
@@ -173,7 +176,7 @@ architecture rtl of TOP_RX_FIFO is
     signal s_small_fifo_almost_full  : std_logic_vector(C_NUM_CHANNELS - 1 downto 0);
 	signal o_small_fifo_dout : std_logic_vector(C_NUM_CHANNELS * C_DAC_WIDTH - 1 downto 0);
 
-    signal fifo_dout_to_packer : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal fifo_dout_to_packer : std_logic_vector(C_ADC_WIDTH-1 downto 0);
     signal fifo_sel : unsigned(3 downto 0);
 
 
@@ -232,15 +235,17 @@ begin
     -- Versa user LEDs are active-low, so fifo_q is inverted.
     --------------------------------------------------------------------
     debug_bus(0) <= reset;
-    debug_bus(1) <= udp_tlast;
-    debug_bus(2) <= mdio_init_done_i;
+    debug_bus(1) <= s_small_fifo_empty(0);
+    debug_bus(2) <= rx_fifo_wr_en_safe;
     debug_bus(3) <= phy_link_up_i;
-    debug_bus(4) <= tx_fifo_wr_en;
+    debug_bus(4) <= rx_fifo_empty_i;
     debug_bus(5) <= reg_fifo_almostfull;
-	debug_bus(6) <= tx_fifo_empty_i;
-	debug_bus(7) <= reg_fifo_empty;
+	debug_bus(6) <= rx_fifo_rd_en_i;
+	debug_bus(7) <= rx_fifo_full_i;
 
-    fifo_q <= not mac_debug_state;
+    fifo_q <= not debug_bus;
+    rx_fifo_wr_en_safe <= rx_fifo_wr_en and not rx_fifo_full_i;
+    rx_fifo_rd_en_safe <= rx_fifo_rd_en_i and not rx_fifo_empty_i;
 
     seg_display_inst : entity work.byte_to_14seg
     port map (
@@ -248,7 +253,7 @@ begin
 
         -- Use your internal normal-polarity debug bus if you have it.
         -- If fifo_q is active-low for LEDs, then use not fifo_q.
-        data_in  => reg_fifo_data,
+        data_in  => rx_fifo_data_q,
 
         -- DIP switch ON = logic 0, so invert it.
         sel_high => not seg_sel_sw,
@@ -336,8 +341,8 @@ begin
         port map (
             Data        => rx_fifo_data,
             Clock       => clk125,
-            WrEn        => rx_fifo_wr_en,
-            RdEn        => rx_fifo_rd_en_i,
+            WrEn        => rx_fifo_wr_en_safe,
+            RdEn        => rx_fifo_rd_en_safe,
             Reset       => rx_reset,
             Q           => rx_fifo_data_q,
             Empty       => rx_fifo_empty_i,
@@ -490,15 +495,15 @@ begin
         rgmii_txctl => rgmii_txctl,
         rgmii_txc   => rgmii_txc
     );
-    top_tb_fpga_inst : entity work.top_tb_fpga
-        port map (
-            clk           => clk125,
-            rst           => rx_reset,
-            enable        => '1',
-            fifo_full     => tx_fifo_full_i,
-            Data          => tx_fifo_data,
-            fifo_write_en => tx_fifo_wr_en
-        );
+    -- top_tb_fpga_inst : entity work.top_tb_fpga
+    --     port map (
+    --         clk           => clk125,
+    --         rst           => rx_reset,
+    --         enable        => '1',
+    --         fifo_full     => tx_fifo_full_i,
+    --         Data          => tx_fifo_data,
+    --         fifo_write_en => tx_fifo_wr_en
+    --     );
     --------------------------------------------------------------------
     -- Controller
     --------------------------------------------------------------------
@@ -545,11 +550,10 @@ begin
 
     u_adc_fifo_frame_packer : entity work.Controller_ADC
         generic map (
-            C_NUM_CHANNELS           => 16,
-            C_ADC_WIDTH              => 24,
-            C_BYTE_WIDTH             => 8,
-            C_LARGE_FIFO_COUNT_WIDTH => 16,
-            C_MUX_WAIT_CYCLES        => 3
+            C_NUM_CHANNELS           => C_NUM_CHANNELS,
+            C_ADC_WIDTH              => C_ADC_WIDTH,
+            C_BYTE_WIDTH             => C_BYTE_WIDTH,
+            C_MUX_WAIT_CYCLES        => C_MUX_WAIT_CYCLES
         )
         port map (
             i_clk   => clk125,
@@ -557,7 +561,7 @@ begin
 
             i_enable => '1',
 
-            i_small_fifo_empty => s_small_fifo_empty,
+            i_small_fifo_empty => s_small_fifo_almost_empty,
 
             o_fifo_sel => fifo_sel,
 
@@ -573,30 +577,30 @@ begin
 
     u_MuxFifo : entity work.fifo_16ch_mux
         generic map (
-            G_ADC_WIDTH => 24
+            C_ADC_WIDTH => C_ADC_WIDTH
         )
         port map (
-            i_clk => clk,
-            i_rst => rst,
+            i_clk => clk125,
+            i_rst => rx_reset,
 
             i_fifo_sel => fifo_sel,
 
-            i_fifo_0_dout  => adc_fifo_0_dout,
-            i_fifo_1_dout  => adc_fifo_1_dout,
-            i_fifo_2_dout  => adc_fifo_2_dout,
-            i_fifo_3_dout  => adc_fifo_3_dout,
-            i_fifo_4_dout  => adc_fifo_4_dout,
-            i_fifo_5_dout  => adc_fifo_5_dout,
-            i_fifo_6_dout  => adc_fifo_6_dout,
-            i_fifo_7_dout  => adc_fifo_7_dout,
-            i_fifo_8_dout  => adc_fifo_8_dout,
-            i_fifo_9_dout  => adc_fifo_9_dout,
-            i_fifo_10_dout => adc_fifo_10_dout,
-            i_fifo_11_dout => adc_fifo_11_dout,
-            i_fifo_12_dout => adc_fifo_12_dout,
-            i_fifo_13_dout => adc_fifo_13_dout,
-            i_fifo_14_dout => adc_fifo_14_dout,
-            i_fifo_15_dout => adc_fifo_15_dout,
+            i_fifo_0_dout  => s_small_fifo_q(0),
+            i_fifo_1_dout  => s_small_fifo_q(1),
+            i_fifo_2_dout  => s_small_fifo_q(2),
+            i_fifo_3_dout  => s_small_fifo_q(3),
+            i_fifo_4_dout  => s_small_fifo_q(4),
+            i_fifo_5_dout  => s_small_fifo_q(5),
+            i_fifo_6_dout  => s_small_fifo_q(6),
+            i_fifo_7_dout  => s_small_fifo_q(7),
+            i_fifo_8_dout  => s_small_fifo_q(8),
+            i_fifo_9_dout  => s_small_fifo_q(9),
+            i_fifo_10_dout => s_small_fifo_q(10),
+            i_fifo_11_dout => s_small_fifo_q(11),
+            i_fifo_12_dout => s_small_fifo_q(12),
+            i_fifo_13_dout => s_small_fifo_q(13),
+            i_fifo_14_dout => s_small_fifo_q(14),
+            i_fifo_15_dout => s_small_fifo_q(15),
 
             o_fifo_dout => fifo_dout_to_packer
         );

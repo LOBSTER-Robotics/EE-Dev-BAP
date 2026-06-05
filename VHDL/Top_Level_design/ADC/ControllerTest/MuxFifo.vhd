@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity fifo_16ch_mux is
     generic (
-        G_ADC_WIDTH : positive := 24
+        C_ADC_WIDTH : positive := 24
     );
     port (
         i_clk : in std_logic;
@@ -12,38 +12,38 @@ entity fifo_16ch_mux is
 
         i_fifo_sel : in unsigned(3 downto 0);
 
-        i_fifo_0_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_1_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_2_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_3_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_4_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_5_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_6_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_7_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_8_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_9_dout  : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_10_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_11_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_12_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_13_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_14_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
-        i_fifo_15_dout : in std_logic_vector(G_ADC_WIDTH-1 downto 0);
+        i_fifo_0_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_1_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_2_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_3_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_4_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_5_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_6_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_7_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_8_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_9_dout  : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_10_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_11_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_12_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_13_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_14_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
+        i_fifo_15_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
 
-        o_fifo_dout : out std_logic_vector(G_ADC_WIDTH-1 downto 0)
+        o_fifo_dout : out std_logic_vector(C_ADC_WIDTH-1 downto 0)
     );
 end entity fifo_16ch_mux;
 
 architecture rtl of fifo_16ch_mux is
 
-    signal mux_g0_c : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g1_c : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g2_c : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g3_c : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal mux_g0_c : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g1_c : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g2_c : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g3_c : std_logic_vector(C_ADC_WIDTH-1 downto 0);
 
-    signal mux_g0_r : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g1_r : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g2_r : std_logic_vector(G_ADC_WIDTH-1 downto 0);
-    signal mux_g3_r : std_logic_vector(G_ADC_WIDTH-1 downto 0);
+    signal mux_g0_r : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g1_r : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g2_r : std_logic_vector(C_ADC_WIDTH-1 downto 0);
+    signal mux_g3_r : std_logic_vector(C_ADC_WIDTH-1 downto 0);
 
     signal fifo_sel_hi_r : unsigned(1 downto 0);
 

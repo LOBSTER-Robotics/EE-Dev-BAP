@@ -70,7 +70,16 @@ architecture rtl of MAC_AXItoRGMII is
     signal crc_next  : std_logic_vector(31 downto 0);
     signal crc_input : std_logic_vector(7 downto 0);
 
+    -- Registered GMII outputs
+    signal r_gmii_tx_en, next_gmii_tx_en : std_logic;
+    signal r_gmii_tx_er, next_gmii_tx_er : std_logic;
+    signal r_gmii_txd,   next_gmii_txd   : std_logic_vector(7 downto 0);
+
 begin
+
+    gmii_tx_en <= r_gmii_tx_en;
+    gmii_tx_er <= r_gmii_tx_er;
+    gmii_txd   <= r_gmii_txd;
 
     --------------------------------------------------------------------
     -- CRC Generator
@@ -139,6 +148,9 @@ begin
                 ifg_cnt    <= 0;
                 frame_len  <= 0;
                 crc_reg    <= (others => '1');
+                r_gmii_tx_en <= '0';
+                r_gmii_tx_er <= '0';
+                r_gmii_txd   <= (others => '0');
 
             else
 
@@ -149,6 +161,9 @@ begin
                 ifg_cnt    <= next_ifg_cnt;
                 frame_len  <= next_frame_len;
                 crc_reg    <= next_crc_reg;
+                r_gmii_tx_en <= next_gmii_tx_en;
+                r_gmii_tx_er <= next_gmii_tx_er;
+                r_gmii_txd   <= next_gmii_txd;
 
             end if;
         end if;
@@ -172,9 +187,10 @@ begin
         next_frame_len <= frame_len;
         next_crc_reg   <= crc_reg;
 
-        gmii_tx_en <= '0';
-        gmii_tx_er <= '0';
-        gmii_txd   <= (others => '0');
+        next_gmii_tx_en <= '0';
+        next_gmii_tx_er <= '0';
+        next_gmii_txd   <= (others => '0');
+
         s_ready    <= '0';
 
         ----------------------------------------------------------------
@@ -202,12 +218,12 @@ begin
             ------------------------------------------------------------
             when PREAMBLE =>
 
-                gmii_tx_en <= '1';
+                next_gmii_tx_en <= '1';
 
                 if pre_cnt < 7 then
-                    gmii_txd <= x"55";
+                    next_gmii_txd <= x"55";
                 else
-                    gmii_txd <= x"D5";
+                    next_gmii_txd <= x"D5";
                 end if;
 
                 if pre_cnt = 7 then
@@ -225,8 +241,8 @@ begin
 
                 if s_valid = '1' then
 
-                    gmii_tx_en <= '1';
-                    gmii_txd   <= s_data;
+                    next_gmii_tx_en <= '1';
+                    next_gmii_txd   <= s_data;
 
                     crc_input    <= s_data;
                     next_crc_reg <= crc_next;
@@ -252,8 +268,8 @@ begin
             ------------------------------------------------------------
             when PADDING =>
 
-                gmii_tx_en <= '1';
-                gmii_txd   <= x"00";
+                next_gmii_tx_en <= '1';
+                next_gmii_txd   <= x"00";
 
                 crc_input    <= x"00";
                 next_crc_reg <= crc_next;
@@ -270,14 +286,14 @@ begin
             ------------------------------------------------------------
             when CRC =>
 
-                gmii_tx_en <= '1';
+                next_gmii_tx_en <= '1';
 
                 case crc_cnt is
-                    when 0 => gmii_txd <= not crc_reg(7 downto 0);
-                    when 1 => gmii_txd <= not crc_reg(15 downto 8);
-                    when 2 => gmii_txd <= not crc_reg(23 downto 16);
-                    when 3 => gmii_txd <= not crc_reg(31 downto 24);
-                    when others => gmii_txd <= (others => '1');
+                    when 0 => next_gmii_txd <= not crc_reg(7 downto 0);
+                    when 1 => next_gmii_txd <= not crc_reg(15 downto 8);
+                    when 2 => next_gmii_txd <= not crc_reg(23 downto 16);
+                    when 3 => next_gmii_txd <= not crc_reg(31 downto 24);
+                    when others => next_gmii_txd <= (others => '1');
                 end case;
 
                 if crc_cnt = 3 then
@@ -292,7 +308,7 @@ begin
             ------------------------------------------------------------
             when IFG =>
 
-                gmii_tx_en <= '0';
+                next_gmii_tx_en <= '0';
 
                 if ifg_cnt = 11 then
                     next_state <= IDLE;

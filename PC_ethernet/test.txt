@@ -1,4 +1,1 @@
-packet 1
-packet 2
-packet 3
-hex:48 65 6C 6C 6F
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~

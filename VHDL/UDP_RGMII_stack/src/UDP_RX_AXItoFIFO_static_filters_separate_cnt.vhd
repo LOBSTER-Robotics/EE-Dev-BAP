@@ -146,7 +146,7 @@ begin
         next_fifo_wr   <= '0';
         next_fifo_last <= '0';
 
-        accept_byte := (s_valid = '1' and ready_i = '1');
+        accept_byte := s_valid = '1';
 
         case state is
 
@@ -255,6 +255,7 @@ begin
             ----------------------------------------------------------------
             when IP_HDR =>
                 if accept_byte then
+                    next_ip_cnt <= ip_cnt + 1;
                     if s_last = '1' then
                         next_state  <= IDLE;
                         next_ip_cnt <= 0;
@@ -264,37 +265,27 @@ begin
                                 -- IPv4, 20-byte header, no options
                                 if s_data /= x"45" then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_ip_cnt <= ip_cnt + 1;
                                 end if;
 
                             when 9 =>
                                 -- Protocol: UDP = 0x11
                                 if s_data /= x"11" then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_ip_cnt <= ip_cnt + 1;
                                 end if;
 
                             when 16 =>
                                 if s_data /= LOCAL_IP_ADDR(31 downto 24) then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_ip_cnt <= ip_cnt + 1;
                                 end if;
 
                             when 17 =>
                                 if s_data /= LOCAL_IP_ADDR(23 downto 16) then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_ip_cnt <= ip_cnt + 1;
                                 end if;
 
                             when 18 =>
                                 if s_data /= LOCAL_IP_ADDR(15 downto 8) then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_ip_cnt <= ip_cnt + 1;
                                 end if;
 
                             when 19 =>
@@ -307,7 +298,7 @@ begin
                                 end if;
 
                             when others =>
-                                next_ip_cnt <= ip_cnt + 1;
+
                         end case;
                     end if;
                 end if;
@@ -325,6 +316,7 @@ begin
                     elsif udp_cnt = UDP_HDR_LAST then
                         next_udp_cnt     <= 0;
                         next_state       <= PAYLOAD;
+                        next_fifo_wr   <= '0';
                     else
                         next_udp_cnt <= udp_cnt + 1;
                     end if;
@@ -335,13 +327,12 @@ begin
             ----------------------------------------------------------------
             when PAYLOAD =>
                 if accept_byte then
-                    next_fifo_data <= s_data;
                     next_fifo_wr   <= '1';
-
-                    if s_last = '1' then
-                        next_fifo_last   <= '1';
-                        next_state       <= IDLE;
-                    end if;
+                    next_fifo_data <= s_data;
+                end if;
+                if s_last = '1' then
+                    next_fifo_last   <= '1';
+                    next_state       <= IDLE;
                 end if;
 
             ----------------------------------------------------------------
@@ -351,7 +342,7 @@ begin
                 next_fifo_wr   <= '0';
                 next_fifo_last <= '0';
 
-                if accept_byte and s_last = '1' then
+                if s_last = '1' then
                     next_state       <= IDLE;
                     next_eth_cnt     <= 0;
                     next_ip_cnt      <= 0;

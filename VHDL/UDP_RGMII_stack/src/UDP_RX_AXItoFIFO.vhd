@@ -145,6 +145,8 @@ begin
 
                     next_cnt   <= 0;
                     next_state <= ETH_HDR;
+                    next_fifo_data <= s_data;
+                    next_fifo_wr   <= '1';
 
                 end if;
 
@@ -155,11 +157,13 @@ begin
             when ETH_HDR =>
 
                 if s_valid = '1' then
-
+                    next_fifo_data <= s_data;
+                    next_fifo_wr   <= '1';
                     if cnt = 13 then
 
                         next_cnt   <= 0;
                         next_state <= IP_HDR;
+                        next_fifo_wr   <= '0';
 
                     else
 
@@ -176,7 +180,8 @@ begin
             when IP_HDR =>
 
                 if s_valid = '1' then
-
+                    next_fifo_data <= s_data;
+                    next_fifo_wr   <= '0';
                     if cnt = 19 then
 
                         next_cnt   <= 0;
@@ -197,7 +202,8 @@ begin
             when UDP_HDR =>
 
                 if s_valid = '1' then
-
+                    next_fifo_data <= s_data;
+                    next_fifo_wr   <= '0';
                     if cnt = 7 then
                         if s_valid = '1' and fifo_full = '0' then
                             next_fifo_data <= s_data;
@@ -222,7 +228,7 @@ begin
                 if s_valid = '1' and fifo_full = '0' then
 
                     next_fifo_data <= s_data;
-                    next_fifo_wr   <= '1';
+                    next_fifo_wr   <= '0';
 
                     ----------------------------------------------------
                     -- LAST BYTE
