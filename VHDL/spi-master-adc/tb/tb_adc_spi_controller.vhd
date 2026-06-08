@@ -7,8 +7,32 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
+package tb_utilities is
+    function to_hstring(data : std_logic_vector) return string;
+end package tb_utilities;
+
+package body tb_utilities is
+    function to_hstring(data : std_logic_vector) return string is
+        constant hex_char : string := "0123456789ABCDEF";
+        variable result : string(1 to data'length / 4);
+        variable nibble : natural;
+    begin
+        for i in 0 to (data'length / 4 - 1) loop
+            nibble := to_integer(unsigned(data(data'high - i * 4 downto data'high - i * 4 - 3)));
+            result(i + 1) := hex_char(nibble + 1);
+        end loop;
+        return result;
+    end function;
+end package body tb_utilities;
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
 entity tb_ADC_SPI_Controller is
 end tb_ADC_SPI_Controller;
+
+use work.tb_utilities.all;
 
 architecture Behavioral of tb_ADC_SPI_Controller is
 

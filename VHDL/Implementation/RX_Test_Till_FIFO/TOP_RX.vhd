@@ -6,7 +6,7 @@ entity TOP_RX_FIFO is
     generic (
         CLK_FREQ_HZ : positive := 125_000_000;
         PHY_ADDR    : std_logic_vector(4 downto 0) := "00000";
-        C_NUM_CHANNELS           : positive := 16;
+        C_NUM_CHANNELS           : positive := 1;
         C_DAC_WIDTH              : positive := 16;
         C_ADC_WIDTH              : positive := 16;
         C_BYTE_WIDTH             : positive := 8;
@@ -17,6 +17,7 @@ entity TOP_RX_FIFO is
         -- CLOCK / RESET
         --------------------------------------------------------------------
         clk125              : in  std_logic;
+        clk100              : in  std_logic;
         reset               : in  std_logic;  -- active-high FPGA reset
 		fifo_reset 		     : in std_logic;
 
@@ -179,6 +180,10 @@ architecture rtl of TOP_RX_FIFO is
     signal fifo_dout_to_packer : std_logic_vector(C_ADC_WIDTH-1 downto 0);
     signal fifo_sel : unsigned(3 downto 0);
 
+    --------------------------------------------------------------------
+    -- FIFO small DAC
+    --------------------------------------------------------------------
+    signal clk50 : std_logic := '0';
 
     --------------------------------------------------------------------
     -- LED/debug bus before active-low inversion
@@ -246,6 +251,12 @@ begin
     fifo_q <= not debug_bus;
     rx_fifo_wr_en_safe <= rx_fifo_wr_en and not rx_fifo_full_i;
     rx_fifo_rd_en_safe <= rx_fifo_rd_en_i and not rx_fifo_empty_i;
+
+    CLOCK_BLOCK : entity work.PLL50
+    port map (
+        CLKI => clk100,
+        CLKOP => clk50
+    );
 
     seg_display_inst : entity work.byte_to_14seg
     port map (
@@ -532,13 +543,15 @@ begin
 
     gen_small_fifos : for ch in 0 to C_NUM_CHANNELS - 1 generate
 
-        u_small_fifo : entity work.Fifosm_DAC
+        u_small_fifo : entity work.Fifosm_DAC_async
             port map (
                 Data        => s_small_fifo_din,
-                Clock       => clk125,
+                WrClock     => clk50,
+                RdClock     => clk125,
                 WrEn        => s_small_fifo_wr_en(ch),
                 RdEn        => s_small_fifo_rd_en(ch),
                 Reset       => rx_reset,
+                RPReset     => rx_reset,
                 Q           => s_small_fifo_q(ch),
                 Empty       => s_small_fifo_empty(ch),
                 Full        => s_small_fifo_full(ch),
@@ -548,61 +561,61 @@ begin
 
     end generate;
 
-    u_adc_fifo_frame_packer : entity work.Controller_ADC
-        generic map (
-            C_NUM_CHANNELS           => C_NUM_CHANNELS,
-            C_ADC_WIDTH              => C_ADC_WIDTH,
-            C_BYTE_WIDTH             => C_BYTE_WIDTH,
-            C_MUX_WAIT_CYCLES        => C_MUX_WAIT_CYCLES
-        )
-        port map (
-            i_clk   => clk125,
-            i_rst   => rx_reset,
-
-            i_enable => '1',
-
-            i_small_fifo_empty => s_small_fifo_almost_empty,
-
-            o_fifo_sel => fifo_sel,
-
-            o_small_fifo_rd_en => s_small_fifo_rd_en,
-
-            i_fifo_dout => fifo_dout_to_packer,
-
-            i_large_fifo_full       => tx_fifo_full_i,
-            i_large_fifo_almost_full => tx_fifo_almost_full_i,
-            o_large_fifo_wr_en      => tx_fifo_wr_en,
-            o_large_fifo_din        => tx_fifo_data
-        );
-
-    u_MuxFifo : entity work.fifo_16ch_mux
-        generic map (
-            C_ADC_WIDTH => C_ADC_WIDTH
-        )
-        port map (
-            i_clk => clk125,
-            i_rst => rx_reset,
-
-            i_fifo_sel => fifo_sel,
-
-            i_fifo_0_dout  => s_small_fifo_q(0),
-            i_fifo_1_dout  => s_small_fifo_q(1),
-            i_fifo_2_dout  => s_small_fifo_q(2),
-            i_fifo_3_dout  => s_small_fifo_q(3),
-            i_fifo_4_dout  => s_small_fifo_q(4),
-            i_fifo_5_dout  => s_small_fifo_q(5),
-            i_fifo_6_dout  => s_small_fifo_q(6),
-            i_fifo_7_dout  => s_small_fifo_q(7),
-            i_fifo_8_dout  => s_small_fifo_q(8),
-            i_fifo_9_dout  => s_small_fifo_q(9),
-            i_fifo_10_dout => s_small_fifo_q(10),
-            i_fifo_11_dout => s_small_fifo_q(11),
-            i_fifo_12_dout => s_small_fifo_q(12),
-            i_fifo_13_dout => s_small_fifo_q(13),
-            i_fifo_14_dout => s_small_fifo_q(14),
-            i_fifo_15_dout => s_small_fifo_q(15),
-
-            o_fifo_dout => fifo_dout_to_packer
-        );
+    -- u_adc_fifo_frame_packer : entity work.Controller_ADC
+    --     generic map (
+    --         C_NUM_CHANNELS           => C_NUM_CHANNELS,
+    --         C_ADC_WIDTH              => C_ADC_WIDTH,
+    --         C_BYTE_WIDTH             => C_BYTE_WIDTH,
+    --         C_MUX_WAIT_CYCLES        => C_MUX_WAIT_CYCLES
+    --     )
+    --     port map (
+    --         i_clk   => clk125,
+    --         i_rst   => rx_reset,
+    --
+    --         i_enable => '1',
+    --
+    --         i_small_fifo_empty => s_small_fifo_almost_empty,
+    --
+    --         o_fifo_sel => fifo_sel,
+    --
+    --         o_small_fifo_rd_en => s_small_fifo_rd_en,
+    --
+    --         i_fifo_dout => fifo_dout_to_packer,
+    --
+    --         i_large_fifo_full       => tx_fifo_full_i,
+    --         i_large_fifo_almost_full => tx_fifo_almost_full_i,
+    --         o_large_fifo_wr_en      => tx_fifo_wr_en,
+    --         o_large_fifo_din        => tx_fifo_data
+    --     );
+    --
+    -- u_MuxFifo : entity work.fifo_16ch_mux
+    --     generic map (
+    --         C_ADC_WIDTH => C_ADC_WIDTH
+    --     )
+    --     port map (
+    --         i_clk => clk125,
+    --         i_rst => rx_reset,
+    --
+    --         i_fifo_sel => fifo_sel,
+    --
+    --         i_fifo_0_dout  => s_small_fifo_q(0),
+    --         i_fifo_1_dout  => s_small_fifo_q(1),
+    --         i_fifo_2_dout  => s_small_fifo_q(2),
+    --         i_fifo_3_dout  => s_small_fifo_q(3),
+    --         i_fifo_4_dout  => s_small_fifo_q(4),
+    --         i_fifo_5_dout  => s_small_fifo_q(5),
+    --         i_fifo_6_dout  => s_small_fifo_q(6),
+    --         i_fifo_7_dout  => s_small_fifo_q(7),
+    --         i_fifo_8_dout  => s_small_fifo_q(8),
+    --         i_fifo_9_dout  => s_small_fifo_q(9),
+    --         i_fifo_10_dout => s_small_fifo_q(10),
+    --         i_fifo_11_dout => s_small_fifo_q(11),
+    --         i_fifo_12_dout => s_small_fifo_q(12),
+    --         i_fifo_13_dout => s_small_fifo_q(13),
+    --         i_fifo_14_dout => s_small_fifo_q(14),
+    --         i_fifo_15_dout => s_small_fifo_q(15),
+    --
+    --         o_fifo_dout => fifo_dout_to_packer
+    --     );
 
 end rtl;

@@ -208,7 +208,7 @@ begin
             when WAIT_POWERUP_ST =>
 
                 state_number <= 1;
-                if wait_counter < 239999 then
+                if wait_counter < 200 then
 
                     next_wait_counter <= wait_counter + 1;
 
@@ -274,7 +274,7 @@ begin
             --------------------------------------------------------
             when WAIT_POWERUP_ST =>
 
-                if wait_counter = 239999 then
+                if wait_counter = 200 then
 
                     next_state <= START_CONFIG_ST;
 
@@ -501,7 +501,7 @@ begin
             --------------------------------------------------------
             when WAIT_RESET_ST =>
 
-                if wait_reset_counter < 79999 then
+                if wait_reset_counter < 100 then
 
                     next_wait_reset_counter <=
                         wait_reset_counter + 1;
@@ -825,7 +825,7 @@ begin
                 --------------------------------------------------------
                 when WAIT_RESET_ST =>
 
-                    if wait_reset_counter = 79999 then
+                    if wait_reset_counter = 100 then
 
                         next_state <= LOAD_CMD_ST;
 
