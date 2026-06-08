@@ -1,7 +1,8 @@
 -- DAC baseline validation top-level — Cyclone 10 LP edition.
+-- byte_generator → FIFO → SPI master → DAC8811.
 --
 -- Clock:   50 MHz on-board oscillator (PIN_E1)
--- Reset:   Active-low push button PB0/S3 (PIN_E15)
+-- Reset:   Active-low push button PB0/KEY0 (PIN_E15)
 --
 -- SPI outputs → J10 GPIO header → DAC8811 EVM J8:
 --   spi_clk  J10 pin 1 (PIN_L13) → EVM J8 pin 1 (SCLK)
@@ -9,11 +10,16 @@
 --   cs_n     J10 pin 3 (PIN_L15) → EVM J8 pin 5 (CS)
 --   GND      J10 pin 12          → EVM J8 pin 2/4/6 (GND)
 --
--- LEDs (active low, Bank 2, 2.5V):
---   LED0 (L14): heartbeat — blinks ~1.5 Hz, confirms FPGA is running
---   LED1 (K15): SPI active — lit while CS is low (transfer in progress)
+-- byte_generator writes 1500 sequential values (0x0000 → 0x05DB) into
+-- the FIFO on each burst, then immediately restarts (enable tied high).
+-- SPI master reads from FIFO at 2 MSps → repeating sawtooth at DAC output.
+-- Sawtooth frequency ≈ 2 MSps / 1500 ≈ 1.33 kHz.
+--
+-- LEDs (active low):
+--   LED0 (L14): heartbeat ~1.5 Hz
+--   LED1 (K15): SPI active — lit while CS is low
 --   LED2 (J14): running   — lit when not in reset
---   LED3 (J13): unused    — always off
+--   LED3 (J13): FIFO almost-full warning
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -23,24 +29,33 @@ entity top_dac_baseline is
     port (
         clk     : in  std_logic;
         rst_n   : in  std_logic;
-
         spi_clk : out std_logic;
         sdi     : out std_logic_vector(0 downto 0);
         cs_n    : out std_logic;
-
-        led     : out std_logic_vector(3 downto 0)  -- active low
+        led     : out std_logic_vector(3 downto 0)
     );
 end entity top_dac_baseline;
 
 architecture rtl of top_dac_baseline is
 
-    signal s_rst        : std_logic;
-    signal s_sine_data  : std_logic_vector(15 downto 0);
-    signal s_read_en    : std_logic_vector(0 downto 0);
-    signal s_cs_n       : std_logic;
+    signal s_rst  : std_logic;
+    signal s_cs_n : std_logic;
 
-    -- Heartbeat: 25-bit counter, bit 24 toggles at 50MHz/2^25 ≈ 1.5 Hz
-    signal s_heartbeat  : unsigned(24 downto 0) := (others => '0');
+    signal s_heartbeat : unsigned(24 downto 0) := (others => '0');
+
+    -- byte_generator outputs
+    signal s_bg_data  : std_logic_vector(15 downto 0);
+    signal s_bg_wr_en : std_logic;
+
+    -- FIFO signals
+    signal s_fifo_empty : std_logic;
+    signal s_fifo_full  : std_logic;
+    signal s_fifo_ae    : std_logic;
+    signal s_fifo_af    : std_logic;
+    signal s_fifo_q     : std_logic_vector(15 downto 0);
+
+    -- SPI master handshake
+    signal s_read_en : std_logic_vector(0 downto 0);
 
 begin
 
@@ -48,7 +63,7 @@ begin
     cs_n  <= s_cs_n;
 
     --------------------------------------------------------------------
-    -- Heartbeat counter
+    -- Heartbeat
     --------------------------------------------------------------------
     process (clk)
     begin
@@ -61,18 +76,41 @@ begin
         end if;
     end process;
 
-    --------------------------------------------------------------------
-    -- LED assignments (active low: '0' = ON, '1' = OFF)
-    --------------------------------------------------------------------
-    led(0) <= not s_heartbeat(24);  -- blinks ~1.5 Hz
-    led(1) <= s_cs_n;               -- ON when CS low (SPI transferring)
-    led(2) <= s_rst;                -- ON when not in reset
-    led(3) <= '1';                  -- always off
+    led(0) <= not s_heartbeat(24);
+    led(1) <= s_cs_n;
+    led(2) <= s_rst;
+    led(3) <= s_fifo_af;  -- almost-full: rate mismatch warning
 
     --------------------------------------------------------------------
-    -- Sine wave generator (~200 kHz at 50 MHz clock)
+    -- Byte generator
+    -- enable tied to '1': restarts immediately after each burst,
+    -- producing a continuous repeating sawtooth (0 → 1499 → 0 → ...).
     --------------------------------------------------------------------
+    u_byte_generator : entity work.byte_generator
+        port map (
+            clk           => clk,
+            rst           => s_rst,
+            enable        => '1',
+            fifo_full     => s_fifo_full,
+            Data          => s_bg_data,
+            fifo_write_en => s_bg_wr_en
+        );
 
+    --------------------------------------------------------------------
+    -- FIFO (256 × 16-bit, single clock)
+    --------------------------------------------------------------------
+    u_fifo : entity work.fifo
+        port map (
+            clock        => clk,
+            data         => s_bg_data,
+            wrreq        => s_bg_wr_en,
+            rdreq        => s_read_en(0),
+            empty        => s_fifo_empty,
+            full         => s_fifo_full,
+            almost_empty => s_fifo_ae,
+            almost_full  => s_fifo_af,
+            q            => s_fifo_q
+        );
 
     --------------------------------------------------------------------
     -- SPI master
@@ -85,8 +123,8 @@ begin
         port map (
             clk           => clk,
             rst           => s_rst,
-            data_in       => x"0000",
-            fifo_empty(0) => '0',
+            data_in       => s_fifo_q,
+            fifo_empty(0) => s_fifo_empty,
             read_en       => s_read_en,
             sdi           => sdi,
             cs_n          => s_cs_n,
