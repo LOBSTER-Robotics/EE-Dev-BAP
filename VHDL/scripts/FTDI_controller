@@ -1,0 +1,24 @@
+import time
+import math
+# pip install ftd2xx  (or pyftdi)
+import ftd2xx as ftd
+
+# Open FTDI device
+dev = ftd.open(0)
+dev.setBaudRate(1000000)
+
+# Generate 256-entry sine LUT (same as your VHDL)
+lut = [round(32767.5 * (1 + math.sin(2 * math.pi * i / 256))) 
+       for i in range(256)]
+
+phase = 0
+PHASE_INC = 262  # ~200 kHz equivalent
+
+while True:
+    sample = lut[phase >> 8]          # top 8 bits of 16-bit phase
+    high_byte = (sample >> 8) & 0xFF
+    low_byte  =  sample       & 0xFF
+    # send 16-bit SPI word (CS handled by FTDI)
+    dev.write(bytes([high_byte, low_byte]))
+    phase = (phase + PHASE_INC) & 0xFFFF
+    time.sleep(1 / 2_000_000)         # 2 MSps rate
