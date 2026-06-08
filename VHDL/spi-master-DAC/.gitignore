@@ -2,7 +2,7 @@
 *.o
 *.cf
 *.vcd
-/tb_*
+/tb_full_path.vhd
 !/tb_*.vhd
 *.bak
 /quartus/
