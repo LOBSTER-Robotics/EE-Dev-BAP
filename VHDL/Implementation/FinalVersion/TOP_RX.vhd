@@ -308,7 +308,7 @@ begin
         );
 
     --------------------------------------------------------------------
-    -- MAC RX -> RX FIFO
+    -- MAC RX
     --------------------------------------------------------------------
     mac_rx_inst : entity work.MAC_RX
         port map (
@@ -317,13 +317,30 @@ begin
             gmii_rxd    => gmii_rxd,
             gmii_rx_dv  => gmii_rx_dv,
             gmii_rx_er  => gmii_rx_er,
-            fifo_data   => rx_fifo_data,
-            fifo_wr_en  => rx_fifo_wr_en,
-            fifo_last   => rx_fifo_last,
-            fifo_full   => rx_fifo_full_i,
+            m_data      => mac_tdata,
+            m_valid     => mac_tvalid,
+            m_last      => mac_tlast,
+            m_ready     => mac_tready,
             debug_state => mac_debug_state(6 downto 0)
         );
 
+    --------------------------------------------------------------------
+    -- UDP RX
+    --------------------------------------------------------------------
+    -- udp_rx_inst : entity work.UDP_FIFO_RX
+    --     port map (
+    --         clk        => clk125,
+    --         reset      => rx_reset,
+    --         s_data     => mac_tdata,
+    --         s_valid    => mac_tvalid,
+    --         s_last     => mac_tlast,
+    --         s_ready    => mac_tready,
+    --         fifo_data  => rx_fifo_data,
+    --         fifo_wr_en => rx_fifo_wr_en,
+    --         fifo_last  => rx_fifo_last,
+    --         fifo_full  => rx_fifo_full_i,
+    --         debug => open
+    --     );
 
     --------------------------------------------------------------------
     -- FIFO
