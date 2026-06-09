@@ -11,7 +11,6 @@ entity spi_master_dac is
         -- At 50 MHz for 2 MSps: 50e6 / (19 + 6) = 2.0 MSps  → DONE_WAIT_CYCLS = 6
         -- At 50 MHz for max:    50e6 /  19        = 2.63 MSps → DONE_WAIT_CYCLS = 0
         DONE_WAIT_CYCLS : natural := 6
-        
     );
     port (
         clk        : in  std_logic;
@@ -58,7 +57,7 @@ begin
 
     cs_n    <= cs_n_reg;
     read_en <= read_en_reg;
-    spi_clk <= clk when cs_n_reg = '0' else '0'; 
+    spi_clk <= clk and '1'; -- and (not cs_n_reg);  -- idles LOW when CS is high (SPI Mode 0)
 
 
     p_comb : process(state, fifo_empty, data_in, shift_reg, bit_count,
