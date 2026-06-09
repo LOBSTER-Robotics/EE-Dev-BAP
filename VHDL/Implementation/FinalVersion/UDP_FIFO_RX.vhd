@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity udp_rx is
+entity UDP_FIFO_RX is
     generic (
         --------------------------------------------------------------------
         -- RX FILTER GENERICS
@@ -49,11 +49,11 @@ entity udp_rx is
         --------------------------------------------------------------------
         -- DEBUG OUTPUT
         --------------------------------------------------------------------
-        debug       : out std_logic_vector(7 downto 0)
+        debug       : out std_logic_vector(6 downto 0)
     );
 end entity;
 
-architecture rtl of udp_rx is
+architecture rtl of UDP_FIFO_RX is
 
     type state_t is (
         IDLE,
@@ -76,13 +76,13 @@ architecture rtl of udp_rx is
     -- Only the counter belonging to the active state is incremented.
     ------------------------------------------------------------------------
     signal eth_cnt      : integer range 0 to ETH_HDR_LAST := 0;
-    signal next_eth_cnt : integer range 0 to ETH_HDR_LAST := 0;
+    signal next_eth_cnt : integer range 0 to ETH_HDR_LAST+1 := 0;
 
     signal ip_cnt       : integer range 0 to IP_HDR_LAST := 0;
-    signal next_ip_cnt  : integer range 0 to IP_HDR_LAST := 0;
+    signal next_ip_cnt  : integer range 0 to IP_HDR_LAST+1 := 0;
 
     signal udp_cnt      : integer range 0 to UDP_HDR_LAST := 0;
-    signal next_udp_cnt : integer range 0 to UDP_HDR_LAST := 0;
+    signal next_udp_cnt : integer range 0 to UDP_HDR_LAST+1 := 0;
 
     signal fifo_data_reg   : std_logic_vector(7 downto 0) := (others => '0');
     signal fifo_wr_reg     : std_logic := '0';
@@ -106,6 +106,39 @@ begin
     ------------------------------------------------------------------------
     ready_i <= '0' when (state = PAYLOAD and fifo_full = '1') else '1';
     s_ready <= ready_i;
+
+    --------------------------------------------------------------------
+    -- Debug output: one-hot state plus helper flags
+    --------------------------------------------------------------------
+    process(all)
+    begin
+        debug <= (others => '0');
+
+        case state is
+            when IDLE =>
+                debug(0) <= '1';
+            when ETH_HDR =>
+                debug(1) <= '1';
+            when IP_HDR =>
+                debug(2) <= '1';
+            when UDP_HDR =>
+                debug(3) <= '1';
+            when PAYLOAD =>
+                debug(4) <= '1';
+            when DROP_FRAME =>
+                debug(5) <= '1';
+            when others =>
+                null;
+        end case;
+
+        -- Frame active (any state except IDLE)
+        if state /= IDLE then
+            debug(6) <= '1';
+        else
+            debug(6) <= '0';
+        end if;
+
+    end process;
 
     ------------------------------------------------------------------------
     -- Clocked register process
@@ -195,8 +228,6 @@ begin
                             when 1 =>
                                 if s_data /= LOCAL_MAC_ADDR(39 downto 32) then
                                     next_state <= DROP_FRAME;
-                                else
-                                    next_eth_cnt <= eth_cnt + 1;
                                 end if;
 
                             when 2 =>
@@ -226,11 +257,11 @@ begin
                                 end if;
 
                             when 13 =>
+                                next_eth_cnt <= 0;
                                 -- EtherType low byte: IPv4 = 0x0800
                                 if s_data /= x"00" then
                                     next_state <= DROP_FRAME;
                                 else
-                                    next_eth_cnt <= 0;
                                     next_ip_cnt  <= 0;
                                     next_state   <= IP_HDR;
                                 end if;

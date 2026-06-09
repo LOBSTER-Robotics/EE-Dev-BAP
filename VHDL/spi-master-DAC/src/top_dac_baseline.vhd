@@ -21,7 +21,7 @@ use ieee.numeric_std.all;
 
 entity top_dac_baseline is
     port (
-        clk     : in  std_logic;
+        clk100     : in  std_logic;
         rst_n   : in  std_logic;
 
         spi_clk : out std_logic;
@@ -38,6 +38,7 @@ architecture rtl of top_dac_baseline is
     signal s_sine_data  : std_logic_vector(15 downto 0);
     signal s_read_en    : std_logic_vector(0 downto 0);
     signal s_cs_n       : std_logic;
+    signal clk50       : std_logic;
 
     -- Heartbeat: 25-bit counter, bit 24 toggles at 50MHz/2^25 ≈ 1.5 Hz
     signal s_heartbeat  : unsigned(24 downto 0) := (others => '0');
@@ -50,9 +51,9 @@ begin
     --------------------------------------------------------------------
     -- Heartbeat counter
     --------------------------------------------------------------------
-    process (clk)
+    process (clk50)
     begin
-        if rising_edge(clk) then
+        if rising_edge(clk50) then
             if s_rst = '1' then
                 s_heartbeat <= (others => '0');
             else
@@ -83,14 +84,20 @@ begin
             DONE_WAIT_CYCLS => 6
         )
         port map (
-            clk           => clk,
+            clk           => clk50,
             rst           => s_rst,
-            data_in       => x"0000",
+            data_in       => x"5555",
             fifo_empty(0) => '0',
             read_en       => s_read_en,
             sdi           => sdi,
             cs_n          => s_cs_n,
             spi_clk       => spi_clk
         );
+
+    CLOCK_BLOCK : entity work.PLL50
+    port map (
+        CLKI => clk100,
+        CLKOP => clk50
+    );
 
 end architecture rtl;

@@ -204,7 +204,7 @@ begin
     --------------------------------------------------------------------
     -- Hold RX chain reset until PHY MDIO setup is complete
     --------------------------------------------------------------------
-    rx_reset <= reset;-- or (not mdio_init_done_i) or not phy_link_up_i;
+    rx_reset <= reset or (not mdio_init_done_i) or not phy_link_up_i;
 
     --------------------------------------------------------------------
     -- Marvell 88E1512 PHY init
@@ -252,6 +252,8 @@ begin
 	debug_bus(6) <= s_small_fifo_almost_full(0);
 	debug_bus(7) <= rx_fifo_full_i;
 
+    mac_debug_state(7) <= rx_fifo_empty_i;
+
     fifo_q <= not mac_debug_state;
     rx_fifo_wr_en_safe <= rx_fifo_wr_en and not rx_fifo_full_i;
     rx_fifo_rd_en_safe <= rx_fifo_rd_en_i and not rx_fifo_empty_i;
@@ -294,7 +296,7 @@ begin
     --------------------------------------------------------------------
     -- RGMII RX
     --------------------------------------------------------------------
-    rgmii_rx_inst : entity work.rgmii_rx
+    rgmii_rx_inst_DDR : entity work.rgmii_rx
         port map (
             rx_clk      => rgmii_rxc,
             reset       => rx_reset,
@@ -306,38 +308,22 @@ begin
         );
 
     --------------------------------------------------------------------
-    -- MAC RX
+    -- MAC RX -> RX FIFO
     --------------------------------------------------------------------
-    mac_rx_inst : entity work.mac_rx
+    mac_rx_inst : entity work.MAC_RX
         port map (
             clk         => clk125,
             reset       => rx_reset,
             gmii_rxd    => gmii_rxd,
             gmii_rx_dv  => gmii_rx_dv,
             gmii_rx_er  => gmii_rx_er,
-            m_data      => mac_tdata,
-            m_valid     => mac_tvalid,
-            m_last      => mac_tlast,
-            m_ready     => mac_tready,
-            debug_state => mac_debug_state
+            fifo_data   => rx_fifo_data,
+            fifo_wr_en  => rx_fifo_wr_en,
+            fifo_last   => rx_fifo_last,
+            fifo_full   => rx_fifo_full_i,
+            debug_state => mac_debug_state(6 downto 0)
         );
 
-    --------------------------------------------------------------------
-    -- UDP RX
-    --------------------------------------------------------------------
-    udp_rx_inst : entity work.udp_rx
-        port map (
-            clk        => clk125,
-            reset      => rx_reset,
-            s_data     => mac_tdata,
-            s_valid    => mac_tvalid,
-            s_last     => mac_tlast,
-            s_ready    => mac_tready,
-            fifo_data  => rx_fifo_data,
-            fifo_wr_en => rx_fifo_wr_en,
-            fifo_last  => rx_fifo_last,
-            fifo_full  => rx_fifo_full_i
-        );
 
     --------------------------------------------------------------------
     -- FIFO
@@ -368,30 +354,30 @@ begin
             AlmostEmpty => tx_fifo_almost_empty_i,
             AlmostFull  => tx_fifo_almost_full_i
         );
-    uart_inst : entity work.olo_intf_uart
-    generic map (
-        ClkFreq_g  => 125.0e6,
-        BaudRate_g => 115.2e3,
-        DataBits_g => 8,
-        StopBits_g => "1",
-        Parity_g   => "none"
-    )
-    port map (
-        Clk            => clk125,
-        Rst            => rx_reset,
-
-        Tx_Valid       => uart_tx_valid_i,
-        Tx_Ready       => uart_tx_ready_i,
-        Tx_Data        => uart_tx_data_i,
-
-        Rx_Valid       => open,
-        Rx_Data        => open,
-        Rx_ParityError => open,
-
-        Uart_Tx        => Uart_Tx,
-        Uart_Rx        => Uart_Rx
-
-    );
+    -- uart_inst : entity work.olo_intf_uart
+    -- generic map (
+    --     ClkFreq_g  => 125.0e6,
+    --     BaudRate_g => 115.2e3,
+    --     DataBits_g => 8,
+    --     StopBits_g => "1",
+    --     Parity_g   => "none"
+    -- )
+    -- port map (
+    --     Clk            => clk125,
+    --     Rst            => rx_reset,
+    --
+    --     Tx_Valid       => uart_tx_valid_i,
+    --     Tx_Ready       => uart_tx_ready_i,
+    --     Tx_Data        => uart_tx_data_i,
+    --
+    --     Rx_Valid       => open,
+    --     Rx_Data        => open,
+    --     Rx_ParityError => open,
+    --
+    --     Uart_Tx        => Uart_Tx,
+    --     Uart_Rx        => Uart_Rx
+    --
+    -- );
     -- fifo_to_uart_inst : entity work.fifo_to_uart_byte
     -- port map (
     --     Clk        => clk125,
@@ -427,7 +413,7 @@ begin
 	--------------------------------------------------------------------
     -- UDP Packetizer
     --------------------------------------------------------------------
-    udp_inst : entity work.UDP_FIFO_AXI
+    UDP_FIFO_TX : entity work.UDP_FIFO_TX
     port map (
 
         clk => clk125,
@@ -454,7 +440,7 @@ begin
     --------------------------------------------------------------------
     -- Ethernet MAC
     --------------------------------------------------------------------
-    mac_inst : entity work.MAC_AXItoRGMII
+    mac_tx_inst : entity work.MAC_TX
     port map (
 
         clk   => clk125,
@@ -481,7 +467,7 @@ begin
     --------------------------------------------------------------------
     -- GMII ? RGMII PHY adapter
     --------------------------------------------------------------------
-    rgmii_inst : entity work.rgmii_tx_ddr
+    rgmii_inst_TX : entity work.rgmii_tx_ddr
     port map (
 
         clk125 => clk125,
