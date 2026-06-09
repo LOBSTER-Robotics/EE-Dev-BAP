@@ -2410,6 +2410,12 @@
 		(uuid "6fa03fdf-a4e0-4a23-b426-9e7b1a0ec637")
 	)
 	(junction
+		(at 85.09 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81694b80-ef93-4bd9-beea-8689ead6d33b")
+	)
+	(junction
 		(at 259.08 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2612,6 +2618,16 @@
 	(no_connect
 		(at 195.58 106.68)
 		(uuid "f4587dd5-ace0-4862-ada1-9fdd59b89719")
+	)
+	(wire
+		(pts
+			(xy 85.09 35.56) (xy 100.33 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "002dd311-32a0-41ac-8d77-c267eee11983")
 	)
 	(wire
 		(pts
@@ -2992,6 +3008,16 @@
 			(type default)
 		)
 		(uuid "2d2349ae-3004-470b-b6c8-4578857da1ad")
+	)
+	(wire
+		(pts
+			(xy 85.09 25.4) (xy 85.09 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d579c79-c06c-4337-8c48-d075eb78a0c4")
 	)
 	(wire
 		(pts
@@ -4223,16 +4249,6 @@
 		)
 		(uuid "fb86b492-59cc-479d-88f0-7520f504fb48")
 	)
-	(wire
-		(pts
-			(xy 85.09 35.56) (xy 100.33 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fdebdf8f-6b37-4918-8ba3-2621eb88ce61")
-	)
 	(hierarchical_label "SDI"
 		(shape input)
 		(at 165.1 134.62 180)
@@ -4419,6 +4435,17 @@
 			(justify left)
 		)
 		(uuid "e93b3a76-f1f6-48bb-90d3-65de4b8d1852")
+	)
+	(hierarchical_label "VRR"
+		(shape output)
+		(at 85.09 25.4 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f352c0e6-e29d-4d63-ac25-4504c8df213d")
 	)
 	(symbol
 		(lib_id "Device:C_Small")

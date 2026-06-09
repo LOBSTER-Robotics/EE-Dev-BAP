@@ -5,6 +5,296 @@
 	(uuid "ad046f05-6e67-40e1-863c-42572319c157")
 	(paper "A5")
 	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:FerriteBead_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "FB"
+				(at 1.905 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "FerriteBead_Small"
+				(at 1.905 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Ferrite bead, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "L ferrite bead inductor filter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "FerriteBead_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.8288 0.2794) (xy -1.1176 1.4986) (xy 1.8288 -0.2032) (xy 1.1176 -1.4224) (xy -1.8288 0.2794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.889) (xy 0 1.2954)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 -0.7874)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "FerriteBead_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -425,20 +715,9 @@
 		)
 		(uuid "276114cd-fdab-4a53-b1e0-597012e0f859")
 	)
-	(text "Voltage summing node\nand a jumper to skip\nit for using the DAC\nas an external \ngenerator and testing\nthe DAC alone."
-		(exclude_from_sim no)
-		(at 92.964 67.818 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5c71b1bb-703e-4cca-a186-8671b9c87c4d")
-	)
 	(text "CH2"
 		(exclude_from_sim no)
-		(at 171.45 22.098 0)
+		(at 179.578 22.352 0)
 		(effects
 			(font
 				(size 3.81 3.81)
@@ -489,6 +768,12 @@
 		(uuid "553641b4-a688-4076-8daf-4da23916d672")
 	)
 	(junction
+		(at 166.37 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4787d5d4-5a20-4d0f-aebe-43900002c59b")
+	)
+	(junction
 		(at 35.56 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -499,6 +784,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96a685a4-b92b-46e5-965a-9c5854374661")
+	)
+	(junction
+		(at 54.61 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a9c13a7e-7e0e-499a-873a-8320bb49e1ac")
 	)
 	(junction
 		(at 123.19 46.99)
@@ -518,6 +809,26 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 123.19) (xy 54.61 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c22e3f1-14d4-4af7-8769-ae03d2db765b")
+	)
+	(wire
+		(pts
+			(xy 113.03 24.13) (xy 113.03 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1138b752-2cf0-4cdc-b5e9-75a8603d5ee5")
+	)
+	(wire
+		(pts
 			(xy 123.19 58.42) (xy 123.19 63.5)
 		)
 		(stroke
@@ -525,6 +836,16 @@
 			(type default)
 		)
 		(uuid "16e7d0af-5ba8-4b38-8532-9bbb3a1d0c0b")
+	)
+	(wire
+		(pts
+			(xy 113.03 43.18) (xy 113.03 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1945ac0e-e5ac-4fc7-97d2-15eb75264bc5")
 	)
 	(wire
 		(pts
@@ -538,7 +859,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 46.99) (xy 165.1 46.99)
+			(xy 161.29 46.99) (xy 166.37 46.99)
 		)
 		(stroke
 			(width 0)
@@ -568,6 +889,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 46.99) (xy 171.45 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3488fe22-471f-4c2a-b189-bc4d8467b0db")
+	)
+	(wire
+		(pts
 			(xy 45.72 50.8) (xy 45.72 53.34)
 		)
 		(stroke
@@ -575,6 +906,46 @@
 			(type default)
 		)
 		(uuid "4719a056-41e5-4f24-9278-835e25d86853")
+	)
+	(wire
+		(pts
+			(xy 166.37 24.13) (xy 166.37 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4890330e-9b4d-40a7-8415-80a037b9543b")
+	)
+	(wire
+		(pts
+			(xy 34.29 113.03) (xy 36.83 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c4946c0-659a-4ad8-9d08-c3d8bfcc033d")
+	)
+	(wire
+		(pts
+			(xy 113.03 46.99) (xy 123.19 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50f11fa5-cac5-4689-be0d-e076f6776dfb")
+	)
+	(wire
+		(pts
+			(xy 54.61 115.57) (xy 54.61 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61d20b94-fe92-4fdf-8037-c8a6afec4d1d")
 	)
 	(wire
 		(pts
@@ -588,7 +959,17 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 46.99) (xy 177.8 46.99)
+			(xy 166.37 43.18) (xy 166.37 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74363bf8-b7ac-4b5d-9117-2b8be9413364")
+	)
+	(wire
+		(pts
+			(xy 179.07 46.99) (xy 184.15 46.99)
 		)
 		(stroke
 			(width 0)
@@ -708,6 +1089,26 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 113.03) (xy 52.07 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdfe9bcd-dadd-4691-9937-ac526ad49adb")
+	)
+	(wire
+		(pts
+			(xy 41.91 113.03) (xy 44.45 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf66de4f-ab65-4283-8973-44d1922e3144")
+	)
+	(wire
+		(pts
 			(xy 35.56 52.07) (xy 35.56 45.72)
 		)
 		(stroke
@@ -736,6 +1137,16 @@
 		)
 		(uuid "e35064a0-a92f-41d2-aea4-fbf15c94c303")
 	)
+	(wire
+		(pts
+			(xy 54.61 113.03) (xy 59.69 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0de5a06-e2fe-4d9a-9fbe-23ad43483331")
+	)
 	(polyline
 		(pts
 			(xy 15.24 26.67) (xy 86.36 26.67)
@@ -745,6 +1156,72 @@
 			(type dash)
 		)
 		(uuid "fe5ec314-40c9-407d-a9c7-824a28fa1c11")
+	)
+	(global_label "VRRR"
+		(shape input)
+		(at 59.69 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39224e3c-89fd-4e1a-be2e-11561fa8b45f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 67.5738 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VRRR"
+		(shape input)
+		(at 166.37 24.13 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "42b7ac95-d1ae-4081-ba9f-1d6a27f400d7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.37 16.2462 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VRRR"
+		(shape input)
+		(at 113.03 24.13 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6ab685b7-1ca1-44c4-a169-9774ea9ef2b1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 113.03 16.2462 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "DAC0"
 		(shape input)
@@ -759,7 +1236,7 @@
 	)
 	(hierarchical_label "DAC1"
 		(shape input)
-		(at 177.8 46.99 0)
+		(at 184.15 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -781,7 +1258,7 @@
 	)
 	(hierarchical_label "ADC1"
 		(shape output)
-		(at 162.56 46.99 180)
+		(at 161.29 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -789,6 +1266,28 @@
 			(justify right)
 		)
 		(uuid "6fa7963a-93d5-4058-926e-95ec600ffcca")
+	)
+	(hierarchical_label "AGND"
+		(shape output)
+		(at 54.61 125.73 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "87165473-b503-4685-ab79-42f8c008e8b5")
+	)
+	(hierarchical_label "VRR"
+		(shape output)
+		(at 34.29 113.03 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "89054df1-aab9-4e4a-a223-a110a1ae10a8")
 	)
 	(hierarchical_label "ADC0"
 		(shape output)
@@ -825,32 +1324,34 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 168.91 46.99 90)
+		(at 175.26 46.99 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4ce675d6-3d4f-4ebe-96ec-0fc38b070436")
-		(property "Reference" "R20"
-			(at 168.783 41.275 90)
+		(uuid "2b1394b8-5aa7-41e1-a1bb-8546b1fbe61d")
+		(property "Reference" "R23"
+			(at 173.228 41.402 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
-		(property "Value" "1k"
-			(at 168.783 43.815 90)
+		(property "Value" "10k"
+			(at 173.99 43.688 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 168.91 45.212 90)
+			(at 175.26 45.212 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -859,7 +1360,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 168.91 46.99 0)
+			(at 175.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -868,7 +1369,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 168.91 46.99 0)
+			(at 175.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -876,8 +1377,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
-			(at 168.91 46.99 90)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 175.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -885,17 +1386,8 @@
 				(hide yes)
 			)
 		)
-		(property "Part number" " ERA-3VRW1001V "
-			(at 168.91 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" " 667-ERA-3VRW1001V "
-			(at 168.91 46.99 90)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 175.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -904,7 +1396,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 168.91 46.99 90)
+			(at 175.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -912,11 +1404,126 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "8d7d1412-90fa-4358-b9b0-de587f28cbdb")
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 175.26 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "988f7788-f6b1-4c33-bd89-37d2b560a44c")
+			(uuid "0ebf4344-1a76-4472-a319-10ff1a47c7fb")
+		)
+		(pin "2"
+			(uuid "81201522-b046-4b86-ac90-73f089b97c7d")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 113.03 39.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "36739b79-0ea0-4288-a6b1-67f547d31b47")
+		(property "Reference" "R20"
+			(at 118.872 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 119.634 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 114.808 39.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 113.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b74630c-ae1f-481f-be70-892465b40129")
+		)
+		(pin "2"
+			(uuid "01289eca-8985-4fcc-895b-7cec563f6af9")
 		)
 		(instances
 			(project "DCD"
@@ -1001,6 +1608,494 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 54.61 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7c1a931d-07c3-4506-9a72-2678713c5cfb")
+		(property "Reference" "C70"
+			(at 57.531 118.2116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1µF"
+			(at 57.531 120.523 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 55.5752 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-GCJ188R71E105KA1D"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "GCJ188R71E105KA01D"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 54.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5380ae27-0ddc-4d9d-9090-62971e0b08b2")
+		)
+		(pin "2"
+			(uuid "64427638-eb1c-4be8-955a-8504e280e6e0")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "C70")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 39.37 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9a36f991-be0f-4134-9119-677b82c64a6c")
+		(property "Reference" "FB18"
+			(at 41.148 107.696 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 41.91 109.728 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 39.37 114.808 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.37 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 39.37 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 39.37 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 39.37 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 39.37 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
+			(at 39.37 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8fd75b4c-cbd7-4bba-ac1e-fd12e2076e5d")
+		)
+		(pin "2"
+			(uuid "b1d51342-36d8-4878-97ac-c745d71948aa")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "FB18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 48.26 113.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e112ac9-e8fc-4661-bf39-5daad07bacdb")
+		(property "Reference" "R25"
+			(at 48.26 107.442 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 48.26 109.728 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 48.26 114.808 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 48.26 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 48.26 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link " "https://eu.mouser.com/ProductDetail/Panasonic/ERA-3VEB1000V?qs=sGAEpiMZZMtlubZbdhIBIFX24rZb7BVEWmP2JDQu%252BM0%3D"
+			(at 48.26 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "982f342d-00df-409d-a0a9-0481669bac20")
+		)
+		(pin "1"
+			(uuid "b84dbc8c-575f-4bff-b8ec-d7500c8660f6")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 123.19 39.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce055df5-021f-497b-88c2-2d7f86422775")
+		(property "Reference" "R18"
+			(at 129.032 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 129.794 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 124.968 39.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 123.19 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "899ae7ca-a401-4841-899a-2302437587a4")
+		)
+		(pin "2"
+			(uuid "f07de3cc-a2aa-408f-839e-2afb40f6ef15")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 166.37 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d45b6319-cdd6-4e43-b743-62b20f02030b")
+		(property "Reference" "R24"
+			(at 160.528 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 159.766 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 164.592 39.37 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 166.37 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "395b1b9d-a6dc-4d5a-ae94-4f7cfb89f3ff")
+		)
+		(pin "2"
+			(uuid "c3977743-3774-412a-b276-bf8d9e177aec")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
+					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 123.19 54.61 0)
 		(mirror y)
@@ -1009,21 +2104,23 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "da046203-ff12-4f7f-86d6-54b9ad08c670")
+		(uuid "dd5c49d2-8527-4498-a89e-f110df99cf32")
 		(property "Reference" "R19"
-			(at 126.492 53.086 0)
+			(at 129.032 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "1k"
-			(at 126.492 55.626 0)
+		(property "Value" "10k"
+			(at 129.794 55.626 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
@@ -1053,8 +2150,8 @@
 				(hide yes)
 			)
 		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
-			(at 123.19 54.61 90)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 123.19 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1062,17 +2159,8 @@
 				(hide yes)
 			)
 		)
-		(property "Part number" " ERA-3VRW1001V "
-			(at 123.19 54.61 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" " 667-ERA-3VRW1001V "
-			(at 123.19 54.61 90)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 123.19 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1081,7 +2169,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 123.19 54.61 90)
+			(at 123.19 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1089,11 +2177,20 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "f13f3f35-6fd2-4617-80ea-73533145f348")
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 123.19 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "29f7d1b7-9f86-4982-b23d-c453c4979deb")
+			(uuid "c4004eea-fab6-49bd-858b-5e5b9c7745f7")
+		)
+		(pin "2"
+			(uuid "90580ce4-2f32-42b4-b1d1-b4b3639f5ae4")
 		)
 		(instances
 			(project "DCD"
@@ -1205,109 +2302,6 @@
 			(project "DCD"
 				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
 					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 123.19 39.37 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f5bf17b3-f75a-4b66-b3ed-5e44cd1572e4")
-		(property "Reference" "R18"
-			(at 126.492 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k"
-			(at 126.492 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 124.968 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 123.19 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 123.19 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link " "https://www.mouser.com/ProductDetail/Panasonic/ERA-3VRW1001V?qs=OlC7AqGiEDk4w8WqW4Z2dQ%3D%3D"
-			(at 123.19 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part number" " ERA-3VRW1001V "
-			(at 123.19 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" " 667-ERA-3VRW1001V "
-			(at 123.19 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "Mouser"
-			(at 123.19 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "03e4dbb5-b5e9-4675-aa0e-d1eb55023931")
-		)
-		(pin "1"
-			(uuid "992d41be-9622-4946-aaa2-57adeb5a828d")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/9d251ce4-04d4-4800-ac42-9fd9e9a8cf74"
-					(reference "R18")
 					(unit 1)
 				)
 			)

@@ -1585,12 +1585,6 @@
 		(uuid "7300d382-2c37-43d6-a99d-dfb46a7f43b4")
 	)
 	(junction
-		(at 144.78 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7e7c8539-7c30-48c9-aef2-d7bac442f745")
-	)
-	(junction
 		(at 82.55 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1608,7 +1602,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 34.29) (xy 137.16 41.91)
+			(xy 140.97 34.29) (xy 140.97 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1648,16 +1642,6 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 49.53) (xy 82.55 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a4e7b15-b714-40e1-804d-73d6d4159c5e")
-	)
-	(wire
-		(pts
 			(xy 80.01 44.45) (xy 123.19 44.45)
 		)
 		(stroke
@@ -1668,23 +1652,13 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 72.39) (xy 59.69 80.01)
+			(xy 58.42 72.39) (xy 58.42 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "32bcb244-71c2-41ec-9158-1af659880a67")
-	)
-	(wire
-		(pts
-			(xy 144.78 39.37) (xy 144.78 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "353db69c-4178-4cf5-ac27-dfb9ebc31c31")
 	)
 	(wire
 		(pts
@@ -1728,7 +1702,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 72.39) (xy 57.15 80.01)
+			(xy 55.88 72.39) (xy 55.88 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1768,7 +1742,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 41.91) (xy 132.08 36.83)
+			(xy 135.89 41.91) (xy 135.89 36.83)
 		)
 		(stroke
 			(width 0)
@@ -1778,7 +1752,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 72.39) (xy 67.31 80.01)
+			(xy 64.77 72.39) (xy 64.77 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1788,7 +1762,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 34.29) (xy 134.62 41.91)
+			(xy 138.43 34.29) (xy 138.43 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1808,7 +1782,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 72.39) (xy 74.93 80.01)
+			(xy 71.12 72.39) (xy 71.12 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1828,17 +1802,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 39.37) (xy 144.78 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b130b6c-c8b8-42f7-ad82-20e4278641b7")
-	)
-	(wire
-		(pts
-			(xy 57.15 36.83) (xy 132.08 36.83)
+			(xy 57.15 36.83) (xy 135.89 36.83)
 		)
 		(stroke
 			(width 0)
@@ -1888,7 +1852,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 72.39) (xy 69.85 80.01)
+			(xy 67.31 72.39) (xy 67.31 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1928,7 +1892,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 72.39) (xy 64.77 80.01)
+			(xy 62.23 72.39) (xy 62.23 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1968,7 +1932,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 34.29) (xy 144.78 39.37)
+			(xy 82.55 34.29) (xy 82.55 49.53)
 		)
 		(stroke
 			(width 0)
@@ -3025,7 +2989,7 @@
 			)
 		)
 		(pin "3.3V" input
-			(at 134.62 41.91 90)
+			(at 138.43 41.91 90)
 			(uuid "ed79d9bc-7402-4700-81c6-285c73d6695f")
 			(effects
 				(font
@@ -3065,7 +3029,7 @@
 			)
 		)
 		(pin "7V" input
-			(at 132.08 41.91 90)
+			(at 135.89 41.91 90)
 			(uuid "5120643a-1859-4c6b-b082-7201f3fff742")
 			(effects
 				(font
@@ -3075,7 +3039,7 @@
 			)
 		)
 		(pin "-1.2V" input
-			(at 137.16 41.91 90)
+			(at 140.97 41.91 90)
 			(uuid "bf15a2a8-3577-4ac2-b17f-bc7f435da620")
 			(effects
 				(font
@@ -3092,16 +3056,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(pin "DGND" input
-			(at 144.78 41.91 90)
-			(uuid "25d7ded2-eda4-4f26-9664-d4d9616e6ed1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(instances
@@ -3149,7 +3103,7 @@
 			)
 		)
 		(pin "BSY" input
-			(at 59.69 80.01 90)
+			(at 58.42 80.01 90)
 			(uuid "fcf0caf8-6e7b-4ea9-94b8-500dd5273673")
 			(effects
 				(font
@@ -3159,7 +3113,7 @@
 			)
 		)
 		(pin "CNV" output
-			(at 57.15 80.01 90)
+			(at 55.88 80.01 90)
 			(uuid "d5099953-c9f7-4c48-b117-e1669b1bb9d3")
 			(effects
 				(font
@@ -3169,7 +3123,7 @@
 			)
 		)
 		(pin "~{CS}" output
-			(at 64.77 80.01 90)
+			(at 62.23 80.01 90)
 			(uuid "e470a07d-f5f6-4eb1-9068-7af2170a42d8")
 			(effects
 				(font
@@ -3199,7 +3153,7 @@
 			)
 		)
 		(pin "SCK" output
-			(at 67.31 80.01 90)
+			(at 64.77 80.01 90)
 			(uuid "fd2eb349-f56f-47dc-ab30-16f295449408")
 			(effects
 				(font
@@ -3209,7 +3163,7 @@
 			)
 		)
 		(pin "SDI" output
-			(at 69.85 80.01 90)
+			(at 67.31 80.01 90)
 			(uuid "53427448-6412-45ea-b3eb-cf8dcb704b10")
 			(effects
 				(font
@@ -3219,7 +3173,7 @@
 			)
 		)
 		(pin "SDO0" input
-			(at 74.93 80.01 90)
+			(at 71.12 80.01 90)
 			(uuid "6503dbc1-90fe-4c87-9fd1-95a8c29e8888")
 			(effects
 				(font
@@ -3403,7 +3357,7 @@
 			)
 		)
 		(pin "3.3V" output
-			(at 134.62 34.29 270)
+			(at 138.43 34.29 270)
 			(uuid "17854928-5206-455b-a9a2-767f1ebcfd86")
 			(effects
 				(font
@@ -3413,7 +3367,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 144.78 34.29 270)
+			(at 82.55 34.29 270)
 			(uuid "9831e215-a086-4c58-8985-69154d6ec750")
 			(effects
 				(font
@@ -3473,7 +3427,7 @@
 			)
 		)
 		(pin "-1.8V" output
-			(at 137.16 34.29 270)
+			(at 140.97 34.29 270)
 			(uuid "2c5eb406-6b8c-4ac8-8182-2a9a826dec36")
 			(effects
 				(font
@@ -3651,7 +3605,7 @@
 			)
 		)
 		(pin "~{CS}" input
-			(at 64.77 72.39 270)
+			(at 62.23 72.39 270)
 			(uuid "ce7c70c4-0c18-4bd0-a164-f4a6e1ca7d35")
 			(effects
 				(font
@@ -3661,7 +3615,7 @@
 			)
 		)
 		(pin "SDI" input
-			(at 69.85 72.39 270)
+			(at 67.31 72.39 270)
 			(uuid "3e30f9da-e19b-409a-a8fe-444ec795887f")
 			(effects
 				(font
@@ -3681,7 +3635,7 @@
 			)
 		)
 		(pin "SDO0" output
-			(at 74.93 72.39 270)
+			(at 71.12 72.39 270)
 			(uuid "4a22537f-3483-4971-8401-59b68ca2fc43")
 			(effects
 				(font
@@ -3691,7 +3645,7 @@
 			)
 		)
 		(pin "SCK" input
-			(at 67.31 72.39 270)
+			(at 64.77 72.39 270)
 			(uuid "cc73c125-2ee1-47a7-982d-475f2fb8a446")
 			(effects
 				(font
@@ -3701,7 +3655,7 @@
 			)
 		)
 		(pin "CNV" input
-			(at 57.15 72.39 270)
+			(at 55.88 72.39 270)
 			(uuid "dd293d55-bed6-4c4e-8c6e-2512ca798ed3")
 			(effects
 				(font
@@ -3721,7 +3675,7 @@
 			)
 		)
 		(pin "BSY" output
-			(at 59.69 72.39 270)
+			(at 58.42 72.39 270)
 			(uuid "689ef368-695b-4daa-8440-e693275e00f2")
 			(effects
 				(font
@@ -3793,6 +3747,16 @@
 		(pin "DGND" input
 			(at 80.01 49.53 0)
 			(uuid "e07e2f0f-5cfe-44ff-983e-cb17427250e6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VRR" output
+			(at 80.01 66.04 0)
+			(uuid "101afb73-d06f-4088-afa8-648730316304")
 			(effects
 				(font
 					(size 1.27 1.27)
