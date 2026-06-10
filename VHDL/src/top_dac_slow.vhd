@@ -192,7 +192,7 @@ begin
         port map (
             clk           => s_clk_slow,
             rst           => s_rst,
-            data_in       => s_dac_data,
+            data_in       => x"5555",
             fifo_empty(0) => '0',
             read_en       => s_read_en,
             sdi           => sdi,

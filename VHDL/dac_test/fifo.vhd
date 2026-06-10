@@ -108,7 +108,7 @@ BEGIN
 		almost_full_value => 80,
 		intended_device_family => "Cyclone 10 LP",
 		lpm_numwords => 256,
-		lpm_showahead => "OFF",
+		lpm_showahead => "ON",
 		lpm_type => "scfifo",
 		lpm_width => 16,
 		lpm_widthu => 8,

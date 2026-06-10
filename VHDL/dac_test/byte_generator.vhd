@@ -15,7 +15,7 @@ end entity byte_generator;
 
 architecture rtl of byte_generator is
 
-    constant TOTAL_BYTES_C : natural := 1500;
+    constant TOTAL_BYTES_C : natural := 65536;
 
     type state_t is (
         IDLE,
@@ -53,14 +53,11 @@ begin
                         write_count   <= 0;
 
                         if enable = '1' then
-                            -- Prepare first byte
-                            Data          <= std_logic_vector(data_cnt);
-                            fifo_write_en <= '1';
-                            state         <= WRITE_FIFO;
+                            state <= WRITE_FIFO;
                         end if;
 
                     ----------------------------------------------------
-                    -- Write 1600 bytes into FIFO
+                    -- Write 65536 values (0x0000 -> 0xFFFF) into FIFO
                     ----------------------------------------------------
                     when WRITE_FIFO =>
 
@@ -69,10 +66,10 @@ begin
                             Data          <= std_logic_vector(data_cnt);
 
                             if write_count = TOTAL_BYTES_C - 1 then
-                                fifo_write_en <= '0';
-                                state         <= IDLE;
-                                write_count   <= 0;
-                                data_cnt      <= (others => '0');
+                                -- 0xFFFF is written this cycle, then wrap
+                                state       <= IDLE;
+                                write_count <= 0;
+                                data_cnt    <= (others => '0');
                             else
                                 write_count <= write_count + 1;
                                 data_cnt    <= data_cnt + 1;
