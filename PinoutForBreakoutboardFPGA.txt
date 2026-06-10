@@ -5,9 +5,9 @@ IO 33 SDI1 D6
 IO 37 CLK B6
 ADC:
 IO 35 CNV D7
-IO 38 BSY E9 high impeadance
-IO 31 SCK B9 high impeadance
-IO 32 SDI E9 high impeadance
+IO 38 !BSY E9 high impeadance
+IO 31 !SCK B9 high impeadance
+IO 32 !SDI E9 high impeadance
 
 Bank 1
 ADC:
