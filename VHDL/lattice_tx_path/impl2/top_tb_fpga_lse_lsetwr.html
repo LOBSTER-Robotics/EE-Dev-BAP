@@ -1,0 +1,290 @@
+<HTML>
+<HEAD><TITLE>Lattice Synthesis Timing Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Map_Twr"></A><B><U><big>Lattice Synthesis Timing Report</big></U></B>
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Thu May 28 12:19:00 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Design:     top_tb_fpga
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets clk_c]
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 9.916ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \dut/udp_inst/idx__i2  (from clk_c +)
+   Destination:    FD1S3JX    D              \dut/mac_inst/crc_reg_i29  (to clk_c +)
+
+   Delay:                  15.161ns  (18.2% logic, 81.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     15.161ns data_path \dut/udp_inst/idx__i2 to \dut/mac_inst/crc_reg_i29 violates
+      5.000ns delay constraint less
+     -0.245ns L_S requirement (totaling 5.245ns) by 9.916ns
+
+ Path Details: \dut/udp_inst/idx__i2 to \dut/mac_inst/crc_reg_i29
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.511             CK to Q              \dut/udp_inst/idx__i2 (from clk_c)
+Route        38   e 1.847                                  \dut/idx[2]
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i1_2_lut_rep_112_3_lut_4_lut
+Route         4   e 1.297                                  \dut/udp_inst/n6486
+LUT4        ---     0.232              D to Z              \dut/udp_inst/n5280_bdd_4_lut_4_lut
+Route         1   e 1.020                                  \dut/udp_inst/n6449
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2123_2_lut_3_lut
+Route         1   e 0.020                                  \dut/udp_inst/n1242
+MUXL5       ---     0.162           BLUT to Z              \dut/udp_inst/i924
+Route         1   e 1.020                                  \dut/udp_inst/n2046
+LUT4        ---     0.232              A to Z              \dut/udp_inst/i925_3_lut
+Route         5   e 1.341                                  \dut/udp_tdata[1]
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2191_2_lut_rep_83_3_lut_4_lut
+Route        11   e 1.499                                  \dut/n6457
+LUT4        ---     0.232              A to Z              \dut/mac_inst/crc_inst/i1_4_lut_adj_127
+Route         2   e 1.158                                  \dut/mac_inst/n5124
+LUT4        ---     0.232              B to Z              \dut/mac_inst/crc_inst/i1_4_lut_adj_125
+Route         2   e 1.158                                  \dut/mac_inst/crc_next[29]
+LUT4        ---     0.232              C to Z              \dut/mac_inst/select_339_Select_29_i2_4_lut
+Route         1   e 1.020                                  \dut/mac_inst/n2_adj_695
+LUT4        ---     0.232              B to Z              \dut/mac_inst/i1_4_lut_adj_172
+Route         1   e 1.020                                  \dut/mac_inst/next_crc_reg[29]
+                  --------
+                   15.161  (18.2% logic, 81.8% route), 11 logic levels.
+
+
+Error:  The following path violates requirements by 9.916ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \dut/udp_inst/idx__i2  (from clk_c +)
+   Destination:    FD1S3JX    D              \dut/mac_inst/crc_reg_i13  (to clk_c +)
+
+   Delay:                  15.161ns  (18.2% logic, 81.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     15.161ns data_path \dut/udp_inst/idx__i2 to \dut/mac_inst/crc_reg_i13 violates
+      5.000ns delay constraint less
+     -0.245ns L_S requirement (totaling 5.245ns) by 9.916ns
+
+ Path Details: \dut/udp_inst/idx__i2 to \dut/mac_inst/crc_reg_i13
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.511             CK to Q              \dut/udp_inst/idx__i2 (from clk_c)
+Route        38   e 1.847                                  \dut/idx[2]
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i1_2_lut_rep_112_3_lut_4_lut
+Route         4   e 1.297                                  \dut/udp_inst/n6486
+LUT4        ---     0.232              D to Z              \dut/udp_inst/n5280_bdd_4_lut_4_lut
+Route         1   e 1.020                                  \dut/udp_inst/n6449
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2123_2_lut_3_lut
+Route         1   e 0.020                                  \dut/udp_inst/n1242
+MUXL5       ---     0.162           BLUT to Z              \dut/udp_inst/i924
+Route         1   e 1.020                                  \dut/udp_inst/n2046
+LUT4        ---     0.232              A to Z              \dut/udp_inst/i925_3_lut
+Route         5   e 1.341                                  \dut/udp_tdata[1]
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2191_2_lut_rep_83_3_lut_4_lut
+Route        11   e 1.499                                  \dut/n6457
+LUT4        ---     0.232              A to Z              \dut/mac_inst/crc_inst/i1_4_lut_adj_127
+Route         2   e 1.158                                  \dut/mac_inst/n5124
+LUT4        ---     0.232              D to Z              \dut/mac_inst/i1_3_lut_4_lut_adj_223
+Route         2   e 1.158                                  \dut/mac_inst/crc_next[13]
+LUT4        ---     0.232              C to Z              \dut/mac_inst/select_339_Select_13_i2_4_lut
+Route         1   e 1.020                                  \dut/mac_inst/n2_adj_689
+LUT4        ---     0.232              B to Z              \dut/mac_inst/i1_4_lut_adj_163
+Route         1   e 1.020                                  \dut/mac_inst/next_crc_reg[13]
+                  --------
+                   15.161  (18.2% logic, 81.8% route), 11 logic levels.
+
+
+Error:  The following path violates requirements by 9.888ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \dut/udp_inst/idx__i1  (from clk_c +)
+   Destination:    FD1S3JX    D              \dut/mac_inst/crc_reg_i29  (to clk_c +)
+
+   Delay:                  15.133ns  (18.2% logic, 81.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     15.133ns data_path \dut/udp_inst/idx__i1 to \dut/mac_inst/crc_reg_i29 violates
+      5.000ns delay constraint less
+     -0.245ns L_S requirement (totaling 5.245ns) by 9.888ns
+
+ Path Details: \dut/udp_inst/idx__i1 to \dut/mac_inst/crc_reg_i29
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.511             CK to Q              \dut/udp_inst/idx__i1 (from clk_c)
+Route        33   e 1.819                                  \dut/idx[1]
+LUT4        ---     0.232              D to Z              \dut/udp_inst/i1_2_lut_rep_112_3_lut_4_lut
+Route         4   e 1.297                                  \dut/udp_inst/n6486
+LUT4        ---     0.232              D to Z              \dut/udp_inst/n5280_bdd_4_lut_4_lut
+Route         1   e 1.020                                  \dut/udp_inst/n6449
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2123_2_lut_3_lut
+Route         1   e 0.020                                  \dut/udp_inst/n1242
+MUXL5       ---     0.162           BLUT to Z              \dut/udp_inst/i924
+Route         1   e 1.020                                  \dut/udp_inst/n2046
+LUT4        ---     0.232              A to Z              \dut/udp_inst/i925_3_lut
+Route         5   e 1.341                                  \dut/udp_tdata[1]
+LUT4        ---     0.232              C to Z              \dut/udp_inst/i2191_2_lut_rep_83_3_lut_4_lut
+Route        11   e 1.499                                  \dut/n6457
+LUT4        ---     0.232              A to Z              \dut/mac_inst/crc_inst/i1_4_lut_adj_127
+Route         2   e 1.158                                  \dut/mac_inst/n5124
+LUT4        ---     0.232              B to Z              \dut/mac_inst/crc_inst/i1_4_lut_adj_125
+Route         2   e 1.158                                  \dut/mac_inst/crc_next[29]
+LUT4        ---     0.232              C to Z              \dut/mac_inst/select_339_Select_29_i2_4_lut
+Route         1   e 1.020                                  \dut/mac_inst/n2_adj_695
+LUT4        ---     0.232              B to Z              \dut/mac_inst/i1_4_lut_adj_172
+Route         1   e 1.020                                  \dut/mac_inst/next_crc_reg[29]
+                  --------
+                   15.133  (18.2% logic, 81.8% route), 11 logic levels.
+
+Warning: 14.916 ns is the maximum delay for this constraint.
+
+
+<A name="mtw1_rs"></A><B><U><big>Timing Report Summary</big></U></B>
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |     5.000 ns|    14.916 ns|    11 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+\dut/idx[2]                             |      38|     793|     19.36%
+                                        |        |        |
+\dut/idx[1]                             |      33|     677|     16.53%
+                                        |        |        |
+\dut/idx[0]                             |      32|     585|     14.28%
+                                        |        |        |
+\dut/idx[3]                             |      31|     566|     13.82%
+                                        |        |        |
+\dut/udp_tdata[0]                       |       6|     530|     12.94%
+                                        |        |        |
+\dut/udp_tdata[2]                       |       6|     526|     12.84%
+                                        |        |        |
+\dut/mac_inst/n6465                     |      11|     504|     12.30%
+                                        |        |        |
+\dut/n6460                              |      12|     503|     12.28%
+                                        |        |        |
+\dut/udp_inst/n6201                     |       1|     503|     12.28%
+                                        |        |        |
+\dut/udp_inst/n2036                     |       2|     502|     12.26%
+                                        |        |        |
+\dut/udp_inst/n2038                     |       3|     492|     12.01%
+                                        |        |        |
+\dut/udp_tdata[4]                       |       3|     492|     12.01%
+                                        |        |        |
+\dut/udp_tdata[1]                       |       5|     489|     11.94%
+                                        |        |        |
+\dut/udp_inst/n2040                     |       1|     470|     11.47%
+                                        |        |        |
+\dut/udp_inst/n2046                     |       1|     462|     11.28%
+                                        |        |        |
+\dut/udp_inst/n1223                     |       1|     434|     10.60%
+                                        |        |        |
+\dut/n318                               |      24|     420|     10.25%
+                                        |        |        |
+\dut/n6457                              |      11|     418|     10.21%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary:</big></U></B>
+---------------
+
+Timing errors: 4096  Score: 25175719
+
+Constraints cover  10382 paths, 673 nets, and 1991 connections (87.7% coverage)
+
+
+Peak memory: 151855104 bytes, TRCE: 5316608 bytes, DLYMAN: 163840 bytes
+CPU_TIME_REPORT: 0 secs 
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

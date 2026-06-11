@@ -1,0 +1,53 @@
+if {![file exists "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/test/test.mpf"]} { 
+	project new "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/test" test
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd"
+	project addfile "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd"
+	vcom -2008 -work work "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd"
+} else {
+	project open "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/test/test"
+	project compileoutofdate
+}
+vsim -voptargs=+acc -L work -L pmi_work -L ovi_ecp5u  top_tb_fpga_tb -t ns
+view wave
+add wave /*
+run 1000ns

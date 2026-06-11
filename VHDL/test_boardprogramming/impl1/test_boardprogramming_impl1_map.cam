@@ -1,0 +1,45 @@
+[ START MERGED ]
+[ END MERGED ]
+[ START CLIPPED ]
+VCC_net
+u_blinker/counter_16_add_4_1/S0
+u_blinker/counter_16_add_4_1/CI
+u_blinker/equal_169_0/S1
+u_blinker/equal_169_0/S0
+u_blinker/equal_169_0/CI
+u_blinker/equal_169_27/S1
+u_blinker/equal_169_27/S0
+u_blinker/equal_169_29/S1
+u_blinker/equal_169_29/S0
+u_blinker/equal_169_31/S1
+u_blinker/equal_169_31/S0
+u_blinker/equal_169_32/S0
+u_blinker/equal_169_32/CO
+u_blinker/counter_16_add_4_33/S1
+u_blinker/counter_16_add_4_33/CO
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Wed May 27 15:34:55 2026
+
+SYSCONFIG SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=DISABLE SLAVE_PARALLEL_PORT=DISABLE BACKGROUND_RECONFIG=OFF DONE_EX=OFF DONE_OD=ON DONE_PULL=ON MCCLK_FREQ=2.4 TRANSFR=OFF CONFIG_IOVOLTAGE=2.5 CONFIG_SECURE=OFF WAKE_UP=21 COMPRESS_CONFIG=OFF CONFIG_MODE=JTAG INBUF=OFF ;
+LOCATE COMP "led[6]" SITE "F16" ;
+LOCATE COMP "led[7]" SITE "E17" ;
+LOCATE COMP "led[5]" SITE "F18" ;
+LOCATE COMP "led[4]" SITE "F17" ;
+LOCATE COMP "led[3]" SITE "E16" ;
+LOCATE COMP "led[2]" SITE "D17" ;
+LOCATE COMP "led[1]" SITE "D18" ;
+LOCATE COMP "led[0]" SITE "E18" ;
+LOCATE COMP "phy_clk125" SITE "L19" ;
+LOCATE COMP "sw[7]" SITE "K20" ;
+LOCATE COMP "sw[6]" SITE "K19" ;
+LOCATE COMP "sw[5]" SITE "K18" ;
+LOCATE COMP "sw[4]" SITE "J18" ;
+LOCATE COMP "sw[3]" SITE "F2" ;
+LOCATE COMP "sw[2]" SITE "G3" ;
+LOCATE COMP "sw[1]" SITE "K3" ;
+LOCATE COMP "sw[0]" SITE "H2" ;
+FREQUENCY PORT "phy_clk125" 125.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

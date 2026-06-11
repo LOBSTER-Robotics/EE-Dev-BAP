@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "ethernet_tx_path_impl2.log"
+-o "ethernet_tx_path_impl2.csv"
+-pr "ethernet_tx_path_impl2.prf"

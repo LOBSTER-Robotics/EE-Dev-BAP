@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
+<userSetting name="C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml" version="Diamond (64-bit) 3.14.0.75.2" date="Thu May 28 10:42:24 2026" vendor="Lattice Semiconductor Corporation" >
+  <msg mid="35921504" type="Info" />
+=======
+<userSetting name="D:/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml" version="Diamond (64-bit) 3.14.0.75.2" date="Wed May 27 15:41:06 2026" vendor="Lattice Semiconductor Corporation" >
+  <msg mid="35921504" type="Info" />
+  <msg mid="35921123" type="Error" />
+>>>>>>> Stashed changes
+  <msg mid="35921205" type="Warning" />
+</userSetting>

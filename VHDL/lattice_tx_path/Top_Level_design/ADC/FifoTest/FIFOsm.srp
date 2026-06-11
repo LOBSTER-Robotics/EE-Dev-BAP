@@ -1,0 +1,38 @@
+SCUBA, Version Diamond (64-bit) 3.14.0.75.2
+Tue May 05 16:31:43 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : E:\Apps\Lattice Diamond\ispfpga\bin\nt64\scuba.exe -w -n FIFOsm -lang vhdl -synth lse -bus_exp 7 -bb -arch sa5p00 -type ebfifo -sync_mode -depth 4 -width 24 -no_enable -pe 1 -pe2 3 -pf 4 -pf2 2 -reset_rel SYNC 
+    Circuit name     : FIFOsm
+    Module type      : fifoblk
+    Module Version   : 5.1
+    Ports            : 
+	Inputs       : Data[23:0], Clock, WrEn, RdEn, Reset
+	Outputs      : Q[23:0], Empty, Full, AlmostEmpty, AlmostFull
+    I/O buffer       : not inserted
+    EDIF output      : FIFOsm.edn
+    VHDL output      : FIFOsm.vhd
+    VHDL template    : FIFOsm_tmpl.vhd
+    VHDL testbench    : tb_FIFOsm_tmpl.vhd
+    VHDL purpose     : for synthesis and simulation
+    Bus notation     : big endian
+    Report output    : FIFOsm.srp
+    Element Usage    :
+          CCU2C : 33
+           AND2 : 4
+        FD1P3DX : 9
+        FD1S3BX : 2
+        FD1S3DX : 2
+            INV : 9
+       ROM16X1A : 4
+           XOR2 : 1
+       PDPW16KD : 1
+    Estimated Resource Usage:
+            LUT : 75
+            EBR : 1
+            Reg : 13

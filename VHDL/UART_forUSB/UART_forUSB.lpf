@@ -1,0 +1,37 @@
+BLOCK RESETPATHS;
+BLOCK ASYNCPATHS;
+
+#=========================================================
+# Clock
+#=========================================================
+
+LOCATE COMP "Clk" SITE "L19";
+
+FREQUENCY PORT "Clk" 125.0 MHz;
+
+#=========================================================
+# UART
+#=========================================================
+
+LOCATE COMP "Uart_Tx" SITE "A11";
+IOBUF PORT "Uart_Tx" IO_TYPE=LVCMOS33;
+
+LOCATE COMP "Uart_Rx" SITE "C11";
+IOBUF PORT "Uart_Rx" IO_TYPE=LVCMOS33;
+
+#=========================================================
+# Reset (if external)
+#=========================================================
+LOCATE COMP "n_Rst" SITE "U17" ;
+IOBUF PORT "n_Rst" IO_TYPE=LVCMOS25 ;
+LOCATE COMP "Rst" SITE "K20";
+IOBUF PORT "Rst" IO_TYPE=LVCMOS25;
+
+LOCATE COMP "leds[0]" SITE "F16" ;
+LOCATE COMP "leds[1]" SITE "E17" ;
+LOCATE COMP "leds[2]" SITE "F18" ;
+LOCATE COMP "leds[3]" SITE "F17" ;
+LOCATE COMP "leds[4]" SITE "E18" ;
+LOCATE COMP "leds[5]" SITE "D18" ;
+LOCATE COMP "leds[6]" SITE "D17" ;
+LOCATE COMP "leds[7]" SITE "E16" ;

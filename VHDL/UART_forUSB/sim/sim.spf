@@ -1,0 +1,16 @@
+<BaliSimProject version="1.3" path="." stage="0" language="-1" name="sim" simType="QuestaSim">
+    <Source worklib="work" path="olo_base_pkg_array.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_base_pkg_math.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_base_pkg_attribute.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_base_pkg_logic.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_base_pkg_string.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_intf_sync.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_base_strobe_gen.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="olo_intf_uart.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="uart_echo.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <Source worklib="work" path="uart_echo_tb.vhd" type="VHDL" langstandard="VHDL_2008" include="none"/>
+    <SimLib value="pmi_work ovi_ecp5u"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+    <TopModule instance="" language="VHDL" name="uart_echo_tb"/>
+</BaliSimProject>

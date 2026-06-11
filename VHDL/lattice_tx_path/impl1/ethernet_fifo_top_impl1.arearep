@@ -1,0 +1,387 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  349 of 44457 (0.785%)
+I/O cells:      36
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                             ALU54B         7          100.0
+                               AND2        51          100.0
+                              CCU2C       339          100.0
+                            FD1P3AX       144          100.0
+                            FD1P3IX        72          100.0
+                            FD1S3AX        28          100.0
+                            FD1S3AY        19          100.0
+                            FD1S3IX        51          100.0
+                            FD1S3JX        35          100.0
+                                GSR         1          100.0
+                                 IB        28          100.0
+                                INV        71          100.0
+                            L6MUX21        72          100.0
+                               LUT4       719          100.0
+                         MULT18X18D        14          100.0
+                                 OB         8          100.0
+                            ODDRX1F         6          100.0
+                           PDPW16KD        17          100.0
+                              PFUMX       121          100.0
+                           ROM16X1A        36          100.0
+                               XOR2        17          100.0
+SUB MODULES
+             Controller(16,24,8,16)         1
+                       DDR_forRGMII         1
+                             FIFOsm         1
+                          FIFOsm_U0         1
+                          FIFOsm_U1         1
+                         FIFOsm_U10         1
+                         FIFOsm_U11         1
+                         FIFOsm_U12         1
+                         FIFOsm_U13         1
+                         FIFOsm_U14         1
+                          FIFOsm_U2         1
+                          FIFOsm_U3         1
+                          FIFOsm_U4         1
+                          FIFOsm_U5         1
+                          FIFOsm_U6         1
+                          FIFOsm_U7         1
+                          FIFOsm_U8         1
+                          FIFOsm_U9         1
+                             Fifolg         1
+                     MAC_AXItoRGMII         1
+                       UDP_FIFO_AXI         1
+                            crc32_8         1
+                  fifo_16ch_mux(24)         1
+                       fifo_udp_reg         1
+                       rgmii_tx_ddr         1
+                              TOTAL      1881
+----------------------------------------------------------------------
+Report for cell FIFOsm_U8.v1
+Instance Path : u_Fifosm15
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U7.v1
+Instance Path : u_Fifosm1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U6.v1
+Instance Path : u_Fifosm2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U5.v1
+Instance Path : u_Fifosm3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U4.v1
+Instance Path : u_Fifosm4
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U3.v1
+Instance Path : u_Fifosm5
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U2.v1
+Instance Path : u_Fifosm6
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U1.v1
+Instance Path : u_Fifosm7
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U0.v1
+Instance Path : u_Fifosm8
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U14.v1
+Instance Path : u_Fifosm0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U13.v1
+Instance Path : u_Fifosm10
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U12.v1
+Instance Path : u_Fifosm11
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U11.v1
+Instance Path : u_Fifosm12
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U10.v1
+Instance Path : u_Fifosm13
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell FIFOsm_U9.v1
+Instance Path : u_Fifosm14
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell rgmii_tx_ddr.v1
+Instance Path : rgmii_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            ODDRX1F         6          100.0
+SUB MODULES
+                       DDR_forRGMII         1
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell DDR_forRGMII.v1
+Instance Path : rgmii_inst.DDR_TX
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            ODDRX1F         6          100.0
+                              TOTAL         6
+----------------------------------------------------------------------
+Report for cell MAC_AXItoRGMII.v1
+Instance Path : mac_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        17            5.0
+                            FD1P3IX        12           16.7
+                            FD1S3IX        40           78.4
+                            FD1S3JX        33           94.3
+                               LUT4       257           35.7
+                              PFUMX         9            7.4
+SUB MODULES
+                            crc32_8         1
+                              TOTAL       369
+----------------------------------------------------------------------
+Report for cell crc32_8.v1
+Instance Path : mac_inst.crc_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        58            8.1
+                              TOTAL        58
+----------------------------------------------------------------------
+Report for cell fifo_udp_reg.v1
+Instance Path : reg_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        10           35.7
+                            FD1S3AY         1            5.3
+                              TOTAL        11
+----------------------------------------------------------------------
+Report for cell Fifolg.v1
+Instance Path : u_Fifo_large
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        60           17.7
+                            FD1P3AX        30           20.8
+                            FD1S3AX         2            7.1
+                            FD1S3AY         2           10.5
+                                INV         7            9.9
+                           PDPW16KD         1            5.9
+                           ROM16X1A         4           11.1
+                               XOR2         1            5.9
+                              TOTAL       110
+----------------------------------------------------------------------
+Report for cell FIFOsm.v1
+Instance Path : u_Fifosm9
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               AND2         3            5.9
+                              CCU2C        15            4.4
+                            FD1P3AX         7            4.9
+                            FD1S3AX         1            3.6
+                            FD1S3AY         1            5.3
+                                INV         4            5.6
+                           PDPW16KD         1            5.9
+                           ROM16X1A         2            5.6
+                               XOR2         1            5.9
+                              TOTAL        35
+----------------------------------------------------------------------
+Report for cell UDP_FIFO_AXI.v1
+Instance Path : udp_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         5            1.5
+                            FD1P3IX         8           11.1
+                            FD1S3IX         5            9.8
+                            FD1S3JX         1            2.9
+                               LUT4        97           13.5
+                              PFUMX        13           10.7
+                              TOTAL       129
+----------------------------------------------------------------------
+Report for cell Controller(16,24,8,16).v1
+Instance Path : u_adc_fifo_frame_packer
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         2            1.4
+                            FD1P3IX        52           72.2
+                            FD1S3IX         6           11.8
+                            FD1S3JX         1            2.9
+                               LUT4       169           23.5
+                              PFUMX         3            2.5
+                              TOTAL       233
+----------------------------------------------------------------------
+Report for cell fifo_16ch_mux(24).v1
+Instance Path : u_MuxFifo
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            L6MUX21        72          100.0
+                               LUT4       192           26.7
+                              PFUMX        96           79.3
+                              TOTAL       360

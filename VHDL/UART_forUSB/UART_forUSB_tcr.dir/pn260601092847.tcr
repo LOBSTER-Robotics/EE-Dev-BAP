@@ -1,0 +1,10 @@
+#Start recording tcl command: 6/1/2026 09:17:31
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_src remove "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+prj_src remove "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_project save
+prj_project close
+#Stop recording: 6/1/2026 09:28:47

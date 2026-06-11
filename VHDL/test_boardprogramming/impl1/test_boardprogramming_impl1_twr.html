@@ -1,0 +1,1183 @@
+<HTML>
+<HEAD><TITLE>Lattice TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par_Twr"></A><B><U><big>Place & Route TRACE Report</big></U></B>
+
+Loading design for application trce from file test_boardprogramming_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5UM-45F
+Package:     CABGA381
+Performance: 7
+Loading device for application trce from file 'sa5p45m.nph' in environment: E:/Apps/Lattice Diamond/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 55.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
+Wed May 27 15:35:07 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 7 -sphld m -o test_boardprogramming_impl1.twr -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml test_boardprogramming_impl1.ncd test_boardprogramming_impl1.prf 
+Design file:     test_boardprogramming_impl1.ncd
+Preference file: test_boardprogramming_impl1.prf
+Device,speed:    LFE5UM-45F,7
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_0_0' Target='right'>FREQUENCY PORT "phy_clk125" 125.000000 MHz (0 errors)</A></LI>            1105 items scored, 0 timing errors detected.
+Report:  200.000MHz is the maximum frequency for this preference.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_0_0"></A>Preference: FREQUENCY PORT "phy_clk125" 125.000000 MHz ;
+            1105 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 3.000ns
+         The internal maximum frequency of the following component is 200.000 MHz
+
+ Logical Details:  Cell type  Pin name       Component name
+
+   Destination:    PIO        PAD            phy_clk125
+
+   Delay:               5.000ns -- based on Minimum Pulse Width
+
+
+Passed: The following path meets requirements by 3.828ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i13  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i6  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i5
+
+   Delay:               3.818ns  (38.5% logic, 61.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.818ns physical path delay u_blinker/SLICE_9 to u_blinker/SLICE_13 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.828ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_9 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.457    R17C68D.CLK to     R17C68D.Q0 u_blinker/SLICE_9 (from phy_clk125_c)
+ROUTE         2     0.737     R17C68D.Q0 to     R19C69B.C0 u_blinker/counter_13
+CTOF_DEL    ---     0.206     R19C69B.C0 to     R19C69B.F0 u_blinker/SLICE_32
+ROUTE         1     0.845     R19C69B.F0 to     R18C69D.A1 u_blinker/n165
+C1TOFCO_DE  ---     0.398     R18C69D.A1 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67D.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.818   (38.5% logic, 61.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.828ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i13  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i4  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i3
+
+   Delay:               3.818ns  (38.5% logic, 61.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.818ns physical path delay u_blinker/SLICE_9 to u_blinker/SLICE_15 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.828ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_9 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.457    R17C68D.CLK to     R17C68D.Q0 u_blinker/SLICE_9 (from phy_clk125_c)
+ROUTE         2     0.737     R17C68D.Q0 to     R19C69B.C0 u_blinker/counter_13
+CTOF_DEL    ---     0.206     R19C69B.C0 to     R19C69B.F0 u_blinker/SLICE_32
+ROUTE         1     0.845     R19C69B.F0 to     R18C69D.A1 u_blinker/n165
+C1TOFCO_DE  ---     0.398     R18C69D.A1 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67C.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.818   (38.5% logic, 61.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67C.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.828ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i13  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i2  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i1
+
+   Delay:               3.818ns  (38.5% logic, 61.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.818ns physical path delay u_blinker/SLICE_9 to u_blinker/SLICE_16 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.828ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_9 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.457    R17C68D.CLK to     R17C68D.Q0 u_blinker/SLICE_9 (from phy_clk125_c)
+ROUTE         2     0.737     R17C68D.Q0 to     R19C69B.C0 u_blinker/counter_13
+CTOF_DEL    ---     0.206     R19C69B.C0 to     R19C69B.F0 u_blinker/SLICE_32
+ROUTE         1     0.845     R19C69B.F0 to     R18C69D.A1 u_blinker/n165
+C1TOFCO_DE  ---     0.398     R18C69D.A1 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67B.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.818   (38.5% logic, 61.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.829ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i13  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i0  (to phy_clk125_c +)
+
+   Delay:               3.818ns  (38.5% logic, 61.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.818ns physical path delay u_blinker/SLICE_9 to u_blinker/SLICE_21 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.353ns LSR_SET requirement (totaling 7.647ns) by 3.829ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_9 to u_blinker/SLICE_21:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.457    R17C68D.CLK to     R17C68D.Q0 u_blinker/SLICE_9 (from phy_clk125_c)
+ROUTE         2     0.737     R17C68D.Q0 to     R19C69B.C0 u_blinker/counter_13
+CTOF_DEL    ---     0.206     R19C69B.C0 to     R19C69B.F0 u_blinker/SLICE_32
+ROUTE         1     0.845     R19C69B.F0 to     R18C69D.A1 u_blinker/n165
+C1TOFCO_DE  ---     0.398     R18C69D.A1 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67A.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.818   (38.5% logic, 61.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_21:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67A.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.882ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i10  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i6  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i5
+
+   Delay:               3.764ns  (39.0% logic, 61.0% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.764ns physical path delay u_blinker/SLICE_11 to u_blinker/SLICE_13 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.882ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_11 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C68B.CLK to     R17C68B.Q1 u_blinker/SLICE_11 (from phy_clk125_c)
+ROUTE         2     0.691     R17C68B.Q1 to     R18C68C.A0 u_blinker/counter_10
+CTOF_DEL    ---     0.206     R18C68C.A0 to     R18C68C.F0 u_blinker/SLICE_29
+ROUTE         1     0.840     R18C68C.F0 to     R18C69D.B0 u_blinker/n163
+C0TOFCO_DE  ---     0.398     R18C69D.B0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67D.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.764   (39.0% logic, 61.0% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_11:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.882ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i10  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i4  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i3
+
+   Delay:               3.764ns  (39.0% logic, 61.0% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.764ns physical path delay u_blinker/SLICE_11 to u_blinker/SLICE_15 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.882ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_11 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C68B.CLK to     R17C68B.Q1 u_blinker/SLICE_11 (from phy_clk125_c)
+ROUTE         2     0.691     R17C68B.Q1 to     R18C68C.A0 u_blinker/counter_10
+CTOF_DEL    ---     0.206     R18C68C.A0 to     R18C68C.F0 u_blinker/SLICE_29
+ROUTE         1     0.840     R18C68C.F0 to     R18C69D.B0 u_blinker/n163
+C0TOFCO_DE  ---     0.398     R18C69D.B0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67C.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.764   (39.0% logic, 61.0% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_11:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67C.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.882ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i10  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i2  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i1
+
+   Delay:               3.764ns  (39.0% logic, 61.0% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.764ns physical path delay u_blinker/SLICE_11 to u_blinker/SLICE_16 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.882ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_11 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C68B.CLK to     R17C68B.Q1 u_blinker/SLICE_11 (from phy_clk125_c)
+ROUTE         2     0.691     R17C68B.Q1 to     R18C68C.A0 u_blinker/counter_10
+CTOF_DEL    ---     0.206     R18C68C.A0 to     R18C68C.F0 u_blinker/SLICE_29
+ROUTE         1     0.840     R18C68C.F0 to     R18C69D.B0 u_blinker/n163
+C0TOFCO_DE  ---     0.398     R18C69D.B0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67B.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.764   (39.0% logic, 61.0% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_11:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.883ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i10  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i0  (to phy_clk125_c +)
+
+   Delay:               3.764ns  (39.0% logic, 61.0% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.764ns physical path delay u_blinker/SLICE_11 to u_blinker/SLICE_21 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.353ns LSR_SET requirement (totaling 7.647ns) by 3.883ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_11 to u_blinker/SLICE_21:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C68B.CLK to     R17C68B.Q1 u_blinker/SLICE_11 (from phy_clk125_c)
+ROUTE         2     0.691     R17C68B.Q1 to     R18C68C.A0 u_blinker/counter_10
+CTOF_DEL    ---     0.206     R18C68C.A0 to     R18C68C.F0 u_blinker/SLICE_29
+ROUTE         1     0.840     R18C68C.F0 to     R18C69D.B0 u_blinker/n163
+C0TOFCO_DE  ---     0.398     R18C69D.B0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67A.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.764   (39.0% logic, 61.0% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_11:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C68B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_21:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67A.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.935ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i2  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i6  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i5
+
+   Delay:               3.711ns  (39.5% logic, 60.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.711ns physical path delay u_blinker/SLICE_16 to u_blinker/SLICE_13 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.935ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_16 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C67B.CLK to     R17C67B.Q1 u_blinker/SLICE_16 (from phy_clk125_c)
+ROUTE         2     0.585     R17C67B.Q1 to     R18C68B.D0 u_blinker/counter_2
+CTOF_DEL    ---     0.206     R18C68B.D0 to     R18C68B.F0 u_blinker/SLICE_28
+ROUTE         1     0.893     R18C68B.F0 to     R18C69D.A0 u_blinker/n162
+C0TOFCO_DE  ---     0.398     R18C69D.A0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67D.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.711   (39.5% logic, 60.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67D.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.935ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i2  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i4  (to phy_clk125_c +)
+                   FF                        u_blinker/counter_16__i3
+
+   Delay:               3.711ns  (39.5% logic, 60.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      3.711ns physical path delay u_blinker/SLICE_16 to u_blinker/SLICE_15 meets
+      8.000ns delay constraint less
+      0.000ns skew and
+      0.354ns LSR_SET requirement (totaling 7.646ns) by 3.935ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_16 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.454    R17C67B.CLK to     R17C67B.Q1 u_blinker/SLICE_16 (from phy_clk125_c)
+ROUTE         2     0.585     R17C67B.Q1 to     R18C68B.D0 u_blinker/counter_2
+CTOF_DEL    ---     0.206     R18C68B.D0 to     R18C68B.F0 u_blinker/SLICE_28
+ROUTE         1     0.893     R18C68B.F0 to     R18C69D.A0 u_blinker/n162
+C0TOFCO_DE  ---     0.398     R18C69D.A0 to    R18C69D.FCO u_blinker/SLICE_17
+ROUTE         1     0.000    R18C69D.FCO to    R18C70A.FCI u_blinker/n188
+FCITOF1_DE  ---     0.409    R18C70A.FCI to     R18C70A.F1 u_blinker/SLICE_14
+ROUTE        18     0.766     R18C70A.F1 to    R17C67C.LSR u_blinker/n37 (to phy_clk125_c)
+                  --------
+                    3.711   (39.5% logic, 60.5% route), 4 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_16:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67B.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     2.395      L19.PADDI to    R17C67C.CLK phy_clk125_c
+                  --------
+                    2.395   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:  200.000MHz is the maximum frequency for this preference.
+
+<A name="ptwr_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "phy_clk125" 125.000000  |             |             |
+MHz ;                                   |  125.000 MHz|  200.000 MHz|   0  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="ptwr_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: phy_clk125_c   Source: phy_clk125.PAD   Loads: 18
+   Covered under: FREQUENCY PORT "phy_clk125" 125.000000 MHz ;
+
+
+<A name="ptwr_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 1105 paths, 1 nets, and 171 connections (90.96% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
+Wed May 27 15:35:07 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 7 -sphld m -o test_boardprogramming_impl1.twr -gui -msgset C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/test_boardprogramming/promote.xml test_boardprogramming_impl1.ncd test_boardprogramming_impl1.prf 
+Design file:     test_boardprogramming_impl1.ncd
+Preference file: test_boardprogramming_impl1.prf
+Device,speed:    LFE5UM-45F,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_1_0' Target='right'>FREQUENCY PORT "phy_clk125" 125.000000 MHz (0 errors)</A></LI>            1105 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="par_twr_pref_1_0"></A>Preference: FREQUENCY PORT "phy_clk125" 125.000000 MHz ;
+            1105 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.175ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/led_reg_15  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/led_reg_15  (to phy_clk125_c +)
+
+   Delay:               0.293ns  (80.9% logic, 19.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.293ns physical path delay u_blinker/SLICE_22 to u_blinker/SLICE_22 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.175ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_22 to u_blinker/SLICE_22:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.162    R17C71B.CLK to     R17C71B.Q0 u_blinker/SLICE_22 (from phy_clk125_c)
+ROUTE         2     0.056     R17C71B.Q0 to     R17C71B.D0 blink_led
+CTOF_DEL    ---     0.075     R17C71B.D0 to     R17C71B.F0 u_blinker/SLICE_22
+ROUTE         1     0.000     R17C71B.F0 to    R17C71B.DI0 u_blinker/led_N_74 (to phy_clk125_c)
+                  --------
+                    0.293   (80.9% logic, 19.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_22:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C71B.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_22:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C71B.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i4  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i4  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_15 to u_blinker/SLICE_15 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_15 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C67C.CLK to     R17C67C.Q1 u_blinker/SLICE_15 (from phy_clk125_c)
+ROUTE         2     0.152     R17C67C.Q1 to     R17C67C.A1 u_blinker/counter_4
+CTOF_DEL    ---     0.075     R17C67C.A1 to     R17C67C.F1 u_blinker/SLICE_15
+ROUTE         1     0.000     R17C67C.F1 to    R17C67C.DI1 u_blinker/n161_adj_78 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C67C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_15:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C67C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i22  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i22  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_5 to u_blinker/SLICE_5 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_5 to u_blinker/SLICE_5:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C69D.CLK to     R17C69D.Q1 u_blinker/SLICE_5 (from phy_clk125_c)
+ROUTE         2     0.152     R17C69D.Q1 to     R17C69D.A1 u_blinker/counter_22
+CTOF_DEL    ---     0.075     R17C69D.A1 to     R17C69D.F1 u_blinker/SLICE_5
+ROUTE         1     0.000     R17C69D.F1 to    R17C69D.DI1 u_blinker/n143 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_5:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C69D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_5:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C69D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i14  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i14  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_9 to u_blinker/SLICE_9 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_9 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C68D.CLK to     R17C68D.Q1 u_blinker/SLICE_9 (from phy_clk125_c)
+ROUTE         2     0.152     R17C68D.Q1 to     R17C68D.A1 u_blinker/counter_14
+CTOF_DEL    ---     0.075     R17C68D.A1 to     R17C68D.F1 u_blinker/SLICE_9
+ROUTE         1     0.000     R17C68D.F1 to    R17C68D.DI1 u_blinker/n151 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_9:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C68D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i6  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i6  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_13 to u_blinker/SLICE_13 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_13 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C67D.CLK to     R17C67D.Q1 u_blinker/SLICE_13 (from phy_clk125_c)
+ROUTE         2     0.152     R17C67D.Q1 to     R17C67D.A1 u_blinker/counter_6
+CTOF_DEL    ---     0.075     R17C67D.A1 to     R17C67D.F1 u_blinker/SLICE_13
+ROUTE         1     0.000     R17C67D.F1 to    R17C67D.DI1 u_blinker/n159_adj_76 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C67D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_13:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C67D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i20  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i20  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_6 to u_blinker/SLICE_6 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_6 to u_blinker/SLICE_6:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C69C.CLK to     R17C69C.Q1 u_blinker/SLICE_6 (from phy_clk125_c)
+ROUTE         2     0.152     R17C69C.Q1 to     R17C69C.A1 u_blinker/counter_20
+CTOF_DEL    ---     0.075     R17C69C.A1 to     R17C69C.F1 u_blinker/SLICE_6
+ROUTE         1     0.000     R17C69C.F1 to    R17C69C.DI1 u_blinker/n145 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_6:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C69C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_6:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C69C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i28  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i28  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_2 to u_blinker/SLICE_2 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_2 to u_blinker/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C70C.CLK to     R17C70C.Q1 u_blinker/SLICE_2 (from phy_clk125_c)
+ROUTE         2     0.152     R17C70C.Q1 to     R17C70C.A1 u_blinker/counter_28
+CTOF_DEL    ---     0.075     R17C70C.A1 to     R17C70C.F1 u_blinker/SLICE_2
+ROUTE         1     0.000     R17C70C.F1 to    R17C70C.DI1 u_blinker/n137 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_2:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i30  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i30  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_1 to u_blinker/SLICE_1 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_1 to u_blinker/SLICE_1:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C70D.CLK to     R17C70D.Q1 u_blinker/SLICE_1 (from phy_clk125_c)
+ROUTE         2     0.152     R17C70D.Q1 to     R17C70D.A1 u_blinker/counter_30
+CTOF_DEL    ---     0.075     R17C70D.A1 to     R17C70D.F1 u_blinker/SLICE_1
+ROUTE         1     0.000     R17C70D.F1 to    R17C70D.DI1 u_blinker/n135 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_1:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_1:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70D.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.270ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i12  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i12  (to phy_clk125_c +)
+
+   Delay:               0.388ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.388ns physical path delay u_blinker/SLICE_10 to u_blinker/SLICE_10 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.270ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_10 to u_blinker/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C68C.CLK to     R17C68C.Q1 u_blinker/SLICE_10 (from phy_clk125_c)
+ROUTE         2     0.152     R17C68C.Q1 to     R17C68C.A1 u_blinker/counter_12
+CTOF_DEL    ---     0.075     R17C68C.A1 to     R17C68C.F1 u_blinker/SLICE_10
+ROUTE         1     0.000     R17C68C.F1 to    R17C68C.DI1 u_blinker/n153 (to phy_clk125_c)
+                  --------
+                    0.388   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C68C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_10:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C68C.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.276ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_blinker/counter_16__i26  (from phy_clk125_c +)
+   Destination:    FF         Data in        u_blinker/counter_16__i26  (to phy_clk125_c +)
+
+   Delay:               0.394ns  (59.9% logic, 40.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.394ns physical path delay u_blinker/SLICE_3 to u_blinker/SLICE_3 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.118ns) by 0.276ns
+
+ Physical Path Details:
+
+      Data path u_blinker/SLICE_3 to u_blinker/SLICE_3:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    R17C70B.CLK to     R17C70B.Q1 u_blinker/SLICE_3 (from phy_clk125_c)
+ROUTE         2     0.158     R17C70B.Q1 to     R17C70B.B1 u_blinker/counter_26
+CTOF_DEL    ---     0.075     R17C70B.B1 to     R17C70B.F1 u_blinker/SLICE_3
+ROUTE         1     0.000     R17C70B.F1 to    R17C70B.DI1 u_blinker/n139 (to phy_clk125_c)
+                  --------
+                    0.394   (59.9% logic, 40.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path phy_clk125 to u_blinker/SLICE_3:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70B.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path phy_clk125 to u_blinker/SLICE_3:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        18     0.786      L19.PADDI to    R17C70B.CLK phy_clk125_c
+                  --------
+                    0.786   (0.0% logic, 100.0% route), 0 logic levels.
+
+<A name="ptwr_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "phy_clk125" 125.000000  |             |             |
+MHz ;                                   |            -|            -|   2  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="ptwr_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: phy_clk125_c   Source: phy_clk125.PAD   Loads: 18
+   Covered under: FREQUENCY PORT "phy_clk125" 125.000000 MHz ;
+
+
+<A name="ptwr_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 1105 paths, 1 nets, and 171 connections (90.96% coverage)
+
+
+
+<A name="ptwr_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,10 @@
+/sim/
+*.o
+*.cf
+*.vcd
+/tb_full_path.vhd
+!/tb_*.vhd
+*.bak
+/quartus/
+*.qpf
+*.qsf

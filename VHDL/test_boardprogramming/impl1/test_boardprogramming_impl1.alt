@@ -1,0 +1,25 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Wed May 27 15:35:13 2026 *
+NOTE DESIGN NAME: top *
+NOTE DEVICE NAME: LFE5UM-45F-7CABGA381 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS led[6] : F16 : out *
+NOTE PINS led[7] : E17 : out *
+NOTE PINS led[5] : F18 : out *
+NOTE PINS led[4] : F17 : out *
+NOTE PINS led[3] : E16 : out *
+NOTE PINS led[2] : D17 : out *
+NOTE PINS led[1] : D18 : out *
+NOTE PINS led[0] : E18 : out *
+NOTE PINS phy_clk125 : L19 : in *
+NOTE PINS sw[7] : K20 : in *
+NOTE PINS sw[6] : K19 : in *
+NOTE PINS sw[5] : K18 : in *
+NOTE PINS sw[4] : J18 : in *
+NOTE PINS sw[3] : F2 : in *
+NOTE PINS sw[2] : G3 : in *
+NOTE PINS sw[1] : K3 : in *
+NOTE PINS sw[0] : H2 : in *
+NOTE CONFIGURATION MODE: JTAG *
+NOTE COMPRESSION: off *

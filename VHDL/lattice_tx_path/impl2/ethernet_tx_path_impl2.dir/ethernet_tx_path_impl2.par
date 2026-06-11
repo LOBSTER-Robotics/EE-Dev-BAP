@@ -1,0 +1,28 @@
+PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 28 12:54:28 2026
+
+D:/lscc/diamond/3.14/ispfpga\bin\nt64\par -f ethernet_tx_path_impl2.p2t
+ethernet_tx_path_impl2_map.ncd ethernet_tx_path_impl2.dir
+ethernet_tx_path_impl2.prf -gui -msgset
+D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml
+
+
+Preference file: ethernet_tx_path_impl2.prf.
+
+Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
+Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
+----------   --------     -----        ------       -----------  -----------  ----         ------
+5_1   *      0            0.122        0            0.175        0            15           Completed
+
+* : Design saved.
+
+Total (real) run time for 1-seed: 15 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.

@@ -1,0 +1,56 @@
+Loading design for application iotiming from file ethernet_tx_path_impl2.ncd.
+Design name: top_tb_fpga
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Loading design for application iotiming from file ethernet_tx_path_impl2.ncd.
+Design name: top_tb_fpga
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 9
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Loading design for application iotiming from file ethernet_tx_path_impl2.ncd.
+Design name: top_tb_fpga
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: M
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+// Design: top_tb_fpga
+// Package: CABGA381
+// ncd File: ethernet_tx_path_impl2.ncd
+// Version: Diamond (64-bit) 3.14.0.75.2
+// Written on Thu May 28 12:54:47 2026
+// M: Minimum Performance Grade
+// iotiming ethernet_tx_path_impl2.ncd ethernet_tx_path_impl2.prf -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (M, 9, 8, 7):
+
+// Input Setup and Hold Times
+
+Port  Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+rst   clk   R     3.681      7      -0.108     M
+
+
+// Clock to Output Delay
+
+Port         Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+rgmii_txc    clk   R     6.155         7        2.781          M
+rgmii_txctl  clk   R     6.155         7        2.781          M
+rgmii_txd[0] clk   R     6.155         7        2.781          M
+rgmii_txd[1] clk   R     6.155         7        2.781          M
+rgmii_txd[2] clk   R     6.155         7        2.781          M
+rgmii_txd[3] clk   R     6.155         7        2.781          M

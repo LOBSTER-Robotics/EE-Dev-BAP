@@ -1,0 +1,6 @@
+mac_rx,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
+rgmii_tx,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd
+rgmii_rx,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd
+udp_rx,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+tb_TOP,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd
+top_tb_fpga_tb,/,D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd

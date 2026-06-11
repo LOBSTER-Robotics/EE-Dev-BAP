@@ -1,0 +1,173 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn260528215123"></A><B><U><big>pn260528215123</big></U></B>
+#Start recording tcl command: 5/28/2026 21:43:07
+#Project Location: D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "D:/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+#Stop recording: 5/28/2026 21:51:23
+
+
+
+<A name="pn260529120223"></A><B><U><big>pn260529120223</big></U></B>
+#Start recording tcl command: 5/29/2026 12:00:50
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_project close
+#Stop recording: 5/29/2026 12:02:23
+
+
+
+<A name="pn260529130110"></A><B><U><big>pn260529130110</big></U></B>
+#Start recording tcl command: 5/29/2026 12:05:52
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd"
+prj_src syn_sim -src "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo_tb.vhd" SimulateOnly
+prj_run Export -impl impl1 -task Bitgen
+pgr_project save "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+prj_src add -exclude "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+prj_src enable "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+pgr_program run
+pgr_program run
+pgr_project save "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+prj_dev set -part LFE5UM-45F-7BG381I
+pgr_project close
+prj_run Export -impl impl1 -task Bitgen
+pgr_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+pgr_program run
+pgr_project save "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+pgr_project close
+#Stop recording: 5/29/2026 13:01:10
+
+
+
+<A name="pn260529161257"></A><B><U><big>pn260529161257</big></U></B>
+#Start recording tcl command: 5/29/2026 13:17:58
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation
+RX
+#Start recording tcl command: 5/29/2026 16:12:56
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation; Project name: RX
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_run Export -impl impl1 -task Bitgen
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Bitgen
+pgr_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_send.vhd"
+prj_src syn_sim -src "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd" SimulateOnly
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_program run
+pgr_program run
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+prj_run Export -impl impl1 -task Bitgen
+pgr_program run
+pgr_project save "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/impl1.xcf"
+prj_project save
+prj_project close
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/Lattice/Implementation/RX implementation/RX.ldf"
+pgr_project close
+#Stop recording: 5/29/2026 16:12:57
+
+
+
+<A name="pn260601092847"></A><B><U><big>pn260601092847</big></U></B>
+#Start recording tcl command: 6/1/2026 09:17:31
+#Project Location: C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB; Project name: UART_forUSB
+prj_project open "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.ldf"
+prj_src remove "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+prj_src remove "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_src add "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+prj_project save
+prj_project close
+#Stop recording: 6/1/2026 09:28:47
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

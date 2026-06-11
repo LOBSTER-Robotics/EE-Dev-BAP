@@ -1,0 +1,98 @@
+[ START MERGED ]
+n867 rst_c
+[ END MERGED ]
+[ START CLIPPED ]
+VCC_net
+_add_1_add_4_20/S1
+_add_1_add_4_20/S0
+_add_1_add_4_22/S1
+_add_1_add_4_22/S0
+_add_1_add_4_24/S1
+_add_1_add_4_24/S0
+_add_1_add_4_26/S1
+_add_1_add_4_26/S0
+_add_1_add_4_28/S1
+_add_1_add_4_28/S0
+_add_1_add_4_30/S1
+_add_1_add_4_30/S0
+_add_1_add_4_32/S0
+_add_1_add_4_32/CO
+lenght_cnt_456_add_4_33/S1
+lenght_cnt_456_add_4_33/CO
+add_3294_1/S1
+add_3294_1/S0
+add_3294_1/CI
+add_3294_3/S1
+add_3294_3/S0
+add_3294_5/S1
+add_3294_5/S0
+add_3294_7/S1
+add_3294_7/S0
+add_3294_9/S1
+add_3294_9/S0
+add_3294_11/S1
+add_3294_11/S0
+add_3294_13/S1
+add_3294_13/S0
+add_3294_15/S1
+add_3294_15/S0
+_add_1_add_4_6/S1
+_add_1_add_4_6/S0
+add_3294_17/S1
+add_3294_17/S0
+add_3294_19/S1
+add_3294_19/S0
+add_3294_21/S1
+add_3294_21/S0
+add_3294_23/S1
+add_3294_23/S0
+_add_1_add_4_8/S1
+_add_1_add_4_8/S0
+add_3294_25/S1
+add_3294_25/S0
+_add_1_add_4_10/S1
+_add_1_add_4_10/S0
+add_3294_27/S1
+add_3294_27/S0
+add_3294_29/S1
+add_3294_29/S0
+add_3294_31/S1
+add_3294_31/S0
+add_3294_cout/S1
+add_3294_cout/CO
+_add_1_add_4_12/S1
+_add_1_add_4_12/S0
+_add_1_add_4_14/S1
+_add_1_add_4_14/S0
+_add_1_add_4_16/S1
+_add_1_add_4_16/S0
+_add_1_add_4_4/S1
+_add_1_add_4_4/S0
+_add_1_add_4_18/S1
+_add_1_add_4_18/S0
+_add_1_add_4_2/S1
+_add_1_add_4_2/S0
+_add_1_add_4_2/CI
+lenght_cnt_456_add_4_1/S0
+lenght_cnt_456_add_4_1/CI
+dut/mac_inst/frame_len_457_add_4_1/S0
+dut/mac_inst/frame_len_457_add_4_1/CI
+dut/mac_inst/frame_len_457_add_4_33/S1
+dut/mac_inst/frame_len_457_add_4_33/CO
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.14.0.75.2 -- WARNING: Map write only section -- Thu May 28 12:54:22 2026
+
+SYSCONFIG SLAVE_SPI_PORT=DISABLE MASTER_SPI_PORT=DISABLE SLAVE_PARALLEL_PORT=DISABLE BACKGROUND_RECONFIG=OFF DONE_EX=OFF DONE_OD=ON DONE_PULL=ON MCCLK_FREQ=2.4 TRANSFR=OFF CONFIG_IOVOLTAGE=2.5 CONFIG_SECURE=OFF WAKE_UP=21 COMPRESS_CONFIG=OFF CONFIG_MODE=JTAG INBUF=OFF ;
+LOCATE COMP "rgmii_txc" SITE "P19" ;
+LOCATE COMP "rgmii_txctl" SITE "R20" ;
+LOCATE COMP "rgmii_txd[3]" SITE "P20" ;
+LOCATE COMP "rgmii_txd[2]" SITE "P18" ;
+LOCATE COMP "rgmii_txd[1]" SITE "N20" ;
+LOCATE COMP "rgmii_txd[0]" SITE "N19" ;
+LOCATE COMP "rst" SITE "H2" ;
+LOCATE COMP "clk" SITE "L19" ;
+FREQUENCY PORT "clk" 125.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

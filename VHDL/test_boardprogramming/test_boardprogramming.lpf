@@ -1,0 +1,57 @@
+BLOCK RESETPATHS;
+BLOCK ASYNCPATHS;
+
+#############################################################################
+# 125 MHz PHY clock
+#############################################################################
+
+LOCATE COMP "phy_clk125" SITE "L19";
+
+FREQUENCY PORT "phy_clk125" 125.0 MHz;
+
+IOBUF PORT "phy_clk125" IO_TYPE=LVCMOS25;
+
+#############################################################################
+# LEDs (active low)
+#############################################################################
+
+LOCATE COMP "led[0]" SITE "E18";
+LOCATE COMP "led[1]" SITE "D18";
+LOCATE COMP "led[2]" SITE "D17";
+LOCATE COMP "led[3]" SITE "E16";
+LOCATE COMP "led[4]" SITE "F17";
+LOCATE COMP "led[5]" SITE "F18";
+LOCATE COMP "led[6]" SITE "F16";
+LOCATE COMP "led[7]" SITE "E17";
+
+IOBUF PORT "led[0]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[1]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[2]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[3]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[4]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[5]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[6]" IO_TYPE=LVCMOS25;
+IOBUF PORT "led[7]" IO_TYPE=LVCMOS25;
+
+
+#############################################################################
+# Switches
+#############################################################################
+
+LOCATE COMP "sw[0]" SITE "H2";
+LOCATE COMP "sw[1]" SITE "K3";
+LOCATE COMP "sw[2]" SITE "G3";
+LOCATE COMP "sw[3]" SITE "F2";
+LOCATE COMP "sw[4]" SITE "J18";
+LOCATE COMP "sw[5]" SITE "K18";
+LOCATE COMP "sw[6]" SITE "K19";
+LOCATE COMP "sw[7]" SITE "K20";
+
+IOBUF PORT "sw[0]" IO_TYPE=LVCMOS15;
+IOBUF PORT "sw[1]" IO_TYPE=LVCMOS15;
+IOBUF PORT "sw[2]" IO_TYPE=LVCMOS15;
+IOBUF PORT "sw[3]" IO_TYPE=LVCMOS15;
+IOBUF PORT "sw[4]" IO_TYPE=LVCMOS25;
+IOBUF PORT "sw[5]" IO_TYPE=LVCMOS25;
+IOBUF PORT "sw[6]" IO_TYPE=LVCMOS25;
+IOBUF PORT "sw[7]" IO_TYPE=LVCMOS25;

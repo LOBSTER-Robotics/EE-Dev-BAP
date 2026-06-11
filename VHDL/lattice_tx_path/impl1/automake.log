@@ -1,0 +1,2771 @@
+
+synthesis -f "ethernet_fifo_top_impl1_lattice.synproj"
+synthesis:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Wed May 27 16:26:55 2026
+
+
+Command Line:  synthesis -f ethernet_fifo_top_impl1_lattice.synproj -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml 
+
+    <postMsg mid="35002000" type="Info"    dynamic="0" navigation="0"  />
+Synthesis options:
+The -a option is ECP5U.
+The -s option is 8.
+The -t option is CABGA381.
+The -d option is LFE5U-45F.
+Using package CABGA381.
+Using performance grade 8.
+                                                          
+
+##########################################################
+
+### Lattice Family : ECP5U
+
+### Device  : LFE5U-45F
+
+### Package : CABGA381
+
+### Speed   : 8
+
+##########################################################
+
+                                                          
+
+    <postMsg mid="35001781" type="Info"    dynamic="0" navigation="0"  />
+Optimization goal = Timing
+Top-level module name = top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/lscc/diamond/3.14/ispfpga/sa5p00/data (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1 (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path (searchpath added)
+VHDL library = work
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd
+NGD file = ethernet_fifo_top_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+-vh2008
+
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file D:/lscc/diamond/3.14/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5u.v. VERI-1482
+Compile design.
+Compile Design Begin
+    <postMsg mid="35921504" type="Info"    dynamic="2" navigation="0" arg0="" arg1="D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(27): " arg1="crc32_8" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd" arg3="27"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(35): " arg1="behavioral" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd" arg3="35"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): " arg1="mac_axitorgmii" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd" arg3="27"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(5): " arg1="mac_rx" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(28): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd" arg3="28"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): " arg1="udp_fifo_axi" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd" arg3="24"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): " arg1="udp_rx" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd" arg3="28"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd. VHDL-1481
+    <postMsg mid="35921014" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(6): " arg1="controller_pkg" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd" arg3="6"  />
+    <postMsg mid="35921013" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(13): " arg1="controller_pkg" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd" arg3="13"  />
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(40): " arg1="controller" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd" arg3="40"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd(64): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/controller.vhd" arg3="64"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(12): " arg1="fifolg" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd" arg3="12"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd(26): " arg1="structure" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifolg.vhd" arg3="26"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(12): " arg1="fifosm" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd" arg3="12"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd(26): " arg1="structure" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/fifosm.vhd" arg3="26"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(5): " arg1="fifo_16ch_mux" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd(34): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/muxfifo.vhd" arg3="34"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(5): " arg1="fifo_udp_reg" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd" arg3="5"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(26): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd" arg3="26"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(12): " arg1="ddr_forrgmii" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd" arg3="12"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(21): " arg1="structure" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd" arg3="21"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(12): " arg1="ddr_rx" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd" arg3="12"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(21): " arg1="structure" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd" arg3="21"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(9): " arg1="rgmii_tx_ddr" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd" arg3="9"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(24): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd" arg3="24"  />
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(56): " arg1="rgmii_rx" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd" arg3="56"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(70): " arg1="rtl" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd" arg3="70"  />
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd. VHDL-1481
+    <postMsg mid="35921012" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6): " arg1="top" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd" arg3="6"  />
+    <postMsg mid="35921010" type="Info"    dynamic="2" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(31): " arg1="behavioral" arg2="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd" arg3="31"  />
+unit top is not yet analyzed. VHDL-1485
+d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(6): executing top(Behavioral)
+
+    <postMsg mid="35921205" type="Warning" dynamic="3" navigation="2" arg0="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd(27): " arg1="top" arg2="Behavioral" arg3="d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_level_design/adc/controllertest/top.vhd" arg4="27"  />
+Top module name (VHDL): top
+Last elaborated design is top(Behavioral)
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Top-level module name = top.
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[7]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[6]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[5]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[4]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[3]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_idx[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pre_cnt[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pre_cnt[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pre_cnt[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[5]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[4]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[3]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_pad_cnt[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_crc_cnt[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_crc_cnt[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_ifg_cnt[3]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_ifg_cnt[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_ifg_cnt[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_ifg_cnt[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[31]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[30]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[29]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[28]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[27]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[26]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[25]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[24]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[23]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[22]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[21]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[20]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[19]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[18]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[17]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[16]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[15]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[14]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[13]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[12]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[11]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[10]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[9]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[8]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[7]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[6]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[5]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[4]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[3]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="next_frame_len[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[3]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[2]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[1]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[0]"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txctl"  />
+    <postMsg mid="35001771" type="Warning" dynamic="1" navigation="0" arg0="ctl_reg"  />
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\u_adc_fifo_frame_packer/r_state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 0000001
+
+ 001 -> 0000010
+
+ 010 -> 0000100
+
+ 011 -> 0001000
+
+ 100 -> 0010000
+
+ 101 -> 0100000
+
+ 110 -> 1000000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\udp_inst/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\mac_inst/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+
+
+
+
+
+######### Begin FIR Info ########
+
+
+Number of FIR filters recognized: 1
+
+
+
+######### End FIR Info ########
+
+
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_16_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_16_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_17_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_17_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_17_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_17_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_16_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_19_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_17_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_19_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_19_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_19_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="27" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_20_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_20_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_20_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_20_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_20_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="27" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_22_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_22_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_22_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_22_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_22_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="27" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_24_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_24_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_24_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_24_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_24_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="27" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="26" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_e2"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="25" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="24" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_16_e3"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_24_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_22_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_20_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="23" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="22" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="21" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="20" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="19" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="18" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="17" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="16" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="15" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="7" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="6" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="5" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="4" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="3" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="2" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="1" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="0" arg1="Data_23__I_0_19_e1"  />
+    <postMsg mid="35001537" type="Warning" dynamic="2" navigation="0" arg0="OB" arg1="O"  />
+    <postMsg mid="35001537" type="Warning" dynamic="2" navigation="0" arg0="OB" arg1="O"  />
+    <postMsg mid="35001537" type="Warning" dynamic="2" navigation="0" arg0="OB" arg1="O"  />
+    <postMsg mid="35001537" type="Warning" dynamic="2" navigation="0" arg0="OB" arg1="O"  />
+    <postMsg mid="35001537" type="Warning" dynamic="2" navigation="0" arg0="OB" arg1="O"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[3]"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[2]"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[1]"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txd[0]"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txctl"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="rgmii_txc"  />
+GSR instance connected to net \i714/n1.
+######## Converted FF type for instance \u_Fifosm0/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm0/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm1/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm2/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm3/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm4/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm5/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm6/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm7/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm8/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm9/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm10/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm11/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm12/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm13/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm14/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifosm15/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_32 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_31 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_30 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_29 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_28 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_27 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_26 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_25 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_24 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_23 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_22 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_21 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_20 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_19 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_18 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_17 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_16 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_15 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_14 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_13 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_12 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_11 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_10 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_9 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_8 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_7 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_6 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_5 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_4 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_3 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_2 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_1 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_0 due to shared LSR/GSR.
+######## Converted FF type for instance \u_Fifo_large/FF_33 due to shared LSR/GSR.
+Applying 200.000000 MHz constraint to all clocks
+
+    <postMsg mid="35001611" type="Warning" dynamic="0" navigation="0"  />
+Results of NGD DRC are available in top_drc.log.
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+DRC complete with no errors or warnings
+
+Design Results:
+   1859 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file ethernet_fifo_top_impl1.ngd.
+
+################### Begin Area Report (top)######################
+Number of register bits => 349 of 44457 (0 % )
+ALU54B => 7
+AND2 => 51
+CCU2C => 339
+FD1P3AX => 144
+FD1P3IX => 72
+FD1S3AX => 28
+FD1S3AY => 19
+FD1S3IX => 51
+FD1S3JX => 35
+GSR => 1
+IB => 28
+INV => 71
+L6MUX21 => 72
+LUT4 => 719
+MULT18X18D => 14
+OB => 8
+ODDRX1F => 6
+PDPW16KD => 17
+PFUMX => 121
+ROM16X1A => 36
+XOR2 => 17
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : clk_c, loads : 389
+Clock Enable Nets
+Number of Clock Enables: 61
+Top 10 highest fanout Clock Enables:
+  Net : u_adc_fifo_frame_packer/clk_c_enable_61, loads : 24
+  Net : u_Fifo_large/wren_i, loads : 24
+  Net : u_Fifo_large/rden_i, loads : 16
+  Net : u_Fifo_large/fcnt_en, loads : 11
+  Net : u_Fifosm8/wren_i, loads : 9
+  Net : u_Fifosm10/wren_i, loads : 9
+  Net : u_Fifosm4/wren_i, loads : 9
+  Net : u_Fifosm11/wren_i, loads : 9
+  Net : u_Fifosm6/wren_i, loads : 9
+  Net : u_Fifosm12/wren_i, loads : 9
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : u_adc_fifo_frame_packer/fifo_sel_0, loads : 191
+  Net : rst_c, loads : 186
+  Net : mac_inst/n2296, loads : 62
+  Net : u_adc_fifo_frame_packer/n1843, loads : 54
+  Net : u_adc_fifo_frame_packer/n1846, loads : 49
+  Net : mac_inst/n2294, loads : 48
+  Net : u_adc_fifo_frame_packer/fifo_sel_2, loads : 47
+  Net : udp_inst/n11984, loads : 45
+  Net : mac_inst/n2295, loads : 44
+  Net : mac_inst/n2298, loads : 36
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |  200.000 MHz|   69.502 MHz|    11 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+
+Peak Memory Usage: 164.559  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 18.563  secs
+--------------------------------------------------------------
+
+map -a "ECP5U" -p LFE5U-45F -t CABGA381 -s 8 -oc Industrial   "ethernet_fifo_top_impl1.ngd" -o "ethernet_fifo_top_impl1_map.ncd" -pr "ethernet_fifo_top_impl1.prf" -mp "ethernet_fifo_top_impl1.mrp" -lpf "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl1/ethernet_fifo_top_impl1.lpf" -lpf "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/ethernet_fifo_top.lpf"             
+map:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+   Process the file: ethernet_fifo_top_impl1.ngd
+   Picdevice="LFE5U-45F"
+
+   Pictype="CABGA381"
+
+   Picspeed=8
+
+   Remove unused logic
+
+   Do not produce over sized NCDs.
+
+Part used: LFE5U-45FCABGA381, Performance used: 8.
+
+Loading device for application map from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+
+Running general design DRC...
+
+Removing unused logic...
+
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_13"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_11"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_9"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_3"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_7"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_5"  />
+    <postMsg mid="52131473" type="Warning" dynamic="1" navigation="0" arg0="lat_alu_1"  />
+Optimizing...
+
+610 CCU2 constant inputs absorbed.
+
+
+
+
+Design Summary:
+   Number of registers:    349 out of 44457 (1%)
+      PFU registers:          349 out of 43848 (1%)
+      PIO registers:            0 out of   609 (0%)
+   Number of SLICEs:       813 out of 21924 (4%)
+      SLICEs as Logic/ROM:    813 out of 21924 (4%)
+      SLICEs as RAM:            0 out of 16443 (0%)
+      SLICEs as Carry:        339 out of 21924 (2%)
+   Number of LUT4s:        1517 out of 43848 (3%)
+      Number used as logic LUTs:        839
+      Number used as distributed RAM:     0
+      Number used as ripple logic:      678
+      Number used as shift registers:     0
+   Number of PIO sites used: 36 out of 203 (18%)
+   Number of IDDR/ODDR/TDDR cells used: 6 out of 609 (1%)
+      Number of IDDR cells:   0
+      Number of ODDR cells:   6
+      Number of TDDR cells:   0
+   Number of PIO using at least one IDDR/ODDR/TDDR: 6 (0 differential)
+      Number of PIO using IDDR only:        0 (0 differential)
+      Number of PIO using ODDR only:        6 (0 differential)
+      Number of PIO using TDDR only:        0 (0 differential)
+      Number of PIO using IDDR/ODDR:        0 (0 differential)
+      Number of PIO using IDDR/TDDR:        0 (0 differential)
+      Number of PIO using ODDR/TDDR:        0 (0 differential)
+      Number of PIO using IDDR/ODDR/TDDR:   0 (0 differential)
+   Number of block RAMs:  17 out of 108 (16%)
+   Number of GSRs:  1 out of 1 (100%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 4 (0%)
+   Number of DCC:  0 out of 60 (0%)
+   Number of DCS:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 4 (0%)
+   Number of DDRDLLs:  0 out of 4 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 10 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
+
+   Number Of Mapped DSP Components:
+   --------------------------------
+   MULT18X18D          14
+   MULT9X9D            0
+   ALU54B              7
+   ALU24B              0
+   PRADD18A            0
+   PRADD9A             0
+   --------------------------------
+   Number of Used DSP MULT Sites:  28 out of 144 (19 %)
+   Number of Used DSP ALU Sites:  14 out of 72 (19 %)
+   Number of Used DSP PRADD Sites:  0 out of 144 (0 %)
+   Number of clocks:  1
+     Net clk_c: 255 loads, 255 rising, 0 falling (Driver: PIO clk )
+   Number of Clock Enables:  61
+     Net u_Fifosm15/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm15/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm15/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm1/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm1/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm1/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm2/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm2/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm2/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm3/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm3/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm3/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm4/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm4/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm4/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm5/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm5/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm5/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm6/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm6/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm6/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm7/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm7/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm7/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm8/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm8/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm8/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm0/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm0/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm0/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm10/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm10/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm10/rden_i: 3 loads, 1 LSLICEs
+     Net clk_c_enable_64: 3 loads, 3 LSLICEs
+     Net u_Fifosm11/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm11/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm11/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm12/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm12/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm12/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm13/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm13/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm13/rden_i: 3 loads, 1 LSLICEs
+     Net u_Fifosm14/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm14/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm14/rden_i: 3 loads, 1 LSLICEs
+     Net mac_inst/clk_c_enable_13: 2 loads, 2 LSLICEs
+     Net clk_c_enable_15: 2 loads, 2 LSLICEs
+     Net mac_inst/clk_c_enable_71: 4 loads, 4 LSLICEs
+     Net mac_inst/clk_c_enable_74: 1 loads, 1 LSLICEs
+     Net u_Fifo_large/fcnt_en: 5 loads, 5 LSLICEs
+     Net u_Fifo_large/wren_i: 6 loads, 5 LSLICEs
+     Net u_Fifo_large/rden_i: 7 loads, 5 LSLICEs
+     Net u_Fifosm9/fcnt_en: 2 loads, 2 LSLICEs
+     Net u_Fifosm9/wren_i: 2 loads, 1 LSLICEs
+     Net u_Fifosm9/rden_i: 3 loads, 1 LSLICEs
+     Net clk_c_enable_38: 12 loads, 12 LSLICEs
+     Net clk_c_enable_73: 5 loads, 5 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_61: 24 loads, 24 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_72: 1 loads, 1 LSLICEs
+     Net u_adc_fifo_frame_packer/clk_c_enable_4: 1 loads, 1 LSLICEs
+   Number of local set/reset loads for net rst_c merged into GSR:  6
+   Number of LSRs:  3
+     Net rst_c: 108 loads, 91 LSLICEs
+     Net mac_inst/n3482: 3 loads, 3 LSLICEs
+     Net udp_inst/n6371: 5 loads, 5 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net fifo_sel_0: 192 loads
+     Net rst_c: 125 loads
+     Net Write_En_c: 80 loads
+     Net n2296: 63 loads
+     Net u_adc_fifo_frame_packer/n1843: 56 loads
+     Net n1846: 52 loads
+     Net fifo_sel_2: 48 loads
+     Net mac_inst/n2294: 48 loads
+     Net n11984: 46 loads
+     Net mac_inst/n2295: 44 loads
+ 
+
+   Number of warnings:  7
+   Number of errors:    0
+
+
+
+INFO: Design contains EBR with GSR enabled. The GSR is only applicable for output registers except FIFO. 
+
+. ALU54B  lat_alu_13:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. MULT18X18D  lat_mult_12:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_22_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_16_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. ALU54B  lat_alu_11:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. MULT18X18D  lat_mult_10:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_19_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. ALU54B  lat_alu_9:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. ALU54B  lat_alu_3:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. MULT18X18D  lat_mult_8:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_17_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  lat_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. ALU54B  lat_alu_7:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. MULT18X18D  lat_mult_6:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_24_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_20_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. ALU54B  lat_alu_5:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. ALU54B  lat_alu_1:
+
+54-Bit ALU
+	Opcode  0		1
+	Opcode  1		0
+	Opcode  2		0
+	Opcode  3		0
+	Opcode  4		0
+	Opcode  5		0
+	Opcode  6		0
+	Opcode  7		0
+	Opcode  8		0
+	Opcode  9		1
+	Opcode 10		0
+
+	OpcodeOP0 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	OpcodeOP1 Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	--	--
+		Pipeline	    	--	--
+
+	OpcodeIN Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST
+	--------------------------------------------
+		C0		    	   	    
+		C1		    	   	    
+		CFB		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output0		    	   	    
+		Output1		    	   	    
+
+	Flag Register		CLK	CE	RST
+	--------------------------------------------
+		Flag		    	   	    
+Other
+	MCPAT_SOURCE	STATIC
+	MASKPAT_SOURCE	STATIC
+	MASK01		0x00000000000000
+	MCPAT		0x00000000000000
+	MASKPAT		0x00000000000000
+	RNDPAT		0x00000000000000
+	PSE17		0b00000000000000000
+	PSE44		0b00000000000000000000000000
+	PSE53		0b00000000
+	GSR		DISABLED
+	RESETMODE	SYNC
+	MULT9_MODE	DISABLED
+
+	LEGACY  	DISABLED
+
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+
+. MULT18X18D  lat_mult_4:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  lat_mult_0:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+. MULT18X18D  Data_23__I_0_mult_2:
+
+Multiplier
+	Operation A		Unsigned
+	Operation A Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+
+	Operation B		Unsigned
+	Operation B Registers	CLK	CE	RST
+	--------------------------------------------
+		Input		    	   	    
+		Pipeline	    	   	    
+Data
+	Input Registers		CLK	CE	RST	Source
+	-------------------------------------------------------
+		A		    	   	    	A Data In
+		B		    	   	    	B Data In
+		C		    	   	    	N/A
+	Cascaded Match
+
+	Pipeline Registers	CLK	CE	RST
+	--------------------------------------------
+		Pipe		    	   	    
+
+	Output Register		CLK	CE	RST
+	--------------------------------------------
+		Output		    	   	    
+Other
+	SOURCEB_MODE	B_SHIFT
+	MULT_BYPASS	DISABLED
+	CAS_MATCH_REG	FALSE
+	GSR		DISABLED
+	RESETMODE	SYNC
+	CLK0_DIV	ENABLED
+	CLK1_DIV	ENABLED
+	CLK2_DIV	ENABLED
+	CLK3_DIV	ENABLED
+	HIGHSPEED_CLK	NONE
+	PSE17		0b00000000000000000
+	PSE35		0b00000000000000000
+
+	C_PSE17		0b00000000000000000
+
+
+Total CPU Time: 3 secs  
+Total REAL Time: 4 secs  
+Peak Memory Usage: 85 MB
+
+Dumping design to file ethernet_fifo_top_impl1_map.ncd.
+
+ncd2vdb "ethernet_fifo_top_impl1_map.ncd" ".vdbs/ethernet_fifo_top_impl1_map.vdb"
+
+Loading device for application ncd2vdb from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+
+trce -f "ethernet_fifo_top_impl1.mt" -o "ethernet_fifo_top_impl1.tw1" "ethernet_fifo_top_impl1_map.ncd" "ethernet_fifo_top_impl1.prf"
+trce:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file ethernet_fifo_top_impl1_map.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Loading device for application trce from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
+Wed May 27 16:27:25 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
+Design file:     ethernet_fifo_top_impl1_map.ncd
+Preference file: ethernet_fifo_top_impl1.prf
+Device,speed:    LFE5U-45F,8
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 29531 paths, 1 nets, and 4847 connections (79.43% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2
+Wed May 27 16:27:27 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_fifo_top_impl1.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.prf 
+Design file:     ethernet_fifo_top_impl1_map.ncd
+Preference file: ethernet_fifo_top_impl1.prf
+Device,speed:    LFE5U-45F,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 29531 paths, 1 nets, and 4995 connections (81.86% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 5 secs 
+Total REAL Time: 6 secs 
+Peak Memory Usage: 235 MB
+
+
+ldbanno "ethernet_fifo_top_impl1_map.ncd" -n VHDL -o "ethernet_fifo_top_impl1_mapvho.vho" -w -neg
+ldbanno: version Diamond (64-bit) 3.14.0.75.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Writing a VHDL netlist using the orca library type based on the ethernet_fifo_top_impl1_map design file.
+
+
+Loading design for application ldbanno from file ethernet_fifo_top_impl1_map.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Loading device for application ldbanno from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Converting design ethernet_fifo_top_impl1_map.ncd into .ldb format.
+Writing VHDL netlist to file ethernet_fifo_top_impl1_mapvho.vho
+Writing SDF timing to file ethernet_fifo_top_impl1_mapvho.sdf
+    <postMsg mid="35400250" type="Info"    dynamic="1" navigation="0" arg0="0"  />
+Total CPU Time: 8 secs 
+Total REAL Time: 9 secs 
+Peak Memory Usage: 208 MB
+
+mpartrce -p "ethernet_fifo_top_impl1.p2t" -f "ethernet_fifo_top_impl1.p3t" -tf "ethernet_fifo_top_impl1.pt" "ethernet_fifo_top_impl1_map.ncd" "ethernet_fifo_top_impl1.ncd"
+
+---- MParTrce Tool ----
+Removing old design directory at request of -rem command line option to this program.
+Running par. Please wait . . .
+
+Lattice Place and Route Report for Design "ethernet_fifo_top_impl1_map.ncd"
+Wed May 27 16:27:38 2026
+
+PAR: Place And Route Diamond (64-bit) 3.14.0.75.2.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml -exp parUseNBR=1:parCDP=auto:parCDR=1:parPathBased=OFF:parASE=1:par_low_skew_clock_net=0 ethernet_fifo_top_impl1_map.ncd ethernet_fifo_top_impl1.dir/5_1.ncd ethernet_fifo_top_impl1.prf
+Preference file: ethernet_fifo_top_impl1.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file ethernet_fifo_top_impl1_map.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Loading device for application par from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)      36/245          14% used
+                     36/203          17% bonded
+   IOLOGIC            6/245           2% used
+
+   SLICE            813/21924         3% used
+
+   GSR                1/1           100% used
+   EBR               17/108          15% used
+   MULT18            14/72           19% used
+   ALU54              7/36           19% used
+
+
+Number of Signals: 2720
+Number of Connections: 6102
+
+Pin Constraint Summary:
+   0 out of 36 pins locked (0% locked).
+
+
+The following 4 signals are selected to use the primary clock routing resources:
+    clk_c (driver: clk, clk/ce/sr load #: 255/0/0)
+    rst_c (driver: rst, clk/ce/sr load #: 0/0/125)
+    u_adc_fifo_frame_packer/clk_c_enable_61 (driver: u_adc_fifo_frame_packer/SLICE_720, clk/ce/sr load #: 0/24/0)
+    clk_c_enable_38 (driver: SLICE_646, clk/ce/sr load #: 0/12/0)
+
+
+Signal rst_c is selected as Global Set/Reset.
+.
+Starting Placer Phase 0.
+...............
+Finished Placer Phase 0.  REAL time: 8 secs 
+
+
+Starting Placer Phase 1.
+....................
+Placer score = 780205.
+Finished Placer Phase 1.  REAL time: 22 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  774742
+Finished Placer Phase 2.  REAL time: 23 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 2 out of 12 (16%)
+  GR_PCLK    : 0 out of 12 (0%)
+  PLL        : 0 out of 4 (0%)
+  DCS        : 0 out of 2 (0%)
+  DCC        : 0 out of 60 (0%)
+  CLKDIV     : 0 out of 4 (0%)
+
+Quadrant TL Clocks:
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B11 (PT38A)", CLK/CE/SR load = 28
+  PRIMARY "rst_c" from comp "rst" on CLK_PIN site "H2 (PL35C)", CLK/CE/SR load = 12
+
+  PRIMARY  : 2 out of 16 (12%)
+
+Quadrant TR Clocks:
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B11 (PT38A)", CLK/CE/SR load = 47
+  PRIMARY "rst_c" from comp "rst" on CLK_PIN site "H2 (PL35C)", CLK/CE/SR load = 37
+  PRIMARY "u_adc_fifo_frame_packer/clk_c_enable_61" from F0 on comp "u_adc_fifo_frame_packer/SLICE_720" on site "R36C46D", CLK/CE/SR load = 10
+  PRIMARY "clk_c_enable_38" from F0 on comp "SLICE_646" on site "R36C47D", CLK/CE/SR load = 5
+
+  PRIMARY  : 4 out of 16 (25%)
+
+Quadrant BL Clocks:
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B11 (PT38A)", CLK/CE/SR load = 82
+  PRIMARY "rst_c" from comp "rst" on CLK_PIN site "H2 (PL35C)", CLK/CE/SR load = 48
+
+  PRIMARY  : 2 out of 16 (12%)
+
+Quadrant BR Clocks:
+  PRIMARY "clk_c" from comp "clk" on CLK_PIN site "B11 (PT38A)", CLK/CE/SR load = 98
+  PRIMARY "rst_c" from comp "rst" on CLK_PIN site "H2 (PL35C)", CLK/CE/SR load = 28
+  PRIMARY "u_adc_fifo_frame_packer/clk_c_enable_61" from F0 on comp "u_adc_fifo_frame_packer/SLICE_720" on site "R36C46D", CLK/CE/SR load = 14
+  PRIMARY "clk_c_enable_38" from F0 on comp "SLICE_646" on site "R36C47D", CLK/CE/SR load = 7
+
+  PRIMARY  : 4 out of 16 (25%)
+
+Edge Clocks:
+
+  No edge clock selected.
+
+
+--------------- End of Clock Report ---------------
+
+
++
+I/O Usage Summary (final):
+   36 out of 245 (14.7%) PIO sites used.
+   36 out of 203 (17.7%) bonded PIO sites used.
+   Number of PIO comps: 36; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 8 / 27 ( 29%)  | 2.5V       | -          | -          |
+| 1        | 16 / 33 ( 48%) | 2.5V       | -          | -          |
+| 2        | 1 / 32 (  3%)  | 2.5V       | -          | -          |
+| 3        | 4 / 33 ( 12%)  | 2.5V       | -          | -          |
+| 6        | 1 / 33 (  3%)  | 2.5V       | -          | -          |
+| 7        | 6 / 32 ( 18%)  | 1.8V       | -          | -          |
+| 8        | 0 / 13 (  0%)  | -          | -          | -          |
++----------+----------------+------------+------------+------------+
+
+---------------------------------- DSP Report ----------------------------------
+
+DSP Slice #:           1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+# of MULT9                                                                 
+# of MULT18                              2  2  2     2  2  2  2            
+# of ALU24                                                                 
+# of ALU54                               1  1  1     1  1  1  1            
+# of PRADD9                                                                
+# of PRADD18                                                               
+
+DSP Slice #:          19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+# of MULT9                                                                 
+# of MULT18                                                                
+# of ALU24                                                                 
+# of ALU54                                                                 
+# of PRADD9                                                                
+# of PRADD18                                                               
+
+DSP Slice  7         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C31         MULT18X18D             MULT18          Data_23__I_0_19_mult_2    
+ MULT18_R22C32         MULT18X18D             MULT18               lat_mult_10          
+  ALU54_R22C34           ALU54B               ALU54                 lat_alu_11          
+
+DSP Slice  8         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C35         MULT18X18D             MULT18          Data_23__I_0_22_mult_2    
+ MULT18_R22C36         MULT18X18D             MULT18                lat_mult_4          
+  ALU54_R22C38           ALU54B               ALU54                 lat_alu_5           
+
+DSP Slice  9         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C42         MULT18X18D             MULT18          Data_23__I_0_17_mult_2    
+ MULT18_R22C43         MULT18X18D             MULT18                lat_mult_8          
+  ALU54_R22C45           ALU54B               ALU54                 lat_alu_9           
+
+DSP Slice 11         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C51         MULT18X18D             MULT18          Data_23__I_0_16_mult_2    
+ MULT18_R22C52         MULT18X18D             MULT18               lat_mult_12          
+  ALU54_R22C54           ALU54B               ALU54                 lat_alu_13          
+
+DSP Slice 12         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C55         MULT18X18D             MULT18           Data_23__I_0_mult_2      
+ MULT18_R22C56         MULT18X18D             MULT18                lat_mult_0          
+  ALU54_R22C58           ALU54B               ALU54                 lat_alu_1           
+
+DSP Slice 13         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C60         MULT18X18D             MULT18          Data_23__I_0_24_mult_2    
+ MULT18_R22C61         MULT18X18D             MULT18                lat_mult_2          
+  ALU54_R22C63           ALU54B               ALU54                 lat_alu_3           
+
+DSP Slice 14         Component_Type       Physical_Type           Instance_Name         
+ MULT18_R22C64         MULT18X18D             MULT18          Data_23__I_0_20_mult_2    
+ MULT18_R22C65         MULT18X18D             MULT18                lat_mult_6          
+  ALU54_R22C67           ALU54B               ALU54                 lat_alu_7           
+
+------------------------------ End of DSP Report -------------------------------
+Total placer CPU time: 22 secs 
+
+Dumping design to file ethernet_fifo_top_impl1.dir/5_1.ncd.
+
+0 connections routed; 6102 unrouted.
+Starting router resource preassignment
+DSP info: No dsp pins have been swapped.
+
+Completed router resource preassignment. Real time: 32 secs 
+
+Start NBR router at 16:28:10 05/27/26
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at 16:28:13 05/27/26
+
+Start NBR section for initial routing at 16:28:13 05/27/26
+Level 1, iteration 1
+1(0.00%) conflict; 4402(72.14%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.715ns/0.000ns; real time: 36 secs 
+Level 2, iteration 1
+634(0.03%) conflicts; 3692(60.50%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.956ns/0.000ns; real time: 37 secs 
+Level 3, iteration 1
+367(0.02%) conflicts; 1960(32.12%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.876ns/0.000ns; real time: 38 secs 
+Level 4, iteration 1
+435(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.882ns/0.000ns; real time: 41 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 5 (0.08%)
+
+Start NBR section for normal routing at 16:28:19 05/27/26
+Level 1, iteration 1
+375(0.02%) conflicts; 337(5.52%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.949ns/0.000ns; real time: 42 secs 
+Level 2, iteration 1
+311(0.01%) conflicts; 385(6.31%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.942ns/0.000ns; real time: 43 secs 
+Level 3, iteration 1
+276(0.01%) conflicts; 341(5.59%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.882ns/0.000ns; real time: 44 secs 
+Level 3, iteration 2
+199(0.01%) conflicts; 351(5.75%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.882ns/0.000ns; real time: 44 secs 
+Level 3, iteration 3
+143(0.01%) conflicts; 367(6.01%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.882ns/0.000ns; real time: 45 secs 
+Level 4, iteration 1
+276(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.882ns/0.000ns; real time: 46 secs 
+Level 4, iteration 2
+159(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.877ns/0.000ns; real time: 47 secs 
+Level 4, iteration 3
+93(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 48 secs 
+Level 4, iteration 4
+42(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 48 secs 
+Level 4, iteration 5
+19(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 6
+10(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 7
+5(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 8
+5(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 9
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 10
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+Level 4, iteration 11
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 49 secs 
+
+Start NBR section for setup/hold timing optimization with effort level 3 at 16:28:27 05/27/26
+
+Start NBR section for re-routing at 16:28:32 05/27/26
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.798ns/0.000ns; real time: 54 secs 
+
+Start NBR section for post-routing at 16:28:33 05/27/26
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 0 (0.00%)
+  Estimated worst slack<setup> : 0.798ns
+  Timing score<setup> : 0
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 1 mins 5 secs 
+Total REAL time: 1 mins 7 secs 
+Completely routed.
+End of route.  6102 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 0 
+
+Dumping design to file ethernet_fifo_top_impl1.dir/5_1.ncd.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 0.798
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.175
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 1 mins 6 secs 
+Total REAL time to completion: 1 mins 8 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Exiting par with exit code 0
+Exiting mpartrce with exit code 0
+
+iotiming  "ethernet_fifo_top_impl1.ncd" "ethernet_fifo_top_impl1.prf"
+I/O Timing Report:
+:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application iotiming from file ethernet_fifo_top_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 8
+Loading device for application iotiming from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Running Performance Grade: 8
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+
+Loading design for application iotiming from file ethernet_fifo_top_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 9
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Running Performance Grade: 9
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+
+Loading design for application iotiming from file ethernet_fifo_top_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: M
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Running Performance Grade: M
+Computing Setup Time ...
+Computing Max Clock to Output Delay ...
+Computing Hold Time ...
+Computing Min Clock to Output Delay ...
+Done.

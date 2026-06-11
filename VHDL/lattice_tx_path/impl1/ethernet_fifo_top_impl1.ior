@@ -1,0 +1,77 @@
+Loading design for application iotiming from file ethernet_fifo_top_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 9
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Loading design for application iotiming from file ethernet_fifo_top_impl1.ncd.
+Design name: top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: M
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+// Design: top
+// Package: CABGA381
+// ncd File: ethernet_fifo_top_impl1.ncd
+// Version: Diamond (64-bit) 3.14.0.75.2
+// Written on Wed May 27 16:29:01 2026
+// M: Minimum Performance Grade
+// iotiming ethernet_fifo_top_impl1.ncd ethernet_fifo_top_impl1.prf -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (M, 9, 8):
+
+// Input Setup and Hold Times
+
+Port     Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+Data[0]  clk   R     8.293      8      -0.084     8
+Data[10] clk   R     8.867      8      -0.588     M
+Data[11] clk   R     7.923      8      -0.435     8
+Data[12] clk   R     7.866      8       0.212     8
+Data[13] clk   R     8.998      8      -0.692     M
+Data[14] clk   R     7.846      8      -0.200     8
+Data[15] clk   R     8.193      8      -0.540     M
+Data[16] clk   R     8.349      8      -0.480     8
+Data[17] clk   R     8.766      8      -0.314     8
+Data[18] clk   R     8.352      8       0.478     8
+Data[19] clk   R     7.979      8      -0.715     M
+Data[1]  clk   R     8.366      8      -0.813     M
+Data[20] clk   R     9.677      8      -0.266     8
+Data[21] clk   R     7.703      8      -0.296     8
+Data[22] clk   R     7.600      8      -0.347     8
+Data[23] clk   R     7.917      8      -0.650     M
+Data[2]  clk   R     8.759      8      -0.583     M
+Data[3]  clk   R     8.387      8      -0.555     M
+Data[4]  clk   R     8.278      8       0.190     8
+Data[5]  clk   R    10.042      8      -0.822     M
+Data[6]  clk   R     8.183      8       0.035     8
+Data[7]  clk   R     8.653      8       0.016     8
+Data[8]  clk   R     9.518      8      -0.449     8
+Data[9]  clk   R     7.596      8      -0.475     8
+Write_En clk   R     3.575      8       0.593     8
+enable   clk   R     0.616      M       0.433     8
+rst      clk   R     3.651      8       3.337     8
+
+
+// Clock to Output Delay
+
+Port              Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+packer_busy       clk   R     7.986         8        3.706          M
+packer_frame_done clk   R     6.970         8        3.417          M
+rgmii_txc         clk   R     5.571         8        2.579          M
+rgmii_txctl       clk   R     5.571         8        2.579          M
+rgmii_txd[0]      clk   R     5.571         8        2.579          M
+rgmii_txd[1]      clk   R     5.571         8        2.579          M
+rgmii_txd[2]      clk   R     5.571         8        2.579          M
+rgmii_txd[3]      clk   R     5.571         8        2.579          M
+WARNING: you must also run trce with hold speed: 8
+WARNING: you must also run trce with setup speed: M

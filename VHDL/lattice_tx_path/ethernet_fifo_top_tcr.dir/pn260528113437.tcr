@@ -1,0 +1,31 @@
+#Start recording tcl command: 5/28/2026 09:51:02
+#Project Location: D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path; Project name: ethernet_fifo_top
+prj_project open "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/ethernet_fifo_top.ldf"
+prj_impl new "Ethernet_RX" -dir "Ethernet_RX" -strategy "Area" -synthesis "lse" -lpf "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/ethernet_fifo_top.lpf"
+file copy -force -- "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source"
+file copy -force -- "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Controller.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/Fifolg.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/FIFOsm.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/MuxFifo.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source"
+file copy -force -- "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Top_Level_design/ADC/ControllerTest/TOP_tb.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source"
+file copy -force -- "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/TOP_tb_fpga.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/ethernet_fifo_top.lpf" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/test/test.spf" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source"
+prj_src add -impl "Ethernet_RX" -work "work" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/CRC32_8.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/MAC_AXItoRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/MAC_RX.vhd"
+prj_src add -impl "Ethernet_RX" -work "work" -simulate_only "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/RGMII.vhd"
+prj_src add -impl "Ethernet_RX" -work "work" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/UDP_FIFO_AXI.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/UDP_RX_AXItoFIFO.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/Controller.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/Fifolg.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/FIFOsm.vhd"
+prj_src add -impl "Ethernet_RX" -work "work" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/MuxFifo.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/TOP.vhd"
+prj_src add -impl "Ethernet_RX" -work "work" -simulate_only "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/TOP_tb.vhd"
+prj_src add -impl "Ethernet_RX" -work "work" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/DDR_forRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/RGMII_withDDR.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/DDR_RX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/register.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/TOP_tb_fpga.vhd"
+prj_src add -impl "Ethernet_RX" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/Ethernet_RX/source/test.spf"
+prj_impl active "Ethernet_RX"
+prj_impl active "impl1"
+prj_impl delete "Ethernet_RX"
+prj_impl new "Ethernet_TX" -dir "Ethernet_TX" -strategy "Area" -synthesis "lse"
+prj_impl active "Ethernet_TX"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_Recieve.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_Transmit.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/RGMII.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/TOP_TX.vhd" "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd"
+prj_impl active "impl1"
+prj_impl delete "Ethernet_TX"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga.vhd"
+prj_src add "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd"
+prj_src syn_sim -src "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga_tb.vhd" SimulateOnly
+prj_project save
+prj_project close
+#Stop recording: 5/28/2026 11:34:37

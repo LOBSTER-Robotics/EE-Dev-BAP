@@ -1,0 +1,313 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+          Lattice Mapping Report File for Design Module 'uart_echo'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a ECP5UM -p LFE5UM-45F -t CABGA381 -s 7 -oc Industrial
+     UART_forUSB_impl1.ngd -o UART_forUSB_impl1_map.ncd -pr
+     UART_forUSB_impl1.prf -mp UART_forUSB_impl1.mrp -lpf
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1/UART_forUSB_impl1.lpf -lpf
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/UART_forUSB.lpf -gui -msgset
+     C:/Users/hoona/Documents/school/Universiteit/Jaar
+     3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LFE5UM-45FCABGA381
+Target Performance:   7
+Mapper:  sa5p00m,  version:  Diamond (64-bit) 3.14.0.75.2
+Mapped on:  05/29/26  16:44:21
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:    121 out of 44457 (0%)
+      PFU registers:          121 out of 43848 (0%)
+      PIO registers:            0 out of   609 (0%)
+   Number of SLICEs:       107 out of 21924 (0%)
+      SLICEs as Logic/ROM:    107 out of 21924 (0%)
+      SLICEs as RAM:            0 out of 16443 (0%)
+      SLICEs as Carry:         32 out of 21924 (0%)
+   Number of LUT4s:        168 out of 43848 (0%)
+      Number used as logic LUTs:        104
+      Number used as distributed RAM:     0
+      Number used as ripple logic:       64
+      Number used as shift registers:     0
+   Number of PIO sites used: 13 out of 203 (6%)
+   Number of block RAMs:  0 out of 108 (0%)
+   Number of GSRs:  0 out of 1 (0%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 4 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 4 (0%)
+   Number of DCC:  0 out of 60 (0%)
+   Number of DCS:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 4 (0%)
+   Number of DDRDLLs:  0 out of 4 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 10 (0%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Number of DCUs:  0 out of 2 (0%)
+   Number of DCU Channels:  0 out of 4 (0%)
+   Number of EXTREFs:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+
+
+        Number Of Mapped DSP Components:
+   --------------------------------
+   MULT18X18D          0
+   MULT9X9D            0
+   ALU54B              0
+   ALU24B              0
+   PRADD18A            0
+   PRADD9A             0
+   --------------------------------
+   Number of Used DSP MULT Sites:  0 out of 144 (0 %)
+   Number of Used DSP ALU Sites:  0 out of 72 (0 %)
+   Number of Used DSP PRADD Sites:  0 out of 144 (0 %)
+   Number of clocks:  1
+     Net Clk_c: 74 loads, 74 rising, 0 falling (Driver: PIO Clk )
+   Number of Clock Enables:  7
+     Net Clk_c_enable_39: 4 loads, 4 LSLICEs
+     Net Clk_c_enable_32: 4 loads, 4 LSLICEs
+     Net rx_valid: 1 loads, 1 LSLICEs
+     Net u_uart/Clk_c_enable_12: 3 loads, 3 LSLICEs
+     Net u_uart/Clk_c_enable_5: 1 loads, 1 LSLICEs
+     Net u_uart/Clk_c_enable_25: 4 loads, 4 LSLICEs
+     Net u_uart/Clk_c_enable_36: 6 loads, 6 LSLICEs
+   Number of LSRs:  10
+     Net n967: 1 loads, 1 LSLICEs
+     Net Rst_c: 27 loads, 27 LSLICEs
+     Net n147: 1 loads, 1 LSLICEs
+     Net n1065: 1 loads, 1 LSLICEs
+     Net leds_0_4: 1 loads, 1 LSLICEs
+     Net u_uart/n1060: 3 loads, 3 LSLICEs
+     Net u_uart/n1063: 1 loads, 1 LSLICEs
+     Net u_uart/RxStrobe: 1 loads, 1 LSLICEs
+     Net u_uart/i_strb_tx/n401: 9 loads, 9 LSLICEs
+     Net u_uart/i_strb_rx/n405: 9 loads, 9 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net Rst_c: 35 loads
+     Net u_uart/RxStrobe: 13 loads
+     Net u_uart/r.RxCount_0: 12 loads
+     Net u_uart/r.RxCount_1: 12 loads
+     Net u_uart/r.RxCount_2: 11 loads
+     Net u_uart/r.TxCount_0: 11 loads
+     Net n147: 10 loads
+     Net u_uart/i_strb_rx/n405: 9 loads
+     Net u_uart/i_strb_tx/n401: 9 loads
+     Net u_uart/r.TxCount_1: 9 loads
+
+
+
+
+   Number of warnings:  0
+   Number of errors:    0
+     
+
+
+
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+   No errors or warnings present.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| leds[6]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[5]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[7]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Uart_Tx             | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| n_Rst               | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[4]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[3]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[2]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[1]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| leds[0]             | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Clk                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Rst                 | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| Uart_Rx             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Signal u_uart/n254 was merged into signal u_uart/RxStrobe
+Signal u_uart/n1055 was merged into signal leds_0_4
+Signal u_uart/n1056 was merged into signal n147
+Signal u_uart/i_strb_rx/Count_291_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal u_uart/i_strb_rx/Count_291_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal u_uart/i_strb_rx/Count_291_add_4_17/S1 undriven or does not drive
+     anything - clipped.
+Signal u_uart/i_strb_rx/Count_291_add_4_17/CO undriven or does not drive
+     anything - clipped.
+Signal u_uart/i_strb_tx/Count_289_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal u_uart/i_strb_tx/Count_289_add_4_1/CI undriven or does not drive anything
+     - clipped.
+
+Signal u_uart/i_strb_tx/Count_289_add_4_17/S1 undriven or does not drive
+     anything - clipped.
+Signal u_uart/i_strb_tx/Count_289_add_4_17/CO undriven or does not drive
+     anything - clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_27/S1 undriven or does not drive anything
+     - clipped.
+Signal u_uart/heartbeat_cnt_290_add_4_27/CO undriven or does not drive anything
+     - clipped.
+Block u_uart/i_strb_rx/i101_1_lut was optimized away.
+Block u_uart/i506_1_lut was optimized away.
+Block u_uart/i507_1_lut was optimized away.
+
+     
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 158 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

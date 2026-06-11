@@ -1,0 +1,21 @@
+{
+	"name": "GHDL Container",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "ghdl/ghdl:7.0.0-dev-llvm-ubuntu-24.04",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"surfer-project.surfer",
+				"vhdl-tool.vhdl-tool"
+			]
+		}
+	},
+	"workspaceFolder": "/workspace",
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind"
+	],
+	"postCreateCommand": "apt-get update && apt-get install -y make"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

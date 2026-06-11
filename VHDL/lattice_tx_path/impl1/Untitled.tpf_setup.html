@@ -1,0 +1,581 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<STYLE type=text/css>
+<!--
+.blink {text-decoration:blink}
+.ms  {font-size: 9pt; font-family: monospace; font-weight: normal}
+.msb {font-size: 9pt; font-family: monospace; font-weight: bold  }
+-->
+</STYLE>
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY><B>
+</B>
+<BR><PRE><A name="Report Header"></A>
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2
+Wed May 27 16:31:51 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design file:     top
+Device,speed:    LFE5U-45F,8
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+
+
+</A><A name="FREQUENCY NET 'clk_c' 125.000000 MH"></A>================================================================================
+Preference: FREQUENCY NET "clk_c" 125.000000 MHz ;
+            10 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.798ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/r_curr_sample__i4</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.331ns  (70.2% logic, 29.8% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.331ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.798ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C28.CLKR,EBR_R34C28.DO22,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.515,EBR_R34C28.DO22,R37C47C.C1,adc_fifo_6_dout_4:CTOOFX_DEL, 0.305,R37C47C.C1,R37C47C.OFX0,u_MuxFifo/i6969/SLICE_542:ROUTE, 0.000,R37C47C.OFX0,R37C47C.FXB,u_MuxFifo/n11257:FXTOF_DEL, 0.179,R37C47C.FXB,R37C47C.OFX1,u_MuxFifo/i6969/SLICE_542:ROUTE, 0.000,R37C47C.OFX1,R37C47B.FXA,u_MuxFifo/n11260:FXTOF_DEL, 0.178,R37C47B.FXA,R37C47B.OFX1,SLICE_432:ROUTE, 0.670,R37C47B.OFX1,R35C50C.D0,fifo_dout_to_packer_4:CTOF_DEL, 0.179,R35C50C.D0,R35C50C.F0,u_adc_fifo_frame_packer/SLICE_418:ROUTE, 0.000,R35C50C.F0,R35C50C.DI0,u_adc_fifo_frame_packer/n3414">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C28.CLKR to EBR_R34C28.DO22 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.515<A href="#@net:adc_fifo_6_dout_4:EBR_R34C28.DO22:R37C47C.C1:1.515"> EBR_R34C28.DO22 to R37C47C.C1    </A> <A href="#@net:adc_fifo_6_dout_4">adc_fifo_6_dout_4</A>
+CTOOFX_DEL  ---     0.305     R37C47C.C1 to   R37C47C.OFX0 <A href="#@comp:u_MuxFifo/i6969/SLICE_542">u_MuxFifo/i6969/SLICE_542</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11257:R37C47C.OFX0:R37C47C.FXB:0.000">   R37C47C.OFX0 to R37C47C.FXB   </A> <A href="#@net:u_MuxFifo/n11257">u_MuxFifo/n11257</A>
+FXTOF_DEL   ---     0.179    R37C47C.FXB to   R37C47C.OFX1 <A href="#@comp:u_MuxFifo/i6969/SLICE_542">u_MuxFifo/i6969/SLICE_542</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11260:R37C47C.OFX1:R37C47B.FXA:0.000">   R37C47C.OFX1 to R37C47B.FXA   </A> <A href="#@net:u_MuxFifo/n11260">u_MuxFifo/n11260</A>
+FXTOF_DEL   ---     0.178    R37C47B.FXA to   R37C47B.OFX1 <A href="#@comp:SLICE_432">SLICE_432</A>
+ROUTE         2     0.670<A href="#@net:fifo_dout_to_packer_4:R37C47B.OFX1:R35C50C.D0:0.670">   R37C47B.OFX1 to R35C50C.D0    </A> <A href="#@net:fifo_dout_to_packer_4">fifo_dout_to_packer_4</A>
+CTOF_DEL    ---     0.179     R35C50C.D0 to     R35C50C.F0 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/SLICE_418</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3414:R35C50C.F0:R35C50C.DI0:0.000">     R35C50C.F0 to R35C50C.DI0   </A> <A href="#@net:u_adc_fifo_frame_packer/n3414">u_adc_fifo_frame_packer/n3414</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.331   (70.2% logic, 29.8% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C50C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C50C.CLK:2.091">      B11.PADDI to R35C50C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.823ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_422">u_adc_fifo_frame_packer/r_curr_sample__i13</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.306ns  (70.4% logic, 29.6% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.306ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_422 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.823ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C28.CLKR,EBR_R34C28.DO31,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.700,EBR_R34C28.DO31,R37C51C.C1,adc_fifo_6_dout_13:CTOOFX_DEL, 0.305,R37C51C.C1,R37C51C.OFX0,u_MuxFifo/i6984/SLICE_475:ROUTE, 0.000,R37C51C.OFX0,R37C51C.FXB,u_MuxFifo/n11272:FXTOF_DEL, 0.179,R37C51C.FXB,R37C51C.OFX1,u_MuxFifo/i6984/SLICE_475:ROUTE, 0.000,R37C51C.OFX1,R37C51B.FXA,u_MuxFifo/n11275:FXTOF_DEL, 0.178,R37C51B.FXA,R37C51B.OFX1,SLICE_441:ROUTE, 0.460,R37C51B.OFX1,R36C51B.D1,fifo_dout_to_packer_13:CTOF_DEL, 0.179,R36C51B.D1,R36C51B.F1,u_adc_fifo_frame_packer/SLICE_422:ROUTE, 0.000,R36C51B.F1,R36C51B.DI1,u_adc_fifo_frame_packer/n3423">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_422:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C28.CLKR to EBR_R34C28.DO31 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.700<A href="#@net:adc_fifo_6_dout_13:EBR_R34C28.DO31:R37C51C.C1:1.700"> EBR_R34C28.DO31 to R37C51C.C1    </A> <A href="#@net:adc_fifo_6_dout_13">adc_fifo_6_dout_13</A>
+CTOOFX_DEL  ---     0.305     R37C51C.C1 to   R37C51C.OFX0 <A href="#@comp:u_MuxFifo/i6984/SLICE_475">u_MuxFifo/i6984/SLICE_475</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11272:R37C51C.OFX0:R37C51C.FXB:0.000">   R37C51C.OFX0 to R37C51C.FXB   </A> <A href="#@net:u_MuxFifo/n11272">u_MuxFifo/n11272</A>
+FXTOF_DEL   ---     0.179    R37C51C.FXB to   R37C51C.OFX1 <A href="#@comp:u_MuxFifo/i6984/SLICE_475">u_MuxFifo/i6984/SLICE_475</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11275:R37C51C.OFX1:R37C51B.FXA:0.000">   R37C51C.OFX1 to R37C51B.FXA   </A> <A href="#@net:u_MuxFifo/n11275">u_MuxFifo/n11275</A>
+FXTOF_DEL   ---     0.178    R37C51B.FXA to   R37C51B.OFX1 <A href="#@comp:SLICE_441">SLICE_441</A>
+ROUTE         2     0.460<A href="#@net:fifo_dout_to_packer_13:R37C51B.OFX1:R36C51B.D1:0.460">   R37C51B.OFX1 to R36C51B.D1    </A> <A href="#@net:fifo_dout_to_packer_13">fifo_dout_to_packer_13</A>
+CTOF_DEL    ---     0.179     R36C51B.D1 to     R36C51B.F1 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_422">u_adc_fifo_frame_packer/SLICE_422</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3423:R36C51B.F1:R36C51B.DI1:0.000">     R36C51B.F1 to R36C51B.DI1   </A> <A href="#@net:u_adc_fifo_frame_packer/n3423">u_adc_fifo_frame_packer/n3423</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.306   (70.4% logic, 29.6% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R36C51B.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_422:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R36C51B.CLK:2.091">      B11.PADDI to R36C51B.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.877ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm7/pdp_ram_0_0_0">u_Fifosm7/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_420">u_adc_fifo_frame_packer/r_curr_sample__i8</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.252ns  (71.0% logic, 29.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.252ns physical path delay u_Fifosm7/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_420 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.877ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C33.CLKR,EBR_R34C33.DO26,u_Fifosm7/pdp_ram_0_0_0:ROUTE, 1.646,EBR_R34C33.DO26,R35C55C.C1,adc_fifo_7_dout_8:CTOOFX_DEL, 0.305,R35C55C.C1,R35C55C.OFX0,u_MuxFifo/i6834/SLICE_506:ROUTE, 0.000,R35C55C.OFX0,R35C55C.FXB,u_MuxFifo/n11122:FXTOF_DEL, 0.179,R35C55C.FXB,R35C55C.OFX1,u_MuxFifo/i6834/SLICE_506:ROUTE, 0.000,R35C55C.OFX1,R35C55B.FXA,u_MuxFifo/n11125:FXTOF_DEL, 0.178,R35C55B.FXA,R35C55B.OFX1,SLICE_436:ROUTE, 0.460,R35C55B.OFX1,R35C53D.D0,fifo_dout_to_packer_8:CTOF_DEL, 0.179,R35C53D.D0,R35C53D.F0,u_adc_fifo_frame_packer/SLICE_420:ROUTE, 0.000,R35C53D.F0,R35C53D.DI0,u_adc_fifo_frame_packer/n3418">Data path</A> u_Fifosm7/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_420:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C33.CLKR to EBR_R34C33.DO26 <A href="#@comp:u_Fifosm7/pdp_ram_0_0_0">u_Fifosm7/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.646<A href="#@net:adc_fifo_7_dout_8:EBR_R34C33.DO26:R35C55C.C1:1.646"> EBR_R34C33.DO26 to R35C55C.C1    </A> <A href="#@net:adc_fifo_7_dout_8">adc_fifo_7_dout_8</A>
+CTOOFX_DEL  ---     0.305     R35C55C.C1 to   R35C55C.OFX0 <A href="#@comp:u_MuxFifo/i6834/SLICE_506">u_MuxFifo/i6834/SLICE_506</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11122:R35C55C.OFX0:R35C55C.FXB:0.000">   R35C55C.OFX0 to R35C55C.FXB   </A> <A href="#@net:u_MuxFifo/n11122">u_MuxFifo/n11122</A>
+FXTOF_DEL   ---     0.179    R35C55C.FXB to   R35C55C.OFX1 <A href="#@comp:u_MuxFifo/i6834/SLICE_506">u_MuxFifo/i6834/SLICE_506</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11125:R35C55C.OFX1:R35C55B.FXA:0.000">   R35C55C.OFX1 to R35C55B.FXA   </A> <A href="#@net:u_MuxFifo/n11125">u_MuxFifo/n11125</A>
+FXTOF_DEL   ---     0.178    R35C55B.FXA to   R35C55B.OFX1 <A href="#@comp:SLICE_436">SLICE_436</A>
+ROUTE         2     0.460<A href="#@net:fifo_dout_to_packer_8:R35C55B.OFX1:R35C53D.D0:0.460">   R35C55B.OFX1 to R35C53D.D0    </A> <A href="#@net:fifo_dout_to_packer_8">fifo_dout_to_packer_8</A>
+CTOF_DEL    ---     0.179     R35C53D.D0 to     R35C53D.F0 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_420">u_adc_fifo_frame_packer/SLICE_420</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3418:R35C53D.F0:R35C53D.DI0:0.000">     R35C53D.F0 to R35C53D.DI0   </A> <A href="#@net:u_adc_fifo_frame_packer/n3418">u_adc_fifo_frame_packer/n3418</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.252   (71.0% logic, 29.0% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C33.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm7/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C33.CLKR:2.171">      B11.PADDI to EBR_R34C33.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C53D.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_420:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C53D.CLK:2.091">      B11.PADDI to R35C53D.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.877ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm7/pdp_ram_0_0_0">u_Fifosm7/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/r_curr_sample__i5</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.252ns  (71.0% logic, 29.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.252ns physical path delay u_Fifosm7/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.877ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C33.CLKR,EBR_R34C33.DO23,u_Fifosm7/pdp_ram_0_0_0:ROUTE, 1.646,EBR_R34C33.DO23,R35C52C.C1,adc_fifo_7_dout_5:CTOOFX_DEL, 0.305,R35C52C.C1,R35C52C.OFX0,u_MuxFifo/i6894/SLICE_518:ROUTE, 0.000,R35C52C.OFX0,R35C52C.FXB,u_MuxFifo/n11182:FXTOF_DEL, 0.179,R35C52C.FXB,R35C52C.OFX1,u_MuxFifo/i6894/SLICE_518:ROUTE, 0.000,R35C52C.OFX1,R35C52B.FXA,u_MuxFifo/n11185:FXTOF_DEL, 0.178,R35C52B.FXA,R35C52B.OFX1,SLICE_433:ROUTE, 0.460,R35C52B.OFX1,R35C50C.D1,fifo_dout_to_packer_5:CTOF_DEL, 0.179,R35C50C.D1,R35C50C.F1,u_adc_fifo_frame_packer/SLICE_418:ROUTE, 0.000,R35C50C.F1,R35C50C.DI1,u_adc_fifo_frame_packer/n3415">Data path</A> u_Fifosm7/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C33.CLKR to EBR_R34C33.DO23 <A href="#@comp:u_Fifosm7/pdp_ram_0_0_0">u_Fifosm7/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.646<A href="#@net:adc_fifo_7_dout_5:EBR_R34C33.DO23:R35C52C.C1:1.646"> EBR_R34C33.DO23 to R35C52C.C1    </A> <A href="#@net:adc_fifo_7_dout_5">adc_fifo_7_dout_5</A>
+CTOOFX_DEL  ---     0.305     R35C52C.C1 to   R35C52C.OFX0 <A href="#@comp:u_MuxFifo/i6894/SLICE_518">u_MuxFifo/i6894/SLICE_518</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11182:R35C52C.OFX0:R35C52C.FXB:0.000">   R35C52C.OFX0 to R35C52C.FXB   </A> <A href="#@net:u_MuxFifo/n11182">u_MuxFifo/n11182</A>
+FXTOF_DEL   ---     0.179    R35C52C.FXB to   R35C52C.OFX1 <A href="#@comp:u_MuxFifo/i6894/SLICE_518">u_MuxFifo/i6894/SLICE_518</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11185:R35C52C.OFX1:R35C52B.FXA:0.000">   R35C52C.OFX1 to R35C52B.FXA   </A> <A href="#@net:u_MuxFifo/n11185">u_MuxFifo/n11185</A>
+FXTOF_DEL   ---     0.178    R35C52B.FXA to   R35C52B.OFX1 <A href="#@comp:SLICE_433">SLICE_433</A>
+ROUTE         2     0.460<A href="#@net:fifo_dout_to_packer_5:R35C52B.OFX1:R35C50C.D1:0.460">   R35C52B.OFX1 to R35C50C.D1    </A> <A href="#@net:fifo_dout_to_packer_5">fifo_dout_to_packer_5</A>
+CTOF_DEL    ---     0.179     R35C50C.D1 to     R35C50C.F1 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/SLICE_418</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3415:R35C50C.F1:R35C50C.DI1:0.000">     R35C50C.F1 to R35C50C.DI1   </A> <A href="#@net:u_adc_fifo_frame_packer/n3415">u_adc_fifo_frame_packer/n3415</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.252   (71.0% logic, 29.0% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C33.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm7/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C33.CLKR:2.171">      B11.PADDI to EBR_R34C33.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C50C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C50C.CLK:2.091">      B11.PADDI to R35C50C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.882ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/r_curr_sample__i5</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.247ns  (71.0% logic, 29.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.247ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.882ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C28.CLKR,EBR_R34C28.DO23,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.641,EBR_R34C28.DO23,R35C52C.D1,adc_fifo_6_dout_5:CTOOFX_DEL, 0.305,R35C52C.D1,R35C52C.OFX0,u_MuxFifo/i6894/SLICE_518:ROUTE, 0.000,R35C52C.OFX0,R35C52C.FXB,u_MuxFifo/n11182:FXTOF_DEL, 0.179,R35C52C.FXB,R35C52C.OFX1,u_MuxFifo/i6894/SLICE_518:ROUTE, 0.000,R35C52C.OFX1,R35C52B.FXA,u_MuxFifo/n11185:FXTOF_DEL, 0.178,R35C52B.FXA,R35C52B.OFX1,SLICE_433:ROUTE, 0.460,R35C52B.OFX1,R35C50C.D1,fifo_dout_to_packer_5:CTOF_DEL, 0.179,R35C50C.D1,R35C50C.F1,u_adc_fifo_frame_packer/SLICE_418:ROUTE, 0.000,R35C50C.F1,R35C50C.DI1,u_adc_fifo_frame_packer/n3415">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C28.CLKR to EBR_R34C28.DO23 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.641<A href="#@net:adc_fifo_6_dout_5:EBR_R34C28.DO23:R35C52C.D1:1.641"> EBR_R34C28.DO23 to R35C52C.D1    </A> <A href="#@net:adc_fifo_6_dout_5">adc_fifo_6_dout_5</A>
+CTOOFX_DEL  ---     0.305     R35C52C.D1 to   R35C52C.OFX0 <A href="#@comp:u_MuxFifo/i6894/SLICE_518">u_MuxFifo/i6894/SLICE_518</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11182:R35C52C.OFX0:R35C52C.FXB:0.000">   R35C52C.OFX0 to R35C52C.FXB   </A> <A href="#@net:u_MuxFifo/n11182">u_MuxFifo/n11182</A>
+FXTOF_DEL   ---     0.179    R35C52C.FXB to   R35C52C.OFX1 <A href="#@comp:u_MuxFifo/i6894/SLICE_518">u_MuxFifo/i6894/SLICE_518</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11185:R35C52C.OFX1:R35C52B.FXA:0.000">   R35C52C.OFX1 to R35C52B.FXA   </A> <A href="#@net:u_MuxFifo/n11185">u_MuxFifo/n11185</A>
+FXTOF_DEL   ---     0.178    R35C52B.FXA to   R35C52B.OFX1 <A href="#@comp:SLICE_433">SLICE_433</A>
+ROUTE         2     0.460<A href="#@net:fifo_dout_to_packer_5:R35C52B.OFX1:R35C50C.D1:0.460">   R35C52B.OFX1 to R35C50C.D1    </A> <A href="#@net:fifo_dout_to_packer_5">fifo_dout_to_packer_5</A>
+CTOF_DEL    ---     0.179     R35C50C.D1 to     R35C50C.F1 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/SLICE_418</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3415:R35C50C.F1:R35C50C.DI1:0.000">     R35C50C.F1 to R35C50C.DI1   </A> <A href="#@net:u_adc_fifo_frame_packer/n3415">u_adc_fifo_frame_packer/n3415</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.247   (71.0% logic, 29.0% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C50C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C50C.CLK:2.091">      B11.PADDI to R35C50C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.882ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_420">u_adc_fifo_frame_packer/r_curr_sample__i8</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.247ns  (71.0% logic, 29.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.247ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_420 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.882ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C28.CLKR,EBR_R34C28.DO26,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.641,EBR_R34C28.DO26,R35C55C.D1,adc_fifo_6_dout_8:CTOOFX_DEL, 0.305,R35C55C.D1,R35C55C.OFX0,u_MuxFifo/i6834/SLICE_506:ROUTE, 0.000,R35C55C.OFX0,R35C55C.FXB,u_MuxFifo/n11122:FXTOF_DEL, 0.179,R35C55C.FXB,R35C55C.OFX1,u_MuxFifo/i6834/SLICE_506:ROUTE, 0.000,R35C55C.OFX1,R35C55B.FXA,u_MuxFifo/n11125:FXTOF_DEL, 0.178,R35C55B.FXA,R35C55B.OFX1,SLICE_436:ROUTE, 0.460,R35C55B.OFX1,R35C53D.D0,fifo_dout_to_packer_8:CTOF_DEL, 0.179,R35C53D.D0,R35C53D.F0,u_adc_fifo_frame_packer/SLICE_420:ROUTE, 0.000,R35C53D.F0,R35C53D.DI0,u_adc_fifo_frame_packer/n3418">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_420:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C28.CLKR to EBR_R34C28.DO26 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.641<A href="#@net:adc_fifo_6_dout_8:EBR_R34C28.DO26:R35C55C.D1:1.641"> EBR_R34C28.DO26 to R35C55C.D1    </A> <A href="#@net:adc_fifo_6_dout_8">adc_fifo_6_dout_8</A>
+CTOOFX_DEL  ---     0.305     R35C55C.D1 to   R35C55C.OFX0 <A href="#@comp:u_MuxFifo/i6834/SLICE_506">u_MuxFifo/i6834/SLICE_506</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11122:R35C55C.OFX0:R35C55C.FXB:0.000">   R35C55C.OFX0 to R35C55C.FXB   </A> <A href="#@net:u_MuxFifo/n11122">u_MuxFifo/n11122</A>
+FXTOF_DEL   ---     0.179    R35C55C.FXB to   R35C55C.OFX1 <A href="#@comp:u_MuxFifo/i6834/SLICE_506">u_MuxFifo/i6834/SLICE_506</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11125:R35C55C.OFX1:R35C55B.FXA:0.000">   R35C55C.OFX1 to R35C55B.FXA   </A> <A href="#@net:u_MuxFifo/n11125">u_MuxFifo/n11125</A>
+FXTOF_DEL   ---     0.178    R35C55B.FXA to   R35C55B.OFX1 <A href="#@comp:SLICE_436">SLICE_436</A>
+ROUTE         2     0.460<A href="#@net:fifo_dout_to_packer_8:R35C55B.OFX1:R35C53D.D0:0.460">   R35C55B.OFX1 to R35C53D.D0    </A> <A href="#@net:fifo_dout_to_packer_8">fifo_dout_to_packer_8</A>
+CTOF_DEL    ---     0.179     R35C53D.D0 to     R35C53D.F0 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_420">u_adc_fifo_frame_packer/SLICE_420</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3418:R35C53D.F0:R35C53D.DI0:0.000">     R35C53D.F0 to R35C53D.DI0   </A> <A href="#@net:u_adc_fifo_frame_packer/n3418">u_adc_fifo_frame_packer/n3418</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.247   (71.0% logic, 29.0% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C53D.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_420:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C53D.CLK:2.091">      B11.PADDI to R35C53D.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.899ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_426">u_adc_fifo_frame_packer/r_curr_sample__i20</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.230ns  (71.5% logic, 28.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.230ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_426 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.899ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.325,EBR_R34C28.CLKR,EBR_R34C28.DO2,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.558,EBR_R34C28.DO2,R33C51C.C1,adc_fifo_6_dout_20:CTOOFX_DEL, 0.305,R33C51C.C1,R33C51C.OFX0,u_MuxFifo/i6759/SLICE_489:ROUTE, 0.000,R33C51C.OFX0,R33C51C.FXB,u_MuxFifo/n11047:FXTOF_DEL, 0.179,R33C51C.FXB,R33C51C.OFX1,u_MuxFifo/i6759/SLICE_489:ROUTE, 0.000,R33C51C.OFX1,R33C51B.FXA,u_MuxFifo/n11050:FXTOF_DEL, 0.178,R33C51B.FXA,R33C51B.OFX1,SLICE_448:ROUTE, 0.506,R33C51B.OFX1,R33C49B.D0,fifo_dout_to_packer_20:CTOF_DEL, 0.179,R33C49B.D0,R33C49B.F0,u_adc_fifo_frame_packer/SLICE_426:ROUTE, 0.000,R33C49B.F0,R33C49B.DI0,u_adc_fifo_frame_packer/n3430">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_426:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.325 EBR_R34C28.CLKR to EBR_R34C28.DO2 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.558<A href="#@net:adc_fifo_6_dout_20:EBR_R34C28.DO2:R33C51C.C1:1.558"> EBR_R34C28.DO2 to R33C51C.C1    </A> <A href="#@net:adc_fifo_6_dout_20">adc_fifo_6_dout_20</A>
+CTOOFX_DEL  ---     0.305     R33C51C.C1 to   R33C51C.OFX0 <A href="#@comp:u_MuxFifo/i6759/SLICE_489">u_MuxFifo/i6759/SLICE_489</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11047:R33C51C.OFX0:R33C51C.FXB:0.000">   R33C51C.OFX0 to R33C51C.FXB   </A> <A href="#@net:u_MuxFifo/n11047">u_MuxFifo/n11047</A>
+FXTOF_DEL   ---     0.179    R33C51C.FXB to   R33C51C.OFX1 <A href="#@comp:u_MuxFifo/i6759/SLICE_489">u_MuxFifo/i6759/SLICE_489</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11050:R33C51C.OFX1:R33C51B.FXA:0.000">   R33C51C.OFX1 to R33C51B.FXA   </A> <A href="#@net:u_MuxFifo/n11050">u_MuxFifo/n11050</A>
+FXTOF_DEL   ---     0.178    R33C51B.FXA to   R33C51B.OFX1 <A href="#@comp:SLICE_448">SLICE_448</A>
+ROUTE         2     0.506<A href="#@net:fifo_dout_to_packer_20:R33C51B.OFX1:R33C49B.D0:0.506">   R33C51B.OFX1 to R33C49B.D0    </A> <A href="#@net:fifo_dout_to_packer_20">fifo_dout_to_packer_20</A>
+CTOF_DEL    ---     0.179     R33C49B.D0 to     R33C49B.F0 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_426">u_adc_fifo_frame_packer/SLICE_426</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3430:R33C49B.F0:R33C49B.DI0:0.000">     R33C49B.F0 to R33C49B.DI0   </A> <A href="#@net:u_adc_fifo_frame_packer/n3430">u_adc_fifo_frame_packer/n3430</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.230   (71.5% logic, 28.5% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R33C49B.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_426:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R33C49B.CLK:2.091">      B11.PADDI to R33C49B.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.929ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm13/pdp_ram_0_0_0">u_Fifosm13/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_424">u_adc_fifo_frame_packer/r_curr_sample__i17</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.200ns  (71.5% logic, 28.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.200ns physical path delay u_Fifosm13/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_424 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.929ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C31.CLKR,EBR_R34C31.DO35,u_Fifosm13/pdp_ram_0_0_0:ROUTE, 1.720,EBR_R34C31.DO35,R37C52A.D0,adc_fifo_13_dout_17:CTOOFX_DEL, 0.305,R37C52A.D0,R37C52A.OFX0,u_MuxFifo/i6956/SLICE_538:ROUTE, 0.000,R37C52A.OFX0,R37C52A.FXB,u_MuxFifo/n11244:FXTOF_DEL, 0.179,R37C52A.FXB,R37C52A.OFX1,u_MuxFifo/i6956/SLICE_538:ROUTE, 0.000,R37C52A.OFX1,R37C52B.FXB,u_MuxFifo/n11246:FXTOF_DEL, 0.179,R37C52B.FXB,R37C52B.OFX1,SLICE_445:ROUTE, 0.333,R37C52B.OFX1,R36C52C.D1,fifo_dout_to_packer_17:CTOF_DEL, 0.179,R36C52C.D1,R36C52C.F1,u_adc_fifo_frame_packer/SLICE_424:ROUTE, 0.000,R36C52C.F1,R36C52C.DI1,u_adc_fifo_frame_packer/n3427">Data path</A> u_Fifosm13/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_424:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C31.CLKR to EBR_R34C31.DO35 <A href="#@comp:u_Fifosm13/pdp_ram_0_0_0">u_Fifosm13/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.720<A href="#@net:adc_fifo_13_dout_17:EBR_R34C31.DO35:R37C52A.D0:1.720"> EBR_R34C31.DO35 to R37C52A.D0    </A> <A href="#@net:adc_fifo_13_dout_17">adc_fifo_13_dout_17</A>
+CTOOFX_DEL  ---     0.305     R37C52A.D0 to   R37C52A.OFX0 <A href="#@comp:u_MuxFifo/i6956/SLICE_538">u_MuxFifo/i6956/SLICE_538</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11244:R37C52A.OFX0:R37C52A.FXB:0.000">   R37C52A.OFX0 to R37C52A.FXB   </A> <A href="#@net:u_MuxFifo/n11244">u_MuxFifo/n11244</A>
+FXTOF_DEL   ---     0.179    R37C52A.FXB to   R37C52A.OFX1 <A href="#@comp:u_MuxFifo/i6956/SLICE_538">u_MuxFifo/i6956/SLICE_538</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11246:R37C52A.OFX1:R37C52B.FXB:0.000">   R37C52A.OFX1 to R37C52B.FXB   </A> <A href="#@net:u_MuxFifo/n11246">u_MuxFifo/n11246</A>
+FXTOF_DEL   ---     0.179    R37C52B.FXB to   R37C52B.OFX1 <A href="#@comp:SLICE_445">SLICE_445</A>
+ROUTE         2     0.333<A href="#@net:fifo_dout_to_packer_17:R37C52B.OFX1:R36C52C.D1:0.333">   R37C52B.OFX1 to R36C52C.D1    </A> <A href="#@net:fifo_dout_to_packer_17">fifo_dout_to_packer_17</A>
+CTOF_DEL    ---     0.179     R36C52C.D1 to     R36C52C.F1 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_424">u_adc_fifo_frame_packer/SLICE_424</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3427:R36C52C.F1:R36C52C.DI1:0.000">     R36C52C.F1 to R36C52C.DI1   </A> <A href="#@net:u_adc_fifo_frame_packer/n3427">u_adc_fifo_frame_packer/n3427</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.200   (71.5% logic, 28.5% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C31.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm13/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C31.CLKR:2.171">      B11.PADDI to EBR_R34C31.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R36C52C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_424:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R36C52C.CLK:2.091">      B11.PADDI to R36C52C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.931ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm8/pdp_ram_0_0_0">u_Fifosm8/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/r_curr_sample__i4</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.198ns  (71.5% logic, 28.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.198ns physical path delay u_Fifosm8/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.931ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C64.CLKR,EBR_R34C64.DO22,u_Fifosm8/pdp_ram_0_0_0:ROUTE, 1.382,EBR_R34C64.DO22,R37C47B.D0,adc_fifo_8_dout_4:CTOOFX_DEL, 0.305,R37C47B.D0,R37C47B.OFX0,SLICE_432:ROUTE, 0.000,R37C47B.OFX0,R37C47A.FXA,u_MuxFifo/n11258:FXTOF_DEL, 0.178,R37C47A.FXA,R37C47A.OFX1,u_MuxFifo/i6971/SLICE_543:ROUTE, 0.000,R37C47A.OFX1,R37C47B.FXB,u_MuxFifo/n11261:FXTOF_DEL, 0.179,R37C47B.FXB,R37C47B.OFX1,SLICE_432:ROUTE, 0.670,R37C47B.OFX1,R35C50C.D0,fifo_dout_to_packer_4:CTOF_DEL, 0.179,R35C50C.D0,R35C50C.F0,u_adc_fifo_frame_packer/SLICE_418:ROUTE, 0.000,R35C50C.F0,R35C50C.DI0,u_adc_fifo_frame_packer/n3414">Data path</A> u_Fifosm8/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C64.CLKR to EBR_R34C64.DO22 <A href="#@comp:u_Fifosm8/pdp_ram_0_0_0">u_Fifosm8/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.382<A href="#@net:adc_fifo_8_dout_4:EBR_R34C64.DO22:R37C47B.D0:1.382"> EBR_R34C64.DO22 to R37C47B.D0    </A> <A href="#@net:adc_fifo_8_dout_4">adc_fifo_8_dout_4</A>
+CTOOFX_DEL  ---     0.305     R37C47B.D0 to   R37C47B.OFX0 <A href="#@comp:SLICE_432">SLICE_432</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11258:R37C47B.OFX0:R37C47A.FXA:0.000">   R37C47B.OFX0 to R37C47A.FXA   </A> <A href="#@net:u_MuxFifo/n11258">u_MuxFifo/n11258</A>
+FXTOF_DEL   ---     0.178    R37C47A.FXA to   R37C47A.OFX1 <A href="#@comp:u_MuxFifo/i6971/SLICE_543">u_MuxFifo/i6971/SLICE_543</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11261:R37C47A.OFX1:R37C47B.FXB:0.000">   R37C47A.OFX1 to R37C47B.FXB   </A> <A href="#@net:u_MuxFifo/n11261">u_MuxFifo/n11261</A>
+FXTOF_DEL   ---     0.179    R37C47B.FXB to   R37C47B.OFX1 <A href="#@comp:SLICE_432">SLICE_432</A>
+ROUTE         2     0.670<A href="#@net:fifo_dout_to_packer_4:R37C47B.OFX1:R35C50C.D0:0.670">   R37C47B.OFX1 to R35C50C.D0    </A> <A href="#@net:fifo_dout_to_packer_4">fifo_dout_to_packer_4</A>
+CTOF_DEL    ---     0.179     R35C50C.D0 to     R35C50C.F0 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_418">u_adc_fifo_frame_packer/SLICE_418</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3414:R35C50C.F0:R35C50C.DI0:0.000">     R35C50C.F0 to R35C50C.DI0   </A> <A href="#@net:u_adc_fifo_frame_packer/n3414">u_adc_fifo_frame_packer/n3414</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.198   (71.5% logic, 28.5% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C64.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm8/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C64.CLKR:2.171">      B11.PADDI to EBR_R34C64.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R35C50C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_418:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R35C50C.CLK:2.091">      B11.PADDI to R35C50C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+<font color=#000000> 
+
+Passed: The following path meets requirements by 0.935ns
+ </font>
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW16KD   Port           <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A>(ASIC)  (from <A href="#@net:clk_c">clk_c</A> +)
+   Destination:    FF         Data in        <A href="#@comp:u_adc_fifo_frame_packer/SLICE_424">u_adc_fifo_frame_packer/r_curr_sample__i17</A>  (to <A href="#@net:clk_c">clk_c</A> +)
+
+   Delay:               7.194ns  (71.5% logic, 28.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.194ns physical path delay u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_424 meets
+      8.000ns delay constraint less
+      0.080ns skew and
+     -0.209ns DIN_SET requirement (totaling 8.129ns) by 0.935ns
+
+ Physical Path Details:
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:C2Q_DEL, 4.305,EBR_R34C28.CLKR,EBR_R34C28.DO35,u_Fifosm6/pdp_ram_0_0_0:ROUTE, 1.715,EBR_R34C28.DO35,R37C52C.C1,adc_fifo_6_dout_17:CTOOFX_DEL, 0.305,R37C52C.C1,R37C52C.OFX0,u_MuxFifo/i6954/SLICE_536:ROUTE, 0.000,R37C52C.OFX0,R37C52C.FXB,u_MuxFifo/n11242:FXTOF_DEL, 0.179,R37C52C.FXB,R37C52C.OFX1,u_MuxFifo/i6954/SLICE_536:ROUTE, 0.000,R37C52C.OFX1,R37C52B.FXA,u_MuxFifo/n11245:FXTOF_DEL, 0.178,R37C52B.FXA,R37C52B.OFX1,SLICE_445:ROUTE, 0.333,R37C52B.OFX1,R36C52C.D1,fifo_dout_to_packer_17:CTOF_DEL, 0.179,R36C52C.D1,R36C52C.F1,u_adc_fifo_frame_packer/SLICE_424:ROUTE, 0.000,R36C52C.F1,R36C52C.DI1,u_adc_fifo_frame_packer/n3427">Data path</A> u_Fifosm6/pdp_ram_0_0_0 to u_adc_fifo_frame_packer/SLICE_424:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     4.305 EBR_R34C28.CLKR to EBR_R34C28.DO35 <A href="#@comp:u_Fifosm6/pdp_ram_0_0_0">u_Fifosm6/pdp_ram_0_0_0</A> (from <A href="#@net:clk_c">clk_c</A>)
+ROUTE         1     1.715<A href="#@net:adc_fifo_6_dout_17:EBR_R34C28.DO35:R37C52C.C1:1.715"> EBR_R34C28.DO35 to R37C52C.C1    </A> <A href="#@net:adc_fifo_6_dout_17">adc_fifo_6_dout_17</A>
+CTOOFX_DEL  ---     0.305     R37C52C.C1 to   R37C52C.OFX0 <A href="#@comp:u_MuxFifo/i6954/SLICE_536">u_MuxFifo/i6954/SLICE_536</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11242:R37C52C.OFX0:R37C52C.FXB:0.000">   R37C52C.OFX0 to R37C52C.FXB   </A> <A href="#@net:u_MuxFifo/n11242">u_MuxFifo/n11242</A>
+FXTOF_DEL   ---     0.179    R37C52C.FXB to   R37C52C.OFX1 <A href="#@comp:u_MuxFifo/i6954/SLICE_536">u_MuxFifo/i6954/SLICE_536</A>
+ROUTE         1     0.000<A href="#@net:u_MuxFifo/n11245:R37C52C.OFX1:R37C52B.FXA:0.000">   R37C52C.OFX1 to R37C52B.FXA   </A> <A href="#@net:u_MuxFifo/n11245">u_MuxFifo/n11245</A>
+FXTOF_DEL   ---     0.178    R37C52B.FXA to   R37C52B.OFX1 <A href="#@comp:SLICE_445">SLICE_445</A>
+ROUTE         2     0.333<A href="#@net:fifo_dout_to_packer_17:R37C52B.OFX1:R36C52C.D1:0.333">   R37C52B.OFX1 to R36C52C.D1    </A> <A href="#@net:fifo_dout_to_packer_17">fifo_dout_to_packer_17</A>
+CTOF_DEL    ---     0.179     R36C52C.D1 to     R36C52C.F1 <A href="#@comp:u_adc_fifo_frame_packer/SLICE_424">u_adc_fifo_frame_packer/SLICE_424</A>
+ROUTE         1     0.000<A href="#@net:u_adc_fifo_frame_packer/n3427:R36C52C.F1:R36C52C.DI1:0.000">     R36C52C.F1 to R36C52C.DI1   </A> <A href="#@net:u_adc_fifo_frame_packer/n3427">u_adc_fifo_frame_packer/n3427</A> (to <A href="#@net:clk_c">clk_c</A>)
+                  --------
+                    7.194   (71.5% logic, 28.5% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.171,B11.PADDI,EBR_R34C28.CLKR,clk_c">Source Clock Path</A> clk to u_Fifosm6/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.171<A href="#@net:clk_c:B11.PADDI:EBR_R34C28.CLKR:2.171">      B11.PADDI to EBR_R34C28.CLKR</A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.171   (0.0% logic, 100.0% route), 0 logic levels.
+
+      <A href="#@path:FREQUENCY NET 'clk_c' 125.000000 MHz ;:ROUTE, 2.091,B11.PADDI,R36C52C.CLK,clk_c">Destination Clock Path</A> clk to u_adc_fifo_frame_packer/SLICE_424:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       255     2.091<A href="#@net:clk_c:B11.PADDI:R36C52C.CLK:2.091">      B11.PADDI to R36C52C.CLK   </A> <A href="#@net:clk_c">clk_c</A>
+                  --------
+                    2.091   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:  138.850MHz is the maximum frequency for this preference.
+
+<A name="Report Summary"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "clk_c" 125.000000 MHz ;  |  125.000 MHz|  138.850 MHz|   5  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="Clock Domains Analysis"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: <A href="#@net:clk_c">clk_c</A>   Source: clk.PAD   Loads: 255
+   Covered under: FREQUENCY NET "clk_c" 125.000000 MHz ;
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 29531 paths, 1 nets, and 4998 connections (81.91% coverage)
+

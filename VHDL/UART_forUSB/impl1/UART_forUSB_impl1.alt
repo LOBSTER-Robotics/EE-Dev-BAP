@@ -1,0 +1,21 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Fri May 29 16:44:46 2026 *
+NOTE DESIGN NAME: uart_echo *
+NOTE DEVICE NAME: LFE5UM-45F-7CABGA381 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS leds[6] : D17 : out *
+NOTE PINS leds[5] : D18 : out *
+NOTE PINS leds[7] : E16 : out *
+NOTE PINS Uart_Tx : A11 : out *
+NOTE PINS n_Rst : U17 : out *
+NOTE PINS leds[4] : E18 : out *
+NOTE PINS leds[3] : F17 : out *
+NOTE PINS leds[2] : F18 : out *
+NOTE PINS leds[1] : E17 : out *
+NOTE PINS leds[0] : F16 : out *
+NOTE PINS Clk : L19 : in *
+NOTE PINS Rst : K20 : in *
+NOTE PINS Uart_Rx : C11 : in *
+NOTE CONFIGURATION MODE: JTAG *
+NOTE COMPRESSION: off *

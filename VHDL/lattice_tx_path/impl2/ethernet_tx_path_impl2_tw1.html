@@ -1,0 +1,295 @@
+<HTML>
+<HEAD><TITLE>Lattice Map TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Map_Twr"></A><B><U><big>Map TRACE Report</big></U></B>
+
+Loading design for application trce from file ethernet_tx_path_impl2_map.ncd.
+Design name: top_tb_fpga
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LFE5U-45F
+Package:     CABGA381
+Performance: 7
+Loading device for application trce from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Performance Hardware Data Status:   Final          Version 55.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
+Thu May 28 12:54:25 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_tx_path_impl2.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_tx_path_impl2_map.ncd ethernet_tx_path_impl2.prf 
+Design file:     ethernet_tx_path_impl2_map.ncd
+Preference file: ethernet_tx_path_impl2.prf
+Device,speed:    LFE5U-45F,7
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY PORT "clk" 125.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+Report:  149.365MHz is the maximum frequency for this preference.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY PORT "clk" 125.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 1.305ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              dut/udp_inst/idx__i0  (from clk_c +)
+   Destination:    FF         Data in        dut/mac_inst/crc_reg_i13  (to clk_c +)
+
+   Delay:               6.931ns  (35.4% logic, 64.6% route), 10 logic levels.
+
+ Constraint Details:
+
+      6.931ns physical path delay dut/udp_inst/SLICE_74 to dut/mac_inst/SLICE_83 meets
+      8.000ns delay constraint less
+     -0.236ns DIN_SET requirement (totaling 8.236ns) by 1.305ns
+
+ Physical Path Details:
+
+      Data path dut/udp_inst/SLICE_74 to dut/mac_inst/SLICE_83:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.457 */SLICE_74.CLK to *t/SLICE_74.Q0 dut/udp_inst/SLICE_74 (from clk_c)
+ROUTE        32   e 0.497 *t/SLICE_74.Q0 to */SLICE_148.B0 dut/idx_0
+CTOF_DEL    ---     0.206 */SLICE_148.B0 to */SLICE_148.F0 dut/udp_inst/SLICE_148
+ROUTE         4   e 0.497 */SLICE_148.F0 to */SLICE_162.D1 dut/udp_inst/n6486
+CTOF_DEL    ---     0.206 */SLICE_162.D1 to */SLICE_162.F1 dut/udp_inst/SLICE_162
+ROUTE         1   e 0.497 */SLICE_162.F1 to */SLICE_121.C0 dut/udp_inst/n6449
+CTOOFX_DEL  ---     0.352 */SLICE_121.C0 to *LICE_121.OFX0 dut/udp_inst/i924/SLICE_121
+ROUTE         1   e 0.497 *LICE_121.OFX0 to */SLICE_182.A0 dut/udp_inst/n2046
+CTOF_DEL    ---     0.206 */SLICE_182.A0 to */SLICE_182.F0 dut/SLICE_182
+ROUTE         5   e 0.497 */SLICE_182.F0 to */SLICE_172.C0 dut/udp_tdata_1
+CTOF_DEL    ---     0.206 */SLICE_172.C0 to */SLICE_172.F0 dut/SLICE_172
+ROUTE        11   e 0.497 */SLICE_172.F0 to */SLICE_297.A0 dut/n6457
+CTOF_DEL    ---     0.206 */SLICE_297.A0 to */SLICE_297.F0 dut/mac_inst/crc_inst/SLICE_297
+ROUTE         2   e 0.497 */SLICE_297.F0 to */SLICE_157.D1 dut/mac_inst/n5124
+CTOF_DEL    ---     0.206 */SLICE_157.D1 to */SLICE_157.F1 dut/SLICE_157
+ROUTE         2   e 0.497 */SLICE_157.F1 to */SLICE_275.C0 dut/mac_inst/crc_next_13
+CTOF_DEL    ---     0.206 */SLICE_275.C0 to */SLICE_275.F0 dut/mac_inst/SLICE_275
+ROUTE         1   e 0.497 */SLICE_275.F0 to *t/SLICE_83.B1 dut/mac_inst/n2_adj_689
+CTOF_DEL    ---     0.206 *t/SLICE_83.B1 to *t/SLICE_83.F1 dut/mac_inst/SLICE_83
+ROUTE         1   e 0.001 *t/SLICE_83.F1 to */SLICE_83.DI1 dut/mac_inst/next_crc_reg_13 (to clk_c)
+                  --------
+                    6.931   (35.4% logic, 64.6% route), 10 logic levels.
+
+Report:  149.365MHz is the maximum frequency for this preference.
+
+<A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 125.000000 MHz ;   |  125.000 MHz|  149.365 MHz|  10  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 93
+   Covered under: FREQUENCY PORT "clk" 125.000000 MHz ;
+
+
+<A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 9943 paths, 1 nets, and 1994 connections (95.13% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.14.0.75.2</big></U></B>
+Thu May 28 12:54:25 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o ethernet_tx_path_impl2.tw1 -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml ethernet_tx_path_impl2_map.ncd ethernet_tx_path_impl2.prf 
+Design file:     ethernet_tx_path_impl2_map.ncd
+Preference file: ethernet_tx_path_impl2.prf
+Device,speed:    LFE5U-45F,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY PORT "clk" 125.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY PORT "clk" 125.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.177ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              lenght_cnt_456__i12  (from clk_c +)
+   Destination:    FF         Data in        lenght_cnt_456__i12  (to clk_c +)
+
+   Delay:               0.295ns  (80.0% logic, 20.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.295ns physical path delay SLICE_0 to SLICE_0 meets
+      0.118ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling 0.118ns) by 0.177ns
+
+ Physical Path Details:
+
+      Data path SLICE_0 to SLICE_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.161    SLICE_0.CLK to     SLICE_0.Q1 SLICE_0 (from clk_c)
+ROUTE         2   e 0.058     SLICE_0.Q1 to     SLICE_0.A1 lenght_cnt_12
+CTOF_DEL    ---     0.075     SLICE_0.A1 to     SLICE_0.F1 SLICE_0
+ROUTE         1   e 0.001     SLICE_0.F1 to    SLICE_0.DI1 n153 (to clk_c)
+                  --------
+                    0.295   (80.0% logic, 20.0% route), 2 logic levels.
+
+<A name="mtw1_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY PORT "clk" 125.000000 MHz ;   |            -|            -|   2  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="mtw1_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 1 clocks:
+
+Clock Domain: clk_c   Source: clk.PAD   Loads: 93
+   Covered under: FREQUENCY PORT "clk" 125.000000 MHz ;
+
+
+<A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 9943 paths, 1 nets, and 2019 connections (96.33% coverage)
+
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

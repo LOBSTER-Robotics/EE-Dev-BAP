@@ -1,0 +1,51 @@
+-a "ECP5UM"
+-d LFE5UM-45F
+-t CABGA381
+-s 7
+-frequency 200
+-optimization_goal Timing
+-bram_utilization 100
+-ramstyle Auto
+-romstyle auto
+-dsp_utilization 100
+-use_dsp 1
+-use_carry_chain 1
+-carry_chain_length 0
+-force_gsr Auto
+-resource_sharing 1
+-propagate_constants 1
+-remove_duplicate_regs 1
+-mux_style Auto
+-max_fanout 1000
+-fsm_encoding_style Auto
+-twr_paths 3
+-fix_gated_clocks 1
+-loop_limit 1950
+
+
+
+
+-use_io_insertion 1
+-resolve_mixed_drivers 0
+-use_io_reg auto
+-vh2008
+
+-lpf 1
+-lib "work" -vhd "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_strobe_gen.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_sync.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_intf_uart.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_array.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_attribute.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_logic.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_math.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/olo_base_pkg_string.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_echo.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/uart_send.vhd"
+"C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/counter.vhd"
+-top uart_echo
+
+
+-p "E:/Apps/Lattice Diamond/ispfpga/sa5p00m/data" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB/impl1" "C:/Users/hoona/Documents/school/Universiteit/Jaar 3/BAP/EE-Dev-BAP/VHDL/UART_forUSB"
+
+-ngd "UART_forUSB_impl1.ngd"
+

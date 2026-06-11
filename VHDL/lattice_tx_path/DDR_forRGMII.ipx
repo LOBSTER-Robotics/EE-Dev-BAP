@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="DDR_forRGMII" module="DDR_GENERIC" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2026 05 19 13:28:38.790" version="6.0" type="Module" synthesis="synplify" source_format="VHDL">
+  <Package>
+		<File name="DDR_forRGMII.lpc" type="lpc" modified="2026 05 19 13:28:33.561"/>
+		<File name="DDR_forRGMII.vhd" type="top_level_vhdl" modified="2026 05 19 13:28:33.639"/>
+		<File name="DDR_forRGMII_tmpl.vhd" type="template_vhdl" modified="2026 05 19 13:28:33.639"/>
+  </Package>
+</DiamondModule>

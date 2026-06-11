@@ -1,0 +1,66 @@
+----------------------------------------------------------------------
+Report for cell uart_echo.TECH
+Register bits:  121 of 44457 (0.272%)
+I/O cells:      13
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        32          100.0
+                            FD1P3AX        31          100.0
+                            FD1P3IX         9          100.0
+                            FD1S3AX         6          100.0
+                            FD1S3IX        71          100.0
+                            FD1S3JX         4          100.0
+                                GSR         1          100.0
+                                 IB         3          100.0
+                               LUT4       106          100.0
+                                 OB        10          100.0
+                              PFUMX         4          100.0
+SUB MODULES
+olo_base_strobe_gen(125000000.0,230400.0,true)         1
+olo_base_strobe_gen(125000000.0,230400.0,true)_U0         1
+             olo_intf_sync(1,'1',2)         1
+olo_intf_uart(125000000.0,115200.0,8,"1","none")(1,1,1,4)         1
+                              TOTAL       281
+----------------------------------------------------------------------
+Report for cell olo_intf_uart(125000000.0,115200.0,8,"1","none")(1,1,1,4).v1
+Instance Path : u_uart
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        32          100.0
+                            FD1P3AX        15           48.4
+                            FD1P3IX         8           88.9
+                            FD1S3AX         6          100.0
+                            FD1S3IX        70           98.6
+                            FD1S3JX         4          100.0
+                               LUT4        99           93.4
+                              PFUMX         4          100.0
+SUB MODULES
+olo_base_strobe_gen(125000000.0,230400.0,true)         1
+olo_base_strobe_gen(125000000.0,230400.0,true)_U0         1
+             olo_intf_sync(1,'1',2)         1
+                              TOTAL       241
+----------------------------------------------------------------------
+Report for cell olo_intf_sync(1,'1',2).v1
+Instance Path : u_uart.i_sync
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3JX         2           50.0
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell olo_base_strobe_gen(125000000.0,230400.0,true).v1
+Instance Path : u_uart.i_strb_tx
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         9           28.1
+                            FD1S3IX        18           25.4
+                               LUT4         9            8.5
+                              TOTAL        36
+----------------------------------------------------------------------
+Report for cell olo_base_strobe_gen(125000000.0,230400.0,true)_U0.v1
+Instance Path : u_uart.i_strb_rx
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         9           28.1
+                            FD1S3IX        18           25.4
+                               LUT4        10            9.4
+                              TOTAL        37

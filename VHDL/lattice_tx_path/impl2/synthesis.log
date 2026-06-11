@@ -1,0 +1,319 @@
+synthesis:  version Diamond (64-bit) 3.14.0.75.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 28 12:18:58 2026
+
+
+Command Line:  synthesis -f ethernet_tx_path_impl2_lattice.synproj -gui -msgset D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/promote.xml 
+
+Synthesis options:
+The -a option is ECP5U.
+The -s option is 7.
+The -t option is CABGA381.
+The -d option is LFE5U-45F.
+Using package CABGA381.
+Using performance grade 7.
+                                                          
+
+##########################################################
+
+### Lattice Family : ECP5U
+
+### Device  : LFE5U-45F
+
+### Package : CABGA381
+
+### Speed   : 7
+
+##########################################################
+
+                                                          
+
+INFO - synthesis: User-Selected Strategy Settings
+Optimization goal = Timing
+Top-level module name = top_tb_fpga.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/lscc/diamond/3.14/ispfpga/sa5p00/data (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl2 (searchpath added)
+-p D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path (searchpath added)
+VHDL library = work
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_forRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/DDR_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/RGMII_withDDR.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/CRC32_8.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_AXItoRGMII.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/MAC_RX.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/register.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_FIFO_AXI.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/UDP_RGMII_stack/src/UDP_RX_AXItoFIFO.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx.vhd
+VHDL design file = D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/top_ethernet_tx_tbfpga.vhd
+NGD file = ethernet_tx_path_impl2.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+-vh2008
+
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Technology check ok...
+
+Analyzing Verilog file D:/lscc/diamond/3.14/ispfpga/userware/NT/SYNTHESIS_HEADERS/ecp5u.v. VERI-1482
+Compile design.
+Compile Design Begin
+INFO - synthesis: The default VHDL library search path is now "D:/BAP/EE-Dev-BAP/VHDL/lattice_tx_path/impl2". VHDL-1504
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(12): analyzing entity ddr_forrgmii. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_forrgmii.vhd(21): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(12): analyzing entity ddr_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/ddr_rx.vhd(21): analyzing architecture structure. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(9): analyzing entity rgmii_tx_ddr. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(24): analyzing architecture rtl. VHDL-1010
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(56): analyzing entity rgmii_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/rgmii_withddr.vhd(70): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(27): analyzing entity crc32_8. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/crc32_8.vhd(35): analyzing architecture behavioral. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(5): analyzing entity mac_axitorgmii. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_axitorgmii.vhd(27): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(5): analyzing entity mac_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/mac_rx.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(5): analyzing entity fifo_udp_reg. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/register.vhd(26): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(5): analyzing entity udp_fifo_axi. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_fifo_axi.vhd(24): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(5): analyzing entity udp_rx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/udp_rgmii_stack/src/udp_rx_axitofifo.vhd(28): analyzing architecture rtl. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx.vhd(6): analyzing entity top_ethernet_tx. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx.vhd(24): analyzing architecture behavioral. VHDL-1010
+Analyzing VHDL file d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx_tbfpga.vhd. VHDL-1481
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx_tbfpga.vhd(5): analyzing entity top_tb_fpga. VHDL-1012
+INFO - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx_tbfpga.vhd(17): analyzing architecture behavioral. VHDL-1010
+unit top_tb_fpga is not yet analyzed. VHDL-1485
+d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx_tbfpga.vhd(5): executing top_tb_fpga(Behavioral)
+
+Removed duplicate sequential element Data(8 bit), because it is equivalent to cnt
+
+WARNING - synthesis: d:/bap/ee-dev-bap/vhdl/lattice_tx_path/top_ethernet_tx_tbfpga.vhd(15): replacing existing netlist top_tb_fpga(Behavioral). VHDL-1205
+Top module name (VHDL): top_tb_fpga
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sa5p45.nph' in environment: D:/lscc/diamond/3.14/ispfpga.
+Package Status:                     Final          Version 1.50.
+Top-level module name = top_tb_fpga.
+WARNING - synthesis: Initial value found on net next_idx[7] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[6] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_idx[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pre_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_pad_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_crc_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_crc_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_ifg_cnt[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[31] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[30] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[29] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[28] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[27] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[26] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[25] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[24] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[23] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[22] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[21] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[20] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[19] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[18] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[17] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[16] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[15] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[14] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[13] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[12] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[11] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[10] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[9] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[8] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[7] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[6] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net next_frame_len[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txd[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net rgmii_txctl will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net ctl_reg will be ignored due to unrecognized driver type
+INFO - synthesis: Extracted state machine for register '\dut/udp_inst/state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+INFO - synthesis: Extracted state machine for register '\dut/mac_inst/state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 000 -> 000001
+
+ 001 -> 000010
+
+ 010 -> 000100
+
+ 011 -> 001000
+
+ 100 -> 010000
+
+ 101 -> 100000
+
+
+
+
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Cell OB already has the black_box_pad_pin attribute on O.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[3] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[2] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[1] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txd[0] due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txctl due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on rgmii_txc due to black_box_pad_pin attribute.
+GSR instance connected to net n867.
+Applying 200.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No user .sdc file.
+Results of NGD DRC are available in top_tb_fpga_drc.log.
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/lscc/diamond/3.14/ispfpga/or5g00/data/orc5glib.ngl'...
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file ethernet_tx_path_impl2.ngd.
+
+################### Begin Area Report (top_tb_fpga)######################
+Number of register bits => 151 of 44457 (0 % )
+CCU2C => 67
+FD1P3IX => 19
+FD1S3AX => 9
+FD1S3AY => 1
+FD1S3IX => 87
+FD1S3JX => 35
+GSR => 1
+IB => 2
+LUT4 => 416
+OB => 6
+ODDRX1F => 6
+PFUMX => 19
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : clk_c, loads : 157
+Clock Enable Nets
+Number of Clock Enables: 5
+Top 5 highest fanout Clock Enables:
+  Net : clk_c_enable_16, loads : 7
+  Net : dut/mac_inst/clk_c_enable_8, loads : 5
+  Net : dut/mac_inst/clk_c_enable_17, loads : 3
+  Net : clk_c_enable_19, loads : 1
+  Net : dut/mac_inst/clk_c_enable_9, loads : 1
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : rst_c, loads : 121
+  Net : dut/mac_inst/n423, loads : 61
+  Net : dut/udp_inst/n6493, loads : 49
+  Net : dut/mac_inst/n421, loads : 48
+  Net : dut/mac_inst/n422, loads : 44
+  Net : dut/udp_inst/idx_2, loads : 37
+  Net : dut/mac_inst/n425, loads : 37
+  Net : dut/mac_inst/n6495, loads : 33
+  Net : n2447, loads : 32
+  Net : dut/udp_inst/idx_1, loads : 32
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |  200.000 MHz|   67.042 MHz|    11 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+
+Peak Memory Usage: 145.223  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 2.047  secs
+--------------------------------------------------------------

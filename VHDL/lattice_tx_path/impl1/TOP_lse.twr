@@ -1,0 +1,205 @@
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Wed May 27 16:27:12 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design:     top
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets clk_c]
+            4096 items scored, 4096 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 9.388ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \udp_inst/idx_703__i2  (from clk_c +)
+   Destination:    FD1S3JX    D              \mac_inst/crc_reg_i27  (to clk_c +)
+
+   Delay:                  14.598ns  (16.2% logic, 83.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.598ns data_path \udp_inst/idx_703__i2 to \mac_inst/crc_reg_i27 violates
+      5.000ns delay constraint less
+     -0.210ns L_S requirement (totaling 5.210ns) by 9.388ns
+
+ Path Details: \udp_inst/idx_703__i2 to \mac_inst/crc_reg_i27
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.438             CK to Q              \udp_inst/idx_703__i2 (from clk_c)
+Route        33   e 1.819                                  \udp_inst/idx[2]
+LUT4        ---     0.199              B to Z              \udp_inst/i1_2_lut_rep_217
+Route         2   e 1.158                                  \udp_inst/n11963
+LUT4        ---     0.199              D to Z              \udp_inst/i1_4_lut_4_lut
+Route         1   e 1.020                                  \udp_inst/t_data_7__N_296[1]
+LUT4        ---     0.199              C to Z              \udp_inst/t_data_7__N_304[1]_bdd_4_lut_7410_4_lut
+Route         1   e 0.020                                  \udp_inst/n11631
+MUXL5       ---     0.139           BLUT to Z              \udp_inst/i7346
+Route         1   e 1.020                                  \udp_inst/n11632
+LUT4        ---     0.199              A to Z              \udp_inst/n11632_bdd_3_lut
+Route         4   e 1.297                                  udp_tdata[1]
+LUT4        ---     0.199              C to Z              \udp_inst/i1_2_lut_rep_172_3_lut_4_lut
+Route         9   e 1.459                                  n11918
+LUT4        ---     0.199              A to Z              \mac_inst/crc_inst/i1_4_lut_adj_195
+Route         3   e 1.239                                  \mac_inst/crc_next[31]
+LUT4        ---     0.199              D to Z              \mac_inst/crc_inst/i1_4_lut
+Route         2   e 1.158                                  \mac_inst/crc_next[27]
+LUT4        ---     0.199              C to Z              \mac_inst/select_534_Select_27_i2_4_lut
+Route         1   e 1.020                                  \mac_inst/n2
+LUT4        ---     0.199              B to Z              \mac_inst/i1_4_lut
+Route         1   e 1.020                                  \mac_inst/next_crc_reg[27]
+                  --------
+                   14.598  (16.2% logic, 83.8% route), 11 logic levels.
+
+
+Error:  The following path violates requirements by 9.369ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \udp_inst/idx_703__i1  (from clk_c +)
+   Destination:    FD1S3JX    D              \mac_inst/crc_reg_i27  (to clk_c +)
+
+   Delay:                  14.579ns  (16.2% logic, 83.8% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.579ns data_path \udp_inst/idx_703__i1 to \mac_inst/crc_reg_i27 violates
+      5.000ns delay constraint less
+     -0.210ns L_S requirement (totaling 5.210ns) by 9.369ns
+
+ Path Details: \udp_inst/idx_703__i1 to \mac_inst/crc_reg_i27
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.438             CK to Q              \udp_inst/idx_703__i1 (from clk_c)
+Route        30   e 1.800                                  \udp_inst/idx[1]
+LUT4        ---     0.199              A to Z              \udp_inst/i1_2_lut_rep_217
+Route         2   e 1.158                                  \udp_inst/n11963
+LUT4        ---     0.199              D to Z              \udp_inst/i1_4_lut_4_lut
+Route         1   e 1.020                                  \udp_inst/t_data_7__N_296[1]
+LUT4        ---     0.199              C to Z              \udp_inst/t_data_7__N_304[1]_bdd_4_lut_7410_4_lut
+Route         1   e 0.020                                  \udp_inst/n11631
+MUXL5       ---     0.139           BLUT to Z              \udp_inst/i7346
+Route         1   e 1.020                                  \udp_inst/n11632
+LUT4        ---     0.199              A to Z              \udp_inst/n11632_bdd_3_lut
+Route         4   e 1.297                                  udp_tdata[1]
+LUT4        ---     0.199              C to Z              \udp_inst/i1_2_lut_rep_172_3_lut_4_lut
+Route         9   e 1.459                                  n11918
+LUT4        ---     0.199              A to Z              \mac_inst/crc_inst/i1_4_lut_adj_195
+Route         3   e 1.239                                  \mac_inst/crc_next[31]
+LUT4        ---     0.199              D to Z              \mac_inst/crc_inst/i1_4_lut
+Route         2   e 1.158                                  \mac_inst/crc_next[27]
+LUT4        ---     0.199              C to Z              \mac_inst/select_534_Select_27_i2_4_lut
+Route         1   e 1.020                                  \mac_inst/n2
+LUT4        ---     0.199              B to Z              \mac_inst/i1_4_lut
+Route         1   e 1.020                                  \mac_inst/next_crc_reg[27]
+                  --------
+                   14.579  (16.2% logic, 83.8% route), 11 logic levels.
+
+
+Error:  The following path violates requirements by 9.307ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3IX    CK             \udp_inst/idx_703__i2  (from clk_c +)
+   Destination:    FD1S3JX    D              \mac_inst/crc_reg_i18  (to clk_c +)
+
+   Delay:                  14.517ns  (16.3% logic, 83.7% route), 11 logic levels.
+
+ Constraint Details:
+
+     14.517ns data_path \udp_inst/idx_703__i2 to \mac_inst/crc_reg_i18 violates
+      5.000ns delay constraint less
+     -0.210ns L_S requirement (totaling 5.210ns) by 9.307ns
+
+ Path Details: \udp_inst/idx_703__i2 to \mac_inst/crc_reg_i18
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.438             CK to Q              \udp_inst/idx_703__i2 (from clk_c)
+Route        33   e 1.819                                  \udp_inst/idx[2]
+LUT4        ---     0.199              B to Z              \udp_inst/i1_2_lut_rep_217
+Route         2   e 1.158                                  \udp_inst/n11963
+LUT4        ---     0.199              D to Z              \udp_inst/i1_4_lut_4_lut
+Route         1   e 1.020                                  \udp_inst/t_data_7__N_296[1]
+LUT4        ---     0.199              C to Z              \udp_inst/t_data_7__N_304[1]_bdd_4_lut_7410_4_lut
+Route         1   e 0.020                                  \udp_inst/n11631
+MUXL5       ---     0.139           BLUT to Z              \udp_inst/i7346
+Route         1   e 1.020                                  \udp_inst/n11632
+LUT4        ---     0.199              A to Z              \udp_inst/n11632_bdd_3_lut
+Route         4   e 1.297                                  udp_tdata[1]
+LUT4        ---     0.199              C to Z              \udp_inst/i1_2_lut_rep_172_3_lut_4_lut
+Route         9   e 1.459                                  n11918
+LUT4        ---     0.199              A to Z              \mac_inst/crc_inst/i1_4_lut_adj_240
+Route         2   e 1.158                                  \mac_inst/crc_inst/n9792
+LUT4        ---     0.199              A to Z              \mac_inst/crc_inst/i1_4_lut_adj_238
+Route         2   e 1.158                                  \mac_inst/crc_next[18]
+LUT4        ---     0.199              C to Z              \mac_inst/select_534_Select_18_i2_4_lut
+Route         1   e 1.020                                  \mac_inst/n2_adj_924
+LUT4        ---     0.199              B to Z              \mac_inst/i1_4_lut_adj_326
+Route         1   e 1.020                                  \mac_inst/next_crc_reg[18]
+                  --------
+                   14.517  (16.3% logic, 83.7% route), 11 logic levels.
+
+Warning: 14.388 ns is the maximum delay for this constraint.
+
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets clk_c]                   |     5.000 ns|    14.388 ns|    11 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+\u_adc_fifo_frame_packer/n11926         |      14|    1298|     31.69%
+                                        |        |        |
+\u_adc_fifo_frame_packer/n11981         |       4|     784|     19.14%
+                                        |        |        |
+\u_adc_fifo_frame_packer/n9663          |       7|     576|     14.06%
+                                        |        |        |
+\udp_inst/idx[2]                        |      33|     484|     11.82%
+                                        |        |        |
+\u_adc_fifo_frame_packer/r_byte[0]      |      25|     437|     10.67%
+                                        |        |        |
+\u_adc_fifo_frame_packer/n7311          |       6|     432|     10.55%
+                                        |        |        |
+n11978                                  |       8|     432|     10.55%
+                                        |        |        |
+\u_adc_fifo_frame_packer/r_byte[1]      |      16|     427|     10.42%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+Timing summary:
+---------------
+
+Timing errors: 4096  Score: 29236003
+
+Constraints cover  30653 paths, 2185 nets, and 5038 connections (71.6% coverage)
+
+
+Peak memory: 172130304 bytes, TRCE: 6885376 bytes, DLYMAN: 491520 bytes
+CPU_TIME_REPORT: 0 secs 
