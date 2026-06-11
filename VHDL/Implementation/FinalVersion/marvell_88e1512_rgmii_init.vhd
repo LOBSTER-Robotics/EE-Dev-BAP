@@ -32,7 +32,7 @@ architecture rtl of marvell_88e1512_rgmii_init is
     -- Page 2 Register 21 bits:
     -- bit 5 = RGMII RX clock delay
     -- bit 4 = RGMII TX clock delay
-    constant RGMII_DELAY_MASK : std_logic_vector(15 downto 0) := x"0030";
+    constant RGMII_DELAY_MASK : std_logic_vector(15 downto 0) := x"0010";
 
     type state_t is (
         S_RESET_LOW,

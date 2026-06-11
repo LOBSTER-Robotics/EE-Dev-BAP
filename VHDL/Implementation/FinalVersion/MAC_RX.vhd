@@ -15,12 +15,12 @@ port (
     gmii_rx_er  : in  std_logic;
 
     --------------------------------------------------------------------
-    -- FIFO OUTPUT
+    -- AXI STREAM OUTPUT
     --------------------------------------------------------------------
-    fifo_data   : out std_logic_vector(7 downto 0);
-    fifo_wr_en  : out std_logic;
-    fifo_last   : out std_logic;
-    fifo_full   : in  std_logic;
+    m_data      : out std_logic_vector(7 downto 0);
+    m_valid     : out std_logic;
+    m_last      : out std_logic;
+    m_ready     : in  std_logic;
 
     --------------------------------------------------------------------
     -- DEBUG OUTPUT
@@ -30,7 +30,7 @@ port (
     -- debug_state(3) = DROP
     -- debug_state(4) = gmii_rx_dv
     -- debug_state(5) = gmii_rx_er
-    -- debug_state(6) = fifo_wr_en
+    -- debug_state(6) = rx_valid_reg / m_valid
     -- debug_state(7) = frame active, state /= IDLE
     --------------------------------------------------------------------
     debug_state : out std_logic_vector(6 downto 0)
@@ -58,28 +58,25 @@ architecture rtl of mac_rx is
     signal pre_cnt        : integer range 0 to 7 := 0;
     signal next_pre_cnt   : integer range 0 to 7 := 0;
 
-    signal fifo_data_reg   : std_logic_vector(7 downto 0) := (others => '0');
-    signal fifo_wr_reg     : std_logic := '0';
-    signal fifo_last_reg   : std_logic := '0';
+    signal rx_data_reg    : std_logic_vector(7 downto 0) := (others => '0');
+    signal rx_valid_reg   : std_logic := '0';
+    signal rx_last_reg    : std_logic := '0';
 
-    signal next_fifo_data  : std_logic_vector(7 downto 0);
-    signal next_fifo_wr    : std_logic;
-    signal next_fifo_last  : std_logic;
+    signal next_data      : std_logic_vector(7 downto 0);
+    signal next_valid     : std_logic;
+    signal next_last      : std_logic;
+
+    signal dv_d           : std_logic;
+    signal data_d         : std_logic_vector(7 downto 0);
 
 begin
 
     --------------------------------------------------------------------
     -- OUTPUTS
     --------------------------------------------------------------------
-    fifo_data  <= fifo_data_reg;
-    fifo_wr_en <= fifo_wr_reg;
-    fifo_last  <= fifo_last_reg;
-
-    --------------------------------------------------------------------
-    -- Only accept payload bytes when the FIFO can take them.
-    -- Header bytes are always consumed internally.
-    --------------------------------------------------------------------
-    -- Note: the FIFO write enable is only asserted during PAYLOAD.
+    m_valid <= rx_valid_reg;
+    m_data  <= data_d;
+    m_last  <= dv_d and not gmii_rx_dv;
 
     --------------------------------------------------------------------
     -- DEBUG OUTPUT
@@ -104,7 +101,8 @@ begin
 
         debug_state(4) <= gmii_rx_dv;
         debug_state(5) <= gmii_rx_er;
-        debug_state(6) <= fifo_wr_reg;
+        debug_state(6) <= rx_valid_reg;
+
     end process;
 
     --------------------------------------------------------------------
@@ -119,9 +117,12 @@ begin
                 state        <= IDLE;
                 pre_cnt      <= 0;
 
-                fifo_data_reg <= (others => '0');
-                fifo_wr_reg   <= '0';
-                fifo_last_reg <= '0';
+                rx_data_reg  <= (others => '0');
+                rx_valid_reg <= '0';
+                rx_last_reg  <= '0';
+
+                dv_d         <= '0';
+                data_d       <= (others => '0');
 
             else
 
@@ -131,9 +132,12 @@ begin
                 state        <= next_state;
                 pre_cnt      <= next_pre_cnt;
 
-                fifo_data_reg <= next_fifo_data;
-                fifo_wr_reg   <= next_fifo_wr;
-                fifo_last_reg <= next_fifo_last;
+                rx_data_reg  <= next_data;
+                rx_valid_reg <= next_valid;
+                rx_last_reg  <= next_last;
+
+                dv_d         <= gmii_rx_dv;
+                data_d       <= gmii_rxd;
 
             end if;
         end if;
@@ -151,9 +155,9 @@ begin
         next_state    <= state;
         next_pre_cnt  <= pre_cnt;
 
-        next_fifo_data <= fifo_data_reg;
-        next_fifo_wr   <= '0';
-        next_fifo_last <= '0';
+        next_data     <= rx_data_reg;
+        next_valid    <= '0';
+        next_last     <= '0';
 
         case state is
 
@@ -233,9 +237,10 @@ begin
 
                 elsif gmii_rx_dv = '1' then
 
-                    if fifo_full = '0' then
-                        next_fifo_data <= gmii_rxd;
-                        next_fifo_wr   <= '1';
+                    if m_ready = '1' then
+
+                        next_data  <= gmii_rxd;
+                        next_valid <= '1';
 
                     end if;
 
@@ -244,7 +249,7 @@ begin
                     ----------------------------------------------------------------
                     -- END OF FRAME
                     ----------------------------------------------------------------
-                    next_fifo_last <= '1';
+                    next_last  <= '1';
                     next_state <= IDLE;
 
                 end if;
