@@ -2,13 +2,14 @@
 -- byte_generator → FIFO → SPI master → DAC8811.
 --
 -- Clock:   50 MHz on-board oscillator (PIN_E1)
+-- External Clock 50 Mhz external clock on the DCD board (J10 pin 1 (PIN_L13))
 -- Reset:   Active-low push button PB0/KEY0 (PIN_E15)
 --
 -- SPI outputs → J10 GPIO header → DAC8811 EVM J8:
---   spi_clk  J10 pin 1 (PIN_L13) → EVM J8 pin 1 (SCLK)
---   sdi[0]   J10 pin 2 (PIN_L16) → EVM J8 pin 3 (SDI)
---   cs_n     J10 pin 3 (PIN_L15) → EVM J8 pin 5 (CS)
---   GND      J10 pin 12          → EVM J8 pin 2/4/6 (GND)
+--   sdi[0]      J10 pin 2 (PIN_L16)
+--   cs_n        J10 pin 3 (PIN_L15)
+--   extClk_out  J10 pin 4 (PIN_K16) — buffered copy of extClk for scope probe
+--   GND         J10 pin 12
 --
 -- byte_generator writes 1500 sequential values (0x0000 → 0x05DB) into
 -- the FIFO on each burst, then immediately restarts (enable tied high).
@@ -25,24 +26,22 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity top_dac_baseline is
+entity top_dac_baseline_ext is
     port (
-        clk100     : in  std_logic;
-        rst_n   : in  std_logic;
-        spi_clk : out std_logic;
-        sdi     : out std_logic_vector(0 downto 0);
-        cs_n    : out std_logic;
-        led     : out std_logic_vector(3 downto 0)
+        sysclk      : in  std_logic;
+        extClk      : in  std_logic;
+        rst_n       : in  std_logic;
+        sdi         : out std_logic_vector(0 downto 0);
+        cs_n        : out std_logic;
+        extClk_out  : out std_logic;   -- buffered extClk for scope measurement (PIN_K16)
+        led         : out std_logic_vector(3 downto 0)
     );
-end entity top_dac_baseline;
+end entity top_dac_baseline_ext;
 
-architecture rtl of top_dac_baseline is
+architecture rtl of top_dac_baseline_ext is
 
-    signal s_rst        : std_logic;
-    signal s_sine_data  : std_logic_vector(15 downto 0);
-    signal s_read_en    : std_logic_vector(0 downto 0);
-    signal s_cs_n       : std_logic;
-    signal clk50        : std_logic;
+    signal s_rst  : std_logic;
+    signal s_cs_n : std_logic;
 
     signal s_heartbeat : unsigned(24 downto 0) := (others => '0');
 
@@ -57,19 +56,21 @@ architecture rtl of top_dac_baseline is
     signal s_fifo_af    : std_logic;
     signal s_fifo_q     : std_logic_vector(15 downto 0);
 
-    -- SPI master handshake (declared above with clk50)
+    -- SPI master handshake
+    signal s_read_en : std_logic_vector(0 downto 0);
 
 begin
 
-    s_rst <= not rst_n;
-    cs_n  <= s_cs_n;
+    s_rst      <= not rst_n;
+    cs_n       <= s_cs_n;
+    extClk_out <= extClk;
 
     --------------------------------------------------------------------
     -- Heartbeat
     --------------------------------------------------------------------
-    process (clk50)
+    process (sysclk)
     begin
-        if rising_edge(clk50) then
+        if rising_edge(sysclk) then
             if s_rst = '1' then
                 s_heartbeat <= (others => '0');
             else
@@ -90,7 +91,7 @@ begin
     --------------------------------------------------------------------
     u_byte_generator : entity work.byte_generator
         port map (
-            clk           => clk,
+            clk           => extClk,
             rst           => s_rst,
             enable        => '1',
             fifo_full     => s_fifo_full,
@@ -103,7 +104,7 @@ begin
     --------------------------------------------------------------------
     u_fifo : entity work.fifo
         port map (
-            clock        => clk,
+            clock        => extClk,
             data         => s_bg_data,
             wrreq        => s_bg_wr_en,
             rdreq        => s_read_en(0),
@@ -117,26 +118,19 @@ begin
     --------------------------------------------------------------------
     -- SPI master
     --------------------------------------------------------------------
-    u_spi : entity work.spi_master_dac
+    u_spi : entity work.spi_master_dac_ext
         generic map (
             Num_Channels    => 1,
             DONE_WAIT_CYCLS => 6
         )
         port map (
-            clk           => clk50,
+            clk           => extClk,
             rst           => s_rst,
             data_in       => s_fifo_q,
             fifo_empty(0) => s_fifo_empty,
             read_en       => s_read_en,
             sdi           => sdi,
-            cs_n          => s_cs_n,
-            spi_clk       => spi_clk
-        );
-
-    CLOCK_BLOCK : entity work.PLL50
-        port map (
-            CLKI  => clk100,
-            CLKOP => clk50
+            cs_n          => s_cs_n
         );
 
 end architecture rtl;
