@@ -633,7 +633,6 @@ begin
 
             i_fifo_dout => fifo_dout_to_packer,
 
-            i_large_fifo_full       => tx_fifo_full_i,
             i_large_fifo_almost_full => tx_fifo_almost_full_i,
             o_large_fifo_wr_en      => tx_fifo_wr_en,
             o_large_fifo_din        => tx_fifo_data

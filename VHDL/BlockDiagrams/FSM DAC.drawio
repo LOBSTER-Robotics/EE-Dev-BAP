@@ -1,0 +1,80 @@
+<mxfile host="drawio-plugin" modified="2026-06-11T11:46:56.045Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="22.1.22" etag="YpPJcjDgsUu8H766fPys" type="embed">
+  <diagram name="Pagina-1" id="4jEiYfj5fey6azqZoAjK">
+    <mxGraphModel dx="590" dy="259" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-4" target="CfO9jd61crTvQiTQiR2Z-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-4" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Idle&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;channel = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;byte = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;valid = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;fifo select = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;large fifo write = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;small fifo read = 0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="300" y="140" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-5" target="CfO9jd61crTvQiTQiR2Z-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-55" value="Channels = 16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="CfO9jd61crTvQiTQiR2Z-53" connectable="0" vertex="1">
+          <mxGeometry x="-0.1571" y="-2" relative="1" as="geometry">
+            <mxPoint x="12" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-5" target="CfO9jd61crTvQiTQiR2Z-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-57" value="Channel = 16&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="CfO9jd61crTvQiTQiR2Z-56" connectable="0" vertex="1">
+          <mxGeometry y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-5" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Read first byte and send&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;channel = channel + 1&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;byte = 1&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;valid = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;fifo select = +1&amp;nbsp;&lt;span style=&quot;background-color: transparent; font-size: 16px;&quot;&gt;when not first byte&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;large fifo write = 1 when not first byte&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;small fifo read = 1&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="300" y="340" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-7" target="CfO9jd61crTvQiTQiR2Z-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="375" />
+              <mxPoint x="690" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-54" value="byte = last byte" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="CfO9jd61crTvQiTQiR2Z-52" connectable="0" vertex="1">
+          <mxGeometry x="0.0857" relative="1" as="geometry">
+            <mxPoint x="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-7" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b style=&quot;font-size: 16px;&quot;&gt;Read next bytes&lt;/b&gt;&lt;/span&gt;&lt;br style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;channel = channel + 1&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;byte = byte + 1&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;valid = 1 when byte = 2&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;fifo select = +1 &lt;span style=&quot;background-color: transparent; font-size: 16px;&quot;&gt;when not first byte&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;large fifo write = 1 when not first byte&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;small fifo read = 1&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="744" y="340" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9EG9fgHBY2G9TPBDX6Tz-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-8" target="CfO9jd61crTvQiTQiR2Z-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="630" />
+              <mxPoint x="110" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9EG9fgHBY2G9TPBDX6Tz-3" value="Large fifo almost empty&amp;nbsp;&lt;div style=&quot;font-size: 16px;&quot;&gt;or small fifos full&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="9EG9fgHBY2G9TPBDX6Tz-1" connectable="0" vertex="1">
+          <mxGeometry x="0.2595" y="1" relative="1" as="geometry">
+            <mxPoint y="114" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9EG9fgHBY2G9TPBDX6Tz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;" parent="1" source="CfO9jd61crTvQiTQiR2Z-8" target="CfO9jd61crTvQiTQiR2Z-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="595" />
+              <mxPoint x="220" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9EG9fgHBY2G9TPBDX6Tz-5" value="Large fifo not almost empty&lt;div style=&quot;font-size: 16px;&quot;&gt;and small fifos not full&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=16;" parent="9EG9fgHBY2G9TPBDX6Tz-2" connectable="0" vertex="1">
+          <mxGeometry x="0.0494" y="3" relative="1" as="geometry">
+            <mxPoint x="23" y="21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CfO9jd61crTvQiTQiR2Z-8" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Done&lt;/font&gt;&lt;/b&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;channel = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;byte = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;valid = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;fifo select = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;large fifo write = 0&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;small fifo read = 0&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="300" y="560" width="290" height="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

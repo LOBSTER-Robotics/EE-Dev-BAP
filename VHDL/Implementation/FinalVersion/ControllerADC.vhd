@@ -58,7 +58,6 @@ entity Controller_ADC is
         o_fifo_sel : out unsigned(3 downto 0);
         o_small_fifo_rd_en : out std_logic_vector(C_NUM_CHANNELS-1 downto 0);
         i_fifo_dout : in std_logic_vector(C_ADC_WIDTH-1 downto 0);
-        i_large_fifo_full : in std_logic;
         i_large_fifo_almost_full : in std_logic;
         o_large_fifo_wr_en : out std_logic;
         o_large_fifo_din : out std_logic_vector(C_BYTE_WIDTH-1 downto 0);
