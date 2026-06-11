@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity spi_master_dac is
+entity spi_master_dac_ext is
     generic (
         Num_Channels     : positive := 1;
         -- Extra clock cycles to wait in DONE before starting next transfer.
@@ -23,10 +23,10 @@ entity spi_master_dac is
         sdi        : out std_logic_vector(Num_Channels - 1 downto 0);
         cs_n       : out std_logic
     );
-end entity spi_master_dac;
+end entity spi_master_dac_ext;
 
 
-architecture rtl of spi_master_dac is
+architecture rtl of spi_master_dac_ext is
 
     type data_array_t is array (0 to Num_Channels - 1) of std_logic_vector(15 downto 0);
     type state_t      is (IDLE, READ, SETUP, TRANSFER, DONE);
