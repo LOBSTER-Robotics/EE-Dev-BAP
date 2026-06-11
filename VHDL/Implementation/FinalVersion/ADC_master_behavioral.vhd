@@ -119,7 +119,8 @@ begin
         Data1 => data1_int,
         Data2 => data2_int,
 
-        DataValid => dv_int
+        DataValid => dv_int,
+        FIFO_ENABLE => FIFO_ENABLE
     );
 
     Data1     <= data1_int;
@@ -1222,7 +1223,7 @@ begin
         next_state <= state;
         next_sample_counter <= sample_counter;
 
-        if Enable = '0' then
+        if Enable = '0' OR FIF0_ENABLE = '0' then
 
             next_state <= IDLE_ST;
             next_sample_counter <= 0;
