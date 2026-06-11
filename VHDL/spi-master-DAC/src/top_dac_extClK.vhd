@@ -33,7 +33,6 @@ entity top_dac_baseline_ext is
         rst_n       : in  std_logic;
         sdi         : out std_logic_vector(0 downto 0);
         cs_n        : out std_logic;
-        extClk_out  : out std_logic;   -- buffered extClk for scope measurement (PIN_K16)
         led         : out std_logic_vector(3 downto 0)
     );
 end entity top_dac_baseline_ext;
@@ -63,7 +62,6 @@ begin
 
     s_rst      <= not rst_n;
     cs_n       <= s_cs_n;
-    extClk_out <= extClk;
 
     --------------------------------------------------------------------
     -- Heartbeat
@@ -102,18 +100,19 @@ begin
     --------------------------------------------------------------------
     -- FIFO (256 × 16-bit, single clock)
     --------------------------------------------------------------------
-    u_fifo : entity work.fifo
-        port map (
-            clock        => extClk,
-            data         => s_bg_data,
-            wrreq        => s_bg_wr_en,
-            rdreq        => s_read_en(0),
-            empty        => s_fifo_empty,
-            full         => s_fifo_full,
-            almost_empty => s_fifo_ae,
-            almost_full  => s_fifo_af,
-            q            => s_fifo_q
-        );
+u_fifo : entity work.Fifosm_DAC
+    port map (
+        Clock       => extClk,
+        Data        => s_bg_data,
+        WrEn        => s_bg_wr_en,
+        RdEn        => s_read_en(0),
+        Reset       => s_rst,        -- replace with your reset signal
+        Empty       => s_fifo_empty,
+        Full        => s_fifo_full,
+        AlmostEmpty => s_fifo_ae,
+        AlmostFull  => s_fifo_af,
+        Q           => s_fifo_q
+    );
 
     --------------------------------------------------------------------
     -- SPI master
