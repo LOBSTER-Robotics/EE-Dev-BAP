@@ -1,0 +1,8 @@
+
+State Machine - |top_dac_baseline_ext|spi_master_dac_ext:u_spi|state
+Name state.DONE state.TRANSFER state.SETUP state.READ state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.READ 0 0 0 1 1 
+state.SETUP 0 0 1 0 1 
+state.TRANSFER 0 1 0 0 1 
+state.DONE 1 0 0 0 1 

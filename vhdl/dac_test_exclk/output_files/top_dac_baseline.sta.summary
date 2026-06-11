@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'extClk'
+Slack : -3.549
+TNS   : -207.544
+
+Type  : Slow 1200mV 100C Model Setup 'sysclk'
+Slack : -1.881
+TNS   : -31.530
+
+Type  : Slow 1200mV 100C Model Hold 'extClk'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'sysclk'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'extClk'
+Slack : -12.445
+TNS   : -158.640
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'sysclk'
+Slack : -3.000
+TNS   : -35.125
+
+Type  : Slow 1200mV -40C Model Setup 'extClk'
+Slack : -2.994
+TNS   : -169.488
+
+Type  : Slow 1200mV -40C Model Setup 'sysclk'
+Slack : -1.379
+TNS   : -22.674
+
+Type  : Slow 1200mV -40C Model Hold 'extClk'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'sysclk'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'extClk'
+Slack : -12.445
+TNS   : -158.396
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'sysclk'
+Slack : -3.000
+TNS   : -35.125
+
+Type  : Fast 1200mV -40C Model Setup 'extClk'
+Slack : -0.928
+TNS   : -37.888
+
+Type  : Fast 1200mV -40C Model Setup 'sysclk'
+Slack : -0.349
+TNS   : -2.451
+
+Type  : Fast 1200mV -40C Model Hold 'extClk'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'sysclk'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'extClk'
+Slack : -9.457
+TNS   : -169.251
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'sysclk'
+Slack : -3.000
+TNS   : -36.432
+
+------------------------------------------------------------

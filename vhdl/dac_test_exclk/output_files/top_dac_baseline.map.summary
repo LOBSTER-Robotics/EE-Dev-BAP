@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jun 11 15:12:06 2026
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : top_dac_baseline
+Top-level Entity Name : top_dac_baseline_ext
+Family : Cyclone 10 LP
+Total logic elements : 166
+    Total combinational functions : 166
+    Dedicated logic registers : 128
+Total registers : 128
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 4,096
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
