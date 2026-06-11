@@ -1,4 +1,5 @@
 Bank 0
+3.3V
 DAC:
 IO 36 *CS B11
 IO 33 SDI1 D6
@@ -10,6 +11,7 @@ IO 31 !SCK B9 high impeadance
 IO 32 !SDI E6 high impeadance
 
 Bank 1
+1.8V
 ADC:
 IO 29 SDO0 B19
 IO 30 CS B12

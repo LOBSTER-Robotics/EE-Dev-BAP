@@ -48,8 +48,8 @@ architecture Behavioral of ADC_SPI_Controller is
     --------------------------------------------------------------------
     -- POWERUP WAIT COUNTER
     --------------------------------------------------------------------
-    signal wait_counter : integer range 0 to 3000 := 0;
-    signal next_wait_counter : integer range 0 to 3000 := 0;
+    signal wait_counter : integer range 0 to 240000 := 0;
+    signal next_wait_counter : integer range 0 to 240000 := 0;
 
     --------------------------------------------------------------------
     -- NEEDED SIGNALS FOR LED DEBUGGER
@@ -61,28 +61,10 @@ architecture Behavioral of ADC_SPI_Controller is
     -- signal Data2     : std_logic_vector(23 downto 0);
 	 
 	 signal div_counter : unsigned(10 downto 0) := (others => '0');
-	 signal clk_50k     : std_logic := '0';
 
 begin
 
-	--------------------------------------------------------------------
-	-- 50 MHz -> 50 kHz CLOCK DIVIDER
-	--------------------------------------------------------------------
-	process(CLK, RESET_N)
-    begin
-        if RESET_N = '1' then
-            div_counter <= (others => '0');
-            clk_50k <= '0';
 
-        elsif rising_edge(CLK) then
-            if div_counter = 60 then
-                div_counter <= (others => '0');
-                clk_50k <= not clk_50k;
-            else
-                div_counter <= div_counter + 1;
-            end if;
-        end if;
-    end process;
     --clk_50k <= CLK;
     --------------------------------------------------------------------
     -- SPI OWNERSHIP
@@ -102,7 +84,7 @@ begin
     CONFIG_BLOCK : entity work.ADC_SPI_Config
     port map (
 
-        CLK => clk_50k,
+        CLK => CLK,
 
         Enable => config_enable,
 
@@ -122,7 +104,7 @@ begin
     ACQ_BLOCK : entity work.ADC_Acquisition_Engine
     port map (
 
-        CLK => clk_50k,
+        CLK => CLK,
         RESET_N => RESET_N,
 
         Enable => acq_enable,
@@ -172,45 +154,18 @@ begin
     --------------------------------------------------------------------
     -- STATE REGISTER
     --------------------------------------------------------------------
-   process(clk_50k, RESET_N)
+   process(CLK, RESET_N)
     begin
         if RESET_N = '1' then
             state <= RESET_ST;
             wait_counter <= 0;
-            --RangeLEDs <= (others => '1');
 
-        elsif rising_edge(clk_50k) then
+        elsif rising_edge(CLK) then
             state <= next_state;
             wait_counter <= next_wait_counter;
-            --RangeLEDs <= not std_logic_vector(to_unsigned(state_number, RangeLEDs'length));
         end if;
     end process;
 
-    --------------------------------------------------------------------
-    -- UPDATE LED LEVEL INDICATOR
-    --------------------------------------------------------------------
-    process(clk_50k)
-    begin
-        if rising_edge(clk_50k) then
-            -- if dv_int = '1' then
-            --
-            --     if signed(data1_int) < to_signed(-2097152, 24) then
-            --         RangeLEDs <= "1110";  -- LED0 ON
-            --
-            --     elsif signed(data1_int) < to_signed(0, 24) then
-            --         RangeLEDs <= "1101";  -- LED1 ON
-            --
-            --     elsif signed(data1_int) < to_signed(2097152, 24) then
-            --         RangeLEDs <= "1011";  -- LED2 ON
-            --
-            --     else
-            --         RangeLEDs <= "0111";  -- LED3 ON
-            --
-            --     end if;
-            --
-            -- end if;
-        end if;
-    end process;
 
     --------------------------------------------------------------------
     -- MAIN FSM
@@ -240,7 +195,7 @@ begin
             when WAIT_POWERUP_ST =>
 
                 state_number <= 1;
-                if wait_counter < 2 then
+                if wait_counter < 239999 then
                     --239999
                     next_wait_counter <= wait_counter + 1;
 
@@ -313,7 +268,7 @@ begin
             --------------------------------------------------------
             when WAIT_POWERUP_ST =>
 
-                if wait_counter = 2 then
+                if wait_counter = 239999 then
                     --239999
                     next_state <= START_CONFIG_ST;
 
