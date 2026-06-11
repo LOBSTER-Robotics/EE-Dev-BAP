@@ -925,6 +925,12 @@ architecture Behavioral of ADC_Acquisition_Engine is
     signal next_quiet_counter : integer range 0 to 3 := 0;
 
     --------------------------------------------------------------------
+    -- CNV PULSE COUNTER
+    --------------------------------------------------------------------
+    signal cnv_counter : integer range 0 to 3 := 0;
+    signal next_cnv_counter : integer range 0 to 3 := 0;
+
+    --------------------------------------------------------------------
     -- SPI ACTIVE
     --------------------------------------------------------------------
     signal spi_active : std_logic := '0';
@@ -962,7 +968,7 @@ begin
     --------------------------------------------------------------------
     -- TRUE 80 MHz SPI CLOCK
     --------------------------------------------------------------------
-    SCK <= CLK and spi_active; -- ####CHECK IF THIS IS A PROBLEM
+    SCK <= CLK and spi_active; -- ####CHECK IF THIS IS A PROBLEM, seems to be not a problem
 
     --------------------------------------------------------------------
     -- INVERT CLOCK FOR MOSI UPDATES
@@ -980,6 +986,7 @@ begin
             sample_counter <= 0;
             quiet_counter  <= 0;
             bit_counter    <= 0;
+            cnv_counter    <= 0;
 
             shift_reg1     <= (others => '0');
             shift_reg2     <= (others => '0');
@@ -991,6 +998,7 @@ begin
             sample_counter <= next_sample_counter;
             quiet_counter  <= next_quiet_counter;
             bit_counter    <= next_bit_counter;
+            cnv_counter    <= next_cnv_counter;
 
             shift_reg1     <= next_shift_reg1;
             shift_reg2     <= next_shift_reg2;
@@ -1026,6 +1034,7 @@ begin
     miso2_capture,
     quiet_counter,
     bit_counter,
+    cnv_counter,
     shift_reg1,
     shift_reg2
     )
@@ -1038,6 +1047,7 @@ begin
 
         next_bit_counter   <= bit_counter;
         next_quiet_counter <= quiet_counter;
+        next_cnv_counter   <= cnv_counter;
 
         next_shift_reg1 <= shift_reg1;
         next_shift_reg2 <= shift_reg2;
@@ -1071,10 +1081,8 @@ begin
                 CNV <= '0';
 
                 spi_active <= '0';
-
-
+                
                 next_quiet_counter <= quiet_counter + 1;
-
 
                 STATE_DEBUG <= 1;
 
@@ -1084,6 +1092,8 @@ begin
             when CNV_PULSE_ST =>
 
                 CNV <= '1';
+                
+                next_cnv_counter <= cnv_counter + 1;
 
                 next_quiet_counter <= 0;
 
@@ -1098,6 +1108,10 @@ begin
 
                 CNV <= '0';
 
+                next_cnv_counter <= 0;
+
+                next_quiet_counter <= quiet_counter + 1;
+
                 spi_active <= '0';
 
                 STATE_DEBUG <= 3;
@@ -1106,6 +1120,8 @@ begin
             -- ASSERT CS
             --------------------------------------------------------
             when ASSERT_CS_ST =>
+
+                next_quiet_counter <= 0;
 
                 next_bit_counter <= 0;
 
@@ -1235,11 +1251,15 @@ begin
 
                 when CNV_PULSE_ST =>
 
-                    next_state <= POST_CNV_QUIET_ST;
+                    if cnv_counter = 2 then
+                        next_state <= POST_CNV_QUIET_ST;
+                    end if;
 
                 when POST_CNV_QUIET_ST =>
 
-                    next_state <= ASSERT_CS_ST;
+                    if quiet_counter = 2 then
+                        next_state <= ASSERT_CS_ST;
+                    end if;
 
                 when ASSERT_CS_ST =>
 

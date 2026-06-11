@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity ADC_SPI_Controller is
     Port (
         CLK       : in  std_logic;
-        RESET_N   : in  std_logic; -- add this, active-low reset
+        RESET_N   : in  std_logic; 
 
         high_imp1   : inout std_logic;
         high_imp2   : inout std_logic;
