@@ -69,7 +69,7 @@ static const char* DST_IP_STR = "192.168.1.100";
 static const uint16_t UDP_SRC_PORT = 5000;
 static const uint16_t UDP_DST_PORT = 1234;
 
-static const double SINE_FREQ_HZ = 10000.0;
+static const double SINE_FREQ_HZ = 1000.0;
 static const double SAMPLE_RATE_HZ = 2000000.0;
 
 static const int NUM_CHANNELS = 1;
@@ -102,7 +102,7 @@ static const uint64_t REPEAT_COUNT = 100000;
 //   1000 = 1 ms
 //   100  = 100 us
 //   0    = send as fast as possible
-static const uint64_t INTER_PACKET_INTERVAL_US = 0;
+static const uint64_t INTER_PACKET_INTERVAL_US = 150;
 
 // Set this to your adapter number after listing interfaces.
 static const int ADAPTER_INDEX_TO_USE = -1; // -1 means ask user
