@@ -8,9 +8,9 @@ entity spi_master_dac_ext is
         -- Extra clock cycles to wait in DONE before starting next transfer.
         -- Controls the DAC sample rate:
         --   sample_rate = f_clk / (19 + DONE_WAIT_CYCLS)
-        -- At 50 MHz for 2 MSps: 50e6 / (19 + 6) = 2.0 MSps  → DONE_WAIT_CYCLS = 6
+        -- At 50 MHz for 2 MSps: 50e6 / (19 + 5) = 2.0 MSps  → DONE_WAIT_CYCLS = 5
         -- At 50 MHz for max:    50e6 /  19        = 2.63 MSps → DONE_WAIT_CYCLS = 0
-        DONE_WAIT_CYCLS : natural := 6
+        DONE_WAIT_CYCLS : natural := 5
     );
     port (
         clk        : in  std_logic;          -- this is the external clock from the oscillator on the board
@@ -79,7 +79,7 @@ begin
                 end if;
 
             when READ =>
-                next_cs_n <= '1';
+                next_cs_n <= '0';
                 for k in 0 to Num_Channels - 1 loop
                     next_shift_reg(k) <= data_in(k * 16 + 15 downto k * 16);
                 end loop;
@@ -96,6 +96,7 @@ begin
                     next_shift_reg(k) <= shift_reg(k)(14 downto 0) & '0';
                 end loop;
                 if bit_count = 0 then
+                    next_cs_n <= '1';
                     next_state <= DONE;
                 else
                     next_bit_count <= bit_count - 1;
