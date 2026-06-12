@@ -25,7 +25,8 @@ entity ADC_SPI_Controller is
         Data2     : out std_logic_vector(23 downto 0);
 
         DataValid : out std_logic;
-        FIFO_ENABLE : in std_logic
+        FIFO_ENABLE : in std_logic;
+        RangeLEDs    : out std_logic_vector(3 downto 0)
     );
 end ADC_SPI_Controller;
 
