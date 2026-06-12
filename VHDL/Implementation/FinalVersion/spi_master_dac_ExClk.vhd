@@ -21,7 +21,8 @@ entity spi_master_dac_ext is
         read_en    : out std_logic_vector(Num_Channels - 1 downto 0);
 
         sdi        : out std_logic_vector(Num_Channels - 1 downto 0);
-        cs_n       : out std_logic
+        cs_n       : out std_logic;
+        high_imp  : inout std_logic
     );
 end entity spi_master_dac_ext;
 

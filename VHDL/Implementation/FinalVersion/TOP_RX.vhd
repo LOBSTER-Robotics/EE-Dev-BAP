@@ -26,6 +26,7 @@ entity TOP_RX_FIFO is
         high_imp1   : inout std_logic;
         high_imp2   : inout std_logic;
         high_imp3   : inout std_logic;
+        high_imp4   : inout std_logic;
 
         --------------------------------------------------------------------
         -- RGMII PHY INPUT
@@ -82,6 +83,7 @@ entity TOP_RX_FIFO is
         --------------------------------------------------------------------
         -- SPI DAC
         --------------------------------------------------------------------
+        extClk    : in  std_logic;
         sdi_dac   : out std_logic;
         cs_n_dac  : out std_logic;
         spi_clk_dac : out std_logic;
@@ -670,20 +672,20 @@ begin
     --------------------------------------------------------------------
     -- SPI master
     --------------------------------------------------------------------
-    u_spi_DAC : entity work.spi_master_dac
+    u_spi_DAC : entity work.spi_master_dac_ext
         generic map (
             Num_Channels    => C_NUM_CHANNELS,
             DONE_WAIT_CYCLS => 6
         )
         port map (
-            clk           => clk50,
+            clk           => extClk,
             rst           => reset,
             data_in       => s_small_fifo_DAC_q(0),
             fifo_empty(0) => s_small_fifo_DAC_empty(0),
             read_en(0)       => s_small_fifo_DAC_rd_en(0),
             sdi(0)        => sdi_dac,
             cs_n          => cs_n_dac,
-            spi_clk       => spi_clk_dac
+            high_imp       => high_imp4,
         );
 
     --------------------------------------------------------------------
