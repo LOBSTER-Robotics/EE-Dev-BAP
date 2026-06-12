@@ -1223,7 +1223,7 @@ begin
         next_state <= state;
         next_sample_counter <= sample_counter;
 
-        if Enable = '0' OR FIF0_ENABLE = '0' then
+        if Enable = '0' OR FIFO_ENABLE = '0' then
 
             next_state <= IDLE_ST;
             next_sample_counter <= 0;

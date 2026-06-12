@@ -33,7 +33,8 @@ entity top_dac_baseline_ext is
         rst_n       : in  std_logic;
         sdi         : out std_logic_vector(0 downto 0);
         cs_n        : out std_logic;
-        led         : out std_logic_vector(3 downto 0)
+        led         : out std_logic_vector(3 downto 0);
+		high_imp : inout std_logic
     );
 end entity top_dac_baseline_ext;
 
@@ -62,6 +63,7 @@ begin
 
     s_rst      <= not rst_n;
     cs_n       <= s_cs_n;
+	high_imp <= 'Z';
 
     --------------------------------------------------------------------
     -- Heartbeat
