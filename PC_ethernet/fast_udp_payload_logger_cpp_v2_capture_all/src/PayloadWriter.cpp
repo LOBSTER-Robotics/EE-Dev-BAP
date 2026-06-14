@@ -1,0 +1,110 @@
+#define NOMINMAX
+#include "PayloadWriter.hpp"
+
+#include <filesystem>
+#include <stdexcept>
+#include <string>
+
+PayloadWriter::PayloadWriter(const LoggerConfig& cfg) : cfg_(cfg) {
+    if (cfg_.num_channels <= 0) throw std::runtime_error("num_channels must be > 0");
+    frame_.reserve(static_cast<size_t>(cfg_.num_channels));
+}
+
+void PayloadWriter::open() {
+    std::filesystem::path p(cfg_.output_file);
+    if (!p.parent_path().empty()) std::filesystem::create_directories(p.parent_path());
+
+    std::ios::openmode mode = std::ios::out | std::ios::trunc;
+    if (cfg_.output_mode == OutputMode::RawBinary) mode |= std::ios::binary;
+
+    file_.open(cfg_.output_file, mode);
+    if (!file_) throw std::runtime_error("Could not open output file: " + cfg_.output_file);
+
+    if (cfg_.output_mode == OutputMode::Decoded24Csv) {
+        file_ << "frame";
+        for (int ch = 0; ch < cfg_.num_channels; ++ch) file_ << ",ch" << ch;
+        file_ << "\n";
+    }
+}
+
+void PayloadWriter::flush() {
+    if (file_) file_.flush();
+}
+
+void PayloadWriter::close() {
+    if (file_) {
+        file_.flush();
+        file_.close();
+    }
+}
+
+void PayloadWriter::write_payload(const uint8_t* data, size_t size) {
+    switch (cfg_.output_mode) {
+    case OutputMode::RawBinary:
+        file_.write(reinterpret_cast<const char*>(data), static_cast<std::streamsize>(size));
+        break;
+
+    case OutputMode::HexText:
+        write_hex_payload(data, size);
+        break;
+
+    case OutputMode::Decoded24Csv:
+        write_decoded24_csv(data, size);
+        break;
+    }
+
+    ++payloads_written_;
+    payload_bytes_written_ += size;
+}
+
+void PayloadWriter::write_hex_payload(const uint8_t* data, size_t size) {
+    static const char hex[] = "0123456789ABCDEF";
+    std::string line;
+    line.reserve(size * 3 + 1);
+
+    for (size_t i = 0; i < size; ++i) {
+        uint8_t b = data[i];
+        line.push_back(hex[(b >> 4) & 0xF]);
+        line.push_back(hex[b & 0xF]);
+        if (i + 1 != size) line.push_back(' ');
+    }
+
+    line.push_back('\n');
+    file_.write(line.data(), static_cast<std::streamsize>(line.size()));
+}
+
+int32_t PayloadWriter::decode24_lsb(const uint8_t* p) const {
+    uint32_t u = static_cast<uint32_t>(p[0]) |
+                 (static_cast<uint32_t>(p[1]) << 8) |
+                 (static_cast<uint32_t>(p[2]) << 16);
+
+    if (cfg_.signed_24bit && (u & 0x800000u)) u |= 0xFF000000u;
+    return static_cast<int32_t>(u);
+}
+
+void PayloadWriter::write_decoded24_csv(const uint8_t* data, size_t size) {
+    std::vector<uint8_t> bytes;
+    bytes.reserve(leftover_.size() + size);
+    bytes.insert(bytes.end(), leftover_.begin(), leftover_.end());
+    bytes.insert(bytes.end(), data, data + size);
+
+    size_t i = 0;
+    while (i + 2 < bytes.size()) {
+        int32_t sample = decode24_lsb(&bytes[i]);
+        i += 3;
+
+        frame_.push_back(sample);
+
+        if (frame_.size() == static_cast<size_t>(cfg_.num_channels)) {
+            file_ << frame_index_;
+            for (int32_t v : frame_) file_ << "," << v;
+            file_ << "\n";
+
+            frame_.clear();
+            ++frame_index_;
+            ++decoded_csv_rows_;
+        }
+    }
+
+    leftover_.assign(bytes.begin() + static_cast<std::ptrdiff_t>(i), bytes.end());
+}
