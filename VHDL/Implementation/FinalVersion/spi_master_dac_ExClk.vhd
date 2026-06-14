@@ -6,14 +6,13 @@ entity spi_master_dac_ext is
     generic (
         Num_Channels     : positive := 1;
         -- Extra clock cycles to wait in DONE before starting next transfer.
-        -- Controls the DAC sample rate:
-        --   sample_rate = f_clk / (19 + DONE_WAIT_CYCLS)
-        -- At 50 MHz for 2 MSps: 50e6 / (19 + 5) = 2.0 MSps  → DONE_WAIT_CYCLS = 5
-        -- At 50 MHz for max:    50e6 /  19        = 2.63 MSps → DONE_WAIT_CYCLS = 0
-        DONE_WAIT_CYCLS : natural := 5
+        -- Transfer period = DONE(DONE_WAIT_CYCLS+1) + READ(1) + SETUP(1) + TRANSFER(16)
+        --                 = DONE_WAIT_CYCLS + 19
+        -- At 50 MHz for 2 MSps: 50e6 / 25 = 2.0 MSps → DONE_WAIT_CYCLS = 6
+        DONE_WAIT_CYCLS : natural := 6
     );
     port (
-        clk        : in  std_logic;          -- this is the external clock from the oscillator on the board
+        clk        : in  std_logic;          -- external oscillator clock
         rst        : in  std_logic;
 
         data_in    : in  std_logic_vector(Num_Channels * 16 - 1 downto 0);
@@ -22,7 +21,7 @@ entity spi_master_dac_ext is
 
         sdi        : out std_logic_vector(Num_Channels - 1 downto 0);
         cs_n       : out std_logic;
-        high_imp  : inout std_logic
+        high_imp   : inout std_logic
     );
 end entity spi_master_dac_ext;
 
@@ -34,13 +33,13 @@ architecture rtl of spi_master_dac_ext is
 
     constant ALL_NOT_EMPTY : std_logic_vector(Num_Channels - 1 downto 0) := (others => '0');
 
-    signal state       : state_t                                     := IDLE;
-    signal shift_reg   : data_array_t                                := (others => (others => '0'));
-    signal bit_count   : unsigned(3 downto 0)                        := (others => '0');
-    signal wait_count  : natural range 0 to DONE_WAIT_CYCLS       := 0;
-    signal cs_n_reg    : std_logic                                   := '1';
-    signal read_en_reg : std_logic_vector(Num_Channels - 1 downto 0) := (others => '0');
-    signal sdi_reg     : std_logic_vector(Num_Channels - 1 downto 0) := (others => '0');
+    signal state       : state_t                                      := IDLE;
+    signal shift_reg   : data_array_t                                 := (others => (others => '0'));
+    signal bit_count   : unsigned(3 downto 0)                         := (others => '0');
+    signal wait_count  : natural range 0 to DONE_WAIT_CYCLS           := 0;
+    signal cs_n_reg    : std_logic                                    := '1';
+    signal read_en_reg : std_logic_vector(Num_Channels - 1 downto 0)  := (others => '0');
+    signal sdi_reg     : std_logic_vector(Num_Channels - 1 downto 0)  := (others => '0');
 
     signal next_state      : state_t;
     signal next_shift_reg  : data_array_t;
@@ -96,7 +95,7 @@ begin
                     next_shift_reg(k) <= shift_reg(k)(14 downto 0) & '0';
                 end loop;
                 if bit_count = 0 then
-                    next_cs_n <= '1';
+                    next_cs_n       <= '1';
                     next_state <= DONE;
                 else
                     next_bit_count <= bit_count - 1;
@@ -104,7 +103,6 @@ begin
 
             when DONE =>
                 next_cs_n <= '1';
-                -- Rate limiter: hold in DONE for DONE_WAIT_CYCLS extra cycles
                 if wait_count < DONE_WAIT_CYCLS then
                     next_wait_count <= wait_count + 1;
                 else
@@ -151,7 +149,7 @@ begin
         if falling_edge(clk) then
             if rst = '1' then
                 sdi_reg <= (others => '0');
-            elsif cs_n_reg = '0' then
+            elsif state = TRANSFER then
                 for k in 0 to Num_Channels - 1 loop
                     sdi_reg(k) <= shift_reg(k)(15);
                 end loop;
