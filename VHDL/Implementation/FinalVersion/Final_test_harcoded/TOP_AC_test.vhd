@@ -105,7 +105,7 @@ architecture rtl of top_dac_ac_test is
 
 begin
 
-    s_rst <= not rst_n;
+    s_rst <= rst_n;
     cs_n  <= s_cs_n;
 
     -- Heartbeat

@@ -11,7 +11,6 @@ use ieee.numeric_std.all;
 
 entity top_dc_test is
     port (
-        clk      : in    std_logic;
         extClk   : in    std_logic;
         rst_n    : in    std_logic;
         sdi      : out   std_logic_vector(0 downto 0);
@@ -34,9 +33,9 @@ begin
     s_rst <= not rst_n;
     cs_n  <= s_cs_n;
 
-    process (clk)
+    process (extClk)
     begin
-        if rising_edge(clk) then
+        if rising_edge(extClk) then
             if s_rst = '1' then
                 s_heartbeat <= (others => '0');
                 s_ramp      <= (others => '0');

@@ -86,20 +86,18 @@ architecture rtl of top_1khz_test is
     signal s_scaled   : signed(23 downto 0);
     signal s_dac_data : std_logic_vector(15 downto 0);
 
-    signal s_rst       : std_logic;
     signal s_cs_n      : std_logic;
     signal s_read_en   : std_logic_vector(0 downto 0);
     signal s_heartbeat : unsigned(24 downto 0) := (others => '0');
 
 begin
 
-    s_rst <= not rst_n;
     cs_n  <= s_cs_n;
 
     process (clk)
     begin
         if rising_edge(clk) then
-            if s_rst = '1' then
+            if rst_n = '1' then
                 s_heartbeat <= (others => '0');
                 s_phase     <= (others => '0');
             else
@@ -111,7 +109,7 @@ begin
 
     led(0) <= not s_heartbeat(24);
     led(1) <= s_cs_n;
-    led(2) <= s_rst;
+    led(2) <= rst_n;
     led(3) <= '1';
 
     -- LUT indexed on top 8 bits of 20-bit accumulator
@@ -119,10 +117,18 @@ begin
 
     -- Amplitude: ×60 >> 6 → ±30 720 codes → ±1.172 V at ADC
     s_lut_cent <= signed('0' & s_lut_val) - to_signed(32768, 17);
-    s_scaled   <= resize(s_lut_cent, 24) * to_signed(60, 8);
+
+    s_scaled <= resize(
+                    resize(s_lut_cent, 24) * to_signed(60, 8),
+                    24
+                );
+
     s_dac_data <= std_logic_vector(
                       to_unsigned(
-                          to_integer(s_scaled(23 downto 6)) + 32768, 16));
+                          to_integer(s_scaled(23 downto 6)) + 32768,
+                          16
+                      )
+                  );
 
     u_spi : entity work.spi_master_dac_ext
         generic map (
@@ -131,7 +137,7 @@ begin
         )
         port map (
             clk           => clk,
-            rst           => s_rst,
+            rst           => rst_n,
             data_in       => s_dac_data,
             fifo_empty(0) => '0',
             read_en       => s_read_en,

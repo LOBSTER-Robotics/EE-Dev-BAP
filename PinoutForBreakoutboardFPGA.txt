@@ -5,7 +5,7 @@ IO 36 *CS B11
 IO 33 SDI1 D6
 IO 37 CLK B6
 ADC:
-IO 35 CNV D7
+IO 35 CNV D7 x3 10
 IO 38 !BSY E9 high impeadance
 IO 31 !SCK B9 high impeadance
 IO 32 !SDI E6 high impeadance
@@ -13,11 +13,11 @@ IO 32 !SDI E6 high impeadance
 Bank 1
 1.8V
 ADC:
-IO 29 SDO0 B19
-IO 30 CS B12
+IO 29 SDO0 B19 x3 4
+IO 30 CS B12 x3 5
 
 ADC new:
-IO 25 BSY C17
-IO 10 SCK D11
-IO 28 SDI A18
+IO 25 BSY C17 x4 35
+IO 10 SCK D11 x4 13
+IO 28 SDI A18 x4 39
 

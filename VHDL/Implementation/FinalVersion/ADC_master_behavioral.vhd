@@ -57,19 +57,12 @@ architecture Behavioral of ADC_SPI_Controller is
     signal data1_int : std_logic_vector(23 downto 0);
     signal data2_int : std_logic_vector(23 downto 0);
     signal dv_int    : std_logic;
-    signal clk_50k    : std_logic;
     -- signal Data1     : std_logic_vector(23 downto 0);
     -- signal Data2     : std_logic_vector(23 downto 0);
 	 
 	 signal div_counter : unsigned(10 downto 0) := (others => '0');
 
 begin
-
-    Clock_block : entity work.PLL1
-    port map (
-        CLKI => CLK,
-        CLKOP => clk_50k
-    );
 
 
     --clk_50k <= CLK;
@@ -91,7 +84,7 @@ begin
     CONFIG_BLOCK : entity work.ADC_SPI_Config
     port map (
 
-        CLK => clk_50k,
+        CLK => CLK,
 
         Enable => config_enable,
 
@@ -111,7 +104,7 @@ begin
     ACQ_BLOCK : entity work.ADC_Acquisition_Engine
     port map (
 
-        CLK => clk_50k,
+        CLK => CLK,
         RESET_N => RESET_N,
 
         Enable => acq_enable,
@@ -162,21 +155,21 @@ begin
     --------------------------------------------------------------------
     -- STATE REGISTER
     --------------------------------------------------------------------
-   process(clk_50k, RESET_N)
+   process(CLK, RESET_N)
     begin
         if RESET_N = '1' then
             state <= RESET_ST;
             wait_counter <= 0;
 
-        elsif rising_edge(clk_50k) then
+        elsif rising_edge(CLK) then
             state <= next_state;
             wait_counter <= next_wait_counter;
         end if;
     end process;
 
-        process(clk_50k)
+        process(CLK)
     begin
-        if rising_edge(clk_50k) then
+        if rising_edge(CLK) then
             if dv_int = '1' then
 
                 if signed(data1_int) < to_signed(-2097152, 24) then
@@ -551,7 +544,7 @@ begin
             --------------------------------------------------------
             when WAIT_RESET_ST =>
 
-                if wait_reset_counter < 7 then
+                if wait_reset_counter < 79999 then
                     --79999
                     next_wait_reset_counter <=
                         wait_reset_counter + 1;
@@ -878,7 +871,7 @@ begin
                 --------------------------------------------------------
                 when WAIT_RESET_ST =>
 
-                    if wait_reset_counter = 7 then
+                    if wait_reset_counter = 79999 then
                         --79999
                         next_state <= LOAD_CMD_ST;
 

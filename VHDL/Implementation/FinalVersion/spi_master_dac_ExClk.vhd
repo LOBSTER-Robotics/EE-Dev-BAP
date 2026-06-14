@@ -56,6 +56,7 @@ begin
 
     cs_n    <= cs_n_reg;
     read_en <= read_en_reg;
+    high_imp <= 'Z';
 
 
     p_comb : process(state, fifo_empty, data_in, shift_reg, bit_count,
