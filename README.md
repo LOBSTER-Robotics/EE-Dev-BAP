@@ -1,5 +1,5 @@
-# EE-Dev-BAP
-Bachelor Graduation Project 2026 - Data Aqusition System for Underwater Communication
+# EE-Dev-DAQ
+Data Aqusition System for Underwater Communication
 
 # Project Branching Strategy
 

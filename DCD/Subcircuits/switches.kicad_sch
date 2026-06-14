@@ -1279,7 +1279,7 @@
 		(uuid "87165473-b503-4685-ab79-42f8c008e8b5")
 	)
 	(hierarchical_label "VRR"
-		(shape output)
+		(shape input)
 		(at 34.29 113.03 180)
 		(effects
 			(font

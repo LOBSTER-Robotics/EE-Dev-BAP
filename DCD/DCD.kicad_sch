@@ -1652,6 +1652,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 66.04) (xy 87.63 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c9d4866-ce26-465f-b7ca-cd0881d02dac")
+	)
+	(wire
+		(pts
 			(xy 58.42 72.39) (xy 58.42 80.01)
 		)
 		(stroke
@@ -3553,6 +3563,16 @@
 		(pin "DAC_Ext" output
 			(at 99.06 72.39 270)
 			(uuid "8ec49a27-90fa-4702-bdb7-ae8065fbe749")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VRR" input
+			(at 87.63 66.04 180)
+			(uuid "cb652b92-f852-417f-8f3b-eadc0c3f24e7")
 			(effects
 				(font
 					(size 1.27 1.27)

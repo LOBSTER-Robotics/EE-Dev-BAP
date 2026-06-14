@@ -1329,7 +1329,7 @@
 		)
 		(uuid "0ec6c5d3-ddf8-4492-ab0e-bef85acb2174")
 	)
-	(text_box "Current consumption total <THIS IS OUTDATED AND DOES NOT INCLUDE THE DIFFERENTIAL MODE AMPLIFIER>:\n(VDD5V_I + VIO_I + VDD1.8V_I)*8 + VRef_QI + VRef_I_ADC*8 + VRef_I_DAC*16 + VRef_IQ_Buf + VDD_DAC_I*16 + VRef_IQ_Opamp\n(11.2 + 0.6 + 3.2)*8 + 0.95 + 0 + 1*16 + 0.9 + 0.005*16 + 0.9 = 138.83 [mA]\n\n\nPower Dissipations with 6V Vin:\n @16ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 0.9 + 0.9) = 2.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*(11.2*8 + 1*16) = 105.68 [mW]\n  VDD3.3V: (6 - 3.3)*((0.6 + 3.2)*8 + 0.005*16) = 82.296 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2)*8 = 45.6 [mW]\n\n@2ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 0.9 + 0.9) = 2.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*(11.2 + 1*2) = 13.2 [mW]\n  VDD3.3V: (6 - 3.3)*(0.6 + 3.2 + 0.005*2) = 10.287 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2) = 5.7 [mW]"
+	(text_box "Current consumption total:\n(VDD5V_I + VIO_I + VDD1.8V_I)*8 + VRef_QI + VRef_I_ADC*8 + VRef_I_DAC*16 + VRef_IQ_Buf + VDD_DAC_I*16 + VRef_IQ_Opamp\n(11.2 + 0.6 + 3.2)*8 + 0.95 + 0 + 1*16 + 0.9 + 0.005*16 + 0.9 = 138.83 [mA]\n\n\nPower Dissipations with 6V Vin:\n @16ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 0.9 + 0.9) = 2.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*(11.2*8 + 1*16) = 105.68 [mW]\n  VDD3.3V: (6 - 3.3)*((0.6 + 3.2)*8 + 0.005*16) = 82.296 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2)*8 = 45.6 [mW]\n\n@2ch:\n  VRef:    (6 - 5)*(0.95 + 0 + 0.9 + 0.9) = 2.75 [mW] (Will require 2 sources)\n  VDD5V:   (6 - 5)*(11.2 + 1*2) = 13.2 [mW]\n  VDD3.3V: (6 - 3.3)*(0.6 + 3.2 + 0.005*2) = 10.287 [mW]\n  VDD1.8V: (3.3 - 1.8)*(0.6 + 3.2) = 5.7 [mW]"
 		(exclude_from_sim no)
 		(at 17.78 154.94 0)
 		(size 134.62 38.1)

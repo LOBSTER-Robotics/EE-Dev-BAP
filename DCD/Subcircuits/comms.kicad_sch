@@ -830,74 +830,104 @@
 		)
 	)
 	(junction
-		(at 45.72 85.09)
+		(at 38.1 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "058eb78c-411e-448f-8ecd-7085619ecc09")
 	)
 	(junction
-		(at 73.66 82.55)
+		(at 66.04 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "31cc666c-3ee6-414c-96e4-e963bfbd1889")
 	)
 	(junction
-		(at 78.74 41.91)
+		(at 69.85 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "40ea6de5-703c-4bcb-89cd-47a30b25401b")
+		(uuid "408b69e6-6393-442c-be43-2222afcabf04")
 	)
 	(junction
-		(at 63.5 99.06)
+		(at 69.85 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "462f26f5-1325-4cf3-bac2-060772069348")
+	)
+	(junction
+		(at 55.88 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4cba0d52-fa0f-40e8-af80-d159c1b8857e")
 	)
 	(junction
-		(at 45.72 80.01)
+		(at 38.1 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ebf8788-d8bf-4a12-b658-f6762434dae2")
 	)
 	(junction
-		(at 73.66 99.06)
+		(at 66.04 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "51e866a3-d268-47fb-ae08-0afad7902e3c")
 	)
 	(junction
-		(at 68.58 99.06)
+		(at 60.96 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c85947f-873b-4994-b019-236fa66a5ea4")
 	)
 	(junction
-		(at 78.74 87.63)
+		(at 71.12 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a4f32921-0d0f-4bad-9610-02e4aea937b4")
 	)
 	(junction
-		(at 78.74 99.06)
+		(at 80.01 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aa79b668-0e78-4703-9c90-a95729ef8ba5")
+	)
+	(junction
+		(at 71.12 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c193c95e-9f49-43a6-8eb9-14e51f7ccd8e")
 	)
 	(junction
-		(at 68.58 77.47)
+		(at 69.85 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8b32daf-0ac3-4095-b1cc-f467a6d2f497")
+	)
+	(junction
+		(at 74.93 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cec50b06-6e2a-489f-9600-d07ee4e47427")
+	)
+	(junction
+		(at 74.93 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "de464ba7-f5ab-4eec-a8ec-e36553c1dc1a")
+	)
+	(junction
+		(at 60.96 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e09bfb12-34ef-4af3-89ef-50777c32d995")
 	)
 	(junction
-		(at 81.28 80.01)
+		(at 73.66 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "faa28d36-295c-4fc1-bb75-50fe6eaf17a2")
 	)
 	(wire
 		(pts
-			(xy 60.96 59.69) (xy 83.82 59.69)
+			(xy 53.34 80.01) (xy 76.2 80.01)
 		)
 		(stroke
 			(width 0)
@@ -907,7 +937,17 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 99.06) (xy 81.28 80.01)
+			(xy 53.34 35.56) (xy 80.01 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "003be14d-efaa-4abe-aed5-d9d0cfa08a85")
+	)
+	(wire
+		(pts
+			(xy 73.66 119.38) (xy 73.66 100.33)
 		)
 		(stroke
 			(width 0)
@@ -917,7 +957,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 52.07) (xy 114.3 52.07)
+			(xy 43.18 72.39) (xy 106.68 72.39)
 		)
 		(stroke
 			(width 0)
@@ -927,7 +967,17 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 46.99) (xy 114.3 46.99)
+			(xy 80.01 48.26) (xy 74.93 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17773232-c00f-4a46-9e97-da1d70017d07")
+	)
+	(wire
+		(pts
+			(xy 43.18 67.31) (xy 106.68 67.31)
 		)
 		(stroke
 			(width 0)
@@ -937,7 +987,17 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 77.47) (xy 45.72 80.01)
+			(xy 80.01 35.56) (xy 80.01 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e697daf-af89-46a0-aef7-6e36fb7e40f7")
+	)
+	(wire
+		(pts
+			(xy 38.1 97.79) (xy 38.1 100.33)
 		)
 		(stroke
 			(width 0)
@@ -947,7 +1007,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 99.06) (xy 63.5 99.06)
+			(xy 38.1 119.38) (xy 55.88 119.38)
 		)
 		(stroke
 			(width 0)
@@ -957,7 +1017,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 85.09) (xy 63.5 99.06)
+			(xy 55.88 105.41) (xy 55.88 119.38)
 		)
 		(stroke
 			(width 0)
@@ -967,7 +1027,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 49.53) (xy 109.22 57.15)
+			(xy 101.6 69.85) (xy 101.6 77.47)
 		)
 		(stroke
 			(width 0)
@@ -977,7 +1037,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 52.07) (xy 160.02 52.07)
+			(xy 147.32 72.39) (xy 152.4 72.39)
 		)
 		(stroke
 			(width 0)
@@ -987,7 +1047,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 85.09) (xy 45.72 99.06)
+			(xy 38.1 105.41) (xy 38.1 119.38)
 		)
 		(stroke
 			(width 0)
@@ -997,7 +1057,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 57.15) (xy 109.22 57.15)
+			(xy 69.85 30.48) (xy 105.41 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f85a198-f64a-4655-9a92-1c1b4a23181c")
+	)
+	(wire
+		(pts
+			(xy 106.68 77.47) (xy 101.6 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1007,7 +1077,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 39.37) (xy 83.82 39.37)
+			(xy 53.34 59.69) (xy 76.2 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1017,7 +1087,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 36.83) (xy 109.22 36.83)
+			(xy 106.68 57.15) (xy 101.6 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1027,17 +1097,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 41.91) (xy 83.82 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4611b73a-af60-4218-80ba-39f07e6db6ab")
-	)
-	(wire
-		(pts
-			(xy 45.72 80.01) (xy 45.72 85.09)
+			(xy 38.1 100.33) (xy 38.1 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1047,7 +1107,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 59.69) (xy 55.88 59.69)
+			(xy 43.18 80.01) (xy 48.26 80.01)
 		)
 		(stroke
 			(width 0)
@@ -1057,7 +1117,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 87.63) (xy 78.74 87.63)
+			(xy 35.56 107.95) (xy 71.12 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1067,7 +1127,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 44.45) (xy 114.3 44.45)
+			(xy 43.18 64.77) (xy 106.68 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1077,7 +1137,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 69.85) (xy 83.82 69.85)
+			(xy 43.18 90.17) (xy 76.2 90.17)
 		)
 		(stroke
 			(width 0)
@@ -1087,7 +1147,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 64.77) (xy 83.82 64.77)
+			(xy 43.18 85.09) (xy 76.2 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1097,7 +1157,17 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 82.55) (xy 73.66 82.55)
+			(xy 69.85 48.26) (xy 74.93 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58494e45-7717-49de-9277-05c2f4f56bfd")
+	)
+	(wire
+		(pts
+			(xy 53.34 102.87) (xy 66.04 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1107,7 +1177,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 83.82 82.55)
+			(xy 66.04 102.87) (xy 76.2 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1117,7 +1187,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 77.47) (xy 68.58 90.17)
+			(xy 60.96 97.79) (xy 60.96 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1127,7 +1197,17 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 29.21) (xy 83.82 29.21)
+			(xy 69.85 62.23) (xy 76.2 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65b881e0-77d9-4195-a1cc-d0d583990c69")
+	)
+	(wire
+		(pts
+			(xy 43.18 30.48) (xy 60.96 30.48)
 		)
 		(stroke
 			(width 0)
@@ -1137,7 +1217,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 57.15) (xy 66.04 57.15)
+			(xy 43.18 77.47) (xy 58.42 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1147,7 +1227,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 36.83) (xy 109.22 31.75)
+			(xy 101.6 57.15) (xy 101.6 52.07)
 		)
 		(stroke
 			(width 0)
@@ -1157,27 +1237,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 31.75) (xy 83.82 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c67c38a-c1b0-463f-a0fb-a698fb11ce90")
-	)
-	(wire
-		(pts
-			(xy 71.12 34.29) (xy 83.82 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d88b716-ca70-48bf-9302-1d19cb6d39ee")
-	)
-	(wire
-		(pts
-			(xy 73.66 99.06) (xy 78.74 99.06)
+			(xy 66.04 119.38) (xy 71.12 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1187,7 +1247,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 54.61) (xy 83.82 54.61)
+			(xy 43.18 74.93) (xy 76.2 74.93)
 		)
 		(stroke
 			(width 0)
@@ -1197,7 +1257,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 97.79) (xy 73.66 99.06)
+			(xy 66.04 118.11) (xy 66.04 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1207,7 +1267,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 82.55) (xy 43.18 87.63)
+			(xy 35.56 102.87) (xy 35.56 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1217,7 +1277,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 99.06) (xy 68.58 99.06)
+			(xy 55.88 119.38) (xy 60.96 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1227,7 +1287,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 99.06) (xy 81.28 99.06)
+			(xy 71.12 119.38) (xy 73.66 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1237,7 +1297,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 97.79) (xy 68.58 99.06)
+			(xy 60.96 118.11) (xy 60.96 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1247,7 +1307,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 34.29) (xy 66.04 34.29)
+			(xy 43.18 35.56) (xy 45.72 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1257,7 +1317,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 87.63) (xy 78.74 90.17)
+			(xy 71.12 107.95) (xy 71.12 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1267,7 +1327,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 39.37) (xy 55.88 39.37)
+			(xy 43.18 59.69) (xy 48.26 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1277,7 +1337,27 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 97.79) (xy 78.74 99.06)
+			(xy 60.96 33.02) (xy 74.93 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8adb742f-64eb-429f-a440-e6a9149cf2f6")
+	)
+	(wire
+		(pts
+			(xy 68.58 30.48) (xy 69.85 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b38ae3e-1969-4bf8-ae78-27eedb47ae1f")
+	)
+	(wire
+		(pts
+			(xy 71.12 118.11) (xy 71.12 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1287,7 +1367,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 57.15) (xy 83.82 57.15)
+			(xy 63.5 77.47) (xy 76.2 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1297,7 +1377,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 46.99) (xy 160.02 46.99)
+			(xy 147.32 67.31) (xy 152.4 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1307,7 +1387,17 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 73.66 90.17)
+			(xy 69.85 45.72) (xy 69.85 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "975321c7-bd8a-450a-a396-73f88183b7d6")
+	)
+	(wire
+		(pts
+			(xy 66.04 102.87) (xy 66.04 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1317,7 +1407,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 99.06) (xy 73.66 99.06)
+			(xy 60.96 119.38) (xy 66.04 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1327,7 +1417,17 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 77.47) (xy 76.2 77.47)
+			(xy 69.85 30.48) (xy 69.85 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abe389a6-d0d9-4611-b032-8ef1c4c80849")
+	)
+	(wire
+		(pts
+			(xy 60.96 97.79) (xy 68.58 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1337,7 +1437,17 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 31.75) (xy 76.2 31.75)
+			(xy 69.85 48.26) (xy 69.85 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b101da0a-a182-46d6-b009-acec4822a8a8")
+	)
+	(wire
+		(pts
+			(xy 43.18 33.02) (xy 53.34 33.02)
 		)
 		(stroke
 			(width 0)
@@ -1347,7 +1457,17 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 77.47) (xy 68.58 77.47)
+			(xy 74.93 33.02) (xy 105.41 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b40dc2bd-e565-4546-97b2-1cfbb6ff27b7")
+	)
+	(wire
+		(pts
+			(xy 53.34 97.79) (xy 60.96 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1357,7 +1477,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 77.47) (xy 45.72 77.47)
+			(xy 40.64 97.79) (xy 38.1 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1367,7 +1487,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 44.45) (xy 160.02 44.45)
+			(xy 147.32 64.77) (xy 152.4 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1377,7 +1497,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 77.47) (xy 83.82 77.47)
+			(xy 73.66 97.79) (xy 76.2 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1387,7 +1507,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 80.01) (xy 81.28 80.01)
+			(xy 53.34 100.33) (xy 73.66 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1397,7 +1517,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 41.91) (xy 78.74 41.91)
+			(xy 43.18 62.23) (xy 69.85 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1407,7 +1527,17 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 87.63) (xy 83.82 87.63)
+			(xy 80.01 45.72) (xy 80.01 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cba72edf-88dd-458c-abbf-43fc751d0410")
+	)
+	(wire
+		(pts
+			(xy 71.12 107.95) (xy 76.2 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1417,7 +1547,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 49.53) (xy 109.22 49.53)
+			(xy 69.85 69.85) (xy 101.6 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1427,7 +1557,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 72.39) (xy 83.82 72.39)
+			(xy 43.18 92.71) (xy 76.2 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1437,7 +1567,17 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 80.01) (xy 83.82 80.01)
+			(xy 80.01 35.56) (xy 105.41 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e27219bf-0295-417b-8dad-f5fc1b472bd7")
+	)
+	(wire
+		(pts
+			(xy 73.66 100.33) (xy 76.2 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1447,7 +1587,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 85.09) (xy 63.5 85.09)
+			(xy 53.34 105.41) (xy 55.88 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1457,7 +1597,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 26.67) (xy 83.82 26.67)
+			(xy 43.18 27.94) (xy 105.41 27.94)
 		)
 		(stroke
 			(width 0)
@@ -1467,7 +1607,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 82.55) (xy 43.18 82.55)
+			(xy 40.64 102.87) (xy 35.56 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1477,7 +1617,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 41.91) (xy 78.74 49.53)
+			(xy 69.85 62.23) (xy 69.85 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1487,7 +1627,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 80.01) (xy 48.26 80.01)
+			(xy 38.1 100.33) (xy 40.64 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1497,7 +1637,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 85.09) (xy 48.26 85.09)
+			(xy 38.1 105.41) (xy 40.64 105.41)
 		)
 		(stroke
 			(width 0)
@@ -1507,7 +1647,27 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 67.31) (xy 83.82 67.31)
+			(xy 74.93 33.02) (xy 74.93 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb667f0a-90b2-490f-9227-b17ddfd8f33b")
+	)
+	(wire
+		(pts
+			(xy 74.93 48.26) (xy 74.93 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdc50de2-ef6e-4db7-9ec6-349581c9608f")
+	)
+	(wire
+		(pts
+			(xy 43.18 87.63) (xy 76.2 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1517,7 +1677,7 @@
 	)
 	(hierarchical_label "AGND"
 		(shape output)
-		(at 83.82 67.31 0)
+		(at 76.2 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1528,7 +1688,7 @@
 	)
 	(hierarchical_label "AGND"
 		(shape output)
-		(at 83.82 80.01 0)
+		(at 76.2 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1539,7 +1699,7 @@
 	)
 	(hierarchical_label "SDI1"
 		(shape output)
-		(at 83.82 39.37 0)
+		(at 76.2 59.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1550,7 +1710,7 @@
 	)
 	(hierarchical_label "+Vin"
 		(shape output)
-		(at 83.82 59.69 0)
+		(at 76.2 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1561,7 +1721,7 @@
 	)
 	(hierarchical_label "-Vin"
 		(shape output)
-		(at 83.82 57.15 0)
+		(at 76.2 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1572,7 +1732,7 @@
 	)
 	(hierarchical_label "BSY"
 		(shape input)
-		(at 83.82 54.61 0)
+		(at 76.2 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1583,7 +1743,7 @@
 	)
 	(hierarchical_label "SCK"
 		(shape output)
-		(at 83.82 31.75 0)
+		(at 105.41 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1594,7 +1754,7 @@
 	)
 	(hierarchical_label "*CS1"
 		(shape output)
-		(at 160.02 46.99 0)
+		(at 152.4 67.31 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1605,7 +1765,7 @@
 	)
 	(hierarchical_label "*CS2"
 		(shape output)
-		(at 83.82 82.55 0)
+		(at 76.2 102.87 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1616,7 +1776,7 @@
 	)
 	(hierarchical_label "7V"
 		(shape input)
-		(at 109.22 31.75 90)
+		(at 101.6 52.07 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1627,7 +1787,7 @@
 	)
 	(hierarchical_label "CLK1"
 		(shape output)
-		(at 160.02 52.07 0)
+		(at 152.4 72.39 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1638,7 +1798,7 @@
 	)
 	(hierarchical_label "VRef"
 		(shape input)
-		(at 83.82 64.77 0)
+		(at 76.2 85.09 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1649,7 +1809,7 @@
 	)
 	(hierarchical_label "DAC_Ext"
 		(shape input)
-		(at 83.82 69.85 0)
+		(at 76.2 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1660,7 +1820,7 @@
 	)
 	(hierarchical_label "~{CS}"
 		(shape output)
-		(at 83.82 29.21 0)
+		(at 105.41 30.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1671,7 +1831,7 @@
 	)
 	(hierarchical_label "CNV"
 		(shape output)
-		(at 160.02 44.45 0)
+		(at 152.4 64.77 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1682,7 +1842,7 @@
 	)
 	(hierarchical_label "CLK2"
 		(shape output)
-		(at 83.82 87.63 0)
+		(at 76.2 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1693,7 +1853,7 @@
 	)
 	(hierarchical_label "Ext"
 		(shape bidirectional)
-		(at 83.82 72.39 0)
+		(at 76.2 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1704,7 +1864,7 @@
 	)
 	(hierarchical_label "SDI"
 		(shape output)
-		(at 83.82 34.29 0)
+		(at 105.41 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1715,7 +1875,7 @@
 	)
 	(hierarchical_label "SDO0"
 		(shape input)
-		(at 83.82 26.67 0)
+		(at 105.41 27.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1726,7 +1886,7 @@
 	)
 	(hierarchical_label "DGND"
 		(shape output)
-		(at 83.82 41.91 0)
+		(at 76.2 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1737,7 +1897,7 @@
 	)
 	(hierarchical_label "SDI2"
 		(shape output)
-		(at 83.82 77.47 0)
+		(at 76.2 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1748,7 +1908,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 45.72 29.21 0)
+		(at 38.1 30.48 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1757,7 +1917,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f40b1bf")
 		(property "Reference" "J1"
-			(at 45.0088 29.8196 0)
+			(at 37.3888 31.0896 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1766,7 +1926,7 @@
 			)
 		)
 		(property "Value" "UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.0088 32.131 0)
+			(at 37.3888 33.401 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1776,7 +1936,7 @@
 			)
 		)
 		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.72 29.21 0)
+			(at 38.1 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1785,7 +1945,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 29.21 0)
+			(at 38.1 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1794,7 +1954,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 29.21 0)
+			(at 38.1 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1802,7 +1962,7 @@
 			)
 		)
 		(property "Link" "https://nl.mouser.com/ProductDetail/Samtec/UMPS-04-035-G-VT-SM-WT-K/?qs=l7cgNqFNU1gbv7kovUOslQ%3D%3D"
-			(at 96.52 55.88 0)
+			(at 88.9 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1811,7 +1971,7 @@
 			)
 		)
 		(property "Order number" "200-UMPS43.5GVTSMWTK"
-			(at 96.52 55.88 0)
+			(at 88.9 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1820,7 +1980,7 @@
 			)
 		)
 		(property "Part number" "UMPS-04-03.5-G-VT-SM-WT-K"
-			(at 96.52 55.88 0)
+			(at 88.9 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1829,7 +1989,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 96.52 55.88 0)
+			(at 88.9 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1860,7 +2020,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 45.72 41.91 0)
+		(at 38.1 62.23 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1869,7 +2029,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005fef483c")
 		(property "Reference" "J2"
-			(at 45.0088 42.5196 0)
+			(at 37.3888 62.8396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1878,7 +2038,7 @@
 			)
 		)
 		(property "Value" "UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.0088 44.831 0)
+			(at 37.3888 65.151 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1888,7 +2048,7 @@
 			)
 		)
 		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.72 41.91 0)
+			(at 38.1 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1897,7 +2057,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 41.91 0)
+			(at 38.1 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1906,7 +2066,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 41.91 0)
+			(at 38.1 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1914,7 +2074,7 @@
 			)
 		)
 		(property "Link" "https://nl.mouser.com/ProductDetail/Samtec/UMPS-04-035-G-VT-SM-WT-K/?qs=l7cgNqFNU1gbv7kovUOslQ%3D%3D"
-			(at 96.52 81.28 0)
+			(at 88.9 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1923,7 +2083,7 @@
 			)
 		)
 		(property "Order number" "200-UMPS43.5GVTSMWTK"
-			(at 96.52 81.28 0)
+			(at 88.9 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1932,7 +2092,7 @@
 			)
 		)
 		(property "Part number" "UMPS-04-03.5-G-VT-SM-WT-K"
-			(at 96.52 81.28 0)
+			(at 88.9 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1941,7 +2101,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 96.52 81.28 0)
+			(at 88.9 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1972,7 +2132,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 45.72 54.61 0)
+		(at 38.1 74.93 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1981,7 +2141,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005fef483d")
 		(property "Reference" "J3"
-			(at 45.0088 55.2196 0)
+			(at 37.3888 75.5396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1990,7 +2150,7 @@
 			)
 		)
 		(property "Value" "UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.0088 57.531 0)
+			(at 37.3888 77.851 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2000,7 +2160,7 @@
 			)
 		)
 		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.72 54.61 0)
+			(at 38.1 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2009,7 +2169,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 54.61 0)
+			(at 38.1 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2018,7 +2178,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 54.61 0)
+			(at 38.1 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2026,7 +2186,7 @@
 			)
 		)
 		(property "Link" "https://nl.mouser.com/ProductDetail/Samtec/UMPS-04-035-G-VT-SM-WT-K/?qs=l7cgNqFNU1gbv7kovUOslQ%3D%3D"
-			(at 96.52 106.68 0)
+			(at 88.9 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2035,7 +2195,7 @@
 			)
 		)
 		(property "Order number" "200-UMPS43.5GVTSMWTK"
-			(at 96.52 106.68 0)
+			(at 88.9 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2044,7 +2204,7 @@
 			)
 		)
 		(property "Part number" "UMPS-04-03.5-G-VT-SM-WT-K"
-			(at 96.52 106.68 0)
+			(at 88.9 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2053,7 +2213,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 96.52 106.68 0)
+			(at 88.9 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2084,7 +2244,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Female")
-		(at 45.72 67.31 0)
+		(at 38.1 87.63 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2093,7 +2253,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005fef483e")
 		(property "Reference" "J4"
-			(at 45.0088 67.9196 0)
+			(at 37.3888 88.2396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2102,7 +2262,7 @@
 			)
 		)
 		(property "Value" "UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.0088 70.231 0)
+			(at 37.3888 90.551 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2112,7 +2272,7 @@
 			)
 		)
 		(property "Footprint" "custom_components:UMPS-04-03.5-G-VT-SM-WT"
-			(at 45.72 67.31 0)
+			(at 38.1 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2121,7 +2281,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 67.31 0)
+			(at 38.1 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2130,7 +2290,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 67.31 0)
+			(at 38.1 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2138,7 +2298,7 @@
 			)
 		)
 		(property "Link" "https://nl.mouser.com/ProductDetail/Samtec/UMPS-04-035-G-VT-SM-WT-K/?qs=l7cgNqFNU1gbv7kovUOslQ%3D%3D"
-			(at 96.52 132.08 0)
+			(at 88.9 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2147,7 +2307,7 @@
 			)
 		)
 		(property "Order number" "200-UMPS43.5GVTSMWTK"
-			(at 96.52 132.08 0)
+			(at 88.9 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2156,7 +2316,7 @@
 			)
 		)
 		(property "Part number" "UMPS-04-03.5-G-VT-SM-WT-K"
-			(at 96.52 132.08 0)
+			(at 88.9 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2165,7 +2325,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 96.52 132.08 0)
+			(at 88.9 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2195,33 +2355,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Top_Bottom")
-		(at 53.34 80.01 0)
+		(lib_id "Device:R")
+		(at 69.85 41.91 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1af34bf4-6d02-4483-aede-b1c0e89941ba")
-		(property "Reference" "J5"
-			(at 54.102 74.676 0)
+		(uuid "09bdbbab-f256-437c-add2-6ccb95f3f41b")
+		(property "Reference" "R31"
+			(at 73.914 50.546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "Conn_02x04_Top_Bottom"
-			(at 54.61 73.66 0)
+		(property "Value" "10k"
+			(at 74.676 52.832 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
-			(at 53.34 80.01 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 71.628 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2230,7 +2392,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 53.34 80.01 0)
+			(at 69.85 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2238,8 +2400,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x04, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 53.34 80.01 0)
+		(property "Description" "Resistor"
+			(at 69.85 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2247,8 +2409,17 @@
 				(hide yes)
 			)
 		)
-		(property "Link" "https://www.mouser.com/ProductDetail/Molex/90131-0763?qs=KObwnG1V4zuKPiIchrbqlw%3D%3D"
-			(at 53.34 80.01 0)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 69.85 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2257,7 +2428,102 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 53.34 80.01 0)
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "60c7de82-4610-42fa-be97-a33fea81abda")
+		)
+		(pin "2"
+			(uuid "330c0e43-f0af-4467-a414-4c9347c8f96a")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Top_Bottom")
+		(at 45.72 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1af34bf4-6d02-4483-aede-b1c0e89941ba")
+		(property "Reference" "J5"
+			(at 46.482 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_02x04_Top_Bottom"
+			(at 46.99 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 45.72 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 45.72 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 45.72 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.mouser.com/ProductDetail/Molex/90131-0763?qs=KObwnG1V4zuKPiIchrbqlw%3D%3D"
+			(at 45.72 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 45.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2266,7 +2532,7 @@
 			)
 		)
 		(property "Part number" " 90131-0763 "
-			(at 53.34 80.01 0)
+			(at 45.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2275,7 +2541,7 @@
 			)
 		)
 		(property "Order number" "538-90131-0763 "
-			(at 53.34 80.01 0)
+			(at 45.72 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2317,140 +2583,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:FerriteBead_Small")
-		(at 78.74 31.75 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3d987e7f-05a6-496d-8784-c70b0fd8b205")
-		(property "Reference" "FB13"
-			(at 76.2 30.48 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "470Ω"
-			(at 76.2 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 78.74 33.528 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 78.74 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ferrite bead, small symbol"
-			(at 78.74 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part number" "BLM18GG471SN1D"
-			(at 78.74 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" "81-BLM18GG471SN1D"
-			(at 78.74 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "Mouser"
-			(at 78.74 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 78.74 31.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ed574833-92e8-4a89-aed0-9be24c6cfaec")
-		)
-		(pin "2"
-			(uuid "080f0169-2ddc-4783-8fea-e576915ba10a")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
-					(reference "FB13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 73.66 93.98 0)
-		(mirror y)
+		(at 64.77 30.48 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4c2f3fa5-6a89-4bda-bcea-308f8da09e20")
-		(property "Reference" "R4"
-			(at 74.93 100.838 0)
+		(uuid "393e4128-0452-4c02-b69d-797cfe6c398c")
+		(property "Reference" "R30"
+			(at 62.484 37.846 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "10k"
-			(at 75.692 103.124 0)
+			(at 62.738 39.624 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 75.438 93.98 90)
+			(at 64.77 28.702 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2459,7 +2620,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2468,7 +2629,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2477,7 +2638,7 @@
 			)
 		)
 		(property "Part number" "ERJ-3EKF1002V"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2486,7 +2647,7 @@
 			)
 		)
 		(property "Order number" "667-ERJ-3EKF1002V"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2495,7 +2656,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2504,7 +2665,219 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
-			(at 73.66 93.98 0)
+			(at 64.77 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4fc4dd00-def0-4d2f-bef0-5bffc88810fa")
+		)
+		(pin "2"
+			(uuid "baaea0c4-4bde-4a74-8195-43163e9c8e09")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 80.01 41.91 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4bf80b08-e13b-4c2c-aca4-d1c9fe5abf12")
+		(property "Reference" "R33"
+			(at 85.852 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 86.614 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 81.788 41.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 80.01 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c264dbac-f700-49a7-a1c3-f90fa09e08bd")
+		)
+		(pin "2"
+			(uuid "f59841ca-123c-42c9-906d-d525abf80f8f")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.04 114.3 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4c2f3fa5-6a89-4bda-bcea-308f8da09e20")
+		(property "Reference" "R4"
+			(at 67.31 121.158 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 68.072 123.444 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 67.818 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 66.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 66.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 66.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 66.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 66.04 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2529,16 +2902,16 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 78.74 93.98 0)
+		(at 74.93 41.91 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6dceb1a2-f89b-4832-be29-175f8c67680b")
-		(property "Reference" "R3"
-			(at 84.582 92.71 0)
+		(uuid "6047a0f5-c27f-451f-8f96-8663db858ad0")
+		(property "Reference" "R32"
+			(at 78.994 50.546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2547,7 +2920,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 85.344 94.996 0)
+			(at 79.756 52.832 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2556,7 +2929,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 80.518 93.98 90)
+			(at 76.708 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2565,7 +2938,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2574,7 +2947,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2583,7 +2956,7 @@
 			)
 		)
 		(property "Part number" "ERJ-3EKF1002V"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2592,7 +2965,7 @@
 			)
 		)
 		(property "Order number" "667-ERJ-3EKF1002V"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2601,7 +2974,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2610,7 +2983,113 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
-			(at 78.74 93.98 0)
+			(at 74.93 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f07c0324-334d-4940-96a3-b1e93bc8936b")
+		)
+		(pin "2"
+			(uuid "21ee6b26-6a40-41fd-be1c-4bc79f443b5d")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 71.12 114.3 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6dceb1a2-f89b-4832-be29-175f8c67680b")
+		(property "Reference" "R3"
+			(at 76.962 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 77.724 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 72.898 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 71.12 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2635,34 +3114,34 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 68.58 93.98 0)
-		(mirror y)
+		(at 49.53 35.56 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "895c90ed-6b47-4281-89b9-7aec6c0c1b44")
-		(property "Reference" "R5"
-			(at 69.85 100.838 0)
+		(uuid "848796c1-2781-4a6a-9a81-96a060f8687a")
+		(property "Reference" "R28"
+			(at 47.752 37.846 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "10k"
-			(at 70.612 103.124 0)
+			(at 48.006 39.624 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 70.358 93.98 90)
+			(at 49.53 33.782 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2671,7 +3150,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2680,7 +3159,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2689,7 +3168,7 @@
 			)
 		)
 		(property "Part number" "ERJ-3EKF1002V"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2698,7 +3177,7 @@
 			)
 		)
 		(property "Order number" "667-ERJ-3EKF1002V"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2707,7 +3186,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2716,7 +3195,113 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
-			(at 68.58 93.98 0)
+			(at 49.53 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b355aad-fc1e-4070-acc6-0d3bd90cab25")
+		)
+		(pin "2"
+			(uuid "b0a2ce26-0e70-41fd-be9f-9dc23c268ee6")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.96 114.3 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "895c90ed-6b47-4281-89b9-7aec6c0c1b44")
+		(property "Reference" "R5"
+			(at 62.23 121.158 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 62.992 123.444 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 62.738 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 60.96 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 60.96 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 60.96 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 60.96 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 60.96 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 60.96 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2740,34 +3325,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:FerriteBead_Small")
-		(at 58.42 39.37 90)
+		(lib_id "Device:R")
+		(at 57.15 33.02 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "90f36362-f9d6-4e68-bce1-e3fff7cd80e1")
-		(property "Reference" "FB14"
-			(at 55.88 38.1 90)
+		(uuid "8cd84158-9117-48b9-b34a-f1ec4b6a5d2d")
+		(property "Reference" "R29"
+			(at 55.372 37.846 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "470Ω"
-			(at 55.88 40.64 90)
+		(property "Value" "10k"
+			(at 55.626 39.624 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 58.42 41.148 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 57.15 31.242 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2776,7 +3362,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 58.42 39.37 0)
+			(at 57.15 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2784,8 +3370,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Ferrite bead, small symbol"
-			(at 58.42 39.37 0)
+		(property "Description" "Resistor"
+			(at 57.15 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2793,8 +3379,8 @@
 				(hide yes)
 			)
 		)
-		(property "Part number" "BLM18GG471SN1D"
-			(at 58.42 39.37 90)
+		(property "Part number" "ERJ-3EKF1002V"
+			(at 57.15 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2802,8 +3388,8 @@
 				(hide yes)
 			)
 		)
-		(property "Order number" "81-BLM18GG471SN1D"
-			(at 58.42 39.37 90)
+		(property "Order number" "667-ERJ-3EKF1002V"
+			(at 57.15 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2812,7 +3398,112 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 58.42 39.37 90)
+			(at 57.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://eu.mouser.com/ProductDetail/Panasonic/ERJ-3EKF1002V?qs=H7k1u0Mp9JSrGPQ5%2F5COuw%3D%3D"
+			(at 57.15 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39b77c5c-45a7-4d13-aa22-43a5d97be79a")
+		)
+		(pin "2"
+			(uuid "3d5510e9-7ebc-4274-8526-efae83492ba4")
+		)
+		(instances
+			(project "DCD"
+				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:FerriteBead_Small")
+		(at 50.8 59.69 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "90f36362-f9d6-4e68-bce1-e3fff7cd80e1")
+		(property "Reference" "FB14"
+			(at 48.26 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470Ω"
+			(at 48.26 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
+			(at 50.8 61.468 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Ferrite bead, small symbol"
+			(at 50.8 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part number" "BLM18GG471SN1D"
+			(at 50.8 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Order number" "81-BLM18GG471SN1D"
+			(at 50.8 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Mouser"
+			(at 50.8 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2821,7 +3512,7 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 58.42 39.37 90)
+			(at 50.8 59.69 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +3537,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead_Small")
-		(at 58.42 59.69 90)
+		(at 50.8 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2854,7 +3545,7 @@
 		(dnp no)
 		(uuid "94c0dc77-cc7e-41c9-9c75-4490fa93f4fe")
 		(property "Reference" "FB12"
-			(at 55.88 58.42 90)
+			(at 48.26 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2863,7 +3554,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 55.88 60.96 90)
+			(at 48.26 81.28 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2872,7 +3563,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 58.42 61.468 90)
+			(at 50.8 81.788 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2881,7 +3572,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 58.42 59.69 0)
+			(at 50.8 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2890,7 +3581,7 @@
 			)
 		)
 		(property "Description" "Ferrite bead, small symbol"
-			(at 58.42 59.69 0)
+			(at 50.8 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2899,7 +3590,7 @@
 			)
 		)
 		(property "Part number" "BLM18GG471SN1D"
-			(at 58.42 59.69 90)
+			(at 50.8 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2908,7 +3599,7 @@
 			)
 		)
 		(property "Order number" "81-BLM18GG471SN1D"
-			(at 58.42 59.69 90)
+			(at 50.8 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2917,7 +3608,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 58.42 59.69 90)
+			(at 50.8 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2926,7 +3617,7 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 58.42 59.69 90)
+			(at 50.8 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2951,7 +3642,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead_Small")
-		(at 78.74 77.47 90)
+		(at 71.12 97.79 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2959,7 +3650,7 @@
 		(dnp no)
 		(uuid "9af481e7-f6f0-41a8-a51e-2aa1785433d5")
 		(property "Reference" "FB11"
-			(at 76.2 76.2 90)
+			(at 68.58 96.52 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2968,7 +3659,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 76.2 78.74 90)
+			(at 68.58 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2977,7 +3668,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 78.74 79.248 90)
+			(at 71.12 99.568 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2986,7 +3677,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 77.47 0)
+			(at 71.12 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2995,7 +3686,7 @@
 			)
 		)
 		(property "Description" "Ferrite bead, small symbol"
-			(at 78.74 77.47 0)
+			(at 71.12 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3004,7 +3695,7 @@
 			)
 		)
 		(property "Part number" "BLM18GG471SN1D"
-			(at 78.74 77.47 90)
+			(at 71.12 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3013,7 +3704,7 @@
 			)
 		)
 		(property "Order number" "81-BLM18GG471SN1D"
-			(at 78.74 77.47 90)
+			(at 71.12 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3022,7 +3713,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 78.74 77.47 90)
+			(at 71.12 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3031,7 +3722,7 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 78.74 77.47 90)
+			(at 71.12 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3056,112 +3747,7 @@
 	)
 	(symbol
 		(lib_id "Device:FerriteBead_Small")
-		(at 68.58 34.29 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b9addb4e-aa90-43cb-a493-6f8a3363dcf3")
-		(property "Reference" "FB16"
-			(at 66.04 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "470Ω"
-			(at 66.04 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 68.58 36.068 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 68.58 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ferrite bead, small symbol"
-			(at 68.58 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part number" "BLM18GG471SN1D"
-			(at 68.58 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Order number" "81-BLM18GG471SN1D"
-			(at 68.58 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier" "Mouser"
-			(at 68.58 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 68.58 34.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f263717-953b-4339-81b1-9f8357527495")
-		)
-		(pin "2"
-			(uuid "0628cd24-404d-4059-9b35-02d1e298e275")
-		)
-		(instances
-			(project "DCD"
-				(path "/b8e3d55b-fa56-4199-88ad-60cfd98f56f9/650cd0f6-4277-45cc-8777-f2e2a60d96c5"
-					(reference "FB16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead_Small")
-		(at 68.58 57.15 90)
+		(at 60.96 77.47 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3169,7 +3755,7 @@
 		(dnp no)
 		(uuid "bba719e0-7ee8-4b77-9283-8a0f26fc40b3")
 		(property "Reference" "FB15"
-			(at 66.04 55.88 90)
+			(at 58.42 76.2 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3178,7 +3764,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 66.04 58.42 90)
+			(at 58.42 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3187,7 +3773,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 68.58 58.928 90)
+			(at 60.96 79.248 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3196,7 +3782,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 68.58 57.15 0)
+			(at 60.96 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3205,7 +3791,7 @@
 			)
 		)
 		(property "Description" "Ferrite bead, small symbol"
-			(at 68.58 57.15 0)
+			(at 60.96 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3214,7 +3800,7 @@
 			)
 		)
 		(property "Part number" "BLM18GG471SN1D"
-			(at 68.58 57.15 90)
+			(at 60.96 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3223,7 +3809,7 @@
 			)
 		)
 		(property "Order number" "81-BLM18GG471SN1D"
-			(at 68.58 57.15 90)
+			(at 60.96 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3232,7 +3818,7 @@
 			)
 		)
 		(property "Supplier" "Mouser"
-			(at 68.58 57.15 90)
+			(at 60.96 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3241,7 +3827,7 @@
 			)
 		)
 		(property "Link" "https://eu.mouser.com/ProductDetail/Murata-Electronics/BLM18GG471SN1D?qs=uSeJpk%2F8In1VmERn9ukNjA%3D%3D"
-			(at 68.58 57.15 90)
+			(at 60.96 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3265,7 +3851,7 @@
 		)
 	)
 	(sheet
-		(at 114.3 34.29)
+		(at 106.68 54.61)
 		(size 40.64 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3281,7 +3867,7 @@
 		)
 		(uuid "5d3a0ebc-eb18-42ad-b801-d37836b0a2e1")
 		(property "Sheetname" "Signal Reconditioning"
-			(at 114.3 33.5784 0)
+			(at 106.68 53.8984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3290,7 +3876,7 @@
 			)
 		)
 		(property "Sheetfile" "reconditioning.kicad_sch"
-			(at 114.3 60.2746 0)
+			(at 106.68 80.5946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3299,7 +3885,7 @@
 			)
 		)
 		(pin "*CS" input
-			(at 114.3 46.99 180)
+			(at 106.68 67.31 180)
 			(uuid "c37d7bca-ebcc-4ca0-97db-bf7fc3419e4a")
 			(effects
 				(font
@@ -3309,7 +3895,7 @@
 			)
 		)
 		(pin "DGND" input
-			(at 114.3 57.15 180)
+			(at 106.68 77.47 180)
 			(uuid "75a60f94-7465-4302-bbac-b78db0241a1a")
 			(effects
 				(font
@@ -3319,7 +3905,7 @@
 			)
 		)
 		(pin "CNV" input
-			(at 114.3 44.45 180)
+			(at 106.68 64.77 180)
 			(uuid "57bbb9ae-effe-4a56-a457-689476b5265e")
 			(effects
 				(font
@@ -3329,7 +3915,7 @@
 			)
 		)
 		(pin "CNV_OUT" output
-			(at 154.94 44.45 0)
+			(at 147.32 64.77 0)
 			(uuid "070ff635-3906-4bc0-b7a2-d3a2e14fca13")
 			(effects
 				(font
@@ -3339,7 +3925,7 @@
 			)
 		)
 		(pin "*CS_OUT" output
-			(at 154.94 46.99 0)
+			(at 147.32 67.31 0)
 			(uuid "0eb0d3ed-3dd1-43a1-996c-723e35a69d6d")
 			(effects
 				(font
@@ -3349,7 +3935,7 @@
 			)
 		)
 		(pin "CLK" output
-			(at 114.3 52.07 180)
+			(at 106.68 72.39 180)
 			(uuid "4424e49d-a3b4-4e19-aa17-9d4a7ac1319e")
 			(effects
 				(font
@@ -3359,7 +3945,7 @@
 			)
 		)
 		(pin "7V" input
-			(at 114.3 36.83 180)
+			(at 106.68 57.15 180)
 			(uuid "5cb4a1f7-b45b-4058-b5f7-0fd8c0dd2fea")
 			(effects
 				(font
@@ -3369,7 +3955,7 @@
 			)
 		)
 		(pin "CLK_DAC" output
-			(at 154.94 52.07 0)
+			(at 147.32 72.39 0)
 			(uuid "fad3283b-80b7-4aab-a693-736e2af41014")
 			(effects
 				(font
