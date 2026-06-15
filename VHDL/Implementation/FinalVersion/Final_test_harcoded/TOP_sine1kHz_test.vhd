@@ -40,50 +40,41 @@ architecture rtl of top_1khz_test is
     -- phase_inc = 21 → f = 21 × 50 MHz / 2^20 = 1 001 Hz ≈ 1 kHz
     constant C_PHASE_INC : unsigned(19 downto 0) := to_unsigned(21, 20);
 
-    -- 256-entry sine LUT
-    type lut_t is array (0 to 255) of unsigned(15 downto 0);
-    constant C_LUT : lut_t := (
-        x"8000", x"8324", x"8647", x"896A", x"8C8B", x"8FAB", x"92C7", x"95E0",
-        x"98F8", x"9C0B", x"9F19", x"A223", x"A527", x"A826", x"AB1F", x"AE10",
-        x"B0FB", x"B3DE", x"B6B9", x"B98C", x"BC56", x"BF17", x"C1CD", x"C47A",
-        x"C71C", x"C9B3", x"CC3F", x"CEBF", x"D133", x"D39A", x"D5F4", x"D842",
-        x"DA82", x"DCB4", x"DED7", x"E0E6", x"E2E5", x"E4D5", x"E6B4", x"E882",
-        x"EA3F", x"EBE9", x"ED82", x"EF07", x"F078", x"F1D5", x"F31E", x"F452",
-        x"F571", x"F67B", x"F76F", x"F84D", x"F916", x"F9C9", x"FA67", x"FAEE",
-        x"FB5F", x"FBBA", x"FBFD", x"FC2A", x"FC40", x"FC3E", x"FC25", x"FBEE",
-        x"FBA0", x"FB3A", x"FABE", x"FA2A", x"F97F", x"F8BB", x"F7E1", x"F6EF",
-        x"F5E6", x"F4C6", x"F38F", x"F241", x"F0DD", x"EF62", x"EDD0", x"EC27",
-        x"EA69", x"E894", x"E6AA", x"E4A9", x"E293", x"E067", x"DE27", x"DBD2",
-        x"D968", x"D6EA", x"D458", x"D1B2", x"CEF8", x"CC2B", x"C94A", x"C657",
-        x"C351", x"C038", x"BD0F", x"B9D4", x"B689", x"B32C", x"AFC1", x"AC45",
-        x"A8BC", x"A524", x"A17F", x"9DCE", x"9A12", x"964B", x"927A", x"8E9E",
-        x"8AB9", x"86CB", x"82D5", x"7ED5", x"7ACF", x"76C3", x"72B1", x"6E9B",
-        x"6A80", x"6661", x"623F", x"5E1A", x"59F3", x"55CB", x"51A2", x"4D79",
-        x"4950", x"4528", x"4101", x"3CDD", x"38BB", x"349E", x"3084", x"2C70",
-        x"2860", x"2456", x"2052", x"1C56", x"1860", x"1474", x"1090", x"0CB6",
-        x"08E5", x"051F", x"0163", x"FDB2", x"FA0C", x"F672", x"F2E4", x"EF61",
-        x"EBEB", x"E882", x"E526", x"E1D7", x"DE96", x"DB63", x"D83E", x"D527",
-        x"D21F", x"CF26", x"CC3C", x"C960", x"C695", x"C3D8", x"C12D", x"BE90",
-        x"BC04", x"B98A", x"B721", x"B4CA", x"B285", x"B052", x"AE32", x"AC25",
-        x"AA2A", x"A842", x"A66D", x"A4AB", x"A2FC", x"A161", x"9FD9", x"9E65",
-        x"9D04", x"9BB7", x"9A7D", x"9957", x"9845", x"9746", x"965B", x"9583",
-        x"94BE", x"940E", x"9371", x"92E7", x"9271", x"920F", x"91C1", x"9186",
-        x"915E", x"914A", x"9149", x"915C", x"9181", x"91BA", x"9205", x"9264",
-        x"92D5", x"935A", x"93F1", x"949A", x"9556", x"9624", x"9704", x"97F6",
-        x"98F9", x"9A0D", x"9B32", x"9C67", x"9DAD", x"9F03", x"A068", x"A1DC",
-        x"A360", x"A4F2", x"A692", x"A840", x"A9FB", x"ABC2", x"AD96", x"AF75",
-        x"B160", x"B355", x"B554", x"B75C", x"B96D", x"BB85", x"BDA5", x"BFCA",
-        x"C1F5", x"C425", x"C659", x"C891", x"CACC", x"CD09", x"CF48", x"D188",
-        x"D3C9", x"D60A", x"D84A", x"DA89", x"DCC6", x"DF00", x"E136", x"E368"
+    -- 16-bit source LUT and derived 15-bit active LUT
+    type lut16_t is array (0 to 255) of unsigned(15 downto 0);
+
+    constant C_LUT_16 : lut16_t := (
+        X"0000", X"0405", X"0809", X"0C0C", X"100B", X"1406", X"17FC", X"1BEC",
+        X"1FD5", X"23B6", X"278E", X"2B5B", X"2F1E", X"32D5", X"3680", X"3A1C",
+        X"3DAA", X"4128", X"4495", X"47F2", X"4B3C", X"4E73", X"5196", X"54A5",
+        X"579F", X"5A82", X"5D4E", X"6003", X"629F", X"6523", X"678D", X"69DD",
+        X"6C12", X"6E2C", X"702A", X"720C", X"73D0", X"7578", X"7702", X"786E",
+        X"79BB", X"7AEA", X"7BFA", X"7CEA", X"7DBB", X"7E6C", X"7EFD", X"7F6E",
+        X"7FBE", X"7FEF", X"7FFF", X"7FEF", X"7FBE", X"7F6E", X"7EFD", X"7E6C",
+        X"7DBB", X"7CEA", X"7BFA", X"7AEA", X"79BB", X"786E", X"7702", X"7578",
+        X"73D0", X"720C", X"702A", X"6E2C", X"6C12", X"69DD", X"678D", X"6523",
+        X"629F", X"6003", X"5D4E", X"5A82", X"579F", X"54A5", X"5196", X"4E73",
+        X"4B3C", X"47F2", X"4495", X"4128", X"3DAA", X"3A1C", X"3680", X"32D5",
+        X"2F1E", X"2B5B", X"278E", X"23B6", X"1FD5", X"1BEC", X"17FC", X"1406",
+        X"100B", X"0C0C", X"0809", X"0405", X"0000", X"FBFB", X"F7F7", X"F3F4",
+        X"EFF5", X"EBFA", X"E804", X"E414", X"E02B", X"DC4A", X"D872", X"D4A5",
+        X"D0E2", X"CD2B", X"C980", X"C5E4", X"C256", X"BED8", X"BB6B", X"B80E",
+        X"B4C4", X"B18D", X"AE6A", X"AB5B", X"A861", X"A57E", X"A2B2", X"9FFD",
+        X"9D61", X"9ADD", X"9873", X"9623", X"93EE", X"91D4", X"8FD6", X"8DF4",
+        X"8C30", X"8A88", X"88FE", X"8792", X"8645", X"8516", X"8406", X"8316",
+        X"8245", X"8194", X"8103", X"8092", X"8042", X"8011", X"8001", X"8011",
+        X"8042", X"8092", X"8103", X"8194", X"8245", X"8316", X"8406", X"8516",
+        X"8645", X"8792", X"88FE", X"8A88", X"8C30", X"8DF4", X"8FD6", X"91D4",
+        X"93EE", X"9623", X"9873", X"9ADD", X"9D61", X"9FFD", X"A2B2", X"A57E",
+        X"A861", X"AB5B", X"AE6A", X"B18D", X"B4C4", X"B80E", X"BB6B", X"BED8",
+        X"C256", X"C5E4", X"C980", X"CD2B", X"D0E2", X"D4A5", X"D872", X"DC4A",
+        X"E02B", X"E414", X"E804", X"EBFA", X"EFF5", X"F3F4", X"F7F7", X"FBFB"
     );
 
     -- 20-bit phase accumulator
     signal s_phase    : unsigned(19 downto 0) := (others => '0');
 
-    -- LUT output and amplitude scaling
-    signal s_lut_val  : unsigned(15 downto 0);
-    signal s_lut_cent : signed(16 downto 0);
-    signal s_scaled   : signed(23 downto 0);
+    -- Registered DAC word, updated when SPI requests the next sample
     signal s_dac_data : std_logic_vector(15 downto 0);
 
     signal s_cs_n      : std_logic;
@@ -94,15 +85,33 @@ begin
 
     cs_n  <= s_cs_n;
 
+    -- Capture the next LUT-derived sample after SPI raises read_en.
+    -- The LUT values stay unsigned; scaling is done with integer math.
     process (clk)
+        variable v_lut_val   : unsigned(14 downto 0);
+        variable v_lut_val16 : unsigned(15 downto 0);
+        variable v_code      : integer;
+        variable v_scaled    : integer;
     begin
-        if rising_edge(clk) then
+        if falling_edge(clk) then
             if rst_n = '1' then
+                s_dac_data <= (others => '0');
                 s_heartbeat <= (others => '0');
                 s_phase     <= (others => '0');
-            else
-                s_heartbeat <= s_heartbeat + 1;
+            elsif s_read_en(0) = '1' then
+                v_lut_val   := C_LUT_16(to_integer(s_phase(19 downto 12)));
+                v_lut_val16 := resize(shift_left(v_lut_val, 1), 16);
+                v_code      := to_integer(v_lut_val16);
+                v_scaled    := ((v_code - 32768) * 60) / 64;
                 s_phase     <= s_phase + C_PHASE_INC;
+                s_heartbeat <= s_heartbeat + 1;
+
+                s_dac_data <= std_logic_vector(
+                                  to_unsigned(
+                                      v_scaled + 32768,
+                                      16
+                                  )
+                              );
             end if;
         end if;
     end process;
@@ -112,28 +121,11 @@ begin
     led(2) <= rst_n;
     led(3) <= '1';
 
-    -- LUT indexed on top 8 bits of 20-bit accumulator
-    s_lut_val <= C_LUT(to_integer(s_phase(19 downto 12)));
-
-    -- Amplitude: ×60 >> 6 → ±30 720 codes → ±1.172 V at ADC
-    s_lut_cent <= signed('0' & s_lut_val) - to_signed(32768, 17);
-
-    s_scaled <= resize(
-                    resize(s_lut_cent, 24) * to_signed(60, 8),
-                    24
-                );
-
-    s_dac_data <= std_logic_vector(
-                      to_unsigned(
-                          to_integer(s_scaled(23 downto 6)) + 32768,
-                          16
-                      )
-                  );
 
     u_spi : entity work.spi_master_dac_ext
         generic map (
             Num_Channels    => 1,
-            DONE_WAIT_CYCLS => 6
+            DONE_WAIT_CYCLS => 5
         )
         port map (
             clk           => clk,
