@@ -38,37 +38,44 @@ end entity top_1khz_test;
 architecture rtl of top_1khz_test is
 
     -- phase_inc = 21 → f = 21 × 50 MHz / 2^20 = 1 001 Hz ≈ 1 kHz
-    constant C_PHASE_INC : unsigned(19 downto 0) := to_unsigned(21, 20);
+    constant C_PHASE_INC : unsigned(19 downto 0) := to_unsigned(300, 20);
 
     -- 16-bit source LUT and derived 15-bit active LUT
-    type lut16_t is array (0 to 255) of unsigned(15 downto 0);
+    type lut_t is array (0 to 255) of unsigned(15 downto 0);
 
-    constant C_LUT_16 : lut16_t := (
-        X"0000", X"0405", X"0809", X"0C0C", X"100B", X"1406", X"17FC", X"1BEC",
-        X"1FD5", X"23B6", X"278E", X"2B5B", X"2F1E", X"32D5", X"3680", X"3A1C",
-        X"3DAA", X"4128", X"4495", X"47F2", X"4B3C", X"4E73", X"5196", X"54A5",
-        X"579F", X"5A82", X"5D4E", X"6003", X"629F", X"6523", X"678D", X"69DD",
-        X"6C12", X"6E2C", X"702A", X"720C", X"73D0", X"7578", X"7702", X"786E",
-        X"79BB", X"7AEA", X"7BFA", X"7CEA", X"7DBB", X"7E6C", X"7EFD", X"7F6E",
-        X"7FBE", X"7FEF", X"7FFF", X"7FEF", X"7FBE", X"7F6E", X"7EFD", X"7E6C",
-        X"7DBB", X"7CEA", X"7BFA", X"7AEA", X"79BB", X"786E", X"7702", X"7578",
-        X"73D0", X"720C", X"702A", X"6E2C", X"6C12", X"69DD", X"678D", X"6523",
-        X"629F", X"6003", X"5D4E", X"5A82", X"579F", X"54A5", X"5196", X"4E73",
-        X"4B3C", X"47F2", X"4495", X"4128", X"3DAA", X"3A1C", X"3680", X"32D5",
-        X"2F1E", X"2B5B", X"278E", X"23B6", X"1FD5", X"1BEC", X"17FC", X"1406",
-        X"100B", X"0C0C", X"0809", X"0405", X"0000", X"FBFB", X"F7F7", X"F3F4",
-        X"EFF5", X"EBFA", X"E804", X"E414", X"E02B", X"DC4A", X"D872", X"D4A5",
-        X"D0E2", X"CD2B", X"C980", X"C5E4", X"C256", X"BED8", X"BB6B", X"B80E",
-        X"B4C4", X"B18D", X"AE6A", X"AB5B", X"A861", X"A57E", X"A2B2", X"9FFD",
-        X"9D61", X"9ADD", X"9873", X"9623", X"93EE", X"91D4", X"8FD6", X"8DF4",
-        X"8C30", X"8A88", X"88FE", X"8792", X"8645", X"8516", X"8406", X"8316",
-        X"8245", X"8194", X"8103", X"8092", X"8042", X"8011", X"8001", X"8011",
-        X"8042", X"8092", X"8103", X"8194", X"8245", X"8316", X"8406", X"8516",
-        X"8645", X"8792", X"88FE", X"8A88", X"8C30", X"8DF4", X"8FD6", X"91D4",
-        X"93EE", X"9623", X"9873", X"9ADD", X"9D61", X"9FFD", X"A2B2", X"A57E",
-        X"A861", X"AB5B", X"AE6A", X"B18D", X"B4C4", X"B80E", X"BB6B", X"BED8",
-        X"C256", X"C5E4", X"C980", X"CD2B", X"D0E2", X"D4A5", X"D872", X"DC4A",
-        X"E02B", X"E414", X"E804", X"EBFA", X"EFF5", X"F3F4", X"F7F7", X"FBFB"
+        constant C_LUT : lut_t := (
+        x"8000", x"8324", x"8648", x"896A", x"8C8C", x"8FAB", x"92C8", x"95E2",
+        x"98F9", x"9C0B", x"9F1A", x"A223", x"A528", x"A826", x"AB1F", x"AE11",
+        x"B0FB", x"B3DF", x"B6BA", x"B98C", x"BC56", x"BF17", x"C1CE", x"C47A",
+        x"C71C", x"C9B4", x"CC3F", x"CEBF", x"D133", x"D39B", x"D5F5", x"D842",
+        x"DA82", x"DCB3", x"DED7", x"E0EB", x"E2F1", x"E4E8", x"E6CF", x"E8A6",
+        x"EA6D", x"EC23", x"EDC9", x"EF5E", x"F0E2", x"F254", x"F3B5", x"F504",
+        x"F641", x"F76B", x"F884", x"F989", x"FA7C", x"FB5C", x"FC29", x"FCE3",
+        x"FD89", x"FE1D", x"FE9C", x"FF09", x"FF61", x"FFA6", x"FFD8", x"FFF5",
+        x"FFFF", x"FFF5", x"FFD8", x"FFA6", x"FF61", x"FF09", x"FE9C", x"FE1D",
+        x"FD89", x"FCE3", x"FC29", x"FB5C", x"FA7C", x"F989", x"F884", x"F76B",
+        x"F641", x"F504", x"F3B5", x"F254", x"F0E2", x"EF5E", x"EDC9", x"EC23",
+        x"EA6D", x"E8A6", x"E6CF", x"E4E8", x"E2F1", x"E0EB", x"DED7", x"DCB3",
+        x"DA82", x"D842", x"D5F5", x"D39B", x"D133", x"CEBF", x"CC3F", x"C9B4",
+        x"C71C", x"C47A", x"C1CE", x"BF17", x"BC56", x"B98C", x"B6BA", x"B3DF",
+        x"B0FB", x"AE11", x"AB1F", x"A826", x"A528", x"A223", x"9F1A", x"9C0B",
+        x"98F9", x"95E2", x"92C8", x"8FAB", x"8C8C", x"896A", x"8648", x"8324",
+        x"8000", x"7CDC", x"79B8", x"7696", x"7374", x"7055", x"6D38", x"6A1E",
+        x"6707", x"63F5", x"60E6", x"5DDD", x"5AD8", x"57DA", x"54E1", x"51EF",
+        x"4F05", x"4C21", x"4946", x"4674", x"43AA", x"40E9", x"3E32", x"3B86",
+        x"38E4", x"364C", x"33C1", x"3141", x"2ECD", x"2C65", x"2A0B", x"27BE",
+        x"257E", x"234D", x"2129", x"1F15", x"1D0F", x"1B18", x"1931", x"175A",
+        x"1593", x"13DD", x"1237", x"10A2", x"0F1E", x"0DAC", x"0C4B", x"0AFC",
+        x"09BF", x"0895", x"077C", x"0677", x"0584", x"04A4", x"03D7", x"031D",
+        x"0277", x"01E3", x"0164", x"00F7", x"009F", x"005A", x"0028", x"000B",
+        x"0001", x"000B", x"0028", x"005A", x"009F", x"00F7", x"0164", x"01E3",
+        x"0277", x"031D", x"03D7", x"04A4", x"0584", x"0677", x"077C", x"0895",
+        x"09BF", x"0AFC", x"0C4B", x"0DAC", x"0F1E", x"10A2", x"1237", x"13DD",
+        x"1593", x"175A", x"1931", x"1B18", x"1D0F", x"1F15", x"2129", x"234D",
+        x"257E", x"27BE", x"2A0B", x"2C65", x"2ECD", x"3141", x"33C1", x"364C",
+        x"38E4", x"3B86", x"3E32", x"40E9", x"43AA", x"4674", x"4946", x"4C21",
+        x"4F05", x"51EF", x"54E1", x"57DA", x"5AD8", x"5DDD", x"60E6", x"63F5",
+        x"6707", x"6A1E", x"6D38", x"7055", x"7374", x"7696", x"79B8", x"7CDC"
     );
 
     -- 20-bit phase accumulator
@@ -88,30 +95,32 @@ begin
     -- Capture the next LUT-derived sample after SPI raises read_en.
     -- The LUT values stay unsigned; scaling is done with integer math.
     process (clk)
-        variable v_lut_val   : unsigned(14 downto 0);
-        variable v_lut_val16 : unsigned(15 downto 0);
-        variable v_code      : integer;
-        variable v_scaled    : integer;
+    variable v_code   : integer;
+    variable v_scaled : integer;
     begin
         if falling_edge(clk) then
+            -- Kept your original reset polarity:
+            -- rst_n = '1' resets, rst_n = '0' runs.
             if rst_n = '1' then
-                s_dac_data <= (others => '0');
+                s_dac_data  <= x"8000";
                 s_heartbeat <= (others => '0');
                 s_phase     <= (others => '0');
-            elsif s_read_en(0) = '1' then
-                v_lut_val   := C_LUT_16(to_integer(s_phase(19 downto 12)));
-                v_lut_val16 := resize(shift_left(v_lut_val, 1), 16);
-                v_code      := to_integer(v_lut_val16);
-                v_scaled    := ((v_code - 32768) * 60) / 64;
-                s_phase     <= s_phase + C_PHASE_INC;
-                s_heartbeat <= s_heartbeat + 1;
+            else
+                -- Phase must advance every 50 MHz clock for:
+                -- f_out = phase_inc * 50 MHz / 2^20
+                s_phase <= s_phase + C_PHASE_INC;
 
-                s_dac_data <= std_logic_vector(
-                                  to_unsigned(
-                                      v_scaled + 32768,
-                                      16
-                                  )
-                              );
+                -- Only update DAC word when SPI asks for a new sample
+                if s_read_en(0) = '1' then
+                    v_code   := to_integer(C_LUT(to_integer(s_phase(19 downto 12))));
+                    v_scaled := ((v_code - 32768) * 60) / 64;
+
+                    s_dac_data <= std_logic_vector(
+                                      to_unsigned(v_scaled + 32768, 16)
+                                  );
+
+                    s_heartbeat <= s_heartbeat + 1;
+                end if;
             end if;
         end if;
     end process;

@@ -158,10 +158,18 @@ begin
     -- ±32 767 × 10 / 64 = ±5 120 codes.
     -- After summing-amplifier halving: ±5 120 / 65 536 × 5 V / 2 ≈ ±0.195 V.
     s_lut_cent <= signed('0' & s_lut_val) - to_signed(32768, 17);
-    s_scaled   <= resize(s_lut_cent, 24) * to_signed(3, 4);
+
+    s_scaled <= resize(
+                    resize(s_lut_cent, 24) * to_signed(10, 5),
+                    24
+                );
+
     s_dac_data <= std_logic_vector(
                       to_unsigned(
-                          to_integer(s_scaled(23 downto 6)) + 32768, 16));
+                          to_integer(shift_right(s_scaled, 6)) + 32768,
+                          16
+                      )
+                  );
 
     -- SPI master
     u_spi : entity work.spi_master_dac_ext

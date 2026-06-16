@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 from concurrent.futures import ThreadPoolExecutor
 import os
 
-PCAP_FILE = "C:\\Users\\hoona\\Documents\\test.pcapng"          # change to your Wireshark file
+PCAP_FILE = "C:\\Users\\hoona\\Documents\\test6.pcapng"          # change to your Wireshark file
 HEADER_BYTES = 42                # bytes to skip from full original packet
 SAMPLE_RATE = None               # e.g. 48000, or leave None for sample index
-ENDIAN = "little"                # "little" or "big"
+ENDIAN = "big"                # "little" or "big"
 SIGNED = True
 MAX_WORKERS = 12
 

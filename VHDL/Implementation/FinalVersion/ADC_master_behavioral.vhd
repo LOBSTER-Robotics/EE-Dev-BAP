@@ -925,11 +925,17 @@ architecture Behavioral of ADC_Acquisition_Engine is
         PRE_CNV_QUIET_ST,
         CNV_PULSE_ST,
         POST_CNV_QUIET_ST,
+        SCK_READ_DELAY_ST,
 
         ASSERT_CS_ST,
         SHIFT_ST,
         END_CS_ST
     );
+
+    constant SPI_READ_DELAY_CYCLES : natural := 1;
+
+    signal sck_delay_counter      : natural range 0 to SPI_READ_DELAY_CYCLES := 0;
+    signal next_sck_delay_counter : natural range 0 to SPI_READ_DELAY_CYCLES := 0;
 
     signal state      : state_type := IDLE_ST;
     signal next_state : state_type := IDLE_ST;
@@ -988,325 +994,381 @@ architecture Behavioral of ADC_Acquisition_Engine is
     signal CLK_inv : std_logic;
 
 begin
+--------------------------------------------------------------------
+-- TRUE 80 MHz SPI CLOCK
+--------------------------------------------------------------------
+SCK <= CLK and spi_active;
 
-    --------------------------------------------------------------------
-    -- TRUE 80 MHz SPI CLOCK
-    --------------------------------------------------------------------
-    SCK <= CLK and spi_active; -- ####CHECK IF THIS IS A PROBLEM, seems to be not a problem
+--------------------------------------------------------------------
+-- INVERT CLOCK FOR MISO CAPTURE
+--------------------------------------------------------------------
+CLK_inv <= not CLK;
 
-    --------------------------------------------------------------------
-    -- INVERT CLOCK FOR MOSI UPDATES
-    --------------------------------------------------------------------
-    CLK_inv <= not CLK;
+--------------------------------------------------------------------
+-- FREE RUNNING 2 MHz SAMPLE TIMER
+--------------------------------------------------------------------
+process(CLK, RESET_N)
+begin
+    if RESET_N = '1' then
 
-    --------------------------------------------------------------------
-    -- FREE RUNNING 2 MHz SAMPLE TIMER
-    --------------------------------------------------------------------
-    process(CLK, RESET_N)
-    begin
-        if RESET_N = '1' then
+        state          <= IDLE_ST;
+        sample_counter <= 0;
+        quiet_counter  <= 0;
+        bit_counter    <= 0;
+        cnv_counter    <= 0;
 
-            state          <= IDLE_ST;
-            sample_counter <= 0;
-            quiet_counter  <= 0;
-            bit_counter    <= 0;
-            cnv_counter    <= 0;
+        sck_delay_counter <= 0;
 
-            shift_reg1     <= (others => '0');
-            shift_reg2     <= (others => '0');
-            RangeLEDs     <= (others => '1');
+        shift_reg1     <= (others => '0');
+        shift_reg2     <= (others => '0');
+        RangeLEDs      <= (others => '1');
 
-        elsif rising_edge(CLK) then
+    elsif rising_edge(CLK) then
 
-            state          <= next_state;
-            sample_counter <= next_sample_counter;
-            quiet_counter  <= next_quiet_counter;
-            bit_counter    <= next_bit_counter;
-            cnv_counter    <= next_cnv_counter;
+        state          <= next_state;
+        sample_counter <= next_sample_counter;
+        quiet_counter  <= next_quiet_counter;
+        bit_counter    <= next_bit_counter;
+        cnv_counter    <= next_cnv_counter;
 
-            shift_reg1     <= next_shift_reg1;
-            shift_reg2     <= next_shift_reg2;
-            RangeLEDs <= not std_logic_vector(to_unsigned(next_quiet_counter, RangeLEDs'length));
+        sck_delay_counter <= next_sck_delay_counter;
+
+        shift_reg1     <= next_shift_reg1;
+        shift_reg2     <= next_shift_reg2;
+
+        RangeLEDs <= not std_logic_vector(to_unsigned(next_quiet_counter, RangeLEDs'length));
+
+    end if;
+end process;
 
 
+process(CLK_inv, RESET_N)
+begin
+    if RESET_N = '1' then
+
+        miso1_capture <= '0';
+        miso2_capture <= '0';
+
+    elsif rising_edge(CLK_inv) then
+
+        -- MISO is only captured in SHIFT_ST.
+        -- During SCK_READ_DELAY_ST, SCK is running,
+        -- but MISO is ignored.
+        if state = SHIFT_ST then
+            miso1_capture <= MISO1;
+            miso2_capture <= MISO2;
         end if;
-    end process;
 
-   process(CLK_inv, RESET_N)
-    begin
-        if RESET_N = '1' then
-
-            miso1_capture <= '0';
-            miso2_capture <= '0';
+    end if;
+end process;
 
 
-        elsif rising_edge(CLK_inv) then
-
-            if state = SHIFT_ST then
-                miso1_capture <= MISO1;
-                miso2_capture <= MISO2;
-            end if;
-
-        end if;
-    end process;
-    --------------------------------------------------------------------
-    -- MAIN CONTROL LOGIC
-    --------------------------------------------------------------------
-    process(
+--------------------------------------------------------------------
+-- MAIN CONTROL LOGIC
+--------------------------------------------------------------------
+process(
     state,
     miso1_capture,
     miso2_capture,
     quiet_counter,
     bit_counter,
     cnv_counter,
+    sck_delay_counter,
     shift_reg1,
     shift_reg2
-    )
-    begin
+)
+begin
 
-        ------------------------------------------------------------
-        -- DEFAULTS
-        ------------------------------------------------------------
-        DataValid <= '0';
+    ------------------------------------------------------------
+    -- DEFAULTS
+    ------------------------------------------------------------
+    DataValid <= '0';
 
-        next_bit_counter   <= bit_counter;
-        next_quiet_counter <= quiet_counter;
-        next_cnv_counter   <= cnv_counter;
+    next_bit_counter       <= bit_counter;
+    next_quiet_counter     <= quiet_counter;
+    next_cnv_counter       <= cnv_counter;
+    next_sck_delay_counter <= sck_delay_counter;
 
-        next_shift_reg1 <= shift_reg1;
-        next_shift_reg2 <= shift_reg2;
+    next_shift_reg1 <= shift_reg1;
+    next_shift_reg2 <= shift_reg2;
 
-        spi_active <= '0';
+    spi_active <= '0';
 
-        Data1 <= (others => '0');
-        Data2 <= (others => '0');
+    Data1 <= (others => '0');
+    Data2 <= (others => '0');
 
-        CNV <= '0';
-        case state is
+    CNV <= '0';
 
-            --------------------------------------------------------
-            -- IDLE
-            --------------------------------------------------------
-            when IDLE_ST =>
+    case state is
 
-                CNV <= '0';
+        --------------------------------------------------------
+        -- IDLE
+        --------------------------------------------------------
+        when IDLE_ST =>
 
-                spi_active <= '0';
+            CNV <= '0';
 
-                next_quiet_counter <= 0;
+            spi_active <= '0';
 
-                STATE_DEBUG <= 0;
+            next_quiet_counter     <= 0;
+            next_sck_delay_counter <= 0;
 
-            --------------------------------------------------------
-            -- PRE-CNV QUIET ZONE
-            --------------------------------------------------------
-            when PRE_CNV_QUIET_ST =>
+            STATE_DEBUG <= 0;
 
-                CNV <= '0';
+        --------------------------------------------------------
+        -- PRE-CNV QUIET ZONE
+        --------------------------------------------------------
+        when PRE_CNV_QUIET_ST =>
 
-                spi_active <= '0';
-                
-                next_quiet_counter <= quiet_counter + 1;
+            CNV <= '0';
 
-                STATE_DEBUG <= 1;
+            spi_active <= '0';
 
-            --------------------------------------------------------
-            -- CNV PULSE
-            --------------------------------------------------------
-            when CNV_PULSE_ST =>
+            next_quiet_counter <= quiet_counter + 1;
 
-                CNV <= '1';
-                
-                next_cnv_counter <= cnv_counter + 1;
+            STATE_DEBUG <= 1;
 
-                next_quiet_counter <= 0;
+        --------------------------------------------------------
+        -- CNV PULSE
+        --------------------------------------------------------
+        when CNV_PULSE_ST =>
 
-                spi_active <= '0';
+            CNV <= '1';
 
-                STATE_DEBUG <= 2;
+            next_cnv_counter <= cnv_counter + 1;
 
-            --------------------------------------------------------
-            -- POST-CNV QUIET ZONE
-            --------------------------------------------------------
-            when POST_CNV_QUIET_ST =>
+            next_quiet_counter <= 0;
 
-                CNV <= '0';
+            spi_active <= '0';
 
-                next_cnv_counter <= 0;
+            STATE_DEBUG <= 2;
 
-                next_quiet_counter <= quiet_counter + 1;
+        --------------------------------------------------------
+        -- POST-CNV QUIET ZONE
+        --------------------------------------------------------
+        when POST_CNV_QUIET_ST =>
 
-                spi_active <= '0';
+            CNV <= '0';
 
-                STATE_DEBUG <= 3;
+            next_cnv_counter <= 0;
 
-            --------------------------------------------------------
-            -- ASSERT CS
-            --------------------------------------------------------
-            when ASSERT_CS_ST =>
+            next_quiet_counter <= quiet_counter + 1;
 
-                next_quiet_counter <= 0;
+            spi_active <= '0';
 
-                next_bit_counter <= 0;
+            STATE_DEBUG <= 3;
 
-                spi_active <= '0';
+        --------------------------------------------------------
+        -- ASSERT CS
+        --------------------------------------------------------
+        when ASSERT_CS_ST =>
 
-                STATE_DEBUG <= 4;
+            next_quiet_counter <= 0;
 
-            --------------------------------------------------------
-            -- SHIFT SPI DATA
-            --------------------------------------------------------
-            when SHIFT_ST =>
+            next_bit_counter <= 0;
 
-                spi_active <= '1';
+            next_sck_delay_counter <= 0;
 
-                if bit_counter < 23 then
-                    next_bit_counter <= bit_counter + 1;
-                end if;
+            spi_active <= '0';
 
-                next_shift_reg1 <=
-                    shift_reg1(22 downto 0) & miso1_capture;
+            STATE_DEBUG <= 4;
 
-                next_shift_reg2 <=
-                    shift_reg2(22 downto 0) & miso2_capture;
+        --------------------------------------------------------
+        -- SCK RUNNING, BUT DO NOT READ DATA YET
+        --------------------------------------------------------
+        when SCK_READ_DELAY_ST =>
 
-                STATE_DEBUG <= 5;
+            -- SPI clock starts here
+            spi_active <= '1';
 
-            --------------------------------------------------------
-            -- END SPI TRANSACTION
-            --------------------------------------------------------
-            when END_CS_ST =>
+            -- Keep bit counter reset
+            next_bit_counter <= 0;
 
-                spi_active <= '0';
+            -- Do not shift data yet
+            next_shift_reg1 <= shift_reg1;
+            next_shift_reg2 <= shift_reg2;
 
-                Data1 <= shift_reg1;
-                Data2 <= shift_reg2;
+            -- Count two CLK/SCK cycles before reading data
+            if sck_delay_counter <= SPI_READ_DELAY_CYCLES - 1 then
+                next_sck_delay_counter <= sck_delay_counter + 1;
+            else
+                next_sck_delay_counter <= sck_delay_counter;
+            end if;
 
-                DataValid <= '1';
+            STATE_DEBUG <= 7;
 
-                STATE_DEBUG <= 6;
+        --------------------------------------------------------
+        -- SHIFT SPI DATA
+        --------------------------------------------------------
+        when SHIFT_ST =>
 
-        end case;
+            spi_active <= '1';
 
-    end process;
+            if bit_counter < 23 then
+                next_bit_counter <= bit_counter + 1;
+            end if;
 
-    --------------------------------------------------------------------
-    -- OUTPUT LOGIC
-    --------------------------------------------------------------------
-    process(state)
-    begin
+            next_shift_reg1 <= shift_reg1(22 downto 0) & miso1_capture;
 
-        ------------------------------------------------------------
-        -- DEFAULTS
-        ------------------------------------------------------------
-        CS <= '1';
+            next_shift_reg2 <= shift_reg2(22 downto 0) & miso2_capture;
 
-        case state is
+            STATE_DEBUG <= 5;
 
-            --------------------------------------------------------
-            -- ASSERT CS
-            --------------------------------------------------------
-            when ASSERT_CS_ST =>
+        --------------------------------------------------------
+        -- END SPI TRANSACTION
+        --------------------------------------------------------
+        when END_CS_ST =>
 
-                CS <= '0';
+            spi_active <= '0';
 
-            --------------------------------------------------------
-            -- SHIFT DATA
-            --------------------------------------------------------
-            when SHIFT_ST =>
+            Data1 <= shift_reg1;
+            Data2 <= shift_reg2;
 
-                CS <= '0';
+            DataValid <= '1';
 
-            --------------------------------------------------------
-            -- HOLD CS AFTER LAST CLOCK
-            --------------------------------------------------------
-            when END_CS_ST =>
+            STATE_DEBUG <= 6;
 
-                CS <= '0';
+    end case;
 
-            when others =>
-                null;
+end process;
 
-        end case;
-        
-    end process;
 
-    --------------------------------------------------------------------
-    -- NEXT STATE LOGIC
-    --------------------------------------------------------------------
-    process(
+--------------------------------------------------------------------
+-- OUTPUT LOGIC
+--------------------------------------------------------------------
+process(state)
+begin
+
+    ------------------------------------------------------------
+    -- DEFAULTS
+    ------------------------------------------------------------
+    CS <= '1';
+
+    case state is
+
+        --------------------------------------------------------
+        -- ASSERT CS
+        --------------------------------------------------------
+        when ASSERT_CS_ST =>
+
+            CS <= '0';
+
+        --------------------------------------------------------
+        -- SCK STARTED, DATA NOT READ YET
+        --------------------------------------------------------
+        when SCK_READ_DELAY_ST =>
+
+            CS <= '0';
+
+        --------------------------------------------------------
+        -- SHIFT DATA
+        --------------------------------------------------------
+        when SHIFT_ST =>
+
+            CS <= '0';
+
+        --------------------------------------------------------
+        -- HOLD CS AFTER LAST CLOCK
+        --------------------------------------------------------
+        when END_CS_ST =>
+
+            CS <= '0';
+
+        when others =>
+            null;
+
+    end case;
+
+end process;
+
+
+--------------------------------------------------------------------
+-- NEXT STATE LOGIC
+--------------------------------------------------------------------
+process(
     state,
     sample_counter,
     quiet_counter,
     bit_counter,
-    Enable
-    )
-    begin
+    cnv_counter,
+    sck_delay_counter,
+    Enable,
+    FIFO_ENABLE
+)
+begin
 
-        next_state <= state;
-        next_sample_counter <= sample_counter;
+    next_state <= state;
+    next_sample_counter <= sample_counter;
 
-        if Enable = '0' OR FIFO_ENABLE = '0' then
+    if Enable = '0' OR FIFO_ENABLE = '0' then
 
-            next_state <= IDLE_ST;
-            next_sample_counter <= 0;
+        next_state <= IDLE_ST;
+        next_sample_counter <= 0;
 
+    else
+
+        if sample_counter < 39 then
+            next_sample_counter <= sample_counter + 1;
         else
-
-            if sample_counter < 39 then
-                next_sample_counter <= sample_counter + 1;
-            else
-                next_sample_counter <= 0;
-            end if;
-
-            case state is
-
-                when IDLE_ST =>
-
-                    if sample_counter = 0 then
-                        next_state <= PRE_CNV_QUIET_ST;
-                    end if;
-
-                when PRE_CNV_QUIET_ST =>
-
-                    if quiet_counter = 1 then
-                        next_state <= CNV_PULSE_ST;
-                    end if;
-
-                when CNV_PULSE_ST =>
-
-                    if cnv_counter = 2 then
-                        next_state <= POST_CNV_QUIET_ST;
-                    end if;
-
-                when POST_CNV_QUIET_ST =>
-
-                    if quiet_counter = 2 then
-                        next_state <= ASSERT_CS_ST;
-                    end if;
-
-                when ASSERT_CS_ST =>
-
-                    next_state <= SHIFT_ST;
-
-                when SHIFT_ST =>
-
-                    if bit_counter = 23 then
-                        next_state <= END_CS_ST;
-                    end if;
-
-                when END_CS_ST =>
-
-                    next_state <= IDLE_ST;
-
-                when others =>
-
-                    next_state <= IDLE_ST;
-
-            end case;
-
+            next_sample_counter <= 0;
         end if;
 
-    end process;
+        case state is
+
+            when IDLE_ST =>
+
+                if sample_counter = 0 then
+                    next_state <= PRE_CNV_QUIET_ST;
+                end if;
+
+            when PRE_CNV_QUIET_ST =>
+
+                if quiet_counter = 1 then
+                    next_state <= CNV_PULSE_ST;
+                end if;
+
+            when CNV_PULSE_ST =>
+
+                if cnv_counter = 2 then
+                    next_state <= POST_CNV_QUIET_ST;
+                end if;
+
+            when POST_CNV_QUIET_ST =>
+
+                if quiet_counter = 2 then
+                    next_state <= ASSERT_CS_ST;
+                end if;
+
+            when ASSERT_CS_ST =>
+
+                -- CS is low, next state starts SCK
+                next_state <= SHIFT_ST;
+
+            when SCK_READ_DELAY_ST =>
+
+                -- After 2 CLK/SCK cycles, start reading MISO
+                if sck_delay_counter >= SPI_READ_DELAY_CYCLES - 1 then
+                    next_state <= SHIFT_ST;
+                end if;
+
+            when SHIFT_ST =>
+
+                if bit_counter = 23 then
+                    next_state <= END_CS_ST;
+                end if;
+
+            when END_CS_ST =>
+
+                next_state <= IDLE_ST;
+
+            when others =>
+
+                next_state <= IDLE_ST;
+
+        end case;
+
+    end if;
+
+end process;
 
 end Behavioral;

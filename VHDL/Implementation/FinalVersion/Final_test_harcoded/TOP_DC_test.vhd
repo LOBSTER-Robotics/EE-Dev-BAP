@@ -30,7 +30,7 @@ architecture rtl of top_dc_test is
 
 begin
 
-    s_rst <= not rst_n;
+    s_rst <= rst_n;
     cs_n  <= s_cs_n;
 
     process (extClk)
@@ -40,8 +40,10 @@ begin
                 s_heartbeat <= (others => '0');
                 s_ramp      <= (others => '0');
             else
+                if s_read_en(0) = '1' then
+                    s_ramp <= s_ramp + 1;   -- increments at 2 MSps
+                end if;                   -- DAC captures every 25 cycles
                 s_heartbeat <= s_heartbeat + 1;
-                s_ramp      <= s_ramp + 1;   -- increments at 50 MHz
             end if;                           -- DAC captures every 25 cycles
         end if;
     end process;
@@ -54,7 +56,7 @@ begin
     u_spi : entity work.spi_master_dac_ext
         generic map (
             Num_Channels    => 1,
-            DONE_WAIT_CYCLS => 481
+            DONE_WAIT_CYCLS => 1000
         )
         port map (
             clk           => extClk,

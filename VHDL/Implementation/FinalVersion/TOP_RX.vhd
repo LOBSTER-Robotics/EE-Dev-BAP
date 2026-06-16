@@ -314,10 +314,10 @@ begin
     rx_fifo_rd_en_safe <= rx_fifo_rd_en_i and not rx_fifo_empty_i;
     sel_high_i <= not seg_sel_sw;
 
-    CLOCK_BLOCK_50_80 : entity work.PLL60
+    CLOCK_BLOCK_50_80 : entity work.PLL1
     port map (
         CLKI => clk100,
-        CLKOP => clk50
+        CLKOP => clk80
     );
 
     seg_display_inst : entity work.byte_to_14seg
@@ -689,7 +689,7 @@ begin
     u_top_1khz_test : entity work.top_1khz_test
     port map (
         clk      => extClk,             -- use the 50 MHz clock generated in this design
-        rst_n    => reset,      -- active-low reset, rx_reset is active-high here
+        rst_n    => rx_reset,      -- active-low reset, rx_reset is active-high here
         sdi(0)      => sdi_dac,    -- map scalar sdi_dac into the 1-element vector
         cs_n     => cs_n_dac,          -- share the DAC CS signal
         high_imp => high_imp4,         -- connect to one of the high_imp pins (board-specific)
@@ -700,8 +700,8 @@ begin
     -- u_top_dc_test : entity work.top_dc_test
     --     port map (
     --         extClk   => extClk,               -- external SPI clock (shared with DAC path)
-    --         rst_n    => not rx_reset,         -- active-low reset
-    --         sdi(0)      => (0 => sdi_dac),       -- map single-bit sdi_dac into 1-element vector
+    --         rst_n    => rx_reset,         -- active-low reset
+    --         sdi(0)      => sdi_dac,       -- map single-bit sdi_dac into 1-element vector
     --         cs_n     => cs_n_dac,             -- share DAC chip-select (careful with contention)
     --         high_imp => high_imp2,            -- use high_imp2 for this test instance
     --         led      => open                  -- leave LEDs unconnected (or map to signals if desired)
@@ -729,7 +729,7 @@ begin
         u_small_fifo_adc : entity work.Fifosm_ADC_async
             port map (
                 Data        => s_small_fifo_ADC_din(ch),
-                WrClock     => clk50,
+                WrClock     => clk80,
                 RdClock     => clk125,
                 WrEn        => s_small_fifo_ADC_wr_en(ch),
                 RdEn        => s_small_fifo_ADC_rd_en(ch),
@@ -746,7 +746,7 @@ begin
 
     u_spi_ADC : entity work.ADC_SPI_Controller
         port map (
-            clk           => clk50,
+            clk           => clk80,
             RESET_N           => rx_reset,
             high_imp1       => high_imp1,
             high_imp2    => high_imp2,
